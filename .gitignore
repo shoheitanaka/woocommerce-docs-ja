@@ -1,0 +1,12 @@
+
+
+node_modules/
+package-lock.json
+vendor/
+.env
+.DS_Store
+
+composer.lock
+translations/cache/*.json
+translations/cache/*.md
+.cache/
