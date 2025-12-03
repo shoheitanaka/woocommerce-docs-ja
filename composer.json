@@ -1,0 +1,23 @@
+{
+    "name": "woocommerce-docs-ja/wordpress-plugin",
+    "description": "WordPress plugin for displaying translated WooCommerce documentation",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "composer/installers": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WooCommerceDocsJa\\": "wordpress-plugin/includes/"
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=WordPress wordpress-plugin/",
+        "phpcbf": "phpcbf --standard=WordPress wordpress-plugin/"
+    }
+}

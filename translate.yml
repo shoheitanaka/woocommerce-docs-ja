@@ -1,0 +1,149 @@
+name: Translate Documentation
+
+on:
+  pull_request:
+    types: [opened, synchronize, labeled]
+    paths:
+      - 'docs/**/*.md'
+  workflow_dispatch:
+    inputs:
+      target_files:
+        description: 'Target files to translate (comma-separated, or "all")'
+        required: false
+        default: 'all'
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    # translation ラベルがついているPR、または手動実行の場合のみ実行
+    if: |
+      github.event_name == 'workflow_dispatch' || 
+      contains(github.event.pull_request.labels.*.name, 'translation')
+    
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          token: ${{ secrets.PAT_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Load translation cache
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: translations/cache
+          key: translation-cache-${{ hashFiles('docs/**/*.md') }}
+          restore-keys: |
+            translation-cache-
+      
+      - name: Detect changed files
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            TARGET="${{ github.event.inputs.target_files }}"
+            if [ "$TARGET" == "all" ]; then
+              FILES=$(find docs -name "*.md" -type f)
+            else
+              FILES=$(echo $TARGET | tr ',' '\n')
+            fi
+          else
+            # PRの変更ファイルを取得
+            FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'docs/**/*.md')
+          fi
+          
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          FILE_COUNT=$(echo "$FILES" | wc -l)
+          echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+      
+      - name: Estimate DeepL API usage
+        id: estimate
+        env:
+          FILES: ${{ steps.changes.outputs.files }}
+        run: |
+          node scripts/estimate-usage.js
+      
+      - name: Check DeepL API quota
+        if: steps.estimate.outputs.estimated_chars > 0
+        run: |
+          ESTIMATED=${{ steps.estimate.outputs.estimated_chars }}
+          echo "📊 推定文字数: $ESTIMATED 文字"
+          
+          # 無料枠の警告（月間50万文字）
+          if [ $ESTIMATED -gt 500000 ]; then
+            echo "⚠️ 警告: 推定文字数が無料枠を超えています"
+            echo "estimated_chars=$ESTIMATED" >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Translate documents
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+          DEEPL_API_FREE: true
+          FILES: ${{ steps.changes.outputs.files }}
+        run: |
+          npm run translate
+      
+      - name: Generate translation report
+        id: report
+        run: |
+          node scripts/generate-report.js > translation-report.md
+          
+          # レポートをGitHub Step Summaryに追加
+          cat translation-report.md >> $GITHUB_STEP_SUMMARY
+      
+      - name: Commit translations
+        run: |
+          git add translations/ja/
+          git add translations/cache/
+          
+          if git diff --staged --quiet; then
+            echo "No translation changes to commit"
+          else
+            git commit -m "translations: update Japanese translations
+            
+            - Files translated: ${{ steps.changes.outputs.file_count }}
+            - Characters processed: ${{ steps.report.outputs.total_chars }}
+            - API calls: ${{ steps.report.outputs.api_calls }}
+            - Cache hits: ${{ steps.report.outputs.cache_hits }}"
+            
+            git push
+          fi
+      
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('translation-report.md', 'utf8');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🌐 翻訳完了レポート\n\n${report}\n\n---\n🤖 自動生成されました`
+            });
+      
+      - name: Save cache
+        if: always()
+        uses: actions/cache/save@v3
+        with:
+          path: translations/cache
+          key: translation-cache-${{ hashFiles('docs/**/*.md') }}

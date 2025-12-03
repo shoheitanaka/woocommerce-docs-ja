@@ -1,0 +1,45 @@
+{
+  "name": "woocommerce-docs-ja",
+  "version": "1.0.0",
+  "description": "WooCommerce documentation Japanese translation automation system",
+  "main": "index.js",
+  "scripts": {
+    "sync": "node scripts/sync-upstream.js",
+    "translate": "node scripts/translate.js",
+    "deploy": "node scripts/deploy.js",
+    "cache:clear": "node scripts/cache-manager.js clear",
+    "cache:stats": "node scripts/cache-manager.js stats",
+    "test": "jest",
+    "lint": "eslint scripts/**/*.js"
+  },
+  "keywords": [
+    "woocommerce",
+    "documentation",
+    "translation",
+    "japanese",
+    "wordpress",
+    "deepl"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "deepl-node": "^1.11.0",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "marked": "^11.0.0",
+    "crypto": "^1.0.1",
+    "glob": "^10.3.10",
+    "diff": "^5.1.0",
+    "simple-git": "^3.20.0",
+    "turndown": "^7.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

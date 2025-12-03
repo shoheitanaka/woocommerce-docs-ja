@@ -1,0 +1,70 @@
+{
+  "project": {
+    "name": "WooCommerce Docs Japanese",
+    "version": "1.0.0",
+    "description": "WooCommerce公式ドキュメントの日本語翻訳システム"
+  },
+  "upstream": {
+    "owner": "woocommerce",
+    "repo": "woocommerce",
+    "branch": "trunk",
+    "docsPath": "docs",
+    "excludePaths": [
+      "node_modules",
+      ".github",
+      "vendor"
+    ]
+  },
+  "translation": {
+    "sourceLang": "EN",
+    "targetLang": "JA",
+    "preserveCodeBlocks": true,
+    "preserveLinks": true,
+    "preserveFrontmatter": true,
+    "splitByParagraph": true,
+    "batchSize": 10,
+    "maxCharsPerRequest": 5000
+  },
+  "cache": {
+    "enabled": true,
+    "expiryDays": 30,
+    "hashAlgorithm": "sha256",
+    "compareMethod": "content-hash"
+  },
+  "wordpress": {
+    "postType": "page",
+    "postStatus": "publish",
+    "categoryPrefix": "WooCommerce Docs",
+    "menuLocation": "primary",
+    "slugPrefix": "wc-docs"
+  },
+  "versioning": {
+    "enabled": true,
+    "strategy": "git-tags",
+    "defaultVersion": "latest",
+    "versionsToKeep": 5
+  },
+  "github": {
+    "autoCreatePR": true,
+    "prLabels": ["translation", "auto-generated"],
+    "prReviewers": [],
+    "prAssignees": [],
+    "branchPrefix": "translation/update"
+  },
+  "sync": {
+    "schedule": "0 2 * * *",
+    "checkOnPush": true,
+    "ignorePatterns": [
+      "*.test.md",
+      "*.draft.md",
+      "CONTRIBUTING.md"
+    ]
+  },
+  "optimization": {
+    "deeplApiOptimization": true,
+    "cacheTranslations": true,
+    "incrementalTranslation": true,
+    "parallelProcessing": false,
+    "maxConcurrentRequests": 1
+  }
+}
