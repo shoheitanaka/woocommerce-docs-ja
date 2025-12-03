@@ -22,21 +22,33 @@
 - **validate-wp-connection.js**: WordPress接続検証
 
 ### 3. WordPressプラグイン (`wordpress-plugin/`)
-- メインプラグインファイル
-- バージョン管理機能
-- カスタムスタイル
-- インタラクティブなJavaScript機能
+- **woocommerce-docs-ja.php**: メインプラグインファイル
+- **includes/**: PHPクラスファイル
+  - **class-version-manager.php**: バージョン管理
+  - **class-api-handler.php**: API処理
+  - **class-shortcodes.php**: ショートコード機能
+- **assets/**: フロントエンド資産
+  - **css/style.css**: カスタムスタイル
+  - **js/script.js**: インタラクティブなJavaScript機能
 
-### 4. 設定ファイル
+### 4. ルートレベルのファイル
+- **woocommerce-docs-ja.php**: プラグインメインファイル（ルート）
+- **class-version-manager.php**: バージョン管理クラス（ルート）
+- **style.css**: スタイルシート（ルート）
+- **script.js**: JavaScript（ルート）
+
+### 5. 設定ファイル
 - **config/config.json**: プロジェクト全体の設定
+- **config/sync-rules.json**: 同期ルール設定
 - **.env.example**: 環境変数のテンプレート
 - **package.json**: Node.js依存関係
 - **composer.json**: PHP依存関係
 
-### 5. ドキュメント
+### 6. ドキュメント
 - **README.md**: プロジェクト概要
 - **SETUP.md**: 詳細なセットアップガイド
 - **USAGE.md**: 使い方ガイド
+- **PROJECT_OVERVIEW.md**: このファイル
 
 ## 🎯 主要機能
 
@@ -85,25 +97,33 @@ woocommerce-docs-ja/
 │   ├── generate-report.js
 │   ├── generate-deploy-report.js
 │   └── validate-wp-connection.js
+├── config/                     # 設定ファイル
+│   ├── config.json
+│   └── sync-rules.json
 ├── translations/               # 翻訳データ
 │   ├── cache/                  # キャッシュ
+│   │   └── translation-cache.json
 │   └── ja/                     # 日本語訳（自動生成）
 ├── wordpress-plugin/           # WordPressプラグイン
-│   ├── woocommerce-docs-ja.php
-│   ├── includes/
-│   │   └── class-version-manager.php
-│   └── assets/
-│       ├── css/style.css
-│       └── js/script.js
-├── config/                     # 設定
-│   └── config.json
-├── package.json
-├── composer.json
-├── .env.example
+│   ├── woocommerce-docs-ja.php # メインプラグインファイル
+│   ├── includes/               # PHPクラス
+│   │   ├── class-version-manager.php
+│   │   ├── class-api-handler.php
+│   │   └── class-shortcodes.php
+│   └── assets/                 # フロントエンド資産
+│       ├── css/
+│       │   └── style.css
+│       └── js/
+│           └── script.js
+├── package.json                # Node.js依存関係
+├── composer.json               # PHP依存関係
+├── .env.example                # 環境変数テンプレート
 ├── .gitignore
+├── LICENSE
 ├── README.md
 ├── SETUP.md
-└── USAGE.md
+├── USAGE.md
+└── PROJECT_OVERVIEW.md
 ```
 
 ## 🚀 クイックスタート
@@ -137,7 +157,8 @@ woocommerce-docs-ja/
    - PAT_TOKEN
 
 4. **WordPressプラグインのインストール**
-   - `wordpress-plugin/` をWordPressにアップロード
+   - ルートディレクトリの `woocommerce-docs-ja.zip` をWordPressにアップロード
+   - または `wordpress-plugin/` ディレクトリをWordPressの `wp-content/plugins/` にコピー
 
 5. **GitHub Actionsの有効化**
    - Actionsタブで手動実行

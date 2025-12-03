@@ -1,0 +1,161 @@
+{
+  "sync": {
+    "description": "上流リポジトリとの同期ルール設定",
+    "enabled": true,
+    "autoSync": true
+  },
+  "include": {
+    "description": "同期対象とするファイルパターン",
+    "patterns": [
+      "**/*.md",
+      "**/*.markdown"
+    ],
+    "directories": [
+      "docs"
+    ]
+  },
+  "exclude": {
+    "description": "同期対象外とするファイル・ディレクトリ",
+    "patterns": [
+      "**/*.test.md",
+      "**/*.draft.md",
+      "**/*.tmp.md",
+      "**/node_modules/**",
+      "**/vendor/**",
+      "**/.git/**",
+      "**/.github/**",
+      "**/tests/**",
+      "**/test/**",
+      "**/__tests__/**"
+    ],
+    "files": [
+      "CONTRIBUTING.md",
+      "CODE_OF_CONDUCT.md",
+      "SECURITY.md",
+      "LICENSE",
+      "LICENSE.md",
+      "LICENSE.txt"
+    ],
+    "directories": [
+      ".github",
+      "node_modules",
+      "vendor",
+      "tests",
+      "test",
+      "__tests__",
+      ".vscode",
+      ".idea"
+    ]
+  },
+  "transform": {
+    "description": "ファイルパスの変換ルール",
+    "enabled": true,
+    "rules": [
+      {
+        "description": "README.md は index.md に変換",
+        "from": "README.md",
+        "to": "index.md"
+      },
+      {
+        "description": "大文字のファイル名を小文字に変換",
+        "pattern": "^[A-Z_]+\\.md$",
+        "transform": "lowercase"
+      }
+    ]
+  },
+  "metadata": {
+    "description": "同期時に追加するメタデータ",
+    "addSourceInfo": true,
+    "addSyncTimestamp": true,
+    "addUpstreamCommit": true,
+    "customFields": {
+      "source": "WooCommerce Official Documentation",
+      "sourceRepo": "woocommerce/woocommerce",
+      "license": "GPL-3.0"
+    }
+  },
+  "conflict": {
+    "description": "競合時の解決方法",
+    "resolution": "upstream",
+    "options": [
+      "upstream",
+      "local",
+      "manual"
+    ],
+    "createBackup": true
+  },
+  "validation": {
+    "description": "同期前のバリデーション",
+    "enabled": true,
+    "checks": [
+      "file-size",
+      "file-format",
+      "encoding"
+    ],
+    "maxFileSize": "10MB",
+    "allowedEncodings": [
+      "utf-8",
+      "utf-8-sig"
+    ]
+  },
+  "hooks": {
+    "description": "同期前後に実行するフック",
+    "beforeSync": [],
+    "afterSync": [
+      "update-cache",
+      "generate-index"
+    ],
+    "onError": [
+      "create-error-log"
+    ]
+  },
+  "priority": {
+    "description": "優先的に同期するファイル",
+    "enabled": true,
+    "files": [
+      "README.md",
+      "docs/README.md",
+      "docs/index.md",
+      "docs/getting-started.md",
+      "docs/installation.md"
+    ]
+  },
+  "fileMapping": {
+    "description": "特定のファイルに対する個別マッピング",
+    "enabled": true,
+    "mappings": {
+      "docs/README.md": "translations/ja/index.md",
+      "docs/api/README.md": "translations/ja/api/index.md"
+    }
+  },
+  "contentProcessing": {
+    "description": "コンテンツの前処理",
+    "enabled": true,
+    "removeComments": false,
+    "normalizeLineEndings": true,
+    "trimWhitespace": true,
+    "preserveCodeBlocks": true,
+    "preserveFrontmatter": true
+  },
+  "versioning": {
+    "description": "バージョン管理の同期ルール",
+    "enabled": true,
+    "trackTags": true,
+    "trackBranches": [
+      "trunk",
+      "main",
+      "master"
+    ],
+    "versionPattern": "^v?\\d+\\.\\d+\\.\\d+$"
+  },
+  "notification": {
+    "description": "同期完了時の通知設定",
+    "enabled": true,
+    "methods": [
+      "github-pr",
+      "commit-message"
+    ],
+    "includeStats": true,
+    "includeDiff": true
+  }
+}
