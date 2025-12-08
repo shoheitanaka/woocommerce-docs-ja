@@ -88,7 +88,25 @@ async function testRestAPI(url, username, password) {
       console.log('   ✓ Authentication successful');
       console.log(`   ✓ User ID: ${response.data.id}`);
       console.log(`   ✓ User name: ${response.data.name}`);
-      console.log(`   ✓ User roles: ${response.data.roles.join(', ')}`);
+      
+      // デバッグ: レスポンスの構造を確認
+      if (process.env.DEBUG) {
+        console.log('\n   [DEBUG] User data structure:');
+        console.log(JSON.stringify(response.data, null, 2));
+      }
+      
+      // rolesプロパティの存在を確認
+      if (response.data.roles && Array.isArray(response.data.roles)) {
+        console.log(`   ✓ User roles: ${response.data.roles.join(', ')}`);
+      } else if (response.data.capabilities) {
+        // capabilitiesが存在する場合はそちらを表示
+        const roles = Object.keys(response.data.capabilities).filter(cap => 
+          cap.includes('administrator') || cap.includes('editor') || cap.includes('author')
+        );
+        console.log(`   ✓ User capabilities: ${roles.length > 0 ? roles.join(', ') : 'Available'}`);
+      } else {
+        console.log('   ⚠ User roles: Not available in response');
+      }
     }
   } catch (error) {
     if (error.response) {

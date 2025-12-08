@@ -141,8 +141,17 @@ node scripts/validate-wp-connection.js
 ✅ All validation checks passed!
 ```
 
+**注意**: ユーザーロール情報が表示されない場合でも、他のチェックが通過すれば問題ありません。一部のWordPress環境では、セキュリティ上の理由でREST APIレスポンスからロール情報が除外されています。
+
+デバッグモードで詳細情報を確認する場合:
+```bash
+DEBUG=1 node scripts/validate-wp-connection.js
+```
+
 #### 6.2 上流リポジトリの同期テスト
 
+以下で、woocommerceのgithubから、英語のドキュメントをdocsフォルダにとってきて同期します。
+少し時間がかかります。10分ぐらい。
 ```bash
 npm run sync
 ```
@@ -158,7 +167,7 @@ npm run sync
 
 ```bash
 # 1つのファイルのみテスト
-npm run translate docs/README.md
+npm run translate docs/apis/README.md
 ```
 
 ### ステップ7: GitHub Actionsの有効化
@@ -221,6 +230,15 @@ npm run cache:stats
 1. アプリケーションパスワードが正しいか確認
 2. WordPressのREST APIが有効か確認
 3. ユーザーに適切な権限があるか確認
+
+**症状**: `Cannot read properties of undefined (reading 'join')`
+
+**原因**: WordPress REST APIのレスポンスにユーザーロール情報が含まれていない
+
+**解決策**:
+- これは正常な動作です。一部のWordPress環境ではセキュリティ上の理由でロール情報が制限されています
+- 他のチェック（ページの読み取り、作成、削除）が通過していれば問題ありません
+- デバッグモードで詳細を確認: `DEBUG=1 node scripts/validate-wp-connection.js`
 
 ### DeepL APIエラー
 

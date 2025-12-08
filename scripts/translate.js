@@ -3,7 +3,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const crypto = require('crypto');
-const * as deepl = require('deepl-node');
+const deepl = require('deepl-node');
 const matter = require('gray-matter');
 const config = require('../config/config.json');
 require('dotenv').config();
