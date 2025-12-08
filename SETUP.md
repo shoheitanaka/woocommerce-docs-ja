@@ -258,6 +258,20 @@ npm run cache:stats
 2. Actionsログを確認して具体的なエラーを特定
 3. `.env.example`と実際の環境変数を比較
 
+**症状**: `Dependencies lock file is not found` エラー
+
+**原因**: `package-lock.json` または `composer.lock` がリポジトリにコミットされていない
+
+**解決策**:
+```bash
+# lock filesをGitに追加
+git add package-lock.json composer.lock
+git commit -m "fix: add lock files for GitHub Actions"
+git push origin main
+```
+
+これらのファイルは依存関係のバージョンを固定し、GitHub Actionsのキャッシュ機能を利用するために必要です。
+
 ## 📚 次のステップ
 
 - [使い方ガイド](USAGE.md)を読む

@@ -5,6 +5,7 @@ const path = require('path');
 const crypto = require('crypto');
 const deepl = require('deepl-node');
 const matter = require('gray-matter');
+const { glob } = require('glob');
 const config = require('../config/config.json');
 require('dotenv').config();
 
@@ -416,14 +417,10 @@ function getOutputPath(inputPath) {
  * マークダウンファイルの取得
  */
 async function getMarkdownFiles() {
-  const glob = require('glob');
   const pattern = path.join(process.cwd(), 'docs', '**', '*.md');
-  
-  return new Promise((resolve, reject) => {
-    glob(pattern, (err, files) => {
-      if (err) reject(err);
-      else resolve(files);
-    });
+  return await glob(pattern, { 
+    nodir: true,
+    absolute: true 
   });
 }
 

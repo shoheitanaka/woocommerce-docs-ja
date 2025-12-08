@@ -3,6 +3,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const crypto = require('crypto');
+const { glob } = require('glob');
 
 const CACHE_DIR = path.join(process.cwd(), 'translations', 'cache');
 const CACHE_FILE = path.join(CACHE_DIR, 'translation-cache.json');
@@ -134,14 +135,10 @@ class CacheManager {
     console.log('🔄 Updating cache...\n');
     await this.load();
 
-    const glob = require('glob');
     const docsPattern = path.join(process.cwd(), 'docs', '**', '*.md');
-
-    const files = await new Promise((resolve, reject) => {
-      glob(docsPattern, (err, files) => {
-        if (err) reject(err);
-        else resolve(files);
-      });
+    const files = await glob(docsPattern, {
+      nodir: true,
+      absolute: true
     });
 
     console.log(`Found ${files.length} markdown files`);

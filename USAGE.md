@@ -252,6 +252,21 @@ GitHub Actionsで:
 
 ### 翻訳が失敗する
 
+**症状**: `glob is not a function` エラー
+
+**原因**: `glob` パッケージのバージョン不一致または古い使用方法
+
+**解決策**:
+```bash
+# 依存関係を再インストール
+npm install
+
+# または、globパッケージを最新版に更新
+npm install glob@latest
+```
+
+このエラーは修正済みです。最新のコードを取得してください。
+
 **症状**: GitHub Actionsで翻訳が失敗
 
 **確認事項**:
