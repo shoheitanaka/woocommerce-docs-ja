@@ -24,9 +24,9 @@
 ### 3. WordPressプラグイン (`wordpress-plugin/`)
 - **woocommerce-docs-ja.php**: メインプラグインファイル
 - **includes/**: PHPクラスファイル
-  - **class-version-manager.php**: バージョン管理
-  - **class-api-handler.php**: API処理
-  - **class-shortcodes.php**: ショートコード機能
+  - **class-wc-docs-ja-version-manager.php**: バージョン管理
+  - **class-wc-docs-ja-api-handler.php**: API処理
+  - **class-wc-docs-ja-shortcodes.php**: ショートコード機能
 - **assets/**: フロントエンド資産
   - **css/style.css**: カスタムスタイル
   - **js/script.js**: インタラクティブなJavaScript機能
@@ -107,9 +107,9 @@ woocommerce-docs-ja/
 ├── wordpress-plugin/           # WordPressプラグイン
 │   ├── woocommerce-docs-ja.php # メインプラグインファイル
 │   ├── includes/               # PHPクラス
-│   │   ├── class-version-manager.php
-│   │   ├── class-api-handler.php
-│   │   └── class-shortcodes.php
+│   │   ├── class-wc-docs-ja-version-manager.php
+│   │   ├── class-wc-docs-ja-api-handler.php
+│   │   └── class-wc-docs-ja-shortcodes.php
 │   └── assets/                 # フロントエンド資産
 │       ├── css/
 │       │   └── style.css

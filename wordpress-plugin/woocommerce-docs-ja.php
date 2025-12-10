@@ -63,6 +63,7 @@ class WooCommerce_Docs_JA {
 	private function init_hooks() {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'init', array( $this, 'register_taxonomy' ) );
+		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 		add_filter( 'the_content', array( $this, 'filter_content' ) );
@@ -73,9 +74,9 @@ class WooCommerce_Docs_JA {
 	 * 依存関係の読み込み
 	 */
 	private function load_dependencies() {
-		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-version-manager.php';
-		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-shortcodes.php';
-		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-api-handler.php';
+		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-wc-docs-ja-version-manager.php';
+		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-wc-docs-ja-shortcodes.php';
+		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-wc-docs-ja-api-handler.php';
 	}
 
 	/**
@@ -117,23 +118,42 @@ class WooCommerce_Docs_JA {
 		);
 
 		register_taxonomy( 'docs_version', array( 'page', 'wc_docs' ), $args );
-	}   /**
-		 * Enqueue assets.
-		 *
-		 * @since 1.0.0
-		 */
+	}
+
+	/**
+	 * Register settings.
+	 *
+	 * @since 1.0.0
+	 */
+	public function register_settings() {
+		register_setting(
+			'wc_docs_ja_settings',
+			'wc_docs_ja_auto_toc',
+			array(
+				'type'              => 'boolean',
+				'sanitize_callback' => 'rest_sanitize_boolean',
+				'default'           => true,
+			)
+		);
+	}
+
+	/**
+	 * Enqueue assets.
+	 *
+	 * @since 1.0.0
+	 */
 	public function enqueue_assets() {
 		if ( is_singular( 'wc_docs' ) || is_page() ) {
 			wp_enqueue_style(
 				'wc-docs-ja-style',
-				WC_DOCS_JA_PLUGIN_URL . 'style.css',
+				WC_DOCS_JA_PLUGIN_URL . 'aseets/css/style.css',
 				array(),
 				WC_DOCS_JA_VERSION
 			);
 
 			wp_enqueue_script(
 				'wc-docs-ja-script',
-				WC_DOCS_JA_PLUGIN_URL . 'script.js',
+				WC_DOCS_JA_PLUGIN_URL . 'aseets/js/script.js',
 				array( 'jquery' ),
 				WC_DOCS_JA_VERSION,
 				true
@@ -176,10 +196,112 @@ class WooCommerce_Docs_JA {
 			return;
 		}
 
+		// Get WooCommerce Docs pages (deployed documentation).
+		$docs_pages = get_posts(
+			array(
+				'post_type'      => 'page',
+				'posts_per_page' => -1,
+				'meta_query'     => array(
+					array(
+						'key'     => 'source_file',
+						'compare' => 'EXISTS',
+					),
+				),
+				'orderby'        => 'title',
+				'order'          => 'ASC',
+			)
+		);
+
 		?>
 		<div class="wrap">
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-			<p><?php esc_html_e( 'WooCommerce Documentation Japanese Translation Settings', 'woocommerce-docs-ja' ); ?></p>
+			<p><?php esc_html_e( 'WooCommerce Documentation Japanese Translation', 'woocommerce-docs-ja' ); ?></p>
+
+			<h2><?php esc_html_e( 'Deployed Documentation', 'woocommerce-docs-ja' ); ?></h2>
+			
+			<?php if ( empty( $docs_pages ) ) : ?>
+				<p><?php esc_html_e( 'No documentation pages found. Please deploy documentation using the deployment script.', 'woocommerce-docs-ja' ); ?></p>
+			<?php else : ?>
+				<table class="wp-list-table widefat fixed striped">
+					<thead>
+						<tr>
+							<th><?php esc_html_e( 'Title', 'woocommerce-docs-ja' ); ?></th>
+							<th><?php esc_html_e( 'Source File', 'woocommerce-docs-ja' ); ?></th>
+							<th><?php esc_html_e( 'Last Updated', 'woocommerce-docs-ja' ); ?></th>
+							<th><?php esc_html_e( 'Version', 'woocommerce-docs-ja' ); ?></th>
+							<th><?php esc_html_e( 'Actions', 'woocommerce-docs-ja' ); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ( $docs_pages as $doc ) : ?>
+							<?php
+							$source_file  = get_post_meta( $doc->ID, 'source_file', true );
+							$last_updated = get_post_meta( $doc->ID, 'last_updated', true );
+							$version      = get_post_meta( $doc->ID, 'version', true );
+							?>
+							<tr>
+								<td>
+									<strong>
+										<a href="<?php echo esc_url( get_edit_post_link( $doc->ID ) ); ?>">
+											<?php echo esc_html( $doc->post_title ); ?>
+										</a>
+									</strong>
+								</td>
+								<td><?php echo esc_html( $source_file ); ?></td>
+								<td>
+									<?php
+									if ( $last_updated ) {
+										echo esc_html( date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime( $last_updated ) ) );
+									} else {
+										echo esc_html( get_the_modified_date( '', $doc->ID ) );
+									}
+									?>
+								</td>
+								<td><?php echo esc_html( $version ? $version : 'latest' ); ?></td>
+								<td>
+									<a href="<?php echo esc_url( get_permalink( $doc->ID ) ); ?>" target="_blank" class="button button-small">
+										<?php esc_html_e( 'View', 'woocommerce-docs-ja' ); ?>
+									</a>
+									<a href="<?php echo esc_url( get_edit_post_link( $doc->ID ) ); ?>" class="button button-small">
+										<?php esc_html_e( 'Edit', 'woocommerce-docs-ja' ); ?>
+									</a>
+								</td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				<p class="description">
+					<?php
+					printf(
+						/* translators: %d: number of documentation pages */
+						esc_html__( 'Total: %d documentation pages', 'woocommerce-docs-ja' ),
+						count( $docs_pages )
+					);
+					?>
+				</p>
+			<?php endif; ?>
+
+			<h2><?php esc_html_e( 'Settings', 'woocommerce-docs-ja' ); ?></h2>
+			<form method="post" action="options.php">
+				<?php settings_fields( 'wc_docs_ja_settings' ); ?>
+				<table class="form-table">
+					<tr>
+						<th scope="row">
+							<label for="wc_docs_ja_auto_toc">
+								<?php esc_html_e( 'Auto-generate Table of Contents', 'woocommerce-docs-ja' ); ?>
+							</label>
+						</th>
+						<td>
+							<input type="checkbox" id="wc_docs_ja_auto_toc" name="wc_docs_ja_auto_toc" value="1" 
+								<?php checked( get_option( 'wc_docs_ja_auto_toc', true ) ); ?> />
+							<p class="description">
+								<?php esc_html_e( 'Automatically generate a table of contents for documentation pages.', 'woocommerce-docs-ja' ); ?>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<?php submit_button(); ?>
+			</form>
 		</div>
 		<?php
 	}   /**

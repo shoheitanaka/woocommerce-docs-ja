@@ -36,32 +36,44 @@ class WordPressClient {
     }
   }
 
-  async getPages(params = {}) {
-    return await this.request('/pages', 'GET', params);
+  // wc_docs カスタム投稿タイプ用メソッド
+  async getWcDocs(params = {}) {
+    return await this.request('/wc_docs', 'GET', params);
   }
 
-  async getPage(id) {
-    return await this.request(`/pages/${id}`);
+  async getWcDoc(id) {
+    return await this.request(`/wc_docs/${id}`);
   }
 
-  async createPage(data) {
-    return await this.request('/pages', 'POST', data);
+  async createWcDoc(data) {
+    return await this.request('/wc_docs', 'POST', data);
   }
 
-  async updatePage(id, data) {
-    return await this.request(`/pages/${id}`, 'POST', data);
+  async updateWcDoc(id, data) {
+    return await this.request(`/wc_docs/${id}`, 'POST', data);
   }
 
-  async deletePage(id) {
-    return await this.request(`/pages/${id}`, 'DELETE');
+  async deleteWcDoc(id) {
+    return await this.request(`/wc_docs/${id}`, 'DELETE');
   }
 
-  async getCategories() {
-    return await this.request('/categories');
+  // wc_docs_category タクソノミー用メソッド
+  async getWcDocsCategories(params = {}) {
+    return await this.request('/wc_docs_category', 'GET', params);
   }
 
-  async createCategory(name, parent = 0) {
-    return await this.request('/categories', 'POST', { name, parent });
+  async getWcDocsCategory(id) {
+    return await this.request(`/wc_docs_category/${id}`);
+  }
+
+  async createWcDocsCategory(name, parent = 0, slug = null) {
+    const data = { name, parent };
+    if (slug) data.slug = slug;
+    return await this.request('/wc_docs_category', 'POST', data);
+  }
+
+  async updateWcDocsCategory(id, data) {
+    return await this.request(`/wc_docs_category/${id}`, 'POST', data);
   }
 }
 
@@ -89,11 +101,11 @@ async function deployToWordPress(targetFiles = null) {
 
     // 接続テスト
     console.log('🔌 Testing WordPress connection...');
-    await wp.getPages({ per_page: 1 });
+    await wp.getWcDocs({ per_page: 1 });
     console.log('   ✓ Connected successfully\n');
 
-    // カテゴリーの準備
-    const categoryId = await ensureCategory(wp);
+    // カテゴリー階層の準備
+    const categoryMap = await ensureCategoryHierarchy(wp);
 
     // デプロイ対象ファイルの取得
     const files = targetFiles || await getTranslatedFiles();
@@ -101,7 +113,7 @@ async function deployToWordPress(targetFiles = null) {
 
     // ファイルごとに処理
     for (const filePath of files) {
-      await deployFile(wp, filePath, categoryId);
+      await deployFile(wp, filePath, categoryMap);
     }
 
     // 統計情報の表示
@@ -118,7 +130,7 @@ async function deployToWordPress(targetFiles = null) {
 /**
  * 個別ファイルのデプロイ
  */
-async function deployFile(wp, filePath, categoryId) {
+async function deployFile(wp, filePath, categoryMap) {
   const relativePath = path.relative(
     path.join(process.cwd(), 'translations', 'ja'),
     filePath
@@ -136,19 +148,22 @@ async function deployFile(wp, filePath, categoryId) {
     // スラッグの生成
     const slug = generateSlug(relativePath);
 
-    // 既存ページをチェック
-    const existingPages = await wp.getPages({
+    // カテゴリーIDの取得（階層構造から）
+    const categoryIds = getCategoryIdsFromPath(relativePath, categoryMap);
+
+    // 既存ドキュメントをチェック
+    const existingDocs = await wp.getWcDocs({
       slug,
       per_page: 1
     });
 
-    // ページデータの準備
-    const pageData = {
+    // ドキュメントデータの準備
+    const docData = {
       title: frontmatter.title || path.basename(filePath, '.md'),
       content: htmlContent,
       slug,
       status: config.wordpress.postStatus || 'publish',
-      categories: [categoryId],
+      wc_docs_category: categoryIds,
       meta: {
         source_file: relativePath,
         last_updated: new Date().toISOString(),
@@ -157,15 +172,15 @@ async function deployFile(wp, filePath, categoryId) {
       }
     };
 
-    // ページの作成または更新
-    if (existingPages.length > 0) {
-      const pageId = existingPages[0].id;
-      await wp.updatePage(pageId, pageData);
-      console.log(`   ✓ Updated (ID: ${pageId})`);
+    // ドキュメントの作成または更新
+    if (existingDocs.length > 0) {
+      const docId = existingDocs[0].id;
+      await wp.updateWcDoc(docId, docData);
+      console.log(`   ✓ Updated (ID: ${docId})`);
       stats.updated++;
     } else {
-      const newPage = await wp.createPage(pageData);
-      console.log(`   ✓ Created (ID: ${newPage.id})`);
+      const newDoc = await wp.createWcDoc(docData);
+      console.log(`   ✓ Created (ID: ${newDoc.id})`);
       stats.created++;
     }
 
@@ -186,30 +201,97 @@ async function deployFile(wp, filePath, categoryId) {
 }
 
 /**
- * カテゴリーの確保
+ * カテゴリー階層の確保
  */
-async function ensureCategory(wp) {
-  const categoryName = config.wordpress.categoryPrefix || 'WooCommerce Docs';
+async function ensureCategoryHierarchy(wp) {
+  console.log('📁 Setting up category hierarchy...');
+  const categoryMap = {};
 
   try {
-    // 既存カテゴリーを検索
-    const categories = await wp.getCategories();
-    const existing = categories.find(cat => cat.name === categoryName);
-
-    if (existing) {
-      console.log(`📁 Using existing category: ${categoryName} (ID: ${existing.id})`);
-      return existing.id;
+    // 既存のカテゴリーを取得
+    const existingCategories = await wp.getWcDocsCategories({ per_page: 100 });
+    
+    // 既存カテゴリーをマップに追加
+    for (const cat of existingCategories) {
+      categoryMap[cat.slug] = cat.id;
     }
 
-    // カテゴリーを作成
-    const newCategory = await wp.createCategory(categoryName);
-    console.log(`📁 Created category: ${categoryName} (ID: ${newCategory.id})`);
-    return newCategory.id;
+    // 翻訳ファイルからディレクトリ構造を取得
+    const files = await getTranslatedFiles();
+    const directories = new Set();
+
+    files.forEach(file => {
+      const relativePath = path.relative(
+        path.join(process.cwd(), 'translations', 'ja'),
+        file
+      );
+      const dir = path.dirname(relativePath);
+      if (dir !== '.') {
+        const parts = dir.split(path.sep);
+        for (let i = 0; i < parts.length; i++) {
+          directories.add(parts.slice(0, i + 1).join('/'));
+        }
+      }
+    });
+
+    // ディレクトリを階層順にソート
+    const sortedDirs = Array.from(directories).sort((a, b) => {
+      return a.split('/').length - b.split('/').length;
+    });
+
+    // 各ディレクトリに対してカテゴリーを作成
+    for (const dir of sortedDirs) {
+      const parts = dir.split('/');
+      const name = parts[parts.length - 1];
+      const slug = dir.replace(/\//g, '-');
+
+      // 既に存在する場合はスキップ
+      if (categoryMap[slug]) {
+        console.log(`   ✓ Category exists: ${dir}`);
+        continue;
+      }
+
+      // 親カテゴリーのIDを取得
+      let parentId = 0;
+      if (parts.length > 1) {
+        const parentSlug = parts.slice(0, -1).join('-');
+        parentId = categoryMap[parentSlug] || 0;
+      }
+
+      // カテゴリーを作成
+      const newCat = await wp.createWcDocsCategory(name, parentId, slug);
+      categoryMap[slug] = newCat.id;
+      console.log(`   ✓ Created category: ${dir} (ID: ${newCat.id})`);
+    }
+
+    console.log(`   Total categories: ${Object.keys(categoryMap).length}\n`);
+    return categoryMap;
 
   } catch (error) {
-    console.error('⚠️  Could not create category, using default');
-    return 1; // デフォルトカテゴリー
+    console.error('⚠️  Error setting up category hierarchy:', error.message);
+    return categoryMap;
   }
+}
+
+/**
+ * パスからカテゴリーIDを取得
+ */
+function getCategoryIdsFromPath(relativePath, categoryMap) {
+  const dir = path.dirname(relativePath);
+  if (dir === '.') return [];
+
+  const parts = dir.split(path.sep);
+  const categoryIds = [];
+
+  // すべての階層のカテゴリーIDを取得
+  for (let i = 0; i < parts.length; i++) {
+    const slug = parts.slice(0, i + 1).join('-');
+    if (categoryMap[slug]) {
+      categoryIds.push(categoryMap[slug]);
+    }
+  }
+
+  return categoryIds;
 }
 
 /**

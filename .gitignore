@@ -8,3 +8,6 @@ vendor/
 translations/cache/*.json
 translations/cache/*.md
 .cache/
+
+.vscode/
+.idea/
