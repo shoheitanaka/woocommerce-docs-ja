@@ -245,15 +245,13 @@ class WC_Docs_JA_API_Handler {
 		if ( ! empty( $params['category'] ) ) {
 			$args['tax_query'] = array(
 				array(
-					'taxonomy' => 'category',
+					'taxonomy' => 'wc_docs_category',
 					'field'    => 'slug',
 					'terms'    => $params['category'],
 				),
 			);
-		}
-
-		$query = new WP_Query( $args );
-		$docs  = array();
+		}       $query = new WP_Query( $args );
+		$docs          = array();
 
 		foreach ( $query->posts as $post ) {
 			$docs[] = $this->format_doc_response( $post );
@@ -515,8 +513,22 @@ class WC_Docs_JA_API_Handler {
 	 * @return array Formatted response data.
 	 */
 	private function format_doc_response( $post ) {
-		$version = get_post_meta( $post->ID, '_wc_docs_version', true );
-		$updated = get_post_meta( $post->ID, 'last_updated', true );
+		$version    = get_post_meta( $post->ID, '_wc_docs_version', true );
+		$updated    = get_post_meta( $post->ID, 'last_updated', true );
+		$categories = get_the_terms( $post->ID, 'wc_docs_category' );
+
+		// Format categories.
+		$category_data = array();
+		if ( $categories && ! is_wp_error( $categories ) ) {
+			foreach ( $categories as $category ) {
+				$category_data[] = array(
+					'id'     => $category->term_id,
+					'name'   => $category->name,
+					'slug'   => $category->slug,
+					'parent' => $category->parent,
+				);
+			}
+		}
 
 		return array(
 			'id'           => $post->ID,
@@ -525,6 +537,7 @@ class WC_Docs_JA_API_Handler {
 			'content'      => apply_filters( 'the_content', $post->post_content ),
 			'excerpt'      => get_the_excerpt( $post ),
 			'version'      => $version ? $version : 'latest',
+			'categories'   => $category_data,
 			'status'       => $post->post_status,
 			'url'          => get_permalink( $post->ID ),
 			'modified'     => $post->post_modified,

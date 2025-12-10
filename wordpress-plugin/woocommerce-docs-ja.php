@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Docs Japanese
  * Plugin URI: https://github.com/shoheitanaka/woocommerce-docs-ja
  * Description: Display translated WooCommerce documentation on your WordPress site with version control
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Author: Shohei Tanaka
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants.
-define( 'WC_DOCS_JA_VERSION', '1.0.0' );
+define( 'WC_DOCS_JA_VERSION', '1.0.1' );
 define( 'WC_DOCS_JA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WC_DOCS_JA_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WC_DOCS_JA_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -108,7 +108,36 @@ class WooCommerce_Docs_JA {
 	 * @since 1.0.0
 	 */
 	public function register_taxonomy() {
-		$args = array(
+		// Documentation Category (hierarchical structure).
+		$cat_args = array(
+			'label'             => __( 'Documentation Category', 'woocommerce-docs-ja' ),
+			'labels'            => array(
+				'name'              => __( 'Documentation Categories', 'woocommerce-docs-ja' ),
+				'singular_name'     => __( 'Documentation Category', 'woocommerce-docs-ja' ),
+				'search_items'      => __( 'Search Categories', 'woocommerce-docs-ja' ),
+				'all_items'         => __( 'All Categories', 'woocommerce-docs-ja' ),
+				'parent_item'       => __( 'Parent Category', 'woocommerce-docs-ja' ),
+				'parent_item_colon' => __( 'Parent Category:', 'woocommerce-docs-ja' ),
+				'edit_item'         => __( 'Edit Category', 'woocommerce-docs-ja' ),
+				'update_item'       => __( 'Update Category', 'woocommerce-docs-ja' ),
+				'add_new_item'      => __( 'Add New Category', 'woocommerce-docs-ja' ),
+				'new_item_name'     => __( 'New Category Name', 'woocommerce-docs-ja' ),
+				'menu_name'         => __( 'Categories', 'woocommerce-docs-ja' ),
+			),
+			'hierarchical'      => true,
+			'public'            => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_rest'      => true,
+			'rest_base'         => 'wc_docs_category',
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'wc-docs-category' ),
+		);
+
+		register_taxonomy( 'wc_docs_category', array( 'wc_docs' ), $cat_args );
+
+		// Documentation Version.
+		$ver_args = array(
 			'label'        => __( 'Documentation Version', 'woocommerce-docs-ja' ),
 			'hierarchical' => true,
 			'public'       => true,
@@ -117,7 +146,7 @@ class WooCommerce_Docs_JA {
 			'rewrite'      => array( 'slug' => 'docs-version' ),
 		);
 
-		register_taxonomy( 'docs_version', array( 'page', 'wc_docs' ), $args );
+		register_taxonomy( 'docs_version', array( 'wc_docs' ), $ver_args );
 	}
 
 	/**
