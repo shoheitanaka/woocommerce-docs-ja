@@ -65,8 +65,11 @@ class WooCommerce_Docs_JA {
 		add_action( 'init', array( $this, 'register_taxonomy' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 		add_filter( 'the_content', array( $this, 'filter_content' ) );
+		add_filter( 'template_include', array( $this, 'load_custom_template' ) );
+		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
 		add_shortcode( 'wc_docs', array( $this, 'docs_shortcode' ) );
 	}
 
@@ -77,6 +80,7 @@ class WooCommerce_Docs_JA {
 		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-wc-docs-ja-version-manager.php';
 		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-wc-docs-ja-shortcodes.php';
 		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-wc-docs-ja-api-handler.php';
+		require_once WC_DOCS_JA_PLUGIN_DIR . 'includes/class-wc-docs-blocks.php';
 	}
 
 	/**
@@ -172,6 +176,25 @@ class WooCommerce_Docs_JA {
 	 * @since 1.0.0
 	 */
 	public function enqueue_assets() {
+		// Enqueue template styles and scripts for wc_docs post type.
+		if ( is_singular( 'wc_docs' ) || is_post_type_archive( 'wc_docs' ) || is_tax( 'wc_docs_category' ) ) {
+			wp_enqueue_style(
+				'wc-docs-ja-template-style',
+				WC_DOCS_JA_PLUGIN_URL . 'aseets/css/docs-template.css',
+				array(),
+				WC_DOCS_JA_VERSION
+			);
+
+			wp_enqueue_script(
+				'wc-docs-ja-template-script',
+				WC_DOCS_JA_PLUGIN_URL . 'aseets/js/docs-template.js',
+				array(),
+				WC_DOCS_JA_VERSION,
+				true
+			);
+		}
+
+		// Enqueue general styles for all pages.
 		if ( is_singular( 'wc_docs' ) || is_page() ) {
 			wp_enqueue_style(
 				'wc-docs-ja-style',
@@ -198,11 +221,13 @@ class WooCommerce_Docs_JA {
 				)
 			);
 		}
-	}   /**
-		 * Add admin menu.
-		 *
-		 * @since 1.0.0
-		 */
+	}
+
+	/**
+	 * Add admin menu.
+	 *
+	 * @since 1.0.0
+	 */
 	public function add_admin_menu() {
 		add_menu_page(
 			__( 'WC Docs Settings', 'woocommerce-docs-ja' ),
@@ -329,9 +354,9 @@ class WooCommerce_Docs_JA {
 						</td>
 					</tr>
 				</table>
-				<?php submit_button(); ?>
-			</form>
-		</div>
+		<?php submit_button(); ?>
+	</form>
+</div>
 		<?php
 	}   /**
 		 * Filter content.
@@ -367,13 +392,15 @@ class WooCommerce_Docs_JA {
 		}
 
 		return $content;
-	}   /**
-		 * Generate table of contents.
-		 *
-		 * @since 1.0.0
-		 * @param string $content Post content.
-		 * @return string Table of contents HTML.
-		 */
+	}
+
+	/**
+	 * Generate table of contents.
+	 *
+	 * @since 1.0.0
+	 * @param string $content Post content.
+	 * @return string Table of contents HTML.
+	 */
 	private function generate_table_of_contents( &$content ) {
 		preg_match_all( '/<h([2-3]).*?>(.*?)<\/h[2-3]>/i', $content, $matches );
 
@@ -453,6 +480,149 @@ class WooCommerce_Docs_JA {
 	 */
 	private function get_current_version() {
 		return get_option( 'wc_docs_ja_current_version', 'latest' );
+	}
+
+	/**
+	 * Load custom template.
+	 *
+	 * @since 1.0.0
+	 * @param string $template Template path.
+	 * @return string Modified template path.
+	 */
+	public function load_custom_template( $template ) {
+		// Skip if using FSE theme (block templates are handled differently).
+		if ( $this->is_fse_theme() ) {
+			return $template;
+		}
+
+		// Check if this is a wc_docs single post.
+		if ( is_singular( 'wc_docs' ) ) {
+			$custom_template = WC_DOCS_JA_PLUGIN_DIR . 'templates/single-wc_docs.php';
+			if ( file_exists( $custom_template ) ) {
+				return $custom_template;
+			}
+		}
+
+		// Check if this is a wc_docs archive or category.
+		if ( is_post_type_archive( 'wc_docs' ) || is_tax( 'wc_docs_category' ) ) {
+			$custom_template = WC_DOCS_JA_PLUGIN_DIR . 'templates/archive-wc_docs.php';
+			if ( file_exists( $custom_template ) ) {
+				return $custom_template;
+			}
+		}
+
+		return $template;
+	}
+
+	/**
+	 * Add theme support for block templates.
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_theme_support() {
+		// Register block template directory.
+		if ( $this->is_fse_theme() ) {
+			add_filter( 'get_block_templates', array( $this, 'inject_block_templates' ), 10, 3 );
+		}
+	}
+
+	/**
+	 * Check if current theme is an FSE theme.
+	 *
+	 * @since 1.0.0
+	 * @return bool True if FSE theme.
+	 */
+	private function is_fse_theme() {
+		if ( function_exists( 'wp_is_block_theme' ) ) {
+			return wp_is_block_theme();
+		}
+		return false;
+	}
+
+	/**
+	 * Inject custom block templates.
+	 *
+	 * @since 1.0.0
+	 * @param array  $query_result Array of found block templates.
+	 * @param array  $query Arguments to retrieve templates.
+	 * @param string $template_type Template type: 'wp_template' or 'wp_template_part'.
+	 * @return array Modified templates array.
+	 */
+	public function inject_block_templates( $query_result, $query, $template_type ) {
+		if ( 'wp_template' !== $template_type ) {
+			return $query_result;
+		}
+
+		$templates_dir = WC_DOCS_JA_PLUGIN_DIR . 'templates/';
+
+		// Define our custom templates.
+		$custom_templates = array(
+			'single-wc_docs'  => array(
+				'title'       => __( 'Single WC Docs', 'woocommerce-docs-ja' ),
+				'description' => __( 'Template for single WC Docs posts', 'woocommerce-docs-ja' ),
+				'post_types'  => array( 'wc_docs' ),
+			),
+			'archive-wc_docs' => array(
+				'title'       => __( 'Archive WC Docs', 'woocommerce-docs-ja' ),
+				'description' => __( 'Template for WC Docs archive and categories', 'woocommerce-docs-ja' ),
+				'post_types'  => array( 'wc_docs' ),
+			),
+		);
+
+		foreach ( $custom_templates as $slug => $template_data ) {
+			$template_file = $templates_dir . $slug . '.html';
+
+			if ( ! file_exists( $template_file ) ) {
+				continue;
+			}
+
+			// Check if we should add this template.
+			$should_add = false;
+
+			if ( isset( $query['slug__in'] ) && in_array( $slug, $query['slug__in'], true ) ) {
+				$should_add = true;
+			} elseif ( ! isset( $query['slug__in'] ) ) {
+				$should_add = true;
+			}
+
+			if ( ! $should_add ) {
+				continue;
+			}
+
+			// Check if template already exists in results.
+			$template_exists = false;
+			foreach ( $query_result as $existing_template ) {
+				if ( $existing_template->slug === $slug ) {
+					$template_exists = true;
+					break;
+				}
+			}
+
+			if ( $template_exists ) {
+				continue;
+			}
+
+			// Create template object.
+			$template_content = file_get_contents( $template_file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+
+			$template                 = new WP_Block_Template();
+			$template->id             = 'woocommerce-docs-ja//' . $slug;
+			$template->theme          = 'woocommerce-docs-ja';
+			$template->slug           = $slug;
+			$template->source         = 'plugin';
+			$template->type           = 'wp_template';
+			$template->title          = $template_data['title'];
+			$template->description    = $template_data['description'];
+			$template->content        = $template_content;
+			$template->status         = 'publish';
+			$template->has_theme_file = true;
+			$template->is_custom      = true;
+			$template->post_types     = $template_data['post_types'];
+
+			$query_result[] = $template;
+		}
+
+		return $query_result;
 	}
 }
 

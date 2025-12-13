@@ -1,0 +1,61 @@
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"1400px"}} -->
+<div class="wp-block-group wc-docs-wrapper">
+	<!-- wp:group {"className":"wc-docs-container","layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+	<div class="wp-block-group wc-docs-container">
+		
+		<!-- wp:group {"className":"wc-docs-sidebar-left","layout":{"type":"default"}} -->
+		<div class="wp-block-group wc-docs-sidebar-left">
+			<!-- wp:shortcode -->
+			[wc_docs_category_nav]
+			<!-- /wp:shortcode -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"className":"wc-docs-archive-content","layout":{"type":"default"}} -->
+		<div class="wp-block-group wc-docs-archive-content">
+			
+			<!-- wp:group {"className":"wc-docs-archive-header","layout":{"type":"default"}} -->
+			<div class="wp-block-group wc-docs-archive-header">
+				<!-- wp:query-title {"type":"archive","level":1,"className":"wc-docs-archive-title"} /-->
+				
+				<!-- wp:term-description {"className":"wc-docs-archive-description"} /-->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":0,"offset":0,"postType":"wc_docs","order":"asc","orderBy":"menu_order","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"wc-docs-grid","layout":{"type":"default"}} -->
+			<div class="wp-block-query wc-docs-grid">
+				<!-- wp:post-template {"className":"wc-docs-grid","layout":{"type":"grid","columnCount":3}} -->
+				
+					<!-- wp:group {"className":"wc-docs-card","layout":{"type":"default"}} -->
+					<div class="wp-block-group wc-docs-card">
+						<!-- wp:post-title {"level":3,"isLink":true,"className":"wc-docs-card-title"} /-->
+						
+						<!-- wp:post-excerpt {"moreText":"Read more","excerptLength":20,"className":"wc-docs-card-excerpt"} /-->
+						
+						<!-- wp:post-terms {"term":"wc_docs_category","className":"wc-docs-card-categories"} /-->
+					</div>
+					<!-- /wp:group -->
+				
+				<!-- /wp:post-template -->
+
+				<!-- wp:query-pagination {"className":"pagination","layout":{"type":"flex","justifyContent":"center"}} -->
+					<!-- wp:query-pagination-previous {"label":"Previous"} /-->
+					<!-- wp:query-pagination-numbers /-->
+					<!-- wp:query-pagination-next {"label":"Next"} /-->
+				<!-- /wp:query-pagination -->
+
+				<!-- wp:query-no-results -->
+					<!-- wp:paragraph {"className":"wc-docs-no-results"} -->
+					<p class="wc-docs-no-results">No documentation found.</p>
+					<!-- /wp:paragraph -->
+				<!-- /wp:query-no-results -->
+			</div>
+			<!-- /wp:query -->
+
+		</div>
+		<!-- /wp:group -->
+
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->

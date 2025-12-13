@@ -154,7 +154,7 @@ function extractTranslatableSegments(markdown) {
 
   for (const paragraph of paragraphs) {
     const trimmed = paragraph.trim();
-    if (trimmed && !trimmed.startsWith('#') && trimmed.length > 10) {
+    if (trimmed && trimmed.length > 10) {
       segments.push({
         original: paragraph,
         codeBlocks,

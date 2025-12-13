@@ -1,0 +1,90 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#7f54b3",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#1e1e1e",
+					"name": "Secondary"
+				},
+				{
+					"slug": "background",
+					"color": "#f7f7f7",
+					"name": "Background"
+				}
+			]
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true,
+			"units": ["px", "em", "rem", "%", "vh", "vw"]
+		},
+		"typography": {
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "14px",
+					"name": "Small"
+				},
+				{
+					"slug": "medium",
+					"size": "16px",
+					"name": "Medium"
+				},
+				{
+					"slug": "large",
+					"size": "20px",
+					"name": "Large"
+				},
+				{
+					"slug": "x-large",
+					"size": "28px",
+					"name": "Extra Large"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "1400px",
+			"wideSize": "1400px"
+		}
+	},
+	"styles": {
+		"spacing": {
+			"padding": {
+				"top": "20px",
+				"right": "20px",
+				"bottom": "20px",
+				"left": "20px"
+			}
+		},
+		"blocks": {
+			"core/group": {
+				"spacing": {
+					"margin": {
+						"top": "0",
+						"bottom": "0"
+					}
+				}
+			}
+		}
+	},
+	"customTemplates": [
+		{
+			"name": "single-wc_docs",
+			"title": "Single WC Docs",
+			"postTypes": ["wc_docs"]
+		},
+		{
+			"name": "archive-wc_docs",
+			"title": "Archive WC Docs",
+			"postTypes": ["wc_docs"]
+		}
+	]
+}
