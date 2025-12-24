@@ -103,7 +103,7 @@ jobs:
           draft: false
           prerelease: false
       
-      - name: Notify Slack (optional)
+      - name: Notify Slack (optional) 
         if: steps.changes.outputs.has_changes == 'true' && secrets.SLACK_WEBHOOK_URL != ''
         uses: slackapi/slack-github-action@v1
         with:
