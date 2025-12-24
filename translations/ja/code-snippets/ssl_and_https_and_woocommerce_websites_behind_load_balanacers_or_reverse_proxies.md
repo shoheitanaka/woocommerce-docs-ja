@@ -5,9 +5,9 @@ current wccom url: >-
   https://woocommerce.com/document/ssl-and-https/#websites-behind-load-balancers-or-reverse-proxies
 ---
 
-# SSL and HTTPS and WooCommerce
+# SSLとHTTPSとWooCommerce
 
-## Websites behind load balancers or reverse proxies
+## ロードバランサーやリバースプロキシの背後にあるウェブサイト
 
 WooCommerce uses the `is_ssl()` WordPress function to verify if your website using SSL or not.
 

@@ -7,23 +7,23 @@ combined with: >-
   https://woocommerce.com/document/hide-other-shipping-methods-when-free-shipping-is-available/#use-a-plugin
 ---
 
-# Free Shipping Customizations
+# 送料無料カスタマイズ
 
-## Free Shipping: Advanced Settings/Customization
+## 送料無料詳細設定/カスタマイズ
 
-### Overview
+### 概要
 
 デフォルトでは、WooCommerceは顧客とカートの内容に一致するすべての配送方法を表示します。つまり、送料無料も定額料金やその他の配送方法と一緒に表示されます。 
 
 他のすべての配送方法を非表示にし、「送料無料」のみを表示するには、カスタムPHPコードまたはプラグイン/エクステンションが必要です。
 
-### Adding code
+### コードの追加
 
 スニペットを追加する前に、WooCommerceのキャッシュをクリアしてください。WooCommerce &gt; System Status &gt; Tools &gt; WooCommerce Transients &gt; Clear transientsにアクセスしてください。
 
-## Code Snippets
+## コードスニペット
 
-### How do I only show Free Shipping?
+### 送料無料と表示するには？
 
 次のスニペットは、「送料無料」が利用可能な場合、他のすべての配送方法を非表示にします。
 
@@ -49,7 +49,7 @@ function fsc_hide_shipping_rates_when_free_is_available( $rates ) {
 add_filter( 'woocommerce_package_rates', 'fsc_hide_shipping_rates_when_free_is_available', 10, 1 );
 ```
 
-### How do I only show Local Pickup and Free Shipping?
+### ローカルピックアップと送料無料のみを表示するにはどうすればよいですか？
 
 次のスニペットは、「無料配送」と「現地受け取り」が利用可能な場合、「無料配送」と「現地受け取り」以外のすべての配送方法を非表示にします。
 
@@ -89,7 +89,7 @@ function fsc_hide_shipping_rates_when_free_is_available_excluding_local( $rates 
 add_filter( 'woocommerce_package_rates', 'fsc_hide_shipping_rates_when_free_is_available_excluding_local', 10, 1 );
 ```
 
-### Enabling or Disabling Free Shipping via Hooks
+### フックによる無料配送の有効化または無効化
 
 送料無料が利用可能かどうかをプログラムで知りたい場合、これは可能です。WooCommerceは以下のようなフィルターを適用します：
 
@@ -118,6 +118,6 @@ function fsc_free_shipping_is_available( $is_available ) {
 add_filter( 'woocommerce_shipping_free_shipping_is_available', 'fsc_free_shipping_is_available', 10, 1 );
 ```
 
-### Enable Shipping Methods on a per Class / Product Basis, split orders, or other scenarios?
+### クラスごと／商品ごとの配送方法、分割注文、その他のシナリオを有効にしますか？
 
 Need more flexibility? Take a look at our [premium Shipping Method extensions](https://woocommerce.com/product-category/woocommerce-extensions/shipping-methods/).

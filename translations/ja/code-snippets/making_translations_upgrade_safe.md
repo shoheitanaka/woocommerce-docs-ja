@@ -5,7 +5,7 @@ current wccom url: >-
   https://woocommerce.com/document/woocommerce-localization/#making-your-translation-upgrade-safe
 ---
 
-# Making your translation upgrade safe
+# 翻訳のアップグレードを安全にする
 
 Like all other plugins, WooCommerce keeps translations in `wp-content/languages/plugins`. 
 

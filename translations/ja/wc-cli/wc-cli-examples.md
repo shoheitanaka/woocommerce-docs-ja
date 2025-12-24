@@ -4,7 +4,7 @@ sidebar_label: Examples
 sidebar_position: 3
 ---
 
-# WooCommerce CLI Examples
+# WooCommerce CLI の例
 
 Full documentation for every command is available using `--help`. Below are some example commands to show what the CLI can do.
 
@@ -14,7 +14,7 @@ You can also find other examples (without output) by looking at [the testing fil
 
 Each command will have a `.feature` file. For example, [these some payment gateway commands](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/cli/features/payment_gateway.feature).
 
-## Clearing the product/shop transients cache
+## 商品/ショップのトランジェントキャッシュのクリア
 
 Command: 
 
@@ -24,7 +24,7 @@ Response:
 
 `Success: Updated system_status_tool clear_transients.`
 
-## Listing all system tools
+## 全てのシステムツールのリスト
 
 Command: 
 
@@ -54,7 +54,7 @@ Response:
 +----------------------------+----------------------------------+-------------------------------+-----------------------------------------------------------------------------------+
 ```
 
-## Creating a customer
+## 顧客を作る
 
 Command:
 
@@ -64,7 +64,7 @@ Response:
 
 `Success: Created customer 17.`
 
-## Getting a customer in CSV format
+## CSV 形式での顧客の取得
 
 Command:
 
@@ -93,7 +93,7 @@ total_spent,0.00
 avatar_url,http://2.gravatar.com/avatar/5791d33f7d6472478c0b5fa69133f09a?s=96
 ```
 
-## Adding a customer note on order 355
+## 注文に顧客メモを追加する 355
 
 Command:
 
@@ -103,7 +103,7 @@ Response:
 
 `Success: Created order_note 286.`
 
-## Getting an order note
+## オーダーノートの取得
 
 Command:
 
@@ -122,7 +122,7 @@ Response:
 +---------------+-----------------------+
 ```
 
-## Updating a coupon
+## クーポンの更新
 
 Command:
 
@@ -132,7 +132,7 @@ Response:
 
 `Success: Updated shop_coupon 45.`
 
-## Getting a coupon
+## クーポンの取得
 
 Command:
 

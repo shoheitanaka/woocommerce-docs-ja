@@ -4,7 +4,7 @@ sidebar_position: 0
 sidebar_label: Getting Started
 ---
 
-# Getting started
+# はじめに
 
 WooCommerceは、WordPress上に構築されたカスタマイズ可能なオープンソースのeコマースプラットフォームです。物理的な製品やデジタルダウンロードから、購読、コンテンツ、さらには予約まで、あらゆるものを販売する世界中のビジネスを支援します。
 
@@ -14,7 +14,7 @@ WooCommerceは、WordPress上に構築されたカスタマイズ可能なオー
 
 ---
 
-## Build WooCommerce extensions
+## WooCommerceエクステンションの構築
 
 WooCommerce エクステンションを構築し、強化するための包括的なガイドとリソースをご覧ください。強力なエクステンションを作成するための開発のベストプラクティスと革新的なテクニックに飛び込みましょう。
 
@@ -22,11 +22,11 @@ WooCommerce エクステンションを構築し、強化するための包括�
 * [シンプルな拡張機能の設計](/docs/extensions/getting-started-extensions/how-to-design-a-simple-extension)
 * [拡張機能開発のベストプラクティス](/docs/extensions/best-practices-extensions/extension-development-best-practices)
 
-エクステンション開発](/docs/extensions/getting-started-extensions/)についてもっと知る。
+拡張機能開発](/docs/extensions/getting-started-extensions/)についてもっと知る。
 
 ---
 
-## Build WooCommerce themes
+## WooCommerceテーマを作る
 
 WooCommerceテーマ開発の技術を発見してください。テーマのカスタマイズ、デザインの原則、視覚的に魅力的で機能的なテーマを作成するためのユーザーエクスペリエンスの向上について学びます。
 
@@ -38,7 +38,7 @@ WooCommerceテーマ開発の技術を発見してください。テーマのカ
 
 ---
 
-## Contribute to WooCommerce
+## WooCommerceへの貢献
 
 オープンソースコミュニティに参加してWooCommerceに貢献しましょう。オープンな問題に取り組み、WooCommerceのエコシステムを向上させることで、どのような変化をもたらすことができるかを探求してください。
 
@@ -46,11 +46,11 @@ WooCommerceテーマ開発の技術を発見してください。テーマのカ
 * [Open Issues on GitHub](https://github.com/woocommerce/woocommerce/issues)
 * [Woo contributor guidelines](/docs/contribution/contributing/)
 
-貢献](/docs/contribution/contributing)についてもっと知る
+貢献]についてもっと知る(/docs/contribution/contributing)
 
 ---
 
-## Additional resources
+## その他のリソース
 
 * [WooCommerce Official Website](https://woocommerce.com/)
 * [Woo Marketplace](https://woocommerce.com/marketplace)
@@ -58,6 +58,6 @@ WooCommerceテーマ開発の技術を発見してください。テーマのカ
 
 ---
 
-## Not a developer?
+## 開発者ではない？
 
 This documentation site is intended for developers. If you're a merchant or are new to WooCommerce, please check out [woocommerce.com](https://woocommerce.com/) for our merchant-facing docs.

@@ -4,13 +4,13 @@ sidebar_label: Commands
 sidebar_position: 4
 ---
 
-# WooCommerce CLI Commands
+# WooCommerce CLIコマンド
 
-## Overview
+## 概要
 
 このドキュメントは WooCommerce Command Line Interface (WC-CLI) コマンドの包括的なリファレンスです。各コマンドの構文、オプション、簡単な説明が含まれています。これらのコマンドはWooCommerceバージョン3.0.0以降に適用されます。
 
-## General Command Structure
+## ♪一般的な指揮系統
 
 WC-CLIコマンドの一般的な構文は以下の通り：
 
@@ -24,21 +24,21 @@ wp wc [command] [options]
 wp wc [command] --help
 ```
 
-## Commands
+## コマンド
 
-### wc blueprint
+### WCブループリント
 
-#### wc blueprint import [schema-path]
+#### wc ブループリントのインポート [スキーマパス］
 
 - `--show-messages` - Show debug messages. Supported log levels: all, error, info, debug.
 
-#### wc blueprint export [save-to-filename]
+#### wc blueprint export [save-to-filename] (wcブループリントのエクスポート)
 
 - `--steps` - name of steps to export.
 
 ### wc com
 
-#### wc com extension list
+#### wc com 拡張子リスト
 
 - `--format` - Render output in a particular format.
 
@@ -52,7 +52,7 @@ wp wc [command] --help
 
 オプション：product_slug、product_name、auto_renew、expires_on、expired、sites_max、sites_active、maxed
 
-#### wc com extension install [extension]
+#### wc com 拡張機能インストール [拡張機能］
 
 - `--extension` - Install one plugin from the available extensions.Accepts a plugin slug
 - `--force` - If set, the command will overwrite any installed version of the extension without prompting for confirmation.
@@ -60,9 +60,9 @@ wp wc [command] --help
 - `--activate-network` - If set, the plugin will be network activated immediately after installation
 - `--insecure` - Retry downloads without certificate validation if TLS handshake fails. Note: This makes the request vulnerable to a MITM attack.
 
-### wc customer
+### WCカスタマー
 
-#### wc customer list
+#### WC顧客リスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--page` - Current page of the collection.
@@ -83,7 +83,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc customer create
+#### WCカスタマークリエイト
 
 - `--email` - New user email address. (*Required*)
 - `--first_name` - Customer first name.
@@ -107,7 +107,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc customer update [id]
+#### WC 顧客アップデート [ID］
 
 - `--id` - Unique identifier for the resource.
 - `--email` - The email address for the customer.
@@ -185,7 +185,7 @@ wp wc [command] --help
 
 ### wc payment_gateway
 
-#### wc payment_gateway list
+#### wc payment_gateway リスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -196,7 +196,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc payment_gateway get [id]
+#### wc payment_gateway get [id].
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -208,7 +208,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc payment_gateway update [id]
+#### wc payment_gateway update [id].
 
 - `--id` - Unique identifier for the resource.
 - `--title` - Payment gateway title on checkout.
@@ -218,9 +218,9 @@ wp wc [command] --help
 - `--settings` - Payment gateway settings.
 - `--porcelain` - Output just the id when the operation is successful.
 
-### wc product
+### WC製品
 
-#### wc product list
+#### WC製品リスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--page` - Current page of the collection.
@@ -258,7 +258,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product create
+#### WC プロダクトクリエイト
 
 - `--name` - Product name.
 - `--slug` - Product slug.
@@ -318,7 +318,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product update [id]
+#### WC製品アップデート [ID］
 
 - `--id` - Unique identifier for the resource.
 - `--name` - Product name.
@@ -439,7 +439,7 @@ wp wc [command] --help
 
 ### wc product_attribute
 
-#### wc product_attribute list
+#### wc 製品属性リスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -459,7 +459,7 @@ wp wc [command] --help
 - `--has_archives` - Enable/Disable attribute archives.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_attribute get [id]
+#### wc product_attribute get [id].
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -471,7 +471,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product_attribute update [id]
+#### wc product_attribute update [id].
 
 - `--id` - Unique identifier for the resource.
 - `--name` - Attribute name.
@@ -481,7 +481,7 @@ wp wc [command] --help
 - `--has_archives` - Enable/Disable attribute archives.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_attribute delete [id]
+#### wc product_attribute delete [id].
 
 - `--id` - Unique identifier for the resource.
 - `--force` - Required to be true, as resource does not support trashing.
@@ -522,7 +522,7 @@ wp wc [command] --help
 - `--menu_order` - Menu order, used to custom sort the resource.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_cat get [id]
+#### wc product_cat get [id].
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -534,7 +534,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product_cat update [id]
+#### wc product_cat update [id].
 
 - `--id` - Unique identifier for the resource.
 - `--name` - Category name.
@@ -546,13 +546,13 @@ wp wc [command] --help
 - `--menu_order` - Menu order, used to custom sort the resource.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_cat delete [id]
+#### wc product_cat delete [id].
 
 - `--id` - Unique identifier for the resource.
 - `--force` - Required to be true, as resource does not support trashing.
 - `--porcelain` - Output just the id when the operation is successful.
 
-### wc product_review
+### WC製品レビュー
 
 #### wc product_review list `<product_id>`
 
@@ -613,7 +613,7 @@ wp wc [command] --help
 
 ### wc product_shipping_class
 
-#### wc product_shipping_class list
+#### wc 製品出荷クラスリスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--page` - Current page of the collection.
@@ -642,7 +642,7 @@ wp wc [command] --help
 - `--description` - HTML description of the resource.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_shipping_class get [id]
+#### wc product_shipping_class get [id].
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -654,7 +654,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product_shipping_class update [id]
+#### wc product_shipping_class update [id].
 
 - `--id` - Unique identifier for the resource.
 - `--name` - Shipping class name.
@@ -662,7 +662,7 @@ wp wc [command] --help
 - `--description` - HTML description of the resource.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_shipping_class delete [id]
+#### wc product_shipping_class delete [id].
 
 - `--id` - Unique identifier for the resource.
 - `--force` - Required to be true, as resource does not support trashing.
@@ -699,7 +699,7 @@ wp wc [command] --help
 - `--description` - HTML description of the resource.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_tag get [id]
+#### wc product_tag get [id].
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -711,7 +711,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product_tag update [id]
+#### wc product_tag update [id].
 
 - `--id` - Unique identifier for the resource.
 - `--name` - Tag name.
@@ -719,7 +719,7 @@ wp wc [command] --help
 - `--description` - HTML description of the resource.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc product_tag delete [id]
+#### wc product_tag delete [id].
 
 - `--id` - Unique identifier for the resource.
 - `--force` - Required to be true, as resource does not support trashing.
@@ -851,9 +851,9 @@ wp wc [command] --help
 - `--force` - Whether to bypass trash and force deletion.
 - `--porcelain` - Output just the id when the operation is successful.
 
-### wc setting
+### WCセッティング
 
-#### wc setting get [id]
+#### wcの設定[id]を取得
 
 - `--group` - Settings group ID.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -864,16 +864,16 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc setting update [id]
+#### wc 設定更新 [id］
 
 - `--group` - Settings group ID.
 - `--id` - Unique identifier for the resource.
 - `--value` - Setting value.
 - `--porcelain` - Output just the id when the operation is successful.
 
-### wc shipping_method
+### 発送方法
 
-#### wc shipping_method list
+#### wc 配送方法リスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -884,7 +884,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc shipping_method get [id]
+#### wc shipping_method get [id].
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -896,9 +896,9 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-### wc shipping_zone
+### WC シッピングゾーン
 
-#### wc shipping_zone list
+#### WC 出荷ゾーンリスト
 
 - `--fields` - Limit response to specific fields. Defaults to all fields.
 - `--field` - Get the value of an individual field.
@@ -914,7 +914,7 @@ wp wc [command] --help
 - `--order` - Shipping zone order.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc shipping_zone get [id]
+#### wc shipping_zone get [id].
 
 - `--id` - Unique ID for the resource.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -925,22 +925,22 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc shipping_zone update [id]
+#### wc shipping_zone update [id].
 
 - `--id` - Unique ID for the resource.
 - `--name` - Shipping zone name.
 - `--order` - Shipping zone order.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc shipping_zone delete [id]
+#### wc shipping_zone delete [id].
 
 - `--id` - Unique ID for the resource.
 - `--force` - Whether to bypass trash and force deletion.
 - `--porcelain` - Output just the id when the operation is successful.
 
-### wc shipping_zone_location
+### WC 出荷ゾーン・ロケーション
 
-#### wc shipping_zone_location list
+#### wc 発送地リスト
 
 - `--id` - Unique ID for the resource.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -951,9 +951,9 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-### wc shipping_zone_method
+### wc 配送ゾーン方法
 
-#### wc shipping_zone_method list
+#### wc shipping_zone_method リスト
 
 - `--zone_id` - Unique ID for the zone.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -973,7 +973,7 @@ wp wc [command] --help
 - `--method_id` - Shipping method ID. (*Required*)
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc shipping_zone_method get [id]
+#### wc shipping_zone_method get [id].
 
 - `--zone_id` - Unique ID for the zone.
 - `--instance_id` - Unique ID for the instance.
@@ -985,7 +985,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc shipping_zone_method update [id]
+#### wc shipping_zone_method 更新 [id].
 
 - `--zone_id` - Unique ID for the zone.
 - `--instance_id` - Unique ID for the instance.
@@ -994,16 +994,16 @@ wp wc [command] --help
 - `--settings` - Shipping method settings.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc shipping_zone_method delete [id]
+#### wc shipping_zone_method delete [id].
 
 - `--zone_id` - Unique ID for the zone.
 - `--instance_id` - Unique ID for the instance.
 - `--force` - Whether to bypass trash and force deletion.
 - `--porcelain` - Output just the id when the operation is successful.
 
-### wc shop_coupon
+### ショップクーポン
 
-#### wc shop_coupon list
+#### WCショップクーポンリスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--page` - Current page of the collection.
@@ -1049,7 +1049,7 @@ wp wc [command] --help
 - `--meta_data` - Meta data.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc shop_coupon get [id]
+#### wc shop_coupon get [id].
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -1061,7 +1061,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc shop_coupon update [id]
+#### wc shop_coupon update [id].
 
 - `--id` - Unique identifier for the resource.
 - `--code` - Coupon code.
@@ -1086,7 +1086,7 @@ wp wc [command] --help
 - `--meta_data` - Meta data.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc shop_coupon delete [id]
+#### wc shop_coupon delete [id].
 
 - `--id` - Unique identifier for the resource.
 - `--force` - Whether to bypass trash and force deletion.
@@ -1153,7 +1153,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc shop_order update [id]
+#### wc shop_order update [id].
 
 - `--id` - Unique identifier for the resource.
 - `--parent_id` - Parent order ID.
@@ -1240,7 +1240,7 @@ wp wc [command] --help
 
 ### wc tax
 
-#### wc tax list
+#### WCタックスリスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--page` - Current page of the collection.
@@ -1260,7 +1260,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc tax create
+#### WCタックスクリエイト
 
 - `--country` - Country ISO 3166 code.
 - `--state` - State code.
@@ -1287,7 +1287,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc tax update [id]
+#### WC税の更新 [ID］
 
 - `--id` - Unique identifier for the resource.
 - `--country` - Country ISO 3166 code.
@@ -1311,7 +1311,7 @@ wp wc [command] --help
 
 ### wc tax_class
 
-#### wc tax_class list
+#### wc tax_classリスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--fields` - Limit response to specific fields. Defaults to all fields.
@@ -1327,15 +1327,15 @@ wp wc [command] --help
 - `--name` - Tax class name. (*Required*)
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc tax_class delete [id]
+#### wc tax_class delete [id].
 
 - `--slug` - Unique slug for the resource.
 - `--force` - Required to be true, as resource does not support trashing.
 - `--porcelain` - Output just the id when the operation is successful.
 
-### wc webhook
+### wc ウェブフック
 
-#### wc webhook list
+#### wc ウェブフックリスト
 
 - `--context` - Scope under which the request is made; determines fields present in response.
 - `--page` - Current page of the collection.
@@ -1357,7 +1357,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc webhook create
+#### wc ウェブフック作成
 
 - `--name` - A friendly name for the webhook.
 - `--status` - Webhook status.
@@ -1366,7 +1366,7 @@ wp wc [command] --help
 - `--delivery_url` - Webhook delivery URL. (*Required*)
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc webhook get [id]
+#### wc ウェブフック取得 [id］
 
 - `--id` - Unique identifier for the resource.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -1378,7 +1378,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc webhook update [id]
+#### wc ウェブフック更新 [id］
 
 - `--id` - Unique identifier for the resource.
 - `--name` - A friendly name for the webhook.
@@ -1387,7 +1387,7 @@ wp wc [command] --help
 - `--secret` - Secret key used to generate a hash of the delivered webhook and provided in the request headers. This will default is a MD5 hash from the current user's ID|username if not provided.
 - `--porcelain` - Output just the id when the operation is successful.
 
-#### wc webhook delete [id]
+#### wc ウェブフック削除 [id］
 
 - `--id` - Unique identifier for the resource.
 - `--force` - Required to be true, as resource does not support trashing.
@@ -1395,7 +1395,7 @@ wp wc [command] --help
 
 ### wc webhook_delivery
 
-#### wc webhook_delivery list
+#### wc ウェブフック配信リスト
 
 - `--webhook_id` - Unique identifier for the webhook.
 - `--context` - Scope under which the request is made; determines fields present in response.
@@ -1407,7 +1407,7 @@ wp wc [command] --help
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc webhook_delivery get [id]
+#### wc webhook_delivery get [id].
 
 - `--webhook_id` - Unique identifier for the webhook.
 - `--id` - Unique identifier for the resource.

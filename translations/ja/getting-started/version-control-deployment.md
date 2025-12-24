@@ -4,11 +4,11 @@ sidebar_label: Version control and deployment
 sidebar_position: 8
 ---
 
-# Version control and deployment
+# バージョン管理と配備
 
 Because WordPress and WooCommerce are both developer frameworks *and* content management systems, it’s important to plan ahead for how you will version control your code and deploy changes to a live environment. A common rule is that “code goes up, content goes down,” meaning that you’ll push your custom code up from a local or staging environment, but never the contents of your database or user-generated content that lives in the `wp-content/uploads` directory.
 
-## Considerations
+#考察
 
 There is no one-size-fits-all approach to deploying WordPress. Your hosting environment may have a dedicated approach that you need to follow, especially at more enterprise-level hosts like [WordPress VIP](https://docs.wpvip.com/development-workflow/). 
 
@@ -19,7 +19,7 @@ Based on the [project structure](/docs/getting-started/project-structure) of a W
 
 **Note:** Do not commit your `wp-config.php` file to a public repository. It may include sensitive information and most likely it will have differences from your local and production environments. 
 
-## Building and Deployment
+## ビルドと配備
 
 ほとんどのWordPressホスティング環境は、NodeやComposerをサポート*していません。デプロイ先の環境に確認する必要がありますが、ワークフローをセットアップする際にはこのことを覚えておいてください。一般的なアプローチには以下のようなものがあります：
 

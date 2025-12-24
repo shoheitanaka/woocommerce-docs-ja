@@ -4,13 +4,13 @@ sidebar_label: Using WooCommerce CLI
 sidebar_position: 2
 ---
 
-# How to Use WooCommerce CLI
+# WooCommerce CLIの使い方
 
-## Introduction
+#はじめに
 
 このガイドは、コマンドライン経由でWooCommerceストアを管理するためにWooCommerce CLI（WC-CLI）を使用する初心者を支援することを目的としています。
 
-## Getting Started
+## ♪ はじめに
 
 - WP-CLIがインストールされ、WooCommerceのバージョンが3.0.0以上であることを確認してください。
 - WC-CLIの可用性を確認するには：
@@ -19,7 +19,7 @@ sidebar_position: 2
 wp wc --info
 ```
 
-### General Command Structure
+### 一般的な指揮系統
 
 WC-CLIコマンドの一般的な構文は以下の通り：
 
@@ -33,9 +33,9 @@ wp wc [command] [options]
 wp wc [command] --help
 ```
 
-## Basic Tasks
+## 基本的な仕事
 
-### 1. Listing Products
+### 1.掲載商品
 
 WooCommerceストアの全商品をリストアップします：
 
@@ -43,7 +43,7 @@ WooCommerceストアの全商品をリストアップします：
 wp wc product list
 ```
 
-### 2. Creating a New Product
+### 2.新製品の作成
 
 新しい製品を作る：
 
@@ -51,7 +51,7 @@ wp wc product list
 wp wc product create --name="New Product" --type="simple" --regular_price="19.99"
 ```
 
-### 3. Updating a Product
+### 3.製品の更新
 
 既存の製品（例：製品ID 123）を更新する場合：
 
@@ -59,7 +59,7 @@ wp wc product create --name="New Product" --type="simple" --regular_price="19.99
 wp wc product update 123 --regular_price="24.99"
 ```
 
-### 4. Deleting a Product
+### 4.製品の削除
 
 商品を削除するには（例：商品ID 123）：
 

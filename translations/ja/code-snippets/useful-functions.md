@@ -2,11 +2,11 @@
 post_title: Useful core functions
 ---
 
-# Useful core functions
+# 便利なコア機能
 
 WooCommerce core functions are available on both front-end and admin. They can be found in `includes/wc-core-functions.php` and can be used by themes in plugins.
 
-## Conditional Functions
+## 条件付き関数
 
 WooCommerceの条件付き関数は、現在のクエリ/ページを決定するのに役立ちます。
 
@@ -18,7 +18,7 @@ WooCommerceテンプレートを使用するページの場合、trueを返し�
 is_woocommerce()
 ```
 
-### is_shop
+### ショップ
 
 商品タイプアーカイブ(ショップ)を表示するときにtrueを返します。
 
@@ -34,7 +34,7 @@ is_shop()
 is_product()
 ```
 
-## Coupon Functions
+## クーポン機能
 
 ### wc_get_coupon_code_by_id
 
@@ -56,7 +56,7 @@ wc_get_coupon_id_by_code( $code, $exclude = 0 )
 
 `$code` is the coupon code and `$exclude` is to exclude an ID from the check if you're checking existence.
 
-## User Functions
+## ユーザー機能
 
 ### wc_customer_bought_product
 
@@ -86,7 +86,7 @@ wc_get_customer_order_count( $user_id )
 
 `$user_id` is the user ID of the customer.
 
-## Formatting Functions
+## 書式設定関数
 
 ### wc_get_dimension
 
@@ -136,7 +136,7 @@ wc_price( $price, $args = array() )
 
 The ` $args` array has an option called ` ex_tax_label` - if true then an `excluding tax` message will be appended.
 
-## Order Functions
+## オーダー関数
 
 ### wc_get_orders
 
@@ -174,7 +174,7 @@ Searches orders based on the given `$term`.
 wc_order_search( $term )
 ```
 
-## Page Functions
+## ページ機能
 
 ### wc_get_page_id
 
@@ -192,7 +192,7 @@ Gets the URL for an `$endpoint`, which varies depending on permalink settings.
 wc_get_endpoint_url( $endpoint, $value = '', $permalink = '' )
 ```
 
-## Product Functions
+## 製品機能
 
 ### wc_get_products
 
@@ -238,7 +238,7 @@ wc_get_featured_product_ids()
 wc_get_related_products( $product_id, $limit = 5, $exclude_ids = array() )
 ```
 
-## Account Functions
+## アカウント機能
 
 ### wc_get_account_endpoint_url
 
@@ -248,7 +248,7 @@ wc_get_related_products( $product_id, $limit = 5, $exclude_ids = array() )
 wc_get_account_endpoint_url( $endpoint )
 ```
 
-## Attribute Functions
+## 属性関数
 
 ### wc_get_attribute_taxonomies
 
@@ -274,7 +274,7 @@ wc_attribute_taxonomy_name( $attribute_name )
 wc_attribute_taxonomy_id_by_name( $name )
 ```
 
-## REST Functions
+## REST関数
 
 ### wc_rest_prepare_date_response
 

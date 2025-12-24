@@ -4,9 +4,9 @@ sidebar_label: Local Development
 sidebar_position: 2
 ---
 
-# Setting up your development environment
+# 開発環境のセットアップ
 
-## Recommended software
+## 推奨ソフトウェア
 
 WooCommerceエクステンションを開発する際に考慮する必要がある特定のソフトウェア要件がいくつかあります。必要なソフトウェアは以下の通りです：
 
@@ -20,19 +20,19 @@ WooCommerceエクステンションを開発する際に考慮する必要があ
 
 Note: A POSIX compliant operating system (e.g., Linux, macOS) is assumed. If you're working on a Windows machine, the recommended approach is to use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) (available since Windows 10).
 
-## Setting up a reusable WordPress development environment
+## 再利用可能なWordPress開発環境のセットアップ
 
-上記で紹介したソフトウェアに加えて、ローカルの開発サーバースタックをセットアップするための何らかの方法も用意したい。これにはさまざまなツールがあり、それぞれに機能や制限があります。以下の選択肢の中から、お好みのワークフローに最も適したものを選ぶことをお勧めする。
+上記で紹介したソフトウェアに加えて、ローカルの開発サーバースタックをセットアップするための何らかの方法を用意しておきたい。これにはさまざまなツールがあり、それぞれに機能や制限があります。以下の選択肢の中から、お好みのワークフローに最も適したものを選ぶことをお勧めする。
 
-### Studio - Recommended Approach
+### ワードプレススタジオ - 推奨アプローチ
 
-For easy local development environments, we recommend [Studio](https://developer.wordpress.com/studio/), the local development environment provided by [WordPress.com](https://developer.wordpress.com). Studio includes the ability to manage multiple local website environments, as well as integrations with your code editor and terminal. Studio also features a WordPress-specific AI Assistant, easy imports from WordPress backups, free public preview sites, and two-way sync with sites hosted on WordPress.com.
+For easy local development environments, we recommend [WordPress Studio](https://developer.wordpress.com/studio/), the local development environment supported by the [WordPress.com](https://developer.wordpress.com) team. Studio includes the ability to manage multiple local website environments, as well as integrations with your code editor and terminal. Studio also features a WordPress-specific AI Assistant, easy imports from WordPress backups, Blueprint support, free public preview sites, and two-way sync with sites hosted on WordPress.com or Pressable.
 
 ### wp-env
 
 [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) is a command-line utility maintained by the WordPress community that allows you to set up and run custom WordPress environments with [Docker](https://www.docker.com/) and JSON manifests. The repository includes a `.wp-env.json` file specifically for contributing to WooCommerce core.
 
-### General PHP-based web stack tools
+### 一般的なPHPベースのウェブスタックツール
 
 以下は、WordPressに特化したものではない、環境管理に役立つツールのコレクションです。
 
@@ -44,19 +44,19 @@ For easy local development environments, we recommend [Studio](https://developer
 * [DDEV](https://ddev.com/) - An open-source, Docker-based tool for streamlined local web development, supporting many CMS and frameworks like Drupal and WordPress.
 * [vvv](https://varyingvagrantvagrants.org/) is a highly configurable, cross-platform, and robust environment management tool powered by VirtualBox and Vagrant. 
 
-### Minimum server requirements
+### 最低サーバー要件
 
 Regardless of the tool you choose for managing your development environment, you should make sure it [meets the server recommendations](https://woocommerce.com/document/server-requirements/?utm_source=wooextdevguide) for WooCommerce as well as the [requirements for running WordPress](https://wordpress.org/about/requirements/).
 
-## Add WooCommerce Core to your environment
+## WooCommerce Coreを環境に追加する
 
 WooCommerceを開発する場合、WooCommerce Coreの開発版をインストールするのが便利です。
 
-### Option 1: WooCommerce Beta Tester
+### オプション1：WooCommerceベータテスター
 
 If installing WooCommerce through the traditional WordPress dashboard, you can also install the [WooCommerce Beta Tester](/docs/contribution/testing/beta-testing) extension to change the version, including access to upcoming betas and release candidates. The WooCommerce Beta tester is available through the [Woo Marketplace](https://woocommerce.com/marketplace). 
 
-### Option 2: Clone the WooCommerce Core repository
+### オプション 2: WooCommerce Core リポジトリをクローンする
 
 You can also work directly against the `trunk` or upcoming release branch of WooCommerce Core in your development environment by:
 
@@ -66,7 +66,7 @@ You can also work directly against the `trunk` or upcoming release branch of Woo
 4. Building WooCommerce.  
 5. Symlinking the `plugin/woocommerce` directory to your `wp-content/plugins` directory
 
-#### Clone the WooCommerce Core repository
+#### WooCommerce Coreリポジトリをクローンする
 
 以下のCLIコマンドを使ってWooCommerce Coreリポジトリをローカルにクローンできます：
 
@@ -76,7 +76,7 @@ git clone https://github.com/woocommerce/woocommerce.git
 cd woocommerce
 ```
 
-#### Install and activate Node
+#### ノードのインストールと有効化
 
 It is recommended to install and activate Node using [Node Version Manager](https://github.com/nvm-sh/nvm) (or nvm). You can install nvm using the following CLI command:
 
@@ -86,7 +86,7 @@ nvm install
 
 You can learn more about how to install and utilize nvm in [the nvm GitHub repository](https://github.com/nvm-sh/nvm?tab=readme-ov-file#intro).
 
-#### Install dependencies
+#### 依存関係のインストール
 
 WooCommerceの依存関係をインストールするには、以下のCLIコマンドを使用します：
 
@@ -94,7 +94,7 @@ WooCommerceの依存関係をインストールするには、以下のCLIコマ
 pnpm install --frozen-lockfile
 ```
 
-#### Build WooCommerce
+#### WooCommerceの構築
 
 以下のCLIコマンドを使用して、WooCommerceの動作に必要なJavaScriptとCSSをコンパイルします：
 
@@ -104,7 +104,7 @@ pnpm build
 
 注意: コンパイルされたアセットを生成せずにサーバ上でWooCommerceを実行しようとすると、エラーやその他の望ましくない副作用が発生する可能性があります。
 
-#### Symlink the WooCommerce plugin 
+#### WooCommerce プラグインをシムリンクする 
 
 WooCommerceプラグインをローカルの開発環境にロードするには、クローンしたリポジトリにあるWooCommerceプラグインからローカルのWordPress開発環境にシンボリックリンクを作成します。
 

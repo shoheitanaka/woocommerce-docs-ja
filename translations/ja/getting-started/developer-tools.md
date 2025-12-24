@@ -4,15 +4,15 @@ sidebar_label: Developer tools
 sidebar_position: 5
 ---
 
-# Developer tools
+# 開発ツール
 
 このガイドでは、WooCommerceの開発に不可欠なツールとライブラリの概要を説明します。WooCommerceプロジェクトを効率的に強化したい開発者を対象としています。
 
-## Productivity Tools
+## 生産性向上ツール
 
 これらのリソースを使用して、WooCommerceの開発ワークフローを強化しましょう。
 
-### Development
+### 開発
 
 #### [wp-cli](https://wp-cli.org/)
 
@@ -20,7 +20,7 @@ This is the command-line interface for [WordPress](https://wordpress.org/). You 
 
 #### [wc-cli](/docs/wc-cli/cli-overview)
 
-WooCommerceがWordPressインストール上で実行されている場合、WP-CLIはストアデータを管理するための追加機能で拡張されます。
+WooCommerceがWordPressインストール上で動作している場合、WP-CLIはストアデータを管理するための追加機能で拡張されます。
 
 #### [wp-env](https://www.npmjs.com/package/@wordpress/env)
 
@@ -36,7 +36,7 @@ wordpress/scriptsパッケージは、WordPressプロジェクトの開発プロ
 
 It also includes the [Dependency Extraction Webpack Plugin](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin), which allows JavaScript bundles produced by webpack to leverage WordPress style dependency sharing without an error-prone process of manually maintaining a dependency list.
 
-### Testing
+### テスト
 
 #### [Smooth Generator](https://github.com/woocommerce/wc-smooth-generator)
 
@@ -50,11 +50,11 @@ A plugin to help you generate WooCommerce-related data for testing. Use the WP A
 
 QITは、マネージドテスト、E2Eテスト、使い捨てのローカルテスト環境を備えたWooCommerceプラグインとテーマのためのテストプラットフォームです。
 
-## Libraries
+## ライブラリー
 
 これらのリソースを使用することで、データの取得や変換、UI 要素の作成などの手間を省くことができます。
 
-### API Clients
+### APIクライアント
 
 #### [WooCommerce REST API - JavaScript](https://www.npmjs.com/package/@woocommerce/woocommerce-rest-api)
 
@@ -70,7 +70,7 @@ WooCommerce REST APIとは対照的に、Store APIは認証されておらず、
 
 The `@wordpress/api-fetch` package is a utility that simplifies AJAX requests to the WordPress REST API. It's a wrapper around `window.fetch` that provides a consistent interface for handling authentication, settings, and errors, allowing developers to easily interact with WordPress backend services.
 
-### Components
+### コンポーネント
 
 #### [WooCommerce Components](https://www.npmjs.com/package/@woocommerce/components)
 
@@ -80,7 +80,7 @@ This package includes a library of React components that can be used to create p
 
 This package includes a library of generic WordPress components that can be used for creating common UI elements shared between screens and features of the WordPress dashboard. To preview these components, review the [Gutenberg Storybook](https://wordpress.github.io/gutenberg/).
 
-### JavaScript Utility Packages
+### JavaScriptユーティリティ・パッケージ
 
 #### [CSV Export](https://www.npmjs.com/package/@woocommerce/csv-export)
 

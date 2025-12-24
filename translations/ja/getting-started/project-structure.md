@@ -4,19 +4,19 @@ sidebar_label: Project structure
 sidebar_position: 1
 ---
 
-# Project Structure
+# プロジェクト体制
 
-## Prerequisites
+## 前提条件
 
 WooCommerce adheres to WordPress code standards and guidelines, so it's best to familiarize yourself with [WordPress Development](https://learn.wordpress.org/tutorial/introduction-to-wordpress/) as well as [PHP](https://www.php.net/). Currently WooCommerce requires PHP 7.4 or newer.
 
 Knowledge and understanding of [WooCommerce hooks and filters](https://woocommerce.com/document/introduction-to-hooks-actions-and-filters/?utm_source=wooextdevguide) will allow you to add and change code without editing core files. You can learn more about WordPress hooks and filters in the [WordPress Plugin Development Handbook](https://developer.wordpress.org/plugins/hooks/).
 
-## Recommended reading
+## 推薦図書
 
 WooCommerce extensions are a specialized type of WordPress plugin. If you are new to WordPress plugin development, take a look at some of the articles in the [WordPress Plugin Developer Handbook](https://developer.wordpress.org/plugins/).
 
-## Anatomy of a WordPress environment
+## ワードプレス環境の解剖
 
 開発環境はさまざまですが、WordPress環境の基本的なファイル構造は一貫しているはずです。
 
@@ -32,7 +32,7 @@ There are three directories in a WordPress installation. The `wp-admin` and `wp-
 
 Finally, at the root of your WordPress installation is one more configurable file, `wp-config.php`. This file acts similarly to a `.env` file and stores important security credentials and variables that define your environment configuration.
 
-## WooCommerce Plugin Structure 
+## WooCommerceプラグインの構造 
 
 When adding WooCommerce to a WordPress installation, you can either install the plugin from inside the WordPress dashboard or manually upload the plugin directory to the `wp-content/plugins` directory. 
 
@@ -47,7 +47,7 @@ Each plugin, package, and tool has its own `package.json` file containing projec
 
 If you'd like to learn more about how our monorepo works, [please check out this guide here](http://github.com/woocommerce/woocommerce/tree/trunk/tools/README.md).
 
-## Theming and Extending Functionality
+## テーマ設定と機能拡張
 
 Unless you’re contributing directly to WooCommerce core, you will not edit WordPress or WooCommerce files directly. All modification of functionality is done by creating a custom extension or modifying the `functions.php` file of your active theme. 
 

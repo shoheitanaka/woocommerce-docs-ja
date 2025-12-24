@@ -4,39 +4,39 @@ sidebar_label: Debugging
 sidebar_position: 7
 ---
 
-# Resources for debugging
+# デバッグ用リソース
 
-## WordPress
+## ワードプレス
 
 手始めに、WordPress自体に組み込まれているデバッグ・ツールから始めるのがよいだろう：
 
 The documentation for [Debugging in WordPress c](https://wordpress.org/documentation/article/debugging-in-wordpress/)overs a number of environment variables you can set to enable WordPress’s core debugging tools.
 
-### Query Monitor
+### クエリーモニター
 
 A popular plugin for WordPress developers is [Query Monitor](https://wordpress.org/plugins/query-monitor/), the developer tools for WordPress. Query Monitor enables debugging of database queries, PHP errors, AJAX/Rest requests, hooks and actions, block editor blocks, enqueued scripts and stylesheets, HTTP API calls, and more.
 
-### Email Debugging
+### 電子メールのデバッグ
 
 ローカルのWooCommerce環境で作業する場合、MailpitやMailhogのようなツールを有効にして、すべてのトランザクションメールを送信するのではなく、ログにリダイレクトすることをお勧めします。
 
 あるいは、Stop Emailsのようなプラグインを使って、誤ってメールがトリガーされないようにすることもできます。
 
-## WooCommerce
+## ウーコマース
 
-### Logging
+### ロギング
 
 WooCommerceにはログシステムがあり、サイトのエラーを見つけたり追跡したりするのにとても役立ちます：
 
 * [WooCommerceにおけるロギング](/docs/best-practices/data-management/logging)
 
-### Coming Soon Mode
+### もうすぐモード
 
 WooCommerceの "coming soon "モードでは、作業中に一時的にサイトを見えなくすることができます。
 
 * [近日モードとの統合](/docs/extensions/extension-onboarding/integrating-coming-soon-mode)
 
-## PHP/JavaScript Debugging
+## PHP/JavaScriptデバッグ
 
 ### Xdebug
 
