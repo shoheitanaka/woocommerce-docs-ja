@@ -5,7 +5,7 @@ current wccom url: >-
   https://woocommerce.com/document/woocommerce-marketplace-suggestions-settings/#section-6
 ---
 
-# Disabling Marketplace Suggestions Programmatically
+# マーケットプレイスの提案をプログラムで無効にする
 
 
 For those who prefer to programmatically disable marketplace suggestions that are fetched from woocommerce.com, add the `woocommerce_allow_marketplace_suggestions` filter to your theme’s `functions.php` or a custom plugin. 

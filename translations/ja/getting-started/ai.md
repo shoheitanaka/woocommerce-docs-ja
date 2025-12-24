@@ -12,9 +12,9 @@ sidebar_position: 3
 
 WooCommerceはモデルコンテキストプロトコル(MCP)のネイティブサポートを含んでおり、AIアシスタントやツールが標準化されたプロトコルを介してWooCommerceストアと直接対話することを可能にします。詳しくは[MCPドキュメント](/docs/features/mcp/)をご覧ください。
 
-## AI Documentation Tools
+## AIドキュメンテーションツール
 
-### LLMS.txt Files
+### LLMS.txtファイル
 
 WooCommerce Developer DocumentationをLLMまたはAIアシストIDEにフィードするには、2つのオプションがあります：
 
@@ -25,13 +25,13 @@ CursorやWindsurfのようなIDEを使用している場合は、必要に応じ
 
 **Note** that these do not include the contents of the [WC REST API documentation](https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction) or the [WooCommerce Code Reference](https://woocommerce.github.io/code-reference/).
 
-### Copy to Markdown
+### マークダウンにコピー
 
 Developer Docsのどのページにも、右上にクリップボードのアイコンがあります。このアイコンを選択すると、現在のドキュメントがMarkdownフォーマットでコピーされ、LLMのチャットインターフェースに貼り付けることができます。
 
-## AI Development Tools
+## AI開発ツール
 
-### Cursor Rules files for contributors
+### 投稿者用カーソル・ルール・ファイル
 
 The `.cursor/rules/` directory contains configuration files that provide AI assistants with specific guidance for working with the WooCommerce codebase. These files help ensure consistent development practices and workflows:
 

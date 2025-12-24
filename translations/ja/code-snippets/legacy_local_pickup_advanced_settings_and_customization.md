@@ -6,9 +6,9 @@ note: >-
   our own alternative?
 ---
 
-# Advanced settings and customization for legacy Local Pickup
+# レガシーローカルピックアップの高度な設定とカスタマイズ
 
-## Disable local taxes when using local pickup
+## 地方送迎を利用する場合、地方税を無効にする
 
 Local Pickup calculates taxes based on your store's location (address) by default, and not the customer's address. Add this snippet at the end of your theme's `functions.php` to use your standard tax configuration instead:
 
@@ -18,9 +18,9 @@ add_filter( 'woocommerce_apply_base_tax_for_local_pickup', '__return_false' );
 
 ローカルピックアップを選択した場合、店舗所在地ベースの税金ではなく、通常の税金が使用される。 
 
-## Changing the location for local taxes
+## 地方税の納税地を変更する
 
-地域のピックアップ場所の郵便番号と都市に基づいて地方税を請求するには、このコード例を使用して、ショップのベースとなる都市と郵便番号を定義する必要があります：
+地域のピックアップ場所の郵便番号と都市に基づいて地方税を請求するには、このコード例を使用してショップのベースとなる都市と郵便番号を定義する必要があります：
 
 ```php
 add_filter( 'woocommerce_countries_base_postcode', create_function( '', 'return "80903";' ) );
@@ -29,7 +29,7 @@ add_filter( 'woocommerce_countries_base_city', create_function( '', 'return "COL
 
 Update `80903` to reflect your preferred postcode/zip, and `COLORADO SPRINGS` with your preferred town or city.
 
-## Custom emails for local pickup
+## ローカルピックアップ用カスタムEメール
 
 配送方法としてLocal Pickupを使用した場合、_Shipping Address_が管理者の注文メールに表示されない。
 
