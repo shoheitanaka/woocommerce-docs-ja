@@ -5,7 +5,6 @@ vendor/
 .env
 .DS_Store
 
-translations/cache/*.json
 translations/cache/*.md
 .cache/
 

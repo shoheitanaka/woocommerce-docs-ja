@@ -125,27 +125,29 @@ async function translateFile(filePath, cache) {
 function extractTranslatableSegments(markdown) {
   const segments = [];
   
+  // 全体的なコードブロック、インラインコード、URLを保存
+  const allCodeBlocks = [];
+  const allInlineCodes = [];
+  const allUrls = [];
+  
   // コードブロックを一時的に置換
-  const codeBlocks = [];
   let content = markdown.replace(/```[\s\S]*?```/g, (match) => {
-    const placeholder = `__CODE_BLOCK_${codeBlocks.length}__`;
-    codeBlocks.push(match);
+    const placeholder = `__CODE_BLOCK_${allCodeBlocks.length}__`;
+    allCodeBlocks.push(match);
     return placeholder;
   });
 
   // インラインコードを保護
-  const inlineCodes = [];
   content = content.replace(/`[^`]+`/g, (match) => {
-    const placeholder = `__INLINE_CODE_${inlineCodes.length}__`;
-    inlineCodes.push(match);
+    const placeholder = `__INLINE_CODE_${allInlineCodes.length}__`;
+    allInlineCodes.push(match);
     return placeholder;
   });
 
   // URLを保護
-  const urls = [];
   content = content.replace(/https?:\/\/[^\s)]+/g, (match) => {
-    const placeholder = `__URL_${urls.length}__`;
-    urls.push(match);
+    const placeholder = `__URL_${allUrls.length}__`;
+    allUrls.push(match);
     return placeholder;
   });
 
@@ -155,11 +157,41 @@ function extractTranslatableSegments(markdown) {
   for (const paragraph of paragraphs) {
     const trimmed = paragraph.trim();
     if (trimmed && trimmed.length > 10) {
+      // このセグメント用のプレースホルダーを0からの連番に正規化
+      let normalizedParagraph = paragraph;
+      const segmentCodeBlocks = [];
+      const segmentInlineCodes = [];
+      const segmentUrls = [];
+      
+      // コードブロックの正規化
+      const codeBlockMatches = paragraph.match(/__CODE_BLOCK_(\d+)__/g) || [];
+      codeBlockMatches.forEach((match, newIndex) => {
+        const oldIndex = parseInt(match.match(/\d+/)[0]);
+        segmentCodeBlocks.push(allCodeBlocks[oldIndex]);
+        normalizedParagraph = normalizedParagraph.replace(match, `__CODE_BLOCK_${newIndex}__`);
+      });
+      
+      // インラインコードの正規化
+      const inlineCodeMatches = paragraph.match(/__INLINE_CODE_(\d+)__/g) || [];
+      inlineCodeMatches.forEach((match, newIndex) => {
+        const oldIndex = parseInt(match.match(/\d+/)[0]);
+        segmentInlineCodes.push(allInlineCodes[oldIndex]);
+        normalizedParagraph = normalizedParagraph.replace(match, `__INLINE_CODE_${newIndex}__`);
+      });
+      
+      // URLの正規化
+      const urlMatches = paragraph.match(/__URL_(\d+)__/g) || [];
+      urlMatches.forEach((match, newIndex) => {
+        const oldIndex = parseInt(match.match(/\d+/)[0]);
+        segmentUrls.push(allUrls[oldIndex]);
+        normalizedParagraph = normalizedParagraph.replace(match, `__URL_${newIndex}__`);
+      });
+      
       segments.push({
-        original: paragraph,
-        codeBlocks,
-        inlineCodes,
-        urls
+        original: normalizedParagraph,
+        codeBlocks: segmentCodeBlocks,
+        inlineCodes: segmentInlineCodes,
+        urls: segmentUrls
       });
     }
   }
@@ -247,6 +279,7 @@ async function translateSingleSegment(segment, cache) {
     return {
       original: segment.original,
       translated: segment.original, // フォールバック
+      metadata: segment,
       error: error.message
     };
   }
@@ -344,6 +377,13 @@ function reconstructMarkdown(original, translatedSegments) {
 
   for (const segment of translatedSegments) {
     let translated = segment.translated;
+
+    // metadata が存在しない場合はスキップ
+    if (!segment.metadata) {
+      console.warn('Warning: segment.metadata is undefined, skipping placeholder restoration');
+      result = result.replace(segment.original, translated);
+      continue;
+    }
 
     // コードブロックを復元
     if (segment.metadata.codeBlocks) {
