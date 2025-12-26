@@ -1,10 +1,9 @@
 ---
 post_title: Change number of related products displayed
 ---
-
 # 関連商品の表示数を変更する
 
-Add code to your child theme's functions.php file or via a plugin that allows custom functions to be added, such as the [Code snippets](https://wordpress.org/plugins/code-snippets/) plugin. Avoid adding custom code directly to your parent theme's `functions.php` file as this will be wiped entirely when you update the theme.
+子テーマのfunctions.phpファイルにコードを追加するか、[Code [snippets](https://wordpress.org/plugins/code-snippets/)プラグインのようなカスタム関数を追加できるプラグインを使用します。親テーマの `functions.php` ファイルに直接カスタムコードを追加することは避けてください。
 
 なお、テーマのコード化により、すべてのテーマで動作するわけではありません。
 

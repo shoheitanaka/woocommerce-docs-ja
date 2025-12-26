@@ -70,16 +70,20 @@ async function translateFile(filePath, cache) {
     const content = await fs.readFile(filePath, 'utf-8');
     const fileHash = calculateHash(content);
 
-    // キャッシュチェック
+    // Frontmatter と本文を分離
+    const { data: frontmatter, content: markdown } = matter(content);
+
+    // キャッシュチェック - キャッシュがある場合は復元して保存
     if (cache[filePath] && cache[filePath].hash === fileHash) {
-      console.log('   ✓ Cache hit - skipping');
+      console.log('   ✓ Cache hit - restoring from cache');
+      const translatedMarkdown = await restoreFromCache(markdown, cache);
+      const translatedFrontmatter = await translateFrontmatter(frontmatter);
+      const outputPath = getOutputPath(filePath);
+      await saveTranslatedFile(outputPath, translatedFrontmatter, translatedMarkdown);
       stats.skippedFiles++;
       stats.cacheHits++;
       return;
     }
-
-    // Frontmatter と本文を分離
-    const { data: frontmatter, content: markdown } = matter(content);
 
     // 翻訳対象の抽出と分割
     const segments = extractTranslatableSegments(markdown);
@@ -120,6 +124,126 @@ async function translateFile(filePath, cache) {
 }
 
 /**
+ * キャッシュから翻訳を復元
+ */
+async function restoreFromCache(markdown, cache) {
+  // extractTranslatableSegmentsと同じロジックでプレースホルダー置換
+  const allCodeBlocks = [];
+  const allInlineCodes = [];
+  const allUrls = [];
+
+  let processedContent = markdown.replace(/```[\s\S]*?```/g, (match) => {
+    const placeholder = `__CODE_BLOCK_${allCodeBlocks.length}__`;
+    allCodeBlocks.push(match);
+    return placeholder;
+  });
+
+  processedContent = processedContent.replace(/`[^`]+`/g, (match) => {
+    const placeholder = `__INLINE_CODE_${allInlineCodes.length}__`;
+    allInlineCodes.push(match);
+    return placeholder;
+  });
+
+  processedContent = processedContent.replace(/https?:\/\/[^\s)]+/g, (match) => {
+    const placeholder = `__URL_${allUrls.length}__`;
+    allUrls.push(match);
+    return placeholder;
+  });
+
+  const paragraphs = processedContent.split(/\n\n+/);
+  const translatedParagraphs = [];
+
+  for (const paragraph of paragraphs) {
+    const trimmed = paragraph.trim();
+    
+    // 空行、コードブロック単体、画像単体をそのまま保持
+    if (!trimmed || 
+        trimmed.match(/^__CODE_BLOCK_\d+__$/) || 
+        trimmed.match(/^!\[.*\]\(__URL_\d+__\)$/)) {
+      translatedParagraphs.push(paragraph.replace(/__CODE_BLOCK_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allCodeBlocks[index] || match;
+      }).replace(/__INLINE_CODE_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allInlineCodes[index] || match;
+      }).replace(/__URL_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allUrls[index] || match;
+      }));
+      continue;
+    }
+    
+    if (trimmed && trimmed.length > 10) {
+      // プレースホルダーを正規化
+      let normalizedParagraph = paragraph;
+      const segmentCodeBlocks = [];
+      const segmentInlineCodes = [];
+      const segmentUrls = [];
+      
+      const codeBlockMatches = paragraph.match(/__CODE_BLOCK_(\d+)__/g) || [];
+      codeBlockMatches.forEach((match, newIndex) => {
+        const oldIndex = parseInt(match.match(/\d+/)[0]);
+        segmentCodeBlocks.push(allCodeBlocks[oldIndex]);
+        normalizedParagraph = normalizedParagraph.replace(match, `__CODE_BLOCK_${newIndex}__`);
+      });
+      
+      const inlineCodeMatches = paragraph.match(/__INLINE_CODE_(\d+)__/g) || [];
+      inlineCodeMatches.forEach((match, newIndex) => {
+        const oldIndex = parseInt(match.match(/\d+/)[0]);
+        segmentInlineCodes.push(allInlineCodes[oldIndex]);
+        normalizedParagraph = normalizedParagraph.replace(match, `__INLINE_CODE_${newIndex}__`);
+      });
+      
+      const urlMatches = paragraph.match(/__URL_(\d+)__/g) || [];
+      urlMatches.forEach((match, newIndex) => {
+        const oldIndex = parseInt(match.match(/\d+/)[0]);
+        segmentUrls.push(allUrls[oldIndex]);
+        normalizedParagraph = normalizedParagraph.replace(match, `__URL_${newIndex}__`);
+      });
+      
+      const hash = crypto.createHash('sha256').update(normalizedParagraph).digest('hex');
+      
+      if (cache.segments && cache.segments[hash]) {
+        let translated = cache.segments[hash].translated;
+        
+        // プレースホルダーを復元
+        segmentCodeBlocks.forEach((code, i) => {
+          translated = translated.replace(`__CODE_BLOCK_${i}__`, code);
+        });
+        segmentInlineCodes.forEach((code, i) => {
+          translated = translated.replace(`__INLINE_CODE_${i}__`, code);
+        });
+        segmentUrls.forEach((url, i) => {
+          translated = translated.replace(`__URL_${i}__`, url);
+        });
+        
+        translatedParagraphs.push(translated);
+      } else {
+        // キャッシュにない場合は元のまま
+        translatedParagraphs.push(paragraph.replace(/__CODE_BLOCK_(\d+)__/g, (match) => {
+          const index = parseInt(match.match(/\d+/)[0]);
+          return allCodeBlocks[index] || match;
+        }).replace(/__INLINE_CODE_(\d+)__/g, (match) => {
+          const index = parseInt(match.match(/\d+/)[0]);
+          return allInlineCodes[index] || match;
+        }).replace(/__URL_(\d+)__/g, (match) => {
+          const index = parseInt(match.match(/\d+/)[0]);
+          return allUrls[index] || match;
+        }));
+      }
+    }
+  }
+
+  let result = translatedParagraphs.join('\n\n');
+  
+  // 後処理: リストアイテムの先頭にある余分な__を削除
+  // パターン: "-   __`code`" → "-   `code`"
+  result = result.replace(/^([-*+]\s+)__(`[^`]+`)/gm, '$1$2');
+  
+  return result;
+}
+
+/**
  * 翻訳可能なセグメントを抽出（コードブロックとリンクを保護）
  */
 function extractTranslatableSegments(markdown) {
@@ -130,7 +254,7 @@ function extractTranslatableSegments(markdown) {
   const allInlineCodes = [];
   const allUrls = [];
   
-  // コードブロックを一時的に置換
+  // コードブロックを一時的に置換（元の改行を保持）
   let content = markdown.replace(/```[\s\S]*?```/g, (match) => {
     const placeholder = `__CODE_BLOCK_${allCodeBlocks.length}__`;
     allCodeBlocks.push(match);
@@ -151,12 +275,167 @@ function extractTranslatableSegments(markdown) {
     return placeholder;
   });
 
-  // 段落単位で分割（空行で区切る）
-  const paragraphs = content.split(/\n\n+/);
+  // 段落単位で分割
+  // 1. 見出しの前に特別なマーカーを挿入して強制分割
+  content = content.replace(/^(#{1,6}\s)/gm, '__HEADING_START__\n$1');
+  
+  // 2. 空行と見出しマーカーで段落を分割
+  const paragraphs = content.split(/\n\n+|__HEADING_START__\n/).filter(p => p.trim());
+  
+  let debugSegmentCount = 0;
 
   for (const paragraph of paragraphs) {
     const trimmed = paragraph.trim();
+    
+    // 空行、コードブロック単体、画像単体はセグメントとして抽出しない
+    if (!trimmed || 
+        trimmed.match(/^__CODE_BLOCK_\d+__$/) || 
+        trimmed.match(/^!\[.*\]\(__URL_\d+__\)$/)) {
+      if (process.env.DEBUG_SEGMENTS) {
+        console.log(`   [Skipped] Length: ${trimmed.length}, Type: ${trimmed.match(/^__CODE_BLOCK_/) ? 'CODE_BLOCK' : trimmed.match(/^!\[/) ? 'IMAGE' : 'EMPTY'}`);
+      }
+      continue;
+    }
+    
     if (trimmed && trimmed.length > 10) {
+      debugSegmentCount++;
+      if (process.env.DEBUG_SEGMENTS) {
+        console.log(`   [Segment ${debugSegmentCount}] Length: ${trimmed.length}, Preview: ${trimmed.substring(0, 80)}...`);
+      }
+      
+      // 非常に長いセグメント（30000文字以上）を分割
+      // DeepL APIの制限は50000文字なので、余裕を持たせる
+      if (trimmed.length > 30000) {
+        console.log(`   ⚠ Warning: Segment ${debugSegmentCount} is very long (${trimmed.length} chars). Splitting into smaller parts...`);
+        
+        let chunks = [];
+        
+        // 戦略1: コードブロックプレースホルダーの前後で分割
+        const codeBlockPattern = /__CODE_BLOCK_\d+__/g;
+        const hasCodeBlocks = paragraph.match(codeBlockPattern);
+        
+        if (hasCodeBlocks && hasCodeBlocks.length > 1) {
+          // コードブロックの位置で分割
+          const parts = paragraph.split(/(__CODE_BLOCK_\d+__)/);
+          let currentChunk = '';
+          
+          for (const part of parts) {
+            if (!part) continue;
+            
+            if (currentChunk.length + part.length > 2500) {
+              if (currentChunk.trim()) {
+                chunks.push(currentChunk.trim());
+              }
+              currentChunk = part;
+            } else {
+              currentChunk += part;
+            }
+          }
+          if (currentChunk.trim()) {
+            chunks.push(currentChunk.trim());
+          }
+          
+          console.log(`   → Split by code blocks into ${chunks.length} chunks`);
+        } 
+        // 戦略2: 空行で分割
+        else if (paragraph.includes('\n\n')) {
+          const parts = paragraph.split(/\n\n+/);
+          let currentChunk = '';
+          
+          for (const part of parts) {
+            if (!part.trim()) continue;
+            
+            if (currentChunk.length + part.length + 2 > 2500) {
+              if (currentChunk.trim()) {
+                chunks.push(currentChunk.trim());
+              }
+              currentChunk = part;
+            } else {
+              currentChunk += (currentChunk ? '\n\n' : '') + part;
+            }
+          }
+          if (currentChunk.trim()) {
+            chunks.push(currentChunk.trim());
+          }
+          
+          console.log(`   → Split by paragraphs into ${chunks.length} chunks`);
+        }
+        // 戦略3: 単一改行で分割
+        else if (paragraph.includes('\n')) {
+          const lines = paragraph.split('\n');
+          let currentChunk = '';
+          
+          for (const line of lines) {
+            if (currentChunk.length + line.length + 1 > 2500) {
+              if (currentChunk.trim()) {
+                chunks.push(currentChunk.trim());
+              }
+              currentChunk = line;
+            } else {
+              currentChunk += (currentChunk ? '\n' : '') + line;
+            }
+          }
+          if (currentChunk.trim()) {
+            chunks.push(currentChunk.trim());
+          }
+          
+          console.log(`   → Split by lines into ${chunks.length} chunks`);
+        }
+        // 戦略4: 強制的に文字数で分割（最後の手段）
+        else {
+          const text = paragraph;
+          for (let i = 0; i < text.length; i += 2500) {
+            chunks.push(text.substring(i, i + 2500).trim());
+          }
+          
+          console.log(`   → Force split by character count into ${chunks.length} chunks`);
+        }
+        
+        console.log(`   Chunk sizes: ${chunks.map(c => c.length).join(', ')}`);
+        
+        // 各チャンクを個別のセグメントとして追加
+        for (const chunk of chunks) {
+          if (chunk.length > 10) {
+            let normalizedChunk = chunk;
+            const segmentCodeBlocks = [];
+            const segmentInlineCodes = [];
+            const segmentUrls = [];
+            
+            // コードブロックの正規化
+            const codeBlockMatches = chunk.match(/__CODE_BLOCK_(\d+)__/g) || [];
+            codeBlockMatches.forEach((match, newIndex) => {
+              const oldIndex = parseInt(match.match(/\d+/)[0]);
+              segmentCodeBlocks.push(allCodeBlocks[oldIndex]);
+              normalizedChunk = normalizedChunk.replace(match, `__CODE_BLOCK_${newIndex}__`);
+            });
+            
+            // インラインコードの正規化
+            const inlineCodeMatches = chunk.match(/__INLINE_CODE_(\d+)__/g) || [];
+            inlineCodeMatches.forEach((match, newIndex) => {
+              const oldIndex = parseInt(match.match(/\d+/)[0]);
+              segmentInlineCodes.push(allInlineCodes[oldIndex]);
+              normalizedChunk = normalizedChunk.replace(match, `__INLINE_CODE_${newIndex}__`);
+            });
+            
+            // URLの正規化
+            const urlMatches = chunk.match(/__URL_(\d+)__/g) || [];
+            urlMatches.forEach((match, newIndex) => {
+              const oldIndex = parseInt(match.match(/\d+/)[0]);
+              segmentUrls.push(allUrls[oldIndex]);
+              normalizedChunk = normalizedChunk.replace(match, `__URL_${newIndex}__`);
+            });
+            
+            segments.push({
+              original: normalizedChunk,
+              codeBlocks: segmentCodeBlocks,
+              inlineCodes: segmentInlineCodes,
+              urls: segmentUrls
+            });
+          }
+        }
+        continue; // 次の段落へ
+      }
+      
       // このセグメント用のプレースホルダーを0からの連番に正規化
       let normalizedParagraph = paragraph;
       const segmentCodeBlocks = [];
@@ -235,8 +514,132 @@ async function translateSegments(segments, cache) {
   return translated;
 }
 
-/**
- * 単一セグメントを翻訳
+/** * DeepL APIの翻訳結果を自動修正
+ * Markdownリンクや画像の開始括弧が欠けている問題を修正
+ */
+function fixDeepLMarkdownIssues(original, translated) {
+  // ===== 1. DeepL APIがプレースホルダーを翻訳してしまう問題を修正 =====
+  // "コード_ブロック_0__" → "__CODE_BLOCK_0__"
+  if (original.match(/__CODE_BLOCK_\d+__/)) {
+    translated = translated.replace(/コード[_\s]*ブロック[_\s]*(\d+)__/g, (match, num) => {
+      console.log('   ⚠ Auto-fixed: Reverted Japanese translation of CODE_BLOCK placeholder');
+      return `__CODE_BLOCK_${num}__`;
+    });
+    
+    // 小文字に変換されている場合も修正: "__code_block_0__" → "__CODE_BLOCK_0__"
+    translated = translated.replace(/__code_block_(\d+)__/g, (match, num) => {
+      console.log('   ⚠ Auto-fixed: Corrected lowercase code_block placeholder');
+      return `__CODE_BLOCK_${num}__`;
+    });
+  }
+  
+  // "インラインコード_0__" → "__INLINE_CODE_0__"
+  if (original.match(/__INLINE_CODE_\d+__/)) {
+    translated = translated.replace(/インライン[_\s]*コード[_\s]*(\d+)__/g, (match, num) => {
+      console.log('   ⚠ Auto-fixed: Reverted Japanese translation of INLINE_CODE placeholder');
+      return `__INLINE_CODE_${num}__`;
+    });
+    
+    // 小文字に変換されている場合も修正: "__inline_code_0__" → "__INLINE_CODE_0__"
+    translated = translated.replace(/__inline_code_(\d+)__/g, (match, num) => {
+      console.log('   ⚠ Auto-fixed: Corrected lowercase inline_code placeholder');
+      return `__INLINE_CODE_${num}__`;
+    });
+  }
+  
+  // "URL_0__" → "__URL_0__" (URLが翻訳されることは稀だが念のため)
+  if (original.match(/__URL_\d+__/)) {
+    translated = translated.replace(/([ぁ-んァ-ヶー一-龯])URL[_\s]*(\d+)__/g, (match, before, num) => {
+      console.log('   ⚠ Auto-fixed: Fixed URL placeholder');
+      return `${before}__URL_${num}__`;
+    });
+    
+    // 小文字に変換されている場合も修正: "__url_0__" → "__URL_0__"
+    translated = translated.replace(/__url_(\d+)__/g, (match, num) => {
+      console.log('   ⚠ Auto-fixed: Corrected lowercase url placeholder');
+      return `__URL_${num}__`;
+    });
+  }
+  
+  // ===== 2. 二重括弧を修正 ===== 
+  // "[Text [Link]" → "[Text Link]"
+  translated = translated.replace(/\[([^\]]*)\[/g, (match, content) => {
+    console.log('   ⚠ Auto-fixed: Removed double opening bracket [[');
+    return '[' + content;
+  });
+  
+  // ===== 3. Markdownリンクの開始括弧が欠けている問題を修正 =====
+  // 元のテキストが[または![で始まる場合、翻訳にも同じように始まるべき
+  if (original.startsWith('![') && !translated.startsWith('![')) {
+    // 画像リンクの場合
+    if (translated.match(/^[^\[]*\].*__URL_\d+__\)/)) {
+      translated = '![' + translated;
+      console.log('   ⚠ Auto-fixed: Added missing ![');
+    }
+  } else if (original.match(/^\[.*\]\(__URL_\d+__\)/) && !translated.startsWith('[')) {
+    // Markdownリンクの場合
+    if (translated.match(/^[^\[]*\].*__URL_\d+__\)/)) {
+      translated = '[' + translated;
+      console.log('   ⚠ Auto-fixed: Added missing [');
+    }
+  }
+  
+  // "The [Link]" パターンの場合
+  if (original.match(/^The \[.*\]\(__URL_\d+__\)/) && !translated.match(/^\[/)) {
+    if (translated.match(/^[^\[]*\].*__URL_\d+__\)/)) {
+      translated = '[' + translated;
+      console.log('   ⚠ Auto-fixed: Added missing [ (The [Link] pattern)');
+    }
+  }
+  
+  // 日本語の後のMarkdownリンクパターン（例: "については Link]" → "については [Link]"）
+  // ただし、既に[がある場合は追加しない（二重括弧を防ぐ）
+  if (original.match(/\[.*?\]\(__URL_\d+__\)/)) {
+    translated = translated.replace(/([ぁ-んァ-ヶー一-龯a-zA-Z]+\s+)([^\[\s][^\[]*?\]\(__URL_\d+__\))/g, (match, before, linkPart) => {
+      // linkPartが既に[で始まっている場合はスキップ
+      if (linkPart.startsWith('[')) {
+        return match;
+      }
+      console.log('   ⚠ Auto-fixed: Added missing [ in Japanese context');
+      return before + '[' + linkPart;
+    });
+  }
+  
+  // ===== 4. プレースホルダーの先頭__が欠けている問題を修正 =====
+  if (original.match(/__(?:INLINE_CODE|CODE_BLOCK|URL)_\d+__/)) {
+    // まず、リストアイテム内のプレースホルダーは除外する
+    // リストマーカー(-、*、+の後にスペースとプレースホルダー)のパターンをスキップ
+    const listItemPattern = /^([-*+]\s+)((?:INLINE_CODE|CODE_BLOCK|URL)_\d+__)/gm;
+    const listItems = [];
+    let listMatch;
+    while ((listMatch = listItemPattern.exec(translated)) !== null) {
+      listItems.push({index: listMatch.index, marker: listMatch[1], placeholder: listMatch[2]});
+    }
+    
+    // パターン1: 完全に__が欠けている場合（INLINE_CODE_0__ や CODE_BLOCK_0__ など）
+    // 行頭、スペース、日本語文字、記号の後に来る場合を検出
+    translated = translated.replace(/(^|[\s\n、。！？：｜ぁ-んァ-ヶー一-龯])((?:INLINE_CODE|CODE_BLOCK|URL)_\d+__)/g, (match, before, placeholder, offset) => {
+      // リストアイテム内のプレースホルダーはスキップ
+      for (const item of listItems) {
+        if (offset === item.index + item.marker.length) {
+          return match; // 変更しない
+        }
+      }
+      console.log('   ⚠ Auto-fixed: Added missing __ prefix to', placeholder);
+      return before + '__' + placeholder;
+    });
+    
+    // パターン2: _が1つしかない場合（_INLINE_CODE_0__ など）
+    translated = translated.replace(/(^|[^_])_(INLINE_CODE|CODE_BLOCK|URL)_(\d+)__/g, (match, before, type, num) => {
+      console.log('   ⚠ Auto-fixed: Added missing _ prefix (single underscore case)');
+      return before + '__' + type + '_' + num + '__';
+    });
+  }
+  
+  return translated;
+}
+
+/** * 単一セグメントを翻訳
  */
 async function translateSingleSegment(segment, cache) {
   const segmentHash = calculateHash(segment.original);
@@ -262,9 +665,13 @@ async function translateSingleSegment(segment, cache) {
     stats.apiCalls++;
     stats.totalChars += segment.original.length;
 
+    // DeepL APIの応答を自動修正（Markdownリンクの括弧が欠けている場合）
+    let translatedText = result.text;
+    translatedText = fixDeepLMarkdownIssues(segment.original, translatedText);
+
     const translated = {
       original: segment.original,
-      translated: result.text,
+      translated: translatedText,
       metadata: segment
     };
 
@@ -307,9 +714,14 @@ async function translateBatch(segments, cache) {
 
     return results.map((result, index) => {
       const segmentHash = calculateHash(segments[index].original);
+      
+      // DeepL APIの応答を自動修正（Markdownリンクの括弧が欠けている場合）
+      let translatedText = result.text;
+      translatedText = fixDeepLMarkdownIssues(segments[index].original, translatedText);
+      
       const translated = {
         original: segments[index].original,
-        translated: result.text,
+        translated: translatedText,
         metadata: segments[index]
       };
 
@@ -373,42 +785,147 @@ async function translateFrontmatter(frontmatter) {
  * マークダウンを再構築（プレースホルダーを復元）
  */
 function reconstructMarkdown(original, translatedSegments) {
-  let result = original;
+  // extractTranslatableSegmentsと同じロジックでプレースホルダー置換
+  const allCodeBlocks = [];
+  const allInlineCodes = [];
+  const allUrls = [];
 
-  for (const segment of translatedSegments) {
-    let translated = segment.translated;
+  let processedContent = original.replace(/```[\s\S]*?```/g, (match) => {
+    const placeholder = `__CODE_BLOCK_${allCodeBlocks.length}__`;
+    allCodeBlocks.push(match);
+    return placeholder;
+  });
 
-    // metadata が存在しない場合はスキップ
-    if (!segment.metadata) {
-      console.warn('Warning: segment.metadata is undefined, skipping placeholder restoration');
-      result = result.replace(segment.original, translated);
-      continue;
-    }
+  processedContent = processedContent.replace(/`[^`]+`/g, (match) => {
+    const placeholder = `__INLINE_CODE_${allInlineCodes.length}__`;
+    allInlineCodes.push(match);
+    return placeholder;
+  });
 
-    // コードブロックを復元
-    if (segment.metadata.codeBlocks) {
-      segment.metadata.codeBlocks.forEach((code, i) => {
-        translated = translated.replace(`__CODE_BLOCK_${i}__`, code);
-      });
-    }
+  processedContent = processedContent.replace(/https?:\/\/[^\s)]+/g, (match) => {
+    const placeholder = `__URL_${allUrls.length}__`;
+    allUrls.push(match);
+    return placeholder;
+  });
 
-    // インラインコードを復元
-    if (segment.metadata.inlineCodes) {
-      segment.metadata.inlineCodes.forEach((code, i) => {
-        translated = translated.replace(`__INLINE_CODE_${i}__`, code);
-      });
-    }
-
-    // URLを復元
-    if (segment.metadata.urls) {
-      segment.metadata.urls.forEach((url, i) => {
-        translated = translated.replace(`__URL_${i}__`, url);
-      });
-    }
-
-    result = result.replace(segment.original, translated);
+  // 見出しの前に特別なマーカーを挿入（extractTranslatableSegmentsと同じ処理）
+  processedContent = processedContent.replace(/^(#{1,6}\s)/gm, '__HEADING_START__\n$1');
+  
+  // 空行と見出しマーカーで段落を分割（extractTranslatableSegmentsと同じ処理）
+  const paragraphs = processedContent.split(/\n\n+|__HEADING_START__\n/).filter(p => p.trim());
+  const translatedParagraphs = [];
+  let segmentIndex = 0;
+  
+  if (process.env.DEBUG_RECONSTRUCT) {
+    console.log(`\n📝 Reconstruction Debug:`);
+    console.log(`   Total paragraphs to process: ${paragraphs.length}`);
+    console.log(`   Total translated segments: ${translatedSegments.length}`);
   }
 
+  for (const paragraph of paragraphs) {
+    const trimmed = paragraph.trim();
+    
+    if (process.env.DEBUG_RECONSTRUCT) {
+      const isCodeBlock = trimmed.match(/^__CODE_BLOCK_\d+__$/);
+      const isImage = trimmed.match(/^!\[.*\]\(__URL_\d+__\)$/);
+      if (isCodeBlock || isImage) {
+        console.log(`   [Skipped] ${isCodeBlock ? 'CODE_BLOCK' : 'IMAGE'}: ${trimmed.substring(0, 50)}`);
+      }
+    }
+    
+    // 空行、コードブロック単体、画像単体をそのまま保持
+    if (!trimmed || 
+        trimmed.match(/^__CODE_BLOCK_\d+__$/) || 
+        trimmed.match(/^!\[.*\]\(__URL_\d+__\)$/)) {
+      translatedParagraphs.push(paragraph.replace(/__CODE_BLOCK_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allCodeBlocks[index] || match;
+      }).replace(/__INLINE_CODE_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allInlineCodes[index] || match;
+      }).replace(/__URL_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allUrls[index] || match;
+      }));
+      continue;
+    }
+    
+    if (trimmed && trimmed.length > 10 && segmentIndex < translatedSegments.length) {
+      const translatedSegment = translatedSegments[segmentIndex];
+      let translated = translatedSegment.translated;
+      
+      if (process.env.DEBUG_RECONSTRUCT) {
+        const hasCodeBlocks = translatedSegment.metadata && translatedSegment.metadata.codeBlocks && translatedSegment.metadata.codeBlocks.length > 0;
+        const hasPlaceholders = translated.match(/__CODE_BLOCK_\d+__/);
+        if (hasCodeBlocks || hasPlaceholders) {
+          console.log(`   [Segment ${segmentIndex}] CodeBlocks: ${hasCodeBlocks ? translatedSegment.metadata.codeBlocks.length : 0}, Placeholders: ${hasPlaceholders ? 'YES' : 'NO'}`);
+        }
+      }
+      
+      // プレースホルダーを復元
+      if (translatedSegment.metadata) {
+        if (translatedSegment.metadata.codeBlocks) {
+          translatedSegment.metadata.codeBlocks.forEach((code, i) => {
+            translated = translated.replace(`__CODE_BLOCK_${i}__`, code);
+          });
+        }
+        if (translatedSegment.metadata.inlineCodes) {
+          translatedSegment.metadata.inlineCodes.forEach((code, i) => {
+            translated = translated.replace(`__INLINE_CODE_${i}__`, code);
+          });
+        }
+        if (translatedSegment.metadata.urls) {
+          translatedSegment.metadata.urls.forEach((url, i) => {
+            translated = translated.replace(`__URL_${i}__`, url);
+          });
+        }
+      }
+      
+      // メタデータから復元できなかったプレースホルダーを、グローバル配列から復元
+      translated = translated.replace(/__CODE_BLOCK_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allCodeBlocks[index] || match;
+      });
+      translated = translated.replace(/__INLINE_CODE_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allInlineCodes[index] || match;
+      });
+      translated = translated.replace(/__URL_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allUrls[index] || match;
+      });
+      
+      translatedParagraphs.push(translated);
+      segmentIndex++;
+    } else {
+      // 翻訳対象外の段落をそのまま保持
+      translatedParagraphs.push(paragraph.replace(/__CODE_BLOCK_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allCodeBlocks[index] || match;
+      }).replace(/__INLINE_CODE_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allInlineCodes[index] || match;
+      }).replace(/__URL_(\d+)__/g, (match) => {
+        const index = parseInt(match.match(/\d+/)[0]);
+        return allUrls[index] || match;
+      }));
+    }
+  }
+
+  let result = translatedParagraphs.join('\n\n');
+  
+  if (process.env.DEBUG_RECONSTRUCT) {
+    console.log(`\n📝 Reconstruction Result:`);
+    console.log(`   Total paragraphs in result: ${translatedParagraphs.length}`);
+    console.log(`   Result length: ${result.length}`);
+    const codeBlockCount = (result.match(/__CODE_BLOCK_/g) || []).length;
+    console.log(`   Remaining __CODE_BLOCK__ placeholders: ${codeBlockCount}`);
+  }
+  
+  // 後処理: リストアイテムの先頭にある余分な__を削除
+  // パターン: "-   __`code`" → "-   `code`"
+  result = result.replace(/^([-*+]\s+)__(`[^`]+`)/gm, '$1$2');
+  
   return result;
 }
 

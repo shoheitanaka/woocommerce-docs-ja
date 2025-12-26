@@ -1,11 +1,11 @@
-# WooCommerce Block Development
+# WooCommerceブロック開発
 
 WooCommerceブロック開発ドキュメントへようこそ！  
-このセクションはWooCommerceのブロックの構築、カスタマイズ、拡張方法を学ぶための出発点です。
+このセクションは、WooCommerceのブロックの構築、カスタマイズ、拡張方法を学ぶための出発点です。
 
 このガイドでは、ブロック開発の初心者でも、専門知識を深めたい方でも、基本から高度な拡張性まで、順を追って説明します。
 
-## Start Here
+## ♪ここから始めよう
 
 - **入門](/docs/block-development/getting-started/extensibility-overview/)**：環境をセットアップし、最初のブロックを作成します。
 - **チュートリアル](/docs/category/tutorials/)**：ハンズオン・ガイドに従って、ブロックを構築し、強化してください。

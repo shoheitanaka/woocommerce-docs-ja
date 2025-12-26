@@ -1,14 +1,14 @@
 # Website
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+このウェブサイトは、最新の静的ウェブサイト・ジェネレーターである[Docusaurus](https://docusaurus.io/)を使用して構築されています。
 
-## Installation
+## インスタレーション
 
 ```bash
 npm install
 ```
 
-## Local Development
+## 地方開発
 
 ```bash
 npm run start
@@ -22,11 +22,11 @@ npm run start
 npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+このコマンドは、`build`ディレクトリに静的コンテンツを生成し、任意の静的コンテンツ・ホスティング・サービスを使って提供することができる。
 
-## Deployment
+## 配備
 
-The contents in the `woocommerce/docs` folder are pulled via a GitHub Actions cron job defined in the [deploy-docs workflow](https://github.com/woocommerce/woo-docs-build/blob/trunk/.github/workflows/deploy-docs.yml). 
+`woocommerce/docs`フォルダ内のコンテンツは、[deploy-docsワークフロー](https://github.com/woocommerce/woo-docs-build/blob/trunk/.github/workflows/deploy-docs.yml)で定義されたGitHub Actionsのcronジョブを介してプルされます。
 
-They are then built for production and a PR is created against the [woocommerce-woo-docs-multi-com repository](https://github.com/wpcomvip/woocommerce-woo-docs-multi-com) in that same GitHub Action.
+その後、本番用にビルドされ、同じ GitHub アクションの [woocommerce-woo-docs-multi-com リポジトリ](https://github.com/wpcomvip/woocommerce-woo-docs-multi-com) に対して PR が作成されます。
 

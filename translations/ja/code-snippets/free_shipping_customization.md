@@ -6,7 +6,6 @@ current wccom url: >-
 combined with: >-
   https://woocommerce.com/document/hide-other-shipping-methods-when-free-shipping-is-available/#use-a-plugin
 ---
-
 # 送料無料カスタマイズ
 
 ## 送料無料詳細設定/カスタマイズ
@@ -97,7 +96,7 @@ add_filter( 'woocommerce_package_rates', 'fsc_hide_shipping_rates_when_free_is_a
 return apply_filters( 'woocommerce_shipping_' . $this->id . '_is_available', $is_available );
 ```
 
-This means you can use `add_filter()` on `woocommerce_shipping_free_shipping_is_available` and receive `true` or `false` if Free Shipping is enabled. For example, this next snippet would log if Free Shipping is available or not:
+つまり、`woocommerce_shipping_free_shipping_is_available`で`add_filter()`を使用し、送料無料が有効であれば`true`または`false`を受け取ることができます。例えば、次のスニペットは送料無料が利用可能かどうかを記録します：
 
 ```php
 /**
@@ -120,4 +119,4 @@ add_filter( 'woocommerce_shipping_free_shipping_is_available', 'fsc_free_shippin
 
 ### クラスごと／商品ごとの配送方法、分割注文、その他のシナリオを有効にしますか？
 
-Need more flexibility? Take a look at our [premium Shipping Method extensions](https://woocommerce.com/product-category/woocommerce-extensions/shipping-methods/).
+もっと柔軟性が必要ですか？プレミアム配送方法拡張機能](https://woocommerce.com/product-category/woocommerce-extensions/shipping-methods/)をご覧ください。

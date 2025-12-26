@@ -1,7 +1,6 @@
 ---
 post_title: Rename a country
 ---
-
 # 国名の変更
 
 国名リストの国名を変更します：

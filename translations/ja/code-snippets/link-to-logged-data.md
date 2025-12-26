@@ -2,7 +2,6 @@
 post_title: Add link to logged data
 sidebar_label: Add link to logged data
 ---
-
 # 記録されたデータへのリンクを追加する
 
 [ロギング](/docs/best-practices/data-management/logging)はWooCommerceエクステンションの重要な部分です。エラーを追跡し、問題をデバッグするのに役立ちます。一般的なパターンは、ユーザが問題を解決する必要があるときにログを有効にする設定をエクステンションに持つことです。次のコードスニペットは、[設定API](/docs/extensions/settings-and-config/settings-api)のコンテキストで、この設定とログビューアへのリンクを追加する方法の例を示しています。

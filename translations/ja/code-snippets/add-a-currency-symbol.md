@@ -2,8 +2,7 @@
 post_title: Add currencies and symbols
 sidebar_label: Add currencies and symbols
 ---
-
-# Add currencies and symbols
+# 通貨と記号の追加
 
 通貨リストにカスタム通貨を追加：
 

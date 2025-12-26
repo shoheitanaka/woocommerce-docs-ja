@@ -1,12 +1,11 @@
 ---
 post_title: Change a currency symbol
 ---
+# 通貨記号の変更
 
-# Change a currency symbol
+WooCommerceでは、各通貨はコードとシンボルに関連付けられています。例えば、オーストラリアドルは`AUD`というコードと`WooCommerceでは、各通貨はコードとシンボルに関連付けられています。例えば、オーストラリアドルは`AUD`というコードとというシンボルを持っています（もし興味があれば、[ソースコード](https://github.com/woocommerce/woocommerce/blob/9.6.1/plugins/woocommerce/includes/wc-core-functions.php#L682)でコードとシンボルの完全なリストを見ることができます）。 
 
-In WooCommerce, each currency is associated with a code and a symbol. For example, the Australian dollar has the code `AUD` and the symbol `$` (if you are interested, you can see a full list of codes and symbols in the [source code](https://github.com/woocommerce/woocommerce/blob/9.6.1/plugins/woocommerce/includes/wc-core-functions.php#L682)). 
-
-However, there may be situations where you wish to change the symbol. Taking our example of the Australian dollar, it uses the same symbol as many other dollar currencies and so, in certain situations where this could lead to confusion, it might be useful to change it to `AUD$`. The following snippet outlines how this might be done:
+しかし、シンボルを変更したい場合もあるでしょう。オーストラリアドルを例にとると、オーストラリアドルは他の多くのドル通貨と同じ記号を使用しているため、混乱を招きかねない状況では、`AUDしかし、シンボルを変更したい場合もあるでしょう。オーストラリアドルを例にとると、オーストラリアドルは他の多くのドル通貨と同じ記号を使用しているため、混乱を招きかねない状況では、に変更するのが便利かもしれません。次のスニペットは、この方法を説明したものです：
 
 ```php
 if ( ! function_exists( 'YOUR_PREFIX_change_currency_symbol' ) ) {

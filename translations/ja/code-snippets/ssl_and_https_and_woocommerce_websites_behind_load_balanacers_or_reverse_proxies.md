@@ -4,16 +4,15 @@ sidebar_label: SSL and HTTPS and WooCommerce
 current wccom url: >-
   https://woocommerce.com/document/ssl-and-https/#websites-behind-load-balancers-or-reverse-proxies
 ---
-
 # SSLとHTTPSとWooCommerce
 
 ## ロードバランサーやリバースプロキシの背後にあるウェブサイト
 
-WooCommerce uses the `is_ssl()` WordPress function to verify if your website using SSL or not.
+WooCommerceは、`is_ssl()` WordPress関数を使用して、ウェブサイトがSSLを使用しているかどうかを確認します。
 
-`is_ssl()` checks if the connection is via HTTPS or on Port 443. However, this won't work for websites behind load balancers, especially websites hosted at Network Solutions. For details, read [WordPress is_ssl() function reference notes](https://codex.wordpress.org/Function_Reference/is_ssl#Notes).
+`is_ssl()`は、接続がHTTPS経由かポート443経由かをチェックします。しかし、これはロードバランサーの背後にあるウェブサイト、特にNetwork Solutionsでホストされているウェブサイトでは動作しません。詳細については、[WordPress [is_ssl()関数リファレンスノート](https://codex.wordpress.org/Function_Reference/is_ssl#Notes)をお読みください。
 
-Websites behind load balancers or reverse proxies that support `HTTP_X_FORWARDED_PROTO` can be fixed by adding the following code to the `wp-config.php` file, above the require_once call:
+`HTTP_X_FORWARDED_PROTO`をサポートしているロードバランサーやリバースプロキシーの背後にあるウェブサイトは、`wp-config.php`ファイルのrequire_once呼び出しの上に以下のコードを追加することで修正できます：
 
 ```php
 if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && 'https' == $_SERVER['HTTP_X_FORWARDED_PROTO'] ) {

@@ -1,10 +1,9 @@
 ---
 post_title: Customizing checkout fields using actions and filters
 ---
+# アクションとフィルターを使ったチェックアウトフィールドのカスタマイズ
 
-# Customizing checkout fields using actions and filters
-
-If you are unfamiliar with code and resolving potential conflicts, we have an extension that can help: [WooCommerce Checkout Field Editor](https://woocommerce.com/products/woocommerce-checkout-field-editor/). Installing and activating this extension overrides any code below that you try to implement; and you cannot have custom checkout field code in your functions.php file when the extension is activated.
+コードや潜在的なコンフリクトの解決に不慣れな場合は、お役に立てるエクステンションがあります：[WooCommerce [Checkout Field Editor](https://woocommerce.com/products/woocommerce-checkout-field-editor/).この拡張機能をインストールし、有効化することで、あなたが実装しようとした以下のコードが上書きされます。また、拡張機能が有効化されている場合、functions.phpファイルにカスタムチェックアウトフィールドのコードを記述することはできません。
 
 カスタムコードは、子テーマの**functions.php**ファイルにコピーしてください。
 
@@ -14,7 +13,7 @@ If you are unfamiliar with code and resolving potential conflicts, we have an ex
 
 ## How Are Checkout Fields Loaded to WooCommerce?
 
-The billing and shipping fields for checkout pull from the countries class `class-wc-countries.php` and the **`get_address_fields`** function. This allows WooCommerce to enable/disable fields based on the user's location.
+チェックアウトの請求先フィールドと配送先フィールドは国クラス `class-wc-countries.php` と **`get_address_fields`** 関数から取得します。これにより、WooCommerceはユーザーのロケーションに基づいてフィールドを有効/無効にすることができます。
 
 これらのフィールドを返す前に、WooCommerceはフィールドを_filter_に通します。これにより、サードパーティのプラグインやテーマ、独自のカスタムコードで編集できるようになります。
 
@@ -30,7 +29,7 @@ Shipping:
 $address_fields = apply_filters( 'woocommerce_shipping_fields', $address_fields );
 ```
 
-The checkout class adds the loaded fields to its `checkout_fields` array, as well as adding a few other fields like "order notes".
+チェックアウト・クラスはロードされたフィールドを`checkout_fields`配列に追加し、"order notes "のような他のフィールドも追加します。
 
 ```php
 $this->checkout_fields['billing']  = $woocommerce->countries->get_address_fields( $this->get_value( 'billing_country' ), 'billing_' );
@@ -73,9 +72,9 @@ $this->checkout_fields = apply_filters( 'woocommerce_checkout_fields', $this->ch
 
 つまり、あなたはチェックアウトのフィールドを**フルコントロール**できるのです。
 
-## Overriding Core Fields
+## コアフィールドのオーバーライド
 
-Hooking into the **`woocommerce_checkout_fields`** filter lets you override any field. As an example, let's change the placeholder on the order_comments fields. Currently, it's set to:
+`woocommerce_checkout_fields`**フィルタにフックすることで、任意のフィールドを上書きすることができます。例として、order_commentsフィールドのプレースホルダーを変更してみましょう。現在は
 
 ```php
 _x( 'Notes about your order, e.g. special notes for delivery.', 'placeholder', 'woocommerce' );
@@ -94,7 +93,7 @@ function custom_override_checkout_fields( $fields ) {
 }
 ```
 
-ラベルなど、他の部分をオーバーライドすることができる：
+ラベルなど、他の部分を上書きすることもできる：
 
 ```php
 // Hook in
@@ -122,61 +121,61 @@ function custom_override_checkout_fields( $fields ) {
 }
 ```
 
-Here's a full list of fields in the array passed to `woocommerce_checkout_fields`:
+以下は、`woocommerce_checkout_fields`に渡された配列のフィールドの全リストである：
 
--   Billing
-    -   `billing_first_name`
-    -   `billing_last_name`
-    -   `billing_company`
-    -   `billing_address_1`
-    -   `billing_address_2`
-    -   `billing_city`
-    -   `billing_postcode`
-    -   `billing_country`
-    -   `billing_state`
-    -   `billing_email`
-    -   `billing_phone`
--   Shipping
-    -   `shipping_first_name`
-    -   `shipping_last_name`
-    -   `shipping_company`
-    -   `shipping_address_1`
-    -   `shipping_address_2`
-    -   `shipping_city`
+-   請求
+    -   __`billing_first_name`
+    -   __`billing_last_name`
+    -   __`billing_company`
+    -   __`billing_address_1`
+    -   __`billing_address_2`
+    -   インラインコード
+    -   インラインコード
+    -   インラインコード7
+    -   インラインコード8
+    -   インラインコード9
+    -   インライン・コード10
+-   送料
+    -   __`shipping_first_name`
+    -   発送 `shipping_last_name`
+    -   発送 `shipping_company`
+    -   発送 `billing_country`
+    -   発送 `shipping_address_2`
+    -   インラインコード
     -   `shipping_postcode`
-    -   `shipping_country`
-    -   `shipping_state`
--   Account
-    -   `account_username`
-    -   `account_password`
-    -   `account_password-2`
--   Order
-    -   `order_comments`
+    -   インラインコード
+    -   インラインコード
+-   アカウント
+    -   口座番号 `account_username`
+    -   口座番号 `account_password`
+    -   口座 `account_password-2`
+-   注文
+    -   __`order_comments`
 
 各フィールドはプロパティの配列を含む：
 
--   `type` - type of field (text, textarea, password, select)
--   `label` - label for the input field
--   `placeholder` - placeholder for the input
--   `class` - class for the input
--   `required` - true or false, whether or not the field is require
--   `clear` - true or false, applies a clear fix to the field/label
--   `label_class` - class for the label element
--   `options` - for select boxes, array of options (key => value pairs)
+-   `type` - フィールドの種類 (テキスト、テキストエリア、パスワード、セレクト)。
+-   `label` - 入力フィールドのラベル。
+-   `placeholder` - 入力フィールドのプレースホルダ。
+-   `class` - 入力クラス。
+-   `required` - true あるいは false、フィールドが必須かどうか。
+-   `clear` - true あるいは false で、フィールド/ラベルに明確な修正を適用します。
+-   `label_class` - label 要素のクラス。
+-   `options` - セレクトボックスのための、オプションの配列 (キー =&gt; 値のペア)
 
-In specific cases you need to use the **`woocommerce_default_address_fields`** filter. This filter is applied to all billing and shipping default fields:
+特定のケースでは、**`woocommerce_default_address_fields`**フィルタを使用する必要があります。このフィルタはすべての請求および配送のデフォルトフィールドに適用されます：
 
 -   `country`
 -   `first_name`
 -   `last_name`
 -   `company`
--   `address_1`
--   `address_2`
--   `city`
--   `state`
--   `postcode`
+-   ラインコード
+-   インラインコード
+-   インラインコード
+-   インラインコード7
+-   インラインコード8
 
-For example, to make the `address_1` field optional:
+例えば、`address_1`フィールドをオプションにする：
 
 ```php
 // Hook in
@@ -190,7 +189,7 @@ function custom_override_default_address_fields( $address_fields ) {
 }
 ```
 
-### Defining select options
+### セレクトオプションの定義
 
 select'タイプのフィールドを追加する場合、上記のようにキーと値のペアを定義します。例えば
 
@@ -201,23 +200,23 @@ $fields['billing']['your_field']['options'] = array(
 );
 ```
 
-## Priority
+## 優先順位
 
 PHPコードに関する優先順位は、関数と呼ばれるコードがページのロードに関連して実行されるタイミングを確立するのに役立ちます。これは各関数の内部で設定され、カスタム表示のために既存のコードを上書きするときに便利です。
 
 つまり、優先度20のコードは優先度10のコードの後に実行される。
 
-The priority argument is set during the [add_action](https://developer.wordpress.org/reference/functions/add_action/) function, after you establish which hook you're connecting to and what the name of your custom function will be.
+priority引数は、どのフックに接続し、カスタム関数の名前を決めた後、[add_action](https://developer.wordpress.org/reference/functions/add_action/)関数の中で設定します。
 
 下の例では、青い文字が修正するフックの名前、緑の文字がカスタム関数の名前、赤が設定した優先順位です。
 
 ![Setting priority for the hooked function](https://developer.woocommerce.com/wp-content/uploads/2023/12/priority-markup.png)
 
-## Examples
+## 例
 
-### Change Return to Shop button redirect URL
+### ショップに戻るボタンのリダイレクトURLを変更する
 
-In this example, the code is set to redirect the "Return to Shop" button found in the cart to a category that lists products for sale at `http://example.url/category/specials/`.
+この例では、カート内の「ショップに戻る」ボタンを、`http://example.url/category/specials/`で販売されている商品を掲載しているカテゴリーにリダイレクトするようにコードを設定しています。
 
 ```php
 /**
@@ -269,9 +268,9 @@ function wc_empty_cart_redirect_url() {
 add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url', 10 );
 ```
 
-### Adding Custom Shipping And Billing Fields
+### カスタム配送・請求フィールドの追加
 
-Adding fields is done in a similar way to overriding fields. For example, let's add a new field to shipping fields - `shipping_phone`:
+フィールドの追加は、フィールドのオーバーライドと同様の方法で行います。例えば、シッピング・フィールドに新しいフィールド`shipping_phone`を追加してみましょう：
 
 ```php
 // Hook in
@@ -304,9 +303,9 @@ function my_custom_checkout_field_display_admin_order_meta($order){
 
 生きている！
 
-What do we do with the new field? Nothing. Because we defined the field in the `checkout_fields` array, the field is automatically processed and saved to the order post meta (in this case, `_shipping_phone`). If you want to add validation rules, see the checkout class where there are additional hooks you can use.
+新しいフィールドで何をするか？何もしません。`checkout_fields`配列でフィールドを定義したので、フィールドは自動的に処理され、注文の投稿メタ（この場合は`_shipping_phone`）に保存されます。バリデーションルールを追加したい場合は、チェックアウトクラスを参照してください。
 
-### Adding a Custom Special Field
+### カスタム特殊フィールドの追加
 
 カスタムフィールドの追加も同様です。次のようにフックして、注文メモの後に新しいフィールドをチェックアウトに追加してみましょう：
 
@@ -396,7 +395,7 @@ function my_custom_checkout_field_display_admin_order_meta( $order ){
 
 ![checkout_field_custom_field_admin](https://developer.woocommerce.com/wp-content/uploads/2023/12/checkout_field_custom_field_admin.png)
 
-### Make phone number not required
+### 電話番号は不要
 
 ```php
 add_filter( 'woocommerce_billing_fields', 'wc_npr_filter_phone', 10, 1 );

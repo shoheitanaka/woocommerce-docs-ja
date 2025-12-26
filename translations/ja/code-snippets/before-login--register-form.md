@@ -1,8 +1,7 @@
 ---
 post_title: Add a message above the login / register form
 ---
-
-# Add a message above the login / register form
+# ログイン/登録フォームの上にメッセージを追加する
 
 このコードは、ユーザーのmy-accountページのログイン/登録フォームの上にカスタムメッセージを追加します。
 

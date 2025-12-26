@@ -2,8 +2,7 @@
 post_title: Add a country
 sidebar_label: Add a country
 ---
-
-# Add a country
+# 国を追加する
 
 このコード・スニペットを使って、国名リストに国名を追加してください：
 
