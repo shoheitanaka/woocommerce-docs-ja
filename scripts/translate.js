@@ -248,6 +248,9 @@ async function restoreFromCache(markdown, cache) {
  */
 function extractTranslatableSegments(markdown) {
   const segments = [];
+  const apiMaxChars = config?.translation?.maxCharsPerRequest || 5000;
+  const segmentSplitThreshold = Math.max(1000, apiMaxChars - 500); // API上限に近い長文を分割
+  const chunkSizeLimit = Math.max(500, segmentSplitThreshold - 500); // 分割後チャンクの目安サイズ
   
   // 全体的なコードブロック、インラインコード、URLを保存
   const allCodeBlocks = [];
@@ -303,10 +306,9 @@ function extractTranslatableSegments(markdown) {
         console.log(`   [Segment ${debugSegmentCount}] Length: ${trimmed.length}, Preview: ${trimmed.substring(0, 80)}...`);
       }
       
-      // 非常に長いセグメント（30000文字以上）を分割
-      // DeepL APIの制限は50000文字なので、余裕を持たせる
-      if (trimmed.length > 30000) {
-        console.log(`   ⚠ Warning: Segment ${debugSegmentCount} is very long (${trimmed.length} chars). Splitting into smaller parts...`);
+      // 非常に長いセグメントを分割（APIリクエストの上限に合わせる）
+      if (trimmed.length > segmentSplitThreshold) {
+        console.log(`   ⚠ Warning: Segment ${debugSegmentCount} exceeds safe length (${trimmed.length} chars > ${segmentSplitThreshold}). Splitting into smaller parts...`);
         
         let chunks = [];
         
@@ -322,7 +324,7 @@ function extractTranslatableSegments(markdown) {
           for (const part of parts) {
             if (!part) continue;
             
-            if (currentChunk.length + part.length > 2500) {
+            if (currentChunk.length + part.length > chunkSizeLimit) {
               if (currentChunk.trim()) {
                 chunks.push(currentChunk.trim());
               }
@@ -345,7 +347,7 @@ function extractTranslatableSegments(markdown) {
           for (const part of parts) {
             if (!part.trim()) continue;
             
-            if (currentChunk.length + part.length + 2 > 2500) {
+            if (currentChunk.length + part.length + 2 > chunkSizeLimit) {
               if (currentChunk.trim()) {
                 chunks.push(currentChunk.trim());
               }
@@ -366,7 +368,7 @@ function extractTranslatableSegments(markdown) {
           let currentChunk = '';
           
           for (const line of lines) {
-            if (currentChunk.length + line.length + 1 > 2500) {
+            if (currentChunk.length + line.length + 1 > chunkSizeLimit) {
               if (currentChunk.trim()) {
                 chunks.push(currentChunk.trim());
               }
@@ -384,17 +386,27 @@ function extractTranslatableSegments(markdown) {
         // 戦略4: 強制的に文字数で分割（最後の手段）
         else {
           const text = paragraph;
-          for (let i = 0; i < text.length; i += 2500) {
-            chunks.push(text.substring(i, i + 2500).trim());
+          for (let i = 0; i < text.length; i += chunkSizeLimit) {
+            chunks.push(text.substring(i, i + chunkSizeLimit).trim());
           }
           
           console.log(`   → Force split by character count into ${chunks.length} chunks`);
         }
         
-        console.log(`   Chunk sizes: ${chunks.map(c => c.length).join(', ')}`);
+        // チャンクが依然として長い場合は文字数でさらに分割
+        const normalizedChunks = chunks.flatMap(chunk => {
+          if (chunk.length <= segmentSplitThreshold) return [chunk];
+          const forced = [];
+          for (let i = 0; i < chunk.length; i += chunkSizeLimit) {
+            forced.push(chunk.substring(i, i + chunkSizeLimit).trim());
+          }
+          return forced;
+        });
+        
+        console.log(`   Chunk sizes: ${normalizedChunks.map(c => c.length).join(', ')}`);
         
         // 各チャンクを個別のセグメントとして追加
-        for (const chunk of chunks) {
+        for (const chunk of normalizedChunks) {
           if (chunk.length > 10) {
             let normalizedChunk = chunk;
             const segmentCodeBlocks = [];
