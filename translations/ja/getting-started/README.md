@@ -3,14 +3,15 @@ slug: /
 sidebar_position: 0
 sidebar_label: Getting Started
 ---
-
-# Getting started
+# はじめに
 
 WooCommerceは、WordPress上に構築されたカスタマイズ可能なオープンソースのeコマースプラットフォームです。物理的な製品やデジタルダウンロードから、購読、コンテンツ、さらには予約まで、あらゆるものを販売する世界中のビジネスを支援します。
 
-* WordPress [プラグイン開発](https://developer.wordpress.org/plugins/) に慣れてください。
-* 開発者向けリソース](https://developer.wordpress.org/plugins/plugin-basics/) をご覧ください。
-* Woo [Community Slack](https://woo.com/community-slack/) に参加する。
+[* WordPress プラグイン開発](https://developer.wordpress.org/plugins/) に慣れてください。
+* [開発者向けリソース](https://developer.wordpress.org/plugins/plugin-basics/) をご覧ください。
+* Woo Community [Slack](https://woo.com/community-slack/) に参加する。
+
+---
 
 ## WooCommerceエクステンションの構築
 
@@ -20,7 +21,9 @@ WooCommerce エクステンションを構築し、強化するための包括�
 * [シンプルな拡張機能の設計](/docs/extensions/getting-started-extensions/how-to-design-a-simple-extension)
 * [拡張機能開発のベストプラクティス](/docs/extensions/best-practices-extensions/extension-development-best-practices)
 
-拡張機能開発](/docs/extensions/getting-started-extensions/)についてもっと知る。
+[拡張機能開発](/docs/extensions/getting-started-extensions/)についてもっと知る。
+
+---
 
 ## WooCommerceテーマを作る
 
@@ -30,7 +33,9 @@ WooCommerceテーマ開発の技術を発見してください。テーマのカ
 * [クラシックテーマ開発者ハンドブック](/docs/theming/theme-development/classic-theme-developer-handbook)
 * [テーマのデザインとユーザー体験のガイドライン](/docs/theming/theme-development/theme-design-ux-guidelines)
 
-クラシックテーマ開発](/docs/theming/theme-development/classic-theme-developer-handbook)または[ブロックテーマ開発](/docs/theming/block-theme-development/theming-woo-blocks)についてもっと詳しく。
+[クラシックテーマ開発](/docs/theming/theme-development/classic-theme-developer-handbook)または[ブロックテーマ開発](/docs/theming/block-theme-development/theming-woo-blocks)についてもっと詳しく。
+
+---
 
 ## WooCommerceへの貢献
 
@@ -40,13 +45,17 @@ WooCommerceテーマ開発の技術を発見してください。テーマのカ
 * [GitHubのオープンイシュー](https://github.com/woocommerce/woocommerce/issues)
 * [Wooコントリビューターガイドライン](/docs/contribution/contributing/)
 
-貢献](/docs/contribution/contributing)についてもっと知る
+[貢献](/docs/contribution/contributing)についてもっと知る
+
+---
 
 ## その他のリソース
 
 * [WooCommerce公式サイト](https://woocommerce.com/)
 * [Wooマーケットプレイス](https://woocommerce.com/marketplace)
 * すべての[GitHub上のWooCommerceリポジトリ](https://woocommerce.github.io/)
+
+---
 
 ## 開発者ではない？
 

@@ -10,7 +10,7 @@ current wccom url: >-
 
 WooCommerceは、`is_ssl()` WordPress関数を使用して、ウェブサイトがSSLを使用しているかどうかを確認します。
 
-`is_ssl()`は、接続がHTTPS経由かポート443経由かをチェックします。しかし、これはロードバランサーの背後にあるウェブサイト、特にNetwork Solutionsでホストされているウェブサイトでは動作しません。詳細については、[WordPress [is_ssl()関数リファレンスノート](https://codex.wordpress.org/Function_Reference/is_ssl#Notes)をお読みください。
+`is_ssl()`は、接続がHTTPS経由かポート443経由かをチェックします。しかし、これはロードバランサーの背後にあるウェブサイト、特にNetwork Solutionsでホストされているウェブサイトでは動作しません。詳細については、[WordPress is_ssl()関数リファレンスノート](https://codex.wordpress.org/Function_Reference/is_ssl#Notes)をお読みください。
 
 `HTTP_X_FORWARDED_PROTO`をサポートしているロードバランサーやリバースプロキシーの背後にあるウェブサイトは、`wp-config.php`ファイルのrequire_once呼び出しの上に以下のコードを追加することで修正できます：
 

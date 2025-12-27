@@ -97,9 +97,9 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット<!-- omit in toc -->
 
-| 前 | 後 |
+| 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|![カート項目クラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a587a6ce-d051-4ed0-bba5-815b5d72179d) |![カート項目クラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/9b25eeae-6d81-4e28-b177-32f942e1d0c2) |
+|![カート項目クラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a587a6ce-d051-4ed0-bba5-815b5d72179d) |![カート項目クラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/9b25eeae-6d81-4e28-b177-32f942e1d0c2) |｜...
 
 ## `cartItemPrice`
 
@@ -252,9 +252,9 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット<!-- omit in toc -->
 
-| 前 | 後 |
+|![ 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|![項目名フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/97d0f501-138e-4448-93df-a4d865b524e6) |![項目名フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/69381932-d064-4e8f-b378-c2477fef56ae) |
+|項目名フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/97d0f501-138e-4448-93df-a4d865b524e6) |!
 
 ## `saleBadgePriceFormat`
 
@@ -340,7 +340,7 @@ registerCheckoutFilters( 'example-extension', {
 
 [| 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|![セール・バッジ価格形式フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d2aeb206-e620-44e0-93c1-31484cfcdca6) |![セール・バッジ価格形式フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/6b929695-5d89-433b-8694-b9201a7c0519) |｜...
+|セール・バッジ価格形式フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d2aeb206-e620-44e0-93c1-31484cfcdca6) |![セール・バッジ価格形式フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/6b929695-5d89-433b-8694-b9201a7c0519) |｜...
 
 ## `showRemoveItemLink`
 
@@ -573,7 +573,7 @@ registerCheckoutFilters( 'example-extension', {
 -   decsription_ `string` - カートアイテムの説明。
 -   extensions_ `object` (default: `{}`) - 拡張オブジェクト。
 -   id_ `number` - アイテムID。
--   images_ `array` - アイテム画像の配列。
+-   images_ `array` - アイテムの画像配列。
 -   item_data_ `array` - アイテムデータの配列。
 -   key_ `string` - アイテムのキー。
 -   __low_stock_remaining_ `number` - 残りの在庫数。
@@ -603,7 +603,7 @@ registerCheckoutFilters( 'example-extension', {
     -   minimum_ `number` - 最小量。
     -   multiple_of_ `number` - 数量の倍数。
 -   short_description_ `string` - 商品の短い説明。
--   show_backorder_badge_ `boolean` - バックオーダーのバッジを表示するかどうか。
+-   _show_backorder_badge_ `boolean` - バックオーダーのバッジを表示するかどうか。
 -   sku_ `string` - 商品のSKU。
 -   sold_individually_ `boolean` - アイテムが個別に販売されているかどうか。
 -   totals_ `object` - 以下のキーを持つ項目の合計オブジェクトです：

@@ -3,36 +3,35 @@ post_title: WooCommerce Pre-releases
 sidebar_label: WooCommerce Pre-releases
 sidebar_position: 5
 ---
+# WooCommerceプレリリース
 
-# WooCommerce Pre-releases
-
-WooCommerceプレリリースは、開発者、テスター、およびコミュニティが将来のリリースに備えることができるように、今後の機能や改善点への早期アクセスを提供します。
+WooCommerceのプレリリースは、開発者、テスター、およびコミュニティが将来のリリースに備えることができるように、今後の機能や改善への早期アクセスを提供します。
 
 この文書では、利用可能なさまざまな種類のプレリリースの概要、そのタイミング、およびそれらが全体的なリリース・サイクルにどのように適合するかについて説明します。
 
-| Release Name      | Estimated Timing                                     |
+| リリース名 | 予定時期 |
 |-------------------|------------------------------------------------------|
-| `nightly`         | Every night                                          |
-| `-dev`            | At feature freeze                                    |
-| `-beta.1`         | 1 week after feature freeze                          |
-| `-beta.2`, ...    | At least 1 more, as needed before `-rc.1`            |
-| `-rc.1`           | Shortly (~1 day) before final release                |
+|`nightly` | 毎晩
+|`-dev` | フリーズ時
+|`-beta.1` | フリーズから1週間後
+|`-beta.2`, ...    |`-rc.1` の前に、必要に応じて少なくとももう1つ。
+|`-rc.1` | 最終リリースの少し前（～1日） |...
 
 ## Nightlies
 
-Regenerated every night based on the current contents of `trunk`. Found [under the `nightly` tag on GitHub](https://github.com/woocommerce/woocommerce/releases/tag/nightly).
+[`trunk`の現在の内容に基づいて毎晩再生成される。GitHubの`nightly`タグで](https://github.com/woocommerce/woocommerce/releases/tag/nightly)。
 
 これらはGitHubリポジトリでのみ公開されており、WordPress.orgにはアップロードされていません。
 
-## Release cycle pre-releases
+## リリースサイクル プレリリース
 
-Once the feature freeze for the upcoming main version (`X.Y.0`) happens, a release-specific branch is created (named `release/x.y`) which is used for stabilization, fixing regressions, and building all the pre-releases tied to that release cycle.
+次期メインバージョン（`X.Y.0`）の機能フリーズが発生すると、リリース固有のブランチ（`release/x.y`）が作成され、安定化、リグレッションの修正、そのリリースサイクルに関連するすべてのプレリリースのビルドに使用されます。
 
-These releases are tagged at various points in time as described below. As usual, the source of truth for any specific dates is [our release calendar](https://developer.woocommerce.com/release-calendar/).
+これらのリリースは、以下のように様々な時点でタグ付けされている。例によって、特定の日付に関する真実の情報源は[私たちのリリースカレンダー](https://developer.woocommerce.com/release-calendar/)です。
 
-### `-dev` release
+### `-dev` リリース
 
-This is an auto-generated tag that is created at the same time as the feature freeze happens for the current cycle. For example, when the feature freeze for `10.1.0` happened, `10.1.0-dev` was tagged.
+これは自動生成されるタグで、現在のサイクルで機能凍結が起こると同時に作成される。例えば、`10.1.0`の機能フリーズが発生すると、`10.1.0-dev`がタグ付けされます。
 
 これは内部開発用のタグで、GitHub リポジトリでのみ利用可能で、WordPress.org では利用できません。
 
@@ -40,7 +39,7 @@ This is an auto-generated tag that is created at the same time as the feature fr
 
 プラグイン作者やアーリーアダプターが次期バージョンの機能や特徴をテストするために使用します。最初のベータ版は通常、機能フリーズの1週間後にリリースされます。
 
-Betas are versioned incrementally, starting with `-beta.1`, then `-beta.2`, and so on.
+ベータ版のバージョンは、`-beta.1`から始まり、`-beta.2`というように、段階的に変更される。
 
 最終的な安定版リリースの前に、重要なバグ修正や機能の追加テストが必要な場合、または重要なアップデートが行われる場合は、それ以上のベータ版をリリースすることも可能です。
 
@@ -48,10 +47,10 @@ Betas are versioned incrementally, starting with `-beta.1`, then `-beta.2`, and 
 
 WooCommerceのベータテストに参加し、貴重なフィードバックに貢献する方法については、[ベータテストに関するドキュメント](/docs/contribution/testing/beta-testing/)を参照してください。
 
-### Release Candidate (RC)
+### リリース候補（RC）
 
 これは、機能が完成し、最終テストに十分な安定性があるとみなされたプレリリース版です。RCは通常、最終リリースの少し前にリリースされ、最終的なテストとチェックのために社内で使用されます。
 
-They are versioned incrementally as `-rc.1`, `-rc.2`, and so on.
+これらは、`-rc.1`、`-rc.2`というように、インクリメンタルにバージョン管理される。
 
 最終リリースの前に少なくとも1回はRCをリリースすることを目標としており、これは公には発表されませんが、タグ付けされ、GitHubとWordPress.orgの両方でダウンロードできるようになります。

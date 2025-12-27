@@ -3,7 +3,7 @@ post_title: Customizing checkout fields using actions and filters
 ---
 # アクションとフィルターを使ったチェックアウトフィールドのカスタマイズ
 
-コードや潜在的なコンフリクトの解決に不慣れな場合は、お役に立てるエクステンションがあります：[WooCommerce [Checkout Field Editor](https://woocommerce.com/products/woocommerce-checkout-field-editor/).この拡張機能をインストールし、有効化することで、あなたが実装しようとした以下のコードが上書きされます。また、拡張機能が有効化されている場合、functions.phpファイルにカスタムチェックアウトフィールドのコードを記述することはできません。
+コードや潜在的なコンフリクトの解決に不慣れな場合は、お役に立てるエクステンションがあります：[WooCommerce Checkout Field Editor](https://woocommerce.com/products/woocommerce-checkout-field-editor/).この拡張機能をインストールし、有効化することで、あなたが実装しようとした以下のコードが上書きされます。また、拡張機能が有効化されている場合、functions.phpファイルにカスタムチェックアウトフィールドのコードを記述することはできません。
 
 カスタムコードは、子テーマの**functions.php**ファイルにコピーしてください。
 
@@ -29,7 +29,7 @@ Shipping:
 $address_fields = apply_filters( 'woocommerce_shipping_fields', $address_fields );
 ```
 
-チェックアウト・クラスはロードされたフィールドを`checkout_fields`配列に追加し、"order notes "のような他のフィールドも追加します。
+チェックアウト・クラスは、ロードされたフィールドを`checkout_fields`配列に追加し、"order notes "のような他のフィールドも追加します。
 
 ```php
 $this->checkout_fields['billing']  = $woocommerce->countries->get_address_fields( $this->get_value( 'billing_country' ), 'billing_' );
@@ -93,7 +93,7 @@ function custom_override_checkout_fields( $fields ) {
 }
 ```
 
-ラベルなど、他の部分を上書きすることもできる：
+ラベルなど、他の部分をオーバーライドすることができる：
 
 ```php
 // Hook in
@@ -161,7 +161,7 @@ function custom_override_checkout_fields( $fields ) {
 -   `required` - true あるいは false、フィールドが必須かどうか。
 -   `clear` - true あるいは false で、フィールド/ラベルに明確な修正を適用します。
 -   `label_class` - label 要素のクラス。
--   `options` - セレクトボックスのための、オプションの配列 (キー =&gt; 値のペア)
+-   `options` - セレクトボックスのための、オプションの配列 (キー => 値のペア)
 
 特定のケースでは、**`woocommerce_default_address_fields`**フィルタを使用する必要があります。このフィルタはすべての請求および配送のデフォルトフィールドに適用されます：
 
@@ -210,7 +210,7 @@ priority引数は、どのフックに接続し、カスタム関数の名前を
 
 下の例では、青い文字が修正するフックの名前、緑の文字がカスタム関数の名前、赤が設定した優先順位です。
 
-![Setting priority for the hooked function](https://developer.woocommerce.com/wp-content/uploads/2023/12/priority-markup.png)
+![フック機能の優先順位設定](https://developer.woocommerce.com/wp-content/uploads/2023/12/priority-markup.png)
 
 ## 例
 
@@ -299,7 +299,7 @@ function my_custom_checkout_field_display_admin_order_meta($order){
 }
 ```
 
-![adding custom sthipping and billing fields](https://developer.woocommerce.com/wp-content/uploads/2023/12/Webp-to-PNG-Shipping-Field-Hook.png)
+![カスタム明細と請求フィールドの追加](https://developer.woocommerce.com/wp-content/uploads/2023/12/Webp-to-PNG-Shipping-Field-Hook.png)
 
 生きている！
 
@@ -337,7 +337,7 @@ function my_custom_checkout_field( $checkout ) {
 
 これによって私たちは
 
-![WooCommerce Codex - Checkout Field Hook](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Hook.png)
+![WooCommerce Codex - チェックアウトフィールドフック](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Hook.png)
 
 次に、チェックアウトフォームが投稿されたときにフィールドをバリデートする必要があります。この例では、フィールドに文字だけが含まれていることをチェックしましょう：
 
@@ -357,7 +357,7 @@ function my_custom_checkout_field_process() {
 
 フィールドが空白の場合、チェックアウトエラーが表示されます：
 
-![WooCommerce Codex - Checkout Field Notice](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Notice.png)
+![WooCommerce Codex - チェックアウトフィールドのお知らせ](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Notice.png)
 
 最後に、以下のコードを使って、新しいフィールドをカスタムフィールドの注文に保存しましょう：
 

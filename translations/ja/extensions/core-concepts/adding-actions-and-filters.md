@@ -3,8 +3,7 @@ post_title: How to add actions and filters
 sidebar_label: Actions and filters
 sidebar_position: 2
 ---
-
-# How to add actions and filters
+# アクションとフィルタの追加方法
 
 多くのWordPressプラグインがそうであるように、WooCommerceは、開発者がプラットフォームを拡張し、変更することができるアクションとフィルタの範囲を提供します。
 
@@ -27,18 +26,18 @@ sidebar_position: 2
 
 これらの項目以外では、一般的にWordPressのコーディング標準を遵守しています。フックに関しては、具体的には
 
-* [Documentation standards for hooks](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/#4-hooks-actions-and-filters)
-* [Guidance on Dynamic hook names](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#interpolation-for-naming-dynamic-hooks)
+* [フックの文書化基準](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/#4-hooks-actions-and-filters)
+* [動的フック名に関するガイダンス](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#interpolation-for-naming-dynamic-hooks)
 
 このガイドでは、原則のいくつかを説明するのに役立つよう、コードの例を示していることに注意してください。しかし、物事を簡潔に保つために、通常、docブロックを含む不必要な詳細は省略しています（しかし、実際には、フックは常にdocブロックを伴うべきです！）。
 
-## Prefer existing hooks (or other alternatives)
+## 既存のフック（または他の選択肢）を優先する
 
-フックには長期的な義務が伴います。開発者が依存するようになる新しいフックを追加して、それをまた取り除いてしまうのは一番避けたいことです。しかしこれは、フックを含むコード部分をリファクタリングする時が来た時に困難につながる可能性があり、時には意味のある変更を遅らせたり、後方互換性のコミットメントを損なうことなく変更を簡単に実装する方法を制限したりします。
+フックには長期的な義務が伴います。開発者が依存するようになる新しいフックを追加して、それをまた取り除くというのは一番避けたいことです。しかしこれは、フックを含むコード部分をリファクタリングする時が来た時に困難につながる可能性があり、意味のある変更を遅らせたり、後方互換性の約束を損なうことなく変更を簡単に実装する方法を制限したりすることがある。
 
 このような理由から、私たちは常に、合理的である限りにおいて、新しいフックを追加するよりも、既存のフックや代替アプローチを優先する。
 
-## Adding lifecycle hooks
+## ライフサイクルフックの追加
 
 ライフサイクルフックは、ライフサイクルイベントが開始されようとしていること、または終了したことを伝えるために使用することができる。そのようなイベントの例としては
 
@@ -69,7 +68,7 @@ function woocommerce_get_current_promotions( ...$args ) {
 }
 ```
 
-## Escape hooks
+## エスケープフック
 
 場合によっては、関数やメソッドのショートカットをサポートすることが適切なこともある。これはエスケープフックと呼ばれるもので、より良い方法がない場合にコードをオーバーライドする手段として有用である。
 
@@ -94,7 +93,7 @@ function get_product_metrics( $args ): array {
 }
 ```
 
-## Modifying function input and output (global rendering functions)
+## 関数の入出力の変更（グローバルレンダリング関数）
 
 グローバルレンダリングやフォーマット関数（いわゆる "テンプレートタグ"）の場合、より良い代替手段を実装することが容易でない場合、関数の引数と戻り値の両方にフィルタを追加することが許されます。
 
@@ -111,7 +110,7 @@ function woocommerce_format_sale_price( ...$args ): string {
 }
 ```
 
-## Prefer passing objects over IDs
+## IDよりもオブジェクトの受け渡しを優先
 
 アクションやフィルターによっては、オブジェクトID（商品IDなど）を主な値として渡すものもあれば、実際のオブジェクトそのもの（商品オブジェクトなど）を渡すものもあります。一貫性を保つためには、オブジェクトを渡すことが望ましいです。
 
@@ -129,7 +128,7 @@ function get_featured_product_for_current_customer( ) {
 }
 ```
 
-## Tying lifecycle hooks to methods of execution
+## ライフサイクルフックを実行方法に結びつける
 
 時には、同じアクションにつながる複数のパスが存在することがあります。例えば、注文はREST API、管理環境、またはフロントエンドで更新されます。さらに、ajax経由や通常のリクエストで更新されることもあります。
 
@@ -150,7 +149,7 @@ function on_ajax_order_creation() {
 }
 ```
 
-## Using filters as feature flags
+## フィルタを機能フラグとして使う
 
 フィルタを、機能の一部を有効にしたり無効にしたりする、一種の機能フラグとして使いたくなることがある。これは避けるべきです！オプションを使うことをお勧めします：
 
@@ -167,15 +166,15 @@ $super_products_enabled = (bool) apply_filters( 'woocommerce_super_products_are_
 $super_products_enabled = get_option( 'woocommerce_super_products_are_enabled', 'no' ) === 'yes';
 ```
 
-## Placement of filter hooks
+## フィルターフックの配置
 
 フィルターはテンプレートだけのアクションの中に置くべきではありません。テンプレート内で使用される値がフィルター可能であることが重要である場合、関連するロジックはテンプレートをロードすることを決定する関数またはメソッドに移動されるべきです。
 
-また、フィルター・フックをデータストア・クラスの内部に配置しないことが好ましい。これは、これらのコンポーネントの完全性を低下させる可能性があるからだ。
+また、フィルター・フックをデータストア・クラスの内部に配置しないことが好ましい。これは、それらのコンポーネントの完全性を低下させる可能性があるからだ。
 
-## Enumeration values inside hook names
+## フック名の中の列挙値
 
-動的なフック名（フック名の一部が変数を使って作られる）の場合もあるが、経験則では、変数に列挙値と考えられるものが含まれている場合は、これを避けるのがよい。
+動的なフック名（フック名の一部が変数を使って作成される）の場合もあるが、経験則では、変数に列挙値と考えられるものが含まれている場合は、これを避けるのがよい。
 
 例えば、エラーコードがフック名の一部になっているような場合である。
 

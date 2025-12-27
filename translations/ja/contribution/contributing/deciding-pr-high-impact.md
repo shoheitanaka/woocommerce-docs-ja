@@ -2,29 +2,28 @@
 post_title: How to assess the impact of a pull request
 sidebar_label: Assessing PR impact
 ---
-
-# How to assess the impact of a pull request
+# プルリクエストの影響を評価する方法
 
 Pull RequestがHigh-Impactと宣言されるべきかどうかを決定するのは複雑な作業です。これを達成するためには、Pull Requestで導入された変更がWooCommerceに与える影響を評価し、見積もる必要があります。これは通常主観的な作業であり、WooCommerceの製品詳細、技術的な詳細、さらには顧客の問題履歴に関する膨大な知識が要求されるため、時には不正確なこともあります。
 
 このページでは、プルリクエストの影響度を評価するためのガイドラインをご紹介します。
 
-## You should mark a Pull Request as High-Impact if
+## 以下の場合、その Pull Request を High-Impact としてマークする必要があります。
 
-- It adds a **new feature** to WooCommerce, except if it's behind a feature flag.
-- Modifies **critical functionality** (see the [critical flows list](https://github.com/woocommerce/woocommerce/wiki/Critical-Flows)).
-- It fixes a **high-priority bug** (this includes Blocks fix releases core version bumps).
-- It contains a **security fix**.
-- Updates **SQL queries**.
-- Touches any of the **$_REQUEST** family of variables.
-- Any kind of **data migration/update**.
-- Changes to **emails** sent from WooCommerce.
-- Changes to WooCommerce **hooks/actions/filters**.
-- Changes to **REST API endpoints**.
-- It's a **big PR** (i.e. adds several changes in many files).
-- It has **i18n changes** (for example, any file from `woocommerce/i18n` is modified).
+- WooCommerceに**新機能**を追加します。ただし機能フラグの後ろにある場合は除きます。
+- クリティカルな機能**を変更します（[クリティカルフローリスト](https://github.com/woocommerce/woocommerce/wiki/Critical-Flows)をご覧ください）。
+- 優先度の高いバグを修正します。
+- セキュリティに関する修正**が含まれています。
+- SQLクエリを更新します。
+- 変数 **$_REQUEST** ファミリーのいずれかに触れている。
+- あらゆる種類の**データ移行/更新**。
+- WooCommerceから送信される**メール**の変更。
+- WooCommerce **フック/アクション/フィルタ**への変更。
+- REST APIエンドポイント**の変更。
+- これは**大きなPR**です（つまり、多くのファイルでいくつかの変更が追加されます）。
+- i18nの変更**があります(例えば、`woocommerce/i18n`のファイルが変更されています)。
 
-## You should not mark a Pull Request as High-Impact if
+## 以下の場合、Pull RequestをHigh-Impactとマークすべきではありません。
 
 - 自動テスト、WooCommerceリリースパッケージに含まれていないインフラに関連するもの、リリースパッケージに含まれていないmonorepoの他のプロジェクトのみを更新します。
 - Readmeや変更履歴の変更のみが含まれます。
@@ -33,6 +32,6 @@ Pull RequestがHigh-Impactと宣言されるべきかどうかを決定するの
 - 定期的に予定されている (修正リリースではない) Blocks パッケージのコアバージョンアップ (テストがすでに予定されているため)。
 - まだ全体としてリリースされていない機能の一部である（つまり、現在進行中の機能フラグの後ろにある）。
 
-## My PR is High-Impact. What's next?
+## 私のPRはハイインパクト。次の目標は？
 
-If your PR is High-Impact, be sure to label it with `impact: high` and the WooCommerce Core team will keep special considerations for testing it.
+もしあなたのPRがHigh-Impactの場合、必ず`impact: high`を付けてください。

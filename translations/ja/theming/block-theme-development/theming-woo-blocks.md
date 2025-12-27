@@ -47,7 +47,7 @@ WooCommerceには2つの特定の[ブロックテンプレート部品](https://
 
 ### グローバルスタイル
 
-WooCommerceブロックは[グローバルスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/styles/)に依存します。グローバルスタイルはテーマによって`theme.json`で定義されるか、ユーザによって外観 &gt; エディタ &gt; スタイルで定義されます：
+WooCommerceブロックは[グローバルスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/styles/)に依存します。グローバルスタイルはテーマによって`theme.json`で定義されるか、ユーザによって外観 > エディタ > スタイルで定義されます：
 
 - 必要なCSSだけがページに印刷されるため、ページをレンダリングするためのバンドルサイズが小さくなり、パフォーマンスが向上します。
 - ユーザーがUIから簡単にカスタマイズできる。

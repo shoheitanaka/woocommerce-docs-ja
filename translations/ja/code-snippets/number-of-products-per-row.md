@@ -3,7 +3,7 @@ post_title: Change number of related products displayed
 ---
 # 関連商品の表示数を変更する
 
-子テーマのfunctions.phpファイルにコードを追加するか、[Code [snippets](https://wordpress.org/plugins/code-snippets/)プラグインのようなカスタム関数を追加できるプラグインを使用します。親テーマの `functions.php` ファイルに直接カスタムコードを追加することは避けてください。
+子テーマのfunctions.phpファイルにコードを追加するか、[Code snippets](https://wordpress.org/plugins/code-snippets/)プラグインのようなカスタム関数を追加できるプラグインを使用します。親テーマの `functions.php` ファイルに直接カスタムコードを追加することは避けてください。
 
 なお、テーマのコード化により、すべてのテーマで動作するわけではありません。
 

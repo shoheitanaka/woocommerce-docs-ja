@@ -2,14 +2,13 @@
 post_title: Technical documentation style guide
 sidebar_label: Style guide
 ---
-
-# Technical Documentation Style Guide
+# 技術文書スタイルガイド
 
 このスタイルガイドは、WooCommerce技術文書のための効果的でユーザーフレンドリーなチュートリアルとハウツーガイドを作成するためのガイドラインを提供することを目的としています。
 
-## Writing style
+## 文体
 
-### Language style
+### 言語スタイル
 
 - わかりやすく、簡潔な言葉を使うことが大切です。アクティブボイスを使用し、ユーザーにとって馴染みのない専門用語の使用は避けましょう。友好的で親しみやすく、ユーザーの行動を促すようなトーンにする。
 
@@ -18,13 +17,13 @@ sidebar_label: Style guide
 
 - スペルや句読点のスタイルにはアメリカ英語を使うか、他の英語圏で異なるスペルを持たない別の単語を使うことを検討しましょう。
 
-- 文書のタイトルや小見出しには（タイトルケースではなく）センテンスケースを使用してください。
+- ドキュメントのタイトルや小見出しには、大文字ではなく小文字を使用してください。
   例"打ち上げ体験の紹介 "ではなく、"打ち上げ体験の紹介"。
 
-- When referring to files or directories, the text formatting eliminates the need to include articles such as "the" and clarifying nouns such as "file" or "directory".
-  Example: "files stored in ~~the~~ `/wp-content/uploads/` ~~directory~~" or "edit ~~the~~ `/config/config.yml` ~~file~~ with"
+- ファイルやディレクトリに言及する場合、テキスト・フォーマットでは、"the "のような冠詞や、"file "や "directory "のような名詞を明確にする必要がなくなります。
+  例"~~the~`/wp-content/uploads/` ~~ディレクトリ~~に保存されているファイル"、または"~~the~`/config/config.yml` ~~ファイル~~を編集する"
 
-### Writing tips
+### 執筆のヒント
 
 - 対象となる読者には、さまざまな役割や能力があります。チュートリアルやハウツーガイドを作成する際には、対象読者を考慮することが重要です。初心者なのか上級者なのか？技術的な背景は？読者を理解することは、ガイドで使用する詳細なレベルや言語の選択の指針になります。
 
@@ -38,40 +37,40 @@ sidebar_label: Style guide
 
 - 常に、トピックに対する概念的でハイレベルなイントロダクションを、H2の小見出しの上に最初に書く。
 
-### Tutorials
+### チュートリアル
 
 チュートリアルは包括的で、新しいスキルやコンセプトを教えるためにデザインされています。
 
-> You are the teacher, and you are responsible for what the student will do. Under your instruction, the student will execute a series of actions to achieve some end.
+[> あなたは教師であり、生徒が何をするかについて責任があります。あなたの指導の下、生徒はある目的を達成するために一連の行動を実行する。
 > 
-> [Divio Framework on Tutorial Writing](https://documentation.divio.com/tutorials/)
+> チュートリアルの書き方に関するディビオのフレームワーク](https://documentation.divio.com/tutorials/)
 
-### How-to guides
+### ハウツーガイド
 
 ハウツーガイドは、焦点を絞った具体的なもので、特定のタスクの達成方法や特定の問題の解決方法を説明するものである。
 
-> How-to guides are wholly distinct from tutorials and must not be confused with them:
+[> ハウツーガイドはチュートリアルとはまったく異なるものであり、混同してはならない：
 > 
-> - A tutorial is what you decide a beginner needs to know.
-> - A how-to guide is an answer to a question that only a user with some experience could even formulate.
+> チュートリアルとは、初心者が知る必要があると判断したものである。
+> チュートリアルとは、初心者が知る必要があると判断したものである。
 > 
-> [Divio Framework on How-to-Guide Writing](https://documentation.divio.com/how-to-guides/)
+> ハウツーガイドの書き方に関するディビオのフレームワーク](https://documentation.divio.com/how-to-guides/)
 
-## Custom Linting Rules
+## カスタムリンティングルール
 
-At WooCommerce, we're dedicated to maintaining a consistent and high-quality standard for our technical documentation. Our documents primarily adhere to the linting rules provided by `markdownlint`. To assist our contributors, we've detailed our custom configurations and exceptions below.
+WooCommerceでは、技術文書の一貫した高品質な標準を維持することに専念しています。私たちのドキュメントは主に`markdownlint`によって提供されるリンティングルールを遵守しています。私たちの貢献者を支援するために、私たちのカスタム設定と例外を以下に詳述します。
 
-Note: While we've outlined specific rules above, all other default linting rules from `markdownlint` apply unless otherwise stated. We've only highlighted custom configurations or exceptions here. For a complete list of `markdownlint` rules, you can refer to [this link](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md).
+注意：上記で特定のルールを説明しましたが、特に断りのない限り、`markdownlint`の他のすべてのデフォルトのリンティング・ルールが適用されます。ここでは、カスタム設定や例外のみを取り上げています。`markdownlint`ルールの完全なリストについては、[このリンク](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md)を参照してください。
 
-1. **Headings Style**: 
-    - Use the ATX-style (`#`) for headers.
+1. **ヘッダーのスタイル**： 
+    - ヘッダーにはATXスタイル(`#`)を使用してください。
 
     ```markdown
       # This is an H1
       ## This is an H2
     ```
 
-   [Reference: MD003](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md003---heading-style)
+   [参考：MD003](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md003---heading-style)
 
 2. **リストのインデント**： 
     - リスト項目のインデントを空白 4 文字にします。
@@ -81,55 +80,55 @@ Note: While we've outlined specific rules above, all other default linting rules
           - Subitem 1.1
     ```
 
-   [Reference: MD007](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md007---unordered-list-indentation)
+   [参考：MD007](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md007---unordered-list-indentation)
 
-3. **Line Length**: 
-    - No specific restriction on the line length, but keep paragraphs and sentences readable.
+3. **行の長さ**： 
+    - 行の長さに特に制限はありませんが、読みやすい段落と文章にしてください。
     
-    [Reference: MD013](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md013---line-length)
+    [参考：MD013](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md013---line-length)
 
-4. **Multiple Headings with the Same Content**: 
-    - Multiple headings with the same content are permissible as long as they are not siblings.
+4. **同じ内容の複数の見出し**： 
+    - 同じ内容の複数の見出しは、兄弟でない限り許されます。
     
-    [Reference: MD024](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md024---no-multiple-headings-with-the-same-content)
+    [参考：MD024](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md024---no-multiple-headings-with-the-same-content)
 
-5. **Inline HTML**: 
-    - Only the `video` element is allowed when using inline HTML.
+5. **インラインHTML**： 
+    - インラインHTMLを使用する場合、`video`要素のみが許可されます。
 
     ```markdown
     <video src="path_to_video.mp4" controls></video>
     ```
 
-   [Reference: MD033](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md033---inline-html)
+   [参考：MD033](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md#md033---inline-html)
 
-6. **Tabs and Whitespace**: 
-    - We're flexible with the use of hard tabs and trailing whitespace. However, for consistency, we recommend using spaces over tabs and avoiding trailing whitespaces.
+6. **タブと空白**： 
+    - タブと空白**：ハードタブと末尾の空白については柔軟に対応します。ただし、一貫性を保つために、タブよりもスペースを使用し、末尾の空白を避けることをお勧めします。
     
-    [Reference: no-hard-tabs & whitespace](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md)
+    [参考：ハードタブと空白の使用禁止](https://github.com/DavidAnson/markdownlint/blob/3561fc3f38b05b3c55f44e371c2cd9bda194598a/doc/Rules.md)
 
-## Formatting
+## フォーマット
 
-### Visual style
+### ビジュアルスタイル
 
-- Use the H2 style for main headings to be programmatically listed in the articles table of contents.
-- File names and directory paths should be stylized as code per the [HTML spec](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element).
-  Example: `/wp-content/uploads/`
-- References to a single directory should have a trailing slash (eg. "/" appended) to the name.
-  Example: "uploads/"
-- References to repositories should appear without forward slashes and not be formatted in any way. The first appearance of a repository in article content should link to the URL of the repository source whenever possible.
-  Example: "[woocommerce-blocks](https://github.com/woocommerce/woocommerce-blocks)" followed by "woocommerce-blocks"
-- Inline references to functions and command line operations should be formatted as inline code.
-  Example: "Use `dig` to retrieve DNS information."
-- Functions should be styled with "Inline code" formatting and retain upper and lower case formatting as established from their source.
-  Example: `WP_Query` (not WP_query)
+- 記事の目次にプログラムでリストされる大見出しには、H2スタイルを使用してください。
+- ファイル名とディレクトリパスは、[HTML spec](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element)に従ってコードとしてスタイル化されるべきです。
+  例`/wp-content/uploads/`
+- 1つのディレクトリへの参照は、末尾にスラッシュ（例："/"を付加）を付けてください。
+  例"uploads/"
+- リポジトリへの参照は、前方スラッシュなしで表示され、いかなるフォーマットもされるべきではありません。記事の内容でリポジトリが最初に登場する場合は、可能な限りリポジトリソースのURLにリンクしてください。
+  例"[woocommerce-blocks](https://github.com/woocommerce/woocommerce-blocks) "の後に "woocommerce-blocks "を続けます。
+- 関数やコマンドライン操作へのインライン参照は、インラインコードとしてフォーマットしてください。
+  例"DNS情報を取得するには`dig`を使用してください。"
+- 関数は "インライン・コード "書式で記述し、大文字と小文字の書式はソースと同じにします。
+  例`WP_Query` (WP_queryではありません)
 
-### Visual aids
+### ビジュアルエイド
 
 スクリーンショット、図、コード・スニペット、ビデオなどの視覚的補助は、ハウツー・ガイドで非常に役立ちます。視覚的なリファレンスを提供することで、ユーザーはより簡単に説明を理解することができます。ビジュアルエイドを掲載する場合は、必ずラベルを明記し、何が表示されているかを説明するキャプションや説明を付けてください。
 
-### Acronyms
+### 頭字語
 
-頭字語の形でよく知られているフレーズも使用できる。どのページでも、頭字語が初めて登場する場合は、完全な語句を記載し、その後に頭字語を括弧書きで記載しなければならない。
+頭字語の方が馴染みのあるフレーズも使用できる。どのページでも、頭字語が初めて登場する場合は、完全な語句を記載し、その後に頭字語を括弧書きで記載しなければならない。
 
 例ハイパフォーマンスオーダーストレージ（HPOS）の導入により、WooCommerceのクエリ機能を強化しました。
 
@@ -137,9 +136,9 @@ Note: While we've outlined specific rules above, all other default linting rules
 
 用語が一般的かどうかを決定するとき、翻訳と将来の国際化(i18n)の取り組みへの影響を考慮してください。
 
-## Patterning
+## ♪ パターニング
 
-### Article content
+### 記事の内容
 
 ハウツーガイドを作成する際には、一貫性のあるわかりやすいフォーマットを使うことが重要です。ここでは、ソフトウェアのハウツーガイドの推奨テンプレートをご紹介します：
 
@@ -153,21 +152,21 @@ Note: While we've outlined specific rules above, all other default linting rules
 
 **結論**：結論**：本ガイドで取り上げた重要なポイントを要約し、参考になりそうな追加資料や参考文献があれば提示する。
 
-## Terminology
+## 用語
 
-### Reference to components and features
+### コンポーネントと機能への言及
 
-- "**WordPress Admin dashboard**" should be presented in its complete form the first time it appears in an article, followed by its abbreviated form in parentheses ("WP Admin"). Thereafter the abbreviated form can be used for any reference to the WordPress Admin dashboard within the same article.
-- When referring to the URL of the WordPress Admin dashboard, the shortened form `wp-admin` can be used.
+- "**WordPress Admin dashboard**"は、記事内で最初に表示されるときは完全な形で表示し、その後に括弧で囲んだ省略形（"WP Admin"）を表示します。それ以降、同じ記事内でWordPress管理ダッシュボードを参照する場合は、省略形を使用することができます。
+- WordPress AdminダッシュボードのURLを参照する場合は、短縮形の`wp-admin`を使用できます。
 
 ## Testing
 
 チュートリアルやガイドを公開する前に、その手順が正確でわかりやすいものであるかどうかを徹底的にテストすることが重要です。
 
-## Structure
+## 構造
 
-### Atomizing the docs
+### ドキュメントを原子化する
 
-一箇所に多くのトピックを網羅しすぎた記事は、ユーザーが探している情報を見つけることを難しくします。ドキュメントを "アトマイズ "することは、広範な記事を小さな関連記事のグループに分割することを意味します。この記事グループには、多くの場合、記事グループのハイレベルな概要を示すメインの「ランディングページ」があり、説明的なテキストは、ユーザーが関連すると思われる関連記事へのリンクを提供します。このような記事グループは、より小さく、霧状化された記事によって形成された情報の「分子」と考えることができる。
+一箇所に多くのトピックを網羅しすぎた記事は、ユーザーが探している情報を見つけることを難しくします。ドキュメントを "アトマイズ "することは、広範な記事をより小さな関連記事のグループに分割することを意味します。この記事グループには、多くの場合、記事グループのハイレベルな概要を示すメインの「ランディングページ」があり、説明的なテキストは、ユーザーが関連すると思われる関連記事へのリンクを提供します。このような記事グループは、より小さな、霧状の記事によって形成された情報の「分子」と考えることができる。
 
 より小さなコンテンツのかたまりをそれぞれの記事に分割することで、アンカータグを使ったより広範な記事へのリンクに頼るよりも、特定のトピックへのリンクが容易になります。このより具体的なリンクアプローチは、サポートチームにとって有用ですが、Docsサイト全体を通して記事を相互リンクする際にも役立ちます。

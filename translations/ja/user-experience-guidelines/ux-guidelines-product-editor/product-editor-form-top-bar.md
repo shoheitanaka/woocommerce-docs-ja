@@ -2,18 +2,17 @@
 post_title: Top bar extensions (future feature)
 sidebar_label: Top bar extensions
 ---
-
-# Top Bar Extensions (future feature)
+# トップバーの拡張（将来の機能）
 
 トップ・バー・エクステンションは、重要な製品作成フローにとって **不可欠** ではない補助的な体験を提供します。それらは二次的なものであり、製品の全体的な品質や完成度に影響を与える可能性のある情報を含むべきではありません。
 
 各トップバーエクステンションは、トップナビゲーションバーにユニークなアイコンを持っています。エクステンションの数が4つを超えると、ドロップダウンメニューで切り捨てられることに注意してください。
 
-![Top bar example](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-top-bar.png)
+![トップバーの例](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-top-bar.png)
 
 例えば、トップ・バー・エクステンションは次のような使い方ができる：
 
-- 商品スケジュールや特別な表示オプションを提供する、
+- 商品スケジューリングや特別な表示オプションを提供します、
 - マーチャントに追加のSEOメタデータを表示させる
 - ドキュメントやステップバイステップのガイドに簡単にアクセスできるようにする
 

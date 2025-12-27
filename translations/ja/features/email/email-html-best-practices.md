@@ -2,16 +2,15 @@
 post_title: HTML best practices
 sidebar_label: HTML best practices
 ---
-
-# Email HTML - Best Practices
+# HTMLメールのベストプラクティス
 
 <!-- markdownlint-disable MD024 -->
 
-## Overview
+## 概要
 
 メールのデザインや開発には、従来のウェブ開発とは異なるアプローチが必要です。このガイドでは、HTMLメールをすべての主要なメールクライアントで正しく表示するためのベストプラクティスを概説します。
 
-### Key principles
+### 主要原則
 
 - **幅メールの幅を600～640pxの間に保ちましょう。これにより、小さな画面でも横スクロールすることなく、すべてのデバイスでメールが適切に表示されます。
 - **ファイルサイズ大きなメールはGmailや他のプロバイダーでクリップされる可能性があり、モバイルデバイスでの読み込みに時間がかかります。
@@ -20,20 +19,20 @@ sidebar_label: HTML best practices
 
 ## HTML
 
-### Use older, simpler HTML standards
+### より古く、よりシンプルなHTML標準を使用する
 
-- Use HTML 4.01 or XHTML 1.0 - Many email clients use outdated rendering engines and don't support modern HTML5 features.
-- Avoid HTML5 elements in the main structure - Elements like `<section>`, `<article>`, and `<aside>` aren't supported in all email clients.
-- Always use lowercase for tags and attributes - This ensures maximum compatibility and prevents rendering issues in strict clients.
-- Always use quotes for attribute values - Unquoted attributes can cause parsing errors in some email clients.
-- Close all tags, even self-closing ones with a trailing slash (`<br />`) - This prevents rendering issues in clients that expect XHTML-style syntax.
+- HTML 4.01またはXHTML 1.0を使用する - 多くのメールクライアントは、古いレンダリングエンジンを使用しており、最新のHTML5の機能をサポートしていません。
+- HTML5の要素をメイン構造に使わない - `<section>`、`<article>`、`<aside>`などの要素は、すべてのメールクライアントでサポートされていません。
+- タグと属性には常に小文字を使用する - これにより互換性を最大限に確保し、厳格なクライアントでのレンダリングの問題を防ぐことができます。
+- 属性値には常に引用符を使用する - 引用符で囲まれていない属性は、一部のメールクライアントで解析エラーを引き起こす可能性があります。
+- すべてのタグを閉じます。たとえ末尾にスラッシュ(`<br />`)がついていても同様です - XHTMLスタイルの構文を期待するクライアントでレンダリングの問題が発生するのを防ぎます。
 
-### Tables as the foundation
+### 基礎としてのテーブル
 
-- Use nested tables for layout instead of div-based layouts - Tables provide consistent structure across email clients with poor CSS support.
-- Set explicit cell padding, spacing, and dimensions - This prevents inconsistent spacing and layout across different email clients.
-- Declare width on table elements and on cells - Double-declaring widths improves rendering consistency, especially in Outlook.
-- Use `align` and `valign` attributes instead of CSS equivalents - These HTML attributes have better support than CSS positioning in email clients.
+- divベースのレイアウトではなく、ネストされたテーブルをレイアウトに使用する - テーブルは、CSSのサポートが不十分なメールクライアント間で一貫した構造を提供します。
+- セルのパディング、スペーシング、寸法を明示的に設定する - これにより、異なるメールクライアント間でスペーシングやレイアウトに一貫性がなくなります。
+- テーブル要素とセルの幅を宣言する - 幅を二重に宣言することで、特にOutlookではレンダリングの一貫性が向上します。
+- CSSの代わりに`align`と`valign`属性を使用する。
 
 ```html
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -45,7 +44,7 @@ sidebar_label: HTML best practices
 </table>
 ```
 
-### Avoid problematic elements
+### 問題のある要素は避ける
 
 - JavaScriptなし - ほとんどのメールクライアントはセキュリティ上の理由からJavaScriptを無効にしています。
 - フォームなし（一部のクライアントはサポートしていますが） - フォームのサポートは非常に一貫性がありません。
@@ -55,14 +54,14 @@ sidebar_label: HTML best practices
 
 ## CSS
 
-### CSS Support Limitations
+### CSS サポートの制限
 
-- Use inline CSS for everything critical - Many email clients strip `<style>` tags or ignore them entirely.
-- Avoid CSS shorthand properties (use `margin-top` instead of `margin`) - Some email clients only recognize individual properties, not shorthand.
-- Avoid CSS positioning properties (`position`, `float`, `clear`) - These are poorly supported and can cause layout issues.
-- Avoid advanced selectors (stick to element, class, and ID selectors) - Complex selectors often fail in email clients with limited CSS support.
+- 重要なものはすべてインラインCSSを使う - 多くのメールクライアントは`<style>`タグを除去するか、完全に無視します。
+- CSSのショートハンドプロパティを避ける (`margin` の代わりに `margin-top` を使う) - メールクライアントによっては、ショートハンドプロパティではなく、個々のプロパティしか認識しないものもあります。
+- CSSのポジショニング・プロパティを使わない (`position`, `float`, `clear`) - これらはサポートが不十分で、レイアウトの問題を引き起こす可能性があります。
+- 高度なセレクタは避ける（要素セレクタ、クラスセレクタ、IDセレクタにこだわる） - 複雑なセレクタは、CSSのサポートが限られているメールクライアントでは失敗することがよくあります。
 
-### Always use inline styles
+### 常にインラインスタイルを使用する
 
 ```html
 <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #333333;">
@@ -70,37 +69,37 @@ sidebar_label: HTML best practices
 </p>
 ```
 
-### Limited use of style tags
+### スタイルタグの使用制限
 
-- Use for email client-specific hacks only
-- Be careful with media queries (support varies)
-- Always include the type attribute: `<style type="text/css">`
+- メールクライアント固有のハックにのみ使用する
+- メディアクエリの扱いに注意（サポートは様々です）
+- 常にtype属性を含めること：`<style type="text/css">`。
 
-### Supported vs unsupported CSS
+### サポートされるCSSとサポートされないCSS
 
 **よくサポートされている：**。
 
-- `font-family`, `font-size`, `color` - Basic text styling has consistent support across email clients.
-- `text-align`, `line-height` - Text alignment and spacing properties work reliably in most clients.
-- `width`, `height`, `padding`, `margin` (with caution) - Basic box model properties work when used conservatively. Margin doesn't work properly in Outlook.
-- `border`, `background-color` - These visual properties have good support in most email clients.
+- `font-family`, `font-size`, `color` - 基本的なテキストスタイルが電子メールクライアント間で一貫してサポートされています。
+- `text-align`, `line-height` - テキストのアラインメントとスペーシングのプロパティは、 ほとんどのクライアントで確実に動作します。
+- `width`、`height`、`padding`、`margin` (注意) - 基本的なボックスモデルのプロパティは、控えめに使用すると動作します。Outlookではマージンが正しく機能しません。
+- `border`、`background-color` - これらの視覚的なプロパティは、ほとんどの電子メールクライアントで良好にサポートされています。
 
 **サポートが不十分、または一貫性がない。
 
-- Flexbox, Grid - Modern layout systems are not supported in many email clients, particularly Outlook.
-- Positioning properties (`position`, `display`) - These can cause emails to render differently or break layouts in some clients.
-- CSS transitions, animations - These are stripped or ignored by most email clients.
-- Many pseudo-classes and pseudo-elements - Support is inconsistent; Outlook and some webmail clients ignore them completely.
+- Flexbox、Grid - 最新のレイアウトシステムは、多くのメールクライアント、特にOutlookではサポートされていません。
+- ポジショニング・プロパティ (`position`, `display`) - 一部のクライアントでは、メールのレンダリングが異なったり、レイアウトが崩れたりすることがあります。
+- CSSのトランジション、アニメーション - ほとんどのメールクライアントでは、これらは取り除かれるか無視されます。
+- 多くの擬似クラスや擬似要素 - サポートに一貫性がなく、Outlookや一部のウェブメールクライアントでは完全に無視されます。
 
-## Layout Techniques
+## レイアウトテクニック
 
-### Single column design
+### シングル・カラム設計
 
 - すべてのクライアントで最も信頼性が高い - シンプルなレイアウトは失敗のポイントが少ない。
 - 推奨幅：600px - ほとんどのプレビューペインとモバイル画面に収まります。
 - レスポンシブでなくてもモバイルで問題なく動作 - シングルカラムは、最小限の問題で狭い画面に自然に適応します。
 
-### Multi-column layouts with tables
+### テーブルを使った複数カラムのレイアウト
 
 ```html
 <table border="0" cellpadding="0" cellspacing="0" width="600">
@@ -115,10 +114,10 @@ sidebar_label: HTML best practices
 </table>
 ```
 
-### Column stacking techniques
+### カラムのスタッキング技術
 
 - サポートされている場合はメディアクエリを使用する - メディアクエリによって、サポートしているクライアントではモバイルデバイス上でカラムがスタックするようになります。
-- Outlook用のMSO条件付きコメントを使用する - これは特にOutlookを対象としており、レスポンシブレイアウトのための特別な処理が必要です。
+- Outlook用のMSO条件付きコメントを使用する - これはOutlookに特化したもので、レスポンシブレイアウト用に特別な処理が必要です。
 - メディアクエリをサポートしていないクライアントには、ハイブリッド/スポンジーアプローチを考慮する - このテクニックは、メディアクエリをサポートしていなくても、適度に適応するレイアウトを作成します。
 
 ```html
@@ -135,16 +134,16 @@ sidebar_label: HTML best practices
 <!--[if mso]></td></tr></table><![endif]-->
 ```
 
-## Responsiveness
+## 応答性
 
-### Mobile-first approach
+### モバイル・ファースト・アプローチ
 
 - モバイルメールの開封数はデスクトップを上回ることが多いため、モバイル最適化は非常に重要です。
 - 可能な限りプロポーショナル幅を使用する。
 - 適切なフォントサイズ（最低14px）を使用する - 小さいフォントはモバイル端末では読みにくく、ズームが必要になる場合があります。
 - タッチターゲットは最低44x44pxにする - アクセシビリティガイドラインに従い、タッチスクリーンでのインタラクションを容易にします。
 
-### Media queries
+### メディアクエリー
 
 限定的だが重要なサポート：
 
@@ -163,7 +162,7 @@ sidebar_label: HTML best practices
 </style>
 ```
 
-### Fluid hybrid approach
+### 流体ハイブリッド・アプローチ
 
 max-widthとMSO条件式を使用して、メディアクエリサポートの有無にかかわらず、クライアント全体で動作します：
 
@@ -179,9 +178,9 @@ max-widthとMSO条件式を使用して、メディアクエリサポートの�
 <![endif]-->
 ```
 
-## Typography
+## タイポグラフィ
 
-### Email-safe fonts
+### 電子メール用フォント
 
 常に、広くサポートされているフォントを含むフォントスタックを使用してください：
 
@@ -194,9 +193,9 @@ font-family: Georgia, Times, 'Times New Roman', serif;
 font-family: 'Courier New', Courier, monospace;
 ```
 
-### Web fonts
+### ウェブフォント
 
-- 限定的なサポート - 適切なフォールバックでのみ使用 - 多くのメールクライアントはウェブフォントをサポートしていないため、フォールバックは不可欠です。
+- 限定的なサポート - 適切なフォールバックでのみ使用 - 多くのメールクライアントがウェブフォントをサポートしていないため、フォールバックが不可欠です。
 - 最も信頼できるサポート：Apple Mail、iOS Mail、AndroidのGoogle Fonts - これらのクライアントは一貫してウェブフォントをレンダリングします。
 - Outlook、Gmail、Yahoo！はウェブフォントをサポートしていないことが多い - これらの一般的なクライアントはフォールバックフォントを代わりに表示します。
 
@@ -208,9 +207,9 @@ font-family: 'Courier New', Courier, monospace;
 <p style="font-family: 'Open Sans', Arial, sans-serif;">Your text</p>
 ```
 
-### Text formatting best practices
+### テキスト書式のベストプラクティス
 
-- フォントサイズは14～16pxを基本に - 小さいフォントは、特にモバイル端末では読みにくくなることがあります。
+- 基本のフォントサイズは14～16pxに設定する - 小さいフォントは、特にモバイルデバイスでは読みにくくなることがあります。
 - 行間はフォントサイズの1.4～1.6倍を目安に - 適切な行間は読みやすさを向上させ、テキストが窮屈に見えるのを防ぎます。
 - 大きなテキストブロックは分割しましょう。
 - テキストを左寄せにすることで、読みやすさが向上します。
@@ -218,20 +217,20 @@ font-family: 'Courier New', Courier, monospace;
 
 ## Images
 
-### Image guidelines
+### 画像のガイドライン
 
-- Always include the `alt` attribute - This provides text alternatives when images are blocked and improves accessibility.
-- Set explicit width and height on all images - This prevents layout shifts when images load and maintains structure when images are blocked.
-- Keep image file sizes small (optimize for web) - Large images increase loading time and may exceed file size limits.
-- Consider what happens when images are blocked - Many email clients block images by default, so your email should still make sense without them.
+- 常に`alt`属性を含める - 画像がブロックされたときに代替テキストを提供し、アクセシビリティを向上させます。
+- すべての画像に明示的に幅と高さを設定する - 画像の読み込み時にレイアウトがずれるのを防ぎ、画像がブロックされたときの構造を維持します。
+- 画像のファイルサイズを小さく保つ（ウェブ用に最適化する） - 画像が大きいと読み込み時間が長くなり、ファイルサイズの制限を超える可能性があります。
+- 画像がブロックされた場合のことを考慮する - 多くのメールクライアントはデフォルトで画像をブロックしています。
 
 ```html
 <img src="https://example.com/image.jpg" alt="Description of image" width="600" height="400" style="display: block; width: 100%; max-width: 600px; height: auto;" border="0">
 ```
 
-### Background images
+### 背景画像
 
-サポートは限定的で、常に予備の bgcolor を提供する：
+サポートは限定的。常に代替の bgcolor を提供すること：
 
 ```html
 <table background="https://example.com/bg.jpg" bgcolor="#f7f7f7" width="600" cellpadding="0" cellspacing="0" border="0">
@@ -243,9 +242,9 @@ font-family: 'Courier New', Courier, monospace;
 </table>
 ```
 
-## Email Client Specifics
+## 電子メールクライアントの仕様
 
-### Outlook (Windows)
+### アウトルック（ウィンドウズ）
 
 - Wordのレンダリングエンジン（MSO）を使用 - これは、Outlookのユニークなレンダリングの癖と制限されたCSSサポートについて説明します。
 - 背景画像と角丸にはVMLが必要 - これらの効果のための標準的なCSSメソッドは、Outlookでは動作しません。
@@ -264,48 +263,48 @@ font-family: 'Courier New', Courier, monospace;
 - すべてにインライン スタイルを使用する - これが Gmail でコンテンツをスタイル設定する唯一の信頼できる方法です。
 - メールサイズの制限（大きすぎる場合はクリッピング） - 102KBを超えるメールは「メッセージ全体を表示」リンクでクリッピングされます。
 
-### Apple Mail/iOS
+### アップル・メール／iOS
 
 - 最高のレンダリング機能 - これらのクライアントは、最新のCSSとHTML標準をサポートしています。
 - 最もモダンなCSSをサポート - 主にAppleユーザーをターゲットにしている場合、フレックスボックスやグリッドのような機能を使用できます。
 - メディアクエリの優れたサポート - レスポンシブデザインはこれらのプラットフォームで確実に機能します。
 
-## Accessibility
+## アクセシビリティ
 
-### Semantic structure
+### 意味構造
 
-- Use semantic HTML where possible (`p`, `h1`, `h2`, etc.) - This improves screen reader interpretation and overall accessibility.
-- Add `role="presentation"` to layout tables - This tells screen readers the table is for layout only, not data presentation.
-- Include proper heading structure - This creates a logical document outline that helps screen reader users navigate.
-- Use `aria-hidden="true"` for decorative elements - This prevents screen readers from announcing purely visual elements.
+- 可能な限り、セマンティックHTMLを使用する（`p`、`h1`、`h2`など） - これは、スクリーン・リーダーの解釈と全体的なアクセシビリティを向上させます。
+- レイアウト・テーブルに`role="presentation"`を追加する - これは、スクリーン・リーダーに、テーブルがデータ表示用ではなく、レイアウト専用であることを伝えます。
+- 適切な見出し構造を含める - これは、スクリーン・リーダー・ユーザーのナビゲーションを助ける論理的なドキュメントのアウトラインを作成します。
+- 装飾的な要素には`aria-hidden="true"`を使用する - これは、スクリーン・リーダーが純粋に視覚的な要素をアナウンスするのを防ぎます。
 
 ```html
 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
 ```
 
-### Text alternatives
+### 代替テキスト
 
-- 画像には常に説明的なaltテキストを使用する - これにより、スクリーン・リーダーを使用している人々が画像の内容と目的を理解できるようになります。
+- 画像には常に説明的なaltテキストを使用する - これにより、スクリーン・リーダーを使用する人々が画像の内容と目的を理解できるようになります。
 - 装飾的な画像には空のaltテキストを設定する - これは、スクリーンリーダーが情報を追加しない画像をアナウンスするのを防ぎます。
 - 画像をオフにした場合のメールの見え方を考慮する - 多くのユーザーやメールクライアントが画像をブロックしているため、コンテンツは画像なしでも動作するようにしましょう。
 
-### Color and contrast
+### 色とコントラスト
 
 - 通常のテキストのコントラスト比を最低4.5:1に保つ - これはWCAGアクセシビリティ基準を満たしており、すべてのユーザーにとって読みやすさが向上します。
 - 画像内のテキストではなく、実際のテキストを使用する - 画像内のテキストは、スクリーンリーダーにとってアクセシブルではなく、さまざまなデバイスでうまく拡大縮小されません。
 - 情報を伝えるのに色だけに頼らない - これは、色覚障害のあるユーザーに対応します。
 
-### Navigation and links
+### ナビゲーションとリンク
 
 - リンクを簡単に識別できるようにする - 明確なスタイルを使用することで、ユーザーがクリック可能な要素を認識しやすくなります。
 - 説明的なリンクテキストを使用する（「ここをクリック」を避ける） - 説明的なリンクは、コンテキストを提供し、スクリーンリーダーのユーザーにとってよりアクセスしやすくなります。
 - タッチターゲット間の適切な間隔を確保する - モバイルデバイスでの誤タップを防ぎ、運動機能に障害のあるユーザーを助けます。
 
-## Testing tools and services
+## テストツールとサービス
 
-- Use professional email testing services like [Litmus](https://www.litmus.com/) and [Email on Acid](https://www.emailonacid.com/) - These platforms provide comprehensive testing across multiple email clients and devices.
-- Test in real email clients when possible - While testing services are valuable, real-world testing can catch issues that automated testing might miss.
-- Check rendering in both desktop and mobile clients - Mobile email opens often exceed desktop, making mobile testing essential.
-- Test with images disabled - Many email clients block images by default, so ensure your email is readable and functional without them.
-- Check spam filter scores - Use tools like [Mail-Tester](https://www.mail-tester.com/) to identify potential spam triggers in your email content.
-- Validate HTML - Use email-specific validators to catch potential rendering issues before sending.
+[- Litmus](https://www.litmus.com/)や[Email on Acid](https://www.emailonacid.com/)のような専門的なメールテストサービスを利用する - これらのプラットフォームでは、複数のメールクライアントやデバイスを使った包括的なテストが可能です。
+- 可能な限り実際のメールクライアントでテストする - テストサービスは貴重ですが、実際のテストでは、自動化されたテストでは見逃す可能性のある問題を発見することができます。
+- デスクトップとモバイルクライアントの両方でレンダリングを確認する - モバイルメールの開封数はデスクトップを上回ることが多いため、モバイルテストは不可欠です。
+- 画像を無効にしてテストする - 多くのメールクライアントはデフォルトで画像をブロックしています。
+- スパムフィルターのスコアをチェックする - [Mail-Tester](https://www.mail-tester.com/) などのツールを使って、メールコンテンツに含まれる潜在的なスパムを特定しましょう。
+- HTMLを検証する - メール固有のバリデーターを使用して、送信前にレンダリングの潜在的な問題を検出しましょう。

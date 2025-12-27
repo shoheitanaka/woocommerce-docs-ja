@@ -38,7 +38,7 @@ WooCommerceバージョン3.3から、ほとんどのテーマがWooCommerceと�
 
 - 現在のWooCommerceのインストールが最新であれば、FTP経由でファイルにアクセスしてください。
 - WooCommerceのバージョンごとのテンプレートは[テンプレート構造ドキュメント](https://woocommerce.com/document/template-structure/)でご確認ください。
-- [WordPress.orgプラグインページ](https://wordpress.org/plugins/woocommerce/)から最新バージョンをダウンロードする。
+- WordPress.[orgプラグインページ](https://wordpress.org/plugins/woocommerce/)から最新バージョンをダウンロードする。
 - GitHub [リポジトリ](https://github.com/woocommerce/woocommerce/releases) から最新リリースをダウンロードしてください。
 
 ### なぜ、クリックしてすべてを更新するボタンを作らないのですか？

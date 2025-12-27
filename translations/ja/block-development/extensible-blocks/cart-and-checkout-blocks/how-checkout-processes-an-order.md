@@ -3,7 +3,6 @@ post_title: How the checkout block processes an order
 sidebar_label: Processing an order
 sidebar_position: 1
 ---
-
 # チェックアウトブロックがどのように注文を処理するか
 
 このドキュメントでは、チェックアウトフローの内部構造について説明します。具体的には、ユーザーが "注文する "ボタンを押した後に何が起こるかについてです。
@@ -104,14 +103,14 @@ StoreApi `/checkout` エンドポイントへのフェッチがレスポンス�
 次のようなアクションを実行する：
 
 -   注文完了後にリダイレクトするURLを設定します。
--   支払い結果を`checkout`データストアに保存します。
+-   決済結果を`checkout`データストアに保存します。
 -   チェックアウトステータスを`after_processing`に変更します (ステップ10)
 
 ### 10\.チェックアウトステータスが`after_processing`に設定されました[(ファイル)](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/data/checkout/thunks.ts#L42)
 
 `after_processing`ステータスは、メインのチェックアウト処理ステップが終了したことを示します。このステップでは、クリーンアップアクションを実行し、最後のステップで発生したエラーを表示します。
 
-### 11\.INLINE_CODE_0__イベントを発行する [(file)](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/data/checkout/thunks.ts#L118-L128)
+### 11\.INLINE_CODE_0__イベントを出す [(file)](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/data/checkout/thunks.ts#L118-L128)
 
 エラーがなければ、`checkout_after_processing_with_success`イベントが発生します。ここで、チェックアウトが成功した後に他のプラグインがコードを実行することができます。
 
@@ -123,7 +122,7 @@ StoreApi `/checkout` エンドポイントへのフェッチがレスポンス�
 
 ### 13\.チェックアウトステータスを`complete`に設定する [(ファイル)](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/data/checkout/utils.ts#L146)
 
-エラーがなければ、チェックアウト・データ・ストアの`status`プロパティは`complete`に変わります。これはチェックアウト処理が完了したことを示します。
+エラーがなければ、チェックアウト・データ・ストアの`status`プロパティは`complete`に変更されます。これはチェックアウト処理が完了したことを示します。
 
 ### 14\.リダイレクト [(ファイル)](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/checkout-processor.js#L193-L197)
 

@@ -58,7 +58,7 @@ const options = {
 };
 ```
 
-#### `wc global`
+#### `WooCommerceDependencyExtractionWebpackPlugin`
 
 | オプション|タイプ|説明|必須
 |-----------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -170,7 +170,7 @@ registerPaymentMethod( options );
 | `checkoutStatus` | isCalculating、isComplete、isIdle、isProcessingプロパティを持つオブジェクト。                                                                                                                                                                                                                                                      |
 | ValidationInputError, PaymentMethodLabel, PaymentMethodIcons, LoadingMaskプロパティを持つオブジェクト。                                                                                                                                                                          |
 | イベントエミッターを使用する際に役立つ定数がいくつか含まれています。詳しくは_[イベントの発行](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/e267cd96a4329a4eeef816b2ef627e113ebb72a5/docs/extensibility/checkout-flow-and-events.md#emitting-events)_セクションをお読みください。|
-| onCheckoutValidation、onCheckoutSuccess、onCheckoutFail、onPaymentSetup、onShippingRateSuccess、onShippingRateFail、onShippingRateSelectSuccess、onShippingRateSelectFailプロパティを持つオブジェクトです。これらは、決済メソッドがチェックアウトフローの様々なポイントと対話するためにオブザーバを登録できる関数です(詳細については[このドキュメント](./checkout-flow-and-events.md)を参照してください)。                                                               |
+| onCheckoutValidation、onCheckoutSuccess、onCheckoutFail、onPaymentSetup、onShippingRateSuccess、onShippingRateFail、onShippingRateSelectSuccess、onShippingRateSelectFailプロパティを持つオブジェクトです。これらは、支払いメソッドがチェックアウトフローの様々なポイントと対話するためにオブザーバを登録できる関数です(詳細については[このドキュメント](./checkout-flow-and-events.md)を参照してください)。                                                               |
 | `onClick`｜ 関数｜ **支払いメソッドボタンがクリックされたときにトリガーされる(支払いメソッドが支払い処理を引き継いだことをチェックアウトに知らせる)**支払いメソッドを表現するために提供される関数です。
 
 | `onClose` ｜ 関数｜ **エクスプレス決済メソッドに提供される**もので、エクスプレス決済メソッドのモーダルが閉じられ、コントロールがチェックアウトに戻されたときにトリガーされます。                                                                                                                                                                 |

@@ -57,7 +57,7 @@ woocommerce_register_additional_checkout_field(
 );
 ```
 
-コンタクト用追加フィールド](/img/doc_images/additional-field-contact.png)
+![コンタクト用追加フィールド](/img/doc_images/additional-field-contact.png)
 
 ### アドレス (`address`)
 
@@ -76,7 +76,7 @@ woocommerce_register_additional_checkout_field(
 );
 ```
 
-住所欄の追加](/img/doc_images/additional-field-address.png)
+![住所欄の追加](/img/doc_images/additional-field-address.png)
 
 ### 注文情報 (`order`)
 
@@ -95,9 +95,9 @@ woocommerce_register_additional_checkout_field(
 );
 ```
 
-注文の追加フィールド](/img/doc_images/additional-field-order.png)
+![注文の追加フィールド](/img/doc_images/additional-field-order.png)
 
-#サポートされるフィールドタイプ
+## サポートされるフィールドタイプ
 
 APIは3つのフィールドタイプをサポートしている：
 
@@ -163,7 +163,7 @@ woocommerce_register_additional_checkout_field(
 );
 ```
 
-## フィールド属性を追加する
+## フィールド属性の追加
 
 より良いユーザーエクスペリエンスのために、HTML属性でフィールドを拡張することができます：
 例

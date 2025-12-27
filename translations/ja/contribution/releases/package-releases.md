@@ -3,9 +3,8 @@ post_title: WooCommerce Package Releases
 sidebar_label: Package Releases
 sidebar_position: 8
 ---
+# JavaScriptパッケージリリース
 
-# JavaScript Package Releases
+WooCommerceモノレポには、NPM経由で配布されている`@woocommerce/components`など、WooCommerce開発をサポートするJavaScriptパッケージが多数含まれています。このリリースプロセスはGitHub Actionsで管理されています。
 
-The WooCommerce monorepo includes numerous JavaScript packages to support WooCommerce development, such as `@woocommerce/components`, distributed via NPM. This release process is managed via GitHub Actions.
-
-For the full documentation on how to release a JavaScript package, see the [package release tool documentation](https://github.com/woocommerce/woocommerce/tree/trunk/tools/package-release).
+JavaScriptパッケージのリリース方法に関する完全なドキュメントは、[パッケージリリースツールのドキュメント](https://github.com/woocommerce/woocommerce/tree/trunk/tools/package-release)を参照してください。

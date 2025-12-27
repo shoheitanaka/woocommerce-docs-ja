@@ -2,12 +2,11 @@
 post_title: Managing custom attributes in WooCommerce menus and taxonomy archives
 sidebar_label: Custom attributes in menus
 ---
-
-# Managing custom attributes in WooCommerce menus and taxonomy archives
+# WooCommerceのメニューとタクソノミーアーカイブでカスタム属性を管理する
 
 レイヤーナビに使用できる属性はカスタムタクソノミーであり、メニューに表示したり、属性別に商品を表示したりすることができます。これにはいくつかの作業が必要で、アーカイブを有効にする必要があります。
 
-## Register the taxonomy for menus
+## メニューのタクソノミーを登録する
 
 カスタム属性にタクソノミーを登録する際、WooCommerceは以下のフックを呼び出します：
 
@@ -15,7 +14,7 @@ sidebar_label: Custom attributes in menus
 $show_in_nav_menus = apply_filters('woocommerce_attribute_show_in_nav_menus', false, $name);
 ```
 
-So, for example, if your attribute slug was `size` you would do the following to register it for menus:
+例えば、あなたの属性スラッグが`size`だった場合、メニュー用に登録するには次のようにします：
 
 ```php
 add_filter('woocommerce_attribute_show_in_nav_menus', 'wc_reg_for_menus', 1, 2);
@@ -26,15 +25,15 @@ return $register;
 }
 ```
 
-Custom attribute slugs are prefixed with `pa_`, so an attribute called `size` would be `pa_size`
+カスタム属性のスラッグは`pa_`で始まるので、`size`という属性は`pa_size`となります。
 
-では、**Appearance &gt; Menus**であなたの属性を使用してください。ただし、タクソノミータームへのリンクをクリックすると、デフォルトのブログスタイルになることにお気づきでしょう。
+次に、**Appearance > Menus**であなたの属性を使用してください。ただし、タクソノミータームへのリンクをクリックすると、デフォルトのブログスタイルになることにお気づきでしょう。
 
-## Create a template
+## テンプレートを作成する
 
 商品を思い通りに表示するには、属性をテーマ化する必要があります。そのためには
 
-1.  Copy `woocommerce/templates/taxonomy-product_cat.php` into your theme folder
-2.  Rename the template to reflect your attribute - in our example we'd use `taxonomy-pa_size.php`
+1.  `woocommerce/templates/taxonomy-product_cat.php`をテーマフォルダにコピーする。
+2.  あなたの属性を反映させるためにテンプレート名を変更する - この例では`taxonomy-pa_size.php`を使用します。
 
 これで、カスタム属性のタクソノミー用語を表示するときに、このテンプレートが表示されるようになります。

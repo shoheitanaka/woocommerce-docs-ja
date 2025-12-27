@@ -2,12 +2,11 @@
 post_title: String localization guidelines
 sidebar_label: String localization guidelines
 ---
+# 文字列の地域化ガイドライン
 
-# String localization guidelines
+1.すべての文字列で`woocommerce`テキストドメインを使用する。
+2.printf/sprintfで動的文字列を使用する場合、1つ以上の文字列を置き換える場合は、番号付きの引数を使用する。
+3.例えば、`Some Thing`は`Some thing`となる。
+4.HTMLは避ける。必要であれば、sprintfを使ってHTMLを挿入する。
 
-1. Use `woocommerce` textdomain in all strings.
-2. When using dynamic strings in printf/sprintf, if you are replacing > 1 string use numbered args. e.g. `Test %s string %s.` would be `Test %1$s string %2$s.`
-3. Use sentence case. e.g. `Some Thing` should be `Some thing`.
-4. Avoid HTML. If needed, insert the HTML using sprintf.
-
-For more information, see WP core document [i18n for WordPress Developers](https://codex.wordpress.org/I18n_for_WordPress_Developers).
+詳しくは WP core document [i18n for WordPress Developers](https://codex.wordpress.org/I18n_for_WordPress_Developers) をご覧ください。

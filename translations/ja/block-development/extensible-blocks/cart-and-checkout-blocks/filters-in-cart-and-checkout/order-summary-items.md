@@ -31,7 +31,7 @@ sidebar_label: Order summary items
 -   _defaultValue_ `string` (デフォルト: `''`) - デフォルトの注文要約項目クラスです。
 -   extensions_ `object` (default: `{}`) - extensions オブジェクト。
 -   args_ `object` - 以下のキーを持つ引数オブジェクト：
-    -   cart_ `object` - [カートオブジェクト](#cart-object)を参照ください。
+    -   cart_ `object` - [カートオブジェクト](#cart-object)を参照してください。
     -   _cartItem_ `object` - `wc/store/cart` の注文概要項目オブジェクト。[注文概要項目オブジェクト](#cart-item-object) を参照ください。
     -   __context_ `string` (指定可能な値: `cart` または `summary`) - アイテムのコンテキスト。
 
@@ -95,7 +95,7 @@ registerCheckoutFilters( 'example-extension', {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[カート項目クラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ff555a84-8d07-4889-97e1-8f7d50d47350) |！[カート項目クラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/183809d8-03dc-466d-a415-d8d2062d880f) |｜...
+|![カート項目クラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ff555a84-8d07-4889-97e1-8f7d50d47350) |![カート項目クラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/183809d8-03dc-466d-a415-d8d2062d880f) |｜...
 
 ## `cartItemPrice`
 
@@ -173,7 +173,7 @@ registerCheckoutFilters( 'example-extension', {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[カート商品価格フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/58137fc4-884d-4783-9275-5f78abec1473) |！[カート商品価格フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/fb502b74-6447-49a8-8d35-241e738f089d) |｜...
+|![カート商品価格フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/58137fc4-884d-4783-9275-5f78abec1473) |![カート商品価格フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/fb502b74-6447-49a8-8d35-241e738f089d) |｜...
 
 ## `itemName`
 
@@ -248,9 +248,9 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット
 
-| 前
+|![ 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|項目名フィルター適用前】(https://github.com/woocommerce/woocommerce-blocks/assets/3323310/3dc0bda7-fccf-4f35-a2e2-aa04e616563a) |!
+|項目名フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/3dc0bda7-fccf-4f35-a2e2-aa04e616563a) |!
 
 ## `subtotalPriceFormat`
 
@@ -270,7 +270,7 @@ registerCheckoutFilters( 'example-extension', {
 
 ### リターン
 
--   `string` - 部分文字列`<price/>`を含む、注文サマリー項目の小計価格の変更フォーマット、または元の価格フォーマット。
+-   `string` - 変更された注文サマリー項目の小計価格のフォーマットで、`<price/>`の部分文字列、または元の価格のフォーマットを含んでいる必要があります。
 
 ### コード例
 
@@ -336,7 +336,7 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット
 
-| Before                                                                 | After                                                                 |
+| 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
 |![小計価格フォーマットフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/3574e7ae-9857-4651-ac9e-e6b597e3a589) |![小計価格フォーマットフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/94e18439-6d6b-44a4-ade1-8302c5984641) |｜...
 
@@ -381,7 +381,7 @@ registerCheckoutFilters( 'example-extension', {
         -   price_ `number` - タックスラインの価格。
         -   rate_ `string` - タックス・ラインの税率ID。
     -   total_discount_ `string` - 割引総額。
-    -   _total_discount_tax_ `string` - 割引税額の合計。
+    -   _total_discount_tax_ `string` - 割引税の合計。
     -   _total_fees_ `string` - 料金合計。
     -   _total_fees_tax_ `string` - 料金にかかる税金の合計。
     -   total_items_ `string` - 合計アイテム。
@@ -419,7 +419,7 @@ registerCheckoutFilters( 'example-extension', {
     -   __currency_prefix_ `string` - 通貨のプレフィックス。
     -   __currency_suffix_ `string` - 通貨のサフィックス。
     -   __currency_symbol_ `string` - 通貨記号。
-    -   __currency_thousand_separator_ `string` - 通貨の千の区切り文字。
+    -   currency_thousand_separator_ `string` - 通貨の千単位区切り文字。
     -   price_ `string` - 価格。
     -   price_range_ `string` - 価格帯。
     -   raw_prices_ `object` - 以下のキーを持つ生の価格オブジェクト：

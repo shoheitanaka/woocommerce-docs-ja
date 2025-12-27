@@ -6,10 +6,10 @@ sidebar_label: CSS styling for themes
 
 ## ブロックとコンポーネントのクラス名
 
-&gt; 重要
-&gt; 私たちは、既存のブロック・クラス名に基づいてCSSコードを記述することを強く禁じ、可能な限りグローバル・スタイルを使用することを優先します。特に、特定のブロックが別のブロックの子孫であることに依存する CSS セレクタを記述することはお勧めしません。ユーザーがブロックを自由に移動できるため、壊れやすいからです。WordPress 自体と同様に、コンポーネント、ブロック、ブロックテンプレート内の HTML 構造は「プライベート」であり、将来さらに変更される可能性があると考えています。したがって、CSS を使用してブロックやブロックテンプレートの内部をターゲットにすることは推奨されませんし、サポートされません。
+> 重要
+> 私たちは、既存のブロック・クラス名に基づいてCSSコードを記述することを強く禁じ、可能な限りグローバル・スタイルを使用することを優先します。特に、特定のブロックが別のブロックの子孫であることに依存する CSS セレクタを記述することはお勧めしません。ユーザーがブロックを自由に移動できるため、壊れやすいからです。WordPress 自体と同様に、コンポーネント、ブロック、ブロックテンプレート内の HTML 構造は「プライベート」であり、将来さらに変更される可能性があると考えています。したがって、CSS を使用してブロックやブロックテンプレートの内部をターゲットにすることは推奨されませんし、サポートされません。
 
-WooCommerce Blocksは[コーディングガイドラインに記載されている](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/contributors/coding-guidelines.md)ように、クラス名のBEMに従っています。すべてのクラスはこれら2つの接頭辞のいずれかで始まります：
+WooCommerce Blocksは[コーディングガイドラインに記載されている](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/contributors/coding-guidelines.md)ように、クラス名をBEMに従っています。すべてのクラスはこれら2つの接頭辞のいずれかで始まります：
 
 -   `.wc-block-`：単一のブロックに固有のクラス名。
 -   `.wc-block-components-`: コンポーネントに固有のクラス名。このコンポーネントは、異なるブロックで再利用されるかもしれない。
@@ -45,9 +45,9 @@ WooCommerce Blocksは[コーディングガイドラインに記載されてい�
 | | 521px-700px | `is-large` |
 | 521px-700px | `is-medium`
 | 401px-520px | `is-small`
-| |401px-520px | `wc-block-sort-select`
+| | 401px-520px | `wc-block-sort-select`
 
-例として、コンテナの幅が521px以上のときに、チェックアウトのフォントサイズを10％大きくしたい場合、次のコードで実現できる：
+例として、コンテナの幅が521px以上のときに、チェックアウトのフォントサイズを10％大きくしたい場合は、次のようなコードになります：
 
 ```css
 .wc-block-checkout.is-medium,

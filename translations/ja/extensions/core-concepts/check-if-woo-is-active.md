@@ -2,12 +2,11 @@
 post_title: How to check if WooCommerce is active
 sidebar_label: Check if WooCommerce is active
 ---
-
-# How to check if WooCommerce is active
+# WooCommerceが有効かどうかを確認する方法
 
 WooCommerceの開発を行う場合、コードを実行する前にWooCommerceがインストールされ、有効になっていることを確認することが重要です。これにより、WooCommerceの関数やクラスが見つからないことによるエラーを防ぐことができます。
 
-There are a few methods to achieve this. The first is to execute your code on the `woocommerce_loaded` action. This approach guarantees that WooCommerce and its functionalities are fully loaded and available for use. This is fired around the same time as the core `plugins_loaded` action. 
+これを実現するにはいくつかの方法がある。一つ目は`woocommerce_loaded`アクションでコードを実行することです。この方法はWooCommerceとその機能が完全にロードされ、使用可能であることを保証します。これはコアの`plugins_loaded`アクションと同時に実行されます。 
 
 ```php
 add_action( 'woocommerce_loaded', 'prefix_woocommerce_loaded' );
@@ -19,7 +18,7 @@ function prefix_woocommerce_loaded() {
 
 **注意**：この段階では、WordPressはまだ現在のユーザーデータを初期化していません。
 
-Another method is to execute your code on the `woocommerce_init` action. This is executed right _after_ WooCommerce is active and initialized. This action (and the `before_woocommerce_init` action) fires in the context of the WordPress `init` action so at this point current user data has been initialized.
+もう一つの方法は`woocommerce_init`アクションでコードを実行することです。これはWooCommerceがアクティブになり初期化された直後に実行されます。このアクション（および`before_woocommerce_init`アクション）はWordPressの`init`アクションのコンテキストで実行されるため、この時点で現在のユーザーデータは初期化されています。
 
 ```php
 add_action( 'woocommerce_init', 'prefix_woocommerce_init' );
@@ -29,7 +28,7 @@ function prefix_woocommerce_init() {
 }
 ```
 
-**Note**: The `before_woocommerce_init` hook is also an option, running just _before_ WooCommerce's initialization
+**注意**：`before_woocommerce_init`フックもオプションで、WooCommerceの初期化の直前に実行されます。
 
 上記のフックを使用することで、WooCommerce関数へのアクセスが許可され、さらなる条件チェックが可能になります。例えば、あなたのコードとの互換性を確保するためにWooCommerceのバージョンを確認したいかもしれません：
 

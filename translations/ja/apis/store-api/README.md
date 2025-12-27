@@ -3,10 +3,9 @@ sidebar_label: Store API
 category_slug: store-api
 post_title: Store API
 ---
-
 # WooCommerce ストア API
 
-**Store APIは、顧客向けのカート、チェックアウト、商品機能の開発のためのパブリックなRest APIエンドポイントを提供します。これは、[WordPress REST API](https://developer.wordpress.org/rest-api/key-concepts/) で使用されているパターンの多くに従っています。
+**Store APIは、顧客向けのカート、チェックアウト、および製品機能の開発のためのパブリックなRest APIエンドポイントを提供します。これは、[WordPress REST API](https://developer.wordpress.org/rest-api/key-concepts/) で使用されているパターンの多くに従っています。
 
 WooCommerce REST APIとは対照的に、Store APIは認証されておらず、機密性の高い店舗データやその他の顧客情報へのアクセスを提供しません。
 
@@ -37,6 +36,8 @@ Store APIの利用方法としては、以下のようなものが考えられ�
 
 Store APIのリソースはすべて`wc/store/v1`名前空間内にあり、このAPIはWordPress APIを拡張しているため、アクセスするには`/wp-json/`ベースが必要です。現在のところ、バージョンは `v1` のみです。バージョンが省略された場合は、`v1`が提供されます。
 
+Examples:
+
 ```http
 GET /wp-json/wc/store/v1/products
 GET /wp-json/wc/store/v1/cart
@@ -51,7 +52,7 @@ Store APIで利用可能なリソースを以下に列挙し、より詳細な�
 | リソース | メソッド | エンドポイント |
 | :----------------------------------------------------------- | :----------------------------- | --------------------------------------------------------------------------------------------- |
 | [`Cart`](/docs/apis/store-api/resources-endpoints/cart) | `GET` | [`/wc/store/v1/cart`](/docs/apis/store-api/resources-endpoints/cart#get-cart) | | [`POST`](/docs/apis/store-api/resources-endpoints/cart#get-cart)
-| |_INLINE_CODE_3__ | [`/wc/store/v1/cart/add-item`](/docs/apis/store-api/resources-endpoints/cart#add-item) |
+| |`v1` | [`/wc/store/v1/cart/add-item`](/docs/apis/store-api/resources-endpoints/cart#add-item) |
 | | `POST` | [`/wc/store/v1/cart/remove-item`](/docs/apis/store-api/resources-endpoints/cart#remove-item) |
 | | `POST` | [`/wc/store/v1/cart/update-item`](/docs/apis/store-api/resources-endpoints/cart#update-item)
 | [`POST`](/docs/apis/store-api/resources-endpoints/cart#apply-coupon) | | [`/wc/store/v1/cart/apply-coupon`](/docs/apis/store-api/resources-endpoints/cart#apply-coupon)
@@ -60,17 +61,18 @@ Store APIで利用可能なリソースを以下に列挙し、より詳細な�
 | [`POST`](/docs/apis/store-api/resources-endpoints/cart#select-shipping-rate) |｜ [`/wc/store/v1/cart/select-shipping-rate`](/docs/apis/store-api/resources-endpoints/cart#select-shipping-rate)
 | [`Cart Items`](/docs/apis/store-api/resources-endpoints/cart-items) | `GET`, `POST`, `DELETE` | [`/wc/store/v1/cart/items`](/docs/apis/store-api/resources-endpoints/cart-items#list-cart-items) |
 | | [`GET`, `POST`, `PUT`, `DELETE`](/docs/apis/store-api/resources-endpoints/cart-items#single-cart-item) | | [`/wc/store/v1/cart/items/:key`](/docs/apis/store-api/resources-endpoints/cart-items#single-cart-item)
-| [`Cart Coupons`](/docs/apis/store-api/resources-endpoints/cart-coupons) | `GET`, `POST`, `DELETE` | [`/wc/store/v1/cart/coupons`](/docs/apis/store-api/resources-endpoints/cart-coupons#list-cart-coupons) | | [__INLINE_CODE_31__](/docs/apis/store-api/resources-endpoints/cart-coupons#list-cart-coupons)
+| [`Cart Coupons`](/docs/apis/store-api/resources-endpoints/cart-coupons) | `GET`, `POST`, `DELETE` | [`/wc/store/v1/cart/coupons`](/docs/apis/store-api/resources-endpoints/cart-coupons#list-cart-coupons) | | [`/wc/store/v1/cart/items/:key`](/docs/apis/store-api/resources-endpoints/cart-coupons#list-cart-coupons)
 | [`GET`, `DELETE`](/docs/apis/store-api/resources-endpoints/cart-coupons#single-cart-coupon) |｜ [`/wc/store/v1/cart/coupon/:code`](/docs/apis/store-api/resources-endpoints/cart-coupons#single-cart-coupon)
 | [`Checkout`](/docs/apis/store-api/resources-endpoints/checkout) | `GET`, `POST`, `PUT` | [`/wc/store/v1/checkout`](/docs/apis/store-api/resources-endpoints/checkout) |
-| [`Checkout order`](/docs/apis/store-api/resources-endpoints/checkout-order) | `POST` | [`/wc/store/v1/checkout/:id`](/docs/apis/store-api/resources-endpoints/checkout-order) |
-| [`Order`](/docs/apis/store-api/resources-endpoints/order) | [`GET`](/docs/apis/store-api/resources-endpoints/order) |
-| [`Products`](/docs/apis/store-api/resources-endpoints/products) | [`GET`](/docs/apis/store-api/resources-endpoints/products#list-products) |
+| [`Checkout order`](/docs/apis/store-api/resources-endpoints/checkout-order) | [`POST`](/docs/apis/store-api/resources-endpoints/checkout-order) |
+
+| [`Order`](/docs/apis/store-api/resources-endpoints/order) | `GET` | [`/wc/store/v1/order/:id`](/docs/apis/store-api/resources-endpoints/order) | | [`Products`](/docs/apis/store-api/resources-endpoints/products)
+| [`v1`](/docs/apis/store-api/resources-endpoints/products) | [`GET`](/docs/apis/store-api/resources-endpoints/products#list-products) |
 | [`GET`](/docs/apis/store-api/resources-endpoints/products#single-product-by-id) |｜ [`/wc/store/v1/products/:id`](/docs/apis/store-api/resources-endpoints/products#single-product-by-id)
-| [`Product Collection Data`](/docs/apis/store-api/resources-endpoints/product-collection-data) | `GET`｜ [`/wc/store/v1/products/collection-data`](/docs/apis/store-api/resources-endpoints/product-collection-data) |
+| [`Product Collection Data`](/docs/apis/store-api/resources-endpoints/product-collection-data) | [`GET`](/docs/apis/store-api/resources-endpoints/product-collection-data) |
 | [`Product Attributes`](/docs/apis/store-api/resources-endpoints/product-attributes) | `GET` | [`/wc/store/v1/products/attributes`](/docs/apis/store-api/resources-endpoints/product-attributes#list-product-attributes)      |
 | [`GET`](/docs/apis/store-api/resources-endpoints/product-attributes#single-product-attribute) |｜ [`/wc/store/v1/products/attributes/:id`](/docs/apis/store-api/resources-endpoints/product-attributes#single-product-attribute)
-| [`Product Attribute Terms`](/docs/apis/store-api/resources-endpoints/product-attribute-terms) | `GET` | [`/wc/store/v1/products/attributes/:id/terms`](/docs/apis/store-api/resources-endpoints/product-attribute-terms) | | [__INLINE_CODE_61__](/docs/apis/store-api/resources-endpoints/product-attribute-terms)
+| [`Product Attribute Terms`](/docs/apis/store-api/resources-endpoints/product-attributeterms) | `GET` | [`/wc/store/v1/products/attributes/:id/terms`](/docs/apis/store-api/resources-endpoints/product-attributeterms) |
 | [`Product Categories`](/docs/apis/store-api/resources-endpoints/product-categories) | [`GET`](/docs/apis/store-api/resources-endpoints/product-categories) |
 | [`Product Brands`](/docs/apis/store-api/resources-endpoints/product-brands) | [`GET`](/docs/apis/store-api/resources-endpoints/product-brands) |
 | [`Product Reviews`](/docs/apis/store-api/resources-endpoints/product-reviews) | [`GET`](/docs/apis/store-api/resources-endpoints/product-reviews) |
@@ -85,11 +87,11 @@ Store APIで利用可能なリソースを以下に列挙し、より詳細な�
 | `page` | コレクションの現在のページ。デフォルトは`1`です。                                       |
 | `per_page` | 結果セットに返されるアイテムの最大数。デフォルトは `10` です。最大`100`。|
 
-下の例では、1ページに20の商品をリストアップし、2ページ目を返します。
-
 ```sh
 curl "https://example-store.com/wp-json/wc/store/v1/products?page=2&per_page=20"
 ```
+
+下の例では、1ページに20の商品をリストアップし、2ページ目を返します。
 
 追加のページネーション・ヘッダーも追加情報とともに送り返される。
 
@@ -97,7 +99,7 @@ curl "https://example-store.com/wp-json/wc/store/v1/products?page=2&per_page=20"
 | :---------------- | :------------------------------------------------------------------------ |
 | コレクション内のアイテムの総数。                              |
 | `X-WP-TotalPages` | コレクションの総ページ数。                              |
-| INLINE_CODE_3__, `prev`, `up` 該当する場合、他のページへのリンクが含まれます。|
+| `next`, `prev`, `up` 該当する場合、他のページへのリンクが含まれます。|
 
 ## ステータスコード
 
@@ -107,8 +109,8 @@ curl "https://example-store.com/wp-json/wc/store/v1/products?page=2&per_page=20"
 | :----------- | :---------------------------------------------------------------------------------------------------------- |
 | 1つ以上のリソースにアクセスし、`200 OK`と結果をJSONとして返します。                                    |
 | リソースの作成に成功した場合は`201 Created`を返し、新しく作成されたリソースをJSONとして返します。|
-| INLINE_CODE_4__ | リソースの変更に成功したら `200 OK` を返します。変更結果はJSONとして返される。          |
-|_INLINE_CODE_6__ | リソースの削除に成功した場合は `204 No Content` を返します。                                          |
+| `PUT` | リソースの変更に成功したら `200 OK` を返します。変更結果はJSONとして返される。          |
+|`DELETE` | リソースの削除に成功した場合は `204 No Content` を返します。                                          |
 
 次の表は、APIリクエストで返される可能性のあるコードを示しています。
 
@@ -116,7 +118,7 @@ curl "https://example-store.com/wp-json/wc/store/v1/products?page=2&per_page=20"
 | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
 | `200 OK`｜リクエストは成功し、リソース自体がJSONとして返されます。                                                                     |
 | サーバはリクエストに成功し、レスポンスペイロードボディに送信する追加コンテンツはありません。             |
-| INLINE_CODE_2__ | POSTリクエストは成功し、リソースはJSONとして返されます。                                                                       |
+| `201 Created` | POSTリクエストは成功し、リソースはJSONとして返されます。                                                                       |
 | API リクエストの必須属性が見つかりません。                                                                                         |
 | リクエストは許可されていません。                                                                                                                 |
 | リソースが存在しないなど、リソースにアクセスできませんでした。                                                                             |
@@ -135,11 +137,11 @@ Store APIの各ルートには3つの主要な部分があります：
 通常、ルートは以下のタイプのリクエストを処理する：
 
 * `GET`リクエストは、商品、カート、またはチェックアウトのデータを読み込みます。
-* INLINE_CODE_1__ および `PUT` による、 カートやチェックアウトのデータを更新するリクエスト。
+* `POST` および `PUT` による、 カートやチェックアウトのデータを更新するリクエスト。
 * カートのデータを削除する `DELETE` リクエスト。
 * 現在のルートの JSON スキーマを取得する `OPTIONS` リクエスト。
 
-ストアAPIガイド原則](/docs/apis/store-api/guiding-principles)をご確認ください。これは、開発に対する私たちのアプローチや、バージョニング、どのデータを含めるのが安全か、新しいルートを構築する方法などのトピックをカバーしています。
+[ストアAPIガイド原則](/docs/apis/store-api/guiding-principles)をご確認ください。これは、開発に対する私たちのアプローチや、バージョニング、どのデータを含めるのが安全か、新しいルートを構築する方法などのトピックをカバーしています。
 
 ## 拡張性
 
@@ -147,7 +149,7 @@ Store APIにおける拡張性のアプローチは、特定のルートとス�
 
 ルートに拡張インターフェイスが含まれている場合、サードパーティの開発者は共有の `ExtendSchema::class` インスタンスを使用して、追加のエンドポイントデータと追加のスキーマを登録できます。
 
-これは従来のフィルター・フック・アプローチとは異なり、より限定的なものだが、サードパーティーの拡張機能がルートやエンドポイントを壊したり、他のアプリが依存する可能性のある返されたデータを上書きしたりする可能性を減らすことができる。
+これは従来のフィルター・フック・アプローチとは異なり、より限定的なものだが、サードパーティーの拡張機能がルートやエンドポイントを壊したり、他のアプリが依存しているかもしれない返されたデータを上書きしたりする可能性を減らすことができる。
 
 新しいスキーマが必要で、以下の記述のいずれかが当てはまる場合は、既存のStore APIスキーマに新しいスキーマを導入するのではなく、Store APIを_拡張することを選択してください：
 
@@ -158,6 +160,3 @@ Store APIにおける拡張性のアプローチは、特定のルートとス�
 データが機密である場合（例えば、非公開にすべきコア設定）、または現在のユーザーと関係がない場合（例えば、注文IDで注文を検索する）、[認証されたWC REST APIを使用する](https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction)を選択します。
 
 Store API _schema_を拡張するのではなく、_new routes and endpoints_を追加したい場合は、Store APIを拡張する必要はありません。代わりに WordPress のコア機能を利用して新しいルートを作成し、Store API と同じパターンを使用することもできます。こちらをご覧ください：
-
-* [`register_rest_route()`](https://developer.wordpress.org/reference/functions/register_rest_route/)
-* [レストAPIパーミッションコールバック](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/#permissions-callback)

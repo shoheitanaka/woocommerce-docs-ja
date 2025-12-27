@@ -3,7 +3,6 @@ post_title: WooCommerce CLI frequently asked questions
 sidebar_label: Frequently asked questions
 sidebar_position: 5
 ---
-
 # WooCommerce CLI よくある質問
 
 ## 一般的な質問
@@ -42,7 +41,7 @@ sidebar_position: 5
 
 ### コマンド使用時に404エラーが発生した場合はどうすればいいですか？
 
-If you are getting a 401 error like `Error: Sorry, you cannot list resources. {"status":401}`, you are trying to use the command unauthenticated. The WooCommerce CLI as of 3.0 requires you to provide a proper user to run the action as. Pass in your user ID using the `--user` flag.
+`Error: Sorry, you cannot list resources. {"status":401}`のような401エラーが表示される場合、認証されていない状態でコマンドを使用しようとしています。3.0以降のWooCommerce CLIでは、アクションを実行するユーザーを指定する必要があります。`--user`フラグを使ってユーザーIDを入力してください。
 
 ### Xのリストを更新しようとしているのですが、保存されません。
 

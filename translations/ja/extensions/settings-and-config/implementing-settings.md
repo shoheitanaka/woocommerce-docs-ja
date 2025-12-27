@@ -3,24 +3,23 @@ post_title: Creating custom settings for WooCommerce extensions
 sidebar_label: Creating custom settings
 sidebar_position: 1
 ---
+# WooCommerceエクステンションのカスタム設定の作成
 
-# Creating custom settings for WooCommerce extensions
+WooCommerceをカスタマイズしたり、独自の機能を追加したりする場合、おそらく何らかの設定ページが必要になるでしょう。設定ページを作成する最も簡単な方法の1つは、[`WC_Integration` class](https://woocommerce.github.io/code-reference/classes/WC-Integration.html 'WC_Integration Class') を利用することです。Integrationクラスを使用すると、自動的に**WooCommerce > Settings > Integrations**の下に新しい設定ページが作成され、自動的にデータが保存され、サニタイズされます。このチュートリアルでは、新しいインテグレーションを作成する方法を説明します。
 
-If you're customizing WooCommerce or adding your own functionality to it you'll probably need a settings page of some sort. One of the easiest ways to create a settings page is by taking advantage of the [`WC_Integration` class](https://woocommerce.github.io/code-reference/classes/WC-Integration.html 'WC_Integration Class'). Using the Integration class will automatically create a new settings page under **WooCommerce > Settings > Integrations** and it will automatically save, and sanitize your data for you. We've created this tutorial so you can see how to create a new integration.
-
-## Setting up the Integration
+## 統合の設定
 
 統合を作成するには少なくとも2つのファイルが必要なので、ディレクトリを作成する必要がある。
 
-### Creating the Main Plugin File
+### メイン・プラグイン・ファイルの作成
 
-Create your main plugin file to [hook](https://developer.wordpress.org/reference/functions/add_action/ 'WordPress add_action()') into the `plugins_loaded` hook and check if the `WC_Integration` [class exists](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.extends 'PHP Class Exists'). If it doesn't then the user most likely doesn't have WooCommerce activated. After you do that you need to register the integration. Load the integration file (we'll get to this file in a minute). Use the `woocommerce_integrations` filter to add a new integration to the [array](http://php.net/manual/en/language.types.array.php 'PHP Array').
+メインプラグインファイルを作成し、`plugins_loaded`フックに[hook](https://developer.wordpress.org/reference/functions/add_action/ 'WordPress add_action()')し、`WC_Integration` [class exists](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.extends 'PHP Class Exists')が存在するかチェックします。存在しない場合、ユーザーはWooCommerceを有効化していない可能性が高いです。その後、インテグレーションを登録する必要があります。統合ファイルを読み込みます。`woocommerce_integrations`フィルタを使用して、新しいインテグレーションを[array](http://php.net/manual/en/language.types.array.php 'PHP Array')に追加します。
 
-### Creating the Integration Class
+### 統合クラスの作成
 
-Now that we have the framework setup let's actually implement this Integration class. There already is a `WC_Integration` class so we want to make a [child class](https://www.php.net/manual/en/language.oop5.inheritance.php). This way it inherits all of the existing methods and data. You'll need to set an id, a description, and a title for your integration. These will show up on the integration page. You'll also need to load the settings by calling: `$this->init_form_fields();` & `$this->init_settings();` You'll also need to save your options by calling the `woocommerce_update_options_integration_{your method id}` hook. Lastly you have to input some settings to save! We've included two dummy fields below but we'll go more into fields in the next section.
+フレームワークのセットアップができたので、実際にこのIntegrationクラスを実装してみましょう。すでに`WC_Integration`クラスがあるので、[子クラス](https://www.php.net/manual/en/language.oop5.inheritance.php)を作りたい。こうすることで、既存のメソッドとデータをすべて継承します。統合のために、id、説明、タイトルを設定する必要があります。これらは統合ページに表示されます。を呼び出して設定を読み込む必要があります：また、`$this->init_form_fields();` と `$this->init_settings();` を呼び出して設定を読み込み、`woocommerce_update_options_integration_{your method id}` フックを呼び出してオプションを保存する必要があります。最後に、保存する設定を入力しなければならない！以下に2つのダミー・フィールドを載せましたが、フィールドについては次のセクションで詳しく説明します。
 
-> Added to a file named `class-wc-integration-demo-integration.php`
+> `class-wc-integration-demo-integration.php`という名前のファイルに追加。
 
 ```php
 <?php
@@ -83,7 +82,7 @@ if ( ! class_exists( 'WC_Integration_Demo_Integration' ) ) :
 endif;
 ```
 
-> Added to a file named `wc-integration-demo.php`
+> `wc-integration-demo.php`という名前のファイルに追加。
 
 ```php
 <?php
@@ -152,11 +151,11 @@ $WC_Integration_Demo = new WC_Integration_Demo( __FILE__ );
 
 ```
 
-## Creating Settings
+## 設定の作成
 
-If you took a look through the last section you'll see that we added two dummy settings using the `init_form_fields()` method.
+最後のセクションを読んでいただければ、`init_form_fields()`メソッドを使って2つのダミー設定を追加したことがわかるだろう。
 
-### Types of Settings
+### 設定の種類
 
 WooCommerceは8種類の設定をサポートしています。
 
@@ -169,7 +168,7 @@ WooCommerceは8種類の設定をサポートしています。
 -   選択
 -   マルチセレクト
 
-And these settings have attributes which you can use. These affect the way the setting looks and behaves on the settings page. It doesn't affect the setting itself. The attributes will manifest slightly differently depending on the setting type. A placeholder for example doesn't work with checkboxes. To see exactly how they work you should look through the [source code](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/abstracts/abstract-wc-settings-api.php 'WC Settings API on GitHub'). Ex.
+これらの設定には、使用できる属性があります。これらの属性は、設定ページでの見え方や動作に影響を与えます。設定自体には影響しません。属性は、設定の種類によって若干異なります。例えば、プレースホルダーはチェックボックスでは機能しません。どのように動作するかは、[ソースコード](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/abstracts/abstract-wc-settings-api.php 'WC Settings API on GitHub') を参照してください。例
 
 -   タイトル
 -   クラス
@@ -179,9 +178,9 @@ And these settings have attributes which you can use. These affect the way the s
 -   デフォルト
 -   チップ
 
-### Creating Your Own Settings
+### 独自の設定を作成する
 
-The built-in settings are great but you may need extra controls to create your settings page. That's why we included some methods to do this for you. First, define a setting by adding it to the `$this->form_fields` array, entering the kind of form control you want under `type`. You can override the default HTML for your form inputs by creating a method with a name of the format `generate_{ type }_html` which outputs HTML markup. To specify how buttons are rendered, you'd add a method called `generate_button_html`. For textareas, you'd add a `generate_textarea_html` method, and so on. (Check out the `generate_settings_html` method of the `WC_Settings_API` class in the WooCommerce source code to see how WooCommerce uses this.) The below example creates a button that goes to WooCommerce.com.
+ビルトインの設定は素晴らしいですが、設定ページを作成するために追加のコントロールが必要な場合があります。そのため、いくつかの方法を用意しました。まず、`$this->form_fields`配列に追加して設定を定義し、`type`に必要なフォーム・コントロールの種類を入力します。HTMLマークアップを出力する `generate_{ type }_html` 形式のメソッドを作成することで、フォーム入力のデフォルトHTMLをオーバーライドできます。ボタンのレンダリング方法を指定するには、`generate_button_html`というメソッドを追加します。textareasの場合は、`generate_textarea_html`メソッドを追加します。(WooCommerceのソースコードで`WC_Settings_API`クラスの`generate_settings_html`メソッドをチェックし、WooCommerceがこれをどのように使用しているかを見てください)。以下の例ではWooCommerce.comにアクセスするボタンを作成しています。
 
 ```php
 /**
@@ -247,11 +246,11 @@ public function generate_button_html( $key, $data ) {
 }
 ```
 
-## Validating & Sanitizing Data
+## データの検証とサニタイズ
 
 最高のユーザーエクスペリエンスを実現するために、データを検証し、サニタイズしたいと思うかもしれません。統合クラスはすでに基本的なサニタイズを行っており、悪意のあるコードが存在しないようにしていますが、未使用のデータを削除することでさらにサニタイズを行うことができます。データをサニタイズする例としては、APIキーがすべて大文字のサードパーティ製サービスとの統合があります。APIキーを大文字に変換することで、ユーザーにとって少しわかりやすくなります。
 
-### Sanitize
+### 消毒
 
 データをサニタイズする方法を最初に説明する。しかし、覚えておいてほしいのは、サニタイズはバリデーションの後に行われるということだ。つまり、バリデーションが行われなければ、サニタイズのステップに進むことはできません。
 
@@ -281,9 +280,9 @@ public function sanitize_settings( $settings ) {
 }
 ```
 
-### Validation
+### バリデーション
 
-Validation isn't always necessary but it's nice to do. If your API keys are always 10 characters long and someone enters one that's not 10 then you can print out an error message and prevent the user a lot of headache when they assumed they put it in correctly. First set up a `validate_{setting key}_field` method for each field you want to validate. For example, with the `api_key` field you need a `validate_api_key_field()` method.
+バリデーションは常に必要というわけではないが、やっておいて損はない。APIキーの長さが常に10文字であり、誰かが10文字でないものを入力した場合、エラーメッセージを表示することで、正しく入力したと思い込んでいたユーザーの頭痛の種を防ぐことができる。まず、検証したいフィールドごとに`validate_{setting key}_field`メソッドを設定します。例えば、`api_key`フィールドには`validate_api_key_field()`メソッドが必要です。
 
 ```php
 public function validate_api_key_field( $key, $value ) {
@@ -295,6 +294,6 @@ public function validate_api_key_field( $key, $value ) {
 }
 ```
 
-## A complete example
+## 完全な例
 
-If you've been following along you should have a complete integration example. If you have any problems see our [full integration demo](https://github.com/woogists/woocommerce-integration-demo 'Integration Demo').
+もし、あなたがこのページについてきているのであれば、完全な統合の例があるはずです。何か問題があれば、私たちの[完全な統合デモ](https://github.com/woogists/woocommerce-integration-demo '統合デモ')を参照してください。

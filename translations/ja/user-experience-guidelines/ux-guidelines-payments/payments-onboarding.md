@@ -2,14 +2,13 @@
 post_title: Payments onboarding and setup
 sidebar_label: Payments onboarding and setup
 ---
+# ペイメントのオンボーディングとセットアップ
 
-# Payments Onboarding and Setup
+## ペイメント・オンボーディング
 
-## Payments onboarding
+プラグインの作者は、プラグインがインストールされ、有効化されると、加盟店に積極的にプラグインのセットアップを案内する必要があります。
 
-プラグインの作者は、プラグインがインストールされ、有効化された後、加盟店に対して積極的にプラグインのセットアップを案内すべきである。
-
-### Third party onboarding
+### サードパーティー・オンボーディング
 
 OAuthまたはサードパーティのエクスペリエンスを使用して加盟店から許可を得るプラグインの場合、加盟店はプラグインを設定するためのリンクをクリックし、プラグインのオンボーディングにリダイレクトされます。
 
@@ -20,13 +19,13 @@ OAuthまたはサードパーティのエクスペリエンスを使用して加
 - 加盟店に対して、ペイメントプロバイダへのログインまたはアカウントの作成を促す。
 - 請求プラン、ペイアウト、または通知の設定を完了するよう加盟店に依頼する。
 
-### Manual setup
+### 手動設定
 
-APIキーの手動入力が必要な場合は、セットアッププロセスをできるだけシンプルに設計する。
+APIキーの手動入力が必要な場合は、セットアッププロセスをできるだけシンプルに設計し、理想的にはガイド付きセットアップウィザードを使用する。
 
-## Configuration & Settings
+## コンフィギュレーションと設定
 
-設定](/docs/extensions/ux-guidelines-extensions/settings)と[ナビゲーション](/docs/extensions/ux-guidelines-extensions/navigation)のWooユーザーエクスペリエンスガイドラインに従ってください。
+[設定](/docs/extensions/ux-guidelines-extensions/settings)と[ナビゲーション](/docs/extensions/ux-guidelines-extensions/navigation)のWooユーザーエクスペリエンスガイドラインに従ってください。
 
 ユーザーによる設定の手間を最小限にするために、適切なデフォルト設定を含める。
 
@@ -34,10 +33,10 @@ APIキーの手動入力が必要な場合は、セットアッププロセス�
 
 プラグイン内で複数の支払い方法を提供している場合は、加盟店に選択肢を明確に提示し、どの支払い方法が有効であるかを表示します。
 
-支払い方法](/img/doc_images/payment-methods.png)
+![支払い方法](/img/doc_images/payment-methods.png)
 
 何らかの理由で支払い方法が利用できない場合、ユーザーが問題を診断し解決できるよう、明確で有益なエラーメッセージを提供する。
 
 プラグインが決済処理の準備ができたことを加盟店に通知する必要があります。それまでは、加盟店への注意喚起として、プラグイン設定にインライン警告通知を表示してください。警告通知のためのトップレベルのバナーを実装しないでください。
 
-インライン通知](/img/doc_images/Inline-Notice.png)
+![インライン通知](/img/doc_images/Inline-Notice.png)

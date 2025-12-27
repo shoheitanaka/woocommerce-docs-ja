@@ -72,7 +72,7 @@ PUT /wc/store/v1/checkout?__experimental_calc_totals=true
 
 | 属性 | タイプ | 必須 | 説明 |
 | :------------------ | :----- | :------:| :-------------------------------------------------- |
-|`additional_fields`｜ オブジェクト｜いいえ｜名前 =&gt; 更新する追加フィールドの値のペア。|
+|`additional_fields`｜ オブジェクト｜いいえ｜名前 => 更新する追加フィールドの値のペア。|
 | `payment_method`｜文字列｜いいえ｜選択された支払い方法のID。              |
 | `order_notes`｜文字列｜いいえ｜注文メモ。                                        |
 
@@ -152,7 +152,7 @@ POST /wc/store/v1/checkout
 | 属性 | タイプ | 必須 | 説明 |
 | :------------------ | :----- | :------:| :------------------------------------------------------------------ |
 | `billing_address` | object | はい｜更新された顧客の請求先住所データのオブジェクト。            |
-| `shipping_address` | オブジェクト | はい | 顧客の発送先住所データの更新オブジェクト。           |
+| `shipping_address`｜オブジェクト｜はい｜顧客の更新された配送先住所データのオブジェクト。           |
 | `customer_note` | 文字列 | いいえ | チェックアウト時に顧客が注文に追加したメモ。            |
 | `payment_method` | string | Yes | 決済処理に使用される支払い方法のID。     |
 | `payment_data` | 配列 | いいえ | 決済処理時に支払い方法に渡すデータ。|
@@ -248,7 +248,7 @@ curl --header "Nonce: 12345" --request POST https://example-store.com/wp-json/wc
 
 マーチャントが使用できる決済ゲートウェイは数多くあり、それぞれが異なる`payment_data`を要求します。すべてのペイメントゲートウェイに対して期待されるすべてのリクエストを包括的にリストアップすることはできませんので、ペイメントゲートウェイプラグインの作者に問い合わせることをお勧めします。
 
-WooCommerce [Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)を使用する際にCheckoutエンドポイントに送信される支払いデータの例を以下に示します。
+[WooCommerce Stripe Payment Gateway](https://wordpress.org/plugins/woocommerce-gateway-stripe/)を使用する際にCheckoutエンドポイントに送信される支払いデータの例を以下に示します。
 
 `stripe_source`の生成に関する詳細は、[Stripeのドキュメント](https://stripe.com/docs)を参照してください。
 

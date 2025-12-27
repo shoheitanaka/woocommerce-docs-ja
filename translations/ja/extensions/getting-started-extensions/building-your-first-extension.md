@@ -3,28 +3,27 @@ post_title: How to build your first extension
 sidebar_label: Build your first extension
 sidebar_position: 2
 ---
+# 最初のエクステンションの作り方
 
-# How to build your first extension
-
-This guide will teach you how to use [create-woo-extension](https://www.npmjs.com/package/@woocommerce/create-woo-extension) to scaffold a WooCommerce extension. There are various benefits to using create-woo-extension over manually creating one from scratch, including:
+このガイドでは、[create-woo-extension](https://www.npmjs.com/package/@woocommerce/create-woo-extension)を使用してWooCommerce拡張機能の足場を作る方法を説明します。create-woo-extensionを使用することで、手動で一から作成するよりも以下のような様々な利点があります：
 
 書くべき定型的なコードは少なくなり、手動でセットアップする依存関係も少なくなる。
 
 ブロックのような最新の機能は自動的にサポートされ、ユニットテスト、リンティング、Prettier IDEの設定もすぐに使える。
 
-Once your extension is set up, we will show you how to instantly spin up a development environment using [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/).
+拡張機能をセットアップしたら、[wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/)を使って開発環境を即座に立ち上げる方法を紹介します。
 
-## Requirements
+## 必要条件
 
 作業を始める前に、お使いのデバイスに以下のツールがインストールされている必要があります：
 
 - [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) with NPM
-- [Docker](https://docs.docker.com/engine/install/) (must be running to use wp-env)
+- [Docker](https://docs.docker.com/engine/install/)(wp-envを使うには起動している必要があります)
 - [Composer](https://getcomposer.org/doc/00-intro.md)
 
 また、このガイドは、あなたがコマンドラインの操作に慣れていることを前提としている。
 
-## Bootstrapping Your Extension
+## 拡張機能のブートストラップ
 
 ターミナルを開き
 
@@ -32,9 +31,9 @@ Once your extension is set up, we will show you how to instantly spin up a devel
  npx @wordpress/create-block -t @woocommerce/create-woo-extension my-extension-name
 ```
 
-If you would like to set a custom extension name, you can replace `my-extension-name` with any slug. Please note that your slug must not have any spaces.
+カスタム拡張名を設定したい場合は、`my-extension-name`を任意のスラッグに置き換えることができます。スラッグにはスペースを入れてはいけません。
 
-If you see a prompt similar to `Need to install the following packages`: `@wordpress/create-block@4.34.0. Ok to proceed?`, press `Y`.
+`Need to install the following packages`のようなプロンプトが表示されたら、`@wordpress/create-block@4.34.0. Ok to proceed?`を押します：`Need to install the following packages`のようなプロンプトが表示されたら、`Y`を押す。
 
 パッケージが拡張機能を生成し終わったら、拡張機能フォルダに移動します。 
 
@@ -42,43 +41,42 @@ If you see a prompt similar to `Need to install the following packages`: `@wordp
  cd my-extension-name
 ```
 
-You should then install the extension dependencies using `npm install`  and build it using `npm run build`.
+その後、`npm install`を使用して拡張機能の依存関係をインストールし、`npm run build`を使用してビルドする必要があります。
 
 おめでとうございます！WooCommerceエクステンションが完成しました！あなたのエクステンションは以下のファイル構造を持っています：
 
 - `my-extension-name`
-    - `block.json` - contains metadata used to register your custom blocks with WordPress. Learn more.
-    - `build` - the built version of your extension which is generated using npm run build. You shouldn't directly modify any of the files in this folder.
-    - `composer.json` - contains a list of your PHP dependencies which is referenced by Composer.
-    - `composer.lock` - this file allows you to control when and how to update these dependencies
-    - `includes` - The primary purpose of an "includes" folder in PHP development is to store reusable code or files that need to be included or required in multiple parts of a project. This is a PHP developer convention.
-    - `languages` - contains POT files that are used to localize your plugin.
-    - `my-extension-name.php` - your plugin entry point that registers your plugin with WordPress.
-    - `node-modules` - help you form the building blocks of your application and write more structured code
-    - `package.json` - is considered the heart of a Node project. It records metadata, and installs functional dependencies, runs scripts, and defines the entry point of your application.
-    - `README.md` - An introduction and instructional overview of your application. Any special instructions, updates from the author, and details about the application can be written in text here.
-    - `src` - keeps the root directory clean and provides a clear separation between the source code and other assets
-    - `tests` - can hold unit tests for your application, keeps them separate from source files
-    - `vendor` - holds project dependencies, and 3rd party code that you did not write
-    - `webpack.config.js` - webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser
+    - `block.json` - カスタムブロックをWordPressに登録するためのメタデータが含まれます。詳細はこちら。
+    - `build` - npm run buildで生成される拡張機能のビルドバージョン。このフォルダ内のファイルを直接修正してはいけません。
+    - `composer.json` - Composer が参照する PHP の依存関係のリストです。
+    - `composer.lock` - このファイルで、依存関係を更新するタイミングと方法を制御できます。
+    - `includes` - PHP 開発における「includes」フォルダの主な目的は、 再利用可能なコードや、プロジェクトの複数の部分でインクルードまたは必須となる ファイルを保存することです。これはPHP開発者の慣習です。
+    - `languages` - プラグインのローカライズに使用する POT ファイルを格納します。
+    - `my-extension-name.php` - プラグインのエントリーポイントで、プラグインをWordPressに登録します。
+    - `node-modules` - アプリケーションの構成要素を作成し、より構造化されたコードを書くのに役立ちます。
+    - `package.json` - Nodeプロジェクトの中核と見なされます。メタデータを記録し、機能依存関係をインストールし、スクリプトを実行し、アプリケーションのエントリー・ポイントを定義します。
+    - `README.md` - アプリケーションの紹介と説明の概要です。特別な指示、作者からの更新、アプリケーションの詳細は、ここにテキストで書くことができます。
+    - `src` - ルートディレクトリをクリーンに保ち、ソースコードとその他の資産を明確に分離します。
+    - `tests` - アプリケーションのユニットテストを保持し、ソースファイルから分離します。
+    - `vendor` - プロジェクトの依存関係や、あなたが書いていないサードパーティのコードを保持します。
+    - `webpack.config.js` - webpackはモジュールバンドラーです。主な目的は、ブラウザで使用するためにJavaScriptファイルをバンドルすることです。
 
+## 開発環境のセットアップ
 
-## Setting Up a Developer Environment
+[`wp-env`を使用してローカル開発環境を立ち上げることをお勧めします。wp-envについての詳細はこちら](https://make.wordpress.org/core/2020/03/03/wp-env-simple-local-environments-for-wordpress/)を参照してください。wp-envがまだローカルにインストールされていない場合は、次の方法でインストールできます。 
+`npm -g i @wordpress/env`を使用してインストールできます。
 
-We recommend using `wp-env` to spin up local development environments. You can [learn more about wp-env here](https://make.wordpress.org/core/2020/03/03/wp-env-simple-local-environments-for-wordpress/). If you do not already have wp-env installed locally, you can install it using 
-`npm -g i @wordpress/env`.
+`wp-env`をインストールしたら、`my-extension-name`フォルダ内で`wp-env` startを実行してください。数秒後、WooCommerceと拡張機能がインストールされたテストWordPressサイトが`localhost:8888`で実行されます。
 
-Once you have installed `wp-env`, and while still inside your `my-extension-name` folder, run `wp-env` start. After a few seconds, a test WordPress site with your WooCommerce and your extension installed will be running on `localhost:8888`.
+拡張機能にカスタム名を設定していない場合、`wp-admin/admin.php?page=wc-admin&path=%2Fmy-extension-name`にアクセスすると、/src/index.jsによって生成された設定ページを見ることができます。`wp-env`のデフォルトのユーザー名とパスワードの組み合わせは`admin` / `password`です。
 
-If you did not set a custom name for your extension, you can visit `wp-admin/admin.php?page=wc-admin&path=%2Fmy-extension-name` to see the settings page generated by /src/index.js. The default username/password combination for `wp-env` is `admin` / `password`.
-
-## Next Steps
+## 次のステップ
 
 拡張機能のブートストラップが完了したら、いよいよ機能を追加していきましょう！ここでは、いくつかの簡単な機能を紹介します：
 
-[How to add a custom field to simple and variable products](https://developer.woocommerce.com/docs/how-to-add-a-custom-field-to-simple-and-variable-products/)
+[シンプル商品と可変商品にカスタムフィールドを追加する方法](https://developer.woocommerce.com/docs/how-to-add-a-custom-field-to-simple-and-variable-products/)
 
-## Reference
+## リファレンス
 
-[Visit @woocommerce/create-woo-extension on NPM for package reference](https://www.npmjs.com/package/@woocommerce/create-woo-extension)
-[Check out wp-env's command reference to learn more about advanced functionality](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#command-reference)
+[パッケージリファレンスはNPMの@woocommerce/create-woo-extensionをご覧ください](https://www.npmjs.com/package/@woocommerce/create-woo-extension)
+[高度な機能についてはwp-envのコマンドリファレンスをチェック](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#command-reference)

@@ -3,32 +3,31 @@ post_title: WooCommerce CLI examples
 sidebar_label: Examples
 sidebar_position: 3
 ---
-
 # WooCommerce CLI の例
 
-Full documentation for every command is available using `--help`. Below are some example commands to show what the CLI can do.
+各コマンドの完全なドキュメントは`--help`を使用して入手できます。以下はCLIで何ができるかを示すコマンドの例です。
 
 以下の例ではすべてユーザーID1（通常は管理者アカウント）を使用していますが、ご自身のユーザーアカウントに置き換えてください。
 
-You can also find other examples (without output) by looking at [the testing files for our CLI tests](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/tests/cli/features).
+また、[CLIテストのテストファイル](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/tests/cli/features)を見れば、他の例（出力なし）を見つけることができます。
 
-Each command will have a `.feature` file. For example, [these some payment gateway commands](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/cli/features/payment_gateway.feature).
+各コマンドは`.feature`ファイルを持っています。例えば、[これらの支払いゲートウェイのコマンド](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/cli/features/payment_gateway.feature)。
 
-## 商品/ショップのトランジェントキャッシュのクリア
+## 商品/ショップのトランジェントキャッシュをクリアする
 
 Command: 
 
-`$ wp wc tool run clear_transients --user=1`
+`$ wp wc tool run clear_transients --user=1`。
 
 Response:
 
-`Success: Updated system_status_tool clear_transients.`
+`Success: Updated system_status_tool clear_transients.`。
 
 ## 全てのシステムツールのリスト
 
 Command: 
 
-`$ wp wc tool list --user=1`
+`$ wp wc tool list --user=1`。
 
 Response:
 
@@ -58,17 +57,17 @@ Response:
 
 Command:
 
-`$ wp wc customer create --email='woo@woo.local' --user=1 --billing='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --shipping='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --password='hunter2' --username='mrbob' --first_name='Bob' --last_name='Tester'`
+`$ wp wc customer create --email='woo@woo.local' --user=1 --billing='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --shipping='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --password='hunter2' --username='mrbob' --first_name='Bob' --last_name='Tester'`。
 
 Response:
 
-`Success: Created customer 17.`
+`Success: Created customer 17.`。
 
 ## CSV 形式での顧客の取得
 
 Command:
 
-`$ wp wc customer get 17 --user=1 --format=csv`
+`$ wp wc customer get 17 --user=1 --format=csv`。
 
 Response:
 
@@ -97,17 +96,17 @@ avatar_url,http://2.gravatar.com/avatar/5791d33f7d6472478c0b5fa69133f09a?s=96
 
 Command:
 
-`$ wp wc order_note create 355 --note="Great repeat customer" --customer_note=true --user=1`
+`$ wp wc order_note create 355 --note="Great repeat customer" --customer_note=true --user=1`。
 
 Response:
 
-`Success: Created order_note 286.`
+`Success: Created order_note 286.`。
 
 ## オーダーノートの取得
 
 Command:
 
-`$ wp wc order_note get 355 286 --user=1`
+`$ wp wc order_note get 355 286 --user=1`。
 
 Response:
 
@@ -126,17 +125,17 @@ Response:
 
 Command:
 
-`$ wp wc shop_coupon update 45 --amount='10' --discount_type='percent' --free_shipping=true --user=1`
+`$ wp wc shop_coupon update 45 --amount='10' --discount_type='percent' --free_shipping=true --user=1`。
 
 Response:
 
-`Success: Updated shop_coupon 45.`
+`Success: Updated shop_coupon 45.`。
 
-## クーポンの取得
+## クーポン取得
 
 Command:
 
-`$ wp wc shop_coupon get 45 --user=1`
+`$ wp wc shop_coupon get 45 --user=1`。
 
 Response:
 

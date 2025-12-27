@@ -3,8 +3,7 @@ post_title: Setting up your development environment
 sidebar_label: Local Development
 sidebar_position: 2
 ---
-
-# Setting up your development environment
+# 開発環境のセットアップ
 
 ## 推奨ソフトウェア
 
@@ -26,7 +25,9 @@ WooCommerceエクステンションを開発する際に考慮する必要があ
 
 ### ワードプレススタジオ - 推奨アプローチ
 
-簡単なローカル開発環境としては、[WordPress.com](https://developer.wordpress.com) チームがサポートするローカル開発環境である [WordPress [Studio](https://developer.wordpress.com/studio/) をお勧めします。Studioには、複数のローカルウェブサイト環境を管理する機能や、コードエディタやターミナルとの統合機能が含まれています。Studioには、WordPress専用のAIアシスタント、WordPressのバックアップからの簡単なインポート、ブループリントのサポート、無料の公開プレビューサイト、WordPress.comまたはPressableでホストされているサイトとの双方向同期などの機能もあります。
+簡単なローカル開発環境としては、[WordPress.com](https://developer.wordpress.com) チームがサポートするローカル開発環境である [WordPress Studio](https://developer.wordpress.com/studio/) をお勧めします。Studioには、複数のローカルウェブサイト環境を管理する機能や、コードエディタやターミナルとの統合機能が含まれています。Studioには、WordPress専用のAIアシスタント、WordPressのバックアップからの簡単なインポート、ブループリントのサポート、無料の公開プレビューサイト、WordPress.comまたはPressableでホストされているサイトとの双方向同期などの機能もあります。
+
+### wp-env
 
 [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/)はWordPressコミュニティによって管理されているコマンドラインユーティリティで、[Docker](https://www.docker.com/)とJSONマニフェストを使用してカスタムWordPress環境をセットアップして実行することができます。このリポジトリには、WooCommerceコアに貢献するための`.wp-env.json`ファイルが含まれています。
 
@@ -37,7 +38,7 @@ WooCommerceエクステンションを開発する際に考慮する必要があ
 * [MAMP](https://www.mamp.info/en/mac/) - MacやWindowsにインストールできるローカルサーバー環境。  
 * [WAMP](https://www.wampserver.com/en/) - Apache2、PHP、MySQLでアプリケーションを作成できるWindowsのウェブ開発環境。  
 * [XAMPP](https://www.apachefriends.org/index.html) - インストールが簡単なApacheディストリビューションで、MariaDB、PHP、Perlが含まれています。Windows、Linux、OS Xで利用可能です。  
-* [Laravel [Herd / Valet](https://herd.laravel.com/) - macOS (Valet) と Windows (Herd) 用のミニマリストで高速な開発環境で、Laravel やその他の PHP アプリケーション用に最適化されています。
+* [Laravel Herd / Valet](https://herd.laravel.com/) - macOS (Valet) と Windows (Herd) 用のミニマリストで高速な開発環境で、Laravel やその他の PHP アプリケーション用に最適化されています。
 * [Lando](https://lando.dev/) - 様々な言語やフレームワークのローカル開発サービスを定義・管理するための、Dockerベースの強力なツールです。
 * [DDEV](https://ddev.com/) - DrupalやWordPressのような多くのCMSやフレームワークをサポートする、合理化されたローカルWeb開発のためのオープンソースのDockerベースのツールです。
 * [vvv](https://varyingvagrantvagrants.org/) は、VirtualBoxとVagrantを利用した、高度に設定可能で、クロスプラットフォームな、堅牢な環境管理ツールです。 
@@ -48,11 +49,11 @@ WooCommerceエクステンションを開発する際に考慮する必要があ
 
 ## WooCommerce Coreを環境に追加する
 
-WooCommerceを開発する場合、WooCommerce Coreの開発版をインストールするのが便利です。
+WooCommerceを開発する場合、WooCommerce Coreの開発版をインストールすると便利です。
 
 ### オプション1：WooCommerceベータテスター
 
-従来のWordPressダッシュボードからWooCommerceをインストールする場合、[WooCommerce Beta Tester](/docs/contribution/testing/beta-testing)エクステンションをインストールすることで、今後のベータ版やリリース候補版へのアクセスを含め、バージョンを変更することもできます。WooCommerce Beta testerは[Woo [Marketplace](https://woocommerce.com/marketplace)から入手できます。 
+従来のWordPressダッシュボードからWooCommerceをインストールする場合、[WooCommerce Beta Tester](/docs/contribution/testing/beta-testing)エクステンションをインストールすることで、今後のベータ版やリリース候補版へのアクセスを含め、バージョンを変更することもできます。WooCommerce Beta testerは[Woo Marketplace](https://woocommerce.com/marketplace)から入手できます。 
 
 ### オプション 2: WooCommerce Core リポジトリをクローンする
 
@@ -76,13 +77,13 @@ cd woocommerce
 
 #### ノードのインストールと有効化
 
-Node [Version Manager](https://github.com/nvm-sh/nvm) (または nvm) を使用して Node をインストールし、アクティベートすることをお勧めします。nvmは以下のCLIコマンドでインストールできます：
+[Node Version Manager](https://github.com/nvm-sh/nvm) (または nvm) を使用して Node をインストールし、アクティベートすることをお勧めします。nvmは以下のCLIコマンドでインストールできます：
 
 ```shell
 nvm install
 ```
 
-nvmのインストール方法と利用方法については、[nvm [GitHubリポジトリ](https://github.com/nvm-sh/nvm?tab=readme-ov-file#intro)を参照してください。
+nvmのインストール方法と利用方法については、[nvm GitHubリポジトリ](https://github.com/nvm-sh/nvm?tab=readme-ov-file#intro)を参照してください。
 
 #### 依存関係のインストール
 
@@ -118,4 +119,4 @@ ln -s woocommerce/plugins/woocommerce /path-to-local/wp-content/plugins
 pnpm build:zip
 ```
 
-`woocommerce.zip`ファイルはWooCommerceの修正版を別のテスト環境にアップロードしたい場合に役立ちます。
+`woocommerce.zip`ファイルはWooCommerceの修正バージョンを別のテスト環境にアップロードしたい場合に役立ちます。

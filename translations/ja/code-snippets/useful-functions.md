@@ -195,7 +195,7 @@ wc_get_endpoint_url( $endpoint, $value = '', $permalink = '' )
 
 ### wc_get_products
 
-この関数は、特定のパラメータに基づいて製品を検索する標準的な方法です。
+この関数は、特定のパラメーターに基づいて商品を検索する標準的な方法である。
 
 ```php
 wc_get_products( $args )

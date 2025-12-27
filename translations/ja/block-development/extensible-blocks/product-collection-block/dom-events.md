@@ -34,7 +34,7 @@ window.document.addEventListener(
 
 | Parameter          | Type    | Default value | Description                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------ | ------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `collection` | string | `undefined` | コレクション・タイプ。タイプを指定しないので、"create your own "コレクションでは`undefined`です。他のCoreコレクションの場合は、`woocommerce/product-collection/best-sellers`となります：`undefined`, `woocommerce/product-collection/featured`, `woocommerce/product-collection/new-arrivals`, `woocommerce/product-collection/on-sale`, `woocommerce/product-collection/top-rated` のいずれかです。カスタム・コレクションの場合は、その名前が格納されます。|
+| `collection` | string | `undefined` | コレクション・タイプ。タイプを指定しないので、"create your own "コレクションでは`undefined`です。他のCoreコレクションでは、`woocommerce/product-collection/best-sellers`となります：`undefined`, `woocommerce/product-collection/featured`, `woocommerce/product-collection/new-arrivals`, `woocommerce/product-collection/on-sale`, `woocommerce/product-collection/top-rated` のいずれかです。カスタム・コレクションの場合は、その名前が格納されます。|
 | 番号｜商品ID｜`productId`。
 
 ### 使用例

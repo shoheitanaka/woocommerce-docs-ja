@@ -2,12 +2,11 @@
 post_title: Onboarding
 sidebar_label: Onboarding
 ---
-
-# Onboarding
+# オンボーディング
 
 ユーザが拡張機能を使用する最初の経験は非常に重要です。初めて拡張機能をアクティブにするユーザは、新規ユーザやリピーターユーザを正しい方法でオンボードする機会を提供します。どのように始めればよいのか、ユーザにとって明確ですか？セットアップが難しければ難しいほど、ユーザーが製品を完全に放棄する可能性が高くなることに留意してください。
 
-**主なボタンは行動喚起として使用し、副次的な情報は優先順位を下げてわかりやすくします。内線が設定されていない場合、または設定が完了していない場合は、明確な次のステップ、または進行状況を示すステップバイステップのプロセスで、加盟店をセットアップ成功に向けて誘導する。
+**主なボタンは行動喚起として使用し、副次的な情報は優先順位を下げてわかりやすくします。内線が設定されていない場合、または設定が完了していない場合は、次のステップや進捗状況を表示するステップバイステップのプロセスを明確にして、セットアップの成功に向けて加盟店を誘導してください。
 
 **必要であれば、プラグインエリア**で解除可能な通知を提供してください。プラグインを正常に有効にするためにセットアップや接続が必要な場合、次のステップを伝える通知を追加します。
 
@@ -23,8 +22,8 @@ sidebar_label: Onboarding
 
 **役に立つ空の状態を表示する**。もしあれば、既存のプラグインのUIに頼って、ユーザーをプラグインのセットアップと使用にうまく導くようにしましょう。オンボーディングメール、プッシュ通知、ウェルカムツアーは避けましょう。
 
-**Plugins should not redirect on activation from WordPress plugins area**. This can break bulk activation of plugins. Following the [dotorg plugin guideline 11](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/#11-plugins-should-not-hijack-the-admin-dashboard), the extension shouldn't hijack the dashboard or hide functionality of core or other extensions.
+[**プラグインをWordPressのプラグインエリアから有効化する際に、リダイレクトされないようにしてください。これはプラグインの一括有効化を壊す可能性があります。dotorg plugin guideline 11](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/#11-plugins-should-not-hijack-the-admin-dashboard) に従って、拡張機能はダッシュボードを乗っ取ったり、コアや他の拡張機能の機能を隠したりしてはいけません。
 
-**行き止まりのリンクやページは避けること。常に進む道や戻る道があるべきです。
+**行き止まりのリンクやページは避けること。常に進む道、戻る道があるべきです。
 
 **エラー処理とメッセージング**。ユーザーがセットアップ中にエラーに遭遇した場合、何が問題で、どのように修正すればよいのか、明確でわかりやすい情報とともに、明確で有益な通知を提供しましょう。

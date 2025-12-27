@@ -2,7 +2,6 @@
 post_title: Settings
 sidebar_label: Settings
 ---
-
 # Settings
 
 **製品の全体的な機能にとって重要な設定オプションのみを含める。

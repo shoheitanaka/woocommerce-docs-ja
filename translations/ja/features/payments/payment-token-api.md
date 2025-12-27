@@ -2,32 +2,31 @@
 post_title: WooCommerce Payment Token API
 sidebar_label: Payment Token API
 ---
-
 # WooCommerce Payment Token API
 
 WooCommerce 2.6では、ゲートウェイ用の支払いトークンを保存および管理するためのAPIが導入されました。ユーザーはアカウント設定からこれらのトークンを管理し、チェックアウト時に保存された支払いトークンから選択することもできます。
 
 このガイドでは、新しいAPIを使用するためのいくつかの便利なチュートリアルと、利用可能なすべての様々な方法を提供しています。
 
-## Tutorials
+## チュートリアル
 
-### Adding Payment Token API Support To Your Gateway
+### ゲートウェイにペイメントトークンAPIサポートを追加する
 
 これらの例では、Simplify Commerceゲートウェイを使用します。
 
-#### Step 0: Extending The Correct Gateway Base
+#### ステップ0：正しいゲートウェイベースの拡張
 
-WooCommerce ships with two base classes for gateways. These classes were introduced along with the Token API in 2.6. They  are `WC_Payment_Gateway_CC` (for credit card based tokens) and `WC_Payment_Gateway_eCheck` (for eCheck based tokens). They contain some useful code for generating payment forms on checkout and should hopefully cover most cases.
+WooCommerceにはゲートウェイ用の2つの基本クラスが同梱されています。これらのクラスは2.6でトークンAPIと共に導入されました。これらは`WC_Payment_Gateway_CC`（クレジットカードベースのトークン用）と`WC_Payment_Gateway_eCheck`（eCheckベースのトークン用）です。これらは、チェックアウト時に支払いフォームを生成するための便利なコードを含んでおり、うまくいけばほとんどのケースをカバーできるはずです。
 
-You can also implement your own gateway base by extending the abstract `WC_Payment_Gateway` class, if neither of those classes work for you.
+これらのクラスがどちらも使えない場合は、`WC_Payment_Gateway` クラスを継承して独自のゲートウェイ・ベースを実装することもできます。
 
 シンプリファイではクレジットカードを扱っているため、クレジットカードのゲートウェイを拡張しています。
 
-`class WC_Gateway_Simplify_Commerce extends WC_Payment_Gateway_CC`
+`class WC_Gateway_Simplify_Commerce extends WC_Payment_Gateway_CC`。
 
-#### Step 1: 'Supports' Array
+#### ステップ1：「サポート」配列
 
-We need to tell WooCommerce our gateway supports tokenization. Like other gateways features, this is defined in a gateway's `__construct` in an array called `supports`.
+ゲートウェイがトークン化をサポートしていることをWooCommerceに伝える必要があります。他のゲートウェイの機能のように、これはゲートウェイの`__construct`で`supports`と呼ばれる配列で定義されます。
 
 これがシンプリファイ配列だ：
 
@@ -41,13 +40,13 @@ $this->supports = array(
 );
 ```
 
-Add `tokenization` to this array.
+この配列に`tokenization`を追加する。
 
-#### Step 2: Define A Method For Adding/Saving New Payment Methods From "My Account"
+#### ステップ2：「マイアカウント」から新しい支払い方法を追加・保存する方法を定義する
 
-The form handler that is run when adding a new payment method from the "my accounts" section will call your gateway's `add_payment_method` method.
+my accounts "セクションから新しい支払い方法を追加する際に実行されるフォームハンドラは、ゲートウェイの`add_payment_method`メソッドを呼び出します。
 
-Your `add_payment_method` is expected to return an array with two keys, a `result` string and a `redirect` url:
+`add_payment_method`は、`result`文字列と`redirect`URLの2つのキーを持つ配列を返すことが期待されています：
 
 ```php
 array(
@@ -56,13 +55,13 @@ array(
 );
 ```
 
-After any validation (i.e. making sure the token and data you need is present from the payment provider), you can start building a new token by creating an instance of one of the following classes: `WC_Payment_Token_CC` or `WC_Payment_Token_eCheck`. Like gateways, you can also extend the abstract `WC_Payment_Token` class and define your own token type type if necessary. For more information on all three of these classes and their methods, see further down below in this doc.
+検証（必要なトークンとデータが決済プロバイダから提供されていることを確認すること）が完了したら、以下のクラスのインスタンスを作成して新しいトークンの作成を開始できます：`WC_Payment_Token_CC`または`WC_Payment_Token_eCheck`です。ゲートウェイと同様に、必要に応じて抽象クラスである`WC_Payment_Token`を拡張し、独自のトークン型を定義することもできます。これら3つのクラスとそのメソッドの詳細については、このドキュメントのさらに下を参照してください。
 
 Simplifyはクレジットカードを使うので、クレジットカードクラスを使います。
 
-`$token = new WC_Payment_Token_CC();`
+`$token = new WC_Payment_Token_CC();`。
 
-We will use various `set_` methods to pass in information about our token. To start with we will pass the token string and the gateway ID so the token can be associated with Simplify.
+トークンに関する情報を渡すために、さまざまな`set_`メソッドを使用します。まず最初に、トークンの文字列とゲートウェイIDを渡して、トークンをSimplifyに関連付けることができるようにします。
 
 ```php
 $token->set_token( $token_string );
@@ -80,35 +79,35 @@ $token->set_expiry_year( '2018' );
 
 ほとんどの場合、トークンを特定のユーザーに関連付けることもできます：
 
-`$token->set_user_id( get_current_user_id() );`
+`$token->set_user_id( get_current_user_id() );`。
 
 最後に、トークン・オブジェクトが構築されたら、トークンをデータベースに保存します。
 
-`$token->save();`
+`$token->save();`。
 
-Save will return `true` if the token was successfully saved, and `false` if an error occurred (like a missing field).
+Saveは、トークンが正常に保存された場合は`true`を返し、（フィールドが見つからないなどの）エラーが発生した場合は`false`を返します。
 
-#### Step 3: Save Methods On Checkout
+#### ステップ3：チェックアウト時に方法を保存する
 
-WooCommerce also allows customers to save a new payment token during the checkout process in addition to "my account". You'll need to add some code to your gateways `process_payment` function to make this work correctly.
+WooCommerceはまた、顧客が「マイアカウント」に加えてチェックアウトプロセス中に新しい支払いトークンを保存することができます。これを正しく動作させるには、ゲートウェイの`process_payment`関数にコードを追加する必要があります。
 
-To figure out if you need to save a new payment method you can check the following POST field which should return `true` if the "Save to Account" checkbox was selected.
+口座に保存」チェックボックスが選択されている場合、`true`を返すはずです。
 
-`wc-{$gateway_id}-new-payment-method`
+`wc-{$gateway_id}-new-payment-method`。
 
-If you have previously saved tokens being offered to the user, you can also look at `wc-{$gateway_id}-payment-token` for the value `new` to make sure the "Use a new card" / "Use new payment method" radio button was selected.
+ユーザーに提供されるトークンを以前に保存している場合、`wc-{$gateway_id}-payment-token`の値`new`を見て、「新しいカードを使用する」/「新しい支払い方法を使用する」ラジオボタンが選択されていることを確認することもできます。
 
-Once you have found out that a token should be saved you can save a token in the same way you did in Step 2, using the `set_` and `save` methods.
+トークンを保存すべきことがわかったら、ステップ2と同じように`set_`メソッドと`save`メソッドを使ってトークンを保存することができます。
 
-#### Step 4: Retrieve The Token When Processing Payments
+#### ステップ4：支払い処理時にトークンを取得する
 
-You will need to retrieve a saved token when processing a payment in your gateway if a user selects one. This should also be done in your `process_payment` method.
+ユーザーがトークンを選択した場合、ゲートウェイで支払いを処理する際に保存されたトークンを取得する必要があります。これも `process_payment` メソッドで行う必要があります。
 
 以下のような条件を使って、既存のトークンを使うべきかどうかをチェックできる：
 
-`if ( isset( $_POST['wc-simplify_commerce-payment-token'] ) && 'new' !== $_POST['wc-simplify_commerce-payment-token'] ) {`
+`if ( isset( $_POST['wc-simplify_commerce-payment-token'] ) && 'new' !== $_POST['wc-simplify_commerce-payment-token'] ) {`。
 
-`wc-{$gateway_id}}-payment-token` will return the ID of the selected token.
+`wc-{$gateway_id}}-payment-token`は選択されたトークンのIDを返します。
 
 その後、ta IDからトークンをロードすることができます（このdocの後の方でWC_Payment_Tokensクラスについて詳しく説明します）：
 
@@ -117,7 +116,7 @@ $token_id = wc_clean( $_POST['wc-simplify_commerce-payment-token'] );
 $token    = WC_Payment_Tokens::get( $token_id );
 ```
 
-これは、ロードされたトークンが現在のユーザに属しているかどうかをチェックする ***ものではありません。単純なチェックで可能です：
+これは、ロードされたトークンが現在のユーザに属しているかどうかをチェックするものではありません。単純なチェックで可能です：
 
 ```php
 // Token user ID does not match the current user... bail out of payment processing.
@@ -127,14 +126,14 @@ if ( $token->get_user_id() !== get_current_user_id() ) {
 }
 ```
 
-Once you have loaded the token and done any necessary checks, you can get the actual token string (to pass to your payment provider) by using
-`$token->get_token()`.
+トークンをロードし、必要なチェックを行ったら、次のようにして実際のトークン文字列を取得します。
+`$token->get_token()`を使用します。
 
-### Creating A New Token Type
+### 新しいトークン・タイプの作成
 
 抽象的な WC_Payment_Token クラスを拡張し、新しいトークン・タイプを作成することができます。この場合、いくつか含める必要があるものがあります。
 
-#### Step 0: Extend WC_Payment_Token And Name Your Type
+#### ステップ 0: WC_Payment_Token を拡張し、タイプに名前を付ける
 
 WC_Payment_Tokenを拡張し、新しいタイプの名前を指定することから始めましょう。eCheckトークンクラスはWooCommerceのコアに搭載されている最も基本的なトークンタイプなので、どのように構築されるかを見ていきます。
 
@@ -149,15 +148,15 @@ class WC_Payment_Token_eCheck extends WC_Payment_Token {
 }
 ```
 
-The name for this token type is 'eCheck'. The value provided in `$type` needs to match the class name (i.e: `WC_Payment_Token_$type`).
+このトークン・タイプの名前は「eCheck」です。`$type`で指定される値は、クラス名と一致する必要があります(例: `WC_Payment_Token_$type`)。
 
-#### Step 1: Provide A Validate Method
+#### ステップ1：検証メソッドの提供
 
-Some basic validation is performed on a token before it is saved to the database. `WC_Payment_Token` checks to make sure the actual token value is set, as well as the `$type` defined above. If you want to validate the existence of other data (eChecks require the last 4 digits for example) or length (an expiry month should be 2 characters), you can provide your own `validate()` method.
+トークンがデータベースに保存される前に、いくつかの基本的なバリデーションが実行されます。`WC_Payment_Token`は、上で定義した`$type`と同様に、実際のトークン値が設定されていることを確認します。その他のデータ（例えばeチェックでは下4桁の数字が必要です）や長さ（有効期限月は2文字です）を検証したい場合は、独自の`validate()`メソッドを用意してください。
 
-Validate should return `true` if everything looks OK, and false if something doesn't.
+Validateは、何も問題がなければ`true`を返し、何も問題がなければfalseを返すべきである。
 
-Always make sure to call `WC_Payment_Token`'s validate method before adding in your own logic.
+独自のロジックを追加する前に、必ず`WC_Payment_Token`のvalidateメソッドを呼び出してください。
 
 ```php
 public function validate() {
@@ -174,18 +173,18 @@ if ( ! $this->get_last4() ) {
 }
 ```
 
-Finally, return true if we make it to the end of the `validate()` method.
+最後に、`validate()`メソッドの終わりまで到達したらtrueを返す。
 
 ```php
     return true;
 }
 ```
 
-#### Step 2: Provide `get_` And `set_` Methods For Extra Data
+#### ステップ2：追加データ用に`get_`と`set_`メソッドを用意する
 
-公開したいデータごとに独自のメソッドを追加できるようになった。データの保存と取得を簡単にする便利な関数が用意されている。すべてのデータはメタ・テーブルに保存されるので、独自のテーブルを作成したり、既存のテーブルに新しいフィールドを追加したりする必要はありません。
+公開したいデータごとに独自のメソッドを追加できるようになった。便利な関数が用意されているので、データの保存や取り出しが簡単にできる。すべてのデータはメタ・テーブルに保存されるので、独自のテーブルを作成したり、既存のテーブルに新しいフィールドを追加したりする必要はありません。
 
-Provide a `get_` and `set_` method for each piece of data you want to capture. For eChecks, this is "last4" for the last 4 digits of a check.
+取り込みたいデータごとに`get_`と`set_`メソッドを用意してください。eチェックの場合、これは小切手の下4桁を表す "last4 "です。
 
 ```php
 public function get_last4() {
@@ -197,9 +196,9 @@ public function set_last4( $last4 ) {
 }
 ```
 
-That's it! These meta functions are provided by [WC_Data](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/abstracts/abstract-wc-data.php).
+以上である！これらのメタ関数は[WC_Data](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/abstracts/abstract-wc-data.php)によって提供されています。
 
-#### Step 3: Use Your New Token Type
+#### ステップ3：新しいトークン・タイプを使用する
 
 新しいトークン・タイプは、新しいトークンを構築する際に直接使用することができます。
 
@@ -209,7 +208,7 @@ That's it! These meta functions are provided by [WC_Data](https://github.com/woo
 $token->save()
 ```
 
-or it will be returned when using `WC_Payment_Tokens::get( $token_id )`.
+または、`WC_Payment_Tokens::get( $token_id )`を使用した場合に返される。
 
 ## Classes
 
@@ -219,7 +218,7 @@ or it will be returned when using `WC_Payment_Tokens::get( $token_id )`.
 
 #### get_customer_tokens( $customer_id, $gateway_id = '' )
 
-Returns an array of token objects for the customer specified in `$customer_id`. You can filter by gateway by providing a gateway ID as well.
+`$customer_id`で指定された顧客のトークン・オブジェクトの配列を返します。ゲートウェイIDを指定することで、ゲートウェイでフィルタリングすることもできます。
 
 ```php
 // Get all tokens for the current user
@@ -232,7 +231,7 @@ $tokens = WC_Payment_Tokens::get_customer_tokens( get_current_user_id(), 'simpli
 
 #### get_customer_default_token( $customer_id )
 
-default'としてマークされたトークン（チェックアウト時に自動的に選択されるトークン）のトークンオブジェクトを返します。ユーザがデフォルトトークンを持たない場合、この関数は null を返します。
+default'（チェックアウト時に自動的に選択されるトークン）としてマークされたトークンのトークンオブジェクトを返します。ユーザがデフォルトトークンを持たない場合、この関数は null を返します。
 
 ```php
 // Get default token for the current user
@@ -243,7 +242,7 @@ $token = WC_Payment_Tokens::get_customer_default_token( 520 );
 
 #### get_order_tokens( $order_id )
 
-Orders can have payment tokens associated with them (useful for subscription products and renewing, for example). You can get a list of tokens associated with this function. Alternatively you can use `WC_Order`'s '`get_payment_tokens()` function to get the same result.
+注文には、支払いトークンを関連付けることができます（定期購入商品や更新時などに便利です）。この関数でトークンの一覧を取得できます。別の方法として、`WC_Order` の '`get_payment_tokens()` 関数を使用して同じ結果を得ることもできます。
 
 ```php
 // Get tokens associated with order 25
@@ -255,7 +254,7 @@ $tokens =  $order->get_payment_tokens();
 
 #### get( $token_id )
 
-Returns a single payment token object for the provided `$token_id`.
+指定された `$token_id` に対応する単一の支払いトークン・オブジェクトを返します。
 
 ```php
 // Get payment token 52
@@ -273,7 +272,7 @@ WC_Payment_Tokens::delete( 52 );
 
 #### set_users_default( $user_id, $token_id )
 
-Makes the provided token (`$token_id`) the provided user (`$user_id`)'s default token. It makes sure that whatever token is currently set is default is removed and sets the new one.
+指定されたトークン(`$token_id`)を指定されたユーザー(`$user_id`)のデフォルト・トークンにします。現在デフォルトに設定されているトークンが削除され、新しいトークンが設定されることを確認します。
 
 ```php
 // Set user 17's default token to token 82
@@ -291,7 +290,7 @@ $type = WC_Payment_Tokens::get_token_type_by_id( 23 );
 
 ### WC_Payment_Token_CC
 
-`set_` methods **do not** update the token in the database. You must call `save()`, `create()` (new tokens only), or `update()` (existing tokens only).
+`set_`メソッドはデータベース内のトークンを更新しません。`save()`、`create()`（新しいトークンのみ）、`update()`（既存のトークンのみ）を呼び出す必要があります。
 
 #### validate()
 
@@ -320,7 +319,7 @@ echo $token->get_card_type();
 
 #### set_card_type( $type )
 
-Set the credit card type. This is a freeform text field, but the following values can be used and WooCommerce will show a formatted label New labels can be added with the `woocommerce_credit_card_type_labels` filter.
+クレジットカードタイプを設定します。これはフリーフォームのテキストフィールドですが、以下の値を使用することができ、WooCommerceはフォーマットされたラベルを表示します。 新しいラベルは`woocommerce_credit_card_type_labels`フィルタを使用して追加することができます。
 
 ```php
 $token = WC_Payment_Tokens::get( 42 );
@@ -400,11 +399,11 @@ echo $token->get_last4(); // returns 2929
 
 ### WC_Payment_Token_eCheck
 
-`set_` methods **do not** update the token in the database. You must call `save()`, `create()` (new tokens only), or `update()` (existing tokens only).
+`set_`メソッドはデータベース内のトークンを更新しません。`save()`、`create()`（新しいトークンのみ）、`update()`（既存のトークンのみ）を呼び出す必要があります。
 
 #### validate()
 
-eチェック・トークンは、実際のトークンと同様に下4桁が保存されていることを確認します。
+eCheckトークンには、実際のトークンと同様に下4桁が保存されていることを確認します。
 
 ```php
 $token = new WC_Payment_Token_eCheck();
@@ -435,9 +434,9 @@ echo $token->get_last4(); // returns 2929
 
 ### WC_Payment_Token
 
-You should not use `WC_Payment_Token` directly. Use one of the bundled token classes (`WC_Payment_Token_CC` for credit cards and `WC_Payment_Token_eCheck`). You can extend this class if neither of those work for you. All the methods defined in this section are available to those classes.
+`WC_Payment_Token`を直接使うべきではありません。バンドルされているトークン・クラス（クレジットカード用の`WC_Payment_Token_CC`と`WC_Payment_Token_eCheck`）のいずれかを使用してください。どちらも使えない場合は、このクラスを拡張することができます。このセクションで定義されているすべてのメソッドは、これらのクラスで使用できます。
 
-`set_` methods **do not** update the token in the database. You must call `save()`, `create()` (new tokens only), or `update()` (existing tokens only).
+`set_`メソッドはデータベース内のトークンを更新しません。`save()`、`create()`（新しいトークンのみ）、`update()`（既存のトークンのみ）を呼び出す必要があります。
 
 #### get_id()
 
@@ -499,7 +498,7 @@ $token->set_user_id( '21' ); // This token now belongs to user 21.
 echo $token->get_last4(); // returns 2929
 ```
 
-#### get_gateway_id
+#### ゲートウェイID
 
 トークンに関連付けられたゲートウェイを取得します。
 
@@ -530,7 +529,7 @@ var_dump( $token->is_default() ); // returns false
 
 #### set_default( $is_default )
 
-Toggle a tokens 'default' flag. Pass true to set it as default, false if its just another token. This **does not** unset any other tokens that may be set as default. You can use `WC_Payment_Tokens::set_users_default()` to handle that instead.
+トークンの「デフォルト」フラグを切り替えます。trueを渡すとデフォルトに設定され、falseを渡すと別のトークンに設定されます。これは、デフォルトとして設定されている他のトークンをアンセットすることは **しません** 。代わりに `WC_Payment_Tokens::set_users_default()` を使ってそれを処理することができます。
 
 ```php
 $token = WC_Payment_Tokens::get( 42 ); // Token 42 is a default token for user 3
@@ -541,11 +540,11 @@ var_dump( $token->is_default() ); // returns false
 
 #### validate()
 
-Does a check to make sure both the token and token type (CC, eCheck, ...) are present. See `WC_Payment_Token_CC::validate()` or `WC_Payment_Token_eCheck::validate()` for usage.
+トークンとトークン・タイプ（CC、eCheck、...）の両方が存在することを確認するチェックを行います。使い方は`WC_Payment_Token_CC::validate()`または`WC_Payment_Token_eCheck::validate()`を参照。
 
 #### read( $token_id )
 
-Load an existing token object from the database. See `WC_Payment_Tokens::get()` which is an alias of this function.
+既存のトークン・オブジェクトをデータベースからロードします。この関数のエイリアスである `WC_Payment_Tokens::get()` を参照してください。
 
 ```php
 // Load a credit card toke, ID 55, user ID 5
@@ -557,7 +556,7 @@ echo $token->get_user_id(); // returns 5
 
 #### update()
 
-Update an existing token. This will take any changed fields (`set_` functions) and actually save them to the database. Returns true or false depending on success.
+既存のトークンを更新します。これは変更されたフィールド(`set_`関数)を受け取り、実際にデータベースに保存します。成功に応じてtrueまたはfalseを返します。
 
 ```php
 $token = WC_Payment_Tokens::get( 42 ); // credit card token
@@ -578,7 +577,7 @@ $token->create(); // save to database
 
 #### save()
 
-`save()` can be used in place of `update()` and `create()`. If you are working with an existing token, `save()` will call `update()`. A new token will call `create()`. Returns true or false depending on success.
+`save()`は、`update()`と`create()`の代わりに使用できます。既存のトークンを使用している場合、`save()`は`update()`を呼び出します。新しいトークンは `create()` を呼び出します。成功に応じてtrueまたはfalseを返します。
 
 ```php
 // calls update
@@ -592,7 +591,7 @@ $token = new WC_Payment_Token_CC();
 $token->save();
 ```
 
-#### delete()
+#### 削除()
 
 データベースからトークンを削除します。
 

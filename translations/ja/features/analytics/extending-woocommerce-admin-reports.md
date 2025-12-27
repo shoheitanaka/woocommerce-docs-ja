@@ -1,54 +1,51 @@
 ---
 post_title: How to extend WooCommerce analytics reports
 sidebar_label: Extend analytics reports
+sidebar_position: 1
 ---
+# WooCommerceの分析レポートを拡張する方法
 
-# How to extend WooCommerce analytics reports
-
-## Introduction
+## はじめに
 
 このドキュメントは、基本的なUIドロップダウン、追加されたクエリパラメータ、SQLクエリの変更、および結果のレポートデータを使用して、WC-Adminレポートを拡張するためのガイドです。この例では、特定の通貨に基づいて注文レポートを表示するための通貨セレクタを作成します。
 
-Code from this guide can be viewed in the [woocommerce code repository](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/admin/docs/examples/extensions/sql-modification).
+## ♪ はじめに
 
-## Getting started
+`@woocommerce/create-woo-extension`を使用して、プラグイン用のモダンなWordPress JavaScript環境を構築します。このツールはWooCommerceと統合するための完全に機能的な開発環境を作成します。
 
-We'll be using a local installation of WordPress with WooCommerce and the development version of WC-Admin to take advantage of `create-wc-extension` as a way to easily scaffold a modern WordPress JavaScript environment for plugins.
+この例では、`sql-modification`バリアントを使用して、基本的なレポート拡張を作成します。
 
-ローカルにインストールしている場合は、WC-Adminをクローンして起動する。
-
-```sh
-cd wp-content/plugins
-git clone git@github.com:woocommerce/woocommerce.git
-cd plugins/woocommerce/client/admin
-npm run build
-```
-
-これがうまくいったら、JavaScript開発のための拡張機能フォルダをセットアップすることができる。
+`wp-content/plugins`ディレクトリで、以下のコマンドを実行して拡張機能を作成します：
 
 ```sh
-npm run create-wc-extension
+npx @wordpress/create-block -t @woocommerce/create-woo-extension --variant=sql-modification my-extension-name
 ```
 
-名前を決めたら、そのフォルダに移動し、ファイルを監視してビルドするためにwebpackを起動する。
+新しく作成したフォルダに移動し、開発を開始する：
 
 ```sh
-cd ../<my-plugin-name>
-npm install
-npm start
+cd my-extension-name
+npm run start
 ```
 
-Don't forget to head over to `/wp-admin/plugins.php` and activate your plugin.
+WordPressのローカル環境では、`wp-env`を使用することもできます：
 
-## Populating test data
+```sh
+npm -g i @wordpress/env
+wp-env start
+```
 
-次に、サンプルデータを持つためにいくつかの注文を設定します。WooCommerce &gt; Settings &gt; Currencyを使って、メキシコペソ、米ドル、ニュージーランドドルの3つのテスト注文を追加しました。
+`/wp-admin/plugins.php`にアクセスし、プラグインを有効化することをお忘れなく。
 
-After doing so, check out WC-Admin to make sure the orders are showing up by going to `/wp-admin/admin.php?page=wc-admin&period=today&path=%2Fanalytics%2Forders&compare=previous_year`. Note that without any modification currency figures show according to what I have currently in WooCommerce settings, which is New Zealand Dollar in this case.
+## テストデータの投入
 
-![screenshot of wp-admin showing processing orders](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.11.34-pm.png?w=851)
+次に、サンプルデータを持つためにいくつかの注文を設定します。WooCommerce > Settings > Currencyを使って、メキシコペソ、米ドル、ニュージーランドドルの3つのテスト注文を追加しました。
 
-We can confirm each order's currency by running the following query on the `wp_posts` table and joining `wp_postmeta` to gather currency meta values. Results show an order in NZD, USD, and MXN. This query is similar to the one we'll implement later in the guide to gather and display currency values.
+そうしたら、WC-Adminで`/wp-admin/admin.php?page=wc-admin&period=today&path=%2Fanalytics%2Forders&compare=previous_year`にアクセスして注文が表示されていることを確認してください。WooCommerceの設定で現在表示されている通貨はニュージーランドドルです。
+
+![注文処理中のwp-adminのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.11.34-pm.png?w=851)
+
+`wp_posts`テーブルで以下のクエリを実行し、`wp_postmeta`を結合して通貨メタ値を収集することで、各注文の通貨を確認できます。結果はNZD、USD、MXNでの注文を示しています。このクエリは、このガイドの後半で実装する、通貨値を収集して表示するクエリと似ています。
 
 ```sql
 SELECT
@@ -63,13 +60,13 @@ ORDER BY wp_posts.post_date DESC
 LIMIT 3
 ```
 
-![screenshot of resulting query](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.33.45-pm.png?w=756)
+![クエリー結果のスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.33.45-pm.png?w=756)
 
-## Add a UI dropdown
+## UIドロップダウンを追加する
 
-In order to view reports in differing currencies, a filter or dropdown will be needed. We can add a basic filter to reports by adding a configuration object similar to [this one from the Orders Report](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/admin/client/analytics/report/orders/config.js#L50-L62).
+[異なる通貨でレポートを表示するには、フィルタまたはドロップダウンが必要です。Orders Report](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/admin/client/analytics/report/orders/config.js#L50-L62)のような構成オブジェクトを追加することで、基本的なフィルタをレポートに追加できます。
 
-First, we need to populate the client with data to render the dropdown. The best way to do this is to add data to the `wcSettings` global. This global can be useful for transferring static configuration data from PHP to the client. In the main PHP file, add currency settings to the Data Registry to populate `window.wcSettings.multiCurrency`.
+まず、ドロップダウンをレンダリングするためのデータをクライアントに入力する必要があります。これを行う最善の方法は、`wcSettings` グローバルにデータを追加することです。このグローバルは、静的な設定データを PHP からクライアントに転送するのに便利です。メインの PHP ファイルで、`window.wcSettings.multiCurrency` に通貨設定を追加します。
 
 ```php
 function add_currency_settings() {
@@ -100,9 +97,9 @@ add_action( 'init', 'add_currency_settings' );
 
 コンソールでは、データが無事にクライアントに届いたことを確認できる。
 
-![screenshot of console](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.11.50-pm.png?w=476)
+![コンソールのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.11.50-pm.png?w=476)
 
-In `index.js` create the custom currency filter and add it the Orders Report.
+`index.js`でカスタム通貨フィルターを作成し、注文レポートに追加します。
 
 ```js
 import { addFilter } from "@wordpress/hooks";
@@ -129,13 +126,13 @@ addFilter(
 );
 ```
 
-If we check out the Orders Report, we can see our new dropdown. Play around with it and you'll notice the currency query parameter gets added to the url. If you check out the Network tab, you'll also see this value included in requests for data used to populate the report. For example, see the requests to orders stats endpoint, `/wp-json/wc-analytics/reports/orders/stats`. Next we'll use that query parameter to adjust report results.
+注文レポートをチェックアウトすると、新しいドロップダウンが表示されます。実際に操作してみると、通貨クエリパラメータがURLに追加されていることがわかります。Network]タブを確認すると、この値がレポートの入力に使用されるデータのリクエストに含まれていることもわかります。例えば、`/wp-json/wc-analytics/reports/orders/stats`という注文統計エンドポイントへのリクエストを見てください。次に、このクエリ・パラメータを使ってレポート結果を調整します。
 
-![screenshot showing UI dropdown in wp-admin](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.16.44-pm.png?w=512)
+![wp-adminのUIドロップダウンを示すスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.16.44-pm.png?w=512)
 
-## Handle currency parameters on the server
+## サーバー上で通貨パラメーターを処理する
 
-Now that our dropdown adds a `currency` query parameter to requests for data, the first thing we'll need to do is add the parameter as a query argument to the Orders Data Store and Orders Stats Data Store. Those data stores use query arguments for caching purposes, so by adding our parameter we can be sure a new database query will be performed when the parameter changes. Add the query argument in your main PHP file.
+`currency`クエリパラメータが追加されたので、まず最初にこのパラメータをOrders Data StoreとOrders Stats Data Storeにクエリ引数として追加します。これらのデータストアはキャッシュ目的でクエリ引数を使用するので、パラメータを追加することで、パラメータが変更されたときに新しいデータベースクエリが実行されるようになります。メイン PHP ファイルにクエリ引数を追加します。
 
 ```php
 function apply_currency_arg( $args ) {
@@ -154,9 +151,9 @@ add_filter( 'woocommerce_analytics_orders_query_args', 'apply_currency_arg' );
 add_filter( 'woocommerce_analytics_orders_stats_query_args', 'apply_currency_arg' );
 ```
 
-Now that we're sure a new database query is performed on mutations of the `currency` query parameter, we can start adding SQL statements to the queries that gather data.
+これで、`currency`クエリーパラメーターの突然変異で新しいデータベースクエリーが実行されることが確認できたので、データを収集するクエリーにSQLステートメントを追加し始めることができる。
 
-受注テーブル、受注統計、受注チャートのJOINを追加することから始めよう。
+注文テーブル、注文統計、注文チャートのJOINを追加することから始めよう。
 
 ```php
 function add_join_subquery( $clauses ) {
@@ -176,13 +173,22 @@ add_filter( 'woocommerce_analytics_clauses_join_orders_stats_interval', 'add_joi
 
 ```php
 function add_where_subquery( $clauses ) {
+  global $wpdb;
+
 	$currency = 'USD';
 
 	if ( isset( $_GET['currency'] ) ) {
 		$currency = sanitize_text_field( wp_unslash( $_GET['currency'] ) );
 	}
 
-	$clauses[] = "AND currency_postmeta.meta_key = '_order_currency' AND currency_postmeta.meta_value = '{$currency}'";
+  // Use $wpdb->prepare to safely escape the currency value for SQL.
+  $prepared_clause = $wpdb->prepare(
+      'AND currency_postmeta.meta_key = %s AND currency_postmeta.meta_value = %s',
+      '_order_currency',
+      $currency
+  );
+  
+  $clauses[] = $prepared_clause;
 
 	return $clauses;
 }
@@ -208,11 +214,11 @@ add_filter( 'woocommerce_analytics_clauses_select_orders_stats_interval', 'add_s
 
 注文レポートに戻り、うまくいくか確認してみよう。ドロップダウンを操作して、関連する注文が表に反映されるのを確認できます。
 
-![screenshot of WooCommerce Orders tab in wp-admin showing the relevant order reflected in the table.](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.38.54-pm.png?w=585)
+wp-adminのWooCommerce Ordersタブのスクリーンショット。
 
-## Finishing touches
+## 仕上げ
 
-The orders table could use some customisation to reflect the selected currency. We can add a column to display the currency in `index.js`. The `reportTableData` argument is an object of headers, rows, and items, which are arrays of data. We'll need to add a new header and append the currency to each row's data array.
+受注テーブルをカスタマイズして、選択した通貨を反映させることができます。`index.js` に通貨を表示するカラムを追加します。引数 `reportTableData` は、ヘッダー、行、アイテムのオブジェクトで、データの配列です。新しいヘッダーを追加し、各行のデータ配列に通貨を追加する必要があります。
 
 ```js
 const addTableColumn = (reportTableData) => {
@@ -248,15 +254,15 @@ const addTableColumn = (reportTableData) => {
 addFilter("woocommerce_admin_report_table", "dev-blog-example", addTableColumn);
 ```
 
-![screenshot of customized table](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.02.15-pm.png?w=861)
+![カスタマイズされたテーブルのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.02.15-pm.png?w=861)
 
 カラムを追加することは確かに便利だが、表やグラフの通貨数値は店舗の通貨しか反映しない。
 
-![screenshot of report](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.03.42-pm.png?w=865)
+![レポートのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.03.42-pm.png?w=865)
 
-In order to change a Report's currency and number formatting, we can make use of the `woocommerce_admin_report_currency` JS hook. You can see the store's default sent to the client in `wcSettings.currency`, but we'll need to change these depending on the currency being viewed and designated by the query parameter `?currency=NZD`.
+レポートの通貨と数値の書式を変更するには、`woocommerce_admin_report_currency` JSフックを使用します。ストアのデフォルトは`wcSettings.currency`でクライアントに送信されますが、クエリパラメータ`?currency=NZD`で指定された表示通貨に応じて変更する必要があります。
 
-![screenshot of currency settings](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.18.42-am.png?w=238)
+![通貨設定のスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.18.42-am.png?w=238)
 
 まず、index.jsにいくつかの設定を作る。
 
@@ -298,10 +304,10 @@ addFilter(
 );
 ```
 
-🎉 オーダーレポートを表示し、レポート全体で通貨が金額に反映されているのを確認できるようになりました。
+🎉 オーダーレポートが表示され、レポート全体を通して通貨が金額に反映されているのを確認できるようになりました。
 
-![Screenshot of customized order report](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.29.05-am.png?w=912)
+![カスタマイズ注文レポートのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.29.05-am.png?w=912)
 
-## Conclusion
+## 結論
 
 このガイドでは、サーバーに送信されるクエリ・パラメータを操作するためのUI要素を追加し、それらの値を使用してレポート・データを収集するSQLステートメントを変更します。そうすることで、WC-Adminレポートを高度にカスタマイズする方法を確立しました。この例が、ユーザーにパワフルな体験をもたらすために、拡張機能によってどのようにプラットフォームをカスタマイズできるかを示してくれることを願っています。

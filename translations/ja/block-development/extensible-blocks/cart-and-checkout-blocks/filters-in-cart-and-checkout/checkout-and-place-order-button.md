@@ -92,7 +92,7 @@ registerCheckoutFilters( 'example-extension', {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[レジに進むボタンのラベルフィルターを適用する前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/fb0216c1-a091-4d58-b443-f49ccff98ed8) |！[商品名フィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ef15b6df-fbd7-43e7-a359-b4adfbba961a) |｜...
+|![レジに進むボタンのラベルフィルターを適用する前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/fb0216c1-a091-4d58-b443-f49ccff98ed8) |![商品名フィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ef15b6df-fbd7-43e7-a359-b4adfbba961a) |｜...
 
 ## `proceedToCheckoutButtonLink`
 
@@ -208,7 +208,7 @@ registerCheckoutFilters( 'example-extension', {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[発注ボタンラベルフィルタ適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/aa6d9b65-4d56-45f7-8162-a6bbfe171250) |！[発注ボタンラベルフィルタ適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a5cc2572-16e7-4781-a5ab-5d6cdced2ff6) |｜...
+|![発注ボタンラベルフィルタ適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/aa6d9b65-4d56-45f7-8162-a6bbfe171250) |![発注ボタンラベルフィルタ適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a5cc2572-16e7-4781-a5ab-5d6cdced2ff6) |｜...
 
 <!-- FEEDBACK -->
 
@@ -257,7 +257,7 @@ registerCheckoutFilters( 'example-extension', {
         -   rate_ `string` - 税率。
     -   total_discount_ `string` - 割引総額。
     -   total_discount_tax_ `string` - 割引税額の合計。
-    -   __total_fee_ `string` - 手数料の合計。
+    -   _total_fee_ `string` - 手数料の合計。
     -   __total_fee_tax_ `string` - 料金にかかる税金の合計。
     -   __total_items_ `string` - 項目の合計。
     -   _total_items_tax_ `string` - 合計商品税。
@@ -288,7 +288,7 @@ registerCheckoutFilters( 'example-extension', {
     -   __currency_prefix_ `string` - 通貨のプレフィックス。
     -   __currency_suffix_ `string` - 通貨のサフィックス。
     -   __currency_symbol_ `string` - 通貨記号。
-    -   __currency_thousand_separator_ `string` - 通貨の千の区切り文字。
+    -   currency_thousand_separator_ `string` - 通貨の千単位区切り文字。
     -   price_ `string` - 価格。
     -   price_range_ `string` - 価格帯。
     -   raw_prices_ `object` - 以下のキーを持つ生の価格オブジェクト：

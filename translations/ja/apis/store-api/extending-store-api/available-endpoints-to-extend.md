@@ -9,7 +9,7 @@ Store APIのいくつかのエンドポイントは、`ExtendSchema`というク
 
 以下は、`ExtendSchema`を使用して拡張できるエンドポイントのリストと使用例です。
 
-#製品
+## 製品
 
 メインの`wc/store/products`エンドポイントは、ExtendSchemaによって拡張可能です。データは、レスポンス配列の各 `product` の `extensions` キーで取得できます。
 
@@ -118,9 +118,9 @@ woocommerce_store_api_register_endpoint_data(
 );
 ```
 
-#チェックアウト
+## チェックアウト
 
-`wc/store/checkout`エンドポイントはExtendSchemaによって拡張可能です。追加データは、レスポンスの `extensions` キーで利用できます。
+`wc/store/checkout`エンドポイントはExtendSchemaによって拡張可能です。追加のデータは、レスポンスの `extensions` キーで取得できます。
 
 このエンドポイントは、`CheckoutSchema::IDENTIFIER` キーを使って拡張することができます。このエンドポイントでは、`data_callback`関数と`schema_callback`関数に追加のパラメータは渡されません。
 

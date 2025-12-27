@@ -72,4 +72,4 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[追加カートとチェックアウトのインナーブロックタイプフィルターを適用する前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/0d4560c8-c2b1-4ed8-8aee-469b248ccb08) |！[追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d38cd568-6c8c-4158-9269-d8dffdf66988) |｜｜[追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d38cd568-6c8c-4158-9269-d8dffdf66988)
+|![追加カートとチェックアウトのインナーブロックタイプフィルターを適用する前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/0d4560c8-c2b1-4ed8-8aee-469b248ccb08) |![追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d38cd568-6c8c-4158-9269-d8dffdf66988) |｜｜｜[追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d38cd568-6c8c-4158-9269-d8dffdf66988)

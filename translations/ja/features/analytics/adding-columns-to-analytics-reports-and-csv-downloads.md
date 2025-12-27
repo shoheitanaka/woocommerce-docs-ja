@@ -1,9 +1,9 @@
 ---
 post_title: How to add columns to analytics reports and CSV downloads
 sidebar_label: Add columns to analytics reports
+sidebar_position: 2
 ---
-
-# How to add columns to analytics reports and CSV downloads
+# アナリティクス・レポートとCSVダウンロードに列を追加する方法
 
 アナリティクスレポートにカラムを追加することは、WooCommerceに機能を追加する本当に面白い方法です。CSVを生成することで、ユーザーインターフェイスのテーブルビューや、ユーザーのお気に入りのスプレッドシートやサードパーティアプリケーションで新しいデータを消費することができます。
 
@@ -13,7 +13,7 @@ WooCommerceでは、アナリティクスのCSVは2つの異なる方法で生�
 
 ブラウザに送られるデータもここで生成されるからだ。
 
-この例では、ダウンロード分析レポートを拡張します。このレポートのデータを取得するには、ダウンロード期限付きのダウンロード可能な商品を作成し、その商品を購入する注文を作成し、その商品を数回ダウンロードします。テストでは、26回のダウンロードを作成しました。これは、1ページに25個の商品を表示する場合はレポートが2ページにまたがって表示され、1ページに50個の商品を表示する場合は1ページに表示されるのに十分な数です。これにより、サーバーとブラウザーの両方で生成されたCSVをテストすることができました。
+この例では、ダウンロード分析レポートを拡張します。このレポートのデータを取得するには、ダウンロード期限付きのダウンロード可能な商品を作成し、その商品を購入する注文を作成し、その商品を数回ダウンロードします。テストでは、26回のダウンロードを作成しました。これは、1ページに25件の商品を表示する場合はレポートが2ページにまたがって表示され、1ページに50件の商品を表示する場合は1ページに表示されるのに十分な数です。これにより、サーバーとブラウザーの両方で生成されたCSVをテストすることができました。
 
 プラグインのPHPに、3つのフィルター・ハンドラを追加する：
 
@@ -46,7 +46,7 @@ add_filter( 'woocommerce_report_downloads_prepare_export_item', 'map_access_expi
 
 これにより、ダウンロードテーブル/CSVにアクセス期限タイムスタンプが追加されます（サーバーでCSVが生成される場合）。
 
-These three filters together add the new column to the database query, adds the new header to the CSV, and maps the data returned from the database to the CSV. The first filter `woocommerce_admin_report_columns` adds a SQL fragment to the `SELECT` statement generated for the data query. The second filter `woocommerce_filter_downloads_export_columns` adds the column header to the CSV generated on the server. The third filter `woocommerce_report_downloads_prepare_export_item` maps the value in the data returned from the database query `$item` to the export item for the CSV.
+これら3つのフィルタを合わせて、データベースクエリに新しいカラムを追加し、CSVに新しいヘッダを追加し、データベースから返されたデータをCSVにマッピングします。最初のフィルタ `woocommerce_admin_report_columns` は、データクエリ用に生成された `SELECT` 文に SQL フラグメントを追加します。2番目のフィルター `woocommerce_filter_downloads_export_columns` は、サーバー上で生成されるCSVにカラムヘッダーを追加します。3番目のフィルタ `woocommerce_report_downloads_prepare_export_item` は、データベース・クエリ `$item` から返されたデータの値をCSVのエクスポート項目にマッピングします。
 
 ブラウザで生成されたカラムのサポートを追加することでこれを終わらせるために、プラグインのJavaScriptに別のフィルタを追加する必要があります：
 

@@ -2,23 +2,22 @@
 post_title: Email editor integration
 sidebar_label: Email editor integration
 ---
-
-# WooCommerce email editor integration guide
+# WooCommerceメールエディター統合ガイド
 
 このガイドでは、WooCommerce Email Editorと統合してカスタムメール通知を追加する方法を説明します。  
-**注意:** WooCommerce Email Editorは現在アルファ版です。これを有効にするには、**WooCommerce &gt; Settings &gt; Advanced &gt; Features** に行き、**Block Email Editor (alpha)**を有効にしてください。
+**注意:** WooCommerce Email Editorは現在アルファ版です。これを有効にするには、**WooCommerce > Settings > Advanced > Features** に行き、**Block Email Editor (alpha)**を有効にしてください。
 
-## Quick start
+## クイックスタート
 
-1. **Extend `WC_Email`** – Create a custom email class for your notification by extending the core WooCommerce email class.
-2. **Register with `woocommerce_email_classes`** – Add your new email class to WooCommerce so it appears in the admin email settings.
-3. **Register the email with the block editor** – Register your email ID with the `woocommerce_transactional_emails_for_block_editor` filter to enable block editor support.
-4. **Create a block template** – Design a block-based template to ensure your email works seamlessly with the WooCommerce Email Editor.
-5. **Set up triggers** – Define when and under what conditions your custom email should be sent (for example, after a specific user action or event).
+1. **Extend `WC_Email`** - WooCommerceのコアEメールクラスを拡張して、通知用のカスタムEメールクラスを作成します。
+2. **INLINE_CODE_1__**で登録する - 新しいメールクラスをWooCommerceに追加し、管理画面のメール設定に表示されるようにします。
+3. **ブロックエディターに登録する** - `woocommerce_transactional_emails_for_block_editor`フィルターにメールIDを登録し、ブロックエディターのサポートを有効にします。
+4. **ブロックテンプレートを作成する** - WooCommerceメールエディターとシームレスに動作するようにブロックベースのテンプレートをデザインします。
+5. **トリガーの設定** - いつ、どのような条件でカスタムメールを送信するかを定義します。
 
-## 1. Create email class
+## 1.メールクラスの作成
 
-Extend `WC_Email` and implement the required methods:
+`WC_Email`を拡張し、必要なメソッドを実装する：
 
 ```php
 class YourPlugin_Custom_Email extends WC_Email {
@@ -82,7 +81,7 @@ class YourPlugin_Custom_Email extends WC_Email {
 }
 ```
 
-## 2. Register email
+## 2.メール登録
 
 WooCommerceにEメールを追加します：
 
@@ -102,9 +101,9 @@ function your_plugin_add_email_group( $email_groups ) {
 add_filter( 'woocommerce_email_groups', 'your_plugin_add_email_group' );
 ```
 
-## 3. Register the email with the block editor
+## 3.ブロックエディターにメールを登録する
 
-Third-party extensions need to explicitly opt their emails into block editor support. This is done by registering your email ID with the `woocommerce_transactional_emails_for_block_editor` filter:
+サードパーティのエクステンションは、明示的にブロックエディターのサポートを選択する必要があります。これは`woocommerce_transactional_emails_for_block_editor`フィルターにメールIDを登録することで行います：
 
 ```php
 /**
@@ -122,15 +121,77 @@ add_filter( 'woocommerce_transactional_emails_for_block_editor', 'your_plugin_re
 
 **重要:** このステップを行わないと、あなたのEメールはEメールリストに表示されるかもしれませんが、サードパーティの開発者から明示的なオプトインが必要なため、Eメールエディタは使用されません。
 
-**Note:** For third-party extensions, WooCommerce will not create an email post unless you opt-in using the `woocommerce_transactional_emails_for_block_editor` filter.
+**注意:** サードパーティの拡張機能の場合、`woocommerce_transactional_emails_for_block_editor`フィルタを使用してオプトインしない限り、WooCommerceはメール投稿を作成しません。
 
-**Development tip:** WooCommerce caches email post-generation with a transient. When testing or developing, delete the transient `wc_email_editor_initial_templates_generated` to force post-generation.
+**開発のヒント:** WooCommerceはトランジェントでEメールのポスト生成をキャッシュします。テストや開発時には、トランジェント`wc_email_editor_initial_templates_generated`を削除して、強制的にポストジェネレーションするようにしてください。
 
-## 4. Create the initial block template
+### メールテンプレート投稿生成のカスタマイズ
 
-Create `templates/emails/block/your-custom-email.php`:
+`woocommerce_email_content_post_data`フィルタを使用すると、メールテンプレートの投稿データを作成前に変更することができます。これにより、テンプレート生成時に投稿タイトル、コンテンツ、メタ、その他の投稿データをカスタマイズすることができます。
 
-**Template base property:** Make sure to set the `$template_base` property in your email class constructor to point to your plugin's template directory. This allows WooCommerce to properly locate and load your block template files. The block template filename is expected to match the plain template, but using the `block` directory instead of `plain`.
+**フィルター詳細
+
+| プロパティ
+| ---------- | ----------------------------------------------------------------------- |
+| フック名｜ `woocommerce_email_content_post_data`
+| 10.5.0以降
+| パラメータ｜`$post_data` (array), `$email_type` (string), `$email_data` ( \WC_Email)
+| 戻り値｜配列
+
+**パラメーター
+
+-   `$post_data` _(array)_ - `wp_insert_post()` に渡されるポストデータの配列。`post_type`, `post_status`, `post_title`, `post_content`, `post_excerpt`, `post_name`, `meta_input` のようなキーを含みます。
+-   `$email_type` _(string)_ - Eメールタイプの識別子(例えば'customer_processing_order')。
+-   `$email_data` _(\WC_Email)_ - WooCommerce emailオブジェクト。
+
+**戻り値:**。
+
+変更した投稿データの配列を返します。この配列は、メールテンプレートの投稿を作成する際に使用されます。
+
+#### 例メールテンプレートの投稿データの変更
+
+```php
+/**
+ * Customize email template post data during generation.
+ *
+ * @param array     $post_data  The post data array.
+ * @param string    $email_type The email type identifier.
+ * @param \WC_Email $email_data The WooCommerce email object.
+ * @return array Modified post data.
+ */
+function your_plugin_customize_email_template_post( $post_data, $email_type, $email_data ) {
+    // Modify the post title for specific email types.
+    if ( 'customer_processing_order' === $email_type ) {
+        $post_data['post_title'] = __( 'Custom Processing Order Email', 'your-plugin' );
+    }
+
+    // Modify the post content (block template HTML).
+    $post_data['post_content'] = str_replace(
+        'default content',
+        'custom content',
+        $post_data['post_content']
+    );
+
+    // Add custom meta data.
+    $post_data['meta_input']['custom_meta_key'] = 'custom_value';
+
+    return $post_data;
+}
+add_filter( 'woocommerce_email_content_post_data', 'your_plugin_customize_email_template_post', 10, 3 );
+```
+
+**重要な注意事項
+
+-   有効な `wp_insert_post()` パラメータ (`post_title`、 `post_content`、 `post_excerpt`、 `post_status`、 `post_name`、 `meta_input`など) なら何でも変更できます。
+-   常に変更された `$post_data` 配列を返します。
+-   `post_content`を変更する場合は、有効なブロックマークアップが維持されていることを確認してください。
+-   フィルタはすべてのメールタイプに対して実行されます。特定のメールをターゲットにするには `$email_type` をチェックしてください。
+
+## 4.初期ブロックテンプレートを作成する
+
+`templates/emails/block/your-custom-email.php`を作成する：
+
+**テンプレートベースプロパティ:** メールクラスのコンストラクタで`$template_base`プロパティを設定し、プラグインのテンプレートディレクトリを指すようにしてください。これにより、WooCommerceはブロックテンプレートファイルを適切に見つけ、読み込むことができます。ブロックテンプレートのファイル名はプレーンテンプレートと一致しますが、`plain`の代わりに`block`ディレクトリを使用します。
 
 ```php
 <?php
@@ -151,25 +212,25 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:woocommerce/email-content -->
 ```
 
-Pro tip: If you use a custom path for your email templates, set the block template path using the `template_block` property on the email class.
+Pro tip: Eメール・テンプレートにカスタム・パスを使用する場合、Eメール・クラスの`template_block`プロパティを使用してブロック・テンプレート・パスを設定します。
 
 **電子メール・コンテンツ・プレースホルダー
 
-The `BlockEmailRenderer::WOO_EMAIL_CONTENT_PLACEHOLDER` is a special placeholder that gets replaced with the main email content when the email is rendered. This placeholder is essential for integrating with WooCommerce's email system and allows the email editor to inject the core email content (like order details, customer information, etc.) into your custom template.
+`BlockEmailRenderer::WOO_EMAIL_CONTENT_PLACEHOLDER`は特別なプレースホルダーで、メールがレンダリングされる際にメインのメールコンテンツに置き換えられます。このプレースホルダーはWooCommerceのメールシステムと統合するために不可欠であり、メールエディターがカスタムテンプレートにコアメールコンテンツ（注文詳細、顧客情報など）を注入できるようにします。
 
-By default, WooCommerce uses the [general block email template](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/templates/emails/block/general-block-email.php) to generate the content that replaces this placeholder. When WooCommerce processes your email template, it replaces this placeholder with the appropriate email content based on the email type and context.
+デフォルトでは、WooCommerceはこのプレースホルダーを置き換えるコンテンツを生成するために[一般ブロックメールテンプレート](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/templates/emails/block/general-block-email.php)を使用します。WooCommerceがEメールテンプレートを処理する際、Eメールの種類とコンテキストに基づいて、このプレースホルダーを適切なEメールコンテンツに置き換えます。
 
 Eメールに異なるコンテンツを使用する必要がある場合、2つの選択肢があります：
 
 **カスタム・ブロック・コンテンツ・テンプレートを使用する。
 
-1. **Set a custom template**: Set the `$template_block_content` property in your email class constructor to point to a custom template for the block content:
+1. **カスタム・テンプレートを設定する**：メール・クラスのコンストラクタで`$template_block_content`プロパティを設定し、ブロック・コンテンツのカスタム・テンプレートを指定します：
 
     ```php
     $this->template_block_content = 'emails/block/custom-content.php';
     ```
 
-2. **Implement custom logic**: Implement the `get_block_editor_email_template_content` method in your email class to provide custom logic for generating the content:
+2. **カスタム・ロジックを実装する**：メールクラスに`get_block_editor_email_template_content`メソッドを実装して、コンテンツを生成するためのカスタムロジックを提供してください：
 
     ```php
     public function get_block_editor_email_template_content() {
@@ -179,10 +240,10 @@ Eメールに異なるコンテンツを使用する必要がある場合、2つ
     }
     ```
 
-**Using action hook:**
-You can use the action hook `woocommerce_email_general_block_email` to execute additional actions within the content template. 
+**アクション・フックを使う
+アクションフック`woocommerce_email_general_block_email`を使用すると、コンテンツテンプレート内で追加のアクションを実行できます。
 
-## 5. Set Up Triggers
+## 5.トリガーの設定
 
 **WordPressのアクションにフックすることで、メールを送信するタイミングを設定できます。WooCommerceのイベントや独自のカスタムアクションでメールをトリガーすることができます：
 
@@ -203,63 +264,63 @@ add_action( 'your_plugin_custom_action', 'your_plugin_trigger_custom_email' );
 
 **使用できる一般的なWooCommerceフック:**。
 
--   `woocommerce_order_status_completed` - When order is completed
--   `woocommerce_order_status_processing` - When order is processing
--   `woocommerce_new_order` - When new order is created
--   `woocommerce_customer_created` - When new customer registers
+-   `woocommerce_order_status_completed` - 注文が完了したとき
+-   `woocommerce_order_status_processing` - 注文が処理中の場合
+-   `woocommerce_new_order` - 新規注文が作成されたとき
+-   `woocommerce_customer_created` - 新規顧客が登録されたとき
 
-## Personalization tags
+## 名入れタグ
 
-**Personalization tags** allow you to insert dynamic content into your emails. They appear as `<!--[tag-name]-->` in your templates and get replaced with actual values when the email is sent.
+**パーソナライズタグ**を使用すると、メールに動的なコンテンツを挿入することができます。タグはテンプレートでは`<!--[tag-name]-->`として表示され、メール送信時に実際の値に置き換えられます。
 
-### Built-in tags
+### 内蔵タグ
 
 WooCommerceには、カテゴリ別に整理された多くのパーソナライズタグが組み込まれています：
 
-#### Customer tags
+#### カスタマー・タグ
 
--   `<!--[woocommerce/customer-email]-->` - Customer's email address
--   `<!--[woocommerce/customer-first-name]-->` - Customer's first name
--   `<!--[woocommerce/customer-last-name]-->` - Customer's last name
--   `<!--[woocommerce/customer-full-name]-->` - Customer's full name
--   `<!--[woocommerce/customer-username]-->` - Customer's username
--   `<!--[woocommerce/customer-country]-->` - Customer's country
+-   `<!--[woocommerce/customer-email]-->` - お客様のEメールアドレス
+-   `<!--[woocommerce/customer-first-name]-->` - お客様のファーストネーム
+-   `<!--[woocommerce/customer-last-name]-->` - お客様の姓
+-   `<!--[woocommerce/customer-full-name]-->` - お客様のフルネーム
+-   `<!--[woocommerce/customer-username]-->` - お客様のユーザー名
+-   `<!--[woocommerce/customer-country]-->` - 顧客の国名
 
-#### Order tags
+#### オーダータグ
 
--   `<!--[woocommerce/order-number]-->` - Order number
--   `<!--[woocommerce/order-date]-->` - Order date (supports format parameter)
--   `<!--[woocommerce/order-items]-->` - List of order items
--   `<!--[woocommerce/order-subtotal]-->` - Order subtotal
--   `<!--[woocommerce/order-tax]-->` - Order tax amount
--   `<!--[woocommerce/order-discount]-->` - Order discount amount
--   `<!--[woocommerce/order-shipping]-->` - Order shipping cost
--   `<!--[woocommerce/order-total]-->` - Order total amount
--   `<!--[woocommerce/order-payment-method]-->` - Payment method used
--   `<!--[woocommerce/order-payment-url]-->` - Payment URL for order
--   `<!--[woocommerce/order-transaction-id]-->` - Transaction ID
--   `<!--[woocommerce/order-shipping-method]-->` - Shipping method used
--   `<!--[woocommerce/order-shipping-address]-->` - Formatted shipping address
--   `<!--[woocommerce/order-billing-address]-->` - Formatted billing address
--   `<!--[woocommerce/order-view-url]-->` - Customer order view URL
--   `<!--[woocommerce/order-admin-url]-->` - Admin order edit URL
--   `<!--[woocommerce/order-custom-field]-->` - Custom order field (requires key parameter)
+-   `<!--[woocommerce/order-number]-->` - 注文番号。
+-   `<!--[woocommerce/order-date]-->` - 注文日 (format パラメータをサポートします)
+-   `<!--[woocommerce/order-items]-->` - 注文項目のリスト
+-   `<!--[woocommerce/order-subtotal]-->` - 注文の小計。
+-   `<!--[woocommerce/order-tax]-->` - 注文の税額。
+-   `<!--[woocommerce/order-discount]-->` - 注文の割引額
+-   `<!--[woocommerce/order-shipping]-->` - 注文の送料。
+-   `<!--[woocommerce/order-total]-->` - 注文の合計金額
+-   `<!--[woocommerce/order-payment-method]-->` - 使用した支払い方法
+-   `<!--[woocommerce/order-payment-url]-->` - 注文の支払い URL
+-   `<!--[woocommerce/order-transaction-id]-->` - トランザクション ID
+-   `<!--[woocommerce/order-shipping-method]-->` - 利用された配送方法
+-   `<!--[woocommerce/order-shipping-address]-->` - フォーマットされた配送先住所
+-   形式化された請求先住所 `<!--[woocommerce/order-billing-address]-->` - 形式化された請求先住所
+-   `<!--[woocommerce/order-view-url]-->` - 顧客オーダー閲覧 URL
+-   `<!--[woocommerce/order-admin-url]-->` - 管理者の注文編集 URL
+-   `<!--[woocommerce/order-custom-field]-->` - カスタム注文フィールド (キーパラメーターが必要)
 
-#### Site tags
+#### サイトタグ
 
--   `<!--[woocommerce/site-title]-->` - Site title
--   `<!--[woocommerce/site-homepage-url]-->` - Homepage URL
+-   `<!--[woocommerce/site-title]-->` - サイトタイトル
+-   `<!--[woocommerce/site-homepage-url]-->` - ホームページのURL
 
-#### Store tags
+#### 店舗タグ
 
--   `<!--[woocommerce/store-email]-->` - Store email address
--   `<!--[woocommerce/store-url]-->` - Store URL
--   `<!--[woocommerce/store-name]-->` - Store name
--   `<!--[woocommerce/store-address]-->` - Store address
--   `<!--[woocommerce/my-account-url]-->` - My Account page URL
--   `<!--[woocommerce/admin-order-note]-->` - Admin order note
+-   `<!--[woocommerce/store-email]-->` - 電子メールアドレスを保存する
+-   `<!--[woocommerce/store-url]-->` - ストアの URL
+-   `<!--[woocommerce/store-name]-->` - 店舗名
+-   店舗住所 `<!--[woocommerce/store-address]-->` - 店舗住所
+-   `<!--[woocommerce/my-account-url]-->` - マイアカウント ページ URL
+-   `<!--[woocommerce/admin-order-note]-->` - 管理者オーダーノート
 
-### Custom personalization tags
+### カスタムパーソナライズタグ
 
 **適切なWooCommerceフックを使用して、プラグイン固有のデータのために独自のタグ**を作成します：
 
@@ -303,11 +364,99 @@ function your_plugin_get_custom_field_value( $context, $args = array() ) {
 add_filter( 'woocommerce_email_editor_register_personalization_tags', 'your_plugin_register_personalization_tags' );
 ```
 
-**Usage in templates:** Use `<!--[your-plugin/custom-field]-->` in your block template, and it will be replaced with the value returned by your callback function.
+**ブロック・テンプレートで`<!--[your-plugin/custom-field]-->`を使用すると、コールバック関数が返す値に置き換えられます。
 
-To learn more about personalization tags, please see the [personalization tags documentation](https://github.com/woocommerce/woocommerce/blob/trunk/packages/php/email-editor/docs/personalization-tags.md) in the `woocommerce/email-editor` package.
+パーソナライゼーション・タグの詳細については、`woocommerce/email-editor`パッケージの[パーソナライゼーション・タグのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/packages/php/email-editor/docs/personalization-tags.md)を参照してください。
 
-## Complete example
+### パーソナライズタグにカスタムコンテキストを提供する
+
+`woocommerce_email_editor_integration_personalizer_context_data` フィルタを使用して、パーソナライズタグにカスタムコンテキストデータを提供します。これは、パーソナライズタグのコールバックがアクセスできる追加データ (購読の詳細、ロイヤリティポイント、カスタムオーダーのメタデータなど) を拡張モジュールに渡す必要がある場合に便利です。
+
+**フィルター詳細
+
+| プロパティ
+| ---------- | ---------------------------------------------------------------- |
+| フック名｜ `woocommerce_email_editor_integration_personalizer_context_data`
+| 10.5.0 以降
+| パラメータ｜`$context` (array), `$email` ( \WC_Email)
+| 戻り値 | 配列
+
+**パラメーター
+
+-   `$context` _(array)_ - 既存のコンテキストデータ配列。WooCommerceコアまたは他のエクステンションからのデータが既に含まれている可能性があります。
+-   `$email` _(\WC_Email)_ - 処理中のWooCommerce emailオブジェクト。これを使用して、EメールID、受信者、Eメールに関連付けられたオブジェクト(注文や顧客など)にアクセスできます。
+
+**戻り値:**。
+
+Wooのコアコンテキストデータとカスタムコンテキストデータの配列を返します。この配列は`$context`パラメータを通してすべてのパーソナライズタグコールバックからアクセスできます。
+
+#### 例コンテキストに購読データを追加する
+
+```php
+/**
+ * Add subscription-related context data for personalization tags.
+ *
+ * @param array     $context The existing context data.
+ * @param \WC_Email $email   The WooCommerce email object.
+ * @return array Modified context data.
+ */
+function your_plugin_add_subscription_context( $context, $email ) {
+    // Only add context for subscription-related emails.
+    if ( strpos( $email->id, 'subscription' ) === false ) {
+        return $context;
+    }
+
+    // Get the order from the email object.
+    $order = $email->object instanceof WC_Order ? $email->object : null;
+
+    if ( ! $order ) {
+        return $context;
+    }
+
+    // Add your custom subscription data to context.
+    $context['subscription_id']       = $order->get_meta( '_subscription_id' );
+    $context['subscription_end_date'] = $order->get_meta( '_subscription_end_date' );
+    $context['renewal_count']         = (int) $order->get_meta( '_renewal_count' );
+
+    return $context;
+}
+add_filter( 'woocommerce_email_editor_integration_personalizer_context_data', 'your_plugin_add_subscription_context', 10, 2 );
+```
+
+#### 例パーソナライズタグのコールバックでカスタムコンテキストを使用する
+
+カスタムデータをコンテキストに追加すると、パーソナライズタグのコールバックがそのデータにアクセスできるようになります：
+
+```php
+/**
+ * Personalization tag callback that uses custom context data.
+ *
+ * @param array $context The context data (includes your custom data).
+ * @param array $args    Optional attributes passed to the tag.
+ * @return string The personalized value.
+ */
+function your_plugin_get_subscription_end_date( $context, $args = array() ) {
+    // Access the custom context data you added via the filter.
+    $end_date = $context['subscription_end_date'] ?? '';
+
+    if ( empty( $end_date ) ) {
+        return __( 'N/A', 'your-plugin' );
+    }
+
+    // Format the date according to site settings.
+    return date_i18n( get_option( 'date_format' ), strtotime( $end_date ) );
+}
+```
+
+**重要な注意事項
+
+-   フィルタはメールのパーソナライズ中に呼び出されるため、パーソナライズタグが処理されるときにコンテキストデータを利用できます。
+-   不要な処理を避けるために、コンテキストデータを追加する前に、メールのタイプが関連するかどうかを常にチェックしてください。
+-   WooCommerceコアや他の拡張機能との衝突を防ぐために、コンテキストデータには一意のキーを使用してください。
+-   通常`$email->object`プロパティには、メールに関連するメインオブジェクトが含まれます（例：注文メールには`WC_Order`、ユーザー関連メールには`WP_User`）。
+-   パーソナライズタグでコンテキストデータを使用する場合は、出力コンテキストに基づいて適切にエスケープしてください（例：_`esc_html()`、_`esc_attr()`、`esc_url()`）。
+
+## 完全な例
 
 以下は、ロイヤルティプログラムのウェルカムメールの導入例です：
 
@@ -417,12 +566,12 @@ add_action( 'your_plugin_customer_joined_loyalty', function( $customer_id, $poin
 
 **どのように機能するか:**
 
-1. **Eメール登録**は、**WooCommerce &gt; 設定 &gt; Eメール**にあなたのEメールを表示します。
+1. **Eメール登録**は、**WooCommerce > Settings > Emails**にあなたのEメールを表示します。
 2. **Block editor registration** はあなたのEメールをWooCommerce Email Editorで使えるようにします。
 3. **テンプレート登録**により、ブロックエディターで使用・編集するメールテンプレートを追加登録することができます。
 4. **トリガー設定** 顧客がロイヤリティプログラムに参加した際に自動的にメールを送信します。
 
-## Best practices
+## ベストプラクティス
 
 -   **Sanitize inputs and escape outputs:** セキュリティの問題や表示の問題を防ぐために、メールのロジックで使用されるデータ、テンプレートのエスケープ出力は常に検証し、サニタイズしてください。
 -   **メールクライアント間のテスト:** メールのレイアウトは、さまざまなクライアントで異なって見えることがあります。LitmusやEmail on Acidのようなツールは、一般的なクライアント（Gmail、Outlook、Apple Mailなど）でメールをテストし、意図したとおりに表示されるか確認するのに役立ちます。
@@ -430,19 +579,19 @@ add_action( 'your_plugin_customer_joined_loyalty', function( $customer_id, $poin
 -   **Follow WordPress coding standards:** 読みやすさと互換性を高めるために、WordPressの標準に従ってコードを記述してください。
 -   **Include proper error handling:** チェックとエラー処理を追加して、問題（データ不足や送信失敗など）をキャッチし、簡単にデバッグできるようにします。
 
-## Troubleshooting
+## トラブルシューティング
 
--   **Email not in admin?**
-    Double-check that your email class is registered with the `woocommerce_email_classes` filter and that the class name is correct.
--   **Email not using the block template or email editor?**
-    Ensure you have registered your email ID with the `woocommerce_transactional_emails_for_block_editor` filter.
--   **Template not loading?**
-    Make sure the template file path is correct and that you have registered it with the email editor.
--   **Tags not working?**
-    Confirm that your personalization tag callbacks are registered and returning the expected values.
--   **Email not sending?**
-    Check that the email is enabled in WooCommerce settings and that your trigger action is firing as expected.
+-   **Eメールが管理画面にありません。
+    メールクラスが`woocommerce_email_classes`フィルターに登録されているか、またクラス名が正しいか再確認してください。
+-   **ブロックテンプレートまたはメールエディタを使用していない？
+    メールIDが`woocommerce_transactional_emails_for_block_editor`フィルターに登録されているか確認してください。
+-   **テンプレートが読み込まれません。
+    テンプレートファイルのパスが正しいか、メールエディターに登録されているか確認してください。
+-   **タグが動作しませんか？
+    パーソナライズタグのコールバックが登録され、期待される値を返していることを確認してください。
+-   **メールが送信されません。
+    WooCommerceの設定でメールが有効になっているか、トリガーアクションが期待通りに起動しているか確認してください。
 
 ---
 
-カスタムメールは**WooCommerce &gt; Settings &gt; Emails**に表示され、ブロックエディタを使って編集することができます。
+カスタムメールは**WooCommerce > Settings > Emails**に表示され、ブロックエディタを使って編集することができます。

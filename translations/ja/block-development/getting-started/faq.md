@@ -8,7 +8,7 @@ sidebar_label: Frequently asked questions
 
 FAQは質問を受け次第、追加していく予定です。
 
-ここにない質問は、[GitHub [Discussions](https://github.com/woocommerce/woocommerce/discussions) または [WooCommerce [Community Slack](https://woocommerce.com/community-slack/) でお尋ねください。
+ここにない質問は、[GitHub Discussions](https://github.com/woocommerce/woocommerce/discussions) または [WooCommerce Community Slack](https://woocommerce.com/community-slack/) でお尋ねください。
 
 ## 一般的な質問
 
@@ -79,7 +79,7 @@ const unsubscribe = subscribe( () => {
 
 例として、あなたのサイトに「メーリングリストに登録すると10%オフ」チェックボックスを追加するには、`extensionCartUpdate`を使用して、自動的に10%クーポンをカートに適用することができます。
 
-![Image](https://github.com/user-attachments/assets/e0d114b1-4e4c-4b34-9675-5571136b36d0)
+![画像](https://github.com/user-attachments/assets/e0d114b1-4e4c-4b34-9675-5571136b36d0)
 
 Additional Checkout Fields APIを通じて、またはインナーブロックを作成することによって、チェックボックスをすでに追加したと仮定すると、次のステップは、チェックボックスがチェックされている場合はクーポンを適用し、チェックされていない場合はクーポンを削除するサーバー側のコードを登録することです。
 
@@ -192,7 +192,7 @@ dispatch('wc/store/cart').invalidateResolutionForStore()
 
 この方法は現在 ** 公式にはサポートされていませんが、DOM 操作や React ポータルを使用してこの方法を実行している開発者の話を聞いたことがあります。この方法を選択した場合、将来 Cart ブロックが変更されたときに、統合が機能しなくなる可能性があることに注意してください。 
 
-#チェックアウトの修正
+## チェックアウトの修正
 
 ### チェックアウトフィールドを削除するには？
 

@@ -2,9 +2,8 @@
 post_title: Accessibility
 sidebar_label: Accessibility
 ---
+# アクセシビリティ
 
-# Accessibility
+拡張機能は [WordPress Accessibility Coding Standards] (https://developer.wordpress.org/coding-standards/wordpress-coding-standards/accessibility/) を満たしている必要があります。 
 
-Your extensions must meet the [WordPress Accessibility Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/accessibility/) 
-
-For more information on accessibility, check out the [WordPress accessibility quick start guide](https://make.wordpress.org/accessibility/handbook/best-practices/quick-start-guide/).
+アクセシビリティの詳細については、[WordPressアクセシビリティ クイックスタートガイド](https://make.wordpress.org/accessibility/handbook/best-practices/quick-start-guide/) をご覧ください。

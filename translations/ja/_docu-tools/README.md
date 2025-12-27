@@ -26,7 +26,6 @@ npm run build
 
 ## 配備
 
-`woocommerce/docs`フォルダ内のコンテンツは、[deploy-docsワークフロー](https://github.com/woocommerce/woo-docs-build/blob/trunk/.github/workflows/deploy-docs.yml)で定義されたGitHub Actionsのcronジョブを介してプルされます。
+`woocommerce/docs`フォルダ内のコンテンツは、[deploy-docsワークフロー](https://github.com/woocommerce/woo-docs-build/blob/trunk/.github/workflows/deploy-docs.yml)で定義されたGitHub Actionsのcronジョブを介してプルされます。 
 
 その後、本番用にビルドされ、同じ GitHub アクションの [woocommerce-woo-docs-multi-com リポジトリ](https://github.com/wpcomvip/woocommerce-woo-docs-multi-com) に対して PR が作成されます。
-

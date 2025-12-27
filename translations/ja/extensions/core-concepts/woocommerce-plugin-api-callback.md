@@ -2,32 +2,31 @@
 post_title: WooCommerce Plugin API callbacks
 sidebar_label: Plugin API callbacks
 ---
+# WooCommerceプラグインAPIコールバック
 
-# WooCommerce Plugin API callbacks
-
-## Overview
+## 概要
 
 このドキュメントでは、WooCommerce プラグイン API を使用してプラグインのアクション、特にデフォルトでは初期化されていないゲートウェイやクラスのコールバックを開始する方法について説明します。
 
-## Callback URL Structure
+## コールバックURLの構造
 
 WooCommerce 2.0以前は、こちらをご利用ください：
 
-`https://example.com/?wc-api=CALLBACK`
+`https://example.com/?wc-api=CALLBACK`。
 
 WooCommerce 2.0以降では、エンドポイントを使用してください：
 
-`https://example.com/wc-api/CALLBACK/`
+`https://example.com/wc-api/CALLBACK/`。
 
-## Behavior
+## ビヘイビア
 
 コールバックURLにアクセスすると、WooCommerceは次のようになります：
 
-- Initialize the `CALLBACK` class, if available
-- Trigger the `woocommerce_api_callback` action
-- Exit WordPress
+- もしあれば、`CALLBACK`クラスを初期化する。
+- `woocommerce_api_callback`アクションのトリガー
+- WordPressを終了する
 
-## Hooking into the API Callback
+## APIコールバックへのフック
 
 コールバックにフックするには、プラグインにアクションを追加します：
 
@@ -35,6 +34,6 @@ WooCommerce 2.0以降では、エンドポイントを使用してください�
 add_action( 'woocommerce_api_callback', 'your_callback_handler_function' );
 ```
 
-## Redirecting After Callback
+## コールバック後のリダイレクト
 
 カスタムハンドラ関数を使用して、アクション実行後にユーザーをリダイレクトすることが可能です。

@@ -3,20 +3,19 @@ post_title: Getting started with the WooCommerce REST API
 category_slug: rest-api
 sidebar_label: REST API
 ---
-
 # WooCommerce REST API
 
 [REST API](https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction)はWooCommerceの強力な機能で、注文、商品、クーポン、顧客、配送地域などWooCommerceの様々なデータを読み書きすることができます。
 
 ## 必要条件
 
-標準のエンドポイントURI構造（例：`wc/v3/products`）を使用してREST APIにアクセスするには、WordPressのパーマリンクを「Plain」以外に設定する必要があります。設定 &gt; パーマリンク**に移動し、オプションを選択します。
+標準のエンドポイントURI構造（例：`wc/v3/products`）を使用してREST APIにアクセスするには、WordPressのパーマリンクを「Plain」以外に設定する必要があります。設定 > パーマリンク**に移動し、オプションを選択します。
 
-![Permalinks options](https://developer.woocommerce.com/wp-content/uploads/2023/12/permalinks.webp)
+![パーマリンクのオプション](https://developer.woocommerce.com/wp-content/uploads/2023/12/permalinks.webp)
 
 ## APIリファレンス
 
-[WooCommerce REST API Docs](https://woocommerce.github.io/woocommerce-rest-api-docs/) は各APIエンドポイントの技術的な詳細とコードサンプルを提供しています。
+[WooCommerce REST API Docs](https://woocommerce.github.io/woocommerce-rest-api-docs/)では、各APIエンドポイントの技術的な詳細とコードサンプルを提供しています。
 
 ## 認証
 
@@ -30,13 +29,13 @@ sidebar_label: REST API
 
 REST APIを使い始めるには、まずAPIキーを生成する必要がある。
 
-1.WooCommerce &gt; 設定 &gt; 詳細*に移動します。
+1.WooCommerce > 設定 > 詳細*に移動します。
 2.REST API*タブに移動し、*Add key*をクリックします。
 3.注文などにアクセスできるユーザーを選択し、キーに*読み取り/書き込み*権限を与えます。
 4.Generate api key*をクリックします。
 5.キーを再度表示しようとすると、秘密は隠されます。
 
-![Generated API Keys](https://developer.woocommerce.com/wp-content/uploads/2023/12/keys.png)
+![生成されたAPIキー](https://developer.woocommerce.com/wp-content/uploads/2023/12/keys.png)
 
 ## 基本的な要求をする
 
@@ -46,7 +45,7 @@ Postmanでは、リクエストタイプ、リクエストURL、認証タブの�
 
 すべてがうまくいっていれば、APIからのJSONレスポンスが表示されます。以下のようなものが表示されるはずだ：
 
-![Generated API Keys](https://developer.woocommerce.com/wp-content/uploads/2023/12/postman.png)
+![生成されたAPIキー](https://developer.woocommerce.com/wp-content/uploads/2023/12/postman.png)
 
 インソムニアはポストマンとほとんど同じで、同じフィールドに記入し、やはりベーシック認証を使う。
 
@@ -62,15 +61,15 @@ Postmanでは、リクエストタイプ、リクエストURL、認証タブの�
 
 ローカルホスト上でREST APIへの接続に問題があり、このようなエラーが表示される場合：
 
-![SSL Error](https://developer.woocommerce.com/wp-content/uploads/2023/12/sslerror.png)
+![SSLエラー](https://developer.woocommerce.com/wp-content/uploads/2023/12/sslerror.png)
 
 SSL認証を無効にする必要があります。Postmanの設定にあります：
 
-![Postman settings](https://developer.woocommerce.com/wp-content/uploads/2023/12/postman-ssl.png)
+![ポストマンの設定](https://developer.woocommerce.com/wp-content/uploads/2023/12/postman-ssl.png)
 
 インソムニアにもこの設定がある：
 
-![Insomnia settings](https://developer.woocommerce.com/wp-content/uploads/2023/12/insomnia-ssl.png)
+![不眠症の設定](https://developer.woocommerce.com/wp-content/uploads/2023/12/insomnia-ssl.png)
 
 ### 401 認証されていません
 

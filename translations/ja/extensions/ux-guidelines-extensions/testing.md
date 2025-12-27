@@ -2,7 +2,6 @@
 post_title: Testing
 sidebar_label: Testing
 ---
-
 # Testing
 
 ユーザーは、提供された機能のすべてのアクションを実行できなければなりません。これは、ユーザーテストを実行することで達成できます。
@@ -11,6 +10,6 @@ sidebar_label: Testing
 
 ユーザーテストを素早く行うさまざまな方法
 
-- Recruit potential customers to test your product.
-- Use online services that allow you to expose your extension to new users such as UserTesting.com.
-- Ask enthusiasts in the [WooCommerce Community Slack](https://woocommerce.com/community-slack/) for feedback.
+[- 製品をテストしてくれる潜在顧客を募集する。
+- UserTesting.comのような新しいユーザーに拡張機能を公開できるオンラインサービスを利用しましょう。
+- WooCommerce Community Slack](https://woocommerce.com/community-slack/)で熱心なユーザーにフィードバックを求める。

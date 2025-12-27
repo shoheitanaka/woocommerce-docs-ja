@@ -49,7 +49,7 @@ WooCommerceはカスタム投稿タイプを使用するため、WordPressの条
 ### 単一商品ページ
 
 - `is_product()`  
-  単一の商品ページでtrueを返す。is_singularのラッパー。
+  単一の商品ページで真を返す。is_singularのラッパー。
 
 ### カートページ
 

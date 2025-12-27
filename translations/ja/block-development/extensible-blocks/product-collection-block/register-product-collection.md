@@ -68,7 +68,7 @@ sidebar_label: Registering custom collections
     - `perPage` (`number` 型)：ページあたりの商品数。
     - `search` (`string` 型)：検索キーワード。
     - `taxQuery` (`object` 型)：クエリーをフィルタリングする税クエリー。例えば、`Clothing`と`Accessories`のカテゴリーと`Summer`のタグを持つ商品を取得したい場合、`taxQuery`を`{"product_cat":[20,17],"product_tag":[36]}`として渡すことができます。ここで、配列の値は用語IDである。
-    - `featured` (`boolean`型)：注目アイテムを検索するかどうか。
+    - `featured` (`boolean`型)：特集項目を検索するかどうか。
     - `timeFrame` (`object` 型)：時間枠を指定する。
         - `operator` (`string` 型)：時間枠クエリに使用する演算子。使用可能な値は `in` および `not-in` です。
         - `value` (`string` 型)：クエリーする値。PHP の `strtotime` 関数がパースできる有効な日付文字列でなければなりません。

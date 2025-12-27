@@ -55,7 +55,7 @@ Template: storefront
 /* --------------- Theme customization starts here ----------------- */
 ```
 
-**注意:** Storefrontでは、親テーマの`functions.php`ファイルや`@import`ファイルを子テーマの`style.css`ファイルにPHPでエンキューする必要はありません。
+**注:** Storefrontでは、親テーマの`functions.php`ファイルや`@import`ファイルを子テーマの`style.css`ファイルにPHPでエンキューする必要はありません。
 
 Storefrontでは、子テーマを作成するのに必要なのは空白の`functions.php`ファイルと`style.css`ファイルだけです。
 

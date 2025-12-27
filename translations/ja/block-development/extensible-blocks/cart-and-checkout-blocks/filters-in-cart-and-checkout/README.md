@@ -60,7 +60,7 @@ post_title: Cart and Checkout - Available Filters
 
 ## カートとチェックアウトの内部ブロックの追加タイプフィルター
 
-以下の[追加カート・チェックアウト内部ブロックタイプフィルタ](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/additional-cart-checkout-inner-block-types/)が利用可能です：
+以下の[追加カート・チェックアウトインナーブロックタイプフィルター](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/additional-cart-checkout-inner-block-types/)が利用可能です：
 
 -   `additionalCartCheckoutInnerBlockTypes`。
 

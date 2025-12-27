@@ -1,18 +1,17 @@
 ---
 sidebar_position: 1
 ---
-
 # ノンス・トークン 
 
-Noncesは、セキュリティの目的でリクエストの発信元と意図を確認するために使用される生成番号です。Nonces については [WordPress codex](https://developer.wordpress.org/apis/security/nonces/) を参照してください。
+[Noncesは、セキュリティの目的でリクエストの発信元と意図を確認するために使用される生成番号です。Nonces については WordPress codex](https://developer.wordpress.org/apis/security/nonces/) を参照してください。
 
 ## Noncesを必要とするAPIエンドポイントを保存する
 
-`/cart` エンドポイントへの POST リクエストと `/checkout` エンドポイントへのすべてのリクエストは、nonce が必要です。代わりに[Cart Tokens](/docs/apis/store-api/cart-tokens)を使用していない限り、有効なnonceを提供しないとエラー応答が返されます。
+`/cart` エンドポイントへの POST リクエストと `/checkout` エンドポイントへのすべてのリクエストは、nonce が必要です。代わりに[Cart Tokens](/docs/apis/store-api/cart-tokens)を使用している場合を除き、有効なnonceを提供しないとエラー応答が返されます。
 
 ## ノンス・トークンをリクエストとともに送信する
 
-Nonceトークンはリクエストヘッダに含まれる。`Nonce`というリクエストヘッダを作成する。これはAPIによって検証される。
+Nonceトークンはリクエスト・ヘッダーに含まれる。`Nonce`というリクエストヘッダを作成する。これはAPIによって検証される。
 
 **例
 
@@ -30,7 +29,7 @@ Nonceは、[`wp_create_nonce`関数](https://developer.wordpress.org/reference/f
 wp_create_nonce( 'wc_store_api' )
 ```
 
-それ以外には、noncesを作成するメカニズムはない。
+それ以外に、ノンケースを作成する仕組みはない。
 
 ## 開発のためにNoncesを無効にする
 

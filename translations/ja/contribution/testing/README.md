@@ -3,21 +3,20 @@ sidebar_label: Testing
 category_slug: testing
 post_title: Testing
 ---
-
 # Testing
 
-Properly setting up your test environment and writing tests when contributing to WooCommerce core are essential parts of our development pipeline. The links below are also included in our [Contributing Guidelines](https://github.com/woocommerce/woocommerce/blob/trunk/.github/CONTRIBUTING.md) on GitHub.
+WooCommerceコアにコントリビュートする際に、テスト環境を適切にセットアップし、テストを書くことは、私たちの開発パイプラインの重要な部分です。以下のリンクは GitHub の [Contributing Guidelines](https://github.com/woocommerce/woocommerce/blob/trunk/.github/CONTRIBUTING.md) にも含まれています。
 
-If you have any questions about testing please reach out to the developer community in our public channels([Developer Blog](https://developer.woocommerce.com/blog/), [GitHub Discussions](https://github.com/woocommerce/woocommerce/discussions), or [Community Slack](https://woocommerce.com/community-slack/)).
+テストについて質問がある場合は、開発者コミュニティーの公開チャンネル（[開発者ブログ](https://developer.woocommerce.com/blog/)、[GitHub ディスカッション](https://github.com/woocommerce/woocommerce/discussions)、[コミュニティーSlack](https://woocommerce.com/community-slack/)）までご連絡ください。
 
-## Unit Testing
+## ユニットテスト
 
-[End-to-end tests](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/tests/e2e-pw) are powered by `Playwright`. The test site is spun up using `wp-env` ([recommended](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/)). 
+[エンドツーエンドのテスト](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/tests/e2e-pw)は`Playwright`で実行されます。テストサイトは`wp-env`（[推奨](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/)）を使用して起動されます。 
 
-## API Testing
+## APIテスト
 
-[API tests](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/tests/e2e-pw/tests/api-tests) are based on `Playwright` and `wp-env`.
+[APIテスト](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/tests/e2e-pw/tests/api-tests)は`Playwright`と`wp-env`に基づいています。
 
-## Calls for Testing
+## テスト募集
 
-開発者向けブログでテストの募集状況を確認し、ベータテストの手順を読んで、新機能や拡張機能の開発に役立ててください。
+開発者向けブログでテストの募集状況を確認し、ベータテストに関する説明を必ずお読みください。

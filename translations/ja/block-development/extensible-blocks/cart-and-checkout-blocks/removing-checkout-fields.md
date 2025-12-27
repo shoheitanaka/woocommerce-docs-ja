@@ -3,7 +3,6 @@ post_title: Removing checkout fields
 sidebar_label: Removing checkout fields
 sidebar_position: 5
 ---
-
 # チェックアウトフィールドの削除
 
 新しいチェックアウト・ブロックを拡張しようとしている場合、以前の`checkout_fields`が機能していないことに気づくかもしれません。これは意図的なものです。とはいえ、最もよくあるリクエストの1つは、特定の注文タイプでチェックアウトフィールドを無効にする方法です。これは私たちが推奨するものではありませんが、要望が多いため詳細を共有します。
@@ -16,7 +15,7 @@ sidebar_position: 5
 
 チェックアウトのフィールドは依然としてその国のロケールを尊重しています。つまり、PHPを使ってその国のフィールドを変更することができます。次の請求フォームには10個のフィールドがあり、そのうち7個は必須です：
 
-![Image](https://github.com/user-attachments/assets/63d83769-c20c-4c85-aebf-da8510d1d9ae)
+![画像](https://github.com/user-attachments/assets/63d83769-c20c-4c85-aebf-da8510d1d9ae)
 
 例えば、アルジェリアでは郵便番号と都市名が冗長であることが分かっているので、それらを削除できるとしよう：
 
@@ -35,7 +34,7 @@ add_filter('woocommerce_get_country_locale', function( $locale ) {
 
 上記のコードでは、これらのフィールドはアルジェリアでは削除されるが、他の国では削除されない。
 
-![Image](https://github.com/user-attachments/assets/96d45e1a-99f0-4b91-92d1-85ee742a9705)
+![画像](https://github.com/user-attachments/assets/96d45e1a-99f0-4b91-92d1-85ee742a9705)
 
 これにより、配送と請求の両方のフィールドが削除されることに留意してください。私たちは、請求の形は配送の形と一致させるべきだと強く考えています。
 
@@ -82,7 +81,7 @@ add_filter('woocommerce_get_country_locale', function( $locale ) {
 
 これがその結果だ：
 
-![Image](https://github.com/user-attachments/assets/19c82877-3405-4762-82ce-e952746abe66)
+![画像](https://github.com/user-attachments/assets/19c82877-3405-4762-82ce-e952746abe66)
 
 アドレス行2が表示されていないことにお気づきだろうが、これはアドレス行1がスキップされると、常にスキップされるからである。
 
@@ -90,11 +89,11 @@ add_filter('woocommerce_get_country_locale', function( $locale ) {
 
 ウェブサイトにアクセスできるのであれば）簡単な方法のひとつは、エディターからフィールドをオフに切り替えることだ：
 
-![Image](https://github.com/user-attachments/assets/53740d32-4ccd-4d5e-b08f-91a8b8b7d055)
+![画像](https://github.com/user-attachments/assets/53740d32-4ccd-4d5e-b08f-91a8b8b7d055)
 
 これが結果だろう：
 
-![Image](https://github.com/user-attachments/assets/3bb8dc23-22cc-4787-8577-648081e57644)
+![画像](https://github.com/user-attachments/assets/3bb8dc23-22cc-4787-8577-648081e57644)
 
 ## コードによる会社と電話の削除
 
@@ -119,11 +118,11 @@ add_filter(
 );
 ```
 
-ロケールに応じて値を変更したい（その国のマーチャントの値を上書きしたい）場合は、上記の例を使用することができます。
+ロケールによって値を変えたい（その国のマーチャントの値を上書きしたい）場合は、上記の例を使うことができます。
 
 現在までのところ、すべての変更はアルジェリアのみに適用されており、切り替えをされたお客様には、それぞれの国に適したフィールドが表示されます：
 
-![Image](https://github.com/user-attachments/assets/3b8cb49a-1c95-4fab-8aaa-26b14ce22aad)
+![画像](https://github.com/user-attachments/assets/3b8cb49a-1c95-4fab-8aaa-26b14ce22aad)
 
 ## 販売するすべての国に変更を適用する。
 
@@ -183,7 +182,7 @@ add_filter('woocommerce_get_country_locale', function( $locale ) {
 
 今後の訪問のために、チェックアウトは保存された住所のためのアドレスカードを表示します：
 
-![Image](https://github.com/user-attachments/assets/ab56c4ca-39ba-47ab-83d1-1ce6dfefc0c3)
+![画像](https://github.com/user-attachments/assets/ab56c4ca-39ba-47ab-83d1-1ce6dfefc0c3)
 
 `get_address_formats`関数の値は`woocommerce_localisation_address_formats`フィルタを通過するので、PHPを使って編集することができます。
 
@@ -200,6 +199,6 @@ add_filter( 'woocommerce_localisation_address_formats', function( $formats ) {
 } );
 ```
 
-![Image](https://github.com/user-attachments/assets/2f87e168-896f-44b3-8c4f-63cc2e159d03)
+![画像](https://github.com/user-attachments/assets/2f87e168-896f-44b3-8c4f-63cc2e159d03)
 
 そうしないと改行が認識されない。

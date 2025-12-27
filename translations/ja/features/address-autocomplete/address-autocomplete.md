@@ -1,12 +1,12 @@
-# Address Autocomplete Provider Implementation
+# 住所オートコンプリート・プロバイダの実装
 
-## Overview
+## 概要
 
 WooCommerce住所オートコンプリートシステムは、顧客がチェックアウト中に請求先住所と配送先住所を入力すると、サードパーティのサービスが住所候補を提供することを可能にします。このガイドでは、任意の住所検証サービスと統合するためにカスタム住所プロバイダを作成し、登録する方法を説明します。
 
 この実装では、ショートコードとブロックベースのチェックアウトの両方にプロバイダを登録することに注意してください。
 
-## Architecture
+## 建築
 
 アドレスオートコンプリートシステムは、3つの主要コンポーネントで構成されています：
 
@@ -14,11 +14,11 @@ WooCommerce住所オートコンプリートシステムは、顧客がチェッ
 2. **クライアント側プロバイダ（JavaScript）** - 検索と選択のロジックを実装します。
 3. **UI Components** - サジェストを表示し、ユーザーインタラクションを処理します（これはWooCommerceによって実装されます。）
 
-## Registering the server-side provider
+## サーバー側プロバイダーの登録
 
-### Step 1: Create a WC_Address_Provider subclass
+### ステップ1：WC_Address_Providerサブクラスの作成
 
-Create a PHP class that extends `WC_Address_Provider`:
+`WC_Address_Provider` を継承した PHP クラスを作成します：
 
 ```php
 <?php
@@ -67,9 +67,9 @@ class Custom_Address_Provider extends WC_Address_Provider {
 }
 ```
 
-### Step 2: Register the provider
+### ステップ2：プロバイダーの登録
 
-Register your provider with WooCommerce using the `woocommerce_address_providers` filter:
+`woocommerce_address_providers`フィルタを使用してプロバイダをWooCommerceに登録します：
 
 ```php
 /**
@@ -89,54 +89,54 @@ function register_custom_address_provider( $providers ) {
 add_filter( 'woocommerce_address_providers', 'register_custom_address_provider', 10, 1 );
 ```
 
-## Registering the client-side provider
+## クライアント側プロバイダの登録
 
-### Step 3: Implement JavaScript functions
+### ステップ3：JavaScript関数の実装
 
 クライアント側のプロバイダ・ロジックを実装するJavaScriptファイルを作成します。
 
-#### Provider Object API
+#### プロバイダーオブジェクト API
 
-### Parameters
+### パラメーター
 
-- _id_ `string` - Unique identifier that must match the server-side provider ID.
-- _canSearch_ `function` - Function to determine if the provider supports searching in a given country.
-    - Parameters:
-        - _country_ `string` - Two-letter country code (e.g., 'US', 'GB').
-    - Returns: `boolean` - Whether the provider supports this country.
-- _search_ `function` - Asynchronous function to search for address suggestions.
-    - Parameters:
-        - _query_ `string` - The text entered by the user (minimum 3 characters).
-        - _country_ `string` - Two-letter country code of the selected country.
-        - _type_ `string` - Address type, either 'billing' or 'shipping'.
-    - Returns: `Promise<Array>` - Promise resolving to an array of suggestion objects.
-- _select_ `function` - Asynchronous function to retrieve complete address details.
-    - Parameters:
-        - _addressId_ `string` - The ID of the selected suggestion.
-    - Returns: `Promise<Object|null>` - Promise resolving to an address object or null on error.
+- id_ `string` - サーバー側のプロバイダーIDと一致する必要がある一意の識別子。
+- canSearch_ `function` - プロバイダが指定した国での検索をサポートしているかどうかを調べる関数です。
+    - パラメータを指定します：
+        - country_ `string` - 2文字の国コード (例 'US'、'GB')。
+    - 返り値：`boolean` - プロバイダがこの国をサポートしているかどうか。
+- __search_ `function` - 住所の候補を検索する非同期関数。
+    - パラメータ：
+        - query_ `string` - ユーザーが入力したテキスト（最小3文字）。
+        - country_ `string` - 選択した国の2文字の国コード。
+        - type_ `string` - 住所のタイプ。
+    - を返します：`Promise<Array>` - 提案オブジェクトの配列を解決する約束。
+- __select_ `function` - 住所の詳細情報を取得するための非同期関数です。
+    - パラメータを指定します：
+        - addressId_ `string` - 選択された提案の ID。
+    - 返り値：`Promise<Object|null>` - address オブジェクトに解決するプロミス。
 
-### Suggestion Object Format
+### 提案オブジェクト形式
 
-The `search` function must return suggestion objects with the following structure:
+`search`関数は、以下の構造を持つ提案オブジェクトを返さなければならない：
 
-- _id_ `string` - Unique identifier for this suggestion.
-- _label_ `string` - Display text shown to the user.
-- _matchedSubstrings_ `array` (optional) - Array of text ranges to highlight in the label.
-    - _offset_ `number` - Starting position of matched text.
-    - _length_ `number` - Length of matched text.
+- _id_ `string` - この提案の一意の識別子です。
+- _label_ `string` - ユーザーに表示されるテキスト。
+- matchedSubstrings_ `array` (オプション) - ラベル内でハイライト表示するテキスト範囲の配列。
+    - offset_ `number` - マッチしたテキストの開始位置。
+    - length_ `number` - 一致したテキストの長さ。
 
-### Address Object Format
+### アドレス・オブジェクト・フォーマット
 
-The `select` function must return address objects with these WooCommerce field names:
+`select`関数はこれらのWooCommerceフィールド名を持つアドレスオブジェクトを返す必要があります：
 
-- _address_1_ `string` - Primary address line.
-- _address_2_ `string` - Secondary address line (optional, can be empty string).
-- _city_ `string` - City or town name.
-- _state_ `string` - State or province code.
-- _postcode_ `string` - ZIP or postal code.
-- _country_ `string` - Two-letter country code.
+- _address_1_ `string` - プライマリ・アドレス行。
+- _address_2_ `string` - 副住所行 (省略可能、空文字列も可能)。
+- city_ `string` - 市町村名。
+- state_ `string` - 都道府県コード。
+- postcode_ `string` - 郵便番号。
+- country_ `string` - 2文字の国コード。
 
-### Example Implementation
+### 実装例
 
 ```javascript
 /**
@@ -230,7 +230,7 @@ if (
 }
 ```
 
-### Step 4: Enqueue the JavaScript
+### ステップ4：JavaScriptをエンキューする
 
 チェックアウトページでJavaScriptファイルをエンキューします。
 
@@ -270,29 +270,28 @@ function enqueue_custom_provider_scripts() {
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_provider_scripts' );
 ```
 
-## REST API Implementation
+## REST API の実装
 
 JavaScriptプロバイダーは、REST APIエンドポイントを介してサーバーと通信します。2つのエンドポイントを作成する必要があります：
 
-1. **Address Search Endpoint** (`/wp-json/your-plugin/v1/address-search`)
-   - Accepts: query string, country code, address type
-   - Returns: Array of suggestions with IDs and labels
+1. **住所検索エンドポイント** (`/wp-json/your-plugin/v1/address-search`)
+   - 引数: クエリー文字列、国コード、住所タイプ
+   - 戻り値IDとラベルを持つ候補の配列
 
-2. **Address Details Endpoint** (`/wp-json/your-plugin/v1/address-details`)
-   - Accepts: Address/place ID
-   - Returns: Complete address components
+2. **アドレス詳細エンドポイント** (`/wp-json/your-plugin/v1/address-details`)
+   - 以下のものを受け取ります：住所/場所ID
+   - 戻り値完全な住所構成要素
 
-For implementation details, refer to the [WordPress REST API Handbook](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/).
+実装の詳細については、[WordPress REST API ハンドブック](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) を参照してください。
 
+## トラブルシューティング
 
-## Troubleshooting
-
-### Common Issues
+### よくある問題
 
 1. **チェックアウトにプロバイダが表示されない
    - プロバイダがサーバに登録されていることを確認する
    - JavaScriptファイルがロードされていることを確認する
-   - PHPとJavaScriptの間でプロバイダIDが一致していることを確認する
+   - PHPとJavaScriptでプロバイダIDが一致していることを確認する
 
 2. **提案が表示されません
    - ブラウザのコンソールでJavaScriptエラーを確認する
@@ -300,6 +299,6 @@ For implementation details, refer to the [WordPress REST API Handbook](https://d
    - 国がプロバイダーによってサポートされていることを確認する
    - 検索クエリが3文字以上であることを確認する。
 
-3. **Fields not populating on selection**
-   - Verify `select` method returns correct field names
-   - Check that address data matches WooCommerce field structure
+3. **選択時にフィールドが入力されない
+   - `select`メソッドが正しいフィールド名を返すか確認する
+   - 住所データがWooCommerceのフィールド構造と一致するか確認する

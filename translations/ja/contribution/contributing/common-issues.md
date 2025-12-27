@@ -2,12 +2,11 @@
 post_title: Common issues
 sidebar_label: Common issues
 ---
-
-# Common issues
+# 共通の問題
 
 このページは、既知の問題、よく遭遇する問題、そしてその解決策や回避策を包括的に文書化することを目的としています。もし、ここに記載されていない問題や、記載すべき問題に遭遇した場合は、遠慮なくリストに追加してください。
 
-## Composer error on `Automattic\Jetpack\Autoloader\AutoloadGenerator`
+`Automattic\Jetpack\Autoloader\AutoloadGenerator` での ## Composer エラー
 
 ```bash
 [ErrorException]
@@ -19,17 +18,17 @@ sidebar_label: Common issues
   etDir, $scanPsrPackages = false, $suffix = '')
 ```
 
-A recent [change](https://github.com/composer/composer/commit/b574f10d9d68acfeb8e36cad0b0b25a090140a3b#diff-67d1dfefa9c7b1c7e0b04b07274628d812f82cd82fae635c0aeba643c02e8cd8) in composer 2.0.7 made our autoloader incompatible with the new `AutoloadGenerator` signature. Try to downgrading to composer 2.0.6 by using `composer self-update 2.0.6`.
+composer 2.0.7の[変更](https://github.com/composer/composer/commit/b574f10d9d68acfeb8e36cad0b0b25a090140a3b#diff-67d1dfefa9c7b1c7e0b04b07274628d812f82cd82fae635c0aeba643c02e8cd8)により、オートローダーが新しい`AutoloadGenerator`シグネチャと互換性がなくなりました。`composer self-update 2.0.6`を使用して、composer 2.0.6にダウングレードしてみてください。
 
-## VVV: HostsUpdater vagrant plugin error
+## VVV: HostsUpdater の vagrant プラグインのエラー
 
 ```bash
 ...vagrant-hostsupdater/HostsUpdater.rb:126:in ``digest': no implicit conversion of nil into String (TypeError)
 ```
 
-You might be running an unsupported version of Vagrant. At the time of writing, VVV works with Vagrant 2.2.7. Please check VVV's [requirements](https://github.com/Varying-Vagrant-Vagrants/VVV#minimum-system-requirements).
+サポートされていないバージョンのVagrantを使用している可能性があります。この記事を書いている時点では、VVVはVagrant 2.2.7で動作します。VVV の [requirements](https://github.com/Varying-Vagrant-Vagrants/VVV#minimum-system-requirements) をご確認ください。
 
-## VVV: `install-wp-tests.sh` error
+## VVV: `install-wp-tests.sh` エラー
 
 ```bash
 mysqladmin: CREATE DATABASE failed; error: 'Access denied for user 'wp'@'localhost' to database 'wordpress-one-tests''
@@ -37,11 +36,11 @@ mysqladmin: CREATE DATABASE failed; error: 'Access denied for user 'wp'@'localho
 
 To fix:
 
--   Open MySQL with `sudo mysql`.
--   Run `GRANT ALL PRIVILEGES ON * . * TO 'wp'@'localhost';`. Exit by typing `exit;`.
--   Run the `install-wp-tests.sh` script again.
+-   MySQLを`sudo mysql`で開く。
+-   `GRANT ALL PRIVILEGES ON * . * TO 'wp'@'localhost';`を実行する。`exit;`を入力して終了する。
+-   `install-wp-tests.sh`スクリプトをもう一度実行する。
 
-## Timeout / 404 errors while running e2e tests
+## e2e テスト実行中のタイムアウト / 404 エラー
 
 ```bash
  Store owner can complete onboarding wizard › can complete the product types section
@@ -56,9 +55,9 @@ To fix:
       5 | 		},
 ```
 
-Timeouts or 404 errors in the e2e tests signal that the existing build might be broken. Run `npm install && npm run clean && npm run build` to generate a fresh build. It should also be noted that some of our npm scripts also remove the current build, so it's a good practice to always run a build before running e2e tests.
+e2e テストでタイムアウトや 404 エラーが発生した場合は、 既存のビルドが壊れている可能性がある。`npm install && npm run clean && npm run build`を実行して、新しいビルドを生成してください。npm スクリプトの中には現在のビルドを削除するものもあるので、e2e テストを実行する前に必ずビルドを実行するのがよい習慣です。
 
-## Docker container couldn't be built when attempting e2e test
+## e2eテストを試みたところ、Dockerコンテナがビルドできませんでした。
 
 ```bash
 Thu Dec  3 11:55:56 +08 2020 - Docker container is still being built
@@ -71,35 +70,35 @@ npm ERR! @woocommerce/e2e-environment@0.1.6 test:e2e: `bash ./bin/wait-for-build
 npm ERR! Exit status 1
 ```
 
-Ensure that Docker is running. While the script says `Docker container is still being built`, it is not actually responsible for running Docker; it's just waiting for an existing docker instance to respond. Run `npm run docker:up` if it's not.
+Dockerが起動していることを確認する。スクリプトには`Docker container is still being built`と書かれていますが、実際にはDockerの実行を担当しているわけではありません。もし実行されていなければ、`npm run docker:up`を実行してください。
 
-## Set up WooCommerce Payments dev mode
+## WooCommerce Paymentsの開発モードを設定する
 
-Add this to `wp-config.php`:
+これを`wp-config.php`に追加する：
 
 ```php
 define( 'WCPAY_DEV_MODE', true );
 ```
 
-Also see [this document](https://woocommerce.com/document/woopayments/testing-and-troubleshooting/test-accounts/).
+[この文書](https://woocommerce.com/document/woopayments/testing-and-troubleshooting/test-accounts/)も参照のこと。
 
-## WooCommerce Admin install timestamp
+## WooCommerce Admin インストールタイムスタンプ
 
-To get the install timestamp (used in `wc_admin_active_for()` in `NoteTraits` for example) try this SQL:
+インストールのタイムスタンプ（例えば`NoteTraits`の`wc_admin_active_for()`で使用される）を取得するには、次のSQLを試してください：
 
 ```sql
 SELECT * FROM wp_options WHERE option_name = 'woocommerce_admin_install_timestamp'
 ```
 
-## Reset the onboarding wizard
+## オンボーディングウィザードをリセットする
 
-Delete the `woocommerce_onboarding_profile` option:
+`woocommerce_onboarding_profile`オプションを削除する：
 
 ```sql
 DELETE FROM wp_options WHERE option_name = 'woocommerce_onboarding_profile'
 ```
 
-## Enable tracks debugging in the console
+## コンソールでのトラックデバッグを有効にする
 
 ```javascript
 localStorage.setItem( 'debug', 'wc-admin:tracks' );
@@ -107,12 +106,12 @@ localStorage.setItem( 'debug', 'wc-admin:tracks' );
 
 で、Chromeのログレベル「verbose」を「checked」に設定する。
 
-## Running PHP unit tests using Vagrant (VVV)
+## Vagrant (VVV) を使って PHP のユニットテストを実行する
 
-1. SSH into Vagrant box (`vagrant ssh`)
-2. `cd /srv/www/<WP_INSTANCE>/public_html/wp-content/plugins/woocommerce-admin`
-3. Set up: `bin/install-wp-tests.sh wc-admin-tests root root`
-4. Fast tests: `./vendor/bin/phpunit --group fast`
-5. All tests: `./vendor/bin/phpunit`
+1.Vagrant に SSH でログインする (`vagrant ssh`)
+2.`cd /srv/www/<WP_INSTANCE>/public_html/wp-content/plugins/woocommerce-admin` (`AutoloadGenerator`)
+3.設定するセットアップ: `bin/install-wp-tests.sh wc-admin-tests root root`
+4.高速テスト：`./vendor/bin/phpunit --group fast`
+5.すべてのテスト：すべてのテスト： `./vendor/bin/phpunit`
 
-You might need to `composer install` if `phpunit` doesn't exist.
+`phpunit`が存在しない場合は、`composer install`が必要かもしれない。

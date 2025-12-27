@@ -34,7 +34,7 @@ format( $value, array $options = [] );
 
 ### 実例
 
-例えば、API経由で価格データを返すとしよう。セント単位の価格と、その店の通貨データを返したい。これを行うには、`MoneyFormatter`と`CurrencyFormatter`を使用します。
+例えば、API経由で価格データを返すとしよう。セント単位の価格と、店舗の通貨データを返したい。これを行うには、`MoneyFormatter`と`CurrencyFormatter`を使用します。
 
 まず、フォーマッタ・クラスにアクセスできるようにする必要があります。これには `use` キーワードを使用します：
 
@@ -71,7 +71,7 @@ $price_response = $extend->get_formatter( 'currency' )->format( [
 
 ## マネーフォーマット
 
-[INLINE_CODE_0__](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/trunk/src/StoreApi/Formatters/MoneyFormatter.php) クラスを使用すると、 店の設定を使用して金額をフォーマットすることができます。店舗設定は、このフォーマッタの `format` メソッドにオプションを渡すことで上書きすることができます。
+[`MoneyFormatter`](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/trunk/src/StoreApi/Formatters/MoneyFormatter.php) クラスを使用すると、 店の設定を使用して金額をフォーマットすることができます。店舗設定は、このフォーマッタの `format` メソッドにオプションを渡すことで上書きすることができます。
 
 このフォーマッタを使用する場合は、 [`CurrencyFormatter`](#currencyformatter) も一緒に使用することになるでしょう。こうすることで、API のコンシューマが意図した形式で値を表示できるようになります。
 
@@ -80,9 +80,9 @@ $price_response = $extend->get_formatter( 'currency' )->format( [
 | 引数 | タイプ | 説明 |
 | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `$value` | `number` | 金額にフォーマットしたい数値
-| `$options` `array` `decimals` `integer`, __INLINE_CODE_5__ の2つのキーを含む。
+| `$options` `array` `decimals` `integer`, `format` の2つのキーを含む。
 | `$options['decimals']`      | `number` | Used to control how many decimal places should be displayed in the monetary value.デフォルトはストア設定です。                                                                                                                |
-|`$options['rounding_mode']` | `number` | 金額を丸める方法を指定します。これは、[PHP [round() documentation](https://www.php.net/manual/en/function.round.php) で説明されている PHP の丸めモードのいずれかでなければなりません。デフォルトは `PHP_ROUND_HALF_UP` です。|
+|`$options['rounding_mode']` | `number` | 金額を丸める方法を指定します。これは、[PHP round() documentation](https://www.php.net/manual/en/function.round.php) で説明されている PHP の丸めモードのいずれかでなければなりません。デフォルトは `PHP_ROUND_HALF_UP` です。|
 
 ### 使用例と戻り値
 
@@ -172,4 +172,3 @@ alert('bad script!') This &#8220;coffee&#8221; is <strong>very strong</strong>.
 ```
 
 このフォーマッタは、StoreAPI から HTML を返す際に使用します。そうすることで、コンシューマ/クライアントがエンコーディングの問題なしに安全に HTML を表示できるようになります。
-

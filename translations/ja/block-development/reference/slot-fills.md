@@ -6,7 +6,7 @@ sidebar_label: Slot and fill
 
 ## 問題
 
-ストアAPI](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/rest-api/extend-rest-api-add-data.md)にカスタムデータを追加しました。Checkout filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)を使用して、いくつかの文字列を変更しました。ここで、カートとチェックアウトの特定の場所に独自のコンポーネントをレンダリングしたいとします。
+[ストアAPI](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/rest-api/extend-rest-api-add-data.md)にカスタムデータを追加しました。Checkout [filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)を使用して、いくつかの文字列を変更しました。ここで、カートとチェックアウトの特定の場所に独自のコンポーネントをレンダリングしたいとします。
 
 ## 解決策
 

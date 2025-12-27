@@ -48,7 +48,7 @@ add_filter( 'woocommerce_background_image_regeneration', '__return_false' );
 
 一度無効にすると、画像サイズの設定を変更して新しいサムネイルが必要になった場合、別のツールを使って手動でサムネイルを再生成する必要があります。
 
-別の方法として、[Jetpack Photonモジュール](https://jetpack.com/support/photon/) を使用することもできます。これは、その場で画像のリサイズを行うことができ、WooCommerce 3.3.2以降、背景再生の代わりに使用されます。
+別の方法として、[Jetpack Photonモジュール](https://jetpack.com/support/photon/)を使用することもできます。このモジュールは、その場で画像のリサイズを行うことができ、WooCommerce 3.3.2では背景再生の代わりに使用されます。
 
 ## 代わりにJetpack Photonを使う
 

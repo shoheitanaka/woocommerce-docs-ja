@@ -3,10 +3,9 @@ post_title: Model Context Protocol (MCP) Integration
 sidebar_label: MCP Integration
 category_slug: mcp
 ---
+# モデル・コンテキスト・プロトコル（MCP）の統合
 
-# Model Context Protocol (MCP) Integration
-
-## Introduction
+## はじめに
 
 WooCommerceはモデルコンテキストプロトコル（MCP）のネイティブサポートを含み、AIアシスタントやツールが標準化されたプロトコルを介してWooCommerceストアと直接対話することを可能にします。この統合は、AIクライアントが適切な認証と権限でストア操作を実行するために使用できる検出可能なツールとしてWooCommerceの機能を公開します。
 
@@ -17,20 +16,20 @@ WooCommerceのMCP実装は現在開発者プレビューです。機能の成熟
 
 :::
 
-## Background
+## 背景
 
 モデルコンテキストプロトコル（MCP）は、AIアプリケーションが外部のデータソースやツールに安全に接続できるようにするオープンスタンダードです。WooCommerceのMCP統合は、2つのコアテクノロジーに基づいています：
 
-- **[WordPress Abilities API](https://github.com/WordPress/abilities-api)** - A standardized system for registering capabilities in WordPress
-- **[WordPress MCP Adapter](https://github.com/WordPress/mcp-adapter)** - The core MCP protocol implementation
+- **[WordPress Abilities API](https://github.com/WordPress/abilities-api)** - WordPressに機能を登録するための標準化されたシステム
+- **[WordPress MCP Adapter](https://github.com/WordPress/mcp-adapter)** - MCPプロトコルのコア実装
 
 このアーキテクチャにより、WooCommerceは既存のセキュリティと権限モデルを維持しながら、柔軟なWordPress Abilitiesシステムを通じてMCPツールとして操作を公開することができます。
 
-## What's Available
+## 利用可能なもの
 
 WooCommerceのMCP統合は、AIアシスタントに店舗のコア業務への構造化されたアクセスを提供します：
 
-### Product Management
+### 製品管理
 
 - フィルタリングとページネーションで製品を一覧表示
 - 商品の詳細情報を取得
@@ -38,7 +37,7 @@ WooCommerceのMCP統合は、AIアシスタントに店舗のコア業務への�
 - 既存商品の更新
 - 商品の削除
 
-### Order Management
+### オーダー管理
 
 - フィルタリングとページネーションで注文を一覧表示
 - 詳細な注文情報の取得
@@ -54,9 +53,9 @@ WooCommerceのMCP統合は、AIアシスタントに店舗のコア業務への�
 
 :::
 
-## Architecture
+## 建築
 
-### Data Flow Overview
+### データフローの概要
 
 MCPインテグレーションは、MCPクライアントとWordPressの橋渡しをするために、多層アーキテクチャを使用しています：
 
@@ -72,61 +71,61 @@ WooCommerce Abilities
 WooCommerce Core
 ```
 
-### Architecture Components
+### アーキテクチャ・コンポーネント
 
-**Local MCP Proxy** (`mcp-wordpress-remote`)
+**ローカルMCPプロキシ** (`mcp-wordpress-remote`)
 
 - Node.jsプロセスとして開発者のマシン上でローカルに実行される。
 - MCPプロトコルのメッセージをHTTPリクエストに変換する
 - 認証ヘッダーインジェクションを処理
 - MCPクライアントとWordPress RESTエンドポイント間のプロトコルギャップを埋める
 
-**Remote WordPress MCP Server** (`mcp-adapter`)
+**リモートWordPress MCPサーバー** (`mcp-adapter`)
 
-- Runs within WordPress as a plugin
-- Exposes the `/wp-json/woocommerce/mcp` endpoint
-- Processes incoming HTTP requests and converts them to MCP protocol messages
-- Manages tool discovery and execution
+- WordPress内でプラグインとして動作
+- `/wp-json/woocommerce/mcp`エンドポイントの公開
+- HTTPリクエストを処理し、MCPプロトコルのメッセージに変換する
+- ツールの発見と実行を管理する
 
-#### WordPress Abilities System
+#### ワードプレス・アビリティ・システム
 
 - 能力を登録し、実行するための標準化された方法を提供します。
 - MCPツールと実際の操作の間の抽象化レイヤーとして機能
 - 柔軟な実装アプローチが可能（RESTブリッジング、直接DB操作など）
 
-### Core Components
+### コア・コンポーネント
 
-**MCP Adapter Provider** ([`MCPAdapterProvider.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/MCP/MCPAdapterProvider.php))
+**MCPアダプタ・プロバイダ** ([`MCPAdapterProvider.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/MCP/MCPAdapterProvider.php))
 
-- Manages MCP server initialization and configuration
-- Handles feature flag checking (`mcp_integration`)
-- Provides ability filtering and namespace management
+- MCPサーバーの初期化と設定の管理
+- 機能フラグ・チェックの処理 (`mcp_integration`)
+- 能力のフィルタリングとネームスペースの管理
 
-**Abilities Registry** ([`AbilitiesRegistry.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/Abilities/AbilitiesRegistry.php))
+**アビリティ・レジストリ** ([`AbilitiesRegistry.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/Abilities/AbilitiesRegistry.php))
 
 - WooCommerceのアビリティ登録を一元化
 - WordPressアビリティAPIとWooCommerce操作の橋渡し
-- MCPサーバのアビリティディスカバリを可能にする
+- MCPサーバのアビリティディスカバリーを可能にする
 
-**REST Bridge Implementation** ([`AbilitiesRestBridge.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/Abilities/AbilitiesRestBridge.php))
+**RESTブリッジの実装** ([`AbilitiesRestBridge.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/Abilities/AbilitiesRestBridge.php))
 
 - RESTオペレーションをWordPressアビリティにマッピングする現在のプレビュー実装
 - 商品と注文のスキーマによる明示的なアビリティ定義を提供します。
 - 既存の REST コントローラを使用してアビリティを実装する方法を示します。
 
-**WooCommerce Transport** ([`WooCommerceRestTransport.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/MCP/Transport/WooCommerceRestTransport.php))
+**WooCommerceトランスポート** ([`WooCommerceRestTransport.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/MCP/Transport/WooCommerceRestTransport.php))
 
 - WooCommerce API キー認証の処理
 - HTTPS 要件の強制
 - APIキーのスコープに基づく権限の検証
 
-### Implementation Approach
+### 実施方法
 
 この開発者プレビューでは、WooCommerce の機能は既存の REST API エンドポイントに橋渡しすることで実装されています。このアプローチにより、実績のある REST コントローラを活用しながら、コア機能を迅速に公開することができます。しかし、WordPress Abilities API は柔軟に設計されています。アビリティは REST エンドポイントのプロキシ以外にも、直接的なデータベース操作、カスタムビジネスロジック、外部サービスとの統合など、さまざまな方法で実装することができます。
 
-## Enabling MCP Integration
+## MCPとの統合を可能にする
 
-The MCP feature is controlled by the `mcp_integration` feature flag. You can enable it programmatically:
+MCP機能は`mcp_integration`フラグによって制御されます。プログラムで有効にすることができます：
 
 ```php
 add_filter( 'woocommerce_features', function( $features ) {
@@ -141,11 +140,11 @@ add_filter( 'woocommerce_features', function( $features ) {
 wp option update woocommerce_feature_mcp_integration_enabled yes
 ```
 
-## Authentication and Security
+## 認証とセキュリティ
 
-### API Key Requirements
+### APIキーの要件
 
-MCP clients authenticate using WooCommerce REST API keys in the `X-MCP-API-Key` header:
+MCPクライアントは`X-MCP-API-Key`ヘッダのWooCommerce REST APIキーを使用して認証します：
 
 ```http
 X-MCP-API-Key: ck_your_consumer_key:cs_your_consumer_secret
@@ -153,12 +152,12 @@ X-MCP-API-Key: ck_your_consumer_key:cs_your_consumer_secret
 
 APIキーを作成する：
 
-1. Navigate to **WooCommerce → Settings → Advanced → REST API**
-2. Click **Add Key**
-3. Set appropriate permissions (`read`, `write`, or `read_write`)
-4. Generate and securely store the consumer key and secret
+1.WooCommerce → 設定 → 詳細 → REST API*** に移動します。
+2.キーを追加**をクリックします。
+3.適切なパーミッションを設定する (`read`, `write`, または `read_write`)
+4.コンシューマー・キーとシークレットを生成し、安全に保存する。
 
-### HTTPS Enforcement
+### HTTPS の施行
 
 MCPリクエストには、デフォルトでHTTPSが必要です。ローカル開発では、この要件を無効にできます：
 
@@ -166,15 +165,15 @@ MCPリクエストには、デフォルトでHTTPSが必要です。ローカル
 add_filter( 'woocommerce_mcp_allow_insecure_transport', '__return_true' );
 ```
 
-### Permission Validation
+### 許可の検証
 
 トランスポート・レイヤーは、APIキーの許可に対して操作を検証する：
 
-- `read` permissions: Allow GET requests
-- `write` permissions: Allow POST, PUT, PATCH, DELETE requests
-- `read_write` permissions: Allow all operations
+- `read` 許可：GETリクエストを許可する
+- `write`パーミッション：パーミッション: POST, PUT, PATCH, DELETE リクエストを許可する
+- `read_write`パーミッション：すべての操作を許可する
 
-## Server Endpoint
+## サーバー・エンドポイント
 
 WooCommerce MCP サーバーは下記でご利用いただけます：
 
@@ -182,21 +181,21 @@ WooCommerce MCP サーバーは下記でご利用いただけます：
 https://yourstore.com/wp-json/woocommerce/mcp
 ```
 
-## Connecting to the MCP Server
+## MCPサーバーへの接続
 
-### Proxy Architecture
+### プロキシ・アーキテクチャ
 
 現在のMCPの実装では、MCPクライアントとWordPressサーバーの接続に**ローカルプロキシアプローチ**を使用しています：
 
-- **MCP Clients** (like Claude Code) communicate using the MCP protocol over stdio/JSON-RPC
-- **Local Proxy** (`@automattic/mcp-wordpress-remote`) runs on your machine and translates MCP protocol messages to HTTP requests
-- **WordPress MCP Server** receives HTTP requests and processes them through the WordPress Abilities system
+- **MCPクライアント**（クロード・コードのような）は、stdio/JSON-RPC上でMCPプロトコルを使用して通信します。
+- **ローカルプロキシ**（`@automattic/mcp-wordpress-remote`）はあなたのマシン上で動作し、MCPプロトコルのメッセージをHTTPリクエストに変換します。
+- **WordPress MCP Server** はHTTPリクエストを受信し、WordPress Abilitiesシステムを通して処理します。
 
-This proxy pattern is commonly used in MCP integrations to bridge protocol differences and handle authentication. The `mcp-wordpress-remote` package acts as a protocol translator, converting the stdio-based MCP communication that clients expect into the HTTP REST API calls that WordPress understands.
+このプロキシパターンはプロトコルの違いを埋め、認証を処理するために MCP 統合でよく使われます。`mcp-wordpress-remote`パッケージはプロトコルのトランスレータとして機能し、クライアントが期待するstdioベースのMCP通信をWordPressが理解するHTTP REST API呼び出しに変換します。
 
 **将来の進化**：このプロキシアプローチは強固な基盤を提供しますが、MCPエコシステムの進化に伴い、将来の実装ではWordPress内での直接的なMCPプロトコルのサポートや、別の接続方法を模索するかもしれません。
 
-### Claude Code Integration
+### クロード・コードの統合
 
 クロードコードをWooCommerce MCPサーバーに接続します：
 
@@ -211,9 +210,9 @@ claude mcp add woocommerce_mcp \
   -- npx -y @automattic/mcp-wordpress-remote@latest
 ```
 
-### Manual MCP Client Configuration
+### MCP クライアントの手動設定
 
-For other MCP clients, add this configuration to your MCP settings. This configuration tells the MCP client to run the `mcp-wordpress-remote` proxy locally, which will handle the communication with your WordPress server:
+他のMCPクライアントの場合は、この設定をMCP設定に追加してください。この設定は、`mcp-wordpress-remote`プロキシをローカルで実行し、WordPressサーバーとの通信を処理するようにMCPクライアントに指示します：
 
 ```json
 {
@@ -234,13 +233,13 @@ For other MCP clients, add this configuration to your MCP settings. This configu
 }
 ```
 
-**Important**: Replace `YOUR_CONSUMER_KEY:YOUR_CONSUMER_SECRET` with your actual WooCommerce API credentials.
+**重要**：`YOUR_CONSUMER_KEY:YOUR_CONSUMER_SECRET`を実際のWooCommerce API認証情報に置き換えてください。
 
-**Troubleshooting**: For common setup issues with npx versions or SSL in local environments, see the [mcp-wordpress-remote troubleshooting guide](https://github.com/Automattic/mcp-wordpress-remote/blob/trunk/Docs/troubleshooting.md).
+**トラブルシューティング**：npxのバージョンやローカル環境でのSSLに関する一般的なセットアップの問題については、[mcp-wordpress-remoteトラブルシューティングガイド](https://github.com/Automattic/mcp-wordpress-remote/blob/trunk/Docs/troubleshooting.md)を参照してください。
 
-## Extending MCP Capabilities
+## MCP機能の拡張
 
-### Adding Custom Abilities
+### カスタム能力の追加
 
 サードパーティのプラグインは、WordPress Abilities API を使用して追加のアビリティを登録できます。アビリティは、RESTエンドポイントのブリッジング、直接操作、カスタムロジック、外部統合など、さまざまな方法で実装できます。以下は基本的な例です：
 
@@ -279,9 +278,9 @@ add_action( 'abilities_api_init', function() {
 });
 ```
 
-### Including Custom Abilities in WooCommerce MCP Server
+### WooCommerce MCPサーバーにカスタム機能を含める
 
-By default, only abilities with the `woocommerce/` namespace are included. To include abilities from other namespaces:
+デフォルトでは、`woocommerce/`名前空間を持つアビリティのみがインクルードされます。他の名前空間のアビリティを含めるには
 
 ```php
 add_filter( 'woocommerce_mcp_include_ability', function( $include, $ability_id ) {
@@ -292,53 +291,53 @@ add_filter( 'woocommerce_mcp_include_ability', function( $include, $ability_id )
 }, 10, 2 );
 ```
 
-## Development Example
+## 開発例
 
-For a complete working example, see the [WooCommerce MCP Ability Demo Plugin](https://github.com/woocommerce/wc-mcp-ability). This demonstration plugin shows how third-party developers can:
+完全な動作例については、[WooCommerce MCP Ability Demo Plugin](https://github.com/woocommerce/wc-mcp-ability) をご覧ください。このデモプラグインは、サードパーティの開発者がどのようにできるかを示しています：
 
 - WordPress Abilities APIを使用したカスタムアビリティの登録
 - 包括的な入出力スキーマの定義
 - 適切なパーミッション処理の実装
 - WooCommerce MCPサーバーとの統合
 
-The demo plugin creates a `woocommerce-demo/store-info` ability that retrieves store information and statistics, demonstrating the integration patterns for extending WooCommerce MCP capabilities while using a direct implementation approach rather than REST endpoint bridging.
+デモプラグインは、店舗情報と統計を取得する`woocommerce-demo/store-info`機能を作成し、RESTエンドポイントブリッジングではなく、直接実装アプローチを使用しながら、WooCommerce MCP機能を拡張するための統合パターンを示します。
 
-## Troubleshooting
+## トラブルシューティング
 
-### Common Issues
+### よくある問題
 
-## MCP Server Not Available
+## MCPサーバーが利用できません
 
-- Verify the `mcp_integration` feature flag is enabled
-- Check that the MCP adapter is properly loaded
-- Review WooCommerce logs for initialization errors
+- `mcp_integration`機能フラグが有効になっていることを確認する。
+- MCPアダプタが正しくロードされているか確認する
+- WooCommerceのログに初期化エラーがないか確認してください。
 
-## Authentication Failures
+## 認証の失敗
 
-- Confirm API key format: `consumer_key:consumer_secret`
-- Verify API key permissions match operation requirements
-- Ensure HTTPS is used or explicitly allowed for development
+- APIキーの形式を確認してください：`consumer_key:consumer_secret`
+- APIキーのパーミッションが運用要件に合致していることを確認する
+- 開発時にHTTPSが使用されているか、または明示的に許可されていることを確認する。
 
-## Ability Not Found
+## 能力が見つかりません
 
-- Confirm abilities are registered during `abilities_api_init`
-- Check namespace inclusion using the `woocommerce_mcp_include_ability` filter
-- Verify ability callbacks are accessible
+- `abilities_api_init`で能力が登録されていることを確認する。
+- `woocommerce_mcp_include_ability`フィルタを使用してネームスペースがインクルードされていることを確認する。
+- アビリティのコールバックがアクセス可能であることを確認する
 
-Check **WooCommerce → Status → Logs** for entries with source `woocommerce-mcp`.
+ソース `woocommerce-mcp` のエントリがあるか **WooCommerce → Status → Logs** を確認してください。
 
-## Important Considerations
+## 重要な考慮事項
 
 - **開発者プレビュー**：この機能はプレビュー状態であり、変更される可能性があります。
-- **実装アプローチ現在の能力では、プレビュー実装として REST エンドポイントブリッジングを使用する。
+- **実装アプローチ**：現在の能力では、プレビュー実装として REST エンドポイントブリッジングを使用する。
 - **Breaking Changes**：将来のアップデートで変更される可能性があります。
 - **本番テスト**：本番環境へのデプロイ前に十分なテストを行ってください。
 - **APIの安定性**：WordPress Abilities API と MCP アダプターは進化しています。
 
-## Related Resources
+## 関連リソース
 
-- [WordPress Abilities API Repository](https://github.com/WordPress/abilities-api)
+- [WordPress Abilities API リポジトリ](https://github.com/WordPress/abilities-api)
 - [WordPress MCP Adapter Repository](https://github.com/WordPress/mcp-adapter)
-- [WooCommerce MCP Demo Plugin](https://github.com/woocommerce/wc-mcp-ability)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [WooCommerce REST API Documentation](https://woocommerce.github.io/woocommerce-rest-api-docs/)
+- [WooCommerce MCPデモプラグイン](https://github.com/woocommerce/wc-mcp-ability)
+- [モデルコンテキストプロトコル仕様書](https://modelcontextprotocol.io/)
+- [WooCommerce REST API ドキュメント](https://woocommerce.github.io/woocommerce-rest-api-docs/)

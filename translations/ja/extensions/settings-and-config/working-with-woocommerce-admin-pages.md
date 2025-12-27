@@ -2,16 +2,15 @@
 post_title: Integrating admin pages into WooCommerce extensions
 sidebar_label: Integrating admin pages
 ---
+# WooCommerceエクステンションに管理ページを統合する
 
-# Integrating admin pages into WooCommerce extensions
+## はじめに
 
-## Introduction
+WooCommerceエクステンションの管理エリアページを管理する方法はいくつかあります。既存のPHPページを使用することもできますし、Reactを使用した新しいページを作成することもできます。どの方法を選択しても、ページにWooCommerce Adminヘッダーとアクティビティパネルを表示するには、ページを[`PageController`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html)に登録する必要があります。
 
-There are a number of ways to manage admin-area pages for your WooCommerce extension. You can use existing PHP pages or create new React-powered pages. Regardless of the approach you choose, you'll need to register your page with the [`PageController`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html) in order to display the WooCommerce Admin header and activity panel on your page.
+## PHPで作られたページをWooCommerce Adminに接続する
 
-## Connecting a PHP-powered page to WooCommerce Admin
-
-To register an existing PHP-powered admin page with the [`PageController`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html), use the [`wc_admin_connect_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_connect_page) function. For example:
+既存のPHPによる管理ページを[`PageController`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html)で登録するには、[`wc_admin_connect_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_connect_page)関数を使用します。例えば
 
 ```php
 wc_admin_connect_page(
@@ -24,46 +23,46 @@ wc_admin_connect_page(
 );
 ```
 
-The [`wc_admin_connect_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_connect_page) function accepts an array of arguments, two of which are optional:
+[`wc_admin_connect_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_connect_page)関数は引数の配列を受け取り、そのうちの2つはオプションである：
 
--   `id` (**required**) - This identifies the page with the controller.
--   `parent` (_optional_) - This value denotes the page as a child of a parent (using the parent's ID) and is used for generating breadcrumbs.
--   `screen_id` (**required**) - This corresponds to [`PageController::get_current_screen_id()`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html#method_get_current_screen_id). It is used to determine the current page. (see note below)
--   `title` (**required**) - This corresponds to the page's title and is used to build breadcrumbs. You can supply a string or an array of breadcrumb pieces here.
--   `path` (_optional_) - This is the page's relative path. Used for linking breadcrumb pieces when this page is a parent.
+-   `id` (**必須**) - コントローラのあるページを識別します。
+-   `parent` (_optional_) - この値は、ページを親の子であることを示し(親のIDを使用します)、パンくずを生成するために使用されます。
+-   `screen_id` (**必須**) - [`PageController::get_current_screen_id()`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html#method_get_current_screen_id) に対応します。現在のページを決定するために使用されます。(以下の注を参照)
+-   `title` (**必須**) - これはページのタイトルに対応し、パンくずを作るために使われます。ここには文字列かパンくずの配列を指定します。
+-   `path` (_optional_) - ページの相対パスです。このページが親である場合に、パンくずピースをリンクするために使用します。
 
-In the example above, you can see how to use an array to construct breadcrumbs for your extension. WooCommerce will attach a link leading to the `path` value to the first piece in the title array. All subsequent pieces are rendered as text and not linked.
+上の例では、配列を使用して拡張機能のパンくずを作成する方法を見ることができます。WooCommerce はタイトル配列の最初の部分に `path` 値につながるリンクを付けます。それ以降の部分はすべてテキストとしてレンダリングされ、リンクされません。
 
-### A note about determining the screen ID
+### スクリーンIDの決定に関する注意
 
-WooCommerce Admin uses its own version of [`get_current_screen()`](https://developer.wordpress.org/reference/functions/get_current_screen/) to allow for more precise identification of admin pages, which may have various tabs and subsections.
+WooCommerce Adminは独自バージョンの[`get_current_screen()`](https://developer.wordpress.org/reference/functions/get_current_screen/)を使用して、様々なタブやサブセクションを持つ管理ページをより正確に識別できるようにしています。
 
 このIDのフォーマットは、ページに存在する構造要素によって異なる。この関数が生成するフォーマットには次のようなものがあります：
 
 -   `{$current_screen->action}-{$current_screen->action}-tab-section`
 -   `{$current_screen->action}-{$current_screen->action}-tab`
--   `{$current_screen->action}-{$current_screen->action}` if no tab is present
--   `{$current_screen->action}` if no action or tab is present
+-   タブがない場合は`{$current_screen->action}-{$current_screen->action}`。
+-   アクションまたはタブが存在しない場合は `{$current_screen->action}`
 
-If your extension adds new pages with tabs or subsections, be sure to use the `wc_admin_pages_with_tabs` and `wc_admin_page_tab_sections` filters to have WooCommerce generate accurate screen IDs for them.
+拡張機能でタブやサブセクションのある新しいページを追加する場合、`wc_admin_pages_with_tabs`と`wc_admin_page_tab_sections`フィルタを使用して、WooCommerceに正確なスクリーンIDを生成させてください。
 
-You can also use the `wc_admin_current_screen_id` filter to make any changes necessary to the screen ID generation behavior.
+また、`wc_admin_current_screen_id`フィルタを使用して、スクリーンID生成動作に必要な変更を加えることもできる。
 
-## Registering a React-powered page
+## Reactで動くページを登録する
 
-To register a React-powered page, use the [`wc_admin_register_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_register_page) function. It accepts an array of arguments:
+Reactで動くページを登録するには、[`wc_admin_register_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_register_page)関数を使います。引数の配列を受け取ります：
 
--   `id` (**required**) - This identifies the page with the controller.
--   `parent` (_optional_) - This denotes the page as a child of `parent` (using the parent's ID) and is used for generating breadcrumbs.
--   `title` (**required**) - This corresponds to the page's title and is used to build breadcrumbs. You can supply a String or an Array of breadcrumb pieces here.
--   `path` (**required**) - This is the page's path (relative to `#wc-admin`). It is used for identifying this page and for linking breadcrumb pieces when this page is a parent.
--   `capability` (_optional_) - User capability needed to access this page. The default value is `manage_options`.
--   `icon` (_optional_) - Use this to apply a Dashicons helper class or base64-encoded SVG. Include the entire dashicon class name, ie `dashicons-*`. Note that this won't be included in WooCommerce Admin Navigation.
--   `position` (_optional_) - Menu item position for parent pages. See: [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/).
+-   `id` (**必須**) - コントローラのあるページを識別します。
+-   `parent` (_optional_) - (親のIDを使用して)`parent`の子であることを示します。
+-   `title` (**必須**) - ページのタイトルに対応し、パンくずの生成に使用されます。パンくずの断片を文字列か配列で指定することができます。
+-   `path` (**必須**) - ページのパスです(`#wc-admin`からの相対パス)。このページを識別するためと、このページが親である場合にパンくずピースをリンクするために使用されます。
+-   `capability` (_optional_) - このページにアクセスするために必要なユーザー能力。デフォルト値は`manage_options`です。
+-   `icon` (_optional_) - Dashiconsヘルパークラスまたはbase64エンコードSVGを適用する場合に使用します。ダシコンクラス名全体、つまり `dashicons-*` を含めます。これはWooCommerce Admin Navigationには含まれないので注意。
+-   `position` (_optional_) - 親ページのメニューアイテムの位置。参照してください：[`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/).
 
-Registering a React-powered page is similar to connecting a PHP page, but with some key differences. Registering pages will automatically create WordPress menu items for them, with the appropriate hierarchy based on the value of `parent`.
+Reactで動くページの登録はPHPページの接続と似ていますが、いくつかの重要な違いがあります。ページを登録すると、`parent`の値に基づいた適切な階層で、自動的にWordPressのメニュー項目が作成されます。
 
-### Example: Adding a new WooCommerce Admin page
+### 例新しいWooCommerce管理ページの追加
 
 ```php
 if ( ! function_exists( 'YOUR_PREFIX_add_extension_register_page' ) ) {
@@ -83,7 +82,7 @@ if ( ! function_exists( 'YOUR_PREFIX_add_extension_register_page' ) ) {
 add_action( 'admin_menu', 'YOUR_PREFIX_add_extension_register_page' );
 ```
 
-In the example above, we encapsulated our call to [`wc_admin_register_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_register_page) in a function that we have hooked to the [`admin_menu`](https://developer.wordpress.org/reference/hooks/admin_menu/) action. Once you have registered a page with the controller, you can supply a React component on the client side.
+上の例では、[`wc_admin_register_page()`](https://woocommerce.github.io/code-reference/namespaces/default.html#function_wc_admin_register_page) への呼び出しを関数にカプセル化し、 [`admin_menu`](https://developer.wordpress.org/reference/hooks/admin_menu/) アクションにフックしています。コントローラにページを登録したら、クライアント側でReactコンポーネントを作成します。
 
 ```js
 import { addFilter } from '@wordpress/hooks';
@@ -102,13 +101,13 @@ addFilter( 'woocommerce_admin_pages_list', 'my-namespace', ( pages ) => {
 } );
 ```
 
-Above, we're creating a simple [functional React component](https://reactjs.org/docs/components-and-props.html#function-and-class-components) for the sake of demonstration, but a real-world extension would likely have a more complex nesting of components.
+上では、デモンストレーションのために単純な[機能的なReactコンポーネント](https://reactjs.org/docs/components-and-props.html#function-and-class-components)を作成していますが、実際のエクステンションでは、もっと複雑なコンポーネントの入れ子になる可能性があります。
 
-## Further reading
+## 続きを読む
 
-You can learn more about how page registration works by checking out the [`PageController`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html) class in the WooCommerce Core Code Reference.
+WooCommerceコアコードリファレンスの[`PageController`](https://woocommerce.github.io/code-reference/classes/Automattic-WooCommerce-Admin-PageController.html)クラスをチェックすることで、ページ登録がどのように機能するかについてより詳しく知ることができます。
 
 WooCommerce Coreの2つのページ登録方法の実例をご覧ください：
 
--   [How WooCommerce Admin registers existing core pages](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/react-admin/connect-existing-pages.php) - registering PHP-powered pages
--   [How WooCommerce registers React-powered Analytics report pages](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/Admin/Analytics.php) - registering React-powered pages
+-   [WooCommerce Adminが既存のコアページを登録する方法](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/react-admin/connect-existing-pages.php) - PHPで動作するページを登録する
+-   [WooCommerceがReactで動くAnalyticsレポートページを登録する方法](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/Admin/Analytics.php) - Reactで動くページを登録する

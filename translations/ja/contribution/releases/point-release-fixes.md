@@ -3,23 +3,22 @@ post_title: Point Release Requests in WooCommerce
 sidebar_label: Point Release Requests
 sidebar_position: 4
 ---
-
-# Point Release Requests in WooCommerce
+# WooCommerceにおけるポイント解放リクエスト
 
 ポイントリリースは既に出荷されたWooCommerceのバージョンで発見された重大な問題に対処します。これらはパッチリリース（例：9.9.0 → 9.9.1）で、本番環境に必要な修正のみが含まれています。
 
 このプロセスは、顧客の本番環境にある ALREADY-RELEASED VERSION にのみ適用されることに注意してください。
 
-## Point Release Lifecycle
+## ポイント・リリースのライフサイクル
 
 ポイント・リリースは、通常のリリースとは異なるライフサイクルをたどります：
 
 - **通常リリース後に発見された重大な問題**がトリガーとなる。
 - **限定された範囲** - 重要なバグ修正とセキュリティパッチのみ
-- **タイムラインの短縮** - レビューとリリースのサイクルを短縮。
+- **タイムラインの短縮** - レビューとリリースのサイクルが短縮されます。
 - **後方互換性** - 変更を許さない
 
-## Qualifying Changes for Point Releases
+## ポイントリリースの予選変更
 
 変更がポイント・リリースの対象となるのは、以下の場合のみである：
 
@@ -35,15 +34,15 @@ sidebar_position: 4
 - コードのリファクタリングやクリーンアップ
 - ドキュメントの更新
 
-## Point Release Request Process
+## ポイント放出要求プロセス
 
-### Standard Process: Critical Bug Fixes
+### 標準プロセス：重大なバグ修正
 
 **使用時期：** ほとんどのポイント・リリース・シナリオ
 
-1. **Create a pull request** against the appropriate release branch (e.g., `release/9.9` for a fix targeting 9.9.x releases)
+1. **適切なリリースブランチに対して、プルリクエスト** を作成してください（例えば、9.9.xリリースを対象とした修正には`release/9.9`）。
 
-2. **Create a point release request issue** using the [point release template](https://github.com/woocommerce/woocommerce/issues/new?template=new-prr-template.yml) in the main repository
+2. **メインリポジトリの[ポイントリリーステンプレート](https://github.com/woocommerce/woocommerce/issues/new?template=new-prr-template.yml)を使って、ポイントリリースリクエスト課題**を作成してください。
 
 3. **以下の事項を含む、詳細な正当性**を提示すること：
     - 影響評価（影響を受ける顧客の数）
@@ -53,10 +52,10 @@ sidebar_position: 4
 
 4. **リリース・リードの承認を待つ** - リリース・リードがリクエストを承認する。
 
-5. **Adjust branch targeting** by modifying the automatically-added labels to specify which additional branches need the fix:
-    - Keep `cherry pick to trunk` if the fix should go to trunk
-    - Keep `cherry pick to frozen release` if the fix should go to the current frozen release
-    - Remove labels for branches that don't need the fix
+5. **自動的に追加されるラベルを修正して、修正が必要なブランチを指定してください：
+    - トランクへの修正が必要な場合は `cherry pick to trunk` を保持します。
+    - 現在のフリーズしたリリースに修正が必要な場合は、`cherry pick to frozen release` を保持します。
+    - 修正が不要なブランチのラベルを削除します。
 
 6. **プルリクエストをレビューし、テストし、対象のリリースブランチにマージする。
 
