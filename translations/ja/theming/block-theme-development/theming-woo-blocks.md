@@ -2,53 +2,52 @@
 post_title: Theming for Woo blocks
 sidebar_label: Theming for Woo blocks
 ---
-
-# Theming for Woo blocks
-
----
-
-**Note:** We're assuming you have some previous knowledge about block theme development and some WordPress concepts. If you are completely new to block theme development, please check [Develop Your First Low-Code Block Theme](https://learn.wordpress.org/course/develop-your-first-low-code-block-theme/)
-to learn about block theme development, and explore
-the [Create Block Theme plugin](https://wordpress.org/plugins/create-block-theme/) tool when you're ready to create a new theme.
+# ウー・ブロックのテーマ
 
 ---
 
-## General concepts
+**注意:** ブロックテーマ開発に関する予備知識とWordPressのコンセプトがあることを前提としています。ブロックテーマ開発の全くの初心者の方は、[Develop Your First Low-Code Block Theme](https://learn.wordpress.org/course/develop-your-first-low-code-block-theme/)
+をご覧ください。
+新しいテーマを作成する準備ができたら、[Create Block Theme plugin](https://wordpress.org/plugins/create-block-theme/) ツールをお試しください。
 
-### Block templates
+---
 
-WooCommerce comes with several [block templates](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/templates/templates/blockified) by default. Those are:
+## 一般概念
 
-- Single Product (`single-product.html`)
-- Product Catalog (`archive-product.html`)
-    - Products by Category (`taxonomy-product_cat.html`)
-    - Products by Tag (`taxonomy-product_tag.html`)
-    - Products by Attribute (`taxonomy-product_attribute.html`)
-- Product Search Results (`product-search-results.html`)
-- Page: Coming soon (`page-coming-soon.html`)
-- Page: Cart (`page-cart.html`)
-- Page: Checkout (`page-checkout.html`)
-- Order Confirmation (`order-confirmation.html`)
+### ブロックテンプレート
+
+WooCommerceにはデフォルトでいくつかの[ブロックテンプレート](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/templates/templates/blockified)が用意されています。それらは
+
+- 単一製品 (`single-product.html`)
+- 製品カタログ (`archive-product.html`)
+    - カテゴリー別商品 (`taxonomy-product_cat.html`)
+    - タグ別商品 (`taxonomy-product_tag.html`)
+    - 属性別商品 (`taxonomy-product_attribute.html`)
+- 製品検索結果 (`product-search-results.html`)
+- ページ近日公開予定 (`page-coming-soon.html`)
+- ページ (`page-coming-soon.html`)カート (`page-cart.html`)
+- ページ：カート (`page-cart.html`)チェックアウト (`page-checkout.html`)
+- 注文確認 (`order-confirmation.html`)
 
 ブロックテーマはこれらのテンプレートを以下の方法でカスタマイズできる：
 
-- It's possible to override the templates by creating a file with the same file name under the `/templates` folder. For example, if a block theme contains a `wp-content/themes/yourtheme/templates/single-product.html` template, it will take priority over the WooCommerce default Single Product template.
-- Products by Category, Products by Tag and Products by Attribute templates fall back to the Product Catalog template. In other words, if a theme provides an `archive-product.html` template but doesn't provide a `taxonomy-product_cat.html` template, the Products by Category template will use the `archive-product.html` template. Same for the Products by Tag and Products by Attribute templates.
-- It's possible to create templates for specific products and taxonomies. For example, if the theme provides a template with file name of `single-product-cap.html`, that template will be used when rendering the product with slug `cap`. Similarly, themes can provide specific taxonomy templates: `taxonomy-product_cat-clothing.html` would be used in the product category with slug `clothing`.
-- Always keep in mind users can make modifications to the templates provided by the theme via the Site Editor.
+- `/templates`フォルダの下に同じファイル名のファイルを作成することで、テンプレートを上書きすることができます。例えば、ブロックテーマに`wp-content/themes/yourtheme/templates/single-product.html`テンプレートが含まれている場合、WooCommerceデフォルトのSingle Productテンプレートよりも優先されます。
+- Product by Category、Products by Tag、Products by AttributeテンプレートはProduct Catalogテンプレートにフォールバックします。言い換えると、テーマが`archive-product.html`テンプレートを提供し、`taxonomy-product_cat.html`テンプレートを提供しない場合、Products by Categoryテンプレートは`archive-product.html`テンプレートを使用します。タグ別商品テンプレートと属性別商品テンプレートも同様です。
+- 特定の商品やタクソノミ用のテンプレートを作成することも可能です。たとえば、テーマが`single-product-cap.html`というファイル名のテンプレートを提供する場合、`cap`というスラッグの商品をレンダリングするときにそのテンプレートが使用されます。同様に、テーマは特定のタクソノミー・テンプレートを提供できます：`taxonomy-product_cat-clothing.html`はスラッグ`clothing`の商品カテゴリーで使用されます。
+- ユーザーはサイトエディターを使ってテーマが提供するテンプレートを変更できることを常に念頭に置いてください。
 
-### Block template parts
+### ブロックテンプレート部品
 
-WooCommerce also comes with two specific [block template parts](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/templates/parts):
+WooCommerceには2つの特定の[ブロックテンプレート部品](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/templates/parts)も付属しています：
 
-- Mini-Cart (`mini-cart.html`): used inside the Mini-Cart block drawer.
-- Checkout header (`checkout-header.html`): used as the header in the Checkout template.
+- ミニカート (`mini-cart.html`)：ミニカートブロックドロワー内で使用されます。
+- チェックアウトヘッダー (`checkout-header.html`)：チェックアウトテンプレートのヘッダーとして使用されます。
 
-Similarly to the templates, they can be overridden by themes by adding a file with the same file name under the `/parts` folder.
+テンプレートと同様に、`/parts`フォルダの下に同じファイル名のファイルを追加することで、テーマで上書きすることができます。
 
-### Global styles
+### グローバルスタイル
 
-WooCommerce blocks rely on [global styles](https://developer.wordpress.org/themes/global-settings-and-styles/styles/) for their styling. Global styles can be defined by themes via `theme.json` or by users via Appearance > Editor > Styles and offer several advantages over plain CSS:
+WooCommerceブロックは[グローバルスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/styles/)に依存します。グローバルスタイルはテーマによって`theme.json`で定義されるか、ユーザによって外観 &gt; エディタ &gt; スタイルで定義されます：
 
 - 必要なCSSだけがページに印刷されるため、ページをレンダリングするためのバンドルサイズが小さくなり、パフォーマンスが向上します。
 - ユーザーがUIから簡単にカスタマイズできる。
@@ -56,9 +55,9 @@ WooCommerce blocks rely on [global styles](https://developer.wordpress.org/theme
 - 個々のブロックやコンポーネントへのマークアップやクラス名の更新の影響を受けません。
 - ブロックの特定の入れ子順序に依存しない。スタイルが崩れることなく、ユーザーが自由にブロックを移動できる。
 
-#### Example
+#### 例
 
-For example, let's imagine you are building a theme and would like to customize the Product Price block styles, you can do so by adding these properties in your `theme.json`:
+例えば、テーマを作成していて、商品価格ブロックのスタイルをカスタマイズしたいとします：
 
 ```JSON
 "styles": {
@@ -79,8 +78,8 @@ For example, let's imagine you are building a theme and would like to customize 
 }
 ```
 
-Before                                                                                                                                                                                                      | After
+ビフォア｜アフター
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <img src="https://github.com/woocommerce/woocommerce/assets/3616980/fbc11b83-f47b-4b25-bdeb-df798b251cce" width="210" alt="Product Collection block showing the Product Price block with default styles" /> | <img src="https://github.com/woocommerce/woocommerce/assets/3616980/c9730445-b9df-4e96-8204-a10896ac2c5a" width="210" alt="Product Collection block showing the Product Price styled with background and text colors and italic and bold typography" /> <!-- markdownlint-disable-line no-inline-html -->
 
-You can find more [documentation on global styles](https://developer.wordpress.org/themes/global-settings-and-styles/styles/) in developer.wordpress.org. You can also find the [list of WooCommerce blocks and their names in the docs](/docs/block-development/reference/block-references).
+developer.wordpress.orgに[グローバルスタイルのドキュメント](https://developer.wordpress.org/themes/global-settings-and-styles/styles/)があります。また、[ドキュメント内のWooCommerceブロックとその名前のリスト](/docs/block-development/reference/block-references)もあります。

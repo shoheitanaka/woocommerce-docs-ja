@@ -4,17 +4,17 @@ sidebar_label: Debugging
 sidebar_position: 7
 ---
 
-# デバッグ用リソース
+# Resources for debugging
 
 ## ワードプレス
 
 手始めに、WordPress自体に組み込まれているデバッグ・ツールから始めるのがよいだろう：
 
-The documentation for [Debugging in WordPress c](https://wordpress.org/documentation/article/debugging-in-wordpress/)overs a number of environment variables you can set to enable WordPress’s core debugging tools.
+Debugging [in WordPress c](https://wordpress.org/documentation/article/debugging-in-wordpress/)のドキュメントには、WordPressのコアデバッグツールを有効にするために設定できる環境変数が多数紹介されています。
 
 ### クエリーモニター
 
-A popular plugin for WordPress developers is [Query Monitor](https://wordpress.org/plugins/query-monitor/), the developer tools for WordPress. Query Monitor enables debugging of database queries, PHP errors, AJAX/Rest requests, hooks and actions, block editor blocks, enqueued scripts and stylesheets, HTTP API calls, and more.
+WordPress開発者に人気のプラグインは、WordPress用の開発者ツールである[Query [Monitor](https://wordpress.org/plugins/query-monitor/)です。Query Monitorは、データベースクエリ、PHPエラー、AJAX/Restリクエスト、フックとアクション、ブロックエディタブロック、エンキューされたスクリプトとスタイルシート、HTTP APIコールなどのデバッグを可能にします。
 
 ### 電子メールのデバッグ
 
@@ -38,8 +38,6 @@ WooCommerceの "coming soon "モードでは、作業中に一時的にサイト
 
 ## PHP/JavaScriptデバッグ
 
-### Xdebug
+`wp-env`を使用してローカル開発環境を実行している場合（これはWooCommerceモノレポで推奨されている方法です）、Xdebugを有効にして、VS CodeやPhpStormのようなIDEを使用してブレークポイントを設定し、コードを実行しながらステップスルーすることができます：
 
-If you're using `wp-env` to run a local development environment (this is the recommended method for the WooCommerce monorepo), you can activate Xdebug and then use an IDE like VS Code or PhpStorm to set breakpoints and step through the code as it executes:
-
-* [Using Xdebug](https://github.com/WordPress/gutenberg/tree/trunk/packages/env#using-xdebug)
+* [Xdebugを使う](https://github.com/WordPress/gutenberg/tree/trunk/packages/env#using-xdebug)

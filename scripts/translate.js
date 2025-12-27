@@ -287,12 +287,11 @@ function extractTranslatableSegments(markdown) {
   for (const paragraph of paragraphs) {
     const trimmed = paragraph.trim();
     
-    // 空行、コードブロック単体、画像単体はセグメントとして抽出しない
-    if (!trimmed || 
-        trimmed.match(/^__CODE_BLOCK_\d+__$/) || 
-        trimmed.match(/^!\[.*\]\(__URL_\d+__\)$/)) {
+    // 空行、コードブロック単体はセグメントとして抽出しない
+    // 画像は代替テキストを翻訳するため、スキップしない
+    if (!trimmed || trimmed.match(/^__CODE_BLOCK_\d+__$/)) {
       if (process.env.DEBUG_SEGMENTS) {
-        console.log(`   [Skipped] Length: ${trimmed.length}, Type: ${trimmed.match(/^__CODE_BLOCK_/) ? 'CODE_BLOCK' : trimmed.match(/^!\[/) ? 'IMAGE' : 'EMPTY'}`);
+        console.log(`   [Skipped] Length: ${trimmed.length}, Type: ${trimmed.match(/^__CODE_BLOCK_/) ? 'CODE_BLOCK' : 'EMPTY'}`);
       }
       continue;
     }
@@ -518,6 +517,29 @@ async function translateSegments(segments, cache) {
  * Markdownリンクや画像の開始括弧が欠けている問題を修正
  */
 function fixDeepLMarkdownIssues(original, translated) {
+  // ===== 0. HTMLエンティティのデコード =====
+  // DeepLが記号をHTMLエンティティに変換してしまうことがあるので、元に戻す
+  const entityMap = {
+    '&gt;': '>',
+    '&lt;': '<',
+    '&amp;': '&',
+    '&quot;': '"',
+    '&#39;': "'",
+    '&apos;': "'"
+  };
+  
+  let hasEntityIssue = false;
+  for (const [entity, char] of Object.entries(entityMap)) {
+    if (translated.includes(entity)) {
+      hasEntityIssue = true;
+      translated = translated.replace(new RegExp(entity, 'g'), char);
+    }
+  }
+  
+  if (hasEntityIssue) {
+    console.log('   ⚠ Auto-fixed: Decoded HTML entities (&gt; → >, etc.)');
+  }
+  
   // ===== 1. DeepL APIがプレースホルダーを翻訳してしまう問題を修正 =====
   // "コード_ブロック_0__" → "__CODE_BLOCK_0__"
   if (original.match(/__CODE_BLOCK_\d+__/)) {
@@ -571,38 +593,62 @@ function fixDeepLMarkdownIssues(original, translated) {
   // ===== 3. Markdownリンクの開始括弧が欠けている問題を修正 =====
   // 元のテキストが[または![で始まる場合、翻訳にも同じように始まるべき
   if (original.startsWith('![') && !translated.startsWith('![')) {
-    // 画像リンクの場合
-    if (translated.match(/^[^\[]*\].*__URL_\d+__\)/)) {
+    // 画像リンクの場合（__URL_N__または実URLに対応）
+    if (translated.match(/^[^\[]*\].*\)/)) {
       translated = '![' + translated;
       console.log('   ⚠ Auto-fixed: Added missing ![');
     }
-  } else if (original.match(/^\[.*\]\(__URL_\d+__\)/) && !translated.startsWith('[')) {
-    // Markdownリンクの場合
-    if (translated.match(/^[^\[]*\].*__URL_\d+__\)/)) {
+  } else if (original.match(/^\[.*\]\([^)]+\)/) && !translated.startsWith('[')) {
+    // Markdownリンクの場合（__URL_N__または実URLに対応）
+    if (translated.match(/^[^\[]*\]\([^)]+\)/)) {
       translated = '[' + translated;
       console.log('   ⚠ Auto-fixed: Added missing [');
     }
   }
   
   // "The [Link]" パターンの場合
-  if (original.match(/^The \[.*\]\(__URL_\d+__\)/) && !translated.match(/^\[/)) {
-    if (translated.match(/^[^\[]*\].*__URL_\d+__\)/)) {
+  if (original.match(/^The \[.*\]\([^)]+\)/) && !translated.match(/^\[/)) {
+    if (translated.match(/^[^\[]*\]\([^)]+\)/)) {
       translated = '[' + translated;
       console.log('   ⚠ Auto-fixed: Added missing [ (The [Link] pattern)');
     }
   }
   
-  // 日本語の後のMarkdownリンクパターン（例: "については Link]" → "については [Link]"）
-  // ただし、既に[がある場合は追加しない（二重括弧を防ぐ）
-  if (original.match(/\[.*?\]\(__URL_\d+__\)/)) {
-    translated = translated.replace(/([ぁ-んァ-ヶー一-龯a-zA-Z]+\s+)([^\[\s][^\[]*?\]\(__URL_\d+__\))/g, (match, before, linkPart) => {
-      // linkPartが既に[で始まっている場合はスキップ
-      if (linkPart.startsWith('[')) {
-        return match;
-      }
-      console.log('   ⚠ Auto-fixed: Added missing [ in Japanese context');
-      return before + '[' + linkPart;
+  // 日本語の後のMarkdownリンクパターンおよび欠けた開始括弧を修正
+  // パターン1: 文頭の欠けた括弧（text](URL) → [text](URL)）
+  // 両方の形式に対応: __URL_N__ と実URL
+  if (original.match(/\[.*?\]\([^)]+\)/)) {
+    // 文頭にリンクがあるが[で始まっていない場合
+    if (!translated.match(/^\[/) && translated.match(/^[^\[]+?\]\([^)]+\)/)) {
+      translated = translated.replace(/^([^\[]+?\]\([^)]+\))/, (match, linkPart) => {
+        console.log('   ⚠ Auto-fixed: Added missing [ at start of segment');
+        return '[' + linkPart;
+      });
+    }
+    
+    // パターン2: 文中の欠けた開始括弧を修正
+    // 戦略: 正しいリンクを一時的に保護してから、欠けているリンクを修正
+    const correctLinks = [];
+    let protectedText = translated.replace(/\[[^\]]+\]\([^)]+\)/g, (match) => {
+      const index = correctLinks.length;
+      correctLinks.push(match);
+      return `__CORRECT_LINK_${index}__`;
     });
+    
+    // 保護されたテキストで、欠けている[を追加
+    // リンクテキストは最低3文字以上
+    // 日本語の長音符号（ー）も含める
+    protectedText = protectedText.replace(/([\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}ーa-zA-Z0-9\-_`]{3,}?\]\([^)]+\))/gu, (match) => {
+      console.log('   ⚠ Auto-fixed: Added missing [ before link');
+      return '[' + match;
+    });
+    
+    // 正しいリンクを復元
+    protectedText = protectedText.replace(/__CORRECT_LINK_(\d+)__/g, (match, index) => {
+      return correctLinks[parseInt(index)];
+    });
+    
+    translated = protectedText;
   }
   
   // ===== 4. プレースホルダーの先頭__が欠けている問題を修正 =====
@@ -617,8 +663,8 @@ function fixDeepLMarkdownIssues(original, translated) {
     }
     
     // パターン1: 完全に__が欠けている場合（INLINE_CODE_0__ や CODE_BLOCK_0__ など）
-    // 行頭、スペース、日本語文字、記号の後に来る場合を検出
-    translated = translated.replace(/(^|[\s\n、。！？：｜ぁ-んァ-ヶー一-龯])((?:INLINE_CODE|CODE_BLOCK|URL)_\d+__)/g, (match, before, placeholder, offset) => {
+    // 行頭、スペース、日本語文字、記号、括弧の後に来る場合を検出
+    translated = translated.replace(/(^|[\s\n\[\]()（）、。！？：｜ぁ-んァ-ヶー一-龯])((?:INLINE_CODE|CODE_BLOCK|URL)_\d+__)/g, (match, before, placeholder, offset) => {
       // リストアイテム内のプレースホルダーはスキップ
       for (const item of listItems) {
         if (offset === item.index + item.marker.length) {
@@ -634,6 +680,24 @@ function fixDeepLMarkdownIssues(original, translated) {
       console.log('   ⚠ Auto-fixed: Added missing _ prefix (single underscore case)');
       return before + '__' + type + '_' + num + '__';
     });
+  }
+  
+  // ===== 5. 見出しマーカーの修正 =====
+  // DeepL APIが見出しマーカーを変更する問題を修正
+  // 元のテキストの見出しレベルを保持する
+  const originalHeadingMatch = original.match(/^(#{1,6})\s/);
+  const translatedHeadingMatch = translated.match(/^(#{1,6})\s?/);
+  
+  if (originalHeadingMatch && translatedHeadingMatch) {
+    const originalLevel = originalHeadingMatch[1]; // 元の#の数
+    const translatedLevel = translatedHeadingMatch[1]; // 翻訳後の#の数
+    
+    // 見出しレベルが変わっている、またはスペースが欠けている場合に修正
+    if (originalLevel.length !== translatedLevel.length || !translated.match(/^#{1,6}\s/)) {
+      const headingText = translated.replace(/^#{1,6}\s?/, ''); // 見出しテキスト部分を取得
+      translated = originalLevel + ' ' + headingText;
+      console.log(`   ⚠ Auto-fixed: Heading marker from ${translatedLevel} to ${originalLevel}`);
+    }
   }
   
   return translated;
@@ -827,16 +891,14 @@ function reconstructMarkdown(original, translatedSegments) {
     
     if (process.env.DEBUG_RECONSTRUCT) {
       const isCodeBlock = trimmed.match(/^__CODE_BLOCK_\d+__$/);
-      const isImage = trimmed.match(/^!\[.*\]\(__URL_\d+__\)$/);
-      if (isCodeBlock || isImage) {
-        console.log(`   [Skipped] ${isCodeBlock ? 'CODE_BLOCK' : 'IMAGE'}: ${trimmed.substring(0, 50)}`);
+      if (isCodeBlock) {
+        console.log(`   [Skipped] CODE_BLOCK: ${trimmed.substring(0, 50)}`);
       }
     }
     
-    // 空行、コードブロック単体、画像単体をそのまま保持
-    if (!trimmed || 
-        trimmed.match(/^__CODE_BLOCK_\d+__$/) || 
-        trimmed.match(/^!\[.*\]\(__URL_\d+__\)$/)) {
+    // 空行、コードブロック単体をそのまま保持
+    // 画像は翻訳されるため、スキップしない
+    if (!trimmed || trimmed.match(/^__CODE_BLOCK_\d+__$/)) {
       translatedParagraphs.push(paragraph.replace(/__CODE_BLOCK_(\d+)__/g, (match) => {
         const index = parseInt(match.match(/\d+/)[0]);
         return allCodeBlocks[index] || match;

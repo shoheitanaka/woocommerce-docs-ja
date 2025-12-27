@@ -4,53 +4,53 @@ sidebar_label: Project structure
 sidebar_position: 1
 ---
 
-# プロジェクト体制
+# Project Structure
 
 ## 前提条件
 
-WooCommerce adheres to WordPress code standards and guidelines, so it's best to familiarize yourself with [WordPress Development](https://learn.wordpress.org/tutorial/introduction-to-wordpress/) as well as [PHP](https://www.php.net/). Currently WooCommerce requires PHP 7.4 or newer.
+WooCommerceはWordPressのコード標準とガイドラインに準拠しているため、[WordPress開発](https://learn.wordpress.org/tutorial/introduction-to-wordpress/)と[PHP](https://www.php.net/)に精通していることが最善です。現在、WooCommerceにはPHP 7.4以降が必要です。
 
-Knowledge and understanding of [WooCommerce hooks and filters](https://woocommerce.com/document/introduction-to-hooks-actions-and-filters/?utm_source=wooextdevguide) will allow you to add and change code without editing core files. You can learn more about WordPress hooks and filters in the [WordPress Plugin Development Handbook](https://developer.wordpress.org/plugins/hooks/).
+WooCommerce [hooks and filters](https://woocommerce.com/document/introduction-to-hooks-actions-and-filters/?utm_source=wooextdevguide)の知識と理解を深めることで、コアファイルを編集することなくコードを追加・変更できるようになります。WordPressのフックとフィルターについては、[WordPressプラグイン開発ハンドブック](https://developer.wordpress.org/plugins/hooks/)で詳しく説明されています。
 
 ## 推薦図書
 
-WooCommerce extensions are a specialized type of WordPress plugin. If you are new to WordPress plugin development, take a look at some of the articles in the [WordPress Plugin Developer Handbook](https://developer.wordpress.org/plugins/).
+WooCommerce拡張機能は、WordPressプラグインの特殊なタイプです。WordPressプラグイン開発の初心者の方は、[WordPressプラグイン開発者ハンドブック](https://developer.wordpress.org/plugins/)の記事のいくつかをご覧ください。
 
 ## ワードプレス環境の解剖
 
 開発環境はさまざまですが、WordPress環境の基本的なファイル構造は一貫しているはずです。
 
-When developing a WooCommerce extension, you'll usually be doing most of your work within the `public_html/` directory of your local server.
+WooCommerceのエクステンションを開発する場合、通常はローカルサーバーの`public_html/`ディレクトリ内でほとんどの作業を行います。
 
-There are three directories in a WordPress installation. The `wp-admin` and `wp-includes` directories include core functionality and should not be modified. The third directory, `wp-content` is where custom configurations and user-generated media is stored.
+WordPressのインストールには3つのディレクトリがあります。`wp-admin`と`wp-includes`ディレクトリにはコア機能が含まれており、変更すべきではありません。3つ目の`wp-content`ディレクトリには、カスタム設定やユーザーが作成したメディアが保存されます。
 
- Take some time to familiarize yourself with a few key paths inside `wp-content`:
+時間をかけて、`wp-content`の中のいくつかの重要なパスに慣れ親しんでください：
 
-* `wp-content/debug.log` is the file where WordPress writes the important output such as errors and other messages that can be useful for debugging.  
-* `wp-content/plugins`/ is the directory on the server where WordPress plugin folders live.  
-* `wp-content/themes/` is the directory on the server where WordPress theme folders live. A theme is a collection of templates and styles, and WordPress can have only one active theme.
+* `wp-content/debug.log`は、WordPressがエラーやデバッグに役立つその他のメッセージなどの重要な出力を書き込むファイルです。  
+* `wp-content/plugins`/は、WordPressのプラグインフォルダがあるサーバー上のディレクトリです。  
+* `wp-content/themes/`は、WordPressのテーマフォルダがあるサーバー上のディレクトリです。テーマはテンプレートとスタイルの集まりで、WordPressはアクティブなテーマを1つだけ持つことができます。
 
-Finally, at the root of your WordPress installation is one more configurable file, `wp-config.php`. This file acts similarly to a `.env` file and stores important security credentials and variables that define your environment configuration.
+最後に、WordPressインストールのルートには、`wp-config.php`という設定可能なファイルがあります。このファイルは`.env`ファイルと同様に機能し、重要なセキュリティ認証情報と環境設定を定義する変数を保存します。
 
 ## WooCommerceプラグインの構造 
 
-When adding WooCommerce to a WordPress installation, you can either install the plugin from inside the WordPress dashboard or manually upload the plugin directory to the `wp-content/plugins` directory. 
+WordPressのインストールにWooCommerceを追加する場合、WordPressのダッシュボードからプラグインをインストールするか、手動で`wp-content/plugins`ディレクトリにプラグインディレクトリをアップロードします。 
 
-**Important:** The WooCommerce repository is a monorepo that includes multiple plugins and packages. To install WooCommerce from the repository, you cannot simply clone the entire repo into `wp-content/plugins`. The WooCommerce plugin sits in the monorepo inside the `plugins/` directory, so if you’re planning to develop from the repository, we recommend cloning it outside of your local WordPress installation and then using a symlink to “place” it in `wp-content/plugins`. 
+**重要:** WooCommerceリポジトリは複数のプラグインとパッケージを含むmonorepoです。リポジトリからWooCommerceをインストールするには、単純にリポジトリ全体を`wp-content/plugins`にクローンすることはできません。WooCommerceプラグインはmonorepoの`plugins/`ディレクトリ内にあるので、リポジトリから開発する場合は、ローカルのWordPressインストール外にクローンし、シンボリックリンクを使って`wp-content/plugins`に「配置」することをお勧めします。 
 
-Each plugin, package, and tool has its own `package.json` file containing project-specific dependencies and scripts. Most projects also contain a `README.md` file with any project-specific setup instructions and documentation.
+各プラグイン、パッケージ、ツールには、プロジェクト固有の依存関係とスクリプトを含む`package.json`ファイルがあります。ほとんどのプロジェクトでは、`README.md`ファイルにもプロジェクト固有のセットアップ手順やドキュメントが含まれています。
 
-* [**Plugins**](http://github.com/woocommerce/woocommerce/tree/trunk/plugins): Our repository contains plugins that relate to or otherwise aid in the development of WooCommerce.  
-    * [**WooCommerce Core**](http://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce): The core WooCommerce plugin is available in the plugins directory.  
-* [**Packages**](http://github.com/woocommerce/woocommerce/tree/trunk/packages): Contained within the packages directory are all of the [PHP](http://github.com/woocommerce/woocommerce/tree/trunk/packages/php) and [JavaScript](http://github.com/woocommerce/woocommerce/tree/trunk/packages/js) provided for the community. Some of these are internal dependencies and are marked with an `internal-` prefix.  
-* [**Tools**](http://github.com/woocommerce/woocommerce/tree/trunk/tools): We also have a growing number of tools within our repository. Many of these are intended to be utilities and scripts for use in the monorepo, but, this directory may also contain external tools.
+* [**Plugins**](http://github.com/woocommerce/woocommerce/tree/trunk/plugins):私たちのリポジトリには、WooCommerceに関連するプラグイン、またはWooCommerceの開発を支援するプラグインが含まれています。  
+    * [**WooCommerce [Core**](http://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce):WooCommerceのコアプラグインはpluginsディレクトリにあります。  
+* [**Packages**](http://github.com/woocommerce/woocommerce/tree/trunk/packages):packagesディレクトリには、コミュニティのために提供されるすべての[PHP](http://github.com/woocommerce/woocommerce/tree/trunk/packages/php)と[JavaScript](http://github.com/woocommerce/woocommerce/tree/trunk/packages/js)が含まれています。これらのいくつかは内部依存であり、`internal-`プレフィックスでマークされています。  
+* [**Tools**](http://github.com/woocommerce/woocommerce/tree/trunk/tools):私たちのリポジトリにはツールも増えています。これらの多くはmonorepoで使用するユーティリティやスクリプトを意図していますが、このディレクトリには外部のツールも含まれることがあります。
 
-If you'd like to learn more about how our monorepo works, [please check out this guide here](http://github.com/woocommerce/woocommerce/tree/trunk/tools/README.md).
+モノレポの仕組みについてもっと知りたい方は、[こちらのガイドをご覧ください](http://github.com/woocommerce/woocommerce/tree/trunk/tools/README.md)。
 
 ## テーマ設定と機能拡張
 
-Unless you’re contributing directly to WooCommerce core, you will not edit WordPress or WooCommerce files directly. All modification of functionality is done by creating a custom extension or modifying the `functions.php` file of your active theme. 
+WooCommerceのコアに直接貢献しない限り、WordPressやWooCommerceのファイルを直接編集することはありません。すべての機能の変更はカスタム拡張機能を作成するか、アクティブなテーマの`functions.php`ファイルを変更することで行います。 
 
 WooCommerceストアのデザイン*を編集するには、カスタムテーマを修正または作成することをお勧めします。WooCommerceのテーマ作成については[テーマ開発ハンドブック](/docs/theming/theme-development/classic-theme-developer-handbook)をご覧ください。
 
-To edit the *functionality* of a WooCommerce store, you have multiple options. First, you can use the [Woo Marketplace](https://woocommerce.com/marketplace) to find a suitable, pre-made extension that meets your needs. For simple customizations, you can learn more about easy ways to add [code snippets](/docs/code-snippets/) to your store. For more advanced development needs, we recommend building a custom extension (i.e. a WordPress plugin). 
+WooCommerceストアの*機能を編集するには、複数のオプションがあります。まず、[Wooマーケットプレイス](https://woocommerce.com/marketplace)を利用して、あなたのニーズに合った適切な既成の拡張機能を見つけることができます。簡単なカスタマイズについては、[コードスニペット](/docs/code-snippets/) をストアに追加する簡単な方法について詳しく知ることができます。より高度な開発が必要な場合は、カスタム拡張機能（WordPressプラグイン）を作成することをお勧めします。 

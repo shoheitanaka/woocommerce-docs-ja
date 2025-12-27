@@ -4,7 +4,7 @@ sidebar_label: Developer tools
 sidebar_position: 5
 ---
 
-# 開発ツール
+# Developer tools
 
 このガイドでは、WooCommerceの開発に不可欠なツールとライブラリの概要を説明します。WooCommerceプロジェクトを効率的に強化したい開発者を対象としています。
 
@@ -16,7 +16,7 @@ sidebar_position: 5
 
 #### [wp-cli](https://wp-cli.org/)
 
-This is the command-line interface for [WordPress](https://wordpress.org/). You can update plugins, configure multisite installations and much more, without using a web browser.
+WordPress](https://wordpress.org/)のコマンドラインインターフェイスです。ウェブブラウザを使わずに、プラグインの更新やマルチサイトの設定などができます。
 
 #### [wc-cli](/docs/wc-cli/cli-overview)
 
@@ -28,25 +28,25 @@ WooCommerceがWordPressインストール上で動作している場合、WP-CLI
 
 #### [woocommerce/eslint-plugin](https://www.npmjs.com/package/@woocommerce/eslint-plugin)
 
-This is an [ESLint](https://eslint.org/) plugin including configurations and custom rules for WooCommerce development.
+WooCommerce開発のための設定とカスタムルールを含む[ESLint](https://eslint.org/)プラグインです。
 
-#### [WordPress Scripts](https://www.npmjs.com/package/@wordpress/scripts)
+#### [WordPressスクリプト](https://www.npmjs.com/package/@wordpress/scripts)
 
 wordpress/scriptsパッケージは、WordPressプロジェクトの開発プロセス、特にブロック開発とカスタムGutenberg統合を合理化するために設計されたツールとスクリプトのセットです。このパッケージには、Webpack のビルドプロセスと、リンティング、スタイリング、テストなどのタスクの設定が含まれています。
 
-It also includes the [Dependency Extraction Webpack Plugin](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin), which allows JavaScript bundles produced by webpack to leverage WordPress style dependency sharing without an error-prone process of manually maintaining a dependency list.
+また、[Dependency [Extraction Webpack Plugin](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin)も含まれており、webpackによって生成されたJavaScriptバンドルは、手動で依存性リストを管理するようなエラーが発生しやすいプロセスなしに、WordPressスタイルの依存性共有を活用することができます。
 
 ### テスト
 
-#### [Smooth Generator](https://github.com/woocommerce/wc-smooth-generator)
+#### スムーズ・ジェネレーター](https://github.com/woocommerce/wc-smooth-generator)
 
-A plugin to help you generate WooCommerce-related data for testing. Use the WP Admin interface for basic operations, or the CLI tool for more advanced features. Download and install the latest version from the [Releases page](https://github.com/woocommerce/wc-smooth-generator/releases) and review the [documentation on GitHub](https://github.com/woocommerce/wc-smooth-generator).
+テスト用にWooCommerce関連のデータを生成するのに役立つプラグインです。基本的な操作にはWP [Adminインターフェイスを使用し、より高度な機能にはCLIツールを使用します。リリースページ](https://github.com/woocommerce/wc-smooth-generator/releases)から最新版をダウンロードしてインストールし、[GitHub上のドキュメント](https://github.com/woocommerce/wc-smooth-generator)を確認してください。
 
-#### [WooCommerce Dummy Payments Gateway](https://github.com/woocommerce/woocommerce-gateway-dummy)
+#### [WooCommerceダミーペイメントゲートウェイ](https://github.com/woocommerce/woocommerce-gateway-dummy)
 
 サブスクリプションとブロックベースのチェックアウトをサポートした、WooCommerce開発のためのダミー決済ゲートウェイです。
 
-#### [QIT](https://qit.woo.com/)
+#### [qit](https://qit.woo.com/)
 
 QITは、マネージドテスト、E2Eテスト、使い捨てのローカルテスト環境を備えたWooCommerceプラグインとテーマのためのテストプラットフォームです。
 
@@ -56,11 +56,11 @@ QITは、マネージドテスト、E2Eテスト、使い捨てのローカル�
 
 ### APIクライアント
 
-#### [WooCommerce REST API - JavaScript](https://www.npmjs.com/package/@woocommerce/woocommerce-rest-api)
+#### [WooCommerce [REST API - JavaScript](https://www.npmjs.com/package/@woocommerce/woocommerce-rest-api)
 
 WooCommerce REST APIを使用するための公式JavaScriptライブラリです。
 
-#### [WooCommerce Store API](https://developer.woocommerce.com/docs/category/store-api/)
+#### [WooCommerce [Store API](https://developer.woocommerce.com/docs/category/store-api/)
 
 Store API は、顧客向けのカート、チェックアウト、商品機能を開発するためのパブリックな Rest API エンドポイントを提供します。WordPress REST API で使用されているパターンの多くに従っています。
 
@@ -68,40 +68,40 @@ WooCommerce REST APIとは対照的に、Store APIは認証されておらず、
 
 #### [wordpress/api-fetch](https://www.npmjs.com/package/@wordpress/api-fetch)
 
-The `@wordpress/api-fetch` package is a utility that simplifies AJAX requests to the WordPress REST API. It's a wrapper around `window.fetch` that provides a consistent interface for handling authentication, settings, and errors, allowing developers to easily interact with WordPress backend services.
+`@wordpress/api-fetch` パッケージは WordPress REST API への AJAX リクエストを簡素化するユーティリティです。これは`window.fetch`のラッパーで、認証、設定、エラーを処理するための一貫したインターフェイスを提供し、開発者がWordPressのバックエンドサービスと簡単にやりとりできるようにします。
 
 ### コンポーネント
 
-#### [WooCommerce Components](https://www.npmjs.com/package/@woocommerce/components)
+#### WooCommerce [Components](https://www.npmjs.com/package/@woocommerce/components)
 
-This package includes a library of React components that can be used to create pages in the WooCommerce admin area. To preview these components, review the [Woo Storybook](https://woocommerce.github.io/woocommerce/).
+本パッケージには、WooCommerce管理エリアでページを作成するために使用できるReactコンポーネントのライブラリが含まれています。これらのコンポーネントをプレビューするには、[Woo [Storybook](https://woocommerce.github.io/woocommerce/) をご覧ください。
 
-#### [WordPress Components](https://www.npmjs.com/package/@wordpress/components)
+#### [WordPress [Components](https://www.npmjs.com/package/@wordpress/components)
 
-This package includes a library of generic WordPress components that can be used for creating common UI elements shared between screens and features of the WordPress dashboard. To preview these components, review the [Gutenberg Storybook](https://wordpress.github.io/gutenberg/).
+本パッケージには、WordPressダッシュボードの画面や機能間で共有される共通のUI要素を作成するために使用できる、一般的なWordPressコンポーネントのライブラリが含まれています。これらのコンポーネントをプレビューするには、[Gutenberg [Storybook](https://wordpress.github.io/gutenberg/) をご覧ください。
 
 ### JavaScriptユーティリティ・パッケージ
 
-#### [CSV Export](https://www.npmjs.com/package/@woocommerce/csv-export)
+#### CSVエクスポート](https://www.npmjs.com/package/@woocommerce/csv-export)
 
 データをCSV値に変換し、CSVデータのブラウザダウンロードを可能にする関数群。
 
-#### [Currency](https://www.npmjs.com/package/@woocommerce/currency)
+#### 通貨](https://www.npmjs.com/package/@woocommerce/currency)
 
 通貨値を表示したり操作したりするためのユーティリティ集。
 
-#### [Data](https://www.npmjs.com/package/@woocommerce/data)
+#### データ](https://www.npmjs.com/package/@woocommerce/data)
 
 WooCommerce Adminデータストアを管理するユーティリティです。
 
-#### [Date](https://www.npmjs.com/package/@woocommerce/date)
+#### 日付](https://www.npmjs.com/package/@woocommerce/date)
 
 日付の値を表示したり操作したりするためのユーティリティ集。
 
-#### [Navigation](https://www.npmjs.com/package/@woocommerce/navigation)
+#### ナビゲーション](https://www.npmjs.com/package/@woocommerce/navigation)
 
 クエリパラメータオブジェクトの処理、クエリパラメータのシリアライズ、クエリパラメータの更新、パス変更のトリガを行うナビゲーション関連関数のコレクション。
 
-#### [Number](https://www.npmjs.com/package/@woocommerce/number)
+#### 番号](https://www.npmjs.com/package/@woocommerce/number)
 
 WooCommerceで数値を適切にローカライズするためのユーティリティ集です。

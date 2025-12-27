@@ -2,18 +2,17 @@
 post_title: CSS styling for themes
 sidebar_label: CSS styling for themes
 ---
+# テーマのCSSスタイル
 
-# CSS styling for themes
-
-## Block and component class names
+## ブロックとコンポーネントのクラス名
 
 &gt; 重要
 &gt; 私たちは、既存のブロック・クラス名に基づいてCSSコードを記述することを強く禁じ、可能な限りグローバル・スタイルを使用することを優先します。特に、特定のブロックが別のブロックの子孫であることに依存する CSS セレクタを記述することはお勧めしません。ユーザーがブロックを自由に移動できるため、壊れやすいからです。WordPress 自体と同様に、コンポーネント、ブロック、ブロックテンプレート内の HTML 構造は「プライベート」であり、将来さらに変更される可能性があると考えています。したがって、CSS を使用してブロックやブロックテンプレートの内部をターゲットにすることは推奨されませんし、サポートされません。
 
-WooCommerce Blocks follows BEM for class names, as [stated in our coding guidelines](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/contributors/coding-guidelines.md). All classes start with one of these two prefixes:
+WooCommerce Blocksは[コーディングガイドラインに記載されている](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/contributors/coding-guidelines.md)ように、クラス名のBEMに従っています。すべてのクラスはこれら2つの接頭辞のいずれかで始まります：
 
--   `.wc-block-`: class names specific to a single block.
--   `.wc-block-components-`: class names specific to a component. The component might be reused by different blocks.
+-   `.wc-block-`：単一のブロックに固有のクラス名。
+-   `.wc-block-components-`: コンポーネントに固有のクラス名。このコンポーネントは、異なるブロックで再利用されるかもしれない。
 
 ブロッククラス名とコンポーネントクラス名の組み合わせにより、各コンポーネントをグローバルに、または特定のブロックでのみスタイル設定することができます。例として、すべての価格をイタリック体にするには、次のようにします：
 
@@ -33,20 +32,20 @@ WooCommerce Blocks follows BEM for class names, as [stated in our coding guideli
 }
 ```
 
-**Note:** for backwards compatibility, some components might have class names with both prefixes (ie: `wc-block-sort-select` and `wc-block-components-sort-select`). In those cases, the class name with `.wc-block-` prefix is deprecated and shouldn't be used in new code. It will be removed in future versions. If an element has both classes always style the one with `.wc-block-components-` prefix.
+**注意:** 後方互換性のために、いくつかのコンポーネントは両方の接頭辞を持つクラス名を持つかもしれません (例: `wc-block-sort-select` と `wc-block-components-sort-select`) 。このような場合、`.wc-block-`接頭辞を持つクラス名は非推奨であり、新しいコードでは使用しないでください。将来のバージョンでは削除される予定です。要素が両方のクラスを持つ場合は、常に`.wc-block-components-`接頭辞を持つ方をスタイルしてください。
 
-## Container query class names
+## コンテナクエリークラス名
 
 私たちのコンポーネントの中には、コンテナの幅に応じたレスポンシブ・クラスを持っているものがあります。CSSメディアクエリの代わりにこれらのクラスを使用する理由は、ブロックが追加されたコンテナに適応するためです（CSSメディアクエリはビューポートサイズにしか対応できません）。
 
 そのクラスとは
 
-| Container width | Class name  |
+| コンテナ幅
 | --------------- | ----------- |
-| \>700px         | `is-large`  |
-| 521px-700px     | `is-medium` |
-| 401px-520px     | `is-small`  |
-| \<=400px        | `is-mobile` |
+| | 521px-700px | `is-large` |
+| 521px-700px | `is-medium`
+| 401px-520px | `is-small`
+| |401px-520px | `wc-block-sort-select`
 
 例として、コンテナの幅が521px以上のときに、チェックアウトのフォントサイズを10％大きくしたい場合、次のコードで実現できる：
 
@@ -57,9 +56,9 @@ WooCommerce Blocks follows BEM for class names, as [stated in our coding guideli
 }
 ```
 
-### CSS Container Queries for Cart and Checkout blocks
+### カートブロックとチェックアウトブロックの CSS コンテナクエリ
 
-WooCommerce defines the top-level wrappers of Cart and Checkout blocks as CSS containers. These containers use `container-type: inline-size`:
+WooCommerceはカートとチェックアウトブロックのトップレベルラッパーをCSSコンテナとして定義しています。これらのコンテナは`container-type: inline-size`を使用します：
 
 ```css
 .wp-block-woocommerce-checkout {
@@ -67,11 +66,11 @@ WooCommerce defines the top-level wrappers of Cart and Checkout blocks as CSS co
 }
 ```
 
-Developers can use CSS Container Queries (`@container`) to style child components based on parent width, eliminating the need for JS-added classes such as `.is-large` which are considered legacy. Legacy classes remain in place for backwards compatibility, but we recommend using the container approach for cleaner styling and fewer layout shifts.
+開発者は、CSS コンテナクエリ (`@container`) を使用して、親コンポーネントの幅に基づいて子コンポーネントのスタイルを設定できます。レガシー・クラスは後方互換性のためにそのまま残りますが、よりすっきりとしたスタイリングとレイアウトのずれを少なくするために、コンテナ・アプローチを使用することをお勧めします。
 
 **注意:** コンテナ・クエリは、チェックアウト・ブロックのラッパーとスタイリングされる要素の間に別のコンテナがない限り動作します。テーマやプラグインで追加の CSS コンテナを定義している場合、コンテナクエリの動作に干渉する可能性があります。
 
-There are SCSS mixins available as convenient helpers for targeting the same width breakpoints previously defined by classes like `.is-large`, `.is-medium`, `.is-small` and `.is-mobile`. These mixins make it easier to style inner content within the Cart and Checkout blocks based on the container width.
+以前、`.is-large`、`.is-medium`、`.is-small`、`.is-mobile`のようなクラスによって定義されたのと同じ幅のブレークポイントをターゲットにするための便利なヘルパーとして、SCSSミキシンが用意されています。これらのミキシンを使用することで、コンテナの幅に基づいて、カート・ブロックとチェックアウト・ブロック内のインナー・コンテンツのスタイルを簡単に設定できるようになります。
 
 ```scss
 // Before, using JS generated CSS class
@@ -96,16 +95,16 @@ There are SCSS mixins available as convenient helpers for targeting the same wid
 }
 ```
 
-## WC Blocks _vs._ theme style conflicts for semantic elements
+## WC Blocks _vs._ テーマスタイルのセマンティック要素での衝突
 
-WooCommerce Blocks uses HTML elements according to their semantic meaning, not their default layout. That means that some times blocks might use an anchor link (`<a>`) but display it as a button. Or the other way around, a `<button>` might be displayed as a text link. Similarly, headings might be displayed as regular text.
+WooCommerce BlocksはHTML要素をデフォルトのレイアウトではなく、セマンティックな意味に従って使用します。つまり、アンカーリンク(`<a>`)がボタンとして表示されることもあります。逆に、`<button>`がテキスト・リンクとして表示されることもあります。同様に、見出しは通常のテキストとして表示されるかもしれません。
 
-In these cases, Blocks include some CSS resets to undo most default styles introduced by themes. A `<button>` that is displayed as a text link will probably have resets for the background, border, etc. That will solve most conflicts out-of-the-box but in some occasions those CSS resets might not have effect if the theme has a specific CSS selector with higher specificity. When that happens, we really encourage theme developers to decrease their selectors specificity so Blocks styles have preference, if that's not possible, themes can write CSS resets on top.
+このような場合、ブロックにはテーマによって導入されたデフォルトスタイルのほとんどを元に戻すためのCSSリセットが含まれています。テキストリンクとして表示される`<button>`は、おそらく背景や枠線などのリセットを持つでしょう。これでほとんどのコンフリクトはすぐに解決しますが、テーマがより高い特異性を持つ特定のCSSセレクタを持っている場合、これらのCSSリセットは効果を持たないことがあります。そのような場合、私たちはテーマ開発者に、ブロックスタイルが優先されるようにセレクタの特異性を下げることを強くお勧めします。
 
-## Hidden elements
+## 隠された要素
 
-WC Blocks use the [`hidden` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) to hide some elements from the UI so they are not displayed in screens neither read by assistive technologies. If your theme has some generic styles that tweak the CSS display property of blocks elements (ie: `div { display: block; }`), make sure you correctly handle the hidden attribute: `div[hidden] { display: none; }`.
+WCブロックは、[`hidden` HTML属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) を使用して、UIからいくつかの要素を非表示にします。テーマにブロック要素のCSS表示プロパティ（例： `div { display: block; }`）を調整する一般的なスタイルがある場合は、hidden属性を正しく処理してください：inline_code_2__。
 
-## Legacy classes from WooCommerce (.price, .star-rating, .button...)
+## WooCommerceのレガシークラス (.price、.star-rating、.button...)
 
 WooCommerce Blocksでは、レガシーな接頭辞なしクラスの使用をできるだけ避けています。しかし、後方互換性のために追加されたものもあるかもしれません。他のプラグインやエディタなどとの衝突を避けるためです。

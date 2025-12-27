@@ -3,7 +3,6 @@ post_title: Scaffolding and sample store data
 sidebar_label: Scaffolding and sample data
 sidebar_position: 4
 ---
-
 # スカフォールドとサンプルストアのデータ
 
 WooCommerceは、あなたが構築しようとしているものに応じて、多くのスターターキットや足場を提供しています。
@@ -17,33 +16,33 @@ WooCommerceストアをデザインする場合、テーマ開発には2つの�
 
 ### ストアフロントテーマ（クラシック）
 
-Storefront is Woo’s flagship classic theme, available in the [WordPress Theme Directory](https://wordpress.org/themes/). You can either rename and modify the theme itself, or override specific aspects of it using a child theme.
+StorefrontはWooの代表的なクラシックテーマで、[WordPress Theme Directory](https://wordpress.org/themes/)にあります。テーマ自体をリネームして変更することも、子テーマを使って特定の部分を上書きすることもできます。
 
-For more information on building a classic WooCommerce theme, read our classic theme development handbook. For a comprehensive guide on creating a child block theme and understanding the differences between a classic and block theme, please refer to [WooCommerce block theme development](/docs/theming/block-theme-development/theming-woo-blocks) and [WordPress block child theme development](https://learn.wordpress.org/lesson-plan/create-a-basic-child-theme-for-block-themes/).
+クラシックなWooCommerceテーマの作成に関する詳細は、クラシックテーマ開発ハンドブックをお読みください。子ブロックテーマの作成とクラシックテーマとブロックテーマの違いを理解するための包括的なガイドについては、[WooCommerceブロックテーマ開発](/docs/theming/block-theme-development/theming-woo-blocks) と [WordPressブロック子テーマ開発](https://learn.wordpress.org/lesson-plan/create-a-basic-child-theme-for-block-themes/) を参照してください。
 
 ### ブロック・スターター・テーマ
 
-If you are completely new to block theme development, please check [Develop Your First Low-Code Block Theme](https://learn.wordpress.org/course/develop-your-first-low-code-block-theme/) to learn about block theme development, and explore the [Create Block Theme plugin](https://wordpress.org/plugins/create-block-theme/) tool when you're ready to create a new theme.
+ブロックテーマ開発の全くの初心者の方は、[Develop Your First Low-Code Block Theme](https://learn.wordpress.org/course/develop-your-first-low-code-block-theme/) でブロックテーマ開発について学び、新しいテーマを作成する準備ができたら、[Create Block Theme plugin](https://wordpress.org/plugins/create-block-theme/) ツールをお試しください。
 
 詳しくは[ブロックテーマ開発ハンドブック](/docs/theming/block-theme-development/theming-woo-blocks)をご覧ください。
 
-#エクステンション足場
+## エクステンション足場
 
 ### @woocommerce/create-woo-extension
 
-[Create Woo Extension](https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/create-woo-extension/) is an NPX command that scaffolds an entire WooCommerce extension for your store. The generated extensions adds a React-based settings page integrating with WooCommerce Admin. Also included are PHP and Javascript unit testing, linting, and Prettier IDE configuration for WooCommerce and WordPress.
+[Create Woo Extension](https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/create-woo-extension/)はNPXコマンドで、WooCommerceエクステンション全体をあなたのストアのために雛形化します。生成されたエクステンションはWooCommerce Adminと統合するReactベースの設定ページを追加します。また、PHPとJavascriptのユニットテスト、リンティング、WooCommerceとWordPressのPrettier IDE設定も含まれています。
 
-create-woo-extensionパッケージ](/docs/extensions/getting-started-extensions/building-your-first-extension)を使用したチュートリアルをお読みください。
+[create-woo-extensionパッケージ](/docs/extensions/getting-started-extensions/building-your-first-extension)を使用したチュートリアルをお読みください。
 
 ### @woocommerce/extend-cart-checkout-block
 
-This is a template to be used with `@wordpress/create-block` to create a WooCommerce Blocks extension starting point. To install and use it, follow the instructions in [`@woocommerce/extend-cart-checkout-block`](https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/extend-cart-checkout-block/). Please note that this example contains multiple other examples of extensibility, not just inner blocks.
+これは`@wordpress/create-block`と一緒に使用するテンプレートで、WooCommerce Blocksエクステンションのスタートポイントを作成します。インストールして使用するには、[`@woocommerce/extend-cart-checkout-block`](https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/extend-cart-checkout-block/)の指示に従ってください。この例には、インナーブロックだけでなく、他の複数の拡張性の例が含まれていることに注意してください。
 
 ### WooCommerce admin 拡張機能の例
 
 WooCommerceプラグインの内部には、WooCommerceのコア機能を変更するためのさまざまな使用例を紹介する一連の拡張機能があります。例えば、カスタムレポートの追加、カスタム支払いゲートウェイ、WooCommerceダッシュボードの変更などです。
 
-WooCommerceの分析レポートを拡張する方法](/docs/features/analytics/extending-woocommerce-admin-reports)を紹介するチュートリアルをお読みください。
+[WooCommerceの分析レポートを拡張する方法](/docs/features/analytics/extending-woocommerce-admin-reports)を紹介するチュートリアルをお読みください。
 
 ## 関連するワードプレスの足場
 
@@ -55,14 +54,14 @@ WooCommerceの分析レポートを拡張する方法](/docs/features/analytics/
 
 WordPressにコンテンツやデザイン要素を追加する場合、カスタムブロックを作成することは理にかなっているかもしれません。WordPressのブロックエディタパッケージライブラリには、WordPress Create Blockという足場ツールが含まれており、任意のページやテンプレートに挿入できるカスタムブロックを作成するのに役立ちます。
 
-Read more about the [`wordpress/create-block` package](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/).
+[`wordpress/create-block`パッケージ](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/)についてもっと読む。
 
 ## サンプル店舗データ
 
 ### コアプラグインサンプルデータ
 
-It may be helpful to load your local store with sample data. In the WooCommerce core plugin, you can find CSV and XML files that can be imported directly into WooCommerce using the WordPress admin or via WC-CLI. The sample data is located in [`/plugins/woocommerce/sample-data/`](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/sample-data).
+ローカルストアにサンプルデータを読み込むと便利です。WooCommerceコアプラグインには、WordPress管理画面またはWC-CLI経由でWooCommerceに直接インポートできるCSVファイルとXMLファイルがあります。サンプルデータは[`/plugins/woocommerce/sample-data/`](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/sample-data)にあります。
 
 ### スムース・ジェネレーター
 
-For more advanced testing, you may want sample customers and order data. [Smooth Generator](https://github.com/woocommerce/wc-smooth-generator) is a plugin to help you generate WooCommerce-related data for testing. Use the WP Admin interface for basic operations, or the CLI tool for more advanced features. Download and install the latest version from the [Releases page](https://github.com/woocommerce/wc-smooth-generator/releases) and browse the repository for more documentation.
+より高度なテストには、サンプル顧客と注文データが必要かもしれません。[Smooth Generator](https://github.com/woocommerce/wc-smooth-generator)は、テスト用のWooCommerce関連データを生成するのに役立つプラグインです。基本的な操作にはWP Adminインターフェイスを使用し、より高度な機能にはCLIツールを使用します。[リリースページ](https://github.com/woocommerce/wc-smooth-generator/releases)から最新版をダウンロードしてインストールし、リポジトリのドキュメントを参照してください。

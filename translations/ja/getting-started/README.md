@@ -4,15 +4,13 @@ sidebar_position: 0
 sidebar_label: Getting Started
 ---
 
-# はじめに
+# Getting started
 
 WooCommerceは、WordPress上に構築されたカスタマイズ可能なオープンソースのeコマースプラットフォームです。物理的な製品やデジタルダウンロードから、購読、コンテンツ、さらには予約まで、あらゆるものを販売する世界中のビジネスを支援します。
 
-* Get familiar with [WordPress Plugin Development](https://developer.wordpress.org/plugins/).
-* Take a moment to familiarize yourself with our [Developer Resources](https://developer.wordpress.org/plugins/plugin-basics/).
-* Join the [Woo Community Slack](https://woo.com/community-slack/)
-
----
+* WordPress [プラグイン開発](https://developer.wordpress.org/plugins/) に慣れてください。
+* 開発者向けリソース](https://developer.wordpress.org/plugins/plugin-basics/) をご覧ください。
+* Woo [Community Slack](https://woo.com/community-slack/) に参加する。
 
 ## WooCommerceエクステンションの構築
 
@@ -24,8 +22,6 @@ WooCommerce エクステンションを構築し、強化するための包括�
 
 拡張機能開発](/docs/extensions/getting-started-extensions/)についてもっと知る。
 
----
-
 ## WooCommerceテーマを作る
 
 WooCommerceテーマ開発の技術を発見してください。テーマのカスタマイズ、デザインの原則、視覚的に魅力的で機能的なテーマを作成するためのユーザーエクスペリエンスの向上について学びます。
@@ -36,28 +32,22 @@ WooCommerceテーマ開発の技術を発見してください。テーマのカ
 
 クラシックテーマ開発](/docs/theming/theme-development/classic-theme-developer-handbook)または[ブロックテーマ開発](/docs/theming/block-theme-development/theming-woo-blocks)についてもっと詳しく。
 
----
-
 ## WooCommerceへの貢献
 
 オープンソースコミュニティに参加してWooCommerceに貢献しましょう。オープンな問題に取り組み、WooCommerceのエコシステムを向上させることで、どのような変化をもたらすことができるかを探求してください。
 
-* [Visit the WooCommerce monorepo](https://github.com/woocommerce/woocommerce)
-* [Open Issues on GitHub](https://github.com/woocommerce/woocommerce/issues)
-* [Woo contributor guidelines](/docs/contribution/contributing/)
+* [WooCommerceモノレポへ](https://github.com/woocommerce/woocommerce)
+* [GitHubのオープンイシュー](https://github.com/woocommerce/woocommerce/issues)
+* [Wooコントリビューターガイドライン](/docs/contribution/contributing/)
 
-貢献]についてもっと知る(/docs/contribution/contributing)
-
----
+貢献](/docs/contribution/contributing)についてもっと知る
 
 ## その他のリソース
 
-* [WooCommerce Official Website](https://woocommerce.com/)
-* [Woo Marketplace](https://woocommerce.com/marketplace)
-* All [WooCommerce Repositories on GitHub](https://woocommerce.github.io/)
-
----
+* [WooCommerce公式サイト](https://woocommerce.com/)
+* [Wooマーケットプレイス](https://woocommerce.com/marketplace)
+* すべての[GitHub上のWooCommerceリポジトリ](https://woocommerce.github.io/)
 
 ## 開発者ではない？
 
-This documentation site is intended for developers. If you're a merchant or are new to WooCommerce, please check out [woocommerce.com](https://woocommerce.com/) for our merchant-facing docs.
+このドキュメントサイトは開発者向けです。マーチャントの方、またはWooCommerceを初めてご利用になる方は、[woocommerce.com](https://woocommerce.com/) のマーチャント向けドキュメントをご覧ください。
