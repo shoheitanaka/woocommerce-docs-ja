@@ -1,0 +1,1257 @@
+{
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/wc-cli/wc-cli-examples.md": {
+    "hash": "eb63957ee2f7bf3e01319c2d2b6bbfe020427811b63a44a241cad99837fe3e19",
+    "updatedAt": "2025-12-27T02:36:17.888Z",
+    "size": 8489
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/wc-cli/wc-cli-commands.md": {
+    "hash": "31ae2a104052f07289cb738cfd5cf53f6c3e372727c0739c49be42951824e5c6",
+    "updatedAt": "2025-12-27T02:36:17.889Z",
+    "size": 60220
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/wc-cli/using-wc-cli.md": {
+    "hash": "1401325de59cfc062aa3c25631eaf65a983cbea02a5e893d153d7ba43bcbde3a",
+    "updatedAt": "2025-12-27T02:36:17.889Z",
+    "size": 1272
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/wc-cli/cli-overview.md": {
+    "hash": "5da650d13d133cdaf31023223943ef474975479afbb5a70f8b5669f503fae77f",
+    "updatedAt": "2025-12-27T02:36:17.890Z",
+    "size": 1799
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/wc-cli/cli-faq.md": {
+    "hash": "0566410c776aa319e3d4aafabd3e3687dc45202b2275375a7e6931aff88352c8",
+    "updatedAt": "2025-12-27T02:36:17.890Z",
+    "size": 2893
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/version-control-deployment.md": {
+    "hash": "707e9a845489760ebbd632c138a59e11e4d2caa65f97015b265519728d967dec",
+    "updatedAt": "2025-12-27T02:36:17.890Z",
+    "size": 2642
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/tools-for-low-code-development.md": {
+    "hash": "b91337a4b68c25f7ebbb5b4bd1e300e3a1a0f6ad78e89fb208d78e5dbb421677",
+    "updatedAt": "2025-12-27T02:36:17.890Z",
+    "size": 3887
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/scaffolding.md": {
+    "hash": "665a42396b0523cfb58244975c35470c7c5e154b29a8b311166c78685aaaf798",
+    "updatedAt": "2025-12-27T02:36:17.891Z",
+    "size": 5606
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/project-structure.md": {
+    "hash": "51fb2c728e1bbbc45066414473ae006c3a8f60c39ed58fbcc27b1232d1e5405e",
+    "updatedAt": "2025-12-27T02:36:17.891Z",
+    "size": 5489
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/development-environment.md": {
+    "hash": "8611941f0daae0652a141df127b1b33153d3691f46d5326f97fd48096e599265",
+    "updatedAt": "2025-12-27T02:36:17.891Z",
+    "size": 6945
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/developer-tools.md": {
+    "hash": "a91765341a6817ae0a379e950b7593e7720bed5b55659589c7f4c83b2656ca54",
+    "updatedAt": "2025-12-27T02:36:17.892Z",
+    "size": 5689
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/debugging.md": {
+    "hash": "8e61267b510d22bb874d4452251872c1417de708259694fa663adc148fbbddd1",
+    "updatedAt": "2025-12-27T02:36:17.892Z",
+    "size": 1916
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/ai.md": {
+    "hash": "a2f482a762fccb60202562f36029985703613b1b72635b3afdf3395a9ae60e07",
+    "updatedAt": "2025-12-27T02:36:17.892Z",
+    "size": 2796
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/README.md": {
+    "hash": "efb213f0f601d581026c61ba1dd9a343e8487fcc0f257191629e1bdea9b3fddd",
+    "updatedAt": "2025-12-27T02:36:17.892Z",
+    "size": 2919
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/using_nginx_server_to_protect_your_uploads_directory.md": {
+    "hash": "4117210a51706660d24c825ece5892ad8ba7623964d567b7029ceff520cfc090",
+    "updatedAt": "2025-12-27T02:36:17.893Z",
+    "size": 1487
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/useful-functions.md": {
+    "hash": "2d971389c047fc391ad40a4d85cf65452c5ee073b666cc986ebabe4870ed3193",
+    "updatedAt": "2025-12-27T02:36:17.893Z",
+    "size": 6126
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/uninstall_remove_all_woocommerce_data.md": {
+    "hash": "4cf86d34e23d58e4ec971c9fd1c49fd17879f2958ed1f4ec747373cb410068b2",
+    "updatedAt": "2025-12-27T02:36:17.893Z",
+    "size": 1379
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/unhook--remove-woocommerce-emails.md": {
+    "hash": "f83ef8f3011e5a6e93fe2c654906d3cffa2ea093f0718f69a573066134addeb0",
+    "updatedAt": "2025-12-27T02:36:17.893Z",
+    "size": 2458
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/ssl_and_https_and_woocommerce_websites_behind_load_balanacers_or_reverse_proxies.md": {
+    "hash": "4c11cc8a9b5e5ffb50a40b9a8b34ad798d86a3e60e783d17c76429c65aa98d0d",
+    "updatedAt": "2025-12-27T02:36:17.894Z",
+    "size": 1120
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/rename-a-country.md": {
+    "hash": "97a7a524b849501d2449e2ca08299842e7216c31238520655add560a0e7c4f73",
+    "updatedAt": "2025-12-27T02:36:17.894Z",
+    "size": 542
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/override-loop-template-show-quantities-next-add-cart.md": {
+    "hash": "068d1e36c19de3fc1cece8c60bbb8c5710a67f4278c74845d541cb99d5e25a1b",
+    "updatedAt": "2025-12-27T02:36:17.894Z",
+    "size": 1584
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/number-of-products-per-row.md": {
+    "hash": "a06a79a0a8da9d238afb8c7710a50adce4bdf046870afe46c6df09b750f309e0",
+    "updatedAt": "2025-12-27T02:36:17.894Z",
+    "size": 1109
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/making_translations_upgrade_safe.md": {
+    "hash": "0dea32ce6a7a685dede2284ca3ef9ce6de41536c0554c28c231f1a981cd39e44",
+    "updatedAt": "2025-12-27T02:36:17.894Z",
+    "size": 1163
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/link-to-logged-data.md": {
+    "hash": "fa3829ed733afc4afb0ebc65d4b21b911e5bce5ffb89457596cd566c3a860c0e",
+    "updatedAt": "2025-12-27T02:36:17.895Z",
+    "size": 1614
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/legacy_local_pickup_advanced_settings_and_customization.md": {
+    "hash": "7b095e8c90ee342a91c5b8ed02f1bdc712aec7142d064116b84ec7b4e5188a25",
+    "updatedAt": "2025-12-27T02:36:17.895Z",
+    "size": 1892
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/free_shipping_customization.md": {
+    "hash": "756c7c97a185ab19f47e2f42c2204e8c9b490ddbb3e1ee908743befc1e3fdb24",
+    "updatedAt": "2025-12-27T02:36:17.895Z",
+    "size": 4223
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/displaying_custom_fields_in_your_theme_or_site.md": {
+    "hash": "b15020b426aca3904926512e173c932d2919ebc84cfd3769fd10d22cb09dc76b",
+    "updatedAt": "2025-12-27T02:36:17.895Z",
+    "size": 1275
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/disabling_marketplace_suggestions_programmatically.md": {
+    "hash": "0ab870bde95dca4de7f593abf4e2c22166a84e4e32b82bf88346f9185a33e4f3",
+    "updatedAt": "2025-12-27T02:36:17.896Z",
+    "size": 701
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/customising-checkout-fields.md": {
+    "hash": "806c348f44e9561eb85b3eab1ecc53afd43366d15c48137b57e480f61ac45e0b",
+    "updatedAt": "2025-12-27T02:36:17.896Z",
+    "size": 15008
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/configuring_special_tax_scenarios.md": {
+    "hash": "b72af7ae61598611aacc38a49f018a4189bf7b7176ff4dbee4bfb53456357f7e",
+    "updatedAt": "2025-12-27T02:36:17.896Z",
+    "size": 3554
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/check_payment_method_support.md": {
+    "hash": "aef5e5923037e35118f79dc7875de9810f5b529907cf1ae47eed48b9b18b906e",
+    "updatedAt": "2025-12-27T02:36:17.896Z",
+    "size": 2075
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/change-a-currency-symbol.md": {
+    "hash": "2c852c8b22cff3b1f31a95c154c6904e187d4d00e14ad11c573a6d118a29f5ce",
+    "updatedAt": "2025-12-27T02:36:17.897Z",
+    "size": 1489
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/before-login--register-form.md": {
+    "hash": "1a5f66f34f24d9c9e2867cdc42bcc49a58966f72338d5dbbe69994873a2283e4",
+    "updatedAt": "2025-12-27T02:36:17.897Z",
+    "size": 1453
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/adjust-quantity-input-values.md": {
+    "hash": "f42a448ac40c5bd159464396c506aa6a349e6305665ed2dd432fdaa8958b53bc",
+    "updatedAt": "2025-12-27T02:36:17.897Z",
+    "size": 1576
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/add-or-modify-states.md": {
+    "hash": "6a2eb2265c41960f8826b0fee7516d5963fe4fa04c0533ff5aa148c384207cb1",
+    "updatedAt": "2025-12-27T02:36:17.897Z",
+    "size": 835
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/add-a-currency-symbol.md": {
+    "hash": "ad477e5c8cab441f466f8e8f1fec46dd56b25966a7045cbd258f320dd4427779",
+    "updatedAt": "2025-12-27T02:36:17.897Z",
+    "size": 1185
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/add-a-country.md": {
+    "hash": "bcecc2fd2e04d1ba31818431c1fe4d8e1f4e4e0a079217336e61a5c61c3dc300",
+    "updatedAt": "2025-12-27T02:36:17.898Z",
+    "size": 1192
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/README.md": {
+    "hash": "4d8cf947a59e7a3d65f3f420de66de7f75030bfecee4974cd645602ced09884f",
+    "updatedAt": "2025-12-27T02:36:17.898Z",
+    "size": 3151
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/README.md": {
+    "hash": "81e9df3558942aeb12756e8bc83740fe20ed56778bf5cdde7a118b30003afce2",
+    "updatedAt": "2025-12-27T02:36:17.898Z",
+    "size": 1116
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/README.md": {
+    "hash": "498a01121e064c74bd5e3dfad8143e320784a4fae0750eeddc4891b7ee123c2b",
+    "updatedAt": "2025-12-27T02:36:17.898Z",
+    "size": 2654
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/_docu-tools/README.md": {
+    "hash": "e2318144a223bdb13a8acab56da54b9a6ae4d30a9af1514c01d2ffb47b8c899a",
+    "updatedAt": "2025-12-27T02:36:17.898Z",
+    "size": 952
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-themes/theme-design.md": {
+    "hash": "4d19618298c5998a1858c212e89a39dbcafcbe53fd9f6bdc9fc41b35281eb105",
+    "updatedAt": "2025-12-27T02:36:17.899Z",
+    "size": 2295
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-themes/theme-demos-and-sample-content.md": {
+    "hash": "f93feb7b4d7ab0ee3d39e7f1e0fad966e7bf6e24899692bb92b7c2e84b45d7ba",
+    "updatedAt": "2025-12-27T02:36:17.899Z",
+    "size": 911
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-themes/theme-customization.md": {
+    "hash": "b8e8636324670a84b2c26d3d9893e980111a843169fc9d710d421bed9086a64a",
+    "updatedAt": "2025-12-27T02:36:17.899Z",
+    "size": 1095
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-themes/theme-branding.md": {
+    "hash": "c448a82b95205a832b5eeccaf1f1ff9b5c4f4b522473b8b57ede7911ba5b9ed3",
+    "updatedAt": "2025-12-27T02:36:17.899Z",
+    "size": 484
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-themes/theme-accessibility.md": {
+    "hash": "136d310ffdd9f54b5cbbbf463bc86e824e0f7902ced772b5f9aae0a9cc0fae96",
+    "updatedAt": "2025-12-27T02:36:17.900Z",
+    "size": 426
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-themes/README.md": {
+    "hash": "229c875fdfd8ea2236c61c80cd53e6041198ea2a691492b48b6b2ca1167954a0",
+    "updatedAt": "2025-12-27T02:36:17.900Z",
+    "size": 1118
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-form-top-bar.md": {
+    "hash": "a5e44c808dd8543b76be3c65a70c45fd45f4de68c0435d9211a374b0f413b32e",
+    "updatedAt": "2025-12-27T02:36:17.900Z",
+    "size": 965
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-form-subsections.md": {
+    "hash": "b1562d488145c4939c0ff0e2bf89ee6f94c25f5dfcaaf2f5f9dd99b30b7831ff",
+    "updatedAt": "2025-12-27T02:36:17.900Z",
+    "size": 1341
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-form-sections.md": {
+    "hash": "0f29201d0553d273b49967df211ce13825146d565165255c91a56751e6369612",
+    "updatedAt": "2025-12-27T02:36:17.900Z",
+    "size": 1265
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-form-groups.md": {
+    "hash": "26e73c8b72934dde213a0b7ef653c20c3bc9cc251bfd60bdef0473b2ec95076d",
+    "updatedAt": "2025-12-27T02:36:17.901Z",
+    "size": 2171
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-form-fields.md": {
+    "hash": "50f787ad10ec92139b2dccc01bc8e74235a960e3ffd0c9a31a7f45c3b5d02695",
+    "updatedAt": "2025-12-27T02:36:17.901Z",
+    "size": 1265
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-form-dialogue-extensions.md": {
+    "hash": "fca7ff5d087b020463e27599f01291837ad192140aa503956470b792cfe8fbde",
+    "updatedAt": "2025-12-27T02:36:17.901Z",
+    "size": 1276
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-form-custom-product-types.md": {
+    "hash": "d28ff313a875f1b72aed5cbe09e6409dc5fd9b774f1a9d386a78c445b113b6f8",
+    "updatedAt": "2025-12-27T02:36:17.901Z",
+    "size": 971
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/product-editor-examples.md": {
+    "hash": "44569917ed877ad1b55b895bd2ca8258550fb6aec8ec09b52faf7c77601ca031",
+    "updatedAt": "2025-12-27T02:36:17.901Z",
+    "size": 1544
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-product-editor/README.md": {
+    "hash": "62d6c5b80bc11b77fe16d9e7631d1c1c2d54ed443dadd554186a095309120c16",
+    "updatedAt": "2025-12-27T02:36:17.902Z",
+    "size": 954
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-payments/payments-onboarding.md": {
+    "hash": "2a738daca2b790b6c1f98e0bcf58a994a0c833389fee37d3f069a7064a036185",
+    "updatedAt": "2025-12-27T02:36:17.902Z",
+    "size": 2147
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-payments/payment-button-style.md": {
+    "hash": "a64eb12da8e6fca4c4007a30ce5af28ad903afee74022845ee3e05e75ec5eb47",
+    "updatedAt": "2025-12-27T02:36:17.902Z",
+    "size": 988
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-payments/payment-button-size.md": {
+    "hash": "9fce7550bacd935c063b7f2a1ebcf9eb03d729b3e5e4abaf9581322becbeecae",
+    "updatedAt": "2025-12-27T02:36:17.902Z",
+    "size": 2444
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-payments/payment-button-layout.md": {
+    "hash": "046461a83badf0e5642a83411b02e0b221cbf17a9d41eb17826eee81d64c33b3",
+    "updatedAt": "2025-12-27T02:36:17.903Z",
+    "size": 1446
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/user-experience-guidelines/ux-guidelines-payments/README.md": {
+    "hash": "08c1386ae70dd62d6dca7d13bc0c58f9e88bc944a7a0a8ff9f3c3f3a8dff9bbc",
+    "updatedAt": "2025-12-27T02:36:17.903Z",
+    "size": 1054
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/thumbnail-image-regeneration.md": {
+    "hash": "51acc2a1b1e3b12e07cc0c24893e63ec80d9e94408c8bc47eaee370ef4fbcf12",
+    "updatedAt": "2025-12-27T02:36:17.903Z",
+    "size": 3769
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/theme-design-ux-guidelines.md": {
+    "hash": "255b8213a79c183fc697cf3d1e9b6eb8518be3d2c5ecdd135d2cd9a1c7485c56",
+    "updatedAt": "2025-12-27T02:36:17.903Z",
+    "size": 5820
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/template-structure.md": {
+    "hash": "2265f1d4343d6ba047804ab70131504746a4289af529e6332ab909676962e630",
+    "updatedAt": "2025-12-27T02:36:17.903Z",
+    "size": 6279
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/set-up-a-child-theme.md": {
+    "hash": "868019b5cb56c4d9afc7cabbc04c3b491469af3ec5c19aca2ccea5b3e634f250",
+    "updatedAt": "2025-12-27T02:36:17.904Z",
+    "size": 7795
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/image-sizes.md": {
+    "hash": "a4614615d9eff87267168a3f8058c6a724e2022f7baf98f8f6b747d0d12d36a9",
+    "updatedAt": "2025-12-27T02:36:17.904Z",
+    "size": 6595
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/fixing-outdated-woocommerce-templates.md": {
+    "hash": "68b486158fabbcee7f58e337d6540ec7c9ada1b3e8deadf65012874fc2d6f5ac",
+    "updatedAt": "2025-12-27T02:36:17.904Z",
+    "size": 2920
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/conditional-tags.md": {
+    "hash": "fb24b7d0765e661b206adb20bdb109a14b085ce0173c5d1cfeed8b4b70e2ce4f",
+    "updatedAt": "2025-12-27T02:36:17.904Z",
+    "size": 3504
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/classic-theme-developer-handbook.md": {
+    "hash": "031c6bbef1be1ca6b620fbefbd385229090cf9ca71f1166bfdd61aab32914eb8",
+    "updatedAt": "2025-12-27T02:36:17.905Z",
+    "size": 12398
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/block-theme-development/theming-woo-blocks.md": {
+    "hash": "2ee938a72bb01f37a63e8591b5049199536c59b08d7286afe1a814b19934ed4b",
+    "updatedAt": "2025-12-27T02:36:17.905Z",
+    "size": 5713
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/block-theme-development/css-styling.md": {
+    "hash": "6f7e3ae52421df7f03d7045655587850bd4ce933061a716a79b071c01c985d79",
+    "updatedAt": "2025-12-27T02:36:17.905Z",
+    "size": 6226
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/block-theme-development/cart-and-checkout.md": {
+    "hash": "7200bfb0e4770c180a4d9dbfa5aa33ab8800f5a526da6b24b0f185ea252482df",
+    "updatedAt": "2025-12-27T02:36:17.905Z",
+    "size": 3880
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/shipping/shipping-method-api.md": {
+    "hash": "db0be75c8e7456eb2773dedf2a32e82aeaa0892d67c25475d30b9087a6397692",
+    "updatedAt": "2025-12-27T02:36:17.906Z",
+    "size": 33577
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/payments/payment-token-api.md": {
+    "hash": "f3b4731443bfe2715e24421fda2e26fa6683b43fb3ead8d1283ae1489bc83758",
+    "updatedAt": "2025-12-27T02:36:17.906Z",
+    "size": 19841
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/payments/payment-gateway-plugin-base.md": {
+    "hash": "9195afef343aba292d33939097c0c905b37a2a2998afbe0cf75021e3537df3de",
+    "updatedAt": "2025-12-27T02:36:17.906Z",
+    "size": 1621
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/payments/payment-gateway-api.md": {
+    "hash": "26c93ffbdb0c2582f21b507dec81efd2604f713174a78e9316fcde0f7dbe0dc0",
+    "updatedAt": "2025-12-27T02:36:17.906Z",
+    "size": 10546
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/mcp/README.md": {
+    "hash": "be5aa723e5ea82fff9b13bb603a28d40a7066f4a58525e60d51232e71af475b0",
+    "updatedAt": "2025-12-27T02:36:17.907Z",
+    "size": 13729
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/high-performance-order-storage/wc-order-query-improvements.md": {
+    "hash": "98dc4c23e21412b117f867766691130101961568c30daec3359515bed42d0ba9",
+    "updatedAt": "2025-12-27T02:36:17.907Z",
+    "size": 6720
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/high-performance-order-storage/recipe-book.md": {
+    "hash": "743a1f6e14c3c9e80b5ebbdd58e28e5348deb7d244a1f87b86c2a93847ac6813",
+    "updatedAt": "2025-12-27T02:36:17.907Z",
+    "size": 11671
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/high-performance-order-storage/guide-large-store.md": {
+    "hash": "b0b888586fee2b876ba4310bf3c079e3f7490100fe3d8a0c346809240d4ad238",
+    "updatedAt": "2025-12-27T02:36:17.908Z",
+    "size": 10515
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/high-performance-order-storage/enable-hpos.md": {
+    "hash": "a3a214b8620e6f660673835ede544a7d6960d54f5c6e0461ef622db4c2d20a8b",
+    "updatedAt": "2025-12-27T02:36:17.908Z",
+    "size": 2118
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/high-performance-order-storage/cli-tools.md": {
+    "hash": "9460a23c397a6dc853fa6fb7d34a1fa2dadbcdd5fd53ec422ff35376d4dc10b7",
+    "updatedAt": "2025-12-27T02:36:17.908Z",
+    "size": 15964
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/high-performance-order-storage/README.md": {
+    "hash": "41b23b9bbc58cad0d08abde8a604434b9b8db410a83be46b867ca8c9b6ccad2f",
+    "updatedAt": "2025-12-27T02:36:17.908Z",
+    "size": 15548
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/email/email-preview.md": {
+    "hash": "050e78c2623d58d198a2b70ce65434f02928961c154b356049222338aa08b23f",
+    "updatedAt": "2025-12-27T02:36:17.909Z",
+    "size": 5015
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/email/email-html-best-practices.md": {
+    "hash": "712268c0f6dbe527c4ed84df79361cee579bacf01d2c73357dd09fa90faccbe9",
+    "updatedAt": "2025-12-27T02:36:17.909Z",
+    "size": 14437
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/email/email-editor-logging.md": {
+    "hash": "d6e8e664df019d15172470c05002c1de7b4bedb266a0f6a87e64b2f717d7e84e",
+    "updatedAt": "2025-12-27T02:36:17.909Z",
+    "size": 731
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/analytics/extending-woocommerce-admin-reports.md": {
+    "hash": "4eb4d043b12b8d0f1a174584166f217db37b7e42b16f9e32706f8cd699f4713d",
+    "updatedAt": "2025-12-27T02:36:17.909Z",
+    "size": 12051
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/analytics/adding-columns-to-analytics-reports-and-csv-downloads.md": {
+    "hash": "0ebe94d097847e06171d94dfe1e258df1976e61cd241e229bc374be857335ad7",
+    "updatedAt": "2025-12-27T02:36:17.910Z",
+    "size": 4734
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/features/address-autocomplete/address-autocomplete.md": {
+    "hash": "83f2914bb6e1f81de1c49d40211d97cffead6de2e99bea632f2570c96aa0c06b",
+    "updatedAt": "2025-12-27T02:36:17.910Z",
+    "size": 9894
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/testing.md": {
+    "hash": "b9a0c679265f34bdae72b2ea45f1a7399eca76dc7f778a4e6e26b89264d3863e",
+    "updatedAt": "2025-12-27T02:36:17.910Z",
+    "size": 859
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/task-list-and-inbox.md": {
+    "hash": "7b03fdc410353bb1c26b1d0a208c8c0c82f7d78c8b385d4e0a27d2ebd525e8d0",
+    "updatedAt": "2025-12-27T02:36:17.910Z",
+    "size": 2550
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/settings.md": {
+    "hash": "bbc6fa5943264e71cc3af4864f1a53f79e2d24000573b1c265c0d7df91fcc222",
+    "updatedAt": "2025-12-27T02:36:17.911Z",
+    "size": 1355
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/onboarding.md": {
+    "hash": "7f2c012188603a2c50c15f2a4cda9dbf549da3942c98fd8071c220e98843dcfd",
+    "updatedAt": "2025-12-27T02:36:17.911Z",
+    "size": 2803
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/notices.md": {
+    "hash": "854499f7c7b57daacfcd8ddc4f48c915256854ef594248148c93294ddb100957",
+    "updatedAt": "2025-12-27T02:36:17.911Z",
+    "size": 2343
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/navigation.md": {
+    "hash": "d656c0d3bbb172fcfaaa9b14d9473a8d42fcdfa16ae01b066624a22d28f28e6d",
+    "updatedAt": "2025-12-27T02:36:17.911Z",
+    "size": 2858
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/colors.md": {
+    "hash": "aaf51dab68ec41c0672a23a9891f57a009bd18807c7078865e377169a0efb9e8",
+    "updatedAt": "2025-12-27T02:36:17.912Z",
+    "size": 1034
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/best-practices.md": {
+    "hash": "1ff1d80e44a694868c019efc0e81ac1cdb2964cab9f1ebcb933c81a48a7b72ec",
+    "updatedAt": "2025-12-27T02:36:17.912Z",
+    "size": 2735
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/accessibility.md": {
+    "hash": "212c2d3384edec67881f91d245c6d4558957a099a41efac4f1d43de1763b5d61",
+    "updatedAt": "2025-12-27T02:36:17.912Z",
+    "size": 431
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/ux-guidelines-extensions/README.md": {
+    "hash": "cc5c515f46f50b87298dd18c50e3283560745074e763e433202d0b9591027c22",
+    "updatedAt": "2025-12-27T02:36:17.912Z",
+    "size": 2419
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/settings-and-config/working-with-woocommerce-admin-pages.md": {
+    "hash": "c9b300f17f55a1b3067796b5364c9fe2cfa63e400e1e10938d29541d8c909993",
+    "updatedAt": "2025-12-27T02:36:17.913Z",
+    "size": 7556
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/settings-and-config/using-custom-attributes-in-menus.md": {
+    "hash": "28176431b38a69bf9cb4302354e6572335ff3b4b8abf7a9a94a11ca5181be531",
+    "updatedAt": "2025-12-27T02:36:17.913Z",
+    "size": 1612
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/settings-and-config/settings-api.md": {
+    "hash": "aa0a9473803c6f4353b1f35f80ccb3c7abe47346cae5da4d3e098680b2ca70c7",
+    "updatedAt": "2025-12-27T02:36:17.913Z",
+    "size": 3658
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/settings-and-config/implementing-settings.md": {
+    "hash": "f286defb781da033a94cc64aad3a6f02f7b9443204eaaf8f923be68cf684ff8d",
+    "updatedAt": "2025-12-27T02:36:17.913Z",
+    "size": 13125
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/settings-and-config/how-to-add-your-own-store-management-links.md": {
+    "hash": "2e642f7d1bac498a160c56525005d657bc5334c3c998709a2855fd2030c7583b",
+    "updatedAt": "2025-12-27T02:36:17.914Z",
+    "size": 3060
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/settings-and-config/email-editor-integration.md": {
+    "hash": "db73a2c879f20e7cc7372a40469436885dc61617c19547daa2771f6b9a6efe40",
+    "updatedAt": "2025-12-27T02:36:17.914Z",
+    "size": 26423
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/settings-and-config/adding-a-section-to-a-settings-tab.md": {
+    "hash": "39fa246be701ff09a8277fdab6d2768580e5f9a2fec4ed97636fa05122bc340a",
+    "updatedAt": "2025-12-27T02:36:17.915Z",
+    "size": 5960
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/getting-started-extensions/how-to-design-a-simple-extension.md": {
+    "hash": "f09e1b55446ec6cf439bf8537c23b52df07405c67f2624d64fd878e39c2c2fd3",
+    "updatedAt": "2025-12-27T02:36:17.915Z",
+    "size": 18316
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/getting-started-extensions/building-your-first-extension.md": {
+    "hash": "a95ab923fd6b81d1a5c7ddb1e872c5b020ddc62047a42d3fbab9f2a27d2d755c",
+    "updatedAt": "2025-12-27T02:36:17.915Z",
+    "size": 5350
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/getting-started-extensions/README.md": {
+    "hash": "b4d74a7381d460ab1d1159696921c3b919d80609227d0e550351d9189960e205",
+    "updatedAt": "2025-12-27T02:36:17.916Z",
+    "size": 2239
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/extension-onboarding/integrating-coming-soon-mode.md": {
+    "hash": "98483e8fa9a1cf8a5d9056be1414c31e50cc83f656f023377f7940940406ed15",
+    "updatedAt": "2025-12-27T02:36:17.916Z",
+    "size": 9110
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/extension-onboarding/handling-merchant-onboarding.md": {
+    "hash": "07fec644ee512f67fffce5ba933c369dbee4817793af1313a17f5fae662d4d74",
+    "updatedAt": "2025-12-27T02:36:17.916Z",
+    "size": 25946
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/extension-onboarding/creating-custom-product-tours.md": {
+    "hash": "5af4db01dc6846b080a0fae746e10719971fc2b89d2e47e98a6062e19a92998d",
+    "updatedAt": "2025-12-27T02:36:17.916Z",
+    "size": 2853
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/extension-onboarding/adding-custom-products-to-add-products-onboarding-list.md": {
+    "hash": "fcf7627ebe9a9c0c8ec39d5633ef5b23f7e0d8e28a515ee81a20a2af6b5c2dc8",
+    "updatedAt": "2025-12-27T02:36:17.916Z",
+    "size": 3328
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/woocommerce-plugin-api-callback.md": {
+    "hash": "a09047c34afc82583c3bfb497679f9003401d863cacdfb155567b419c4fff436",
+    "updatedAt": "2025-12-27T02:36:17.917Z",
+    "size": 999
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/wc-get-orders.md": {
+    "hash": "246ba20ca604ecfafa4374367697a8527be74d2d2f6eeab5a55e757d0b37be6c",
+    "updatedAt": "2025-12-27T02:36:17.917Z",
+    "size": 17404
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/maintainability.md": {
+    "hash": "f9cb8d8f8e83cca9a23319b098acfc9f4aa9746d46d96c3082941b2a392d5ef9",
+    "updatedAt": "2025-12-27T02:36:17.917Z",
+    "size": 3693
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/handling-deactivation-and-uninstallation.md": {
+    "hash": "fbd09a926d64d828d1187f8505b55c94905976bbd69637c7ec16465c8c46c9c6",
+    "updatedAt": "2025-12-27T02:36:17.917Z",
+    "size": 2765
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/example-header-plugin-comment.md": {
+    "hash": "3f052e2ccdd0bd61c091335acaf1d8571b64a2fa72d1bba177f1c73884a28d65",
+    "updatedAt": "2025-12-27T02:36:17.918Z",
+    "size": 2166
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/class-reference.md": {
+    "hash": "0e221b80cd358e1d543544055b02e912b1baa49851e4a8e68da84a355a135f67",
+    "updatedAt": "2025-12-27T02:36:17.918Z",
+    "size": 2391
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/check-if-woo-is-active.md": {
+    "hash": "dc674527c02440ff6d5ba2c77d2b91b8034e946eb1375408e1b2ec4237faf871",
+    "updatedAt": "2025-12-27T02:36:17.918Z",
+    "size": 2165
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/changelog-txt.md": {
+    "hash": "2c494a230a3fd21d6cbf5333dde3da056daa2c2919f713b2c9414f1e35f7db84",
+    "updatedAt": "2025-12-27T02:36:17.918Z",
+    "size": 1434
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/adding-actions-and-filters.md": {
+    "hash": "07dca14b0c6b4e11746e6ec925de0cc4e933e51f312460eefa113b1228c189b6",
+    "updatedAt": "2025-12-27T02:36:17.918Z",
+    "size": 9723
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/README.md": {
+    "hash": "283ea89105bc00161ae292c9f6b0cea4823652178a58206a1c9c035a27510f6c",
+    "updatedAt": "2025-12-27T02:36:17.919Z",
+    "size": 2024
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/support-and-documentation.md": {
+    "hash": "8d8fbcd24ca152b5a011c8e3a4d3f2287f5f87a5a08d975dfd824060db443a59",
+    "updatedAt": "2025-12-27T02:36:17.919Z",
+    "size": 4175
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/privacy-standards.md": {
+    "hash": "ae3192db7148e29f30a82732ac5ada58fcef4cbd4257299f006b23216a4fc4d9",
+    "updatedAt": "2025-12-27T02:36:17.919Z",
+    "size": 1999
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/gdpr-compliance.md": {
+    "hash": "4912fcfb5952482f82905892dd44148c87fa0c2a584556b563e701b649461afe",
+    "updatedAt": "2025-12-27T02:36:17.919Z",
+    "size": 2615
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/extension-development-best-practices.md": {
+    "hash": "e3591debe0ebc67f3342152d175d8e39ba3590f9906fd8533b00576e4ec85224",
+    "updatedAt": "2025-12-27T02:36:17.919Z",
+    "size": 8569
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/compatibility.md": {
+    "hash": "7c6a58427a4628dd34039530ababf9b472ebc9fe6b47fdcd5c492623d51dc285",
+    "updatedAt": "2025-12-27T02:36:17.920Z",
+    "size": 4189
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/accessibility.md": {
+    "hash": "696e59d2a0c97e52fa146bca718ebb52a8d3a25691f46f88d1fa67d61e9ff9d3",
+    "updatedAt": "2025-12-27T02:36:17.920Z",
+    "size": 13211
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/testing/writing-high-quality-testing-instructions.md": {
+    "hash": "df8003257c25622f71c2d13060d0d56d2c7c75e193b63c9570fdb35544853274",
+    "updatedAt": "2025-12-27T02:36:17.920Z",
+    "size": 8796
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/testing/core-critical-flows.md": {
+    "hash": "06b2d2968b1e3f9846e61470247bd5449b57ea435aa44b5f4fd5208ca8572b6f",
+    "updatedAt": "2025-12-27T02:36:17.920Z",
+    "size": 23251
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/testing/beta-testing.md": {
+    "hash": "6294d7e654e3d8a4b8eac3fa705c3b808f2c4b953dd0e8a317941a06176c3720",
+    "updatedAt": "2025-12-27T02:36:17.921Z",
+    "size": 2327
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/testing/README.md": {
+    "hash": "bff64708617d80adcc54bec26c83ae365848b3c99718b33ca55dd7a36423b06e",
+    "updatedAt": "2025-12-27T02:36:17.921Z",
+    "size": 1348
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/troubleshooting.md": {
+    "hash": "7278b5e2c0e9c1a8dd443ec2cdfae46678ca000bdd8dd1bfa1a414aeedcda003",
+    "updatedAt": "2025-12-27T02:36:17.921Z",
+    "size": 6882
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/schedule.md": {
+    "hash": "e0642ba8c5613a9f358bd447084ded23f1759e6554a243ccd0692ad7b25d5922",
+    "updatedAt": "2025-12-27T02:36:17.921Z",
+    "size": 3789
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/prereleases.md": {
+    "hash": "30bfb3a3e13cb080cc6dcd68f64f30cfb5714fa57bc35da25b9f469563b52e63",
+    "updatedAt": "2025-12-27T02:36:17.921Z",
+    "size": 3332
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/point-releases.md": {
+    "hash": "b5595012f06452a63f20b58a34237811123c65d43f742962cb5cb9ce039ed86f",
+    "updatedAt": "2025-12-27T02:36:17.922Z",
+    "size": 7547
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/point-release-fixes.md": {
+    "hash": "669fe5cd30211ac51c03b031f7e97a09a9807eaa3992819d9507b0f00c372169",
+    "updatedAt": "2025-12-27T02:36:17.922Z",
+    "size": 3002
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/package-releases.md": {
+    "hash": "4408376d47de9b11ef347ca633f7fb934a1ece010d2cab5424690e0560c3ff59",
+    "updatedAt": "2025-12-27T02:36:17.922Z",
+    "size": 531
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/monitoring.md": {
+    "hash": "92e0555776d50b419b7013962f3a763d3677b42a3a4a9740359e270965bd5158",
+    "updatedAt": "2025-12-27T02:36:17.922Z",
+    "size": 1901
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/building-and-publishing.md": {
+    "hash": "fdcb7d13ed614c604154dc59b27cb4bfde59814f606f1ec09587868a7eee6c4d",
+    "updatedAt": "2025-12-27T02:36:17.923Z",
+    "size": 5729
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/backporting.md": {
+    "hash": "664f2cbabd877cf41325e6c311042a7d8db12776f623ad4bb72b9a2aa198e958",
+    "updatedAt": "2025-12-27T02:36:17.923Z",
+    "size": 2298
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/README.md": {
+    "hash": "8fea6c3efad3012550e2cea02c00b868f6211e501a038e1bb12d7233792b215c",
+    "updatedAt": "2025-12-27T02:36:17.923Z",
+    "size": 975
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing-docs/style-guide.md": {
+    "hash": "332fd3cae99b7f549cfe57f2722b74dc87384a8f0e4a5ecdccf9b2d6966f59fc",
+    "updatedAt": "2025-12-27T02:36:17.923Z",
+    "size": 10462
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing-docs/contributing-docs.md": {
+    "hash": "a6badb268728b7622c2d51f95fccf79f085b9e15873ee51dfeacff07b55a4c7c",
+    "updatedAt": "2025-12-27T02:36:17.924Z",
+    "size": 5156
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/woocommerce-git-flow.md": {
+    "hash": "b88e3ee6b7c7d569c4c06a84709205a30e9e2dd296f536a39fd4c69acc62b865",
+    "updatedAt": "2025-12-27T02:36:17.924Z",
+    "size": 813
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/string-localisation-guidelines.md": {
+    "hash": "d87bc3082731eda5d3f968e61fdc11abb7147d5d3c49155365223988b058e4d7",
+    "updatedAt": "2025-12-27T02:36:17.924Z",
+    "size": 598
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/reporting-security-issues.md": {
+    "hash": "66b27b7ccee06ab8d76536f4a4008851efccce0f02ccd9f1fc362c1fa655a3b0",
+    "updatedAt": "2025-12-27T02:36:17.924Z",
+    "size": 1106
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/naming-conventions.md": {
+    "hash": "fbcec972359e48e7a4bb586c31a013b0fc459065e26bfaff886e6bd29eb3d9a7",
+    "updatedAt": "2025-12-27T02:36:17.924Z",
+    "size": 1986
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/minification-of-SCSS-and-JS.md": {
+    "hash": "aa5d1b960cd6fae713bef90a5d973b90d7c9ed2ad3ef4fe8ca825594addf762b",
+    "updatedAt": "2025-12-27T02:36:17.925Z",
+    "size": 1125
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/deprecation-in-core.md": {
+    "hash": "2277ef091b3310e385a1ee84ac013b957d788d2e9bbf8d71ad35f909b58f902f",
+    "updatedAt": "2025-12-27T02:36:17.925Z",
+    "size": 4340
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/deciding-pr-high-impact.md": {
+    "hash": "e634ac5a7a9f8940ca28d89860d1f2975981605e18d0e8f22213244131cc2df6",
+    "updatedAt": "2025-12-27T02:36:17.925Z",
+    "size": 2276
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/common-issues.md": {
+    "hash": "cd27be7a17337f94106b217530fbb7fab05b6c60a2119b3aff1b395a876e74fa",
+    "updatedAt": "2025-12-27T02:36:17.925Z",
+    "size": 4972
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/api-critical-flows.md": {
+    "hash": "abdb0483d8603b3932bf8bc73e9c07190ea34ec1fa2689c3fd492593670dec24",
+    "updatedAt": "2025-12-27T02:36:17.925Z",
+    "size": 5752
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/README.md": {
+    "hash": "11a205899d3331602f9c36db6192b1d80db48f77fdf8ac9d978a552f0d85abe8",
+    "updatedAt": "2025-12-27T02:36:17.926Z",
+    "size": 2753
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/CSS-SASS-coding-guidelines-and-naming-conventions.md": {
+    "hash": "70dcea01a9625a0f92c9a5d5f47cd8cfc4717ce8c206e543f8eb7ae0571cb199",
+    "updatedAt": "2025-12-27T02:36:17.926Z",
+    "size": 2512
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/tutorials/integrating-protection-checkout-block.md": {
+    "hash": "1a664be039897e11a8546c66f7e6d438c441cc298df80b4f30d02f5c85c6406d",
+    "updatedAt": "2025-12-27T02:36:17.926Z",
+    "size": 7616
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/tutorials/how-to-conditional-additional-fields.md": {
+    "hash": "df6c13ce8ffcdb0ac16fe4b1cc0d162940f162a42d8afc5d141d16547b483eea",
+    "updatedAt": "2025-12-27T02:36:17.926Z",
+    "size": 9113
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/tutorials/how-to-additional-checkout-fields-guide.md": {
+    "hash": "9bdff70834bc7255c9a69a22ca277c1f1d00412a1bc27c96e783d6f5bc63f5a1",
+    "updatedAt": "2025-12-27T02:36:17.926Z",
+    "size": 9993
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/slot-fills.md": {
+    "hash": "9100685eb36c5bc3174f0e261a5f3ecd60ccad12f443c62da4ef396a8ebe4ddd",
+    "updatedAt": "2025-12-27T02:36:17.927Z",
+    "size": 2870
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/overview-of-data-flow.md": {
+    "hash": "4c6cf53e9eb8a5bcadb9905de3f4a1e3c327a9a74aa2b1e2841589cab7972c06",
+    "updatedAt": "2025-12-27T02:36:17.927Z",
+    "size": 9818
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/integration-interface.md": {
+    "hash": "c599b2e413eb719132f1e3bf1629e0f6ae43297e2401e21acaae5c58aec0d63a",
+    "updatedAt": "2025-12-27T02:36:17.927Z",
+    "size": 8221
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/block-references.md": {
+    "hash": "8421142665fe557c392c7682426ae0f95fab8374a4d515b6b929ea7d39cd7a50",
+    "updatedAt": "2025-12-27T02:36:17.928Z",
+    "size": 71824
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/getting-started/faq.md": {
+    "hash": "8a06b8d2e7b0bb9fd25b00acb7adf8dcd769a34db42440e43821d7492a780531",
+    "updatedAt": "2025-12-27T02:36:17.928Z",
+    "size": 10520
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/getting-started/extensibility-overview.md": {
+    "hash": "d7cea28bea732c529ae7a383b22cffc0280982daac32e11d3f7ee318b959c5c5",
+    "updatedAt": "2025-12-27T02:36:17.928Z",
+    "size": 8034
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/urls-and-routing/woocommerce-endpoints.md": {
+    "hash": "fa3e3ca72b909522a1d8367e139be36748e0f539339124ad63597cdb702cdbf6",
+    "updatedAt": "2025-12-27T02:36:17.928Z",
+    "size": 1654
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/urls-and-routing/webhooks.md": {
+    "hash": "82b369e28158ff8805539c5a933716e114d04d3c1451236680fe922abdc37f9f",
+    "updatedAt": "2025-12-27T02:36:17.929Z",
+    "size": 3741
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/urls-and-routing/removing-product-product-category-or-shop-from-the-url.md": {
+    "hash": "4bbb79f91af8669830413ceb404b6e9ba458d5bda99ee01ee6c4fee9dc80ee43",
+    "updatedAt": "2025-12-27T02:36:17.929Z",
+    "size": 1365
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/urls-and-routing/customizing-endpoint-urls.md": {
+    "hash": "37870989ffd6781fe34f5fb32354706105393bdec0d08a8b51c031af100ffe44",
+    "updatedAt": "2025-12-27T02:36:17.929Z",
+    "size": 3671
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/urls-and-routing/checkout-urls.md": {
+    "hash": "53dfa90719763fd4b63ffcd5bea6e311bbcf6ce45e0ef6dd71b5d2894e4ceaf6",
+    "updatedAt": "2025-12-27T02:36:17.929Z",
+    "size": 1354
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/security/security-best-practices.md": {
+    "hash": "48685fc5fbfe1bb79e1126924e0c9807ab5a6ea8b97259c809eb7c91bc9b939f",
+    "updatedAt": "2025-12-27T02:36:17.929Z",
+    "size": 7728
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/security/prevent-data-leaks.md": {
+    "hash": "c6d97f9602f1b044b22c2ce7af5ead5b004b74edd3edb1f936aa1ad690d583b3",
+    "updatedAt": "2025-12-27T02:36:17.930Z",
+    "size": 1008
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/when-to-request-reviews.md": {
+    "hash": "30a3a4b0084e7e2a1ec90cef33b240065be7812b107b46d8faf57562c0a1edc7",
+    "updatedAt": "2025-12-27T02:36:17.930Z",
+    "size": 2386
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/utilizing-your-support-team.md": {
+    "hash": "3736cdaed26646e6dc4ceb352ba9ccaafe49cd43a51ebf29247d578af42bdec3",
+    "updatedAt": "2025-12-27T02:36:17.930Z",
+    "size": 2292
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/utilizing-feature-requests.md": {
+    "hash": "ba1ccfa22ac52dc79366bd9712e5ec23cf199b94764dad2ae823b3aeedbc3186",
+    "updatedAt": "2025-12-27T02:36:17.930Z",
+    "size": 2008
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/responding-to-negative-reviews.md": {
+    "hash": "eaf0f3eec7fdb66d288df4b34ef4af053124026c19b7fb940f0766ead2a0f2cf",
+    "updatedAt": "2025-12-27T02:36:17.930Z",
+    "size": 3281
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/notifying-users-about-important-events.md": {
+    "hash": "469fd5aa3185df0183d4792e87bd0b060d2d0e99cddf53a38b9b745a5003bf2f",
+    "updatedAt": "2025-12-27T02:36:17.931Z",
+    "size": 1553
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/misc-guidelines.md": {
+    "hash": "5ab05e6a47bf75fa5fff99b886a2bd130adc7392a2c1d7e0c616fb0d60f35a7b",
+    "updatedAt": "2025-12-27T02:36:17.931Z",
+    "size": 1332
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/how-to-request-reviews.md": {
+    "hash": "b0e1a7910abf18344bd789d9d838c9714cbcbe9aa6f6202381e8934383318fd7",
+    "updatedAt": "2025-12-27T02:36:17.931Z",
+    "size": 3050
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/review-guidelines/README.md": {
+    "hash": "38a68ce36c37299df4be396eb69a042ff25fdbc397d0cfb800c52614b6b4dcea",
+    "updatedAt": "2025-12-27T02:36:17.931Z",
+    "size": 1787
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/performance/performance-optimization.md": {
+    "hash": "4d58dc5422cfb740dd476891b5bf3bc152f44e97c01c5c82200245ddb6445bd7",
+    "updatedAt": "2025-12-27T02:36:17.931Z",
+    "size": 6618
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/performance/performance-best-practices.md": {
+    "hash": "2cceed191fd0aaf61bdc4de0633335535418f922ca304ca131b0b2baa48f54b6",
+    "updatedAt": "2025-12-27T02:36:17.932Z",
+    "size": 3534
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/performance/configuring-caching-plugins.md": {
+    "hash": "8a941d93c7c53743bc1bd8d8fdb1cd91a9982c63e915eec4cebe54ba4ce61448",
+    "updatedAt": "2025-12-27T02:36:17.932Z",
+    "size": 4449
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/localization-translation/translating-woocommerce.md": {
+    "hash": "bff0e84e7f02e883a3878df6fd89d893cbba905d8c484a901ca89469c592b1c4",
+    "updatedAt": "2025-12-27T02:36:17.932Z",
+    "size": 9546
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/localization-translation/countries-and-subdivisions.md": {
+    "hash": "a3c4f9f9871306301ca4dcb40a5e1ae2e4625dd5a81c85143a64dacbca909e1b",
+    "updatedAt": "2025-12-27T02:36:17.932Z",
+    "size": 1254
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/data-management/logging.md": {
+    "hash": "332ed2cf29eb999064754a384f4a46cdad6dfbfcf5fa27acc7e6ad4f58830020",
+    "updatedAt": "2025-12-27T02:36:17.932Z",
+    "size": 15136
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/data-management/data-stores.md": {
+    "hash": "93a5984c32c1b682f27aeea1b65d10b1e85247ebbfdd7b5d8f00c0a3c04d59c1",
+    "updatedAt": "2025-12-27T02:36:17.933Z",
+    "size": 13827
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/data-management/data-storage.md": {
+    "hash": "529a4337dba9eaadd149c2ed0a6adfa0115b83e98fc0dc3464d087da3cbf9ad5",
+    "updatedAt": "2025-12-27T02:36:17.933Z",
+    "size": 1959
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/data-management/crud-objects.md": {
+    "hash": "731cc64a51e7bddd0d743a77ccdadb31fd2cf13d6c0bfc466928ed4e76fa18dc",
+    "updatedAt": "2025-12-27T02:36:17.933Z",
+    "size": 7824
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/data-management/adding-a-custom-field-to-variable-products.md": {
+    "hash": "96012dda833f961d35897730297b47eaa306cb35d36668b58318f276e8ce2d41",
+    "updatedAt": "2025-12-27T02:36:17.933Z",
+    "size": 12292
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/coding-standards/naming-conventions.md": {
+    "hash": "c7901a56f113fd7153da4d9a6bde31eb42d6d6b4b6738b1deb3e146151306ae9",
+    "updatedAt": "2025-12-27T02:36:17.934Z",
+    "size": 3064
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/coding-standards/grammar-punctuation-capitalization.md": {
+    "hash": "0c7373c5525715a1ca0992afdda7ab9d3bd3548e98cf03097a79883519305fcd",
+    "updatedAt": "2025-12-27T02:36:17.934Z",
+    "size": 9592
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/coding-standards/css-sass-naming-conventions.md": {
+    "hash": "f5f0673c4a9d650d102dd3f2ca0b9f05f77241eb068f11bae2b7ebe869f87d02",
+    "updatedAt": "2025-12-27T02:36:17.934Z",
+    "size": 2108
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/best-practices/coding-standards/coding-standards.md": {
+    "hash": "60a8bd6fdac0840d3e6eab4935c5cbe64ac533df3c21f3fc02265a4b87184557",
+    "updatedAt": "2025-12-27T02:36:17.934Z",
+    "size": 3154
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/rate-limiting.md": {
+    "hash": "5b6d99670f43f74a17c6d2fa03bf315f8e07a5b205e6dd0a03f30e8e0d2cf59e",
+    "updatedAt": "2025-12-27T02:36:17.934Z",
+    "size": 4683
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/nonce-tokens.md": {
+    "hash": "71dd2174a089fbf97a13c4121a87865ba6dcc88af8fa3b45c98548340b11a46f",
+    "updatedAt": "2025-12-27T02:36:17.935Z",
+    "size": 1758
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/guiding-principles.md": {
+    "hash": "8d0d56a9d186587f79c3a2b0e96a53e76dd62a13b91941bb45c9e1cbdf140b7c",
+    "updatedAt": "2025-12-27T02:36:17.935Z",
+    "size": 7747
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/cart-tokens.md": {
+    "hash": "8844177abe18b43a7beb38e1c600e5a6ce100773c3bbfdf4cf86d34c398eb53c",
+    "updatedAt": "2025-12-27T02:36:17.935Z",
+    "size": 1093
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/README.md": {
+    "hash": "1f43b07e157b8f98fa8c0996dadde686fae4dd2790c374a8eed36cdc035f511c",
+    "updatedAt": "2025-12-27T02:36:17.935Z",
+    "size": 16485
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/rest-api/README.md": {
+    "hash": "88dc5d36cad73cba72b2307250632a72923e7de55b3fb1f06fc5f4276bcb6b49",
+    "updatedAt": "2025-12-27T02:36:17.935Z",
+    "size": 5077
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/hooks/migrated-hooks.md": {
+    "hash": "0d0093816c854031055cfc0302798f2d520c85b7050d2df7f29a262e1f61a6ab",
+    "updatedAt": "2025-12-27T02:36:17.936Z",
+    "size": 8104
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/hooks/hook-alternatives.md": {
+    "hash": "a17c65aa2ced5271bafbb568bd50f67ba775ab19777bc7e750a13a7292423fad",
+    "updatedAt": "2025-12-27T02:36:17.936Z",
+    "size": 43597
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/hooks/README.md": {
+    "hash": "f352d4c802d968357993f31594c97c3c54230cb68fa9c3f5b7b938d072ce27d4",
+    "updatedAt": "2025-12-27T02:36:17.936Z",
+    "size": 610
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/validation.md": {
+    "hash": "994381bbbc9ef374c88303512becd3a85eb99f583a2d7b0f49bf52c47b61bb63",
+    "updatedAt": "2025-12-27T02:36:17.937Z",
+    "size": 9993
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/store-notices.md": {
+    "hash": "f346ecec3a893c0c55cb31fdc1c10fc627756460ab065ac9bbd0897f42b6e5b0",
+    "updatedAt": "2025-12-27T02:36:17.937Z",
+    "size": 3049
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/schema.md": {
+    "hash": "997655093d6ccef4bb07f53eb3050ce75c18555d6772092a10c009ebc4d807d3",
+    "updatedAt": "2025-12-27T02:36:17.937Z",
+    "size": 3773
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/query-state.md": {
+    "hash": "6e30e8773954e9a7857d938fdba03cca9d5e62c260e25c3ed8dbfc4188d88c19",
+    "updatedAt": "2025-12-27T02:36:17.937Z",
+    "size": 1692
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/payment.md": {
+    "hash": "86ba45da95cf57473ca8d2cba5b6ca0f9ef2188b00aa24de8f6ee4e50f69557a",
+    "updatedAt": "2025-12-27T02:36:17.937Z",
+    "size": 15342
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/collections.md": {
+    "hash": "3c2b39678211682284aef9850be274158c73b82da95ae3e3e27644d97bdf1508",
+    "updatedAt": "2025-12-27T02:36:17.938Z",
+    "size": 7201
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/checkout.md": {
+    "hash": "d2d8c28c3236d4986ed751cf2b213f6e71cd1ca6589d0e11a632aa6fff2a6264",
+    "updatedAt": "2025-12-27T02:36:17.938Z",
+    "size": 12109
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/cart.md": {
+    "hash": "89afb74ef7348f87a34a31643548b2936412a6e9eb1f96dc2580ccd2b0822c88",
+    "updatedAt": "2025-12-27T02:36:17.939Z",
+    "size": 30485
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/reference/data-store/README.md": {
+    "hash": "a84c984046fc051d5701aa30ab9317f65b3e073df15de9f973de98b7167a9865",
+    "updatedAt": "2025-12-27T02:36:17.939Z",
+    "size": 3338
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/product-collection-block/register-product-collection.md": {
+    "hash": "0edd5fd82cc3a2b11e9ba29b17ac52d79779224c35c8c4ac9ad7339d0a8bacf8",
+    "updatedAt": "2025-12-27T02:36:17.939Z",
+    "size": 16611
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/product-collection-block/dom-events.md": {
+    "hash": "c35a19632f71ba75241cc8956fa9606653a842c56ad36300e446a5e450ae110b",
+    "updatedAt": "2025-12-27T02:36:17.939Z",
+    "size": 3817
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/product-collection-block/README.md": {
+    "hash": "7ca6794884c1c4193c300904c2ca6fdda0f7414f3f3cb95cc103324c8b1ed06f",
+    "updatedAt": "2025-12-27T02:36:17.939Z",
+    "size": 504
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/removing-checkout-fields.md": {
+    "hash": "5540ef02f7f1767e5017ca39152cab825444920bf910a8905c34514cf57526d6",
+    "updatedAt": "2025-12-27T02:36:17.940Z",
+    "size": 6981
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/how-checkout-processes-an-order.md": {
+    "hash": "d478ca500e12765e6068351303d649c2f0d5db67749f1b0c22c69e6112356510",
+    "updatedAt": "2025-12-27T02:36:17.940Z",
+    "size": 13097
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/dom-events.md": {
+    "hash": "da75bbc21314639a7085b4c9018836f12c0492f18c31cd6c32d1518e96e7b9e6",
+    "updatedAt": "2025-12-27T02:36:17.940Z",
+    "size": 3570
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/available-slot-fills.md": {
+    "hash": "b323206dddabfb475b2d524d0712b07571872a14c05ad39902f662d89910fa3c",
+    "updatedAt": "2025-12-27T02:36:17.940Z",
+    "size": 7937
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/additional-checkout-fields.md": {
+    "hash": "919010f22eea6c701bb96270c510175b6efadc407a5923310e2f91ea27b430a5",
+    "updatedAt": "2025-12-27T02:36:17.940Z",
+    "size": 52767
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/README.md": {
+    "hash": "9894050d618c33ffb1b0719e33db2b154ed740dec3fbcdd2244c6db15b8fc790",
+    "updatedAt": "2025-12-27T02:36:17.941Z",
+    "size": 8407
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/products.md": {
+    "hash": "4ef88f2db3fe382c8891382204f0cb9c97501c05e86f64a5d86279a16362fc65",
+    "updatedAt": "2025-12-27T02:36:17.941Z",
+    "size": 18608
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-tags.md": {
+    "hash": "5836d4154e062a975b051644dc439d7ed580d962d78adade4943956b143b0972",
+    "updatedAt": "2025-12-27T02:36:17.941Z",
+    "size": 2154
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-reviews.md": {
+    "hash": "5e09f980cfa7319da3e9a20d746e06f28c5ea334fb658f0b7294ac4ed5b7d8fa",
+    "updatedAt": "2025-12-27T02:36:17.941Z",
+    "size": 3383
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-collection-data.md": {
+    "hash": "8d285463f9b36b7bad98ef027b6caa62a5c40af04c78da7b5513c591b079ab74",
+    "updatedAt": "2025-12-27T02:36:17.941Z",
+    "size": 3717
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-categories.md": {
+    "hash": "31673db291aee1cdba40a4a9a92b4de2192cf528b814ad17658f81ada81294b8",
+    "updatedAt": "2025-12-27T02:36:17.942Z",
+    "size": 4082
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-brands.md": {
+    "hash": "c0f56be7bf1b4ee842aea2970ab1c1b95a73b492b0a799171a3afd755368d7b4",
+    "updatedAt": "2025-12-27T02:36:17.942Z",
+    "size": 4177
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-attributes.md": {
+    "hash": "71889d062afa53f6970ede83dbd984822725618ecd0824303c73217c393d8573",
+    "updatedAt": "2025-12-27T02:36:17.942Z",
+    "size": 1099
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-attribute-terms.md": {
+    "hash": "cbb07ada0039f1bce82627f2611b61320a7ba828224de8efbfa57e1df543715c",
+    "updatedAt": "2025-12-27T02:36:17.942Z",
+    "size": 1137
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/order.md": {
+    "hash": "81c900777d5a7e79f7d1618e8626155d869a8acac51cfd4f9143414f2889881b",
+    "updatedAt": "2025-12-27T02:36:17.942Z",
+    "size": 7706
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/checkout.md": {
+    "hash": "17c3214dcaac544e5218346ca361d36bab493cbd44c72c4d454471e728095db4",
+    "updatedAt": "2025-12-27T02:36:17.943Z",
+    "size": 9131
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/checkout-order.md": {
+    "hash": "f0332f18020de7de1f8a98497f5b5d885e825d851147db0950371d1b89495de7",
+    "updatedAt": "2025-12-27T02:36:17.943Z",
+    "size": 4570
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/cart.md": {
+    "hash": "df07835b36b27838ea8acc3187c5f66b0cda119df8a436284f4f0825bf193a0f",
+    "updatedAt": "2025-12-27T02:36:17.943Z",
+    "size": 22793
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/cart-items.md": {
+    "hash": "331adac889337702c1e58cb360b1a3c2666d5a3da7fe202bb4a252cfebe08a8e",
+    "updatedAt": "2025-12-27T02:36:17.943Z",
+    "size": 11928
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/cart-coupons.md": {
+    "hash": "47fa4a4e7a5114bdff1ea249e0c1e5c71063b53e29803a16bf983c1d2ac7b564",
+    "updatedAt": "2025-12-27T02:36:17.943Z",
+    "size": 3239
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/extending-store-api/extend-store-api-update-cart.md": {
+    "hash": "2ac622bbd28d241c26651ee757eac413535437d6b5b19d447b67247f0c8c3732",
+    "updatedAt": "2025-12-27T02:36:17.944Z",
+    "size": 10228
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/extending-store-api/extend-store-api-formatters.md": {
+    "hash": "70ee6b383714b32980a9311c9eda505f01f659c47195bca53b7df885b9526f42",
+    "updatedAt": "2025-12-27T02:36:17.944Z",
+    "size": 8828
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/extending-store-api/extend-store-api-add-data.md": {
+    "hash": "5cca3eeb94951b885fd87044ff875d2915b73954957a1c0d0b3cae1dec9331ad",
+    "updatedAt": "2025-12-27T02:36:17.944Z",
+    "size": 11926
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/extending-store-api/extend-store-api-add-custom-fields.md": {
+    "hash": "1de36068dc15f859e75bbaaf4f9bdd576a49b6b739960d3b8ee2d6301f2ab7cb",
+    "updatedAt": "2025-12-27T02:36:17.944Z",
+    "size": 11542
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/extending-store-api/available-endpoints-to-extend.md": {
+    "hash": "561a6a30b012c58ba4272fa7abaab2cf4176000364bb863a642e8e75aa558170",
+    "updatedAt": "2025-12-27T02:36:17.945Z",
+    "size": 5319
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/extending-store-api/README.md": {
+    "hash": "83629c5b7fe828db67bb87a65dce23a37a72e08cf7f4888367b3357c12f6d612",
+    "updatedAt": "2025-12-27T02:36:17.945Z",
+    "size": 1188
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/totals-footer-item.md": {
+    "hash": "f6bee67421c134f5f3653f57429d8060085e6f33c9fb028bf50fcded44cdd1ae",
+    "updatedAt": "2025-12-27T02:36:17.945Z",
+    "size": 10185
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/order-summary-items.md": {
+    "hash": "a2c3f928d6e31016810b40b272cc1e757015bbd5259627f516586e0da17f0de5",
+    "updatedAt": "2025-12-27T02:36:17.945Z",
+    "size": 17705
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/coupons.md": {
+    "hash": "d85b8ccadeb7e4320c56bed4bfc1ba90ff714278112755623bbb1dd29e193969",
+    "updatedAt": "2025-12-27T02:36:17.945Z",
+    "size": 7075
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/checkout-and-place-order-button.md": {
+    "hash": "dfce8e44c808cb51cfbc57f59e05e9fb6a5b79c29c480effa69a178d7a37c7a8",
+    "updatedAt": "2025-12-27T02:36:17.946Z",
+    "size": 12837
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items.md": {
+    "hash": "5e2b5aba8259190d5f5413c491724d7f3200505bf24eed4c87b09b43e18c0429",
+    "updatedAt": "2025-12-27T02:36:17.946Z",
+    "size": 23364
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/additional-cart-checkout-inner-block-types.md": {
+    "hash": "4bb8618a77d69211bc25df68529864623c681da6eac9ef6b4b178aff89f28bbe",
+    "updatedAt": "2025-12-27T02:36:17.946Z",
+    "size": 3344
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/README.md": {
+    "hash": "c9d195ef348a278eaa4091b3e4d17cee827fb0b154ff3e575f7851eac0dd3796",
+    "updatedAt": "2025-12-27T02:36:17.946Z",
+    "size": 4137
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md": {
+    "hash": "8b04862f2412a3ca1be5417a7291ad75ecb1a37ef32e6b359ed3a8e2eebcdda1",
+    "updatedAt": "2025-12-27T02:36:17.947Z",
+    "size": 40286
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/filtering-payment-methods.md": {
+    "hash": "5896dce9d94d1dac83f6c399d3849aacdc8570a48753297cbc14b9e1425c33fb",
+    "updatedAt": "2025-12-27T02:36:17.947Z",
+    "size": 7246
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/checkout-flow-and-events.md": {
+    "hash": "813e3f7f94488c620ebf96b9ec5c331f2d58d729206f909715df86fc2e012436",
+    "updatedAt": "2025-12-27T02:36:17.947Z",
+    "size": 31807
+  }
+}
