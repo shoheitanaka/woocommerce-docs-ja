@@ -5,18 +5,18 @@ sidebar_label: Enable HPOS for large stores
 
 # A large store's guide to enable HPOS on WooCommerce
 
-大量のWooCommerceストアを運営していますか？HPOS (High Performance Order Storage) を有効にする作業に着手しようとしていますか？より多くの大容量ストアをHPOSに移行するため、このタスクに直面する可能性のある方々のためにガイドラインを文書化することにしました。
+大量のWooCommerceストアを運営していますか？HPOS (High Performance Order Storage) を有効にする作業に着手しようとしていますか？より多くの大量ストアをHPOSに移行していく中で、このタスクに直面するかもしれない方々のためにガイドラインを文書化することにしました。
 
 ## Before you begin
 
-1. [Intro to High-Performance Order Storage](/docs/features/high-performance-order-storage/)
-2. [High-Performance Order Storage Upgrade Recipe Book](/docs/features/high-performance-order-storage/recipe-book/)
-3. [High-Performance Order Storage: Backward Compatibility and Synchronization](https://developer.woocommerce.com/2022/09/29/high-performance-order-storage-backward-compatibility-and-synchronization/)
-4. [Intro to High-Performance Order Storage for non-devs](https://woocommerce.com/document/high-performance-order-storage/)
+1.[高性能オーダーストレージ入門](/docs/features/high-performance-order-storage/)
+2.[高性能注文ストレージ・アップグレード・レシピブック](/docs/features/high-performance-order-storage/recipe-book/)
+3.[高性能オーダーストレージ：下位互換性と同期](https://developer.woocommerce.com/2022/09/29/high-performance-order-storage-backward-compatibility-and-synchronization/)
+4.[非開発者のための高性能オーダーストレージ入門](https://woocommerce.com/document/high-performance-order-storage/)
 
-## Phase 1: Test out HPOS on a local development system
+## フェーズ 1: ローカルの開発システムで HPOS をテストする
 
-ローカルに開発用のセットアップがある場合は、開発用のセットアップでHPOSを試すことができます。このテストサイトでは、すべてのプラグインとカスタムコードが有効になっていること、そしてそれらの最新バージョンが動作していることを確認してください。テスト環境はできるだけ本番サイトを模倣してください。
+ローカルに開発用のセットアップがある場合は、開発用のセットアップでHPOSを試すことができます。このテスト・サイトでは、すべてのプラグインとカスタム・コードが有効になっていること、そしてそれらの最新バージョンが動作していることを確認してください。テスト環境はできるだけ本番サイトを模倣してください。
 
 少なくとも、以下のテストに集中することをお勧めする：
 
@@ -27,115 +27,114 @@ sidebar_label: Enable HPOS for large stores
 
 同期を有効にしても無効にしても、テストを繰り返すことができる。
 
-Remember that you can [toggle synchronization](https://woocommerce.com/document/high-performance-order-storage/#section-5) by going to **WooCommerce > Settings > Advanced > Features**, and toggling the "**Enable compatibility mode**" checkbox.
+WooCommerce > 設定 > 詳細 > 機能**で、"**互換モードを有効にする**"チェックボックスをオンにすることで、[同期を切り替える](https://woocommerce.com/document/high-performance-order-storage/#section-5)ことができます。
 
 ![Toggle synchronization](https://woocommerce.com/wp-content/uploads/2023/10/image-18.png)
 
-### Review: Phase 1 Checklist
+### レビュー第1段階チェックリスト
 
 - [ ] WooCommerce関連プラグインの最新バージョンをインストールし、テストサイトのコードが最新であることを確認してください。
 - [すべての支払い方法についてチェックアウト機能をテストする。
 - [テストチェックアウトの返金プロセスを確認します。
 - [WooCommerce Subscriptionsがインストールされている場合、定期購入と更新をテストします。
-- [同期の有効/無効の両方で重要なサイトフローをテストします。
+- 同期の有効/無効の両方で重要なサイトフローをテストします。
 
-## Phase 2: Migrations and testing on a staging site
+## フェーズ2：ステージングサイトでの移行とテスト
 
 ローカル環境での動作に満足したら、本番データベースをステージング・サイトにコピーして、HPOSの移行をテストしましょう。大規模なサイトでは、同期をオンに設定することをお勧めしますが、スケジュールされたジョブに移行を依存する代わりに、CLIを使用することで作業をスピードアップできます：具体的には、**wp wc hpos sync**コマンドです。
 
-最終的な（本番環境への）移行にどれくらいの時間がかかるかを知るには、このコマンドの実行にかかる時間を計ってください。例えば、900万件の注文があるテストストアの場合、完了までに約1週間かかりました。
+本番環境での）最終的な移行にどれくらいの時間がかかるかを知るには、このコマンドの実行にかかる時間を計ってください。例えば、900万件の注文があるテストストアでは、完了までに約1週間かかりました。
 
-For extra peace of mind, you can run `wp wc hpos verify_cot_data --verbose` to check that the data has migrated successfully.
-Once migration is complete on your staging site, and still with synchronization enabled, re-run the tests defined in Phase 1. **Disable the sync, and go through all testing again.**
+さらに安心するために、`wp wc hpos verify_cot_data --verbose`を実行して、データが正常に移行されたことを確認できます。
+ステージング・サイトでの移行が完了し、同期が有効になっている状態で、フェーズ1で定義したテストを再実行します。 **同期を無効にして、すべてのテストを再実行する。
 
-### Test out 3rd party and external systems
+### サードパーティや外部システムのテストアウト
 
 PHP以外のシステムがDBに直接接続されていて、通常のコード監査から漏れている可能性があります。データウェアハウス、出荷追跡システム、会計システムなどのシステムがある場合、それらが直接投稿テーブルを読み取っていないか確認してください。もしそうであれば、次のステップに進む前に更新する必要があります。
 
-### Review: Phase 2 Checklist
+### レビュー第2段階チェックリスト
 
-1. [ ] Make sure the code on your staging site is up to date by installing the latest versions of all WooCommerce-related plugins you're running.
-2. [ ] Migrate production database to staging site using CLI.
-3. [ ] Monitor migration time for insights into production migration duration.
-4. [ ] Test Phase 1 flows on the staging site with synchronization on.
-5. [ ] Optionally, verify data migration integrity using `wp wc hpos verify_cot_data --verbose`.
-6. [ ] Test Phase 1 flows on the staging site with synchronization off.
-7. [ ] Audit third-party systems to ensure they do not directly access posts tables.
+1.[WooCommerce 関連プラグインの最新バージョンをインストールし、ステージングサイトのコードが最新であることを確認してください。
+2.[CLI を使用して本番データベースをステージングサイトに移行します。
+3.[移行時間を監視し、本番サイトへの移行期間を把握する。
+4.[同期をオンにして、ステージング・サイトでフェーズ 1 フローをテストする。
+5.[必要に応じて、`wp wc hpos verify_cot_data --verbose`を使用してデータ移行の整合性を検証します。
+6. ] 同期をオフにして、ステージング・サイトでフェーズ 1 フローをテストする。
+7.[サードパーティシステムが投稿テーブルに直接アクセスしていないことを監査する。
 
-## Phase 3: Enabling HPOS on production
+## フェーズ3：本番環境でHPOSを有効にする
 
 ローカル・セットアップとステージング・サイトでのテストに満足したら、本番環境でHPOSを有効にするための作業を開始しましょう。
 
-### Enable synchronization, keeping posts authoritative
+### 投稿の権威性を保つために同期を有効にする
 
-前の段階と同様に、WordPressの投稿ストレージを注文ストレージとして使用しながら同期を有効にします。いつものように、**WooCommerce &gt; Settings &gt; Advanced &gt; Features** に行き、**Use the WordPress posts tables** が注文データストレージとして選択されていることを確認してください。
+前の段階と同様に、WordPressの投稿ストレージを注文ストレージとして使用しながら同期を有効にします。いつものように、**WooCommerce > Settings > Advanced > Features** に行き、**Use the WordPress posts tables** が注文データストレージとして選択されていることを確認してください。
 
+これにより、オーダーがHPOSテーブルに表示されるようになり、既存のオーダーも最新の状態に保たれます。
 
-これにより、HPOSテーブルにオーダーが表示されるようになり、既存のオーダーも最新の状態に保たれます。
-
-### Migrate and verify data
+### データの移行と検証
 
 ここで、"**互換モードを有効にする**"チェックボックスをオンにして同期を有効にし、移行を開始する。
 
-Right after enabling synchronization, you can start migrating past orders from the post tables to the new HPOS tables via CLI using the `wp wc hpos sync` command.
+同期を有効にした直後から、`wp wc hpos sync`コマンドを使用して、CLIでポスト・テーブルから新しいHPOSテーブルへの過去のオーダーの移行を開始することができます。
 
 エラーが表示された場合は、同期をオフにするか、同期CLIジョブを中断すると安全です。エラーが解決すれば（あるいはエラーが同期処理と無関係なものであれば）再開できます。
 
-Optionally, you can also run the verify command (`wp wc hpos verify_cot_data --verbose`) to check that data migrated is as expected.
+オプションで、verifyコマンド（`wp wc hpos verify_cot_data --verbose`）を実行して、移行されたデータが期待通りであることを確認することもできます。
 
 重要：CLIジョブが完了しても、まだ同期をオフにしないでください。本番サイトでは、読み取り時に同期を無効にしてから同期を完全に無効にするというように、段階的に同期を無効にしていくことをお勧めします。
 
 また、最近行った大量ストアの移行では、同期を有効（投稿はオーソリティ）にしたままでも、パフォーマンスに目立った悪影響は見られませんでした。
 
-### Switch to HPOS as authoritative
+### 権威あるHPOSに切り替える
 
-HPOSに切り替える時です。WooCommerce &gt; Settings &gt; Advanced &gt; Features** に移動し、HPOSをオーソリティに設定します（"**Use the WooCommerce orders tables**" を選択）。
+HPOSに切り替える時です。WooCommerce > Settings > Advanced > Features**に移動し、HPOSをオーソリティに設定します（"**Use the WooCommerce orders tables**"を選択）。
 
 前述したように、まだ同期をオフにしないでください。何らかの問題が発生した場合、システムは即座に投稿テーブルに戻すことができ、ダウンタイムは発生しません。
 
 前のフェーズで作成したすべての重要なフローを再確認し、テストを実行してください。様々な支払い方法と重要なフローでチェックアウトをテストしてください。注文の多い店舗では、自然に注文が入ることもあるはずなので、それらの注文をいくつか開き、すべての注文データが期待通りに入力されていることを確認しましょう。サポートやコンタクトチャネルにも目を光らせておきましょう。
 
-**ヒント**：もし、あなたのストアが自然にボリュームが少なくなる時期があるのであれば、その時に移行することをお勧めします。HPOSへの切り替えやポストへの復帰（必要な場合）はホットマイグレーションであり、計画的なダウンタイムは必要ありません。
+**ヒント**：もし、あなたのストアの取引量が自然に少なくなる時期があれば、その時に移行することをお勧めします。HPOSへの切り替えやポストへの復帰（必要な場合）はホットマイグレーションであり、計画的なダウンタイムは必要ありません。
 
-### Switch off sync on the read
+### 読み取り時の同期をオフにする
 
-ここまでのステップで、HPOSの同期を有効にしてきたが、次はHPOSの利点を最大限に活用するために、同期を徐々に無効にしていく。このプロセスの最初のステップは、読み込み時の同期を無効にすることである：
+ここまでのステップで、HPOSを同期オンにして有効にした。このプロセスの最初のステップは、読み込み時の同期を無効にすることである：
 
 ```php
 add_filter( 'woocommerce_hpos_enable_sync_on_read', '__return_false' );
 ```
 
-より多くのリソースを必要とするため、まず読み込み時の同期を無効にします。もしあなたのサイトが期待通りに動いていて、注文がいくつか入ってくるのが見えたら、読み込み時の同期を無効にすることができます。私たちは、HPOSをオーソリティに設定してからわずか6時間後に、大量ストアの移行でこれを無効にしました。
+より多くのリソースを必要とするため、まず読み込み時の同期を無効にします。もしあなたのサイトが期待通りに運営されていて、注文がいくつか入ってきているのを確認したら、読み込み時の同期を無効にすることができます。私たちは、HPOSをオーソリティに設定してからわずか6時間後に、大量ストアの移行でこれを無効にしました。
 
-### Switch off sync on write
+### 書き込み時の同期をオフにする
 
-すべてが期待通りに動いているなら、書き込み時の同期も無効にできる。読み込み時の同期がすでに無効になっている場合、設定から同期を完全に無効にすることができます。いつものように、**WooCommerce &gt; Settings &gt; Advanced &gt; Features** に行き、**"Enable compatibility mode "**のチェックを外してください。
+すべてが期待通りに動いているなら、書き込み時の同期も無効にできる。読み込み時の同期がすでに無効になっている場合、設定から同期を完全に無効にすることができます。いつものように、**WooCommerce > Settings > Advanced > Features** に行き、**"Enable compatibility mode "**のチェックを外してください。
 
-On our high-volume site, we fully disabled sync after 1 week. We still run some manual synchronization (via `wp wc hpos sync`) periodically so that we have the opportunity to fall back to posts immediately should anything happen.
+私たちの大容量サイトでは、1週間後に同期を完全に無効にしました。それでも定期的に手動同期（`wp wc hpos sync`経由）を行っており、何かあったときにすぐに投稿に戻れるようにしています。
 
-Keep in mind that disabling synchronization does not remove the ability to revert to the posts datastore, but you'd have to wait for the migration jobs to backfill the posts table with any data in the HPOS tables that they are missing. As always, `wp wc hpos sync` can also be used for this purpose.
+同期を無効にしてもpostsデータストアに戻す機能がなくなるわけではありませんが、移行ジョブがpostsテーブルにHPOSテーブルに欠落しているデータを埋め戻すのを待たなければならないことに注意してください。いつものように、`wp wc hpos sync`もこの目的に使用できます。
 
-同期を完全に無効にした状態で、様々な重要なフローをテストし、注文が期待通りに入ってきていることを確認し、サポートとコンタクトチャンネルに目を光らせてください。
+同期を完全に無効にした状態で、様々な重要なフローをテストし、注文が期待通りに入ってきているかをチェックし、サポートとコンタクトチャンネルに目を光らせてください。
 
-### Review: Phase 3 Checklist
+### レビュー第3段階チェックリスト
 
-1. [ ] Plan to be online and monitoring your live site for a period of time.
-2. [ ] Enable synchronization with posts set as authoritative: in **WooCommerce > Settings > Advanced > Features** > select "**Use the WordPress posts tables**".
-3. [ ] Start migration via CLI using the `wp wc hpos sync` command.
-4. [ ] Monitor for errors during migration; halt or resume as necessary.
-5. [ ] Verify migrated data integrity using the verify command `wp wc hpos verify_cot_data`.
-6. [ ] Enable synchronization with HPOS set as authoritative: in **WooCommerce > Settings > Advanced > Features** > select "Use the **WooCommerce orders tables**".
-7. [ ] Test all critical flows, perform checkouts with multiple payment methods, and verify order data accuracy.
-8. [ ] Monitor support tickets for any issues.
-9. [ ] Disable synchronization on read using the provided snippet: `add_filter( 'woocommerce_hpos_enable_sync_on_read', '__return_false' );`
-10. [ ] Monitor site performance.
-11. [ ] After one week of stable operation, fully disable sync.
-12. [ ] Continuously monitor site performance, order processing, and support tickets.
+1.[一定期間、オンラインでライブサイトを監視することを計画してください。
+2. ] 権威として設定された投稿との同期を有効にする: **WooCommerce > Settings > Advanced > Features** > "**Use the WordPress posts tables**" を選択してください。
+3.[CLI で `wp wc hpos sync` コマンドを使用して移行を開始します。
+4.[移行中のエラーを監視し、必要に応じて停止または再開します。
+5.[検証コマンド `wp wc hpos verify_cot_data` を使用して、移行したデータの整合性を検証します。
+6.[WooCommerce > Settings > Advanced > Features** > Use the **WooCommerce orders tables** を選択してください。
+7.[すべての重要なフローをテストし、複数の支払い方法でチェックアウトを実行し、注文データの正確性を確認します。
+8.[問題がないかサポートチケットを監視する。
+9.[提供されたスニペットを使用して、読み取り時の同期を無効にする：`add_filter( 'woocommerce_hpos_enable_sync_on_read', '__return_false' );`を使用する。
+10. ] サイトのパフォーマンスを監視する。
+11.[ ] 1週間安定したら、同期を完全に無効にする。
+12.[サイトパフォーマンス、注文処理、サポートチケットを継続的に監視する。
 
-### General guidelines
+### 一般的なガイドライン
 
 1.[テスト環境をできるだけ本番環境に近づける。
 2.[テスト中や移行中に発生した問題はすべて文書化する。
 3.[テストの進捗と結果について、利害関係者と定期的にコミュニケーションをとる。
-4.[問題が発生した場合に投稿に戻すことができるように、フォールバックシナリオの可能性を計画する。
+4.問題が発生した場合に投稿に戻すことができるように、フォールバックシナリオの可能性を計画する。
 

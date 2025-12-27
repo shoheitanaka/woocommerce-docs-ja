@@ -14,7 +14,7 @@ ExtendSchemaを使用するには、`schema_callback`と`data_callback`の2つ�
 
 以下の例では、Cart エンドポイントを使用しています。[渡されたパラメータを参照](./available-endpoints-to-extend.md)
 
-**注：以下の「考慮すべきこと」を必ずお読みください。
+**注：以下の「考慮すべき点」を必ずお読みください。
 
 ```php
 use Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema;
@@ -49,7 +49,7 @@ function my_schema_callback() {
 }
 ```
 
-データ・コールバックとスキーマ・コールバックはパラメータを受け取ることもできる：
+データ・コールバックとスキーマ・コールバックはパラメーターを受け取ることもできる：
 
 ```php
 
@@ -104,7 +104,7 @@ add_action( 'woocommerce_blocks_loaded', function() {
 
 ## API定義
 
--   __inline_code_0__：カスタムエンドポイントにデータを登録するために使用される。引数の配列を受け取ります：
+-   `ExtendSchema::register_endpoint_data`：カスタムエンドポイントにデータを登録するために使用される。引数の配列を受け取ります：
 
 | 属性 | タイプ | 必須 | 説明 |
 | :---------------- | :------- | :----------------------:| :--------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -112,7 +112,7 @@ add_action( 'woocommerce_blocks_loaded', function() {
 | プラグインの名前空間。StoreAPIのレスポンスで、この名前空間の下でデータが利用可能になります。                                                     |
 | コールバック｜はい｜データを配列で返すコールバックです。                                                                                                     |
 | `schema_callback` | callback | Yes | データの形状を返すコールバック。                                                                                                      |
-| `schema_type` | string | No (default: `ARRAY_A` ) | データの型。オブジェクト（キー =&gt; 値）を追加する場合は、`ARRAY_A`でなければなりません。アイテムのリストを追加する場合は、`ARRAY_N`でなければなりません。|
+| `schema_type` | string | No (default: `ARRAY_A` ) | データの型。オブジェクト（キー => 値）を追加する場合は、`ARRAY_A`でなければなりません。アイテムのリストを追加する場合は、`ARRAY_N`でなければなりません。|
 
 ## ♪まとめよう
 

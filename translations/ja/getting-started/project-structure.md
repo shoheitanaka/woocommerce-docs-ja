@@ -10,7 +10,7 @@ sidebar_position: 1
 
 WooCommerceはWordPressのコード標準とガイドラインに準拠しているため、[WordPress開発](https://learn.wordpress.org/tutorial/introduction-to-wordpress/)と[PHP](https://www.php.net/)に精通していることが最善です。現在、WooCommerceにはPHP 7.4以降が必要です。
 
-WooCommerce [hooks and filters](https://woocommerce.com/document/introduction-to-hooks-actions-and-filters/?utm_source=wooextdevguide)の知識と理解を深めることで、コアファイルを編集することなくコードを追加・変更できるようになります。WordPressのフックとフィルターについては、[WordPressプラグイン開発ハンドブック](https://developer.wordpress.org/plugins/hooks/)で詳しく説明されています。
+[WooCommerce hooks and filters](https://woocommerce.com/document/introduction-to-hooks-actions-and-filters/?utm_source=wooextdevguide)の知識と理解を深めることで、コアファイルを編集することなくコードを追加・変更できるようになります。WordPressのフックとフィルターについては、[WordPressプラグイン開発ハンドブック](https://developer.wordpress.org/plugins/hooks/)で詳しく説明されています。
 
 ## 推薦図書
 
@@ -41,9 +41,9 @@ WordPressのインストールにWooCommerceを追加する場合、WordPressの
 各プラグイン、パッケージ、ツールには、プロジェクト固有の依存関係とスクリプトを含む`package.json`ファイルがあります。ほとんどのプロジェクトでは、`README.md`ファイルにもプロジェクト固有のセットアップ手順やドキュメントが含まれています。
 
 * [**Plugins**](http://github.com/woocommerce/woocommerce/tree/trunk/plugins):私たちのリポジトリには、WooCommerceに関連するプラグイン、またはWooCommerceの開発を支援するプラグインが含まれています。  
-    * [**WooCommerce [Core**](http://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce):WooCommerceのコアプラグインはpluginsディレクトリにあります。  
+    * [**WooCommerce Core**](http://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce):WooCommerceのコアプラグインはpluginsディレクトリにあります。  
 * [**Packages**](http://github.com/woocommerce/woocommerce/tree/trunk/packages):packagesディレクトリには、コミュニティのために提供されるすべての[PHP](http://github.com/woocommerce/woocommerce/tree/trunk/packages/php)と[JavaScript](http://github.com/woocommerce/woocommerce/tree/trunk/packages/js)が含まれています。これらのいくつかは内部依存であり、`internal-`プレフィックスでマークされています。  
-* [**Tools**](http://github.com/woocommerce/woocommerce/tree/trunk/tools):私たちのリポジトリにはツールも増えています。これらの多くはmonorepoで使用するユーティリティやスクリプトを意図していますが、このディレクトリには外部のツールも含まれることがあります。
+* [**Tools**](http://github.com/woocommerce/woocommerce/tree/trunk/tools):私たちのリポジトリにはツールも増えています。これらの多くはmonorepoで使用するユーティリティやスクリプトを意図したものですが、このディレクトリには外部のツールも含まれることがあります。
 
 モノレポの仕組みについてもっと知りたい方は、[こちらのガイドをご覧ください](http://github.com/woocommerce/woocommerce/tree/trunk/tools/README.md)。
 

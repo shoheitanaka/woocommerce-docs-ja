@@ -1,7 +1,8 @@
 ---
 post_title: Useful core functions
 ---
-# 便利なコア機能
+
+# Useful core functions
 
 WooCommerceのコア関数はフロントエンドと管理画面の両方で利用できます。これらは`includes/wc-core-functions.php`にあり、プラグインのテーマで使用することができます。
 
@@ -195,7 +196,7 @@ wc_get_endpoint_url( $endpoint, $value = '', $permalink = '' )
 
 ### wc_get_products
 
-この関数は、特定のパラメータに基づいて製品を検索する標準的な方法です。
+この関数は、特定のパラメーターに基づいて商品を検索する標準的な方法である。
 
 ```php
 wc_get_products( $args )

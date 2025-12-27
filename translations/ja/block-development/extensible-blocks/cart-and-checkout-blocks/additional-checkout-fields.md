@@ -3,7 +3,8 @@ post_title: Additional checkout fields
 sidebar_label: Additional checkout fields
 sidebar_position: 4
 ---
-# 追加のチェックアウトフィールド
+
+# Additional checkout fields
 
 開発者やマーチャントにとって一般的なユースケースは、顧客や注文に関する追加データを収集するために、チェックアウトフォームに新しいフィールドを追加することです。
 
@@ -25,7 +26,7 @@ sidebar_position: 4
 
 現在、連絡先情報セクションはフォームの一番上に表示されます。`email`フィールドとその他のフィールドが含まれます。
 
-![Eメールと追加のチェックアウトフィールド（オプション）の2つのフィールドがレンダリングされた連絡先情報セクションを表示する](https://github.com/woocommerce/woocommerce/assets/5656702/097c2596-c629-4eab-9604-577ee7a14cfe)
+![Showing the contact information section with two fields rendered, email and an additional checkout field (optional)](https://github.com/woocommerce/woocommerce/assets/5656702/097c2596-c629-4eab-9604-577ee7a14cfe)
 
 ここでレンダリングされたフィールドは買い物客のアカウントに保存されます。これらのフィールドは買い物客の "アカウント詳細 "セクションに表示され、編集可能です。
 
@@ -33,7 +34,7 @@ sidebar_position: 4
 
 住所」セクションには現在、配送先住所と請求先住所のフォームがあります。これらのフォームに表示されるように、追加のチェックアウトフィールドを登録することができます。
 
-![下部にチェックアウト欄が追加された配送先住所フォーム](https://github.com/woocommerce/woocommerce/assets/5656702/746d280f-3354-4d37-a78a-a2518eb0e5de)
+![The shipping address form showing the additional checkout field at the bottom](https://github.com/woocommerce/woocommerce/assets/5656702/746d280f-3354-4d37-a78a-a2518eb0e5de)
 
 ここで登録されたフィールドは、顧客と注文の両方に保存されます。
 
@@ -49,17 +50,17 @@ sidebar_position: 4
 
 ここでレンダリングされたフィールドは注文に保存されます。これらは顧客の保存された住所やアカウント情報の一部にはなりません。新しい注文には、以前に使用された値は入力されません。
 
-![追加のチェックアウトフィールドを含む注文情報セクション](https://github.com/woocommerce/woocommerce/assets/5656702/295b3048-a22a-4225-96b0-6b0371a7cd5f)
+![The order information section containing an additional checkout field](https://github.com/woocommerce/woocommerce/assets/5656702/295b3048-a22a-4225-96b0-6b0371a7cd5f)
 
 デフォルトでは、このブロックはチェックアウトフォームの最後のステップとしてレンダリングされますが、エディタのGutenbergブロックコントロールを使って移動させることができます。
 
-![投稿エディターの注文情報ブロック"](https://github.com/woocommerce/woocommerce/assets/5656702/05a3d7d9-b3af-4445-9318-443ae2c4d7d8)
+![The order information block in the post editor"](https://github.com/woocommerce/woocommerce/assets/5656702/05a3d7d9-b3af-4445-9318-443ae2c4d7d8)
 
 ## 値へのアクセス
 
 追加フィールドは、顧客メタと注文メタの両方で個別のメタキーに保存されます。ヘルパーメソッドを使うか、メタキーを直接使ってアクセスすることができます。
 
-住所フィールドでは、配送用と請求用の2つの値が保存されます。もし顧客が'Use same address for billing` then the values will be the same, but still saved independently of each other.
+For address fields, two values are saved: one for shipping, and one for billing. If the customer has selected 'Use same address for billing` then the values will be the same, but still saved independently of each other.
 
 For contact and order fields, only one value is saved per field.
 
@@ -69,29 +70,11 @@ For contact and order fields, only one value is saved per field.
 
 To access a customer billing and/or shipping value:
 
-```php
-use Automattic\WooCommerce\Blocks\Package;
-use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
-
-$field_id = 'my-plugin-namespace/my-field';
-$customer = wc()->customer; // Or new WC_Customer( $id )
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$my_customer_billing_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'billing' );
-$my_customer_shipping_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'shipping' );
-```
+__CODE_BLOCK_0__
 
 To access an order field:
 
-```php
-use Automattic\WooCommerce\Blocks\Package;
-use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
-
-$field_id = 'my-plugin-namespace/my-field';
-$order = wc_get_order( 1234 );
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$my_order_billing_field = $checkout_fields->get_field_from_object( $field_id, $order, 'billing' );
-$my_order_shipping_field = $checkout_fields->get_field_from_object( $field_id, $order, 'shipping' );
-```
+__CODE_BLOCK_1__
 
 After an order is placed, the data saved to the customer and the data saved to the order will be the same. Customers can change the values for _future_ orders, or from within their My Account page. If you're looking at a customer value at a specific point in time (i.e. when the order was placed), access it from the order object, if you're looking for the most up to date value regardless, access it from the customer object.
 
@@ -105,80 +88,46 @@ For logged-in customers, the value is only persisted once they place an order. A
 
 If you're at a place order hook, doing this will return previous data (not the currently inserted one):
 
-```php
-$customer = new WC_Customer( $order->customer_id ); // Or new WC_Customer( 1234 )
-$my_customer_billing_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'billing' );
-```
+__CODE_BLOCK_2__
 
 Instead, always access the latest data if you want to run some extra validation/data-moving:
 
-```php
-$customer = wc()->customer // This will return the current customer with its session.
-$my_customer_billing_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'billing' );
-```
+__CODE_BLOCK_3__
 
 #### Accessing all fields
 
 You can use `get_all_fields_from_object` to access all additional fields saved to an order or a customer.
 
-```php
-use Automattic\WooCommerce\Blocks\Package;
-use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
-
-$order = wc_get_order( 1234 );
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$order_additional_billing_fields = $checkout_fields->get_all_fields_from_object( $order, 'billing' );
-$order_additional_shipping_fields = $checkout_fields->get_all_fields_from_object( $order, 'shipping' );
-$order_other_additional_fields = $checkout_fields->get_all_fields_from_object( $order, 'other' ); // Contact and Order are saved in the same place under the additional group.
-```
+__CODE_BLOCK_4__
 
 This will return an array of all values, it will only include fields currently registered, if you want to include fields no longer registered, you can pass a third `true` parameter.
 
-```php
-
-$order = wc_get_order( 1234 );
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$order_additional_billing_fields = $checkout_fields->get_all_fields_from_object( $order, 'billing' ); // array( 'my-plugin-namespace/my-field' => 'my-value' );
-
-$order_additional_billing_fields = $checkout_fields->get_all_fields_from_object( $order, 'billing', true  ); // array( 'my-plugin-namespace/my-field' => 'my-value', 'old-namespace/old-key' => 'old-value' );
-```
+__CODE_BLOCK_5__
 
 ### Accessing values directly
 
 While not recommended, you can use the direct meta key to access certain values, this is useful for external engines or page/email builders who only provide access to meta values.
 
-Values are saved under a predefined prefix, this is needed to able to query fields without knowing which ID the field was registered under, for a field with key `'my-'を選択した場合。plugin-namespace/my-field」`, it's meta key will be the following if it's an address field:
+Values are saved under a predefined prefix, this is needed to able to query fields without knowing which ID the field was registered under, for a field with key `'my-plugin-namespace/my-field'`, it's meta key will be the following if it's an address field:
 
-- `wc_billing/my-plugin-namespace/my-field`
-- `wc_shipping/my-plugin-namespace/my-field`
+- `_wc_billing/my-plugin-namespace/my-field`
+- `_wc_shipping/my-plugin-namespace/my-field`
 
 Or the following if it's a contact/order field:
 
-- `wc_other/my-plugin-namespace/my-fieldfield`.
+- `_wc_other/my-plugin-namespace/my-field`.
 
 Those prefixes are part of `CheckoutFields` class, and can be accessed using the following constants:
 
-```php
-echo ( CheckoutFields::BILLING_FIELDS_PREFIX ); // _wc_billing/
-echo ( CheckoutFields::SHIPPING_FIELDS_PREFIX ); // _wc_shipping/
-echo ( CheckoutFields::OTHER_FIELDS_PREFIX ); // _wc_other/
-```
+__CODE_BLOCK_6__
 
 `CheckoutFields` provides a couple of helpers to get the group name or key based on one or the other:
 
-```php
-CheckoutFields::get_group_name( "_wc_billing" ); // "billing"
-CheckoutFields::get_group_name( "_wc_billing/" ); // "billing"
-
-CheckoutFields::get_group_key( "shipping" ); // "_wc_shipping/"
-```
+__CODE_BLOCK_7__
 
 Use cases here would be to build the key name to access the meta directly:
 
-```php
-$key      = CheckoutFields::get_group_key( "other" ) . 'my-plugin/is-opt-in';
-$opted_in = get_user_meta( 123, $key, true ) === "1" ? true : false;
-```
+__CODE_BLOCK_8__
 
 #### Checkboxes values
 
@@ -211,34 +160,24 @@ These options apply to all field types (except in a few circumstances which are 
 | Option name         | Description                                                                                                                         | Required? | Example                                      | Default value                                                                                                                                                                                                                                                                                  |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `id`                | The field's ID. This should be a unique identifier for your field. It is composed of a namespace and field name separated by a `/`. | Yes       | `plugin-namespace/how-did-you-hear`          | No default - this must be provided.                                                                                                                                                                                                                                                            |
-| `label`             | The label shown on your field. This will be the placeholder too.                                                                    | Yes       | `どのようにして当サイトをお知りになりましたか？(オプション)`                 | No default - this must be provided.                                                                                                                                                                                                                                                            |
-| `optionalLabel`     | The label shown on your field if it is optional. This will be the placeholder too.                                                  | No        | `どのようにして当サイトをお知りになりましたか？(Optional)`      | The default value will be the value of `label` with `(optional)` appended.                                                                                                                                                                                                                     |
+| `label`             | The label shown on your field. This will be the placeholder too.                                                                    | Yes       | `How did you hear about us?`                 | No default - this must be provided.                                                                                                                                                                                                                                                            |
+| `optionalLabel`     | The label shown on your field if it is optional. This will be the placeholder too.                                                  | No        | `How did you hear about us? (Optional)`      | The default value will be the value of `label` with `(optional)` appended.                                                                                                                                                                                                                     |
 | `location`          | The location to render your field.                                                                                                  | Yes       | `contact`, `address`, or `order`        | No default - this must be provided.                                                                                                                                                                                                                                                            |
 | `type`              | The type of field you're rendering. It defaults to `text` and must match one of the supported field types.                          | No        | `text`, `select`, or `checkbox`              | `text`                                                                                                                                                                                                                                                                                         |
 | `attributes`        | An array of additional attributes to render on the field's input element. This is _not_ supported for `select` fields.              | No        | `[	'data-custom-data' => 'my-custom-data' ]` | `[]`                                                                                                                                                                                                                                                                                           |
-| `required`          | Can be a boolean or a JSON Schema array. If boolean and `true`, the shopper _must_ provide a value for this field during the checkout process. For checkbox fields, the shopper must check the box to place the order. If a JSON Schema array, the field will be required based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `true` or `["type" => "object","properties" => ...]]` | `false` |
-| `hidden`            | Can be a boolean or a JSON Schema array. Must be `false` when used as a boolean. If a JSON Schema array, the field will be hidden based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `false` or `["type" => "object", "properties" => ...]]` | `false` |
+| `required`          | Can be a boolean or a JSON Schema array. If boolean and `true`, the shopper _must_ provide a value for this field during the checkout process. For checkbox fields, the shopper must check the box to place the order. If a JSON Schema array, the field will be required based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `true` or `["type" => "object", "properties" => [...]]` | `false` |
+| `hidden`            | Can be a boolean or a JSON Schema array. Must be `false` when used as a boolean. If a JSON Schema array, the field will be hidden based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `false` or `["type" => "object", "properties" => [...]]` | `false` |
 | `validation`        | An array of JSON Schema objects that define validation rules for the field. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `[{"type": "object", "properties": {...}}]` | `[]` |
 | `sanitize_callback` | A function called to sanitize the customer provided value when posted.                                                              | No        | See example below                            | By default the field's value is returned unchanged.                                                                                                                                                                                                                          |
 | `validate_callback` | A function called to validate the customer provided value when posted. This runs _after_ sanitization.                              | No        | See example below                            | The default validation function will add an error to the response if the field is required and does not have a value. [See the default validation function.](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Blocks/Domain/Services/CheckoutFields.php#L270-L281) |
 
 ##### Example of `sanitize_callback`. This function will remove spaces from the value <!-- omit from toc -->
 
-```php
-'sanitize_callback' => function( $field_value ) {
-	return str_replace( ' ', '', $field_value );
-},
-```
+__CODE_BLOCK_9__
 
 ##### Example of `validate_callback`. This function will check if the value is an email <!-- omit from toc -->
 
-```php
-'validate_callback' => function( $field_value ) {
-	if ( ! is_email( $field_value ) ) {
-		return new WP_Error( 'invalid_alt_email', 'Please ensure your alternative email matches the correct format.' );
-	}
-},
-```
+__CODE_BLOCK_10__
 
 #### Options for `text` fields
 
@@ -255,35 +194,19 @@ You can set a placeholder to be shown on the select by passing a `placeholder` v
 | Option name | Description | Required? | Example        | Default value |
 |-----|-----|-----|----------------|--------------|
 | `options` | An array of options to show in the select input. Each options must be an array containing a `label` and `value` property. Each entry must have a unique `value`. Any duplicate options will be removed. The `value` is what gets submitted to the server during checkout and the `label` is simply a user-friendly representation of this value. It is not transmitted to the server in any way. | Yes | see below | No default - this must be provided. |
-| `placeholder` | If this value is set, the shopper will see this option in the select. If the select is required, the shopper cannot select this option. | No | `Select` | Select a $label |
+| `placeholder` | If this value is set, the shopper will see this option in the select. If the select is required, the shopper cannot select this option. | No | `Select a role` | Select a $label |
 
-##### Example of `オプション` value
+##### Example of `options` value
 
-```php
-[
+__CODE_BLOCK_11__
 
-	[
-		'value' => 'store_1',
-		'label' => 'Our London Store'
-	],
-	[
-		'value' => 'store_2',
-		'label' => 'Our Paris Store'
-	],
-	[
-		'value' => 'store_3',
-		'label' => 'Our New York Store'
-	]
-]
-```
-
-#### Options for `チェックボックス` fields
+#### Options for `checkbox` fields
 
 As well as the options above, checkbox field support showing an error message if it's required and not checked.
 
 | Option name     | Description                                                                  | Required? | Example                                                      | Default value |
 |-----------------|------------------------------------------------------------------------------|-----------|--------------------------------------------------------------|---|
-| `エラーメッセージ` | A custom message to show if the box is unchecked.                            | No | `ご注文の前に18歳以上であることを確認してください。` | `次に進む場合は、このボックスにチェックを入れてください。` |
+| `error_message` | A custom message to show if the box is unchecked.                            | No | `You must confirm you are over 18 before placing the order.` | `Please check this box if you want to proceed.` |
 
 ### Attributes
 
@@ -312,30 +235,7 @@ Certain attributes are not passed through to the field intentionally, these are 
 
 This example demonstrates rendering a text field in the address section:
 
-```php
-add_action(
-	'woocommerce_init',
-	function() {
-		woocommerce_register_additional_checkout_field(
-			array(
-				'id'            => 'namespace/gov-id',
-				'label'         => 'Government ID',
-				'optionalLabel' => 'Government ID (optional)',
-				'location'      => 'address',
-				'required'      => true,
-				'attributes'    => array(
-					'autocomplete'     => 'government-id',
-					'aria-describedby' => 'some-element',
-					'aria-label'       => 'custom aria label',
-					'pattern'          => '[A-Z0-9]{5}', // A 5-character string of capital letters and numbers.
-					'title'            => 'Title to show on hover',
-					'data-custom'      => 'custom data',
-				),
-			),
-		);
-	}
-);
-```
+__CODE_BLOCK_12__
 
 This results in the following address form (the billing form will be the same):
 
@@ -343,33 +243,13 @@ This results in the following address form (the billing form will be the same):
 
 The rendered markup looks like this:
 
-```html
-	<input type="text" id="shipping-namespace-gov-id" autocapitalize="off"
-       autocomplete="government-id" aria-label="custom aria label"
-       aria-describedby="some-element" required="" aria-invalid="true"
-       title="Title to show on hover" pattern="[A-Z0-9]{5}"
-       data-custom="custom data" value="">
-```
+__CODE_BLOCK_13__
 
 ### Rendering a checkbox field
 
 This example demonstrates rendering a checkbox field in the contact information section:
 
-```php
-add_action(
-	'woocommerce_init',
-	function() {
-		woocommerce_register_additional_checkout_field(
-			array(
-				'id'       => 'namespace/marketing-opt-in',
-				'label'    => 'Do you want to subscribe to our newsletter?',
-				'location' => 'contact',
-				'type'     => 'checkbox',
-			)
-		);
-	}
-);
-```
+__CODE_BLOCK_14__
 
 This results in the following contact information section:
 
@@ -381,40 +261,7 @@ Note that because an `optionalLabel` was not supplied, the string `(optional)` i
 
 This example demonstrates rendering a select field in the order information section:
 
-```php
-add_action(
-	'woocommerce_init',
-	function() {
-		woocommerce_register_additional_checkout_field(
-			array(
-				'id'          => 'namespace/how-did-you-hear-about-us',
-				'label'       => 'How did you hear about us?',
-				'placeholder' => 'Select a source',
-				'location'    => 'order',
-				'type'        => 'select',
-				'options'     => [
-					[
-						'value' => 'google',
-						'label' => 'Google'
-					],
-					[
-						'value' => 'facebook',
-						'label' => 'Facebook'
-					],
-					[
-						'value' => 'friend',
-						'label' => 'From a friend'
-					],
-					[
-						'value' => 'other',
-						'label' => 'Other'
-					],
-				]
-			)
-		);
-	}
-);
-```
+__CODE_BLOCK_15__
 
 This results in the order information section being rendered like so:
 
@@ -454,20 +301,7 @@ To run a custom sanitization function for a field you can use the `sanitize_call
 
 This example shows how to remove whitespace and capitalize all letters in the example Government ID field we added above.
 
-```php
-add_action(
-	'woocommerce_sanitize_additional_field',
-	function ( $field_value, $field_key ) {
-		if ( 'namespace/gov-id' === $field_key ) {
-			$field_value = str_replace( ' ', '', $field_value );
-			$field_value = strtoupper( $field_value );
-		}
-		return $field_value;
-	},
-	10,
-	2
-);
-```
+__CODE_BLOCK_16__
 
 ### Validation
 
@@ -493,23 +327,9 @@ When adding your error to the `WP_Error` object, it should have a unique error c
 
 ###### Example of single-field validation
 
-The below example shows how to apply custom validation to the `namespace/gov-ID` text field from above. The code here ensures the field is made up of 5 characters, either upper-case letters or numbers. The sanitization function from the example above ensures that all whitespace is removed and all letters are capitalized, so this check is an extra safety net to ensure the input matches the pattern.
+The below example shows how to apply custom validation to the `namespace/gov-id` text field from above. The code here ensures the field is made up of 5 characters, either upper-case letters or numbers. The sanitization function from the example above ensures that all whitespace is removed and all letters are capitalized, so this check is an extra safety net to ensure the input matches the pattern.
 
-```php
-add_action(
-	'woocommerce_validate_additional_field',
-	function ( WP_Error $errors, $field_key, $field_value ) {
-		if ( 'namespace/gov-id' === $field_key ) {
-			$match = preg_match( '/[A-Z0-9]{5}/', $field_value );
-			if ( 0 === $match || false === $match ) {
-				$errors->add( 'invalid_gov_id', 'Please ensure your government ID matches the correct format.' );
-			}
-		}
-	},
-	10,
-	3
-);
-```
+__CODE_BLOCK_17__
 
 It is important to note that this action must _add_ errors to the `WP_Error` object it receives. Returning a new `WP_Error` object or any other value will result in the errors not showing.
 
@@ -521,39 +341,9 @@ There are cases where the validity of a field depends on the value of another fi
 
 To solve this, it is possible to validate a field in the context of the location it renders in. The other fields in that location will be passed to this action.
 
-##### Using the `woocommerce_blocks_validate_location_{location}_fields__INLI
+##### Using the `woocommerce_blocks_validate_location_{location}_fields` action
 
-```php
-add_filter(
-	"woocommerce_get_default_value_for_my-plugin-namespace/address-field",
-	function ( $value, $group, $wc_object ) {
-
-		if ( 'billing' === $group ) {
-			$my_plugin_key = 'existing_billing_address_field_key';
-		} else {
-			$my_plugin_key = 'existing_shipping_address_field_key';
-		}
-
-		return $wc_object->get_meta( $my_plugin_key );
-	},
-	10,
-	3
-);
-
-add_filter(
-	"woocommerce_get_default_value_for_my-plugin-namespace/my-other-field",
-	function ( $value, $group, $wc_object ) {
-
-		$my_plugin_key = 'existing_order_field_key';
-
-		return $wc_object->get_meta( $my_plugin_key );
-	},
-	10,
-	3
-);
-```
-
-NE_CODE_126__address`, `contact`, and `order`). For `address` it fires twice, once for the billing address and once for the shipping address.
+This action will be fired for each location that additional fields can render in (`address`, `contact`, and `order`). For `address` it fires twice, once for the billing address and once for the shipping address.
 
 The callback receives the keys and values of the other additional fields in the same location.
 
@@ -578,22 +368,11 @@ There are several places where these hooks are fired.
 
 ##### Example of location validation
 
-In this example, assume there is another field registered alongside the `namespace/gov-id` called ` 名前空間/確認/政府id`. This field will be a confirmation for the Government ID field.
+In this example, assume there is another field registered alongside the `namespace/gov-id` called `namespace/confirm-gov-id`. This field will be a confirmation for the Government ID field.
 
 The example below illustrates how to verify that the value of the confirmation field matches the value of the main field.
 
-```php
-add_action(
-	'woocommerce_blocks_validate_location_address_fields',
-	function ( \WP_Error $errors, $fields, $group ) {
-		if ( $fields['namespace/gov-id'] !== $fields['namespace/confirm-gov-id'] ) {
-			$errors->add( 'gov_id_mismatch', 'Please ensure your government ID matches the confirmation.' );
-		}
-	},
-	10,
-	3
-);
-```
+__CODE_BLOCK_18__
 
 If these fields were rendered in the "contact" location instead, the code would be the same except the hook used would be: `woocommerce_blocks_validate_location_contact_fields`.
 
@@ -609,17 +388,7 @@ Each schema in the array should be a valid JSON Schema object that defines condi
 
 Basic structure of a JSON Schema object:
 
-```json
-{
-  "type": "object",
-  "properties": {
-    "fieldId": {
-      "enum": ["value1", "value2"]
-    }
-  },
-  "required": ["fieldId"]
-}
-```
+__CODE_BLOCK_19__
 
 If you're not familiar with JSON Schema, you can get a quick introduction to it [from the official website](https://json-schema.org/understanding-json-schema/basics), or from one of the libraries used [like AJV](https://ajv.js.org/json-schema.html) or [OPIS.](https://opis.io/json-schema/2.x/examples.html) Checkout builds an abstraction on top of both of them.
 
@@ -635,90 +404,7 @@ An example of the document object looks like this:
 <details>
 	<summary>Document object</summary>
 
-```json
-{
-	"cart": {
-		"coupons": [
-			"my_coupon"
-		],
-		"shipping_rates": [
-			"free_shipping:1"
-		],
-		"items": [
-			27,
-			27,
-			68
-		],
-		"items_type": [
-			"simple",
-			"variation"
-		],
-		"items_count": 3,
-		"items_weight": 0,
-		"needs_shipping": true,
-		"prefers_collection": false,
-		"totals": {
-			"total_price": 6600,
-			"total_tax": 600
-		},
-		"extensions": {}
-	},
-	"checkout": {
-		"create_account": false,
-		"customer_note": "",
-		"additional_fields": {
-			"namespace/myorder-field": "myvalue"
-		},
-		"payment_method": "bacs"
-	},
-	"customer": {
-		"id": 1,
-		"billing_address": {
-			"first_name": "First Name",
-			"last_name": "Last Name",
-			"company": "Company",
-			"address_1": "Address 1",
-			"address_2": "Address 2",
-			"city": "City",
-			"state": "State",
-			"postcode": "08000",
-			"country": "US",
-			"email": "email@example.com",
-			"phone": "1234567890",
-			"namespace/myfield": "myvalue"
-		},
-		"shipping_address": {
-			"first_name": "First Name",
-			"last_name": "Last Name",
-			"company": "Company",
-			"address_1": "Address 1",
-			"address_2": "Address 2",
-			"city": "City",
-			"state": "State",
-			"postcode": "08000",
-			"country": "US",
-			"phone": "1234567890",
-			"namespace/myfield": "myvalue"
-		},
-		"additional_fields": {
-			"namespace/mycontact-field": "myvalue"
-		},
-		"address": {
-			"first_name": "First Name",
-			"last_name": "Last Name",
-			"company": "Company",
-			"address_1": "Address 1",
-			"address_2": "Address 2",
-			"city": "City",
-			"state": "State",
-			"postcode": "08000",
-			"country": "US",
-			"phone": "1234567890",
-			"namespace/myfield": "myvalue"
-		}
-	}
-}
-```
+__CODE_BLOCK_20__
 
 </details>
 <!-- markdownlint-enable MD033 -->
@@ -729,221 +415,7 @@ It's full schema is this one:
 <details>
 	<summary>Document schema</summary>
 	
-```json
-{
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Cart and Checkout Document Object Schema",
-	"description": "Document object schema for cart, checkout, and customer information, to be used for conditional visibility, requirement, and validation of fields.",
-	"type": "object",
-	"properties": {
-		"cart": {
-			"type": "object",
-			"description": "Information about the shopping cart",
-			"properties": {
-				"coupons": {
-					"type": "array",
-					"description": "List of coupon codes applied to the cart",
-					"items": {
-						"type": "string"
-					}
-				},
-				"shipping_rates": {
-					"type": "array",
-					"description": "List of currently selected shipping rates",
-					"items": {
-						"type": "string",
-						"description": "Shipping rate identifier using the full shipping rate ID so method_id:instance_id, for example: flat_rate:1"
-					}
-				},
-				"items": {
-					"type": "array",
-					"description": "List of product IDs in the cart, IDs will be duplicated depending on the quantity of the product in the cart, so if you have 2 of product ID 1, the array will have 2 entries of product ID 1. This only supports integer quantities, not floats (which round up to the nearest integer).",
-					"items": {
-						"type": "integer"
-					}
-				},
-				"items_type": {
-					"type": "array",
-					"description": "Types of items in the cart, for example: simple, variation, subscription, etc.",
-					"items": {
-						"type": "string"
-					}
-				},
-				"items_count": {
-					"type": "integer",
-					"description": "Total number of items in the cart",
-					"minimum": 0
-				},
-				"items_weight": {
-					"type": "number",
-					"description": "Total weight of items in the cart",
-					"minimum": 0
-				},
-				"needs_shipping": {
-					"type": "boolean",
-					"description": "Whether the items in the cart require shipping"
-				},
-				"prefers_collection": {
-					"type": "boolean",
-					"description": "Whether the customer prefers using Local Pickup"
-				},
-				"totals": {
-					"type": "object",
-					"description": "Cart totals information",
-					"properties": {
-						"total_price": {
-							"type": "integer",
-							"description": "Total price of the cart in smallest currency unit (e.g., cents), after applying all discounts, shipping, and taxes"
-						},
-						"total_tax": {
-							"type": "integer",
-							"description": "Total tax amount in smallest currency unit (e.g., cents), after applying all discounts, shipping, and taxes"
-						}
-					},
-					"additionalProperties": false
-				},
-				"extensions": {
-					"type": "object",
-					"description": "Additional cart extension data, this is similar to what's passed in Store API's extensions parameter"
-				}
-			},
-			"additionalProperties": false
-		},
-		"checkout": {
-			"type": "object",
-			"description": "Checkout preferences and settings",
-			"properties": {
-				"create_account": {
-					"type": "boolean",
-					"description": "Whether the customer checked the create account checkbox, this will be false if the customer is logged in, cannot create an account, or forced to create an account."
-				},
-				"customer_note": {
-					"type": "string",
-					"description": "Customer's note or special instructions for the order, this will be empty if the customer didn't add a note."
-				},
-				"additional_fields": {
-					"type": "object",
-					"description": "Additional checkout fields with 'order' location. These fields are rendered in the order information section.",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"patternProperties": {
-						"^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$": {
-							"type": "string",
-							"description": "Custom fields with namespace identifiers"
-						}
-					}
-				},
-				"payment_method": {
-					"type": "string",
-					"description": "Selected payment method identifier, this will be the payment method ID regardless if the customer selected a saved payment method or new payment method"
-				}
-			},
-			"additionalProperties": false
-		},
-		"customer": {
-			"type": "object",
-			"description": "Customer information",
-			"properties": {
-				"id": {
-					"type": "integer",
-					"description": "Customer ID, this will be 0 if the customer is not logged in"
-				},
-				"billing_address": {
-					"$ref": "#/definitions/address",
-					"description": "Customer's billing address"
-				},
-				"shipping_address": {
-					"$ref": "#/definitions/address",
-					"description": "Customer's shipping address"
-				},
-				"additional_fields": {
-					"type": "object",
-					"description": "Additional checkout fields with 'contact' location. These fields are rendered in the contact information section.",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"patternProperties": {
-						"^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$": {
-							"type": "string",
-							"description": "Custom fields with namespace identifiers"
-						}
-					}
-				},
-				"address": {
-					"$ref": "#/definitions/address",
-					"description": "This is a dynamic field that will be the billing or shipping address depending on the context of the field being evaluated."
-				}
-			},
-			"additionalProperties": false
-		}
-	},
-	"additionalProperties": false,
-	"definitions": {
-		"address": {
-			"type": "object",
-			"description": "Customer address information",
-			"properties": {
-				"first_name": {
-					"type": "string",
-					"description": "First name of the recipient"
-				},
-				"last_name": {
-					"type": "string",
-					"description": "Last name of the recipient"
-				},
-				"company": {
-					"type": "string",
-					"description": "Company name"
-				},
-				"address_1": {
-					"type": "string",
-					"description": "Primary address line"
-				},
-				"address_2": {
-					"type": "string",
-					"description": "Secondary address line"
-				},
-				"city": {
-					"type": "string",
-					"description": "City name"
-				},
-				"state": {
-					"type": "string",
-					"description": "State or province, this will be the state code if it's a predefined list, for example: CA, TX, NY, etc, or the field value if it's a freeform state, for example: London."
-				},
-				"postcode": {
-					"type": "string",
-					"description": "Postal or ZIP code"
-				},
-				"country": {
-					"type": "string",
-					"description": "Country code (e.g., US, UK)"
-				},
-				"email": {
-					"type": "string",
-					"format": "email",
-					"description": "Email address"
-				},
-				"phone": {
-					"type": "string",
-					"description": "Phone number"
-				}
-			},
-			"additionalProperties": {
-				"type": "string",
-				"description": "Additional fields with 'address' location appear here as properties within the address objects"
-			},
-			"patternProperties": {
-				"^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$": {
-					"type": "string",
-					"description": "Additional fields with 'address' location using namespace identifiers (e.g., 'namespace/field-name')"
-				}
-			}
-		}
-	}
-}
-```
+__CODE_BLOCK_21__
 
 </details>
 <!-- markdownlint-enable MD033 -->
@@ -954,32 +426,7 @@ It's full schema is this one:
 
 In this example we make the field required and visible only if local pickup is being used.
 
-```php
-'required' => [
-    "type" => "object",
-	"properties" => [
-		"cart" => [
-			"properties" => [
-				"prefers_collection" => [
-					"const" => true
-				]
-			]
-		]
-	]
-],
-'hidden' => [
-	"type" => "object",
-	"properties" => [
-		"cart" => [
-			"properties" => [
-				"prefers_collection" => [
-					"const" => false
-				]
-			]
-		]
-	]
-]
-```
+__CODE_BLOCK_22__
 
 Notice that for hidden, we inverse the field, meaning, this field should only be hidden if `prefers_collection` is false, which is almost all cases except when it's selected. In the examples above, we used [the keyword `const`](https://ajv.js.org/json-schema.html#const).
 
@@ -990,26 +437,11 @@ Validation is slightly different from conditional visibility and requirement. In
 
 In this example, we ensure that VAT is made up of a country code and 8-12 numbers.
 
-```php
-'validation' => [
-	"type" => "string",
-	"pattern" => "^[A-Z]{2}[0-9]{8,12}$",
-	"errorMessage" => "Please enter a valid VAT code with 2 letters for country code and 8-12 numbers."
-]
-```
+__CODE_BLOCK_23__
 
 Validation can also be against other fields, for example, an alternative email field that shouldn't match the current email:
 
-```php
-'validation' => [
-	"type" => "string",
-	"format" => "email",
-	"not" => [
-		"const" => [ '$data' => "/customer/billing_address/email" ]
-	],
-	"errorMessage" => "Please enter a valid alternative email."
-]
-```
+__CODE_BLOCK_24__
 
 In the example above, we used [format keyword](https://github.com/ajv-validator/ajv-formats) and `$data` to refer to the current field value via [JSON pointers](https://ajv.js.org/guide/combining-schemas.html#data-reference). We also used the `errorMessage` property to provide a custom error message.
 
@@ -1019,7 +451,7 @@ In the example above, we used [format keyword](https://github.com/ajv-validator/
 
 When dealing with JSON pointers, there are some things to keep in mind:
 
-- The forward slash `/` is used to navigate through the JSON object, so for additional fields, a field named `my-plugin-namespace/my-field` will need to be referenced as `my-plugin-namespace~1my-。field`.
+- The forward slash `/` is used to navigate through the JSON object, so for additional fields, a field named `my-plugin-namespace/my-field` will need to be referenced as `my-plugin-namespace~1my-field`.
 - Navigation in JSON pointers can be from the current field backward, or from the root. If you have an address field and want to validate say the phone field, this means you will validate 2 values, one for shipping, and one for billing, so you can reference the phone field in 2 ways:
     - `0/customer/address/phone` which uses root navigation (via the `0/`) prefix, and uses the dynamic `address` group, which will change depending if the billing or shipping value is being validated.
     - `1/phone` which uses relative pointers to step back, in this case, it will access its sibling field, the `phone` field. Increase the number to step back even further, for example, `2/id` will access the customer ID.
@@ -1052,52 +484,50 @@ Assuming 2 fields, named `my-plugin-namespace/address-field` in the address step
 
 You can react to those fields being saved by hooking into `woocommerce_set_additional_field_value` action.
 
-```php
-add_action(
-	'woocommerce_set_additional_field_value',
-	function ( $key, $value, $group, $wc_object ) {
-		if ( 'my-plugin-namespace/address-field' !== $key ) {
-			return;
-		}
-
-		if ( 'billing' === $group ) {
-			$my_plugin_address_key = 'existing_billing_address_field_key';
-		} else {
-			$my_plugin_address_key = 'existing_shipping_address_field_key';
-		}
-
-		$wc_object->update_meta_data( $my_plugin_address_key, $value, true );
-	},
-	10,
-	4
-);
-
-add_action(
-	'woocommerce_set_additional_field_value',
-	function ( $key, $value, $group, $wc_object ) {
-		if ( 'my-plugin-namespace/my-other-field' !== $key ) {
-			return;
-		}
-
-		$my_plugin_key = 'existing_order_field_key';
-
-		$wc_object->update_meta_data( $my_plugin_key, $value, true );
-	},
-	10,
-	4
-);
-```
+__CODE_BLOCK_25__
 
 This way, you can ensure existing systems will continue working and your integration will continue to work. However, ideally, you should migrate your existing data and systems to use the new meta fields.
 
 
 ### React to reading fields
 
-You can use the `woocommerce_get_default_value_for_{$key}`フィルタを使用して異なるデフォルト値(たとえば別のメタフィールドからの値)を提供します：
+You can use the `woocommerce_get_default_value_for_{$key}` filters to provide a different default value (a value coming from another meta field for example):
+
+```php
+add_filter(
+	"woocommerce_get_default_value_for_my-plugin-namespace/address-field",
+	function ( $value, $group, $wc_object ) {
+
+		if ( 'billing' === $group ) {
+			$my_plugin_key = 'existing_billing_address_field_key';
+		} else {
+			$my_plugin_key = 'existing_shipping_address_field_key';
+		}
+
+		return $wc_object->get_meta( $my_plugin_key );
+	},
+	10,
+	3
+);
+
+add_filter(
+	"woocommerce_get_default_value_for_my-plugin-namespace/my-other-field",
+	function ( $value, $group, $wc_object ) {
+
+		$my_plugin_key = 'existing_order_field_key';
+
+		return $wc_object->get_meta( $my_plugin_key );
+	},
+	10,
+	3
+);
+```
 
 ## 完全な例
 
 この完全な例では、政府IDテキスト・フィールドを登録し、それが特定のパターンに適合していることを検証する。
+
+この例は、上記で紹介した例を組み合わせたものに過ぎない。
 
 ```php
 add_action(

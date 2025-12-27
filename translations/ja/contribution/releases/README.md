@@ -7,7 +7,7 @@ sidebar_label: Releases
 
 WooCommerceのリリースプロセスは交代制のリリースリードによって管理されています。  以下のドキュメントにリリース管理プロセスの概要が記載されています。  新しいリリースを始めるには、[Building and Publishing WooCommerce](/docs/contribution/releases/building-and-publishing)を参照してください。
 
-## Process Overview
+## プロセス概要
 
 * [構築と公開](/docs/contribution/releases/building-and-publishing)
 * [トラブルシューティング](/docs/contribution/releases/troubleshooting)

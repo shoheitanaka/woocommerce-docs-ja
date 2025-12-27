@@ -109,7 +109,7 @@ curl --header "Nonce: 12345" --request POST https://example-store.com/wp-json/wc
 
 マーチャントが使用できる決済ゲートウェイは数多くあり、それぞれが異なる`payment_data`を要求します。すべてのペイメントゲートウェイに対して期待されるすべてのリクエストを包括的にリストアップすることはできませんので、ペイメントゲートウェイプラグインの作者に問い合わせることをお勧めします。
 
-WooCommerce [Stripeペイメントゲートウェイ](https://wordpress.org/plugins/woocommerce-gateway-stripe/)を使用する際にチェックアウトオーダーエンドポイントに送信される支払いデータの例を以下に示します。
+[WooCommerce Stripeペイメントゲートウェイ](https://wordpress.org/plugins/woocommerce-gateway-stripe/)を使用する際にチェックアウトオーダーエンドポイントに送信される支払いデータの例を以下に示します。
 
 `stripe_source`の生成に関する詳細は、[Stripeのドキュメント](https://stripe.com/docs)を参照してください。
 

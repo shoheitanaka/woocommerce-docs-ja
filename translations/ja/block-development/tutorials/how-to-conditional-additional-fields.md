@@ -2,11 +2,12 @@
 post_title: How to Add Conditional Additional Checkout Fields
 sidebar_label: How to add additional conditional fields in checkout
 ---
-# How to Make Your WooCommerce Additional Checkout Fields Conditionally Visible in Checkout Block
+
+# How to Make Your WooCommerce Additional Checkout Fields Conditionally Visible in the Checkout Block
 
 この機能にはWooCommerce 9.9.0以上が必要です。
 
-条件付きの可視性により、必要なときだけ関連フィールドを表示するスマートで適応性のあるチェックアウトフォームを作成することができ、フォームの乱雑さを減らし、カスタマーエクスペリエンスを向上させます。
+条件付きの可視性により、必要なときだけ関連フィールドを表示するスマートで適応性のあるチェックアウトフォームを作成し、フォームの乱雑さを減らし、カスタマーエクスペリエンスを向上させることができます。
 
 ## なぜ条件付き可視性を使うのか？
 
@@ -33,7 +34,7 @@ WooCommerceの追加チェックアウトフィールドは、JSONスキーマ�
 ]
 ```
 
-#よくある条件付きシナリオ
+## よくある条件付きシナリオ
 
 ### 配送方法に基づくフィールドの表示
 
@@ -94,7 +95,7 @@ woocommerce_register_additional_checkout_field(
 );
 ```
 
-### カートの値に基づいてフィールドを表示する
+### カートの値に基づいてフィールドを表示
 
 高額注文にのみプレミアムサービスオプションを表示する：
 

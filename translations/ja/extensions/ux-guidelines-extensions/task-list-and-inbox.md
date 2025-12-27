@@ -7,9 +7,9 @@ sidebar_label: Task list and inbox
 
 プラグインは、以下のガイドラインに基づいて、タスクノートと受信トレイノートのどちらを実装するかを選択する必要があります。同じメッセージにタスクと受信トレイノートの両方を実装することは避けてください。
 
-Use the Task List and Inbox sparingly. Messages should be clear, concise, and maintain a consistent tone. Follow the [Grammar, Punctuation, and Capitalization guide](https://woocommerce.com/document/grammar-punctuation-style-guide/).
+[タスクリストと受信トレイは控えめに使う。メッセージは明確かつ簡潔で、一貫した語調を保つこと。文法、句読点、大文字小文字ガイド](https://woocommerce.com/document/grammar-punctuation-style-guide/) に従ってください。
 
-## Task List
+## タスクリスト
 
 ![an example of a task in the task list](https://developer.woocommerce.com/wp-content/uploads/2023/12/task-list1.png)
 
@@ -26,11 +26,7 @@ Use the Task List and Inbox sparingly. Messages should be clear, concise, and ma
     - 機能のお知らせやプラグインの使い方のヒントなどの情報通知は、クリティカルではなく、アクションを必要としないため、受信トレイに表示されるべきです。
     - ユーザーアクティビティからの通知は、定期的なフィードバック通知（成功、情報、エラー、警告）として表示されます。
 
-Examples:
-
 ![three tasks in the task list under the heading "Things to do next" with the option to expand at the bottom to "show 3 more tasks" ](https://developer.woocommerce.com/wp-content/uploads/2023/12/task-list-example.png)
-
-## Inbox
 
 受信トレイは、ユーザーに情報、有用、補足的なコンテンツを提供し、一方、重要な通知やセットアップ・タスクは、それぞれ独立した適切な場所に置かれる。
 
@@ -45,7 +41,5 @@ Examples:
 - *受信箱*に表示されないもの：
 
     - アクションが必要な通知、延長設定タスク、または定期的なフィードバック通知。
-
-Examples:
 
 ![an example of two inbox notifications listed under the "Inbox" section of the admin](https://developer.woocommerce.com/wp-content/uploads/2023/12/inbox-examples.png)

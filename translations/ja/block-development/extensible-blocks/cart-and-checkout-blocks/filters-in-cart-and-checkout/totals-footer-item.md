@@ -2,7 +2,8 @@
 post_title: Totals footer item
 sidebar_label: Totals footer item
 ---
-# フッターの合計項目
+
+# Totals footer item
 
 以下の合計フッター項目フィルターが利用可能です：
 
@@ -50,7 +51,7 @@ registerCheckoutFilters( 'example-extension', {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[合計ラベルフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/5b2fb8ab-db84-4ed0-a676-d5203edc84d2) |！[合計ラベルフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/07955eea-cb17-48e9-9cb5-6548dd6a3b24) |｜...
+|![合計ラベルフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/5b2fb8ab-db84-4ed0-a676-d5203edc84d2) |![合計ラベルフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/07955eea-cb17-48e9-9cb5-6548dd6a3b24) |｜...
 
 ## `totalValue`
 
@@ -94,7 +95,7 @@ registerCheckoutFilters( 'my-extension', {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[合計値フィルター適用前](https://github.com/woocommerce/woocommerce/assets/3323310/4b788bdd-6fbd-406c-a9ad-4fb13f901c23) |！[合計値フィルター適用後](https://github.com/woocommerce/woocommerce/assets/3323310/1b1b5f72-7f2f-4ee5-b2a4-1d8eb2208deb) |｜...
+|![合計値フィルター適用前](https://github.com/woocommerce/woocommerce/assets/3323310/4b788bdd-6fbd-406c-a9ad-4fb13f901c23) |![合計値フィルター適用後](https://github.com/woocommerce/woocommerce/assets/3323310/1b1b5f72-7f2f-4ee5-b2a4-1d8eb2208deb) |｜...
 
 ## カートオブジェクト
 
@@ -137,7 +138,7 @@ registerCheckoutFilters( 'my-extension', {
         -   price_ `number` - タックスラインの価格。
         -   rate_ `string` - タックス・ラインの税率ID。
     -   total_discount_ `string` - 割引総額。
-    -   _total_discount_tax_ `string` - 割引税額の合計。
+    -   _total_discount_tax_ `string` - 割引税の合計。
     -   _total_fees_ `string` - 料金合計。
     -   _total_fees_tax_ `string` - 料金にかかる税金の合計。
     -   total_items_ `string` - 合計アイテム。
@@ -162,7 +163,7 @@ registerCheckoutFilters( 'my-extension', {
 -   decsription_ `string` - カートアイテムの説明。
 -   extensions_ `object` (default: `{}`) - 拡張オブジェクト。
 -   id_ `number` - アイテムID。
--   images_ `array` - アイテム画像の配列。
+-   images_ `array` - アイテムの画像配列。
 -   item_data_ `array` - アイテムデータの配列。
 -   key_ `string` - アイテムのキー。
 -   __low_stock_remaining_ `number` - 残りの在庫数。
@@ -175,7 +176,7 @@ registerCheckoutFilters( 'my-extension', {
     -   __currency_prefix_ `string` - 通貨のプレフィックス。
     -   __currency_suffix_ `string` - 通貨のサフィックス。
     -   __currency_symbol_ `string` - 通貨記号。
-    -   __currency_thousand_separator_ `string` - 通貨の千の区切り文字。
+    -   currency_thousand_separator_ `string` - 通貨の千単位区切り文字。
     -   price_ `string` - 価格。
     -   price_range_ `string` - 価格帯。
     -   raw_prices_ `object` - 以下のキーを持つ生の価格オブジェクト：
@@ -192,7 +193,7 @@ registerCheckoutFilters( 'my-extension', {
     -   minimum_ `number` - 最小量。
     -   multiple_of_ `number` - 数量の倍数。
 -   short_description_ `string` - 商品の短い説明。
--   show_backorder_badge_ `boolean` - バックオーダーのバッジを表示するかどうか。
+-   _show_backorder_badge_ `boolean` - バックオーダーのバッジを表示するかどうか。
 -   sku_ `string` - 商品のSKU。
 -   sold_individually_ `boolean` - アイテムが個別に販売されているかどうか。
 -   totals_ `object` - 以下のキーを持つ項目の合計オブジェクトです：

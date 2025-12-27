@@ -2,15 +2,12 @@
 post_title: Theming for Woo blocks
 sidebar_label: Theming for Woo blocks
 ---
-# ウー・ブロックのテーマ
 
----
+# Theming for Woo blocks
 
 **注意:** ブロックテーマ開発に関する予備知識とWordPressのコンセプトがあることを前提としています。ブロックテーマ開発の全くの初心者の方は、[Develop Your First Low-Code Block Theme](https://learn.wordpress.org/course/develop-your-first-low-code-block-theme/)
 をご覧ください。
 新しいテーマを作成する準備ができたら、[Create Block Theme plugin](https://wordpress.org/plugins/create-block-theme/) ツールをお試しください。
-
----
 
 ## 一般概念
 
@@ -25,8 +22,8 @@ WooCommerceにはデフォルトでいくつかの[ブロックテンプレー�
     - 属性別商品 (`taxonomy-product_attribute.html`)
 - 製品検索結果 (`product-search-results.html`)
 - ページ近日公開予定 (`page-coming-soon.html`)
-- ページ (`page-coming-soon.html`)カート (`page-cart.html`)
-- ページ：カート (`page-cart.html`)チェックアウト (`page-checkout.html`)
+- ページ (__INLINE_CODE_6__)カート (`page-cart.html`)
+- ページ：カート (__INLINE_CODE_7__)チェックアウト (`page-checkout.html`)
 - 注文確認 (`order-confirmation.html`)
 
 ブロックテーマはこれらのテンプレートを以下の方法でカスタマイズできる：
@@ -47,7 +44,7 @@ WooCommerceには2つの特定の[ブロックテンプレート部品](https://
 
 ### グローバルスタイル
 
-WooCommerceブロックは[グローバルスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/styles/)に依存します。グローバルスタイルはテーマによって`theme.json`で定義されるか、ユーザによって外観 &gt; エディタ &gt; スタイルで定義されます：
+WooCommerceブロックは[グローバルスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/styles/)に依存します。グローバルスタイルはテーマによって`theme.json`で定義されるか、ユーザによって外観 > エディタ > スタイルで定義されます：
 
 - 必要なCSSだけがページに印刷されるため、ページをレンダリングするためのバンドルサイズが小さくなり、パフォーマンスが向上します。
 - ユーザーがUIから簡単にカスタマイズできる。

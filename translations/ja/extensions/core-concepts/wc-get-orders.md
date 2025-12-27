@@ -1,15 +1,15 @@
 ---
 sidebar_label: Order Querying
 ---
-# `wc_get_orders()` and order queries
+# `wc_get_orders()`と順序クエリ
 
-`wc_get_orders()` and `WC_Order_Query` provide a standard way of retrieving orders from the database, similar to WordPress' [`get_posts()` and `WP_Query`](https://codex.wordpress.org/Class_Reference/WP_Query) but specifically for orders.
+`wc_get_orders()`と`WC_Order_Query`は、WordPressの[`get_posts()`と`WP_Query`](https://codex.wordpress.org/Class_Reference/WP_Query)と同様に、データベースから注文を取得する標準的な方法を提供します。
 
 プラグインやテーマの開発者は、WordPressやWooCommerceのデータベースが変更されると破損する可能性があるため、WordPressのカスタムクエリや直接SQLを書くことをお勧めしません。これらのAPIは、WooCommerceで注文を取得するためのベストプラクティスと将来を保証する方法を提供します。
 
-## Basic usage
+## 基本的な使い方
 
-### Examples
+### 例
 
 いくつか例を挙げよう：
 
@@ -43,48 +43,47 @@ $query->set( 'customer', 'woocommerce@woocommerce.com' );
 $orders = $query->get_orders();
 ```
 
-Note that `wc_get_orders()` is mostly a shortcut to `WC_Order_Query::get_orders()`.
+`wc_get_orders()`は`WC_Order_Query::get_orders()`へのショートカットである。
 
-### Best practices
+### ベストプラクティス
 
-- Avoid direct base queries and rely on `wc_get_orders()` instead.
-- If your code needs to support legacy setups, test thoroughly with HPOS enabled and disabled.
-- Use specific parameters to limit results and improve performance.
-- Consider pagination for large result sets using `limit` and `offset`.
-- Cache results when appropriate.
-- For complex filtering requirements, leverage the new query arguments `meta_query`, `field_query` and `date_query` available since 8.2 on sites running HPOS.
+- 直接的なベースクエリは避け、代わりに`wc_get_orders()`に頼ること。
+- あなたのコードがレガシーセットアップをサポートする必要がある場合、HPOSを有効にしたり無効にしたりして徹底的にテストしてください。
+- 特定のパラメータを使用して結果を制限し、パフォーマンスを向上させる。
+- `limit`と`offset`を使用して、大きな結果セットのページ分割を考慮する。
+- 必要に応じて結果をキャッシュする。
+- 複雑なフィルタリングが必要な場合は、HPOSを実行しているサイトで8.2から利用できるようになった新しいクエリ引数`meta_query`、`field_query`、`date_query`を活用してください。
 
+## APIリファレンス
 
-## API reference
-
-| Method                                   | Description                              |
+| 方法 | 説明 |
 |-------------------------------------------|------------------------------------------|
-| `wc_get_orders ( $args )`            | Retrieve orders matching query `$args`. |
-| `WC_Order_Query::get_query_vars()`        | Get an array of all of the current query variables set on the query object.         |
-| `WC_Order_Query::get( string $key, mixed $default = '' )`               | Get the value of a query variable or the default if the query variable is not set.            |
-| `WC_Order_Query::set( string $key, mixed $value )`       | Set a query variable.                     |
-| `WC_Order_Query::get_orders()`            | Get all orders matching the current query variables.  |
+| `wc_get_orders ( $args )`｜クエリ`$args`に一致する注文を取得します。|
+| クエリオブジェクトに現在設定されているクエリ変数の配列を取得します。         |
+| `WC_Order_Query::get( string $key, mixed $default = '' )`｜クエリ変数の値、またはクエリ変数が設定されていない場合はデフォルト値を取得します。            |
+| `WC_Order_Query::set( string $key, mixed $value )` | クエリ変数を設定します。                     |
+| `WC_Order_Query::get_orders()` | 現在のクエリ変数にマッチする全てのオーダーを取得します。  |
 
 これらの関数で使用できるクエリ・パラメータ／引数を以下に示す。
 
-## Query parameters reference
+## クエリパラメータの参照
 
-### General
+### 一般
 
-|Parameter|Description|
+|パラメータ|ディスクリプション
 |-|-|
-|**status**|Accepts an array of strings: by default is set to the keys of `wc_get_order_statuses()`.|
-|**type**|Accepts a string: `'shop_order'`, `'shop_order_refund'`, or a custom order type.|
-|**version**|Accepts a string: WooCommerce version number the order was created in.|
-|**created_via**|Accepts a string: 'checkout', 'rest-api', or a custom creation method slug.|
-|**parent**|Accepts an integer: post ID of the order parent.|
-|**parent_exclude**|Accepts an array of integers: Excludes orders with parent ids in the array.|
-|**exclude**|Accepts an array of integers: excludes orders that have the ids.|
-|**order**|Accepts a string: 'DESC' or 'ASC'. Use with 'orderby'. Default: 'DESC'.|
-|**orderby**|Accepts a string: 'none', 'ID', 'name', 'type', 'rand', 'date', 'modified'. Default: 'date'.|
-|**return**|Return type. Accepts a string: 'ids' or 'objects'. Default: 'objects'.|
+|**status**|文字列の配列を受け取る: デフォルトでは`wc_get_order_statuses()`.|のキーに設定される。
+|**type**|文字列を受け取ります：`'shop_order'`、`'shop_order_refund'`、またはカスタムオーダータイプ。
+|**version**|文字列を指定します：注文が作成されたWooCommerceのバージョン番号。
+|**created_via**|文字列: 'checkout'、'rest-api'、またはカスタム作成メソッドスラッグを受け入れます。
+|**parent**|Accept an integer: 親となる注文の投稿ID。
+|**parent_exclude**| 整数の配列を受け取ります：親IDが配列に含まれる注文を除外します。
+|**exclude**|整数の配列を受け取る: そのIDを持つオーダーを除外する。
+|**order**|文字列を指定: 'DESC'または'ASC'。orderby'と一緒に使う。デフォルト：'DESC'。
+|**orderby**|文字列を指定します: 'none'、'ID'、'name'、'type'、'rand'、'date'、'modified'。デフォルト: 'date'.
+|**return**|戻り値の型。文字列: 'ids'または'objects'。デフォルト：'objects'。
 
-#### Examples
+#### 例
 
 ```php
 // Get most recently modified orders.
@@ -140,16 +139,16 @@ $args = array(
 $orders = wc_get_orders( $args );
 ```
 
-### Pagination
+### ページネーション
 
-|Parameter|Description|
+|パラメータ|ディスクリプション
 |-|-|
-|**limit**|Accepts an integer: Maximum number of results to retrieve or `-1` for unlimited. Default: Site 'posts_per_page' setting.|
-|**paged**|Accepts an integer: Page of results to retrieve. Does nothing if 'offset' is used.|
-|**offset**|Accepts an integer: Amount to offset order results.|
-|**paginate**|Accepts a boolean: True for pagination, or false for not (default: false). If enabled, modifies the return results to give an object with fields: `orders` (array of found orders), `total` (number of found orders) and `max_num_pages` (total number of pages).|
+|**limit**|整数を指定します：無制限の場合は `-1` となります。デフォルトはサイトの'posts_per_page'設定。
+|**paged**|整数を指定します：取得する結果のページ。offset'が使われている場合は何もしない。
+|**offset**|整数を指定します：結果をオフセットする量。
+|**paginate**|ブール値を指定します：ページ分割を行う場合はtrueを、行わない場合はfalseを指定します（デフォルトはfalse）。有効にすると、フィールドを持つオブジェクトを返すように結果を変更します：`orders`(見つかった注文の配列)、`total`(見つかった注文の数)、`max_num_pages`(ページの総数)。
 
-#### Examples
+#### 例
 
 ```php
 // Get latest 3 orders.
@@ -180,11 +179,11 @@ echo 'Page 1 of ' . $results->max_num_pages . "\n";
 echo 'First order id is: ' . $results->orders[0]->get_id() . "\n";
 ```
 
-### Payment & amounts
+### 支払いと金額
 
 |パラメータ|ディスクリプション
 |-|-|
-通貨|**currency**|文字列を指定します：注文時に使用する通貨。
+通貨|**currency**|文字列を指定します：注文で使用する通貨。
 |**prices_include_tax**|文字列: 'yes'または'no'を指定します。
 |**支払い方法のスラッグ：使用される支払い方法のスラッグ。
 |**payment_method_title**|文字列を指定します：使用される支払い方法の完全なタイトル。
@@ -193,9 +192,9 @@ echo 'First order id is: ' . $results->orders[0]->get_id() . "\n";
 |**shipping_total** |浮動小数点数で指定。
 |**shipping_tax**| 浮動小数点: 四捨五入されない金額を指定します。
 |**cart_tax**|浮動小数点(四捨五入なし)で指定。
-|**合計(total)***|浮動小数点(四捨五入なし)を入力してください。
+|**合計(total)***|浮動小数点: 四捨五入されない金額を指定します。
 
-#### Examples
+#### 例
 
 ```php
 // Get orders paid in USD.
@@ -212,7 +211,7 @@ $orders = wc_get_orders( array( 'payment_method' => 'cheque' ) );
 $orders = wc_get_orders( array( 'discount_total' => 20.00 ) );
 ```
 
-### Customer
+### お客様
 
 |パラメータ|ディスクリプション
 |-|-|
@@ -220,7 +219,7 @@ $orders = wc_get_orders( array( 'discount_total' => 20.00 ) );
 |**customer_id**|整数を指定します：顧客ID。
 |**customer_ip_address**|文字列を受け取ります：マッチする値。
 
-#### Examples
+#### 例
 
 ```php
 // Get orders by customer with email 'woocommerce@woocommerce.com'.
@@ -232,7 +231,7 @@ $orders = wc_get_orders( array( 'customer' => 'woocommerce@woocommerce.com' ) );
 $orders = wc_get_orders( array( 'customer_id' => 12 ) );
 ```
 
-### Billing & shipping
+### 請求と発送
 
 |パラメータ|ディスクリプション
 |-|-|
@@ -245,10 +244,10 @@ $orders = wc_get_orders( array( 'customer_id' => 12 ) );
 |**billing_state***| 文字列を指定します。
 |**billing_postcode**| 文字列を指定します。
 |**billing_country***| 文字列を指定します。
-|**billing_email***| 文字列を指定します。
+***billing_email**｜文字列を指定します。
 |**billing_phone**| 文字列を指定します。
 ***shipping_first_name**｜文字列を指定します。
-|**姓(last_name)**|文字列を指定します。
+|**姓(名)**|文字列を指定します。
 |**会社名**：文字列で指定。
 |**発送先住所_1**｜文字列を指定します。
 |**発送先住所2**：文字列で指定。
@@ -257,7 +256,7 @@ $orders = wc_get_orders( array( 'customer_id' => 12 ) );
 |**配送先郵便番号**：文字列で指定。
 |**配送先国名**｜*shipping_country**｜文字列で指定。
 
-#### Examples
+#### 例
 
 ```php
 // Get orders from the US.
@@ -273,8 +272,6 @@ $args = array(
 $orders = wc_get_orders( $args );
 ```
 
-### Date
-
 日付の引数は、以下に説明する標準的な書式に従って値を受け取るので、より柔軟なクエリが可能になる。
 
 |パラメータ|ディスクリプション
@@ -282,24 +279,24 @@ $orders = wc_get_orders( $args );
 |**date_created**注文の作成日にマッチします。標準形式の文字列を受け付けます。
 |**date_modified**| 注文の変更日にマッチします。標準書式の文字列を指定します。
 |**注文の完了日。標準書式の文字列を受け付けます。
-|**date_paid***注文の支払日にマッチします。標準書式の文字列を受け付けます。
+|**date_paid**注文の支払日にマッチします。標準書式の文字列を受け付けます。
 
-#### Standard format
+#### 標準フォーマット
 
-- `YYYY-MM-DD` - Matches on orders during that one day in site timezone.
-- `>YYYY-MM-DD` - Matches on orders after that one day in site timezone.
-- `>=YYYY-MM-DD` - Matches on orders during or after that one day in site timezone.
-- `<YYYY-MM-DD` - Matches on orders before that one day in site timezone.
-- `<=YYYY-MM-DD` - Matches on orders during or before that one day in site timezone.
-- `YYYY-MM-DD...YYYY-MM-DD` - Matches on orders during or in between the days in site timezone.
-- `TIMESTAMP` - Matches on orders during that one second in UTC timezone.
-- `>TIMESTAMP` - Matches on orders after that one second in UTC timezone.
-- `>=TIMESTAMP` - Matches on orders during or after that one second in UTC timezone.
-- `<TIMESTAMP` - Matches on orders before that one second in UTC timezone.
-- `<=TIMESTAMP` - Matches on orders during or before that one second in UTC timezone.
-- `TIMESTAMP...TIMESTAMP` - Matches on orders during or in between the seconds in UTC timezone.
+- `YYYY-MM-DD` - サイトのタイムゾーンでその日の注文にマッチします。
+- `>YYYY-MM-DD` - サイトのタイムゾーンでその日以降の注文にマッチします。
+- `>=YYYY-MM-DD` - サイトのタイムゾーンでその日中またはその日以降の注文に一致します。
+- `<YYYY-MM-DD` - サイトのタイムゾーンでその日以前の注文にマッチします。
+- `<=YYYY-MM-DD` - サイトのタイムゾーンでその日中またはその前の注文に一致します。
+- `YYYY-MM-DD...YYYY-MM-DD` - サイトのタイムゾーンでその日中またはその間の注文にマッチします。
+- `TIMESTAMP` - UTC タイムゾーンでその 1 秒間の注文に一致します。
+- `>TIMESTAMP` - UTCタイムゾーンでその1秒後の注文にマッチします。
+- `>=TIMESTAMP` - UTCタイムゾーンのその1秒後以降の注文にマッチします。
+- `<TIMESTAMP` - UTCタイムゾーンのその1秒より前の注文にマッチします。
+- `<=TIMESTAMP` - UTC タイムゾーンでその 1 秒前までの注文にマッチします。
+- `TIMESTAMP...TIMESTAMP` - UTCタイムゾーンの秒またはその間の注文にマッチします。
 
-#### Examples
+#### 例
 
 ```php
 // Get orders paid February 12, 2016.
@@ -322,25 +319,22 @@ $args = array(
 $orders = wc_get_orders( $args );
 ```
 
-### Metadata
+### メタデータ
 
 <!-- markdownlint-disable MD033 -->
-|Parameter|Description|
+|パラメータ|ディスクリプション
 |-|-|
-|**meta_query**|One or more arrays with keys `key` (meta key), `value` (optional, string or array) and optionally `type` and `compare`.<br />This parameter is analogous to [WP_Query's `meta_query`](https://developer.wordpress.org/reference/classes/wp_query/#custom-field-post-meta-parameters), supporting various comparison operators and levels of queries joined by AND/OR relations.|
+|**<br />。このパラメータは[WP_Queryの`meta_query`](https://developer.wordpress.org/reference/classes/wp_query/#custom-field-post-meta-parameters)に類似しており、様々な比較演算子やAND/OR関係で結合されたクエリのレベルをサポートします。
 <!-- markdownlint-enable MD033 -->
 
 詳細と例については、[HPOS order querying](/docs/features/high-performance-order-storage/wc-order-query-improvements#metadata-queries-meta_query) ガイドを参照してください。
 
-:::warning
+`meta_query`のサポートはHPOSが注文データストレージとして設定されている場合のみ有効です。
 
-Support for `meta_query` is only available when HPOS is the configured order data storage (the default since WooCommerce 8.2).
-
-Check if it's enabled with `OrderUtil::custom_orders_table_usage_is_enabled()` before using.
+使用する前に`OrderUtil::custom_orders_table_usage_is_enabled()`で有効になっているかチェックすること。
 :::
 
-
-#### Examples
+#### 例
 
 ```php
 // Orders with metadata 'custom_field' set to 'some_value' and metadata 'weight' higher than '50'.
@@ -363,24 +357,22 @@ $orders = wc_get_orders(
 );
 ```
 
-### Order fields
+### オーダーフィールド
 
 <!-- markdownlint-disable MD033 -->
-|Parameter|Description|
+|パラメータ|ディスクリプション
 |-|-|
-|**field_query**|One or more arrays with keys `field` (any order property), `value` and optionally `type` and `compare`.<br />This parameter is analogous to those of `meta_query` described in the previous section, supporting various comparison operators and levels of queries joined by AND/OR relations.|
+|**<br />。このパラメータは前のセクションで説明した`meta_query`と類似しており、様々な比較演算子やAND/OR関係で結合されたクエリのレベルをサポートします。
 <!-- markdownlint-enable MD033 -->
 
 詳細と例については、[HPOS order querying](/docs/features/high-performance-order-storage/wc-order-query-improvements#order-field-queries-field_query) ガイドを参照してください。
 
-:::warning
+`field_query`のサポートはHPOSが注文データストレージとして設定されている場合のみ有効です。
 
-Support for `field_query` is only available when HPOS is the configured order data storage (the default since WooCommerce 8.2).
-
-Check if it's enabled with `OrderUtil::custom_orders_table_usage_is_enabled()` before using.
+使用する前に`OrderUtil::custom_orders_table_usage_is_enabled()`で有効になっているかチェックすること。
 :::
 
-#### Examples
+#### 例
 
 ```php
 // Obtain orders with a total greater than 100 or from New York city.
@@ -403,24 +395,22 @@ $orders = wc_get_orders(
 );
 ```
 
-### Advanced date queries
+### 高度な日付クエリー
 
 <!-- markdownlint-disable MD033 -->
-|Parameter|Description|
+|パラメータ|ディスクリプション
 |-|-|
-|**date_query**|One or more arrays with keys `column` (an order date: `date_completed`, `date_created`, `date_updated` or `date_paid`, optionally followed by `_gmt` for UTC dates), `value` and optionally `type` and `compare`.<br />This parameter is analogous to [WP_Query's `date_query`](https://developer.wordpress.org/reference/classes/wp_query/#date-parameters), supporting various comparison operators and levels of queries joined by AND/OR relations.|
+|**date_query**| キー `column` (注文日: `date_completed`, `date_created`, `date_updated` または `date_paid`, オプションで UTC 日付の場合は `_gmt` が続く)、 `value` およびオプションで `type` と `compare` を持つ 1 つ以上の配列。<br />このパラメータは[WP_Queryの`date_query`](https://developer.wordpress.org/reference/classes/wp_query/#date-parameters)に類似しており、様々な比較演算子とAND/OR関係で結合されたクエリのレベルをサポートします。
 <!-- markdownlint-enable MD033 -->
 
 詳細と例については、[HPOS order querying](/docs/features/high-performance-order-storage/wc-order-query-improvements#date-queries-date_query) ガイドを参照してください。
 
-:::warning
+`date_query`のサポートはHPOSが注文データストレージとして設定されている場合のみ有効です。
 
-Support for `date_query` is only available when HPOS is the configured order data storage (the default since WooCommerce 8.2).
-
-Check if it's enabled with `OrderUtil::custom_orders_table_usage_is_enabled()` before using.
+使用する前に`OrderUtil::custom_orders_table_usage_is_enabled()`で有効になっているかチェックすること。
 :::
 
-#### Examples
+#### 例
 
 ```php
 // Example: Orders paid in the last month that were created before noon (on any date).
@@ -443,14 +433,14 @@ $orders = wc_get_orders(
 );
 ```
 
-## Adding support for custom parameters
+## カスタムパラメーターへの対応
 
-Developers can extend the query capabilities by filtering the generated query to add support for custom parameters to both `wc_get_orders()` and `WC_Order_Query`.
+開発者は、`wc_get_orders()`と`WC_Order_Query`の両方にカスタム・パラメータのサポートを追加するために生成されたクエリをフィルタリングすることによって、クエリ機能を拡張することができます。
 
 WooCommerceは現在2つの注文保存メカニズムをサポートしています：HPOS(デフォルト)とレガシー(WordPressの投稿とメタデータを使用)です：
 
-- (HPOS) `woocommerce_order_query_args` to translate a parameter into an existing one, or `woocommerce_orders_table_query_clauses` to write your own SQL.
-- (Legacy) `woocommerce_order_data_store_cpt_get_orders_query` to translate a parameter into a `WP_Query` parameter.
+- (HPOS)`woocommerce_order_query_args`で既存のパラメータに変換し、`woocommerce_orders_table_query_clauses`で独自のSQLを書きます。
+- (Legacy) `woocommerce_order_data_store_cpt_get_orders_query` でパラメータを`WP_Query`パラメータに変換します。
 
 ```php
 /**
@@ -505,8 +495,6 @@ if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
     );
 }
 ```
-
-Usage:
 
 ```php
 $orders = wc_get_orders( array( 'customvar' => 'somevalue' ) );

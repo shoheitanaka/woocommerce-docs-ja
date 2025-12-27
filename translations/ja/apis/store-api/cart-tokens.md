@@ -3,7 +3,7 @@ sidebar_label: Cart Tokens
 sidebar_position: 3
 ---
 
-# カート・トークン 
+# Cart Tokens 
 
 カートトークンは、カートとのヘッドレスインタラクションのために、クッキーベースのセッションの代わりに使用することができます。`Cart-Token`を使用する場合、[Nonce Token](/docs/apis/store-api/nonce-tokens)は必要ありません。
 

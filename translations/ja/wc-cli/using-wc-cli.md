@@ -4,9 +4,9 @@ sidebar_label: Using WooCommerce CLI
 sidebar_position: 2
 ---
 
-# WooCommerce CLIの使い方
+# How to Use WooCommerce CLI
 
-#はじめに
+## はじめに
 
 このガイドは、コマンドライン経由でWooCommerceストアを管理するためにWooCommerce CLI（WC-CLI）を使用する初心者を支援することを目的としています。
 

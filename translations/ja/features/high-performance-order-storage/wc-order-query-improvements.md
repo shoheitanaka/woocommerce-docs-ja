@@ -6,21 +6,21 @@ post_title: HPOS order querying APIs
 
 HPOSの導入に伴い、WCのクエリー機能を強化しました。現在、よく知られている[既存のAPI](/docs/extensions/core-concepts/wc-get-orders)に加えて、注文やそのプロパティに関する複雑なクエリを簡単に作成できるように、カスタム注文のメタデータをクエリする機能など、いくつかの機能を追加しています。
 
-All the new query types are implemented as additional query arguments that can be passed to `wc_get_orders()` and are heavily inspired by similar functionality in WordPress' own `WP_Query`. As regular query arguments, they can be combined with other arguments to produce complex queries that, until now, would have required writing custom code and SQL.
+新しいクエリタイプはすべて、`wc_get_orders()`に渡すことができる追加のクエリ引数として実装されており、WordPressの`WP_Query`にある同様の機能に大きくインスパイアされています。通常のクエリ引数として、他の引数と組み合わせることで、これまではカスタムコードやSQLを書く必要があった複雑なクエリを作成することができます。
 
-## The new query types
+## 新しいクエリータイプ
 
-### Metadata queries (`meta_query`)
+### メタデータクエリ (`meta_query`)
 
-With the introduction of HPOS, order fields that were previously stored as post metadata have been moved to their own tables, but the remaining metadata (custom, or from other extensions) can now be queried through the `meta_query `argument.
+HPOSの導入により、以前はポスト・メタデータとして保存されていたオーダー・フィールドは、独自のテーブルに移動されましたが、残りのメタデータ（カスタムまたは他の拡張機能からのもの）は、`meta_query `引数を通してクエリできるようになりました。
 
-At its core, `meta_query` is an array that can contain one or more arrays with keys:
-`key` (the meta key name),
-`value` (the meta value)
-`compare` (optional) an operator to use for comparison purposes such as LIKE, RLIKE, NOT BETWEEN, BETWEEN, etc.
-`type` to cast the meta value to a specific SQL type in the query
+その中核となる`meta_query`は配列で、キーを持つ1つ以上の配列を含むことができる：
+`key`（メタ・キー名）、
+`value` (メタ値)
+`compare` (オプション) LIKE、RLIKE、NOT BETWEEN、BETWEENなどの比較に使用する演算子。
+メタ値をクエリの特定のSQL型にキャストする`type`。
 
-The different arrays can also be combined using `relation` (which admits 'AND' or 'OR' values) to produce more complex queries. The syntax for this new argument is exactly the same as for WP_Query's `meta_query`. As such, you can refer to the [`meta_query` docs](https://developer.wordpress.org/reference/classes/wp_query/#custom-field-post-meta-parameters) for more details.
+より複雑なクエリを生成するために、`relation`（'AND'または'OR'値を認める）を使用して異なる配列を組み合わせることもできます。この新しい引数の構文は、WP_Queryの`meta_query`と全く同じです。詳細については、[`meta_query` docs](https://developer.wordpress.org/reference/classes/wp_query/#custom-field-post-meta-parameters) を参照してください。
 
 ```php
 // Example: obtain all orders which have metadata with the "color" key (any value) and have metadata
@@ -41,9 +41,9 @@ $orders = wc_get_orders(
 );
 ```
 
-### Order field queries (`field_query`)
+### オーダーフィールドクエリー (`field_query`)
 
-This query type has a syntax similar to that of meta queries (`meta_query`) but instead of `key` you'd use `field` inside the different clauses. Here, `field` refers to any order property (such as `billing_first_name`, `total` or `order_key`, etc.) which are also accessible as top-level keys in the query arguments as usual. The difference between directly querying those properties and using a `field_query` is that you can create more complex queries by implementing comparison operators and combining or nesting.
+このクエリー・タイプは、メタ・クエリー（`meta_query`）に似た構文を持っていますが、`key`の代わりに、異なる節の中で`field`を使用します。ここで、`field`は、通常通りクエリ引数のトップレベル・キーとしてアクセス可能なオーダー・プロパティ（`billing_first_name`、`total`、`order_key`など）を指します。これらのプロパティを直接クエリするのと、`field_query`を使用するのとの違いは、比較演算子を実装し、組み合わせや入れ子を行うことで、より複雑なクエリを作成できることです。
 
 ```php
 // Example. For a simple query, you'd be better off by using the order properties directly, even though there's a `field_query` equivalent.
@@ -70,7 +70,7 @@ $orders = wc_get_orders(
 );
 ```
 
-The true power of `field_query` is revealed when you want to perform more interesting queries, that were not possible before...
+`field_query`の真の威力が発揮されるのは、これまで不可能だったような、より興味深いクエリーを実行したい場合だ...。
 
 ```php
 // Example. Obtain all orders where either the total or shipping total is less than 5.0.
@@ -94,10 +94,10 @@ $orders = wc_get_orders(
 );
 ```
 
-### Date queries (`date_query`)
+### 日付クエリ (`date_query`)
 
-Date queries allow you to fetch orders by querying their associated dates (`date_completed`, `date_created`, `date_updated`, `date_paid`) in various ways.
-The syntax for `date_query` is fully compatible with that of `date_query` in `WP_Query`. As such, a good source of examples and details is [the `meta_query` docs](https://developer.wordpress.org/reference/classes/wp_query/#date-parameters) in the WP codex.
+日付クエリでは、関連する日付(`date_completed`, `date_created`, `date_updated`, `date_paid`)を様々な方法でクエリして注文を取得することができます。
+`date_query`の構文は、`WP_Query`の`date_query`と完全に互換性があります。そのため、WP codexの[`meta_query`docs](https://developer.wordpress.org/reference/classes/wp_query/#date-parameters)が例と詳細の良い情報源となります。
 
 ```php
 // Example. Obtain all orders paid in the last month that were created before noon (on any date).
@@ -120,7 +120,7 @@ $orders = wc_get_orders(
 );
 ```
 
-## Advanced Examples
+## 高度な例
 
 ```php
 // Obtain orders either "on-hold" or "pending" that have metadata `weight` >= 50 and metadata `color` or `size` is set.

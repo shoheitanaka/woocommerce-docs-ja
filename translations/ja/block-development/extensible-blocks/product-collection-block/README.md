@@ -3,7 +3,8 @@ sidebar_label: Product Collection block
 category_slug: product-collection
 post_title: Product collection block
 ---
-# 商品コレクションブロック
+
+# Product collection block
 
 お店の商品のコレクションを表示します。
 

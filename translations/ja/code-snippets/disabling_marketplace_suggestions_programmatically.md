@@ -4,7 +4,8 @@ sidebar_label: Disabling marketplace suggestions
 current wccom url: >-
   https://woocommerce.com/document/woocommerce-marketplace-suggestions-settings/#section-6
 ---
-# マーケットプレイスの提案をプログラムで無効にする
+
+# Disabling Marketplace Suggestions Programmatically
 
 woocommerce.comから取得したマーケットプレイスの提案をプログラムで無効にしたい場合は、`woocommerce_allow_marketplace_suggestions`フィルタをテーマの`functions.php`またはカスタムプラグインに追加してください。 
 

@@ -4,9 +4,9 @@ category_slug: cart-and-checkout
 post_title: Cart and Checkout blocks
 ---
 
-# カートとチェックアウトの拡張性を始める
+# Getting started with Cart and Checkout extensibility
 
-このドキュメントは、カートブロックとチェックアウトブロックを拡張するために必要な可動部分のハイレベルな概要です。
+このドキュメントは、カートブロックとチェックアウトブロックを拡張するために必要な可動部の高レベルの概要です。
 
 まずはWordPressの[ブロック開発環境](https://developer.wordpress.org/block-editor/getting-started/devenv/)のドキュメントを読み、[チュートリアル]に従うことをお勧めします：最初のブロックを作る
 ](https://developer.wordpress.org/block-editor/getting-started/tutorial/)を参照してください。
@@ -15,7 +15,7 @@ post_title: Cart and Checkout blocks
 
 WooCommerceリポジトリにブロックテンプレートの例があります。このドキュメントを読みながらこのテンプレートをセットアップしておくと、説明されているコンセプトの一部を理解するのに役立つかもしれません。サンプルブロックのインストールと実行方法は[`@woocommerce/extend-cart-checkout-block`パッケージドキュメント](https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/extend-cart-checkout-block/README.md)を参照してください。
 
-(注意: 上記のリンク先のリポジトリにあるコードは、それだけではあまり役に立ちません; そこにあるコードはテンプレートコードです。READMEの指示に従うと、通常のJSやPHPに変換されます)。
+(注意：上記のリンク先のリポジトリにあるコードは、それだけではあまり役に立ちません。そこにあるコードはテンプレートコードです。READMEの指示に従うと、通常のJSやPHPに変換されます)。
 
 ## フロントエンドの拡張性
 
@@ -23,7 +23,7 @@ WooCommerceリポジトリにブロックテンプレートの例があります
 
 ### ビルドシステム
 
-ある拡張モジュールは非常にシンプルで、JavaScriptファイルを1つだけ含むかもしれませんし、他の拡張モジュールは複雑で、コードが複数のファイルに分割されるかもしれません。いずれにせよ、ファイルはバンドルされ、単一の出力ファイルにミニファイされることが推奨されます。拡張モジュールが特定のページでのみ読み込まれるような複数の異なる部分を持つ場合は、バンドル分割を推奨しますが、このドキュメントの範囲外です。
+ある拡張モジュールはとてもシンプルで、JavaScriptファイルをひとつだけ含むかもしれないし、他の拡張モジュールは複雑で、コードが複数のファイルに分かれているかもしれない。いずれにせよ、ファイルはバンドルされ、単一の出力ファイルにミニファイされることが推奨されます。拡張モジュールが特定のページでのみ読み込まれるような複数の異なる部分を持つ場合は、バンドル分割を推奨しますが、このドキュメントの範囲外です。
 
 ビルドシステムをセットアップするには、WordPressに合わせ、[`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)と呼ばれるJavaScriptパッケージを使用することをお勧めします。このパッケージには`build`というスクリプトが含まれています。デフォルトでは、`wp_enqueue_script`を使ってスクリプトを1つの出力ファイルにビルドし、それをキューに入れることができます。
 
@@ -31,7 +31,7 @@ WooCommerceリポジトリにブロックテンプレートの例があります
 
 #### `WooCommerceDependencyExtractionWebpackPlugin`
 
-`WordPress Dependency Extraction Webpack Plugin`](https://github.com/WordPress/gutenberg/tree/trunk/packages/dependency-extraction-webpack-plugin)および 
+[`WordPress Dependency Extraction Webpack Plugin`](https://github.com/WordPress/gutenberg/tree/trunk/packages/dependency-extraction-webpack-plugin)および 
 [`WooCommerce Dependency Extraction Webpack Plugin`](https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/dependency-extraction-webpack-plugin#dependency-extraction-webpack-plugin).
 
 このWebpackプラグインは、以下の目的で使用されます：
@@ -89,9 +89,9 @@ wp_register_script(
 
 ### ブロックの作成
 
-サンプルブロックの中には、Checkoutにインナーブロックを登録するために必要なファイルを含む「checkout-newsletter-subscription-block」ディレクトリがあります。サンプルのブロックテンプレートは、単一のブロックをインポートしてビルドするように設定されているだけですが、Webpackの設定を変更することで、複数のブロックをビルドすることができます。このドキュメントはサポートしていませんので、代わりに [Webpack [ドキュメント](https://webpack.js.org/concepts/) を参照してください。
+サンプルブロックの中には、「checkout-newsletter-subscription-block」ディレクトリがあり、Checkoutにインナーブロックを登録するために必要なファイルが含まれています。サンプルのブロックテンプレートは、単一のブロックをインポートしてビルドするように設定されているだけですが、Webpackの設定を変更することで、複数のブロックをビルドすることができます。このドキュメントはサポートしていませんので、代わりに [Webpack ドキュメント](https://webpack.js.org/concepts/) を参照してください。
 
-チュートリアル]で取り上げた原則最初のブロックを作る
+チュートリアル]で扱われている原則：最初のブロックを作る
 ](https://developer.wordpress.org/block-editor/getting-started/tutorial/)で説明した原則がここにも当てはまります。
 
 ### フロントエンドで既存の値を変更する
@@ -100,11 +100,11 @@ wp_register_script(
 
 この場合、サンプルブロックからブロックフォルダを削除し、そのディレクトリから読み込まないようにWebpackの設定ファイルを修正し、エントリのJavaScriptファイルに必要なコードを含めることができます。
 
-フィルタの使い方の詳細は、[Filter [Registry](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/filter-registry/README.md)と[Available Filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)のドキュメントを参照してください。
+フィルタの使い方の詳細は、[Filter Registry](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/filter-registry/README.md)と[Available Filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)のドキュメントを参照してください。
 
 ### WooCommerceコンポーネントをエクステンションにインポートする
 
-コンポーネントは`@woocommerce/blocks-components`からインポートできます（`@woocommerce/dependency-extraction-webpack-plugin`によって`window.wc.blocksComponents`に外部化されます）。利用可能なコンポーネントのリストは[WooCommerce [Storybook](https://woocommerce.github.io/woocommerce/?path=/docs/woocommerce-blocks_external-components-button--docs)の「WooCommerce Blocks -&gt; External components」で確認できます。
+コンポーネントは`@woocommerce/blocks-components`からインポートできます（`@woocommerce/dependency-extraction-webpack-plugin`によって`window.wc.blocksComponents`に外部化されます）。利用可能なコンポーネントのリストは[WooCommerce Storybook](https://woocommerce.github.io/woocommerce/?path=/docs/woocommerce-blocks_external-components-button--docs)の「WooCommerce Blocks -> External components」で確認できます。
 
 `Button`コンポーネントのインポート例は以下の通り：
 

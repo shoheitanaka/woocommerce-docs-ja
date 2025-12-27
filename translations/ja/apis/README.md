@@ -3,13 +3,13 @@ post_title: Getting Started with WooCommerce APIs
 sidebar_label: Getting started
 ---
 
-# WooCommerce APIを始めよう
+# Getting Started with WooCommerce APIs
 
 WooCommerceは、WooCommerceストアのデータとやり取りするためのプログラムAPIを多数提供しています。
 
 ## WC REST API
 
-WC REST APIはWooCommerceの強力な機能で、注文、商品、クーポン、顧客、配送ゾーンなどWooCommerceの様々なデータを読み書きできます。[WordPress REST API](https://developer.wordpress.org/rest-api/)に基づいています。
+[WC REST APIはWooCommerceの強力な機能で、注文、商品、クーポン、顧客、配送ゾーンなどWooCommerceの様々なデータを読み書きできます。WordPress REST API](https://developer.wordpress.org/rest-api/)に基づいています。
 
 [WC REST API](./rest-api/README.md) ドキュメントを参照してください。
 

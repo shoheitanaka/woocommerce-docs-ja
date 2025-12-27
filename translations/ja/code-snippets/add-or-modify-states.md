@@ -1,11 +1,12 @@
 ---
 post_title: Add or modify states
 ---
-# ステートを追加または変更する
+
+# Add or modify states
 
 WooCommerceに独自の配送方法を追加したり、変更したりできます。
 
-&gt; 注：XXの両方のインスタンスをあなたの国コードに置き換える必要があります。つまり、配列内の各州の ID は、その州に割り当てる番号の前に 2 文字の国コードを指定する必要があります。
+> 注：XXの両方のインスタンスをあなたの国コードに置き換える必要があります。つまり、配列内の各州の ID は、その州に割り当てる番号の前に、2 文字の国コードを指定する必要があります。
 
 ```php
 if ( ! function_exists( 'YOUR_PREFIX_add_or_modify_states' ) ) {

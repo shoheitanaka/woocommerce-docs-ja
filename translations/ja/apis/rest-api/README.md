@@ -10,13 +10,13 @@ sidebar_label: REST API
 
 ## 必要条件
 
-標準のエンドポイントURI構造（例：`wc/v3/products`）を使用してREST APIにアクセスするには、WordPressのパーマリンクを「Plain」以外に設定する必要があります。設定 &gt; パーマリンク**に移動し、オプションを選択します。
+標準のエンドポイントURI構造（例：`wc/v3/products`）を使用してREST APIにアクセスするには、WordPressのパーマリンクを「Plain」以外に設定する必要があります。設定 > パーマリンク**に移動し、オプションを選択します。
 
 ![Permalinks options](https://developer.woocommerce.com/wp-content/uploads/2023/12/permalinks.webp)
 
 ## APIリファレンス
 
-[WooCommerce REST API Docs](https://woocommerce.github.io/woocommerce-rest-api-docs/) は各APIエンドポイントの技術的な詳細とコードサンプルを提供しています。
+[WooCommerce REST API Docs](https://woocommerce.github.io/woocommerce-rest-api-docs/)では、各APIエンドポイントの技術的な詳細とコードサンプルを提供しています。
 
 ## 認証
 
@@ -30,7 +30,7 @@ sidebar_label: REST API
 
 REST APIを使い始めるには、まずAPIキーを生成する必要がある。
 
-1.WooCommerce &gt; 設定 &gt; 詳細*に移動します。
+1.WooCommerce > 設定 > 詳細*に移動します。
 2.REST API*タブに移動し、*Add key*をクリックします。
 3.注文などにアクセスできるユーザーを選択し、キーに*読み取り/書き込み*権限を与えます。
 4.Generate api key*をクリックします。

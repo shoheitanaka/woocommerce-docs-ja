@@ -6,7 +6,8 @@ current wccom url: >-
 combined with: >-
   https://woocommerce.com/document/hide-other-shipping-methods-when-free-shipping-is-available/#use-a-plugin
 ---
-# 送料無料カスタマイズ
+
+# Free Shipping Customizations
 
 ## 送料無料詳細設定/カスタマイズ
 
@@ -18,7 +19,7 @@ combined with: >-
 
 ### コードの追加
 
-スニペットを追加する前に、WooCommerceのキャッシュをクリアしてください。WooCommerce &gt; System Status &gt; Tools &gt; WooCommerce Transients &gt; Clear transientsにアクセスしてください。
+スニペットを追加する前に、WooCommerceのキャッシュをクリアしてください。WooCommerce > System Status > Tools > WooCommerce Transients > Clear transientsにアクセスしてください。
 
 ## コードスニペット
 
@@ -119,4 +120,4 @@ add_filter( 'woocommerce_shipping_free_shipping_is_available', 'fsc_free_shippin
 
 ### クラスごと／商品ごとの配送方法、分割注文、その他のシナリオを有効にしますか？
 
-もっと柔軟性が必要ですか？プレミアム配送方法拡張機能](https://woocommerce.com/product-category/woocommerce-extensions/shipping-methods/)をご覧ください。
+[もっと柔軟性が必要ですか？プレミアム配送方法拡張機能](https://woocommerce.com/product-category/woocommerce-extensions/shipping-methods/)をご覧ください。

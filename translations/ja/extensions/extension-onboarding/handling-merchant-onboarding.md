@@ -1,11 +1,12 @@
 ---
 post_title: How to implement merchant onboarding
 sidebar_label: Implement merchant onboarding
+sidebar_position: 1
 ---
 
 # How to implement merchant onboarding
 
-## Introduction
+## はじめに
 
 オンボーディングは、マーチャントのユーザーエクスペリエンスの重要な部分です。加盟店が成功するように設定し、正しくエクステンションを使用するだけでなく、エクステンションを最大限に活用できるようにします。あなたのエクステンションを使用する加盟店をオンボーディングするために、開発者として活用できる特に便利な機能がいくつかあります：
 
@@ -13,16 +14,42 @@ sidebar_label: Implement merchant onboarding
 - 店舗管理リンク
 - 管理メモ
 
----
+## ♪ はじめに
 
-## Using setup tasks
+`@woocommerce/create-woo-extension`を使用して、プラグイン用のモダンなWordPress JavaScript環境を構築します。このツールはWooCommerceと統合するための完全に機能的な開発環境を作成します。
+
+この例では、`add-task`バリアントを使用して、基本的なオンボーディング・エクステンションを作成します。
+
+`wp-content/plugins`ディレクトリで、以下のコマンドを実行して拡張機能を作成します：
+
+```sh
+npx @wordpress/create-block -t @woocommerce/create-woo-extension --variant=add-task my-extension-name
+```
+
+新しく作成したフォルダに移動し、開発を開始する：
+
+```sh
+cd my-extension-name
+npm run start
+```
+
+WordPressのローカル環境では、`wp-env`を使用することもできます：
+
+```sh
+npm -g i @wordpress/env
+wp-env start
+```
+
+`/wp-admin/plugins.php`にアクセスし、プラグインを有効化することをお忘れなく。
+
+## セットアップタスクの使用
 
 セットアップタスクはWooCommerce Adminホーム画面に表示され、拡張機能をセットアップするために特定のステップを完了するようマーチャントに促します。タスクを追加するには2つのステップが必要です：
 
 - PHP を使ってタスク (とその JavaScript) を登録する
 - JavaScriptを使ってタスクをビルドし、コンフィギュレーションを設定し、タスクリストに追加する
 
-### Registering the task with PHP
+### タスクをPHPに登録する
 
 拡張タスクリストのアイテムとしてタスクを登録するには、まず Task クラスを継承した新しい PHP クラスを作成する必要があります。このクラスはカスタムタスクのプロパティとふるまいを定義します。
 
@@ -76,7 +103,7 @@ class MyTask extends Task {
 }
 ```
 
-After defining your custom task class, add it to the task list by calling the `add_task` method on the `TaskLists` class. Please note that you need to call the add_task method before or in the `init` hook because onboarding tasks are registered in the `init` hook.
+カスタムタスククラスを定義したら、`TaskLists`クラスの`add_task`メソッドを呼び出して、タスクリストに追加します。オンボーディングタスクは `init` フックで登録されるため、add_task メソッドは `init` フックの前かフック内で呼び出す必要があることに注意してください。
 
 ```php
 # Register the task.
@@ -96,13 +123,13 @@ function register_custom_task() {
 add_action('init', 'register_custom_task');
 ```
 
-The `TaskList` class represents a task list. It contains properties and methods for managing task list. We currently have three predefined task lists
+`TaskList`クラスはタスクリストを表します。このクラスには、タスクリストを管理するためのプロパティとメソッドが含まれています。現在、3つの定義済みタスク・リストがあります。
 
-- `setup`: The default task list
-- `extended`: The "Things to do next" task list
-- `secret_tasklist`: The "Secret" task list that is used for having tasks that are accessed by other means.
+- `setup`：デフォルトのタスクリスト
+- `extended`：次にやること」タスクリスト
+- `secret_tasklist`：他の手段でアクセスされるタスクを持つために使われる "シークレット "タスクリスト。
 
-### Adding the task using JavaScript
+### JavaScriptを使ったタスクの追加
 
 PHP でタスクを登録することに加えて、JavaScript でタスクコンポーネントをビルドし、コンフィギュレーションを設定し、タスクリストに追加する必要があります。たとえば、シンプルなタスクの JavaScript ファイルは次のようになります：
 
@@ -151,7 +178,7 @@ registerPlugin( 'add-task-list-item', {
 
 上の例では、エクステンションはいくつかの異なることをしている。それを分解してみよう：
 
-#### Handle imports
+#### 輸入品の取り扱い
 
 まず、外部の依存関係から関数、コンポーネント、その他のユーティリティをインポートする。
 
@@ -164,9 +191,9 @@ import {
 import { registerPlugin } from '@wordpress/plugins';
 ```
 
-#### Construct the component
+#### コンポーネントを構築する
 
-Next, we create a [functional component](https://reactjs.org/docs/components-and-props.html) that returns our task card. The intermixed JavaScript/HTML syntax we're using here is called JSX. If you're unfamiliar with it, you can [read more about it in the React docs](https://reactjs.org/docs/introducing-jsx.html).
+次に、タスクカードを返す[機能コンポーネント](https://reactjs.org/docs/components-and-props.html)を作成する。ここで使っているJavaScriptとHTMLが混在した構文はJSXと呼ばれています。JSXについてよく知らない場合は、[Reactのドキュメント](https://reactjs.org/docs/introducing-jsx.html)を参照してください。
 
 ```js
 import { onboardingStore } from '@woocommerce/data';
@@ -207,11 +234,11 @@ const Task = ( { onComplete, task } ) => {
 };
 ```
 
-In the example above, we're using the `Card` and `CardBody` components to construct our task's component. The `div` inside the `CardBody` uses a [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) (`{}`) to embed a ternary operator that uses the component's state to determine whether to display the task as complete or incomplete.
+上の例では、`Card`と`CardBody`を使ってタスクのコンポーネントを構成しています。`CardBody`内の`div`は、[JavaScript式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) (`{}`)を使用して、コンポーネントの状態を使用してタスクを完了として表示するか未完了として表示するかを決定する三項演算子を埋め込んでいます。
 
-#### Register the Plugin for Task Content
+#### タスクコンテンツ用プラグインの登録
 
-Next, we register the Task component as a plugin named "add-task-content" using [SlotFills](https://developer.wordpress.org/block-editor/reference-guides/slotfills/). This plugin nests the Task component within a WooOnboardingTask component and passes the necessary properties. We also specify the scope of the plugin as "woocommerce-tasks" to make it effective only within WooCommerce's task list.
+次に、[SlotFills](https://developer.wordpress.org/block-editor/reference-guides/slotfills/)を使って "add-task-content "というプラグインとしてTaskコンポーネントを登録します。このプラグインはWooOnboardingTaskコンポーネント内にTaskコンポーネントをネストし、必要なプロパティを渡します。また、プラグインのスコープを "woocommerce-tasks "に指定することで、WooCommerceのタスクリスト内でのみ有効にしています。
 
 ```js
 registerPlugin( 'add-task-content', {
@@ -229,7 +256,7 @@ registerPlugin( 'add-task-content', {
 } );
 ```
 
-#### Register the Plugin for Task List Item Customization
+#### タスクリスト項目カスタマイズ用プラグインの登録
 
 最後に、"my-task-list-item-plugin "というプラグインを登録する。このプラグインはタスクリストアイテムの外観をカスタマイズするために使われます。このプラグインはWooCommerceのタスクリストもターゲットにしており、DefaultTaskItemコンポーネントをカスタムラッパーでラップし、スタイリングを追加します。
 
@@ -256,9 +283,9 @@ registerPlugin( 'my-task-list-item-plugin', {
 
 要約すると、シンプルなタスクのJavaScriptファイルはWooCommerceのタスクリストの機能を拡張し、カスタマイズし、ユーザがタスクをよりよく管理し、タスクリストのアイテムの外観をパーソナライズできるようにします。
 
-### Registering the task with JavaScript
+### タスクをJavaScriptに登録する
 
-In addition to registering the task in php, you'll also need to register and enqueue the transpiled JavaScript file containing your task component and its configuration. A common way to do this is to create a dedicated registration function that hooks into the `admin_enqueue_scripts` action in WordPress. Below is an annotated example of how this registration might look:
+phpでタスクを登録することに加えて、タスクコンポーネントとその設定を含むトランスパイルされたJavaScriptファイルを登録し、エンキューする必要があります。これを行う一般的な方法は、WordPressの`admin_enqueue_scripts`アクションにフックする専用の登録関数を作ることです。以下は、この登録がどのように見えるかの注釈付き例です：
 
 ```php
 /**
@@ -289,14 +316,11 @@ add_action( 'admin_enqueue_scripts', 'add_task_register_script' );
 
 これらのステップに従うことで、カスタムタスクがWooCommerceのオンボーディングタスクリストに表示されるはずです。
 
-For a complete example of adding a custom task as a WordPress plugin, you can check out the [add-task examples directory](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/admin/docs/examples/extensions/add-task).
+WordPressプラグインとしてカスタムタスクを追加する完全な例については、[add-task examples directory](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/admin/docs/examples/extensions/add-task)をチェックできる。
 
-To learn more about the tasklist, you can refer to the [tasklist documentation](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/admin/docs/features/onboarding-tasks.md).
+タスクリストの詳細については、[tasklist documentation](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/admin/docs/features/onboarding-tasks.md)を参照してください。
 
-
----
-
-## Using Store Management Links
+## 店舗管理リンクの使用
 
 マーチャントがオンボーディングタスクリストのすべての項目を完了すると、WooCommerceは便利なストア管理リンクのリストを含むセクションに置き換えます。このセクションは、エクステンションの主要な機能に注目させ、マーチャントのナビゲーションを助ける素晴らしい方法です。
 
@@ -308,13 +332,13 @@ To learn more about the tasklist, you can refer to the [tasklist documentation](
 - PHPで管理スクリプトをエンキューする
 - リンク・オブジェクトを提供するためにJavaScriptフィルターでフックする
 
-### Installing the Icons package
+### アイコンパッケージのインストール
 
-Store management links use the `@wordpress/icons` package. If your extension isn't already using it, you'll need to add it to your extension's list of dependencies.
+店舗管理リンクは`@wordpress/icons`パッケージを使用します。拡張機能がまだこのパッケージを使っていない場合は、拡張機能の依存リストに追加する必要があります。
 
-`npm` `install` ` @wordpress``/icons ` `--save`
+`npm` __`install` __` @wordpress``/icons ` __`--save`
 
-### Enqueuing the JavaScript
+### JavaScriptをエンキューする
 
 店舗管理セクションにカスタムリンクを追加するロジックは、JavaScriptファイルに記述します。そのファイルをPHPファイルでWordPressに登録し、エンキューします：
 
@@ -333,13 +357,13 @@ add_action( 'admin_enqueue_scripts', 'custom_store_management_link' );
 
 この呼び出しの最初の引数はハンドルで、WordPressがキューに入れるスクリプトを参照するための名前です。第二引数は、スクリプトが置かれているURLです。
 
-The third argument is an array of script dependencies. By supplying the `wp-hooks` handle in that array, we're ensuring that our script will have access to the `addFilter` function we'll be using to add our link to WooCommerce's list.
+3番目の引数は、スクリプトの依存関係の配列です。この配列に`wp-hooks`ハンドルを指定することで、WooCommerceのリストにリンクを追加するために使用する`addFilter`関数にスクリプトがアクセスできるようにします。
 
 4番目の引数は優先順位で、WordPressでJavaScriptを読み込む順番を決める。この例では優先度を10に設定しています。店舗管理セクションがレンダリングされる前にスクリプトが実行されることが重要です。リンクが正しくレンダリングされるように、優先順位の値が15より低いことを確認してください。
 
-### Supply your link via JavaScript
+### JavaScriptでリンクを張る
 
-Finally, in the JavaScript file you enqueued above, hook in to the `woocommerce_admin_homescreen_quicklinks` filter and supply your task as a simple JavaScript object.
+最後に、上記でキューに入れたJavaScriptファイルで、`woocommerce_admin_homescreen_quicklinks`フィルターにフックし、単純なJavaScriptオブジェクトとしてタスクを提供する。
 
 ```js
 import { megaphone } from '@wordpress/icons';
@@ -361,9 +385,7 @@ addFilter(
 );
 ```
 
----
-
-## Using Admin Notes
+## アドミンノートを使う
 
 アドミンノートは、WooCommerceストア、エクステンション、アクティビティ、実績に関する有益な情報を表示するためのものです。また、ストアの管理と最適化の日々のタスクに役立つ情報を表示するのにも便利です。一般的なルールとしては、以下のような情報に管理者ノートを使用します：
 
@@ -375,7 +397,7 @@ addFilter(
 
 WooCommerceの新しいReact-powered adminエクスペリエンスの一部であるにもかかわらず、Admin Notesは標準のPHPインターフェイスを介して開発者が利用できます。
 
-The recommended approach for using Admin Notes is to encapsulate your note within its own class that uses the [NoteTraits](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Admin/Notes/NoteTraits.php) trait included with WooCommerce Admin. Below is a simple example of what this might look like:
+アドミンノートを使用するための推奨アプローチは、WooCommerce Adminに含まれる[NoteTraits](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Admin/Notes/NoteTraits.php) traitを使用する独自のクラス内にノートをカプセル化することです。下記はその簡単な例です：
 
 ```php
 <?php
@@ -495,12 +517,11 @@ function my_great_extension_deactivate() {
 register_deactivation_hook( __FILE__, 'my_great_extension_deactivate' );
 ```
 
-
-### Breaking it down
+### 分解する
 
 上の例を分解して、それぞれのセクションが何をするのかを見てみよう。
 
-#### Namespacing and feature availability checks
+#### 名前空間と機能の利用可能性チェック
 
 まず、基本的な名前空間と機能の可用性をチェックし、このファイルがWordPressのアプリケーションスペース内でのみ実行されるようにします。
 
@@ -519,9 +540,9 @@ if ( ! class_exists( 'WC_Data_Store' ) ) {
 }
 ```
 
-#### Using Note and NoteTraits objects
+#### Note オブジェクトと NoteTraits オブジェクトの使用
 
-Next, we define a simple class that will serve as a note provider for our note. To create and manage note objects, we'll import the `Note` and `NotesTraits` classes from WooCommerce Admin.
+次に、ノートのプロバイダとなるシンプルなクラスを定義します。ノートオブジェクトを作成し管理するために、WooCommerce Adminから`Note`と`NotesTraits`クラスをインポートします。
 
 ```php
 class ExampleNote {
@@ -532,15 +553,15 @@ class ExampleNote {
 }
 ```
 
-#### Provide a unique note name
+#### ユニークなノート名を付ける
 
-Before proceeding, create a constant called `NOTE_NAME` and assign a unique note name to it. The `NoteTraits` class uses this constant for queries and note operations.
+先に進む前に、`NOTE_NAME`という定数を作成し、一意のノート名を割り当てます。`NoteTraits`クラスは、クエリーとノート操作にこの定数を使用します。
 
-`const NOTE_NAME = 'my-prefix-example-note';`
+`const NOTE_NAME = 'my-prefix-example-note';`。
 
-#### Configure the note's details
+#### ノートの詳細を設定する
 
-Once you've set your note's name, you can define and configure your note. The `NoteTraits` class will call `self::get_note()` when performing operations, so you should encapsulate your note's instantiation and configuration in a static function called `get_note()` that returns a `Note` object.
+ノートの名前を設定したら、ノートの定義と設定を行います。`NoteTraits`クラスは操作の実行時に`self::get_note()`を呼び出すので、`Note`オブジェクトを返す`get_note()`という静的関数でノートのインスタンス化と設定をカプセル化する必要があります。
 
 ```php
 public static function get_note() {
@@ -549,7 +570,7 @@ public static function get_note() {
 }
 ```
 
-Inside our `get_note()` function, we'll handle any logic for collecting data our Note may need to display. Our example note will include information about when the extension was activated, so this bit of code is just for demonstration. You might include other logic here depending on what data your note should contain.
+`get_note()`関数の中では、ノートが表示する必要のあるデータを収集するためのロジックを処理します。このノートの例では、拡張機能がいつアクティブになったかという情報を表示します。ノートに含めるデータによっては、ここに他のロジックを含めることもできます。
 
 ```php
 $activated_time = current_time( 'timestamp', 0);
@@ -557,13 +578,13 @@ $activated_time_formatted = date( 'F jS', $activated_time );
 
 ```
 
-Next, we'll instantiate a new `Note` object.
+次に、新しい`Note`オブジェクトをインスタンス化する。
 
-`$note = new Note();`
+`$note = new Note();`。
 
 Noteクラスのインスタンスができたら、APIを使ってプロパティを設定することができる。
 
-`$note->set_title( 'Getting Started' );`
+`$note->set_title( 'Getting Started' );`。
 
 次に、上記で収集したタイムスタンプデータの一部を使用して、ノートの内容を設定します。
 
@@ -575,7 +596,7 @@ $note->set_content(
 );
 ```
 
-In addition to regular content, notes also support structured content using the `content_data` property. You can use this property to re-localize notes on the fly, but that is just one use case. You can store other data here too. This is backed by a `longtext` column in the database.
+通常のコンテンツに加えて、ノートは`content_data`プロパティを使った構造化コンテンツもサポートしています。このプロパティを使えば、その場でノートを再ローカライズすることができるが、これは一つの使用例に過ぎない。他のデータもここに保存できます。これはデータベースの`longtext`カラムによってサポートされます。
 
 ```php
 $note->set_content_data( (object) array(
@@ -585,28 +606,28 @@ $note->set_content_data( (object) array(
 ) );
 ```
 
-Next, we'll set the note's `type` property. Note types are defined as enum-style class constants in the `Note` class. Available note types are _error_, _warning_, _update_, _info_, and _marketing_. When selecting a note type, be aware that the _error_ and _update_ result in the note being shown as a Store Alert, not in the Inbox. It's best to avoid using these types of notes unless you absolutely need to.
+次に、ノートの`type`プロパティを設定します。ノート・タイプは、`Note`クラスの列挙型クラス定数として定義されます。利用可能なノート・タイプは、_error_、_warning_、_update_、_info_、_marketing_です。ノートタイプを選択する際、_error_と_update_は受信トレイではなく、ストアアラートとして表示されることに注意してください。どうしても必要な場合を除き、これらのタイプのノートは使用しない方がよいでしょう。
 
-`$note->set_type( Note::E_WC_ADMIN_NOTE_INFORMATIONAL );`
+`$note->set_type( Note::E_WC_ADMIN_NOTE_INFORMATIONAL );`。
 
-Admin Notes also support a few different layouts. You can specify `banner`, `plain`, or `thumbnail` as the layout. If you're interested in seeing the different layouts in action, take a look at [this simple plugin](https://gist.github.com/octaedro/864315edaf9c6a2a6de71d297be1ed88) that you can install to experiment with them.
+アドミンノートはいくつかの異なるレイアウトもサポートしています。`banner`、`plain`、`thumbnail`をレイアウトとして指定できます。これらのレイアウトを実際に見てみたい方は、[このシンプルなプラグイン](https://gist.github.com/octaedro/864315edaf9c6a2a6de71d297be1ed88)をインストールして試してみてください。
 
-We'll choose `plain` as our layout, but it's also the default, so we could leave this property alone and the effect would be the same.
+ここでは、`plain`をレイアウトとして選択するが、これはデフォルトでもあるので、このプロパティだけを残しておいても効果は同じである。
 
-`$note->set_layout( 'plain' );`
+`$note->set_layout( 'plain' );`。
 
-If you have an image that you want to add to your Admin Note, you can specify it using the `set_image` function. This property ultimately renders as the `src` attribute on an `img` tag, so use a string here.
+管理ノートに追加したい画像がある場合は、`set_image`関数を使用して指定できます。このプロパティは最終的に`img`タグの`src`属性としてレンダリングされるので、ここでは文字列を使用してください。
 
-`$note->set_image( '' );`
+`$note->set_image( '' );`。
 
-Next, we'll set the values for our Admin Note's `name` and `source` properties. As a best practice, you should store your extension's name (i.e. its slug) in the `source` property of the note. You can use the `name` property to support multiple sub-types of notes. This gives you a handy way of namespacing your notes and managing them at both a high and low level.
+次に、管理ノートの `name` プロパティと `source` プロパティの値を設定します。ベストプラクティスとして、ノートの `source` プロパティに拡張機能の名前（スラッグ）を格納する必要があります。`name`プロパティを使用すると、複数のサブタイプのノートをサポートできます。これにより、ノートの名前空間と上位および下位レベルでの管理を行う便利な方法が提供されます。
 
 ```php
 $note->set_source( 'inbox-note-example');
 $note->set_name( self::NOTE_NAME );
 ```
 
-Admin Notes can support 0, 1, or 2 actions (buttons). You can use these actions to capture events that trigger asynchronous processes or help the merchant navigate to a particular view to complete a step, or even simply to provide an external link for further information. The `add_action()` function takes up to three arguments. The first is the action name, which can be used for event handling, the second renders as a label for the action's button, and the third is an optional URL for actions that require navigation.
+アドミンノートでは、0、1、または2つのアクション（ボタン）をサポートすることができます。これらのアクションを使用して、非同期処理のトリガーとなるイベントをキャプチャしたり、マーチャントがステップを完了するために特定のビューにナビゲートしたり、あるいは単に詳細情報のための外部リンクを提供したりすることができます。`add_action()`関数は最大3つの引数を取ります。1つ目はイベント処理に使用できるアクション名、2つ目はアクションのボタンのラベルとしてレンダリングされるもの、3つ目はナビゲーションを必要とするアクションのためのオプションのURLです。
 
 ```php
 $note->add_action(
@@ -617,13 +638,13 @@ $note->add_action(
 );
 ```
 
-Finally, remember to have the `get_note()` function return the configured Note object.
+最後に、`get_note()`関数が設定されたNoteオブジェクトを返すことを忘れないでください。
 
-`return $note;`
+`return $note;`。
 
-#### Adding and deleting notes
+#### ノートの追加と削除
 
-To add and delete notes, you can use the helper functions that are part of the `NoteTraits` class: `possibly_add_note()` and its counterpart `possibly_delete_note()`. These functions will handle some of the repetitive logic related to note management and will also run checks to help you avoid creating duplicate notes.
+ノートの追加と削除には、`NoteTraits`クラスの一部であるヘルパー関数を使用できます：`possibly_add_note()`とそれに対応する`possibly_delete_note()`です。これらの関数は、ノート管理に関連する反復ロジックの一部を処理し、重複したノートを作成しないようにチェックを行います。
 
 私たちのエクステンションの例では、シンプルにするために、これらの呼び出しを有効化フックと無効化フックに結び付けています。マーチャントの受信トレイにノートを追加したいイベントはたくさんありますが、非アクティブ化やアンインストール時にノートを削除することは、エクステンションのライフサイクルを管理する上で重要なことです。
 

@@ -10,11 +10,11 @@ sidebar_position: 7
 
 手始めに、WordPress自体に組み込まれているデバッグ・ツールから始めるのがよいだろう：
 
-Debugging [in WordPress c](https://wordpress.org/documentation/article/debugging-in-wordpress/)のドキュメントには、WordPressのコアデバッグツールを有効にするために設定できる環境変数が多数紹介されています。
+[Debugging in WordPress c](https://wordpress.org/documentation/article/debugging-in-wordpress/)のドキュメントには、WordPressのコアデバッグツールを有効にするために設定できる環境変数が多数紹介されています。
 
 ### クエリーモニター
 
-WordPress開発者に人気のプラグインは、WordPress用の開発者ツールである[Query [Monitor](https://wordpress.org/plugins/query-monitor/)です。Query Monitorは、データベースクエリ、PHPエラー、AJAX/Restリクエスト、フックとアクション、ブロックエディタブロック、エンキューされたスクリプトとスタイルシート、HTTP APIコールなどのデバッグを可能にします。
+WordPress開発者に人気のプラグインは、WordPress用の開発者ツールである[Query Monitor](https://wordpress.org/plugins/query-monitor/)です。Query Monitorは、データベースクエリ、PHPエラー、AJAX/Restリクエスト、フックとアクション、ブロックエディタブロック、エンキューされたスクリプトとスタイルシート、HTTP APIコールなどのデバッグを可能にします。
 
 ### 電子メールのデバッグ
 

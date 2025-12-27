@@ -2,7 +2,8 @@
 post_title: 'Handling scripts, styles, and data'
 sidebar_label: 'Script, styles, and data handling'
 ---
-# スクリプト、スタイル、データを扱う
+
+# Handling scripts, styles, and data
 
 ## 問題
 
@@ -12,7 +13,7 @@ sidebar_label: 'Script, styles, and data handling'
 
 `IntegrationRegistry`を使用して`IntegrationInterface`を登録することができ、これはスクリプト、スタイル、データのエンキューを処理するクラスになります。各ブロック (ミニカート、カート、チェックアウト) に異なる `IntegrationInterface` を使用することもできますし、同じものを使用することもできます。
 
-フックを使うべきである：`woocommerce_blocks_mini-cart_block_registration`。`woocommerce_blocks_cart_block_registration`と`woocommerce_blocks_checkout_block_registration`です。これらのフックは[`IntegrationRegistry`](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/trunk/src/Integrations/IntegrationRegistry.php)のインスタンスをコールバックに渡します。
+フックを使うべきである：`woocommerce_blocks_mini-cart_block_registration`。`woocommerce_blocks_cart_block_registration`と`woocommerce_blocks_checkout_block_registration`です。これらのフックは、[`IntegrationRegistry`](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/trunk/src/Integrations/IntegrationRegistry.php)のインスタンスをコールバックに渡します。
 
 このオブジェクトの`register`メソッドを使用して、`IntegrationInterface`を登録することができます。
 
@@ -28,7 +29,7 @@ sidebar_label: 'Script, styles, and data handling'
 
 ### `initialize()`。
 
-ここには、統合のためのセットアップや初期設定を置く必要があります。たとえば、拡張モジュールに必要なスクリプトやスタイルをここに登録することができます。このメソッドは何も返してはいけません。
+ここには、統合のセットアップや初期化を行う必要があります。たとえば、拡張モジュールに必要なスクリプトやスタイルをここに登録することができます。このメソッドは何も返してはいけません。
 
 ### `get_script_handles()`。
 
@@ -187,7 +188,7 @@ add_action(
 
 これで、どちらかのブロックを含むページをロードすると、`initialize`に登録したスクリプトがロードされるはずだ！
 
-### `get_script_data` で追加されたデータの取得
+### `get_script_data`で追加されたデータの取得
 
 インターフェイスの`get_script_data`メソッドで、拡張機能にデータを関連付けた！
 

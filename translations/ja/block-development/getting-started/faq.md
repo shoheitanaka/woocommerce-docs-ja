@@ -2,13 +2,14 @@
 post_title: Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
-# よくある質問
+
+# Frequently Asked Questions
 
 このドキュメントは、WooCommerce Blocksを拡張する開発者からよく寄せられる質問にお答えすることを目的としています。
 
 FAQは質問を受け次第、追加していく予定です。
 
-ここにない質問は、[GitHub [Discussions](https://github.com/woocommerce/woocommerce/discussions) または [WooCommerce [Community Slack](https://woocommerce.com/community-slack/) でお尋ねください。
+ここにない質問は、[GitHub Discussions](https://github.com/woocommerce/woocommerce/discussions) または [WooCommerce Community Slack](https://woocommerce.com/community-slack/) でお尋ねください。
 
 ## 一般的な質問
 
@@ -192,7 +193,7 @@ dispatch('wc/store/cart').invalidateResolutionForStore()
 
 この方法は現在 ** 公式にはサポートされていませんが、DOM 操作や React ポータルを使用してこの方法を実行している開発者の話を聞いたことがあります。この方法を選択した場合、将来 Cart ブロックが変更されたときに、統合が機能しなくなる可能性があることに注意してください。 
 
-#チェックアウトの修正
+## チェックアウトの修正
 
 ### チェックアウトフィールドを削除するには？
 

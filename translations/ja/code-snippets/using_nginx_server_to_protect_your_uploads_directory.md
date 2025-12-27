@@ -4,7 +4,8 @@ sidebar_label: NGINX server to protect upload directory
 current wccom url: >-
   https://woocommerce.com/document/digital-downloadable-product-handling/#protecting-your-uploads-directory
 ---
-# NGINXサーバーを使ってアップロードディレクトリを保護する
+
+# Using NGINX server to protect your upload directory
 
 X-Accel-Redirect/X-Sendfile**または**Force Downloads**ダウンロードメソッドと共にNGINXサーバーを使用している場合、より良いセキュリティのためにこの設定を追加する必要があります：
 

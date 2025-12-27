@@ -2,7 +2,8 @@
 post_title: Inner block types
 sidebar_label: Inner block types
 ---
-# 内部ブロックの種類
+
+# Inner block types
 
 以下の追加カートおよびチェックアウト内部ブロックタイプフィルタが利用可能です：
 
@@ -72,4 +73,4 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|！[追加カートとチェックアウトのインナーブロックタイプフィルターを適用する前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/0d4560c8-c2b1-4ed8-8aee-469b248ccb08) |！[追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d38cd568-6c8c-4158-9269-d8dffdf66988) |｜｜[追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d38cd568-6c8c-4158-9269-d8dffdf66988)
+|![追加カートとチェックアウトのインナーブロックタイプフィルターを適用する前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/0d4560c8-c2b1-4ed8-8aee-469b248ccb08) |![追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d38cd568-6c8c-4158-9269-d8dffdf66988) |｜｜｜[追加カートとチェックアウトのインナーブロックタイプフィルターを適用した後](__URL_1__)

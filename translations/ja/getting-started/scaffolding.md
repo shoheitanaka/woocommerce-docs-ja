@@ -3,7 +3,8 @@ post_title: Scaffolding and sample store data
 sidebar_label: Scaffolding and sample data
 sidebar_position: 4
 ---
-# スカフォールドとサンプルストアのデータ
+
+# Scaffolding and sample store data
 
 WooCommerceは、あなたが構築しようとしているものに応じて、多くのスターターキットや足場を提供しています。
 
@@ -18,7 +19,7 @@ WooCommerceストアをデザインする場合、テーマ開発には2つの�
 
 StorefrontはWooの代表的なクラシックテーマで、[WordPress Theme Directory](https://wordpress.org/themes/)にあります。テーマ自体をリネームして変更することも、子テーマを使って特定の部分を上書きすることもできます。
 
-クラシックなWooCommerceテーマの作成に関する詳細は、クラシックテーマ開発ハンドブックをお読みください。子ブロックテーマの作成とクラシックテーマとブロックテーマの違いを理解するための包括的なガイドについては、[WooCommerceブロックテーマ開発](/docs/theming/block-theme-development/theming-woo-blocks) と [WordPressブロック子テーマ開発](https://learn.wordpress.org/lesson-plan/create-a-basic-child-theme-for-block-themes/) を参照してください。
+クラシックなWooCommerceテーマの作成に関する詳細は、クラシックテーマ開発ハンドブックをお読みください。子ブロックテーマの作成とクラシックテーマとブロックテーマの違いを理解するための包括的なガイドについては、[WooCommerceブロックテーマ開発](/docs/theming/block-theme-development/theming-woo-blocks)と[WordPressブロック子テーマ開発](https://learn.wordpress.org/lesson-plan/create-a-basic-child-theme-for-block-themes/)を参照してください。
 
 ### ブロック・スターター・テーマ
 

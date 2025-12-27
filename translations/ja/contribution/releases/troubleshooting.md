@@ -8,19 +8,25 @@ sidebar_position: 7
 
 このページでは、WooCommerceのリリースプロセス中に発生する可能性のある問題のトラブルシューティングとリカバリに関するガイダンスを提供します。一般的なシナリオ、推奨されるアクション、ベストプラクティスをカバーし、リリースがスムーズに処理され、問題が効率的に解決されるように支援します。
 
+## シナリオ / FAQ
 
-## Scenarios / FAQ
+### リリースのビルド中にワークフローが失敗しました。
 
-### A workflow failed while building the release
-
-1. **GitHubの**Actions**タブでワークフロー実行の詳細**を開き、失敗が発生した場所と原因を確認してください。ほとんどの場合、ワークフローには明確なエラーメッセージが表示されます。
+1. **GitHubの**Actions**タブにあるワークフロー実行の詳細**を開くと、失敗が発生した場所と原因を正確に確認することができます。ほとんどの場合、ワークフローには明確なエラーメッセージが表示されます。
 2. **エラーメッセージを注意深く読んでください。** 時には、ワークフロー設定の欠落やステップのスキップといった単純な問題であることもあります。
 3. **エラーの意味や進め方がわからない場合、**遠慮せずにリリースのSlackチャンネルで助けを求めてください。推測するよりも、セカンドオピニオンを得る方が良いでしょう。
 
 ⚠️ _失敗の原因を理解するまで、ワークフローを再実行しないでください。 _根本的な問題を解決せずに再実行すると、事態をより複雑にする可能性があります。
 
+### リリース関連のPRでCIが失敗している
 
-### Something looks wrong in the final release ZIP. Can I start over? {#can-i-start-over-id}
+リリースの過程で、リリース関連の PR で CI テストに失敗することがあります。このような失敗は、テストの修正がトランクにマージされたものの、カットされる前にリリースブランチにバックポートされなかったために発生することがあります。
+
+1. **原因を特定する**：失敗したテストがトランクでパスしているかどうかチェックしてください。もし通っていれば、その修正はバックポートする必要があります。
+2. **テストの修正をバックポートする**：可能であれば、関連するテスト修正をトランクからリリースブランチに [バックポート](/docs/contribution/releases/backporting) して、CI ワークフローを再実行します。
+3. **複雑なケースに対処する**：依存関係によってバックポートができない場合や、原因がはっきりしない場合は、発見したことを文書化し、リリースのSlackチャンネルで助けを求めてください。Heart of Gold - Flux」チームは、リリース作業を妨げるCI問題の解決を支援することができます。
+
+### 最終リリースのZIPがおかしい。やり直してもいいですか？{#can-i-start-over-id}と入力してください。
 
 生成されたアーティファクトをダウンロードして解凍した後、何かがおかしい（ファイルがない、変更履歴が正しくない、バージョンが一致しないなど）と感じたら、それは通常、次のことを意味する：
 
@@ -29,17 +35,16 @@ sidebar_position: 7
 
 **バージョンを再度ビルドしようとする前に、**。
 
-1. Delete any GitHub draft release or tag for the incorrect release:
-   - Go to **Code > Releases** and delete the draft release.
-   - In **Code > Tags**, delete the tag for the incorrect version. _If you skip this, the final release may point to the wrong commit in history._
-2. Check the status of the `release/X.Y` branch (either in the GitHub UI or locally after pulling the latest changes).
-3. Figure out which step failed. For example, if the plugin header version is correct but the changelog is missing, only the changelog step needs to be re-run.
-4. Review any [auto-generated PRs](https://github.com/woocommerce/woocommerce/pulls?q=is%3Aopen+is%3Apr+author%3Aapp%2Fgithub-actions+label%3ARelease): if there are open PRs that weren't merged and are no longer needed, close them and delete their branches.
+[1.GitHubのドラフトリリースや不正なリリースのタグを削除してください：
+   - コード > リリース**に移動し、ドラフトリリースを削除する。
+   - コード > タグ**で、間違ったバージョンのタグを削除してください。これをスキップすると、最終リリースが履歴の間違ったコミットを指す可能性があります。
+2.INLINE_CODE_0__ ブランチの状態を確認します (GitHub UI で確認するか、最新の変更をプルした後でローカルで確認します)。
+3.どのステップで失敗したかを調べます。たとえば、プラグインのヘッダーのバージョンは正しいのに変更履歴がない場合は、変更履歴のステップだけを再実行する必要があります。
+4.自動生成された PR](https://github.com/woocommerce/woocommerce/pulls?q=is%3Aopen+is%3Apr+author%3Aapp%2Fgithub-actions+label%3ARelease) をレビューする: マージされず、もう必要ないオープンな PR があれば、それを閉じてブランチを削除します。
 
 **どのステップが失敗したかがわかったら、** [ビルド＆パブリッシングガイド](/docs/contribution/releases/building-and-publishing)に記載されているように、そのステップだけを再実行してください。スキップしたワークフローを正しい順序で実行し、すべての設定（バージョン番号、リリースタイプなど）を再確認してから次に進んでください。
 
-
-### A serious bug was detected during internal checks / monitoring
+### 内部チェック/モニタリング中に重大なバグが検出されました。
 
 リリースがWordPress.orgで安定版とマークされる**前に、内部チェックやモニタリングで重大なバグを見つけた場合：
 
@@ -48,12 +53,11 @@ sidebar_position: 7
 - このバージョンのドラフト GitHub リリースは公開しないでください。
 - スキップしたバージョンをどうするかについての詳細は、[以下のセクション](#version-skipped-id)を参照してください。
 
-
-### A version was skipped due to a bug. {#version-skipped-id}
+### バグによりバージョンがスキップされた。{バージョンスキップID}。
 
 WordPress.orgで安定版としてマークするのをスキップしなければならないバグがある場合：
 
-- 関連するエンジニアリングチームに通知する。
+[- 関連するエンジニアリングチームに通知する。
 - デブ・アドボカシー**にループを回し、広報を手伝ってもらう。
 - 月曜日にバグが発見され、火曜日までに修正が間に合わない場合は、Dev Advocacyと協力して遅延を発表してください。以下の遅延について](#release-delay)を読んでください。
 
@@ -65,26 +69,26 @@ WordPress.orgで安定版としてマークするのをスキップしなけれ�
     - スキップしたバージョンの GitHub リリースを順番にすべて公開します。
     - 実際に有効なリリースだけを「最新リリース」としてマークする。
 
-### A critical bug surfaced after the release was marked stable on WordPress.org
+### WordPress.orgで安定版とされたリリース後に重大なバグが表面化した。
 
 深刻なリグレッションやバグが発見された場合（チェックアウトの失敗や回復不可能なデータ損失など）：
 
-1. Immediately notify the relevant engineering team(s).
-2. Prepare to do a [Point Release](/docs/contribution/releases/point-releases).
-3. Temporarily move the stable tag on WordPress.org back to the previous known-good version:
-   - Identify the correct previous version and note its exact number.
-   - Use the [`Release: Update stable tag`](https://github.com/woocommerce/woocommerce/actions/workflows/release-update-stable-tag.yml) workflow, making sure to check the _Revert_ option to allow downgrading.
-   - Merge any auto-generated PRs right away.
+[1.直ちに関連するエンジニアリングチームに通知する。
+2.ポイントリリース](/docs/contribution/releases/point-releases)の準備をする。
+3.WordPress.org の安定版タグを一時的に以前の既知の良いバージョンに戻す：
+   - 正しい旧バージョンを特定し、正確な番号を控えてください。
+   - ワークフロー [`Release: Update stable tag`](https://github.com/woocommerce/woocommerce/actions/workflows/release-update-stable-tag.yml) を使い、_Revert_ オプションをチェックしてダウングレードを許可するようにします。
+   - 自動生成されたPRはすぐにマージしてください。
 
-### The release needs to be delayed. What should we do? {#release-delay}
+### リリースを延期する必要がある。どうすればよいですか？リリース遅延}{#release-delay}。
 
-1. Create an internal Slack thread to communicate with the engineering teams as well as Dev Advocacy. This also provides an opportunity for teams to share any additional context and verify or challenge schedule changes.
-2. Ask Dev Advocacy to communicate the delay publicly.
-3. If there's a clear ETA on the patch release with a fix, [update the release calendar](https://developer.woocommerce.com/release-calendar/) with the new dates.
+1.社内にSlackスレッドを作成し、エンジニアリングチームやDev Advocacyと連絡を取る。これは、チームが追加的なコンテキストを共有し、スケジュールの変更を確認したり、異議を唱えたりする機会にもなる。
+2.Dev Advocacyに遅延を公に伝えるよう依頼する。
+3.修正パッチのリリースに明確なETAがある場合は、[リリースカレンダー](https://developer.woocommerce.com/release-calendar/)を新しい日付で更新する。
 
 パッチリリースを[週末に近すぎないように](#release-delay-weekend-id)計画することを忘れないでください。
 
-### The release was delayed. Can we still release after Tuesday? {#release-delay-weekend-id}
+### リリースが遅れています。火曜日以降にリリースできますか？{#release-delay-weekend-id} です。
 
 一般的に、火曜日以降のリリース、特に週末に近いリリースは避ける。
 

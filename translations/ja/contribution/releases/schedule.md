@@ -11,65 +11,58 @@ WooCommerceは予測可能なリリーススケジュールで運営されてお
 
 モノレポ内でのリリースサイクルの詳細については、[Git Flow docs](/docs/contribution/contributing/woocommerce-git-flow) を参照してください。
 
-:::tip
+現在および今後のリリースに関する実際のスケジュールは、[リリースカレンダー](https://developer.woocommerce.com/release-calendar/)をご覧ください。
 
-To view the actual schedule for current and upcoming releases, see our [release calendar](https://developer.woocommerce.com/release-calendar/).
+![リリース・サイクル・フローチャート](/img/doc_images/release-cycle.png)
 
-:::
+## マイルストーン
 
-リリース・サイクル・フローチャート](/img/doc_images/release-cycle.png)
-
-## Milestones
-
-### Feature Freeze & `-dev` release (day 1)
+### 機能凍結と`-dev`リリース（1日目）
 
 機能凍結の自動化の結果、いくつかのことが起こる：
 
-- A dedicated release branch is created (`release/x.y`), where the future release undergoes testing and stabilization. No new features are included on this branch, only bug fixes.
-- A `-dev` release is built and made available on GitHub.
-- Development of new features continues on `trunk`.
-- A pre-release post is published on our developer website ([example](https://developer.woocommerce.com/2025/05/12/woocommerce-9-9-pre-release-updates/)).
+- 専用のリリースブランチ (`release/x.y`) が作成され、そこで将来のリリースのテストと安定化が行われます。このブランチには新機能は含まれず、バグ修正のみが行われます。
+- `-dev`リリースがビルドされ、GitHubで公開されます。
+- 新機能の開発は `trunk` で続けられる。
+- プレリリースの投稿が開発者向けウェブサイトで公開されます（[例](https://developer.woocommerce.com/2025/05/12/woocommerce-9-9-pre-release-updates/)）。
 
-### Beta 1 (+1 week)
+### ベータ1（+1週間）
 
 この段階で、さまざまなテスト工程が行われる：
 
 - (内部) Wooがメンテナンスしている拡張機能でのリグレッションテスト、複数の環境でのリグレッションテスト、(貢献チームによるものを含む)探索的テスト。
 - (コミュニティ）プレリリースが発表され、コミュニティが[テストを開始](/docs/contribution/testing/beta-testing/)できるようになります。
 
-Any issues found during the beta period are addressed either directly against the release branch or by backporting fixes from `trunk` (preferred). Refer to the [backporting guide](/docs/contribution/releases/backporting) for more details.
+ベータ期間中に見つかった問題は、リリースブランチに対して直接対処するか、`trunk`からの修正をバックポートすることで対処します（推奨）。詳細は[バックポートガイド](/docs/contribution/releases/backporting)を参照してください。
 
-`release/x.y` remains the source of truth for anything going into the upcoming release.
+`release/x.y`は、今後リリースされるものに関する真実のソースであり続ける。
 
-### Beta 2 (+1 week)
+### ベータ2（+1週間）
 
-At this stage, we release regression fixes discovered in `-beta.1` as part of release stabilization. The pre-release announcement continues to be updated.
+現段階では、リリースの安定化の一環として、`-beta.1`で発見された回帰修正をリリースする。リリース前のアナウンスは引き続き更新されます。
 
-### RC 1 (+1 week)
+### RC 1（+1週間）
 
 最終リリース前の（社内）最終チェック。
 
-If anything is found at this stage, a fix is merged into the release branch (`release/x.y`) as in the beta phase.
+この段階で何か発見された場合、ベータ段階と同様にリリースブランチ（`release/x.y`）に修正がマージされる。
 
-### Final Release (+1 day)
+### 最終リリース（+1日）
 
-We make the stable release version available to everyone.
-At this point, the Developer Advocacy team publishes release highlights that are prepared in advance ([example](https://developer.woocommerce.com/2025/06/09/woocommerce-9-9-its-fast-period/)).
+私たちは安定リリース版を誰でも利用できるようにします。
+この時点で、Developer Advocacyチームは事前に準備したリリースハイライトを公開します([例](https://developer.woocommerce.com/2025/06/09/woocommerce-9-9-its-fast-period/))。
 
-### Point/Patch Releases
+### ポイント/パッチリリース
 
-Patch releases are used to ship important bug fixes to our users, which were  detected after the final release. They are versioned `x.y.z` where `z` is non-zero.
+パッチリリースは、最終リリースの後に検出された重要なバグフィックスをユーザーに配布するために使用されます。パッチ・リリースのバージョンは `x.y.z` で、`z` はゼロではありません。
 
 私たちは、ベータ版やRC版の段階と同じ慣例に従って、あらゆる修正をマージします：
 
-- Bugs that are only present on the release branch are fixed against the release branch `release/x.y`.
-- Bugs that have a working fix on `trunk` are [backported](/docs/contribution/releases/backporting).
-
-
-## Delays
+- リリースブランチにのみ存在するバグは、リリースブランチ `release/x.y` に対して修正されます。
+- `trunk`で修正されたバグは[バックポート](/docs/contribution/releases/backporting)されます。
 
 ビジネス上の必要性やテスト中に発見された重大なバグにより、リリース日が変更される場合があります。
 
-We do not take this decision lightly and only do so to guarantee the stability of a release. When this happens, we will always communicate the situation ([example](https://developer.woocommerce.com/2025/06/02/woocommerce-9-9-release-is-delayed/)) and update the release calendar.
+私たちはこの決定を軽々しく行うことはなく、リリースの安定性を保証するためにのみ行います。このような事態が発生した場合、私たちは常に状況を伝え（[例](https://developer.woocommerce.com/2025/06/02/woocommerce-9-9-release-is-delayed/)）、リリースカレンダーを更新します。
 
 遅延の管理方法の詳細については、[リリースのトラブルシューティングガイド](/docs/contribution/releases/troubleshooting#release-delay)を参照してください。

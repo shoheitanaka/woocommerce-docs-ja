@@ -4,7 +4,8 @@ sidebar_label: Uninstalling and removing data
 current wccom url: >-
   https://woocommerce.com/document/installing-uninstalling-woocommerce/#uninstalling-woocommerce
 ---
-# すべてのWooCommerceデータをアンインストールして削除する
+
+# Uninstall and remove all WooCommerce Data
 
 WooCommerceプラグインは、他のWordPressプラグインと同様にアンインストールすることができます。デフォルトでは、WooCommerceのデータはそのまま残ります。 
 

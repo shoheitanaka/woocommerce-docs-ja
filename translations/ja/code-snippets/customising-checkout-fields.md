@@ -1,13 +1,12 @@
 ---
 post_title: Customizing checkout fields using actions and filters
 ---
-# アクションとフィルターを使ったチェックアウトフィールドのカスタマイズ
 
-コードや潜在的なコンフリクトの解決に不慣れな場合は、お役に立てるエクステンションがあります：[WooCommerce [Checkout Field Editor](https://woocommerce.com/products/woocommerce-checkout-field-editor/).この拡張機能をインストールし、有効化することで、あなたが実装しようとした以下のコードが上書きされます。また、拡張機能が有効化されている場合、functions.phpファイルにカスタムチェックアウトフィールドのコードを記述することはできません。
+# Customizing checkout fields using actions and filters
+
+コードや潜在的なコンフリクトの解決に不慣れな場合は、お役に立てるエクステンションがあります：[WooCommerce Checkout Field Editor](https://woocommerce.com/products/woocommerce-checkout-field-editor/).この拡張機能をインストールし、有効化することで、あなたが実装しようとした以下のコードが上書きされます。また、拡張機能が有効化されている場合、functions.phpファイルにカスタムチェックアウトフィールドのコードを記述することはできません。
 
 カスタムコードは、子テーマの**functions.php**ファイルにコピーしてください。
-
-## Note
 
 チェックアウトブロックにフィールドを追加するには、[追加チェックアウトフィールドのドキュメント](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/additional-checkout-fields/)を参照してください。
 
@@ -17,19 +16,15 @@ post_title: Customizing checkout fields using actions and filters
 
 これらのフィールドを返す前に、WooCommerceはフィールドを_filter_に通します。これにより、サードパーティのプラグインやテーマ、独自のカスタムコードで編集できるようになります。
 
-Billing:
-
 ```php
 $address_fields = apply_filters( 'woocommerce_billing_fields', $address_fields );
 ```
-
-Shipping:
 
 ```php
 $address_fields = apply_filters( 'woocommerce_shipping_fields', $address_fields );
 ```
 
-チェックアウト・クラスはロードされたフィールドを`checkout_fields`配列に追加し、"order notes "のような他のフィールドも追加します。
+チェックアウト・クラスは、ロードされたフィールドを`checkout_fields`配列に追加し、"order notes "のような他のフィールドも追加します。
 
 ```php
 $this->checkout_fields['billing']  = $woocommerce->countries->get_address_fields( $this->get_value( 'billing_country' ), 'billing_' );
@@ -93,7 +88,7 @@ function custom_override_checkout_fields( $fields ) {
 }
 ```
 
-ラベルなど、他の部分を上書きすることもできる：
+ラベルなど、他の部分をオーバーライドすることができる：
 
 ```php
 // Hook in
@@ -139,7 +134,7 @@ function custom_override_checkout_fields( $fields ) {
     -   __`shipping_first_name`
     -   発送 `shipping_last_name`
     -   発送 `shipping_company`
-    -   発送 `billing_country`
+    -   発送 __INLINE_CODE_12__
     -   発送 `shipping_address_2`
     -   インラインコード
     -   `shipping_postcode`
@@ -161,7 +156,7 @@ function custom_override_checkout_fields( $fields ) {
 -   `required` - true あるいは false、フィールドが必須かどうか。
 -   `clear` - true あるいは false で、フィールド/ラベルに明確な修正を適用します。
 -   `label_class` - label 要素のクラス。
--   `options` - セレクトボックスのための、オプションの配列 (キー =&gt; 値のペア)
+-   `options` - セレクトボックスのための、オプションの配列 (キー => 値のペア)
 
 特定のケースでは、**`woocommerce_default_address_fields`**フィルタを使用する必要があります。このフィルタはすべての請求および配送のデフォルトフィールドに適用されます：
 

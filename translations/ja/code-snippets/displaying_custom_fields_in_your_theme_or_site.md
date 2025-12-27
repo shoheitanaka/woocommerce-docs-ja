@@ -3,7 +3,8 @@ post_title: Displaying custom fields in your theme or site
 sidebar_label: Displaying custom fields in theme
 current wccom url: 'https://woocommerce.com/document/custom-product-fields/'
 ---
-# テーマやサイトにカスタムフィールドを表示する
+
+# Displaying custom fields in your theme or site
 
 商品に追加したカスタムフィールドのメタデータを使って、追加した情報をテーマやサイト内に表示することができます。
 

@@ -1,14 +1,11 @@
 ---
 post_title: Template structure & Overriding templates via a theme
 ---
-# テンプレートの構造とテーマによるテンプレートの上書き
 
----
+# Template structure & Overriding templates via a theme
 
 **注意** このドキュメントはPHPテンプレートを使用するクラシックテーマについて言及しています。HTMLテンプレートを使うブロックテーマに取り組んでいる場合、[ブロックテーマ用のThemingドキュメントを確認してください](../block-theme-development/theming-woo-blocks.md)。
 概要
-
----
 
 ## 概要
 
@@ -43,7 +40,7 @@ do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_tex
 
 上のコードは、下の画像で赤くハイライトされているブロックを出力します。これは、ショップマネージャーが、サイト上で注文が成功した後に受け取る新規注文メールです：
 
-![画像](https://woocommerce.com/wp-content/uploads/2020/05/templating-using-hooks.webp)
+![image](https://woocommerce.com/wp-content/uploads/2020/05/templating-using-hooks.webp)
 
 以下のコードは、希望する機能を構築するための出発点として使用することができます。このコードをコード・スニペット・プラグインに追加することで、テンプレート自体を編集することなく、テンプレートの特定の場所で出力を変更することができます。他のフックについても同様です。
 
@@ -66,19 +63,13 @@ function my_custom_woo_function() {
 
 コピーされたファイルはWooCommerceのデフォルトテンプレートファイルを上書きするので、コピーされたファイルに好きな変更を加えることができ、結果の出力に反映されるのを見ることができます。
 
----
-
 **注意** テンプレートがアップグレードセーフであることの（望ましい）副作用として、WooCommerceコアテンプレートは更新されますが、カスタムオーバーライドは更新されません。システムステータスレポートに「バージョン3.5.0は古いです。コアバージョンは3.7.0です。このような場合は、古いWooCommerceテンプレートを修正するガイドに従ってください。
-
----
 
 ## カスタムテンプレートのテーマサポートを宣言する
 
 テーマ開発者またはカスタムテンプレートを持つテーマを使用している場合、`add_theme_support`関数を使用してWooCommerceテーマのサポートを宣言する必要があります。GitHub の [Declaring WooCommerce Support in Themes](https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes) を参照してください。
 
 お使いのテーマに`woocommerce.php`がある場合、`woocommerce.php`が他のテンプレートファイルよりも優先されるため、`woocommerce/archive-product.php`を上書きすることはできません。これは表示の問題を防ぐためです。
-
----
 
 Wooストアの編集でサポートが必要ですか？WooExpert代理店がお手伝いします。高度にカスタマイズされた拡張性の高いオンラインストアを構築してきた実績のある信頼できる代理店です。
 [エキスパートを雇う](https://woocommerce.com/customizations/).

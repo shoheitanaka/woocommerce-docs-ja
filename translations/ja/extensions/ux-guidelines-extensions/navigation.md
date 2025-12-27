@@ -7,41 +7,41 @@ sidebar_label: Navigation
 
 既存のWooCommerceメニュー構造内に商品ナビゲーション要素を配置します。
 
-## Extension with its own menu item
+## 独自のメニュー項目を持つ拡張機能
 
 WooCommerceのメニュー構造を拡張する2つのオプションは、カテゴリメニュー内または関連する設定エリア内です。
 
-カテゴリ・サブナビゲーション画像](/img/doc_images/Category-Subnavigation.png)
+![カテゴリ・サブナビゲーション画像](/img/doc_images/Category-Subnavigation.png)
 
-## Category sub-navigation
+## カテゴリサブナビゲーション
 
 もしあなたのプラグインがWooCommerceのあるエリアを拡張しているのであれば、そのカテゴリのセクション内に直接設置する必要があります。
 
 例えば、TikTokはMarketingにあり、Product Add-OnsはProductsにある。
 
-カテゴリー設定画像](/img/doc_images/カテゴリー設定.png)
+![カテゴリー設定画像](/img/doc_images/カテゴリー設定.png)
 
-## Settings
+## 設定
 
-プラグインに設定画面が追加されている場合、設定はWooCommerce &gt; 設定画面の適切なタブの下にあるはずです。
+プラグインに設定画面が追加されている場合、設定はWooCommerce > 設定画面の適切なタブの下にあるはずです。
 
 例えば、配送と支払いのエクステンションは関連する設定エリアに表示されます。拡張機能が既存のタブに収まらない設定を持ち、サブタブを作成することが適切でない場合、必要な場合のみ、トップレベルの設定タブを作成してください。
 
-### Don’t: Add top-level navigation
+### しない：トップレベルのナビゲーションを追加する
 
 商品がWooCommerceを拡張している場合、99.9%の確率で商品のナビゲーションと設定はWooCommerceのナビ構造の中にあるはずです。
 
-### Don’t: No iframes, only APIs
+### しないこと：iframeは使用せず、APIのみを使用する。
 
 まとまりのある体験を生み出すために、アプリケーション・データはiframeではなくAPI経由でロードされるべきである。
 
-### Do: Keep menu structure simple
+### メニュー構成はシンプルにメニュー構成はシンプルに
 
 メニュー構造はシンプルに。既存のWooCommerceのメニュー構造をできるだけ利用し、重複を減らしましょう。
 
 プラグインが複数のページやエリアを導入する必要がある場合は、WooCommerceの構造との一貫性を保つために、既存のコンポーネントを使用してタブでグループ化することを検討してください。
 
-## Extension with no menu item
+## メニューのない拡張機能
 
 エクステンションの中には、既存の製品エリア内の特定の機能を拡張するため、メニュー項目を必要としないものもあります。
 
@@ -49,15 +49,15 @@ WooCommerceのメニュー構造を拡張する2つのオプションは、カ�
 
 この場合、ナビゲーションアイテムや拡張機能のホーム画面はありません。プラグインページは、ユーザーとアップデートを共有するために使用できます。
 
-## Plugin name
+## プラグイン名
 
 プラグイン名は、マーチャントがWooCommerce管理画面の複数のタッチポイントであなたのプラグインを識別する方法を表します。
 
-### Don’t: Use an existing feature or extension in the plugin title
+### やめましょう：プラグインのタイトルに既存の機能や拡張機能を使用する
 
 プラグイン名は常に機能的でオリジナルな名前としてUIに表示されるべきです。例えば、"VendorXYZ Bookings Plugin for WooCommerce "ではなく、"Appointments "です。
 
-### Do: One-line navigation label
+### を行う：一行ナビゲーションラベル
 
 加盟店が読みやすく、理解しやすいように、拡張子名は短く、理想的には20文字以内にしてください。
 

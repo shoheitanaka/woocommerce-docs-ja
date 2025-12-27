@@ -2,7 +2,8 @@
 post_title: Blocks reference
 sidebar_label: Blocks reference
 ---
-# ブロックの参照
+
+# Blocks reference
 
 このページはパッケージに含まれるWooブロックの一覧です。(まだblock.json定義を使っていないブロックがあるので、不完全です）。
 
@@ -168,7 +169,7 @@ sidebar_label: Blocks reference
 
 -	**名前:** woocommerce/product-title
 -	**カテゴリ:** woocommerce-product-elements
--   **Ancestor:** woocommerce/all-products
+-   **祖先:** woocommerce/all-products
 -   **Parent:** 
 -	**サポート:** color (background, gradients, text, ~~link~~), interactivity (~~clientNavigation~~), spacing (margin), typography (fontSize, lineHeight), ~~html~~.
 -	**属性：** align、headingLevel、linkTarget、productId、showProductLink
@@ -192,12 +193,12 @@ sidebar_label: Blocks reference
 -	**カテゴリ:** woocommerce
 -   **Ancestor:** 
 -   **親:** woocommerce/accordion-item
--	**サポート:** anchor, border, color (background, gradient, text), interactivity, layout, shadow, spacing (margin, padding), typography (fontSize, textAlign), ~~align~~~.
+-	**アンカー、ボーダー、カラー（背景、グラデーション、テキスト）、インタラクティブ、レイアウト、シャドウ、スペーシング（マージン、パディング）、タイポグラフィ（fontSize、textAlign）、~~align~~をサポートしています。
 -	**属性：** icon、iconPosition、level、levelOptions、openByDefault、textAlignment、title
 
 ## アコーディオン - woocommerce/accordion-item
 
-ヘッダーと拡張可能なコンテンツを表示する単一のアコーディオン。
+ヘッダーと展開可能なコンテンツを表示する単一のアコーディオン。
 
 -	**名前:** woocommerce/accordion-item
 -	**カテゴリ:** woocommerce
@@ -235,7 +236,7 @@ sidebar_label: Blocks reference
 -	**名前:** woocommerce/add-to-cart-with-options
 -	**カテゴリ:** woocommerce-product-elements
 -   **Ancestor:** 
--   **親:** 
+-   **Parent:** 
 -	**サポート:**双方向性
 -	**属性:** isDescendantOfAddToCartWithOptions
 
@@ -325,7 +326,7 @@ sidebar_label: Blocks reference
 -   **Ancestor:** woocommerce/add-to-cart-with-options-variation-selector-attribute
 -   **Parent:** 
 -	**サポート:** color (background, gradients, text), インタラクティブ, spacing (padding), typography (fontSize, lineHeight), ~~alignWide~~, ~~align~~, ~~inserter~~.
--	**Attributes:** 
+-	**属性:** 
 
 ## バリエーションセレクター属性オプション (ベータ) - woocommerce/add-to-cart-with-options-variation-selector-attribute-options
 
@@ -485,7 +486,7 @@ sidebar_label: Blocks reference
 
 見出し行を表示する。
 
--	**名前:** woocommerce/cart-order-summary-heading-block
+-	**name:** woocommerce/cart-order-summary-heading-block
 -	**カテゴリ:** woocommerce
 -   **Ancestor:** 
 -   **親:** woocommerce/cart-order-summary-block
@@ -538,14 +539,14 @@ sidebar_label: Blocks reference
 
 ## カート合計 - woocommerce/cart-totals-block
 
-カートの合計を含む列。
+カート合計を含む列。
 
 -	**名前:** woocommerce/cart-totals-block
 -	**カテゴリ:** woocommerce
 -   **Ancestor:** 
 -   **親:** woocommerce/filled-cart-block
 -	**サポート:** ~~align~~, ~~html~~, ~~inserter~~, ~~lock~~, ~~multiple~~, ~~reusable~~
--	**チェックボックス、ロック、テキスト
+-	**属性：**チェックボックス、ロック、テキスト
 
 ## カートを空にする - woocommerce/empty-cart-block
 
@@ -558,7 +559,7 @@ sidebar_label: Blocks reference
 -	**サポート:** align (wide), ~~html~~, ~~inserter~~, ~~lock~~, ~~multiple~~, ~~reusable~~
 -	**属性：**ロック
 
-## 満杯カート - woocommerce/filled-cart-block
+## Filled Cart - woocommerce/filled-cart-block
 
 カートに商品が入ったときに表示されるブロックが含まれています。
 
@@ -751,7 +752,7 @@ sidebar_label: Blocks reference
 
 -	**名前:** woocommerce/checkout-order-summary-discount-block
 -	**カテゴリ:** woocommerce
--   **祖先:** 
+-   **Ancestor:** 
 -   **親:** woocommerce/checkout-order-summary-totals-block
 -	**サポート:** ~~align~~, ~~html~~, ~~lock~~, ~~multiple~~, ~~reusable~~
 -	**属性:** className, lock
@@ -890,7 +891,7 @@ sidebar_label: Blocks reference
 
 ## クラシック・ショートコード - woocommerce/classic-shortcode
 
-クラシックなWooCommerceショートコードをレンダリングします。
+古典的なWooCommerceショートコードをレンダリングします。
 
 -	**Name:** woocommerce/classic-shortcode
 -	**カテゴリ:** woocommerce
@@ -910,7 +911,7 @@ sidebar_label: Blocks reference
 
 ## 顧客アカウント - woocommerce/customer-account
 
-顧客が店舗で自分のアカウントにログインしたりログアウトしたりできるようにするブロックです。
+あなたの顧客があなたの店で自分のアカウントにログインしたりログアウトしたりできるようにするブロックです。
 
 -	**Name:** woocommerce/customer-account
 -	**カテゴリ:** woocommerce
@@ -945,7 +946,7 @@ sidebar_label: Blocks reference
 
 製品やバリエーションを強調する。
 
--	**商品名:** woocommerce/featured-product
+-	**製品名:** woocommerce/featured-product
 -	**カテゴリ:** woocommerce
 -   **祖先:** 
 -   **Parent:** 
@@ -983,7 +984,7 @@ sidebar_label: Blocks reference
 -	**サポート:** spacing (margin, padding), typography (fontSize), ~~html~~, ~~multiple~~
 -	**属性:** addToCartBehaviour, cartAndCheckoutRenderStyle, hasHiddenPrice, iconColor, iconColorValue, isPreview, miniCartIcon, onCartClickBehaviour, priceColor, priceColorValue, productCountColor, productCountColorValue, productCountVisibility
 
-## ミニカートの内容 - woocommerce/mini-cart-contents
+## ミニカートコンテンツ - woocommerce/mini-cart-contents
 
 ミニカートウィジェットを表示します。
 
@@ -1251,7 +1252,7 @@ contact'と'order'の位置から追加のチェックアウトフィールド�
 
 注文確認ページに注文概要を表示する。
 
--	**名前:** woocommerce/order-confirmation-summary
+-	**Name:** woocommerce/order-confirmation-summary
 -	**カテゴリ:** woocommerce
 -   **祖先:** 
 -   **Parent:** 
@@ -1306,7 +1307,7 @@ WooCommerceページのコンテンツを表示します。
 
 顧客が価格帯を選択して商品グリッドをフィルタリングできるようにする。
 
--	**Name:** woocommerce/price-filter
+-	**名前:** woocommerce/price-filter
 -	**カテゴリ:** woocommerce
 -   **祖先:** 
 -   **親:** 
@@ -1315,7 +1316,7 @@ WooCommerceページのコンテンツを表示します。
 
 ## ベストセラー商品 - woocommerce/product-best-sellers
 
-ずっと売れ続けている商品のグリッドを表示します。
+ベストセラー商品をグリッドで表示。
 
 -	**商品名:** woocommerce/product-best-sellers
 -	**カテゴリ:** woocommerce
@@ -1328,7 +1329,7 @@ WooCommerceページのコンテンツを表示します。
 
 すべての製品カテゴリをリストまたはドロップダウンとして表示します。
 
--	**名前:** woocommerce/product-categories
+-	**Name:** woocommerce/product-categories
 -	**カテゴリ:** woocommerce
 -   **祖先:** 
 -   **親:** 
@@ -1416,7 +1417,7 @@ WooCommerceページのコンテンツを表示します。
 
 現在アクティブなフィルターを表示します。
 
--	**Name:** woocommerce/product-filter-active
+-	**製品名:** woocommerce/product-filter-active
 -	**カテゴリ:** woocommerce
 -   **祖先:** woocommerce/product-filters
 -   **Parent:** 
@@ -1453,7 +1454,7 @@ WooCommerceページのコンテンツを表示します。
 -	**カテゴリ:** woocommerce
 -   **Ancestor:** woocommerce/product-filter-attribute, woocommerce/product-filter-taxonomy, woocommerce/product-filter-status
 -   **Parent:** 
--	**サポート:** インタラクティビティ
+-	**サポート:**双方向性
 -	**属性:** chipBackground, chipBorder, chipText, customChipBackground, customChipBorder, customChipText, customSelectedChipBackground, customSelectedChipBorder, customSelectedChipText, selectedChipBackground, selectedChipBorder, selectedChipText
 
 ## Clear filters - woocommerce/product-filter-clear-button
@@ -1584,7 +1585,7 @@ WooCommerceページのコンテンツを表示します。
 -	**製品名:** woocommerce/product-on-sale
 -	**カテゴリ:** woocommerce
 -   **祖先:** 
--   **Parent:** 
+-   **親:** 
 -	**サポート:** align (full, wide), インタラクティブ (~~clientNavigation~~), ~~html~~, ~~inserter~~
 -	**属性:** alignButtons、catOperator、categories、columns、contentVisibility、isPreview、orderby、rows、stockStatus
 
@@ -1852,7 +1853,7 @@ WooCommerceページのコンテンツを表示します。
 -	**サポート:** align (full, wide), interactivity
 -	**属性:** isPreview, productId
 
-## 在庫管理によるフィルター - woocommerce/stock-filter
+## 在庫管理によるフィルタリング - woocommerce/stock-filter
 
 顧客が在庫状況によって製品グリッドをフィルタリングできるようにします。
 

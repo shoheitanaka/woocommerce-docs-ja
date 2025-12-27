@@ -7,15 +7,15 @@ sidebar_label: Email preview integration
 
 <!-- markdownlint-disable MD024 -->
 
-## Overview
+## 概要
 
 WooCommerceのメールプレビュー機能では、ダミーデータ（データベースからの実際のデータを使用しない）を使用してメールテンプレートをプレビューすることができます。つまり、新しいEメールタイプを登録するエクステンションは、Eメールプレビューシステムと統合する必要があります。 
 
-## Integration Hooks
+## 統合フック
 
 以下のフックを使用すると、拡張機能でメールのプレビューを完全に制御できます：
 
-### Style and Content Settings
+### スタイルとコンテンツの設定
 
 これらのフックにより、拡張機能が新しいスタイルやコンテンツ設定を追加し、メールプレビューがその変更をリッスンし、変更が加えられたときにプレビューを更新することができます。
 
@@ -41,11 +41,11 @@ add_filter( 'woocommerce_email_preview_email_content_setting_ids', function( $se
 } );
 ```
 
-### Dummy Data Modification
+### ダミーデータの修正
 
 #### `woocommerce_email_preview_dummy_order`
 
-Modify the dummy `WC_Order` object used in preview.
+プレビューで使用されるダミーの`WC_Order`オブジェクトを修正する。
 
 ```php
 add_filter( 'woocommerce_email_preview_dummy_order', function( $order ) {
@@ -92,11 +92,11 @@ add_filter( 'woocommerce_email_preview_dummy_address', function( $address ) {
 } );
 ```
 
-### Placeholders and Email Object
+### プレースホルダーと電子メールオブジェクト
 
 #### `woocommerce_email_preview_placeholders`
 
-メール内で置換するプレースホルダーを修正する。
+電子メールで置換するプレースホルダーを修正する。
 
 ```php
 add_filter( 'woocommerce_email_preview_placeholders', function( $placeholders ) {
@@ -108,7 +108,7 @@ add_filter( 'woocommerce_email_preview_placeholders', function( $placeholders ) 
 
 #### `woocommerce_prepare_email_for_preview`
 
-Modify the `WC_Email` object used in preview.
+プレビューで使用される`WC_Email`オブジェクトを修正する。
 
 ```php
 add_filter( 'woocommerce_prepare_email_for_preview', function( $email ) {
@@ -118,13 +118,13 @@ add_filter( 'woocommerce_prepare_email_for_preview', function( $email ) {
 } );
 ```
 
-## Best Practices
+## ベストプラクティス
 
 メールプレビューと統合する場合：
 
-1. **Use Appropriate Object Types**
-   - Use the correct object type for your extension (e.g., `WC_Subscription` instead of `WC_Order` for WooCommerce Subscriptions)
-   - Ensure all required properties are set on dummy objects
+1. **適切なオブジェクトタイプを使用する**。
+   - エクステンションに適したオブジェクトタイプを使用する (例: WooCommerce Subscriptions の場合は `WC_Order` ではなく `WC_Subscription`)
+   - すべての必要なプロパティがダミーオブジェクトに設定されていることを確認する。
 
 2. **プレースホルダを扱う
    - 拡張機能が使用するすべてのカスタムプレースホルダを追加する
@@ -138,16 +138,16 @@ add_filter( 'woocommerce_prepare_email_for_preview', function( $email ) {
    - すべてのカスタムコンテンツが正しく表示されることを確認する
    - レスポンシブデザインの確認
 
-## Troubleshooting
+## トラブルシューティング
 
 よくある問題と解決策
 
-1. **I see "There was an error rendering an email preview." error**
-   - There is a PHP error in your code that is causing the email preview to fail. Check your error log for more details.
-   - Alternatively, you can modify [`class-wc-admin.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/admin/class-wc-admin.php) and remove [`try/catch` block](https://github.com/woocommerce/woocommerce/blob/f5310a33fbb160a73ea2de95efe4759c3aa791ea/plugins/woocommerce/includes/admin/class-wc-admin.php#L212-L218) around rendering the email preview to see the error message.
+1. **メールプレビューのレンダリングにエラーが発生しました。
+   - メールプレビューに失敗する原因となっているPHPエラーがあります。詳細はエラーログを確認してください。
+   - または、[`class-wc-admin.php`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/admin/class-wc-admin.php)を修正し、[`try/catch`ブロック](https://github.com/woocommerce/woocommerce/blob/f5310a33fbb160a73ea2de95efe4759c3aa791ea/plugins/woocommerce/includes/admin/class-wc-admin.php#L212-L218)を削除することで、エラーメッセージを確認することができます。
 
-2. **Style or Content Settings Changes Not Reflecting**
-   - Ensure the style settings are registered using the `woocommerce_email_preview_email_style_setting_ids` filter
-   - Ensure the content settings are registered using the `woocommerce_email_preview_email_content_setting_ids` filter
-3. **I don't see my extension's emails**
-   - Ensure the email is registered using the `woocommerce_email_classes` filter
+2. **スタイルまたはコンテンツ設定の変更が反映されない**件
+   - スタイル設定が`woocommerce_email_preview_email_style_setting_ids`フィルタを使用して登録されていることを確認してください。
+   - コンテンツ設定が`woocommerce_email_preview_email_content_setting_ids`フィルタを使用して登録されていることを確認する。
+3. **拡張機能のメールが表示されません。
+   - `woocommerce_email_classes`フィルターを使ってメールが登録されていることを確認してください。

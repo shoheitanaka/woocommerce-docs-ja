@@ -2,7 +2,8 @@
 post_title: Image sizing for theme developers
 sidebar_label: Image sizing
 ---
-# テーマ開発者のための画像サイズ調整
+
+# Image sizing for theme developers
 
 [**注意:** このドキュメントは（ブロックテーマではなく）クラシックテーマを開発する際に使用するために作成されました。ブロックテーマの開発](../block-theme-development/theming-woo-blocks.md)については別のドキュメントを確認してください。
 
@@ -68,7 +69,7 @@ add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
 } );
 ```
 
-プラグインやテーマがこのような方法をとることは、ストアオーナーからのコントロールを排除し、彼らの設定が尊重されないため、お勧めしませんが、ストアオーナーにはオプションがあります。 **注意:**画像サイズを変更した後は、新しいサイズが既存の画像に使用されるように、[サムネイルを再生成](https://github.com/woocommerce/woocommerce/wiki/Thumbnail-Image-Regeneration-in-3.3)する必要があるかもしれません。
+プラグインやテーマがこのような方法をとることは、ストアオーナーからのコントロールを排除し、彼らの設定が尊重されないため、お勧めしませんが、ストアオーナーにはオプションがあります。 **注意:**画像サイズを変更した後、新しいサイズが既存の画像に使用されるように、[サムネイルを再生成](https://github.com/woocommerce/woocommerce/wiki/Thumbnail-Image-Regeneration-in-3.3)する必要があるかもしれません。
 
 ## WooCommerceで使用する画像サイズをフックで変更する
 
@@ -90,4 +91,4 @@ add_filter( 'woocommerce_gallery_thumbnail_size', function( $size ) {
 } );
 ```
 
-**注意:** 上記のフックはWooCommerceコアによって使用されます。テーマがカスタムテンプレートファイルを持っていたり、独自の関数を使用して画像を出力している場合、これらのフィルタは使用されない可能性があります。
+**注意:** 上記のフックはWooCommerceコアで使用されます。テーマがカスタムテンプレートファイルを持っていたり、独自の関数を使用して画像を出力している場合、これらのフィルタは使用されない可能性があります。

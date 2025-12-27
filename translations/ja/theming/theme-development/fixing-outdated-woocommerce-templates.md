@@ -2,7 +2,8 @@
 post_title: How to fix outdated WooCommerce templates
 sidebar_label: Fix outdated templates
 ---
-# 古くなったWooCommerceテンプレートを修正する方法
+
+# How to fix outdated WooCommerce templates
 
 ## テンプレートの更新と変更
 
@@ -30,15 +31,13 @@ WooCommerceバージョン3.3から、ほとんどのテーマがWooCommerceと�
 
 私たちはそれが時間のかかることだと認識しています。そのため、WooCommerceテンプレートを変更しないようにしていますが、後方互換性を壊すことが賢明な場合もあります。
 
-## FAQ
-
 ### WooCommerceの最新バージョンはどこで入手できますか？
 
 更新に使用するデフォルトのテンプレートを探している場合、WooCommerceの最新バージョンを使用したい。テンプレートを入手するにはいくつかの簡単な方法があります：
 
 - 現在のWooCommerceのインストールが最新であれば、FTP経由でファイルにアクセスしてください。
 - WooCommerceのバージョンごとのテンプレートは[テンプレート構造ドキュメント](https://woocommerce.com/document/template-structure/)でご確認ください。
-- [WordPress.orgプラグインページ](https://wordpress.org/plugins/woocommerce/)から最新バージョンをダウンロードする。
+- WordPress.[orgプラグインページ](https://wordpress.org/plugins/woocommerce/)から最新バージョンをダウンロードする。
 - GitHub [リポジトリ](https://github.com/woocommerce/woocommerce/releases) から最新リリースをダウンロードしてください。
 
 ### なぜ、クリックしてすべてを更新するボタンを作らないのですか？

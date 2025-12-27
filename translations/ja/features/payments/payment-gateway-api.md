@@ -7,7 +7,7 @@ sidebar_label: Payment Gateway API
 
 WooCommerceの決済ゲートウェイはクラスベースで、従来のプラグインを通して追加することができます。このガイドではゲートウェイ開発の入門を提供します。
 
-## Types of payment gateway
+## 決済ゲートウェイの種類
 
 ペイメントゲートウェイにはいくつかの種類がある：
 
@@ -16,9 +16,9 @@ WooCommerceの決済ゲートウェイはクラスベースで、従来のプラ
 3.  **ダイレクト** - これは、支払いフィールドがチェックアウトページに直接表示され、'注文する'が押されたときに支払いが行われる場合です。例PayPal Pro、Authorize.net AIM
 4.  **オフライン** - オンライン決済は行われません。例小切手、銀行振込
 
-Form and iFrame based gateways post data offsite, meaning there are less security issues for you to think about. Direct gateways, however, require server security to be implemented ([SSL certificates](https://woocommerce.com/document/ssl-and-https/), etc.) and may also require a level of [PCI compliance](https://woocommerce.com/document/pci-dss-compliance-and-woocommerce/).
+フォームとiFrameベースのゲートウェイは、データをオフサイトにポストするため、考えるべきセキュリティの問題が少なくなります。しかし、ダイレクト・ゲートウェイは、サーバー・セキュリティ（[SSL証明書](https://woocommerce.com/document/ssl-and-https/)など）を実装する必要があり、また、[PCIコンプライアンス](https://woocommerce.com/document/pci-dss-compliance-and-woocommerce/)のレベルが必要になる場合もあります。
 
-## Creating a basic payment gateway
+## 基本的な決済ゲートウェイの作成
 
 **注意:** 以下の説明はデフォルトのチェックアウトページのためのものです。新しいチェックアウトブロックにカスタム支払い方法を追加したい場合は、[支払い方法統合ドキュメント](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration)をチェックしてください。
 
@@ -28,7 +28,7 @@ Form and iFrame based gateways post data offsite, meaning there are less securit
 add_action( 'plugins_loaded', 'init_your_gateway_class' );
 ```
 
-It is also important that your gateway class extends the WooCommerce base gateway class, so you have access to important methods and the [settings API](https://developer.woocommerce.com/docs/settings-api/):
+ゲートウェイクラスがWooCommerceのベースゲートウェイクラスを継承していることも重要で、重要なメソッドや[設定API](https://developer.woocommerce.com/docs/settings-api/)にアクセスできるようになります：
 
 ```php
 function init_your_gateway_class() {
@@ -36,7 +36,7 @@ function init_your_gateway_class() {
 }
 ```
 
-You can view the [WC_Payment_Gateway class in the API Docs](https://woocommerce.github.io/code-reference/classes/WC-Payment-Gateway.html).
+APIドキュメントの[WC_Payment_Gatewayクラス](https://woocommerce.github.io/code-reference/classes/WC-Payment-Gateway.html)を参照してください。
 
 クラスを定義するだけでなく、WooCommerce (WC) にその存在を知らせる必要があります。これは_woocommerce_payment_gateways_をフィルタリングすることで行います：
 
@@ -51,7 +51,7 @@ function add_your_gateway_class( $methods ) {
 add_filter( 'woocommerce_payment_gateways', 'add_your_gateway_class' );
 ```
 
-### Required Methods
+### 必須メソッド
 
 ほとんどのメソッドは WC_Payment_Gateway クラスから継承されていますが、いくつかはカスタムゲートウェイで必要です。
 
@@ -59,22 +59,22 @@ add_filter( 'woocommerce_payment_gateways', 'add_your_gateway_class' );
 
 コンストラクター内で、以下の変数を定義する：
 
-- `$this->id` - Unique ID for your gateway, e.g., 'your_gateway'
-- `$this->icon` - If you want to show an image next to the gateway's name on the frontend, enter a URL to an image.
-- `$this->has_fields` - Bool. Can be set to true if you want payment fields to show on the checkout (if doing a direct integration).
-- `$this->method_title` - Title of the payment method shown on the admin page.
-- `$this->method_description` - Description for the payment method shown on the admin page.
+- `$this->id` - あなたのゲートウェイのユニークID、例えば'your_gateway'
+- `$this->icon` - フロントエンドでゲートウェイの名前の横に画像を表示したい場合は、画像のURLを入力します。
+- `$this->has_fields` - ブール値。チェックアウト時に支払いフィールドを表示したい場合、trueを設定します（直接統合する場合）。
+- `$this->method_title` - 管理ページに表示される支払い方法のタイトル。
+- `$this->method_description` - 管理ページに表示される支払い方法の説明。
 
-コンストラクターは、設定フィールドも定義してロードする必要があります：
+コンストラクタは、設定フィールドも定義してロードする必要があります：
 
 ```php
 $this->init_form_fields();
 $this->init_settings();
 ```
 
-We'll cover `init_form_fields()` later, but this basically defines your settings that are then loaded with `init_settings()`.
+`init_form_fields()`については後で説明するが、これは基本的に、`init_settings()`でロードされる設定を定義するものである。
 
-After `init_settings()` is called, you can get the settings and load them into variables, meaning:
+`init_settings()`が呼ばれた後、設定を取得して変数にロードすることができる：
 
 ```php
 $this->title = $this->get_option( 'title' );
@@ -88,7 +88,7 @@ add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $
 
 #### init_form_fields()
 
-Use this method to set `$this->form_fields` - these are options you'll show in admin on your gateway settings page and make use of the [WC Settings API](https://developer.woocommerce.com/docs/settings-api/).
+このメソッドを使用して、`$this->form_fields`を設定します - これらはゲートウェイ設定ページの管理画面に表示されるオプションで、[WC Settings API](https://developer.woocommerce.com/docs/settings-api/)を使用します。
 
 ゲートウェイの基本的な設定は、_enabled_、_title_、_description_で構成されます：
 
@@ -165,9 +165,9 @@ return array(
 
 WooCommerceはこのエラーをキャッチし、チェックアウトページに表示します。
 
-Stock levels are updated via actions (`woocommerce_payment_complete` and in transitions between order statuses), so it's no longer needed to manually call the methods reducing stock levels while processing the payment.
+在庫レベルはアクション（`woocommerce_payment_complete`および注文ステータス間の遷移）を介して更新されるため、支払い処理中に在庫レベルを下げるメソッドを手動で呼び出す必要はなくなりました。
 
-### Updating Order Status and Adding Notes
+### 注文ステータスの更新とメモの追加
 
 注文ステータスの更新は、注文クラスの関数を使用して行うことができます。これは、注文ステータスが処理中でない場合にのみ行う必要があります (その場合は、payment_complete() を使用します)。カスタムステータスに更新する例は次のようになります：
 
@@ -182,13 +182,13 @@ $order->update_status('on-hold', __('Awaiting cheque payment', 'woothemes'));
 $order->add_order_note( __('IPN payment completed', 'woothemes') );
 ```
 
-### Order Status Best Practice
+### 注文状況のベストプラクティス
 
-- If the order has completed but the admin needs to manually verify payment, use **On-Hold**
-- If the order fails and has already been created, set to **Failed**
-- If payment is complete, let WooCommerce handle the status and use `$order->payment_complete()`. WooCommerce will use either **Completed** or **Processing** status and handle stock.
+- 注文は完了したが、管理者が手動で支払いを確認する必要がある場合は、**On-Hold**を使用します。
+- 注文が失敗し、すでに作成されている場合、**Failed**に設定します。
+- 支払いが完了した場合、ステータスはWooCommerceに任せ、`$order->payment_complete()`を使用します。WooCommerceは**Completed**または**Processing**ステータスを使用し、在庫を処理します。
 
-## Notes on Direct Gateways
+## ダイレクトゲートウェイに関する注意事項
 
 高度なダイレクトゲートウェイ（実際のチェックアウトページで支払いを受けるもの）を作成する場合、追加のステップが必要です。まず、ゲートウェイのコンストラクタで has_fields を true に設定する必要があります：
 
@@ -198,11 +198,11 @@ $this->has_fields = true;
 
 これは、次に定義する直接支払いフォームを含む'payment_box'を出力するようにチェックアウトに指示します。
 
-Create a method called `payment_fields()` - this contains your form, most likely to have credit card details.
+`payment_fields()`というメソッドを作成する。
 
-The next but optional method to add is `validate_fields()`. Return true if the form passes validation or false if it fails. You can use the `wc_add_notice()` function if you want to add an error and display it to the user.
+次に追加するオプションのメソッドは `validate_fields()` です。フォームのバリデーションに合格した場合はtrueを返し、不合格の場合はfalseを返します。エラーを追加してユーザーに表示したい場合は、 `wc_add_notice()` 関数を使用します。
 
-Finally, you need to add payment code inside your `process_payment( $order_id )` method. This takes the posted form data and attempts payment directly via the payment provider.
+最後に、`process_payment( $order_id )`メソッド内に支払いコードを追加する必要があります。これは投稿されたフォームデータを受け取り、支払いプロバイダーを通して直接支払いを試みます。
 
 支払いに失敗した場合は、エラーを出力して失敗の配列を返す：
 
@@ -228,7 +228,7 @@ return array(
 );
 ```
 
-## Working with Payment Gateway Callbacks (such as PayPal IPN)
+## PayPal IPNのような決済ゲートウェイコールバックの処理
 
 注文のステータスを伝えるためにストアにコールバックを行うゲートウェイを構築している場合、ゲートウェイ内でこれを処理するコードを追加する必要があります。
 
@@ -238,7 +238,7 @@ return array(
 str_replace( 'https:', 'http:', add_query_arg( 'wc-api', 'WC_Gateway_Paypal', home_url( '/' ) ) );
 ```
 
-そして、そのハンドラーをフックに引っ掛ける：
+そして、そのハンドラーをフックにフックする：
 
 ```php
 add_action( 'woocommerce_api_wc_gateway_paypal', array( $this, 'check_ipn_response' ) );
@@ -246,9 +246,9 @@ add_action( 'woocommerce_api_wc_gateway_paypal', array( $this, 'check_ipn_respon
 
 WooCommerceはあなたのゲートウェイを呼び出し、URLが呼び出されたときにアクションを実行します。
 
-For more information, see [WC_API - The WooCommerce API Callback](https://woocommerce.com/document/wc_api-the-woocommerce-api-callback/).
+詳細は[WC_API - WooCommerce APIコールバック](https://woocommerce.com/document/wc_api-the-woocommerce-api-callback/)をご覧ください。
 
-## Hooks in Gateways
+## ゲートウェイのフック
 
 ゲートウェイクラス内にフックを追加してもトリガーされない可能性があることに注意することが重要です。ゲートウェイはチェックアウト時や管理画面の設定ページなど、必要なときにのみ読み込まれます。
 

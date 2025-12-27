@@ -5,6 +5,6 @@ sidebar_label: Accessibility
 
 # Accessibility
 
-Your extensions must meet the [WordPress Accessibility Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/accessibility/) 
+拡張機能は [WordPress Accessibility Coding Standards] (https://developer.wordpress.org/coding-standards/wordpress-coding-standards/accessibility/) を満たしている必要があります。 
 
-For more information on accessibility, check out the [WordPress accessibility quick start guide](https://make.wordpress.org/accessibility/handbook/best-practices/quick-start-guide/).
+アクセシビリティの詳細については、[WordPressアクセシビリティ クイックスタートガイド](https://make.wordpress.org/accessibility/handbook/best-practices/quick-start-guide/) をご覧ください。

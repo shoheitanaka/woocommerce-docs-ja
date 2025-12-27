@@ -43,8 +43,8 @@
 }
 ```
 
-- lock属性](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/#individual-block-locking)は、ブロックを削除または移動できるかどうかを制御するオブジェクトです。デフォルトでは、ロック属性はブロックの削除と移動を許可するように設定されています。しかし、lock属性を変更することで、ブロックを「強制的に」取り外し不可にすることができます。例えば、remove属性とmove属性の両方をfalseに設定することで、ブロックの削除や移動を禁止することができます。
-- parent属性](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#parent)は、このブロックが入れ子になる親ブロックを指定します。この属性は、ブロックがレンダリングされる場所を決定します。この例では、ブロックは`woocommerce/checkout-shipping-methods-block`の子です。つまり、このブロックは`woocommerce/checkout-shipping-methods-block`内にレンダリングされます。配送方法ブロックが不要な場合、ブロックはレンダリングされません。
+[- lock属性](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/#individual-block-locking)は、ブロックを削除または移動できるかどうかを制御するオブジェクトです。デフォルトでは、ロック属性はブロックの削除と移動を許可するように設定されています。しかし、lock属性を変更することで、ブロックを「強制的に」取り外し不可にすることができます。例えば、remove属性とmove属性の両方をfalseに設定することで、ブロックの削除や移動を禁止することができます。
+- [parent属性](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#parent)は、このブロックが入れ子になる親ブロックを指定します。この属性は、ブロックがレンダリングされる場所を決定します。この例では、ブロックは`woocommerce/checkout-shipping-methods-block`の子です。つまり、このブロックは`woocommerce/checkout-shipping-methods-block`内にレンダリングされます。配送方法ブロックが不要な場合、ブロックはレンダリングされません。
 
 ### 3.カスタムチェックアウトデータの設定
 
@@ -103,11 +103,11 @@ setExtensionData呼び出し前後のデータストアを示すRedux Devツー�
 
 | 前 | 後 |
 | ------ | ----- |
-| ![setExtensionData呼び出し前のRedux [Devツール](https://github.com/woocommerce/woocommerce-blocks/assets/14235870/948581f5-fdc2-4df1-963f-9aeb4b18b042) | ![setExtensionData呼び出し後のRedux [Devツール](https://github.com/woocommerce/woocommerce-blocks/assets/14235870/ddc7dbe7-3fad-44cd-bd19-ce78bc49b951) |
+| ![setExtensionData呼び出し前のRedux Devツール](https://github.com/woocommerce/woocommerce-blocks/assets/14235870/948581f5-fdc2-4df1-963f-9aeb4b18b042) | ![setExtensionData呼び出し後のRedux Devツール](https://github.com/woocommerce/woocommerce-blocks/assets/14235870/ddc7dbe7-3fad-44cd-bd19-ce78bc49b951) |
 
 ### 4.チェックアウト POST リクエストの処理
 
-追加されたフィールドデータを処理するには、Store APIを拡張して、追加データを期待するように指示する必要があります。詳細は[Store [APIでデータを公開する](https://github.com/woocommerce/woocommerce-blocks/blob/trunk/docs/third-party-developers/extensibility/rest-api/extend-store-api-add-data.md)を参照してください。
+追加されたフィールドデータを処理するには、Store APIを拡張して、追加データを期待するように指示する必要があります。詳細は[Store APIでデータを公開する](https://github.com/woocommerce/woocommerce-blocks/blob/trunk/docs/third-party-developers/extensibility/rest-api/extend-store-api-add-data.md)を参照してください。
 
 #### コード例
 
@@ -143,7 +143,7 @@ class Custom_Inner_Block_Blocks_Integration implements IntegrationInterface {
 }
 ```
 
-- `custom-inner-block-extend-store-endpoint.php`ファイル: [Store [API](https://github.com/woocommerce/woocommerce-blocks/tree/trunk/src/StoreApi) を拡張し、新しいフィールド・ブロック命令を保存および表示するフックを追加します。これはデフォルトではカスタム・ブロックからのデータをどこにも保存しませんが、データをデータベースに保存する独自のロジックを追加することができます。
+- `custom-inner-block-extend-store-endpoint.php`ファイル: [Store API](https://github.com/woocommerce/woocommerce-blocks/tree/trunk/src/StoreApi) を拡張し、新しいフィールド・ブロック命令を保存および表示するフックを追加します。これはデフォルトではカスタム・ブロックからのデータをどこにも保存しませんが、データをデータベースに保存する独自のロジックを追加することができます。
 
 ```php
 use Automattic\WooCommerce\Blocks\Package;
@@ -254,7 +254,7 @@ add_action(
 // ... Some code here
 ```
 
-チュートリアル](https://developer.woocommerce.com/2023/08/07/extending-the-woocommerce-checkout-block-to-add-custom-shipping-options/)から、チェックアウト処理中にこのカスタムフィールドのデータを取得する方法の例を示します。この例は`shipping-workshop-blocks-integration.php`ファイルのものです。完全なコードはこの[GitHubリポジトリ](https://github.com/woocommerce/wceu23-shipping-workshop-final/blob/main/shipping-workshop-blocks-integration.php#L42-L83)にあります。
+[チュートリアル](https://developer.woocommerce.com/2023/08/07/extending-the-woocommerce-checkout-block-to-add-custom-shipping-options/)から、チェックアウト処理中にこのカスタムフィールドのデータを取得する方法の例を示します。この例は`shipping-workshop-blocks-integration.php`ファイルのものです。完全なコードはこの[GitHubリポジトリ](https://github.com/woocommerce/wceu23-shipping-workshop-final/blob/main/shipping-workshop-blocks-integration.php#L42-L83)にあります。
 
 ```php
 private function save_shipping_instructions() {

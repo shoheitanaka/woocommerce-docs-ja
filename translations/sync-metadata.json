@@ -1,20 +1,11 @@
 {
-  "syncDate": "2025-12-24T07:52:50.613Z",
-  "upstreamCommit": "d658294be595e7f52160d28b161f3f023c84a2f9",
-  "filesChanged": 13,
+  "syncDate": "2025-12-27T02:36:17.282Z",
+  "upstreamCommit": "e35122244b70e25dba1c02389fa452c00a10fbd5",
+  "filesChanged": 4,
   "files": [
-    "docs/_docu-tools/docusaurus.config.ts",
-    "docs/_docu-tools/package.json",
-    "docs/_docu-tools/src/css/custom.css",
-    "docs/apis/store-api/extending-store-api/extend-store-api-add-data.md",
-    "docs/block-development/reference/block-references.md",
-    "docs/contribution/releases/troubleshooting.md",
-    "docs/extensions/extension-onboarding/handling-merchant-onboarding.md",
-    "docs/extensions/settings-and-config/email-editor-integration.md",
-    "docs/features/analytics/adding-columns-to-analytics-reports-and-csv-downloads.md",
-    "docs/features/analytics/extending-woocommerce-admin-reports.md",
-    "docs/getting-started/development-environment.md",
-    "docs/_docu-tools/static/fonts/Inter-VariableFont_slnt,wght.woff2",
-    "docs/_docu-tools/static/fonts/LICENSE.txt"
+    "docs/apis/store-api/resources-endpoints/product-brands.md",
+    "docs/apis/store-api/resources-endpoints/product-categories.md",
+    "docs/apis/store-api/resources-endpoints/product-tags.md",
+    "docs/apis/store-api/resources-endpoints/products.md"
   ]
 }

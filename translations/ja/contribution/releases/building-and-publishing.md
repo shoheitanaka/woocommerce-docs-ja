@@ -6,83 +6,79 @@ sidebar_position: 1
 
 # Building and Publishing a Release
 
-:::note
-
 リリースの過程で何らかの問題が発生した場合は、[リリースのトラブルシューティングとリカバリーガイド](/docs/contribution/releases/troubleshooting)を参照して、一般的な問題のステップバイステップの解決策とリカバリーの手順を確認してください。
 
-:::
-
-## Prerequisites
+## 前提条件
 
 - コミットを承認するには、WooCommerceプラグインのコミッターアクセスを持つWordPress.orgアカウントが必要です。
 
-## Pre-Checks
+## プレチェック
 
-1. **Verify no open [Pull Requests](https://github.com/woocommerce/woocommerce/pulls?q=is%3Aopen+is%3Apr) or [Issues](https://github.com/woocommerce/woocommerce/issues)** for the milestone matching the release being published.
-   - All pull requests tied to the release milestone must be closed, including [backported pull requests](/docs/contribution/releases/backporting) that may need to be merged into other release branches or trunk.
-2. **Check for [unresolved "cherry pick failed" Pull Requests](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22).**
-   - Ensure any such PRs are either expected or manually resolved via another PR.
-3. **Confirm the Stable tag in `readme.txt` matches [trunk on WordPress.org](https://plugins.trac.wordpress.org/browser/woocommerce/trunk/readme.txt#L7).**
-   - The value should match the current stable version, not the version being built.
-4. **Ensure [GitHub services](https://www.githubstatus.com/) are fully operational**
+1. **公開されるリリースと一致するマイルストーンに対して、未解決の [Pull Requests](https://github.com/woocommerce/woocommerce/pulls?q=is%3Aopen+is%3Apr) または [Issues](https://github.com/woocommerce/woocommerce/issues) がないことを確認してください。
+   - 他のリリースブランチやトランクにマージする必要があるかもしれない[backported pull requests](/docs/contribution/releases/backporting)を含め、リリースのマイルストーンに関連するすべてのプルリクエストをクローズしなければなりません。
+2. **未解決の "cherry pick failed "[プルリクエスト](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22).**がないかチェックしてください。
+   - そのようなPRがあれば、別のPRで解決されることを期待するか、手動で解決するようにしてください。
+3. **`readme.txt`のStableタグが[WordPress.orgのtrunk](https://plugins.trac.wordpress.org/browser/woocommerce/trunk/readme.txt#L7)と一致することを確認する。
+   - この値は、ビルド中のバージョンではなく、現在の安定バージョンと一致する必要があります。
+4. **GitHub [サービス](https://www.githubstatus.com/) が完全に動作していることを確認してください。
 
-## Building WooCommerce
+## WooCommerceの構築
 
-1. **Run the ["Release: Bump version number" workflow](https://github.com/woocommerce/woocommerce/actions/workflows/release-bump-version.yml).**
-   - Run from `trunk`.
-   - Choose the type of version you're releasing (`beta`, `rc`, or `stable`).
-   - Enter as _Release branch_ the branch you are about to release from (e.g. `release/10.0`).
-   - Review and merge the PR created.
-2. **Run the [“Release: Compile changelog” workflow](https://github.com/woocommerce/woocommerce/actions/workflows/release-compile-changelog.yml).**
-   - Run from `trunk` and enter the major version number and the intended release date.
-   - Review and merge the two PRs created (one for trunk, one for the release branch).
-   - Ensure the changelog date is correct.
-3. **Build the release ZIP file using the [“Release: Build ZIP file” workflow](https://github.com/woocommerce/woocommerce/actions/workflows/release-build-zip-file.yml).**
-   - Run from `trunk` and enter the release branch as argument.
-   - Set "Create GitHub release" to `true`.
-   - The workflow will create a [draft release tag](https://github.com/woocommerce/woocommerce/releases) with an attached `woocommerce.zip` file.
+1. *** ["Release: Bump version number "ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-bump-version.yml).** を実行します。
+   - `trunk`から実行します。
+   - リリースするバージョンの種類（`beta`、`rc`、`stable`）を選択します。
+   - リリースするブランチを _Release branch_ と入力します (例: `release/10.0`).
+   - 作成されたPRをレビューし、マージする。
+2. **["Release: Compile changelog" ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-compile-changelog.yml).** を実行します。
+   - `trunk`から実行し、メジャーバージョン番号とリリース予定日を入力する。
+   - 作成された2つのPR (1つはトランク用、もう1つはリリースブランチ用) をレビューしてマージします。
+   - 変更履歴の日付が正しいことを確認してください。
+3. **リリースZIPファイルを["Release: Build ZIP file "ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-build-zip-file.yml).**を使ってビルドします。
+   - `trunk`から実行し、引数にリリースブランチを入力します。
+   - Create GitHub release "を`true`に設定します。
+   - ワークフローは、`woocommerce.zip`ファイルを添付した[ドラフトリリースタグ](https://github.com/woocommerce/woocommerce/releases)を作成します。
 
-## Publishing the Release
+## リリースの発表
 
-### Step 1: Upload Release to WordPress.org
+### ステップ1：WordPress.orgにリリースをアップロードする
 
-- Run the ["Release: Upload release to WordPress.org" workflow](https://github.com/woocommerce/woocommerce/actions/workflows/release-upload-to-wporg.yml) from `trunk` using the release tag.
-- This creates a new SVN tag and, if the release is newer than trunk, overwrites trunk.
-- When releasing the initial beta, longer processing times are expected.
+- releaseタグを使用して、`trunk`から["Release: Upload release to WordPress.org "ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-upload-to-wporg.yml)を実行する。
+- これにより新しいSVNタグが作成され、リリースがtrunkより新しい場合はtrunkが上書きされます。
+- 最初のベータ版をリリースする場合、処理時間が長くなることが予想されます。
 
-### Step 2: Approve the Release
+### ステップ2：リリースを承認する
 
-- Visit [WordPress.org plugin releases](https://wordpress.org/plugins/developers/releases/) as the user `woocommerce` and approve the release.
-- Wait a few minutes for WordPress.org to build the new version.
+- ユーザー `woocommerce` として [WordPress.org plugin releases](https://wordpress.org/plugins/developers/releases/) にアクセスし、リリースを承認する。
+- WordPress.orgが新しいバージョンをビルドするまで数分待ちます。
 
-### Step 3: Verify Release Availability
+### ステップ3：リリースの可用性を確認する
 
-- Confirm the new release appears at:
+- 新しいリリースが表示されることを確認してください：
     - [https://plugins.svn.wordpress.org/woocommerce/tags/](https://plugins.svn.wordpress.org/woocommerce/tags/)
-    - The "Previous versions" dropdown on the [Advanced Options screen](https://wordpress.org/plugins/woocommerce/advanced/).
+    - 詳細オプション画面](https://wordpress.org/plugins/woocommerce/advanced/)の「以前のバージョン」ドロップダウン。
 
-### Step 4: Test and Validate the Release
+### ステップ4：リリースのテストと検証
 
-- **Condition:** Only perform this step for stable and RC releases (`-rc.x` or `.x`).
-- **Action:** Conduct thorough testing and validation of the release to ensure stability and functionality. Carefully monitor for any issues that could critically impact sites running this version.
+- **条件:** 安定版および RC 版リリース (`-rc.x` または `.x`) に対してのみ、このステップを実行してください。
+- **安定性と機能性を確保するために、リリースの徹底的なテストと検証を実施してください。このバージョンを実行しているサイトに重大な影響を与える可能性のある問題がないか慎重に監視してください。
 
-### Step 5: Update Stable Tag
+### ステップ5：安定タグの更新
 
-- **Condition:** Only perform this step if:
-    - The release is a stable release (`.x`), **and**
-    - No major issues were found during testing and validation (Step 4).
-- **Action:** Run the ["Release: Update stable tag" workflow](https://github.com/woocommerce/woocommerce/actions/workflows/release-update-stable-tag.yml) from `trunk`, set the version, and select the option to update the stable tag as part of the workflow input.
-    - Review and merge the pull requests for both the release branch and trunk.
+- **条件:** 以下の場合のみ、このステップを実行してください：
+    - リリースが安定版リリース(`.x`)であること。
+    - テストと検証(ステップ4)で大きな問題が見つからなかった。
+- **アクション:** `trunk` から ["Release: Update stable tag" workflow](https://github.com/woocommerce/woocommerce/actions/workflows/release-update-stable-tag.yml) を実行し、バージョンを設定し、ワークフロー入力の一部として stable タグを更新するオプションを選択します。
+    - リリースブランチとトランクの両方のプルリクエストを確認し、マージします。
 
-### Step 6: Publish GitHub Release Tag
+### ステップ6：GitHubリリースタグの発行
 
-- **Action:** Publish the [previously created GitHub draft release tag](https://github.com/woocommerce/woocommerce/releases).
-- **When setting release status:**
-    - If releasing a dev, beta, or RC, check "Set as a pre-release."
-    - If the version was marked as stable in Step 5, check "Set as the latest release."
-    - If the version was **not** marked as stable in Step 5, do **not** set as the latest release.
+- **アクション:** [以前に作成したGitHubドラフトリリースタグ](https://github.com/woocommerce/woocommerce/releases)を公開します。
+- **リリースステータスを設定する場合:**
+    - 開発版、ベータ版、RC版をリリースする場合は、"Set as a pre-release" をチェックしてください。
+    - ステップ 5 で安定版としてマークされたバージョンの場合は、 "Set as the latest release" をチェックしてください。
+    - ステップ5で安定版としてマークされていない場合は、最新リリースとして設定しないでください。
 
-## Decision Table
+## 決定表
 
 | ステップ｜実行する条件｜条件が満たされない場合のアクション
 |--------|--------------------------------------------------------------------------------|-------------------------------------|

@@ -18,7 +18,7 @@ WooCommerce Developer DocumentationをLLMまたはAIアシストIDEにフィー�
 
 CursorやWindsurfのようなIDEを使用している場合は、必要に応じて参照できるように、これらのリンクをカスタム・ドキュメントとして追加することをお勧めします。
 
-**WC [REST API documentation](https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction) や [WooCommerce [Code Reference](https://woocommerce.github.io/code-reference/) の内容は含まれません。
+[**WC REST API documentation](https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction) や [WooCommerce Code Reference](https://woocommerce.github.io/code-reference/) の内容は含まれません。
 
 ### マークダウンにコピー
 

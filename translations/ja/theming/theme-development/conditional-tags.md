@@ -2,7 +2,8 @@
 post_title: Conditional tags in WooCommerce
 sidebar_label: Conditional tags
 ---
-# WooCommerceの条件タグ
+
+# Conditional tags in WooCommerce
 
 ## 「条件付きタグ」とは？
 
@@ -49,7 +50,7 @@ WooCommerceはカスタム投稿タイプを使用するため、WordPressの条
 ### 単一商品ページ
 
 - `is_product()`  
-  単一の商品ページでtrueを返す。is_singularのラッパー。
+  単一の商品ページで真を返す。is_singularのラッパー。
 
 ### カートページ
 

@@ -5,47 +5,43 @@ sidebar_label: Naming conventions
 
 # Naming conventions
 
-## PHP
-
-WooCommerce core generally follows [WordPress PHP naming conventions](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#naming-conventions). On top of that, function, class, and hook names should be prefixed. For functions the prefix is `wc_`, for classes is `WC_` and for hooks is `woocommerce_`.
+WooCommerceコアは一般的に[WordPress PHP命名規則](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#naming-conventions)に従います。その上で、関数名、クラス名、フック名には接頭辞を付けます。関数のプレフィックスは`wc_`、クラスのプレフィックスは`WC_`、フックのプレフィックスは`woocommerce_`です。
 
 関数名の例：
 
 - `wc_get_product()`
-- `wc_is_active_theme()`
+- `wc_is_active_theme()`。
 
 クラス名の例：
 
 - `WC_Breadcrumb`
-- `WC_Cart`
+- `WC_Cart`。
 
 フック名の例（アクションまたはフィルター）：
 
 - `woocommerce_after_checkout_validation`
-- `woocommerce_get_formatted_order_total`
+- `woocommerce_get_formatted_order_total`。
 
-There are however some exceptions which apply to classes defined inside `src/`. Within this directory:
+ただし、`src/`内で定義されたクラスには例外があります。このディレクトリ内では
 
-- We do not use the `WC_` prefix for class names (the prefix is not needed, because all of the classes in this location live within the `Automattic\WooCommerce` namespace)
-- Classes are named using the `CamelCase` convention (however, method names should still be `underscore_separated`)
-- Class files should match the class name and do not need the `class-` prefix (for example, the filename for the `StringUtil` class is `StringUtil.php`)
+- クラス名には`WC_`という接頭辞を使用しません（この場所にあるクラスはすべて`Automattic\WooCommerce`名前空間内にあるため、接頭辞は必要ありません）。
+- クラス名は`CamelCase`の規則で命名されます（ただし、メソッド名は`underscore_separated`でなければなりません）。
+- クラス・ファイルはクラス名と同じでなければならず、`class-`の接頭辞は必要ありません（例えば、`StringUtil`クラスのファイル名は`StringUtil.php`です）。
 
-## JS
-
-WooCommerce core follows [WordPress JS naming conventions](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/#naming-conventions). As with PHP, function, class, and hook names should be prefixed, but the convention for JS is slightly different, and camelCase is used instead of snake_case. For functions, the prefix is `wc`, for classes is `WC` and for hooks is `woocommerce`.
+WooCommerceコアは[WordPress JS命名規則](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/#naming-conventions)に従います。PHPと同様に、関数名、クラス名、フック名にはプレフィックスを付ける必要がありますが、JSの規約は若干異なり、snake_caseの代わりにcamelCaseが使用されます。関数のプレフィックスは`wc`、クラスのプレフィックスは`WC`、フックのプレフィックスは`woocommerce`です。
 
 関数名の例：
 
-- `wcSettings()`
+- `wcSettings()`。
 
 クラス名の例：
 
-- `WCOrdersTable`
+- `WCOrdersTable`。
 
 フック名の例（アクションまたはフィルター）：
 
-- `woocommerceTracksEventProperties`
+- `woocommerceTracksEventProperties`。
 
-## CSS and SASS
+## CSS と SASS
 
-See [CSS SASS coding guidelines and naming conventions](https://github.com/woocommerce/woocommerce/wiki/CSS-SASS-coding-guidelines-and-naming-conventions).
+[CSS SASSコーディングガイドラインと命名規則](https://github.com/woocommerce/woocommerce/wiki/CSS-SASS-coding-guidelines-and-naming-conventions) を参照してください。

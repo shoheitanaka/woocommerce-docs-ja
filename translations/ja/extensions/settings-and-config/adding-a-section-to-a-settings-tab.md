@@ -7,20 +7,20 @@ sidebar_label: Add a section to a settings tab
 
 WooCommerceの拡張機能で何らかの設定が必要な場合、自問することが重要です：  **もしあなたのエクステンションがいくつかの簡単な設定を持つだけなら、それ専用の新しいタブを作る必要があるでしょうか？ほとんどの場合、答えはノーです。
 
-## When to Create a Section
+## いつセクションを作るか
 
 一つの商品ページにスライダーを追加するエクステンションがあるとします。このエクステンションにはいくつかのオプションしかありません：
 
 -   単一商品ページに自動挿入（チェックボックス）
 -   スライダータイトル（テキストフィールド）
 
-特に**商品**に関連する2つのオプションのみです。WooCommerceの商品設定(**WooCommerce &gt; 設定 &gt; 商品**)に追加することは簡単ですが、ユーザーフレンドリーではありません。ユーザーは最初にどこを見ればいいのかわからず、すべての商品オプションをスキャンしなければなりませんし、オプションを直接リンクするのは難しいか不可能でしょう。幸いなことに、WooCommerce 2.2.2の時点で、コア設定のタブの1つの下に新しい**セクション**を追加できる新しいフィルタがあります。
+特に**商品**に関連する2つのオプションのみです。WooCommerceの商品設定(**WooCommerce > 設定 > 商品**)に追加することは簡単ですが、ユーザーフレンドリーではありません。ユーザーは最初にどこを見ればいいのかわからず、すべての商品オプションをスキャンしなければなりませんし、オプションを直接リンクするのは難しいか不可能でしょう。幸いなことに、WooCommerce 2.2.2の時点で、コア設定のタブの1つの下に新しい**セクション**を追加できる新しいフィルタがあります。
 
-## How to Create a Section
+## セクションの作り方
 
 個々の関数を通してこれを行う方法を説明しますが、おそらく、すべての設定メソッドを格納するクラスを作成する必要があります。
 
-The first thing you need to is add the section, which can be done like this by hooking into the  `woocommerce_get_sections_products`  filter:
+`woocommerce_get_sections_products`フィルターにフックすることで、このようにできる：
 
 ```php
 /**
@@ -40,13 +40,13 @@ function wcslider_add_section( $sections ) {
 }
 ```
 
-_[wc-create-section-beneath-products.php](https://gist.github.com/woogists/2964ec01c8bea50fcce62adf2f5c1232/raw/da5348343cf3664c0bc8b6b132d8105bfcf9ca51/wc-create-section-beneath-products.php)_
+_[wc-create-section-beneath-products.php](https://gist.github.com/woogists/2964ec01c8bea50fcce62adf2f5c1232/raw/da5348343cf3664c0bc8b6b132d8105bfcf9ca51/wc-create-section-beneath-products.php)_。
 
-Make sure you change the  **wcslider**  parts to suit your extension's name / text-domain. The important thing about the  `woocommerce_get_sections_products`  filter, is that the last part  **products**, is the tab you'd like to add a section to. So if you want to add a new tab to accounts section, you would hook into the  `woocommerce_get_sections_accounts`  filter.
+wcslider**の部分を拡張機能の名前/テキストドメインに合わせて変更してください。`woocommerce_get_sections_products`フィルターで重要なのは、最後の **products** という部分が、セクションを追加したいタブであるということです。つまり、アカウント・セクションに新しいタブを追加したい場合は、`woocommerce_get_sections_accounts`フィルターにフックします。
 
-## How to Add Settings to a Section
+## セクションに設定を追加する方法
 
-Now that you've got the tab, you need to filter the output of  `woocommerce_get_sections_products`  (or similar). You would add the settings like usual using the  [**WooCommerce Settings API**](./settings-api.md), but check for the current section before adding the settings to the tab's settings array. For example, let's add the sample settings we discussed above to the new  **wcslider**  section we just created:
+タブを取得したので、`woocommerce_get_sections_products` (または同様のもの) の出力をフィルタリングする必要があります。通常のように [**WooCommerce Settings API**](./settings-api.md) を使用して設定を追加しますが、タブの設定配列に設定を追加する前に現在のセクションをチェックします。例えば、先ほど作成した新しい **wcslider** セクションに、上で説明したサンプル設定を追加してみましょう：
 
 ```php
 /**
@@ -129,12 +129,12 @@ function wcslider_all_settings( $settings, $current_section ) {
 
 _[wc-add-settings-section.php](https://gist.github.com/woogists/4038b83900508806c57a193a2534b845#file-wc-add-settings-section-php)_
 
-We're hooking into the same  `woocommerce_get_sections_products`  filter, but this time doing a check that the  `$current_section`  matches our earlier defined custom section (wcslider), before adding in our new settings.
+同じ`woocommerce_get_sections_products`フィルターにフックしていますが、今回は新しい設定を追加する前に、`$current_section`が先に定義したカスタム・セクション（wcslider）と一致するかチェックします。
 
-## Using the New Settings
+## 新しい設定を使う
 
-You would now just use your newly created settings like you would any other WordPress / WooCommerce setting, through the  [**get_option**](http://codex.wordpress.org/Function_Reference/get_option)  function and the defined ID of the setting. For example, to use the previously created  **wcslider_auto_insert**  option, simply use the following code:  `get_option( 'wcslider_auto_insert' )`
+他の WordPress / WooCommerce 設定と同じように、[**get_option**](http://codex.wordpress.org/Function_Reference/get_option) 関数と定義された ID を使って、新しく作成した設定を使用します。例えば、以前に作成した**wcslider_auto_insert**オプションを使用するには、以下のコードを使用するだけです：  `get_option( 'wcslider_auto_insert' )`
 
-## Conclusion
+## 結論
 
-When creating an extension for WooCommerce, think about where your settings belong before you create them. The key to building a useful product is making it easy to use for the end user, so appropriate setting placement is crucially important. For more specific information on adding settings to WooCommerce, check out the  [**Settings API documentation**](https://github.com/woocommerce/woocommerce/blob/trunk/docs/extension-development/settings-api.md).
+WooCommerceのエクステンションを作成する場合、設定を作成する前に、設定がどこに属するかを考えましょう。便利な製品を作るための鍵は、エンドユーザーにとって使いやすくすることです。そのため、適切な設定の配置は決定的に重要です。WooCommerceに設定を追加する具体的な情報については、[**Settings API documentation**](https://github.com/woocommerce/woocommerce/blob/trunk/docs/extension-development/settings-api.md) をご覧ください。

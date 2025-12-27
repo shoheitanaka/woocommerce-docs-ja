@@ -4,13 +4,13 @@ sidebar_label: Available slots
 sidebar_position: 2
 ---
 
-# 利用可能なスロット
+# Available slots
 
 このドキュメントでは、カスタムコンテンツ（フィル）を追加するために使用できるスロットのリストを示します。
 
-新しいSlotFillコンポーネントを追加したい場合は、[Checkout [- Slot Fill document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/slot/README.md)をチェックしてください。スロットとフィルについての詳細は、[スロットとフィルのドキュメント](/docs/block-development/reference/slot-fills/)をご覧ください。
+新しいSlotFillコンポーネントを追加したい場合は、[Checkout - Slot Fill document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/slot/README.md)をチェックしてください。スロットとフィルについての詳細は、[スロットとフィルのドキュメント](/docs/block-development/reference/slot-fills/)をご覧ください。
 
-**ネーミングについての注意事項： ** `Experimental`のプレフィックスが付いたスロットは実験的なものであり、変更または削除される可能性があります。実験的な段階から卒業すると、ネーミングが変更され、`Experimental`の接頭辞は削除されます。詳しくは[Feature [Gating document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/internal-developers/blocks/feature-flags-and-experimental-interfaces.md)をご覧ください。
+**ネーミングについての注意事項： ** `Experimental`がプレフィックスとして付いているスロットは実験的なものであり、変更または削除される可能性があります。実験的な段階から卒業すると、ネーミングが変更され、`Experimental`の接頭辞は削除されます。詳しくは[Feature Gating document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/internal-developers/blocks/feature-flags-and-experimental-interfaces.md)をご覧ください。
 
 ## ExperimentalOrderMeta
 
@@ -45,9 +45,9 @@ registerPlugin( 'slot-and-fill-examples', {
 
 -   `cart`：`wc/store/cart`のデータが、`snake_case`ではなく`camelCase`になっている。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
 -   `extensions`：サードパーティの開発者が`ExtendSchema`を使用して登録した外部データ。もしあなたが`wc/store/cart`で`ExtendSchema`を使用した場合、あなたのネームスペースの下にあるデータはここにあります。
--   `context`には、塗りつぶしがレンダリングされるブロックの名前を指定します：`woocommerce/cart`または`woocommerce/checkout`。
+-   `context`は、塗りつぶしがレンダリングされるブロックの名前に等しい：`woocommerce/cart`または`woocommerce/checkout`。
 
-#実験的注文出荷パッケージ
+## 実験的注文出荷パッケージ
 
 このスロットはチェックアウトの配送ステップ内とカートの配送オプション内に表示されます。
 
@@ -80,7 +80,7 @@ registerPlugin( 'slot-and-fill-examples', {
 -   `collapse`：`Boolean` パネルをデフォルトで折りたたむかどうか。
 -   これは、パネルが折りたたみ可能な場合に真となります：`Boolean|undefined` 各パッケージの内容を表示するかどうか。これはCartとCheckoutでは未定義で、実際のパッケージロジックに任されています。
 -   `noResultsMessage`：配送オプションがない場合にレンダリングするReact要素。
--   `renderOption`：料金オブジェクトを受け取り、レンダリングオプションを返すレンダー関数。
+-   `renderOption`: 料金オブジェクトを受け取り、レンダーオプションを返すレンダー関数。
 -   `cart`：`wc/store/cart`のデータですが、`snake_case`の代わりに`camelCase`です。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
 -   `extensions`：サードパーティの開発者が`ExtendSchema`を使用して登録した外部データで、`wc/store/cart`で`ExtendSchema`を使用した場合は、ここにある名前空間の下にデータがあります。
 -   `components`: 独自の配送料金をレンダリングするために使用できるコンポーネントを含むオブジェクトで、`ShippingRatesControlPackage`が含まれています。

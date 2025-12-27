@@ -5,7 +5,8 @@ note: >-
   Docs links out to Skyverge's site for howto add a custom email - do we have
   our own alternative?
 ---
-# レガシーローカルピックアップの高度な設定とカスタマイズ
+
+# Advanced settings and customization for legacy Local Pickup
 
 ## 地方送迎を利用する場合、地方税を無効にする
 
@@ -32,5 +33,6 @@ add_filter( 'woocommerce_countries_base_city', create_function( '', 'return "COL
 
 配送方法としてLocal Pickupを使用した場合、_Shipping Address_が管理者の注文メールに表示されない。
 
-すべてのコア配送オプションは、標準の注文フローを使用しているため、顧客はローカルピックアップまたは他の配送オプションを選択した場合でも、同じ注文確認メールを受信します。 
+すべての主要な配送オプションは標準の注文フローを使用しているため、ローカルピックアップを選択しても、他の配送オプションを選択しても、顧客は同じ注文確認メールを受け取ります。 
 地域集荷の注文に別のメールを送信したい場合は、このガイドを使用して地域集荷用のカスタムメールを作成してください：[WooCommerceカスタムメールを追加する方法](https://www.skyverge.com/blog/how-to-add-a-custom-woocommerce-email/).
+

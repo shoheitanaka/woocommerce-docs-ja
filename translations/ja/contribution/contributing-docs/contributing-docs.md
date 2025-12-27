@@ -5,55 +5,55 @@ sidebar_label: Contributing docs
 
 # Contributing technical documentation
 
-Thanks for helping improve WooCommerce's developer documentation. Our docs are powered by Docusaurus, and live inside the [`woocommerce/docs/`](https://github.com/woocommerce/woocommerce/tree/trunk/docs) folder of the monorepo.
+WooCommerceの開発者向けドキュメントの改善にご協力いただきありがとうございます。私たちのドキュメントはDocusaurusを利用しており、monorepoの[`woocommerce/docs/`](https://github.com/woocommerce/woocommerce/tree/trunk/docs)フォルダ内にあります。
 
 このガイドでは、効果的に貢献するための仕組み、ツール、プロセスについて説明します。
 
-## Getting started 
+## ♪ はじめに 
 
-> This guide presumes that you're familiar with basic Git and GitHub functionality, that you're signed into a GitHub account, and that you have Git setup locally. If you're new to GitHub, we recommend reading their [quickstart](https://docs.github.com/en/get-started/quickstart/hello-world) and [working with forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) guides before getting started.
+> このガイドでは、基本的な Git と GitHub の機能に慣れていること、GitHub アカウントにサインインしていること、ローカルに Git がセットアップされていることを前提としています。GitHub を初めて使う場合は、始める前に [quickstart](https://docs.github.com/en/get-started/quickstart/hello-world) と [working with forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) のガイドを読むことをおすすめします。
 
-### Initial setup
+### 初期設定
 
-1. Fork the [WooCommerce monorepo](https://github.com/woocommerce/woocommerce) on GitHub. If asked, you can safely check the `copy the trunk branch only` option.
-2. [Clone the fork that you just created](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). This will allow you to edit it locally.
+1.GitHubの[WooCommerce monorepo](https://github.com/woocommerce/woocommerce)をフォークしてください。と聞かれたら、`copy the trunk branch only`オプションをチェックすると安全です。
+2.[作成したフォークをクローンする](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)。これでローカルで編集できるようになります。
 
-### Making changes
+### 変更を加える
 
-1. Prior to making any changes, ensure your `trunk` branch is up to date with the monorepo's `trunk` [by syncing it](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
-2. For each modification you'd like to make, create a new branch off `trunk` in your fork that starts with `docs/`. For example, if you're adding a doc about improving extension performance, you could call your branch `docs/improve-extension-performance`.
-3. Create or edit markdown files inside the appropriate folder under `docs/`.
-4. If needed, update the folder's `_category_.json` (for sidebar label/position).
-5. Run a build to verify changes, confirm that the sitemaps and llms-txt files are updated, and detect markdown linting errors and broken links (link checking only happens on build):
+1.変更を加える前に、あなたの`trunk`ブランチがmonorepoの`trunk`と[同期して]最新であることを確認してください(https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)。
+2.変更を加えるたびに、`trunk`から`docs/`で始まる新しいブランチを作成します。例えば、エクステンションのパフォーマンス向上に関するドキュメントを追加する場合、ブランチを`docs/improve-extension-performance`と呼ぶことができます。
+3.INLINE_CODE_5__の下にある適切なフォルダで、マークダウンファイルを作成または編集します。
+4.必要に応じて、フォルダの`_category_.json`（サイドバーのラベル/位置）を更新してください。
+5.ビルドを実行して変更を確認し、サイトマップとllms-txtファイルが更新されていることを確認し、マークダウンのリンティングエラーとリンク切れを検出します（リンクチェックはビルド時のみ行われます）：
 
     ```bash
     npm run build
     ```
 
-### Opening a pull request
+### プルリクエストを開く
 
-1. Commit and push your changes to your fork.
-2. [Open a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to woocommerce/woocommerce, targeting the trunk branch.
-3. Use a descriptive title, and fill out the PR template. Include:
-    * Rationale for new files or categories
-    * A note about any sidebar or structure changes
-4. The WooCommerce Developer Advocacy team will review and merge your changes.
+1.変更をコミットしてフォークにプッシュする。
+2.[プルリクエストを開く](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to woocommerce/woocommerce, target the trunk branch.
+3.説明的なタイトルをつけ、PR テンプレートに記入してください。を含めてください：
+    * 新しいファイルやカテゴリの根拠
+    * サイドバーや構造の変更についてのメモ
+4.WooCommerce Developer Advocacy チームがあなたの変更を確認し、マージします。
 
-## Docs folder anatomy
+## # Docs フォルダー解剖学
 
-### Tooling and configuration
+### ツールおよび構成
 
-* **Supporting tooling and config** lives in:
+* **サポート・ツールとコンフィグ**はここにある：
     * [`woocommerce/docs/_docu-tools/`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/_docu-tools/)
-* **Top-level sidebar and navbar** are configured in:
-    * [`sidebars.ts`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/_docu-tools/sidebars.ts)
+* **トップレベルのサイドバーとナバー**は[`sidebars.ts`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/_docu-tools/sidebars.ts)に設定されています：
+    * [__INLINE_CODE_1__](__URL_1__)
     * [`docusaurus.config.ts`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/_docu-tools/docusaurus.config.ts)
 
-### Documentation files
+### ドキュメントファイル
 
-* **Docs location**: All documentation lives inside of [`woocommerce/docs/`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/)
-* **Each folder is sidebar or top nav category**, for example: `getting-started`, `code-snippets`, etc.
-* **Sidebar configuration** for each category is managed using a `_category_.json` file inside each category folder:
+* **ドキュメントの場所**：すべてのドキュメントは[`woocommerce/docs/`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/)の中にあります。
+* **各フォルダーはサイドバーまたはトップナビのカテゴリーです：例えば、`getting-started`、`code-snippets`など。
+* 各カテゴリーの**サイドバー設定**は、各カテゴリーフォルダー内の`_category_.json`ファイルを使用して管理されます：
 
     ```json
     {
@@ -62,7 +62,7 @@ Thanks for helping improve WooCommerce's developer documentation. Our docs are p
     }
     ```
 
-## Adding images
+## 画像の追加
 
 ドキュメントの画像はすべて
 
@@ -76,13 +76,13 @@ docs/_docu-tools/static/img/doc_images/
 ![Alt text](/img/doc_images/your-image-name.png)
 ```
 
-## Creating New Categories
+## 新しいカテゴリーを作る
 
-新しいカテゴリーを作成する前に、本当に必要かどうかを検討する必要があります。可能であれば、既存のカテゴリーでコンテンツを作成するのがデフォルトです。新しいカテゴリーを作成する必要がある場合は、以下の手順に従ってください：
+新しいカテゴリーを作成する前に、本当に必要かどうかを検討する必要があります。可能であれば、既存のカテゴリーでコンテンツを作成することをデフォルトにすべきです。新しいカテゴリーを作成する必要がある場合は、以下の手順に従ってください：
 
-1. Inside the `/docs` folder, create a sub-folder with a descriptive name. For example, if you wanted to create a `Checkout design guidelines` section, you'd create a folder called `/docs/checkout-design-guidelines`.
+1.INLINE_CODE_0__フォルダーの中に、わかりやすい名前のサブフォルダーを作成します。例えば、`Checkout design guidelines`セクションを作成したい場合は、`/docs/checkout-design-guidelines`というフォルダを作成します。
 
-2. Create a `_category_.json` file inside each category folder and give it a position it should have in the sidebar as well as a label:
+2.各カテゴリーフォルダー内に`_category_.json`ファイルを作成し、サイドバー内の位置とラベルを指定します：
 
     ```json
     {
@@ -93,10 +93,10 @@ docs/_docu-tools/static/img/doc_images/
 
 新しいカテゴリーを作成する際は、プルリクエストの説明文にカテゴリーを作成した理由についての根拠を含めてください。
 
-## Writing guidelines and references
+## 執筆ガイドラインと参考文献
 
-* Use short, URL-friendly file names (kebab-case, no spaces)
-* Avoid pasting from rich text editors like Google Docs, which may introduce invalid characters
-* Check our [docs style guide](style-guide) for detailed writing guidelines
-* Reference the [Docusaurus documentation](https://docusaurus.io/docs) for additional guidance
+* ファイル名はURLと同じ短いものを使用する（大文字と小文字を区別し、スペースは使用しない）。
+* Google Docsのようなリッチテキストエディタからの貼り付けは避けてください。
+* 詳しい書き方のガイドラインは[docs style guide](style-guide)を参照してください。
+* [ドキュソー文書](https://docusaurus.io/docs)を参照してください。
 

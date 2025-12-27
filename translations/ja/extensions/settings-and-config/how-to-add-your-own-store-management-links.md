@@ -5,7 +5,7 @@ sidebar_label: Add store management links
 
 # How to add store management links
 
-## Introduction
+## はじめに
 
 新しく改良されたWooCommerceのホーム画面には、最近注目されているプラグイン開発者向けの拡張性が2点あります。1つ目はセットアップタスクリストで、ユーザーに完了すべきタスクを思い出させたり、進捗状況を管理したりすることができます。
 
@@ -15,7 +15,7 @@ sidebar_label: Add store management links
 
 独自の店舗管理リンクを追加するのは簡単なプロセスです。
 
-## Add your own store management link
+## 独自の店舗管理リンクを追加
 
 その前に、この機能に関するいくつかの制限を説明しよう。
 
@@ -25,13 +25,11 @@ sidebar_label: Add store management links
 
 それらを念頭に置いて、始めよう。
 
-## Step 1 - Enqueue JavaScript
+## ステップ 1 - JavaScript をエンキューする
 
 店舗管理リンクの追加はすべてJavaScriptで行われるので、最初のステップは、店舗管理リンクを追加するスクリプトをエンキューすることです。ここで最も重要なことは、店舗管理リンクセクションがレンダリングされる前にスクリプトが実行されるようにすることです。
 
-To ensure that your script runs before ours you'll need to enqueue it with a priority higher than 15. You'll also need to depend on `wp-hooks` to get access to `addFilter`.
-
-Example:
+あなたのスクリプトが私たちのスクリプトより先に実行されるようにするには、優先度を15より高くしてエンキューする必要があります。また、`addFilter`にアクセスするには、`wp-hooks`に依存する必要がある。
 
 ```php
 function enqueue_management_link_script() {
@@ -41,17 +39,17 @@ function enqueue_management_link_script() {
 add_action( 'admin_enqueue_scripts', 'enqueue_management_link_script' );
 ```
 
-## Step 2 - Install @wordpress/icons
+## ステップ 2 - @wordpress/icons をインストールする
 
-To provide an icon of your choice for your store management link, you'll need to install `@wordpress/icons` in your JavaScript project:
+店舗管理リンクにお好みのアイコンを提供するには、JavaScriptプロジェクトに`@wordpress/icons`をインストールする必要があります：
 
 ```sh
 npm install @wordpress/icons --save
 ```
 
-## Step 3 - Add your filter
+## ステップ 3 - フィルターを追加する
 
-Your script will need to use `addFilter` to provide your custom link to the store management link section. And you'll need to import your icon of choice from `@wordpress/icons`. Here's an example:
+あなたのスクリプトは、`addFilter`を使用して、店舗管理リンクセクションにカスタムリンクを提供する必要があります。また、`@wordpress/icons`からお好みのアイコンをインポートする必要があります。以下に例を示します：
 
 ```js
 import { megaphone } from "@wordpress/icons";

@@ -13,60 +13,58 @@ sidebar_label: Payment button size
 - デフォルト：高さ48px
 - 大高さ 55px
 
-## Anatomy
-
 支払いボタンは、ボタンコンポーネント、支払いロゴ、およびオプションのラベルの最大3つの要素で構成されます。
 
-決済ボタンの解剖図](/img/doc_images/Anatomy-updated.png)
+![決済ボタンの解剖図](/img/doc_images/Anatomy-updated.png)
 
 ボタンの表面積の外側にテキストを配置しないでください。
 
-カートレイアウト2](/img/doc_images/カートレイアウト-2.png)
+![カートレイアウト2](/img/doc_images/カートレイアウト-2.png)
 
-## Layout and spacing
+## レイアウトとスペーシング
 
 ラベルとペイメントロゴの間の間隔は、ボタンのサイズに基づいて調整されます。
 
-レイアウトとスペーシング 0.png](/img/doc_images/Layout-and-spacing-Updated.png)
+![レイアウトとスペーシング 0.png](/img/doc_images/Layout-and-spacing-Updated.png)
 
-## Adaptive height
+## 適応身長
 
 ボタンの高さは、テーマのニーズに応じて調整することができます。
 
-レイアウトとスペーシング](/img/doc_images/Layout-and-spacing-1-updated.png)
+![レイアウトとスペーシング](/img/doc_images/Layout-and-spacing-1-updated.png)
 
-## Button size
+## ボタンサイズ
 
 決済ボタンは、CTAの「カートに入れる」や「チェックアウトに進む」を含め、他の決済ボタンと同じサイズにし、大きくも小さくもしない。
 
 ![同じボタンサイズ.png](/img/doc_images/button-size.png)
 
-## Button width
+## ボタンの幅
 
 すべての支払いボタンに同じ幅のサイズを使用してください。他の支払いボタンよりも幅を大きくしたり小さくしたりしないでください。
 
-![ボタン幅.png](/img/doc_images/ボタン幅.png)
+![ボタン幅.png](/img/doc_images/button-width.png)
 
-## Minimum width
+## 最小幅
 
 ボタンは読みやすさを確保するため、最小幅を設定しています。
 
-レイアウトとスペーシング-2.png](/img/doc_images/レイアウトとスペーシング-2-Updated.png)
+![レイアウトとスペーシング-2.png](/img/doc_images/レイアウトとスペーシング-2-Updated.png)
 
 各決済ボタンのサイズの最小幅に従うこと。支払いボタンを1行にまとめないでください。
 
-最小幅.png](/img/doc_images/最小幅.png)
+![最小幅.png](/img/doc_images/最小幅.png)
 
-## Button Shape
+## ボタンの形
 
 すべての支払いボタンに同じコーナー半径を使用してください。コーナー半径を他の支払いボタンより大きくしたり小さくしたりしないでください。
 
 - デフォルトのコーナー半径：4px
 - 最大コーナー半径: ボタンの高さの半分
 
-コーナー半径.png](/img/doc_images/Corner-radius.png)
+![コーナー半径.png](/img/doc_images/コーナー半径.png)
 
-## Button Label
+## ボタンラベル
 
 加盟店のニーズと支払い体験に対応するために、さまざまなボタンを提供する。 
 

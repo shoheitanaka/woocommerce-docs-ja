@@ -4,7 +4,8 @@ sidebar_label: Configuring special tax scenarios
 current wccom url: >-
   https://woocommerce.com/document/setting-up-taxes-in-woocommerce/configuring-specific-tax-setups-in-woocommerce/#configuring-special-tax-setups
 ---
-# 特別な課税シナリオを設定するためのコードスニペット
+
+# Code snippets for configuring special tax scenarios
 
 ## シナリオA：場所や税金に関係なく同じ料金を請求する
 
@@ -20,7 +21,7 @@ add_filter( 'woocommerce_adjust_non_base_location_prices', '__return_false' );
 
 ## シナリオB：小計金額に基づいて税金を課す
 
-以下のスニペットは、ストアが小計が指定された最小値に達したときにのみ税金を広告する場合に便利です。以下のコードスニペットでは、その最小値はストアの通貨の110です。スニペットは、あなたの要件に応じて調整してください。 
+以下のスニペットは、ストアが小計が指定された最小値に達したときにのみ税金を広告する場合に便利です。下記のコードスニペットでは、その最小値はストアの通貨の110です。スニペットは、あなたの要件に応じて調整してください。 
 
 ```php
 <?php
@@ -74,3 +75,4 @@ WooCommerceの税金設定の1つは、商品価格に追加情報を追加す�
 ```php
 add_filter( 'woocommerce_show_variation_price', '__return_true' );
 ```
+

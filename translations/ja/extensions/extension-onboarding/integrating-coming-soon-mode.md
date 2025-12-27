@@ -4,21 +4,21 @@ post_title: Integrating with coming soon mode
 
 # Integrating with coming soon mode
 
-This guide provides examples for third-party developers and hosting providers on how to integrate their systems with WooCommerce's coming soon mode. For more details, please read the [developer blog post](https://developer.woocommerce.com/2024/06/18/introducing-coming-soon-mode/). For site visibility settings, please refer to the [admin documentation](https://woocommerce.com/document/configuring-woocommerce-settings/coming-soon-mode/).
+このガイドでは、サードパーティの開発者やホスティングプロバイダー向けに、WooCommerceのcoming soonモードとシステムを統合する方法を例示しています。詳細は[開発者ブログ記事](https://developer.woocommerce.com/2024/06/18/introducing-coming-soon-mode/)をお読みください。サイトの表示設定については、[管理者向けドキュメント](https://woocommerce.com/document/configuring-woocommerce-settings/coming-soon-mode/) を参照してください。
 
-## Introduction
+## はじめに
 
 WooCommerceのカミングスーンモードでは、作業中に一時的にサイトを見えなくすることができます。このガイドでは、この機能をシステムに統合する方法、サイトの可視性設定が変更されたときにサーバーキャッシュをクリアする方法、coming soon modeを他のプラグインと同期させる方法を紹介します。
 
-## Prerequisites
+## 前提条件
 
 -   PHPおよびWordPressの開発に精通していること。
 
-## Step-by-step instructions
+## ステップバイステップ
 
-### Clear server cache on site visibility settings change
+### サイトの可視性設定変更時にサーバーのキャッシュをクリアする
 
-When the site's visibility settings change, it may be necessary to clear a server cache to apply the changes and re-cache customer-facing pages. The [`update_option`](https://developer.wordpress.org/reference/hooks/update_option/) hook can be used to achieve this.
+サイトの可視性設定が変更された場合、変更を適用して顧客向けページを再キャッシュするために、サーバーキャッシュをクリアする必要があるかもしれません。そのためには、[`update_option`](https://developer.wordpress.org/reference/hooks/update_option/) フックを使用します。
 
 ```php
 add_action( 'update_option_woocommerce_coming_soon', 'clear_server_cache', 10, 3 );
@@ -32,13 +32,13 @@ function clear_server_cache( $old_value, $new_value, $option ) {
 }
 ```
 
-### Clear server cache on template changes
+### テンプレートの変更時にサーバーのキャッシュをクリアする
 
-By default, Coming-soon pages are set with `Cache-Control: max-age=60` header. This setting enables CDNs and other caching mechanisms to cache the page for 60 seconds, balancing the need for efficient performance with reasonable update times.
+デフォルトでは、Coming-soonページには`Cache-Control: max-age=60`ヘッダーが設定されています。この設定により、CDNやその他のキャッシュ・メカニズムが60秒間ページをキャッシュし、効率的なパフォーマンスと妥当な更新時間の必要性のバランスをとることができます。
 
 ユーザがcoming soonテンプレートを変更した場合、クライアント側のキャッシュが期限切れになったときに変更が即座に反映されるように、キャッシュをすべてパージすることをお勧めします。
 
-You can use the `save_post_wp_template`, `save_post_wp_template_part`, and `save_post_wp_global_styles` hooks to detect when a template is updated and trigger the cache purge.
+`save_post_wp_template`、`save_post_wp_template_part`、`save_post_wp_global_styles`フックを使用して、テンプレートが更新されたことを検知し、キャッシュパージをトリガーすることができます。
 
 ```php
 add_action( 'save_post_wp_template', 'purge_cache_on_template_change', 10, 3 );
@@ -56,16 +56,16 @@ function purge_cache_on_template_change( $post_id, $post, $update ) {
 }
 ```
 
-### Syncing coming soon mode with other plugins
+### 他のプラグインとの同期モードがまもなく登場
 
 近日公開モードは、プラグインやアプリケーションからプログラムで同期させることができます。以下は使用例です：
 
 -   メンテナンスモード・プラグインとの統合
 -   ホスティングプロバイダーのcoming soonモードとの統合。
 
-#### Trigger from WooCommerce
+#### WooCommerceからのトリガー
 
-以下の例では、coming soon modeオプションが更新されたときにプラグインのステータスを設定するようなコードを実行できます：
+coming soon modeオプションが更新されたときにプラグインのステータスを設定するようなコードを実行するには、次の例を使用できます：
 
 ```php
 add_action( 'update_option_woocommerce_coming_soon', 'sync_coming_soon_to_other_plugins', 10, 3 );
@@ -80,9 +80,9 @@ function sync_coming_soon_to_other_plugins( $old_value, $new_value, $option ) {
 }
 ```
 
-#### Trigger from other plugins
+#### 他のプラグインからのトリガー
 
-You can use the following example to enable or disable WooCommerce coming soon mode from another plugin by directly updating `woocommerce_coming_soon` option:
+次の例を使用して、`woocommerce_coming_soon`オプションを直接更新することで、他のプラグインからWooCommerce coming soonモードを有効または無効にすることができます：
 
 ```php
 function sync_coming_soon_from_other_plugins( $is_enabled ) {
@@ -98,9 +98,9 @@ function sync_coming_soon_from_other_plugins( $is_enabled ) {
 }
 ```
 
-#### 2-way sync with plugins
+#### プラグインとの2ウェイ同期
 
-If 2-way sync is needed, use the following example where `update_option` will not recursively call `sync_coming_soon_from_other_plugins`:
+双方向同期が必要な場合は、`update_option`が`sync_coming_soon_from_other_plugins`を再帰的に呼び出さない以下の例を使用する：
 
 ```php
 add_action( 'update_option_woocommerce_coming_soon', 'sync_coming_soon_to_other_plugins', 10, 3 );
@@ -133,11 +133,11 @@ function sync_coming_soon_from_other_plugins( $is_enabled ) {
 }
 ```
 
-#### One-way binding with option override
+#### オプションのオーバーライドによる一方向バインディング
 
-We could also programmatically bind the coming soon option from another plugin by overriding the `woocommerce_coming_soon` option. This is advantageous since it simplifies state management and prevents possible out-of-sync issues.
+`woocommerce_coming_soon`オプションをオーバーライドすることで、他のプラグインからcoming soonオプションをプログラムでバインドすることもできる。これは、状態管理を単純化し、同期しない可能性のある問題を防げるので有利です。
 
-In the following example, we're binding the coming soon option from another plugin by overriding the `woocommerce_coming_soon` option.
+次の例では、`woocommerce_coming_soon`オプションをオーバーライドして、別のプラグインからcoming soonオプションをバインドしています。
 
 ```php
 add_filter( 'pre_option_woocommerce_coming_soon', 'override_option_woocommerce_coming_soon' );
@@ -165,11 +165,11 @@ function override_update_woocommerce_coming_soon( $new_value, $old_value ) {
 }
 ```
 
-### Custom exclusions filter
+### カスタム除外フィルター
 
 開発者は、近日公開の保護をバイパスするカスタム除外を追加することが可能です。これは、特定のIPアドレスの画面を常に回避したり、特定のランディングページを利用可能にするような除外に便利です。
 
-#### Disabling coming soon in all pages
+#### すべてのページで近日公開を無効にする
 
 WooCommerceのcoming soonモードと似たような動作をする他の機能がある場合、意図しないコンフリクトを引き起こす可能性があります。すべての顧客向けページを除外することで、カミングスーンモードを無効にすることができます。以下はその例です：
 
@@ -179,9 +179,9 @@ add_filter( 'woocommerce_coming_soon_exclude', function() {
 }, 10 );
 ```
 
-#### Disabling coming soon except for a specific page
+#### 特定のページ以外は近日公開を無効にする
 
-Use the following example to exclude a certain page based on the page's ID. Replace `<page-id>` with your page identifier:
+ページのIDに基づいて特定のページを除外するには、次の例を使用してください。`<page-id>`をページ識別子で置き換えてください：
 
 ```php
 add_filter( 'woocommerce_coming_soon_exclude', function( $is_excluded ) {
@@ -192,7 +192,7 @@ add_filter( 'woocommerce_coming_soon_exclude', function( $is_excluded ) {
 }, 10 );
 ```
 
-#### Custom share links
+#### カスタム共有リンク
 
 次の例は、カスタム共有コードと統合する方法を示しています。クッキーやその他のストレージを使用して、ユーザーがサイト内を移動する際のアクセスを永続化することをお勧めします：
 
@@ -210,9 +210,9 @@ add_filter( 'woocommerce_coming_soon_exclude', function( $exclude ) {
 } );
 ```
 
-### Extend "Apply to store pages only" setting
+### 店舗ページのみに適用」設定の拡張
 
-When using the `Apply to store pages only` setting, you may want to add a custom page to the list of store pages which will be restricted by coming soon mode. You can use the following example to add a custom page:
+`Apply to store pages only`設定を使用する場合、coming soonモードで制限されるストアページのリストにカスタムページを追加したい場合があります。以下の例でカスタムページを追加できます：
 
 ```php
 add_filter( 'woocommerce_store_pages', function( $pages ) {

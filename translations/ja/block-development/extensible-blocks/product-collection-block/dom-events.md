@@ -2,7 +2,8 @@
 post_title: DOM Events sent from product collection block
 sidebar_label: DOM events
 ---
-# 商品コレクションブロックから送信されるDOMイベント
+
+# DOM events sent from product collection block
 
 ## `wc-blocks_product_list_rendered`
 
@@ -12,7 +13,7 @@ sidebar_label: DOM events
 
 | Parameter          | Type    | Default value | Description                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------ | ------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `collection` | string | `undefined` | コレクション・タイプ。タイプを指定しないので、"create your own "コレクションでは`undefined`です。他のCoreコレクションでは、`woocommerce/product-collection/best-sellers`となります：`undefined`, `woocommerce/product-collection/featured`, `woocommerce/product-collection/new-arrivals`, `woocommerce/product-collection/on-sale`, `woocommerce/product-collection/top-rated` のいずれかです。カスタム・コレクションの場合は、その名前が格納されます。|
+| `collection` | string | `undefined` | コレクション・タイプ。タイプを指定しないので、"create your own "コレクションでは`undefined`です。他のCoreコレクションでは、`woocommerce/product-collection/best-sellers`となります：__INLINE_CODE_3__, `woocommerce/product-collection/featured`, `woocommerce/product-collection/new-arrivals`, `woocommerce/product-collection/on-sale`, `woocommerce/product-collection/top-rated` のいずれかです。カスタム・コレクションの場合は、その名前が格納されます。|
 
 ### 使用例
 
@@ -34,7 +35,7 @@ window.document.addEventListener(
 
 | Parameter          | Type    | Default value | Description                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------ | ------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `collection` | string | `undefined` | コレクション・タイプ。タイプを指定しないので、"create your own "コレクションでは`undefined`です。他のCoreコレクションの場合は、`woocommerce/product-collection/best-sellers`となります：`undefined`, `woocommerce/product-collection/featured`, `woocommerce/product-collection/new-arrivals`, `woocommerce/product-collection/on-sale`, `woocommerce/product-collection/top-rated` のいずれかです。カスタム・コレクションの場合は、その名前が格納されます。|
+| `collection` | string | `undefined` | コレクション・タイプ。タイプを指定しないので、"create your own "コレクションでは`undefined`です。他のCoreコレクションでは、`woocommerce/product-collection/best-sellers`となります：__INLINE_CODE_3__, `woocommerce/product-collection/featured`, `woocommerce/product-collection/new-arrivals`, `woocommerce/product-collection/on-sale`, `woocommerce/product-collection/top-rated` のいずれかです。カスタム・コレクションの場合は、その名前が格納されます。|
 | 番号｜商品ID｜`productId`。
 
 ### 使用例

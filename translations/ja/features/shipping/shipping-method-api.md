@@ -7,11 +7,11 @@ sidebar_label: Shipping method API
 
 WooCommerceには独自の料金を追加するためにプラグインが使用できるShipping Method APIがあります。この記事では、Shipping APIと連動するコアのFlat Rateメソッドに基づいて、新しい配送方法を作成する手順を説明します。
 
-## Create a plugin
+## プラグインを作成する
 
 まず最初に、通常のWordPress/WooCommerceプラグインを作成します。[Building Your First Extensionガイド](/docs/extensions/getting-started-extensions/building-your-first-extension)を参照してください。このプラグインファイルで配送方法クラスを定義し、WooCommerceの外部で管理します。
 
-## Checking for WooCommerce and creating a function to house your class
+## WooCommerceをチェックし、クラスを収容する関数を作成する
 
 クラスをロードする前に、WooCommerceがアクティブであること、そして動作に必要な主要なクラスと関数が利用可能であることを確認する必要があります。それらが利用可能であることがわかったら、クラスを初期化するアクションと、主要な配送方法リストにメソッドを追加するフィルタを追加できます。
 
@@ -41,7 +41,7 @@ function your_shipping_method_init() {
 }
 ```
 
-## Create your class
+## クラスを作る
 
 ここで、先ほど作成した関数の中に配置するクラスを作成します。予期しない致命的なエラーが発生しないように、クラスがすでに存在しないことを確認するのが最善です。このクラスは、配送APIと設定APIにアクセスできるように、配送メソッドクラスを継承する必要があります。また、必要なプロパティを宣言し、コンストラクタでさらにオプションやプロパティを定義し、最後にinitメソッドを呼び出します。
 
@@ -87,12 +87,11 @@ if ( ! class_exists( 'WC_Your_Shipping_Method' ) ) {
 }
 ```
 
-## Defining settings/options
+## 設定／オプションの定義
 
-We want to make sure to add an action for the shipping method when options are updated to call `process_admin_options`, this will save any settings entered by a merchant/admin when they choose to save.
+オプションが更新されたときに配送方法のアクションを追加し、`process_admin_options`を呼び出すようにします。
 
-Options are then able to be defined using the [WooCommerce settings API](https://developer.woocommerce.com/docs/settings-api/). We have two additional methods `init_form_fields` and `init_instance_form_fields` that will initialize the form fields for both the stand alone settings and instance settings for us. Additional options, such as the title, tax status, etc, are set via the `get_option` method of the Settings API. These are set for either the stand alone page, or the instance settings, whichever is being displayed.
-
+オプションは[WooCommerce settings API](https://developer.woocommerce.com/docs/settings-api/)を使って定義できます。2つのメソッド`init_form_fields`と`init_instance_form_fields`が追加され、単独の設定とインスタンス設定の両方のフォームフィールドを初期化します。タイトルや課税状況などの追加オプションは、Settings APIの`get_option`メソッドで設定します。これらは、スタンドアロン・ページまたはインスタンス設定のどちらか表示されている方に設定されます。
 
 ```php
 	/**
@@ -255,9 +254,9 @@ Options are then able to be defined using the [WooCommerce settings API](https:/
 	}
 ```
 
-## Sanitizing the cost
+## コストを除菌する
 
-In the previous code snippets you can see that there is a `sanitize_callback` to use `sanitize_cost`, while this may not always be needed, it is still good to keep sanitizing user input in mind. Since a cost field will need to be a text field to allow for a decimal separator, we need to make sure the value entered is valid. For this, we introduce the below method.
+前のコード・スニペットでは、`sanitize_callback`を使用して`sanitize_cost`を使用していることがわかります。コスト・フィールドは小数点以下を区切るためにテキスト・フィールドである必要があるので、入力された値が有効であることを確認する必要があります。そのために、以下の方法を紹介します。
 
 ```php
 	/**
@@ -291,11 +290,11 @@ In the previous code snippets you can see that there is a `sanitize_callback` to
 	}
 ```
 
-## Adding a rate
+## レートを追加する
 
-Rates are added via the Shipping API using the `add_rate` method. Below is a breakdown of available options, and in the next section we will put this to use.
+料金はShipping APIで`add_rate`メソッドを使って追加します。以下は利用可能なオプションの内訳で、次のセクションではこれを使用します。
 
-配送方法は必要な数だけレートを渡すことができますが、それぞれのIDが異なることを確認してください。ユーザーはチェックアウトの際に料金を選択します。
+配送方法は必要な数だけレートを渡すことができますが、それぞれのIDが異なることを確認してください。ユーザーはチェックアウトの際にレートを選択します。
 
 ```php
 $rate = array(
@@ -309,11 +308,11 @@ $rate = array(
 $this->add_rate( $rate );
 ```
 
-## The calculate_shipping() method
+## the calculate_shipping() メソッド
 
-The method to use to add your rates is `calculate_shipping`, WooCommerce will call this when doing shipping calculations in the cart and checkout. Do your plugin specific calculations here and then add the rates via the Shipping API.
+WooCommerceはカートとチェックアウトで送料計算を行う際にこのメソッドを呼び出します。プラグイン固有の計算をここで行い、Shipping API経由で料金を追加します。
 
-Here we also include the `find_shipping_classes` method, which gets the shipping classes from each item in the package.
+ここでは、`find_shipping_classes` メソッドもインクルードし、パッケージ内の各アイテムから配送クラスを取得します。
 
 ```php
 	/**
@@ -416,7 +415,7 @@ Here we also include the `find_shipping_classes` method, which gets the shipping
 	}
 ```
 
-## Piecing it all together
+## ♪すべてをつなぎ合わせる
 
 スタンドアローンのプラグインとして、定額料金の配送方法を縮小したバージョンは以下のようになります：
 

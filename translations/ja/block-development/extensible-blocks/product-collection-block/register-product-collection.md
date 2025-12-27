@@ -2,7 +2,8 @@
 post_title: Registering custom collections in product collection block
 sidebar_label: Registering custom collections
 ---
-# カスタムコレクションを商品コレクションブロックに登録する
+
+# Registering custom collections in product collection block
 
 `__experimentalRegisterProductCollection`関数は`@woocommerce/blocks-registry`パッケージの一部である。この関数を使用すると、サードパーティの開発者は新しいコレクションを登録できます。この関数は、[Block Variation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/#defining-a-block-variation) が受け付けるほとんどの引数を受け付けます。
 
@@ -68,7 +69,7 @@ sidebar_label: Registering custom collections
     - `perPage` (`number` 型)：ページあたりの商品数。
     - `search` (`string` 型)：検索キーワード。
     - `taxQuery` (`object` 型)：クエリーをフィルタリングする税クエリー。例えば、`Clothing`と`Accessories`のカテゴリーと`Summer`のタグを持つ商品を取得したい場合、`taxQuery`を`{"product_cat":[20,17],"product_tag":[36]}`として渡すことができます。ここで、配列の値は用語IDである。
-    - `featured` (`boolean`型)：注目アイテムを検索するかどうか。
+    - `featured` (`boolean`型)：特集項目を検索するかどうか。
     - `timeFrame` (`object` 型)：時間枠を指定する。
         - `operator` (`string` 型)：時間枠クエリに使用する演算子。使用可能な値は `in` および `not-in` です。
         - `value` (`string` 型)：クエリーする値。PHP の `strtotime` 関数がパースできる有効な日付文字列でなければなりません。
@@ -254,7 +255,7 @@ __experimentalRegisterProductCollection({
 
 これで、見出し、商品画像、商品価格を持つコレクションが作成されます。このようになります：
 
-![画像](https://github.com/woocommerce/woocommerce/assets/16707866/3d92c084-91e9-4872-a898-080b4b93afca)
+![image](https://github.com/woocommerce/woocommerce/assets/16707866/3d92c084-91e9-4872-a898-080b4b93afca)
 
 **ヒント:** インナーブロック・テンプレートについては、[インナーブロック](https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/#template)のドキュメントを参照してください。
 
@@ -329,7 +330,5 @@ __experimentalRegisterProductCollection({
   scope: ["inserter"],
 });
 ```
-
----
 
 **ヒント:** [plugins/woocommerce/client/blocks/assets/js/blocks/product-collection/collections](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/product-collection/collections/)ディレクトリで、コアコレクションをどのように定義しているかを見ることもできます。コア・コレクションも時間の経過とともに進化していきます。

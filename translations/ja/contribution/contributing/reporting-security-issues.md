@@ -7,9 +7,9 @@ sidebar_label: Reporting security issues
 
 WooCommerceはセキュリティに深く配慮し、マーチャントとその顧客の安全を守るために努力しています。 
 
-You can find our security policy [over here](https://github.com/woocommerce/woocommerce/security/policy) and, if you believe you have discovered a vulnerability, we encourage you to follow it and submit your findings via [HackerOne](https://hackerone.com/automattic?type=team)-a trusted third party service that facilitates reporting of security issues. Please refer to the policy for more details, however some key points are as follows:
+もしあなたが脆弱性を発見したと思われるなら、それに従い、セキュリティ問題の報告を容易にする信頼できるサードパーティ・サービスである[HackerOne](https://hackerone.com/automattic?type=team)を通じて、あなたの発見を提出することをお勧めします。詳細については、ポリシーを参照してください：
 
-- We operate a [bug bounty program](https://hackerone.com/automattic?type=team), so you can be rewarded for valid reports, but not everything is in scope. Please check the guidance before posting.
-- We strongly encourage [responsible disclosure](https://www.hackerone.com/disclosure-guidelines). To better protect everyone, please use HackerOne and **do not** post your findings in a public forum.
+[- バグ報奨金プログラム](https://hackerone.com/automattic?type=team)を運営していますので、有効な報告には報奨金が支払われますが、すべてが対象ではありません。投稿する前にガイダンスを確認してください。
+- 私たちは[責任ある情報公開](https://www.hackerone.com/disclosure-guidelines)を強く推奨します。より良く皆を守るために、HackerOneを使用し、**あなたの発見を公開フォーラムに投稿しないでください。
 
 責任ある記者でいてくれてありがとう！

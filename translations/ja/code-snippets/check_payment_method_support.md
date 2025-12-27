@@ -4,13 +4,14 @@ sidebar_label: 'Payment method support for refunds, subscriptions, pre-orders'
 current wccom url: >-
   https://woocommerce.com/document/check-if-payment-gateway-supports-refunds-subscriptions-preorders/
 ---
-# 支払い方法が払い戻し、定期購読、予約注文に対応しているかどうかを確認する
+
+# Check if a Payment Method Support Refunds, Subscriptions or Pre-orders
 
 ペイメントメソッドのドキュメントにサポートされている機能の概要が明確に記載されていない場合、ペイメントメソッドのコードを見れば、どの機能がサポートされているかがわかることが多い。
 
 支払い方法は、WooCommerceとその拡張機能の特定の機能のサポートを追加することができます。例えば、支払い方法は返金、定期購入、予約注文機能をサポートすることができます。
 
-# #簡素化されたコマースの例
+## #簡素化されたコマースの例
 
 Simplify Commerceの支払い方法を例にとると、お気に入りのエディタでプラグインファイルを開き、`$this->supports`を検索します。サポートされている機能が見つかります：
 

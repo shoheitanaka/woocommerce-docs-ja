@@ -4,7 +4,7 @@ post_title: Settings API
 
 # Settings API
 
-The WooCommerce Settings API is used by extensions to display, save, and load settings. The best way to make use of the API in your extension is to create a class that extends the `WC_Settings_API` class:
+WooCommerce Settings API は設定を表示、保存、ロードするためにエクステンションによって使用されます。あなたのエクステンションでAPIを利用する最善の方法は`WC_Settings_API`クラスを継承したクラスを作成することです：
 
 ```php
 class My_Extension_Settings extends WC_Settings_API {
@@ -12,15 +12,15 @@ class My_Extension_Settings extends WC_Settings_API {
 }
 ```
 
-## Defining form fields
+## フォームフィールドの定義
 
-You can define your fields using a method called `init_form_fields` in your class constructor:
+クラスのコンストラクタで`init_form_fields`というメソッドを使ってフィールドを定義することができます：
 
 ```php
 $this->init_form_fields();
 ```
 
-You must have your settings defined before you can load them. Setting definitions go in the `form_fields` array:
+設定をロードする前に、設定を定義しておく必要があります。設定定義は `form_fields` 配列に格納されます：
 
 ```php
 /**
@@ -44,7 +44,7 @@ function init_form_fields() {
 } // End init_form_fields()
 ```
 
-(Make sure your class initializes the `form_fields` property so that the "Creation of dynamic property" error is not thrown in PHP 8.2+)
+(PHP8.2+で "Creation of dynamic property "エラーがスローされないように、クラスが`form_fields`プロパティを初期化していることを確認してください)
 
 上記の例では、TitleとDescriptionの2つの設定を定義しています。Titleはテキストボックスで、Descriptionはテキストエリアです。設定自体のデフォルト値と説明を定義できることに注目してください。
 
@@ -65,9 +65,9 @@ function init_form_fields() {
 )
 ```
 
-## Displaying your settings
+## 設定の表示
 
-Create a method called `admin_options` containing the following:
+以下の内容を含む`admin_options`というメソッドを作成する：
 
 ```php
 function admin_options() {
@@ -82,9 +82,9 @@ function admin_options() {
 
 これで設定が正しい形式で出力される。
 
-## Saving your settings
+## 設定の保存
 
-To have your settings save, add your class's `process_admin_options` method to the appropriate `_update_options_` hook. For example, payment gateways should use the payment gateway hook:
+設定を保存するには、クラスの`process_admin_options`メソッドを適切な`_update_options_`フックに追加します。例えば、決済ゲートウェイは決済ゲートウェイフックを使用します：
 
 ```php
 add_action( 'woocommerce_update_options_payment_gateways', array( $this, 'process_admin_options' ) );
@@ -96,16 +96,16 @@ add_action( 'woocommerce_update_options_payment_gateways', array( $this, 'proces
 add_action( 'woocommerce_update_options_shipping_methods', array( $this, 'process_admin_options' ) );
 ```
 
-## Loading your settings
+## 設定の読み込み
 
-コンストラクターでは、以前に定義した設定を読み込むことができます：
+コンストラクタでは、以前に定義した設定を読み込むことができます：
 
 ```php
 // Load the settings.
 $this->init_settings();
 ```
 
-After that you can load your settings from the settings API. The `init_settings` method above populates the settings variable for you:
+その後、settings APIから設定をロードすることができます。上記の`init_settings`メソッドは、settings変数に値を代入してくれる：
 
 ```php
 // Define user set variables

@@ -9,33 +9,33 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 
 これらのフローは、フローが更新されたり、追加されたり、優先順位が変更されたりして、プラットフォームが進化するにつれて継続的に進化していく。
 
-## Shopper critical flow areas
+## 買い物客の重要な流れ
 
--   [ショッパー &gt; ショップ](#shopper---shop)
--   [ショッパー &gt; 商品](#shopper---product)
--   [ショッパー &gt; カート](#shopper---cart)
--   [ショッパー &gt; チェックアウト](#shopper---checkout)
--   [ショッパー &gt; Eメール](#shopper---email)
--   [ショッパー &gt; マイアカウント](#shopper---my-account)
+-   [ショッパー > ショップ](#shopper---shop)
+-   [ショッパー > 商品](#shopper---product)
+-   [ショッパー > カート](#shopper---cart)
+-   [ショッパー > チェックアウト](#shopper---checkout)
+-   [ショッパー > Eメール](#shopper---email)
+-   [ショッパー > マイアカウント](#shopper---my-account)
 
-## Merchant critical flow areas
+## マーチャントのクリティカル・フロー・エリア
 
--   [マーチャント &gt; オンボーディング](#merchant---onboarding)
--   [マーチャント &gt; ダッシュボード](#merchant---dashboard)
--   [マーチャント &gt; 設定](#マーチャント--設定)
--   [マーチャント &gt; クーポン](#merchant---coupons)
--   [マーチャント &gt; マーケティング](#merchant---marketing)
--   [マーチャント &gt; アナリティクス](#merchant---analytics)
--   [マーチャント &gt; 商品](#マーチャント--商品)
--   [マーチャント &gt; オーダー](#merchant---orders)
--   [マーチャント &gt; 顧客](#マーチャント---顧客)
--   [マーチャント &gt; Eメール](#merchant---email)
--   [マーチャント &gt; プラグイン](#merchant---plugins)
--   [マーチャント &gt; マイ購読](#merchant---my-subscriptions)
--   [マーチャント &gt; ページ](#merchant---pages)
--   [マーチャント &gt; 投稿](#merchant---posts)
+-   [マーチャント > オンボーディング](#merchant---onboarding)
+-   [マーチャント > ダッシュボード](#merchant---dashboard)
+-   [マーチャント > 設定](#マーチャント--設定)
+-   [マーチャント > クーポン](#merchant---coupons)
+-   [マーチャント > マーケティング](#merchant---marketing)
+-   [マーチャント > アナリティクス](#merchant---analytics)
+-   [マーチャント > 商品](#マーチャント--商品)
+-   [マーチャント > オーダー](#merchant---orders)
+-   [マーチャント > 顧客](#マーチャント---顧客)
+-   [マーチャント > Eメール](#merchant---email)
+-   [マーチャント > プラグイン](#merchant---plugins)
+-   [マーチャント > マイ購読](#merchant---my-subscriptions)
+-   [マーチャント > ページ](#merchant---pages)
+-   [マーチャント > 投稿](#merchant---posts)
 
-### Shopper - Shop
+### ショッパー - ショップ
 
 | ユーザータイプ│フローエリア│フロー名│テストファイル
 | --------- | --------- | ------------------------------------------- | -------------------------------------------- |
@@ -48,7 +48,7 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | ショッパー｜ショップ｜属性別商品｜shopper/product-tags-attributes.spec.js
 | ショッパー｜ショップ｜商品フィルタを使う｜shopper/shop-products-filer-by-price.spec.js |
 
-### Shopper - Product
+### ショッパー - 商品
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | ---------------------------------------------------- | ---------------------------------------- |
@@ -63,7 +63,7 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | ショッパー｜商品｜商品画像を見る｜shopper/product-simple.spec.js
 | ショッパー｜商品｜商品説明を見る｜shopper/product-simple.spec.js
 
-### Shopper - Cart
+### ショッパー - カート
 
 | ユーザータイプ│フローエリア│フロー名│テストファイル
 | --------- | --------- | ------------------------------------------ | ------------------------------------------- |
@@ -79,7 +79,7 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | ショッパー｜カート｜クロスセル商品を表示する｜products/product-linked-products.spec.js｜｜。
 | ショッパー | カート | チェックアウトに進む | shopper/checkout.spec.js |
 
-### Shopper - Checkout
+### ショッパー - レジ
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | ---------------------------------------- | ------------------------------------------- |
@@ -94,17 +94,17 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | ショッパー｜チェックアウト｜フォームが不完全な場合に警告を受け取る｜shopper/checkout.spec.js
 | ショッパー｜チェックアウト｜請求先住所を追加する｜shopper/checkout.spec.js
 | ショッパー | チェックアウト | クーポン使用の制約を尊重する | shopper/cart-checkout-coupons.spec.js |
-| ショッパー｜チェックアウト｜チェックアウト時に正しい税金を表示する｜shopper/cart-checkout-calculate-tax.spec.js｜｜ショッパー｜チェックアウト｜チェックアウト時に正しい税金を表示する。
+| ショッパー｜チェックアウト｜チェックアウト時に正しい税金を表示する｜shopper/cart-checkout-calculate-tax.spec.js｜｜ショッパー｜チェックアウト｜税金を計算する
 | ショップ｜チェックアウト｜注文確認ページの表示｜shopper/checkout.spec.js
 
-### Shopper - Email
+### ショッパー - Eメール
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | ------------------------------------- | --------------------------------------- |
 | ショッパー｜Eメール｜顧客アカウントEメール受信｜shopper/account-email-receiving.spec.js
 | ショッパー｜Eメール｜顧客注文詳細メール受信｜shopper/order-email-receiving.spec.js |
 
-### Shopper - My Account
+### ショッパー - マイアカウント
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | ---------- | ------------------------- | ----------------------------------------- |
@@ -116,7 +116,7 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | ショップ｜マイアカウント｜注文の支払い｜shopper/my-account-pay-order.spec.js
 | ショッパー｜マイアカウント｜ダウンロードを見る｜shopper/my-account-downloads.spec.js
 
-### Merchant - Onboarding
+### マーチャント - オンボーディング
 
 | ユーザータイプ│フローエリア│フロー名│テストファイル
 | --------- | ------------- | -------------------------------------------------------------- | ---------------------------------------- |
@@ -124,13 +124,13 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | マーチャント｜コアプロファイラ｜ユーザプロファイル情報｜activate-and-setup/core-profiler.spec.js｜マーチャント｜コアプロファイラ
 | マーチャント｜コアプロファイラ｜ビジネス情報｜activate-and-setup/core-profiler.spec.js｜｜マーチャント｜コアプロファイラ
 | マーチャント｜コアプロファイラ｜拡張機能ページ｜activate-and-setup/core-profiler.spec.js｜マーチャント｜コアプロファイラ
-| マーチャント｜コアプロファイラ｜WooPaymentsが対象条件のエクステンションに含まれる｜activate-and-setup/core-profiler.spec.js｜WooPaymentsが対象条件のエクステンションに含まれる。
+| マーチャント｜コアプロファイラ｜WooPaymentsが対象条件のエクステンションに含まれる｜activate-and-setup/core-profiler.spec.js｜マーチャント｜コアプロファイラ｜WooPaymentsのページ。
 | マーチャント | コアプロファイラ | WooPaymentsが非適格基準のエクステンションに含まれていない｜activate-and-setup/core-profiler.spec.js｜WooPaymentsが非適格基準のエクステンションに含まれていない。
 | Merchant | コアプロファイラ | すべてのデフォルトエクステンションをインストールする | activate-and-setup/core-profiler.spec.js |.
 | Merchant | コアプロファイラ | サイトのセットアップを完了する | activate-and-setup/core-profiler.spec.js |.
 | Merchant | コアプロファイラ | 導入をスキップしてビジネスロケーションを確認する | activate-and-setup/core-profiler.spec.js |｜ 商人｜コアプロファイラ
 
-### Merchant - Dashboard
+### マーチャント - ダッシュボード
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | -------------- | ------------------------------------------------------ | --------- |
@@ -145,7 +145,7 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | マーチャント｜受信トレイ｜ノートと連動し、CTAを実行｜マーチャント｜受信トレイ｜ノートと連動し、CTAを実行
 | マーチャント｜受信トレイ｜1つのノートとすべてのノートを削除する
 
-### Merchant - Settings
+### マーチャント - 設定
 
 | ユーザータイプ│フローエリア│フロー名│テストファイル
 | --------- | --------- |----------------------------------------|------------------------------------------|
@@ -157,20 +157,20 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | Merchant | 設定 | 支払い設定の更新 | admin-tasks/payment.spec.js |
 | マーチャント｜設定｜商品ブランドを扱う｜merchant/create-product-brand.spec.js｜マーチャント｜設定｜商品ブランドを扱う
 
-### Merchant - Coupons
+### マーチャント - クーポン
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | --------------------- | ------------------------------------------ |
 | マーチャント｜クーポン｜すべてのクーポンを追加｜merchant/create-coupon.spec.js
 | マーチャント｜クーポン｜制限付きクーポンの追加｜マーチャント/create-restricted-coupons.spec.js
 
-### Merchant - Marketing
+### マーチャント - マーケティング
 
 | ユーザータイプ│フローエリア│フロー名│テストファイル
 | --------- | --------- | -------------------------- | -------------------------------- |
 | マーチャント｜マーケティング｜マーケティング概要の表示｜admin-marketing/overview.spec.js
 
-### Merchant - Analytics
+### マーチャント - アナリティクス
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | -------------------------------------------------- | ------------------------------------------ |
@@ -180,18 +180,18 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | 商取引｜アナリティクス｜概要ページで日付フィルタを使用する｜admin-analytics/analytics-data.spec.js｜マーチャント｜アナリティクス｜概要ページで日付フィルタを使用する
 | 商取引｜アナリティクス｜概要ページでパフォーマンス指標をカスタマイズする｜admin-analytics/analytics-overview.spec.js
 | 商取引｜アナリティクス｜収益レポートの日付フィルターを使用する｜admin-analytics/analytics-data.spec.js｜マーチャント｜アナリティクス｜収益レポートの日付フィルターを使用する。
-| 商取引｜アナリティクス｜収益レポートをCSVでダウンロードする｜admin-analytics/analytics-data.spec.js
+| 商取引｜アナリティクス｜収益レポートをCSVでダウンロードする｜admin-analytics/analytics-data.spec.js｜マーチャント｜アナリティクス｜収益レポートをCSVでダウンロードする。
 | Merchant | Analytics | 受注レポートに高度なフィルタを使用する | admin-analytics/analytics-data.spec.js |｜ 商取引｜分析｜収益レポートをCSVでダウンロードする。
 | 商取引｜アナリティクス｜アナリティクス設定｜admin-analytics/analytics-data.spec.js
 | Merchant｜Analytics｜ 収益レポートにカスタム日付範囲を設定する｜admin-analytics/analytics-data.spec.js｜管理画面
 
-### Merchant - Products
+### マーチャント - 商品
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | -------------- | ------------------------------ | ------------------------------------------------------------------------- |
 | マーチャント｜商品｜全商品を見る｜merchant/product-search.spec.js
 | マーチャント｜商品｜商品検索｜merchant/product-search.spec.js
-| マーチャント｜商品｜シンプルな商品を追加する｜merchant/product-create-simple.spec.js｜マーチャント｜商品検索｜商品検索.spec.js
+| マーチャント｜商品｜シンプルな商品を追加する｜merchant/product-create-simple.spec.js
 | マーチャント｜商品｜可変商品の追加｜merchant/product/add-variable-product/create-variable-product.spec.js｜｜マーチャント｜商品｜可変商品の追加
 | Merchant | 商品 | 商品詳細の編集 | merchant/product-edit.spec.js |｜マーチャント | 商品 | 商品詳細の編集
 | マーチャント｜商品｜バーチャル商品を追加する｜merchant/product-create-simple.spec.js
@@ -209,39 +209,39 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | マーチャント｜商品｜グローバル属性の管理
 | マーチャント｜商品｜アップセルを追加する｜products/product-linked-products.spec.js
 | マーチャント｜商品｜クロスセルの追加｜products/product-linked-products.spec.js｜商品リンクの追加
-| マーチャント｜マーチャント｜商品（新規）｜新商品体験を無効にする｜merchant/products/block-editor/disable-block-product-editor.spec.js
+| マーチャント｜マーチャント｜商品（新規）｜新商品のエクスペリエンスを無効にする｜merchant/products/block-editor/disable-block-product-editor.spec.js
 | Merchant | 商品 (新規) | シンプルな商品を追加する | merchant/products/block-editor/create-simple-product-block-editor.spec.js | 商店｜商品｜商品 (新規) | シンプルな商品を追加する
-| マーチャント｜商品（新規）｜シンプル商品の編集｜merchant/products/block-editor/product-edit-block-editor.spec.js
+| マーチャント｜商品一覧（新規）｜シンプル商品の編集｜merchant/products/block-editor/product-edit-block-editor.spec.js
 | マーチャント｜商品一覧（新規）｜商品画像の管理｜merchant/products/block-editor/product-images-block-editor.spec.js｜マーチャント
 | マーチャント｜商品一覧（新規）｜商品在庫の管理｜merchant/products/block-editor/product-inventory-block-editor.spec.js
 | Merchant | 商品 (新規) | 商品属性の管理 | merchant/products/block-editor/product-attributes-block-editor.spec.js |
 
-### Merchant - Orders
+### マーチャント - 注文
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | ---------------------------------------------------------------- | -------------------------------------- |
 | マーチャント｜注文｜すべての注文を表示｜マーチャント｜注文状況フィルタ.spec.js
 | Merchant | Orders | 新しい注文を追加することができます。
-| マーチャント｜注文｜単一注文の表示｜merchant/order-edit.spec.js｜｜マーチャント｜注文状況フィルター
+| マーチャント｜オーダー｜単一オーダーを表示する｜merchant/order-edit.spec.js
 | マーチャント｜注文｜注文ステータスを完了に更新する｜merchant/order-edit.spec.js｜商人
 | マーチャント｜注文｜注文ステータスをキャンセルに更新する｜merchant/order-edit.spec.js｜商人
-| マーチャント｜注文｜注文の詳細を更新する｜merchant/order-edit.spec.js
+| マーチャント｜注文｜注文の詳細を更新する｜merchant/order-edit.spec.js｜商人
 | マーチャント｜注文｜カスタマーペイメントページ｜merchant/customer-payment-page.spec.js
 | マーチャント｜注文｜注文を払い戻す｜merchant/order-refund.spec.js｜マーチャント｜注文を払い戻す
-| マーチャント｜注文｜クーポンを適用する｜merchant/order-coupon.spec.js｜マーチャント｜注文｜クーポンを適用する
-| Merchant | 注文 | 複数の商品タイプや税クラスを追加できる複合注文 | merchant/create-order.spec.js | マーチャント/オーダー作成.spec.js
+| マーチャント｜注文｜クーポンの適用｜merchant/order-coupon.spec.js｜マーチャント｜注文｜クーポンの適用
+| Merchant | 注文 | 複数の商品タイプと税クラスを複合的に追加できる｜マーチャント｜create-order.spec.js｜マーチャント｜注文｜create-order.spec.js
 | Merchant | 注文 | 注文を検索する | merchant/order-search.spec.js | マーチャント/注文検索.spec.js
 | Merchant | Orders | 注文ステータスによる注文のフィルタリング | merchant/order-status-filter.spec.js | マーチャント/注文ステータスフィルタ.spec.js
 | マーチャント｜注文｜注文ステータスの一括変更｜merchant/order-bulk-edit.spec.js｜マーチャント｜注文ステータスの一括変更
 | マーチャント｜オーダー｜オーダーメモの追加｜merchant/order-edit.spec.js
 
-### Merchant - Customers
+### マーチャント - 顧客
 
 | ユーザータイプ│フローエリア│フロー名│テストファイル
 | --------- | --------- | --------------------- | ------------------------------ |
 | マーチャント｜顧客｜顧客リストを表示する｜merchant/customer-list.spec.js
 
-### Merchant - Email
+### マーチャント - Eメール
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | -------------------------------------------------- | ----------------------------- |
@@ -251,25 +251,25 @@ WooCommerce Coreで最も重要だと思われるユーザーフローを特定�
 | Merchant｜Eメール｜新しい注文メールを再送する｜ merchant/order-emails.spec.js |.
 | Merchant | Eメール | 顧客に請求書/注文の詳細をEメールで送信する | merchant/order-emails.spec.js |.
 
-### Merchant - Plugins
+### マーチャント - プラグイン
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | ---------------------- | -------------------------------------- |
 | Merchant | プラグイン | WooCommerceを更新できる | smoke-tests/update-woocommerce.spec.js |...
 
-### Merchant - My Subscriptions
+### マーチャント - マイ・サブスクリプション
 
 | ユーザータイプ│フローエリア│フロー名│テストファイル
 | --------- | ---------------- | --------------------------------------- | --------------------------------- |
-| Merchant | My Subscriptions | WooCommerce.com接続を開始することができます | merchant/settings-woo-com.spec.js |
+| Merchant | My Subscriptions | WooCommerce.com接続を開始できる | merchant/settings-woo-com.spec.js |
 
-### Merchant - Pages
+### マーチャント - ページ
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | --------------------- | ---------------------------- |
 | マーチャント｜ページ｜新しいページを作成する｜merchant/create-page.spec.js
 
-### Merchant - Posts
+### マーチャント - 投稿
 
 | ユーザータイプ｜フローエリア｜フロー名｜テストファイル
 | --------- | --------- | --------------------- | ---------------------------- |

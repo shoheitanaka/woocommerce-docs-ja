@@ -4,7 +4,8 @@ sidebar_label: Translation upgrade safety
 current wccom url: >-
   https://woocommerce.com/document/woocommerce-localization/#making-your-translation-upgrade-safe
 ---
-# 翻訳のアップグレードを安全にする
+
+# Making your translation upgrade safe
 
 他のプラグインと同様に、WooCommerceは翻訳を`wp-content/languages/plugins`に保持します。 
 

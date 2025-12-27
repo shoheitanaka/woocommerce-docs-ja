@@ -2,7 +2,8 @@
 post_title: Filtering payment methods in the Checkout block
 sidebar_label: Filtering payment methods
 ---
-# チェックアウトブロックにおける支払い方法のフィルタリング
+
+# Filtering payment methods in the Checkout block
 
 ## 問題
 
@@ -104,7 +105,7 @@ WooCommerce Blocksに支払い方法を登録する方法の詳細について�
 
 ### 基本的な使い方
 
-上記にリンクされている支払い方法の登録に関するドキュメントに従って、一意の`supports`機能、例えば`booking_availability`で支払い方法を登録する必要があります。これは、メソッドを分離し、他のメソッドが表示されないようにするために使用されます。
+上記にリンクされている支払い方法の登録に関するドキュメントに従って、一意の`supports`機能、例えば`booking_availability`で支払い方法を登録する必要があります。これは、そのメソッドを分離し、他のメソッドが表示されないようにするために使用されます。
 
 まず、カートの特定の支払い要件を決定するために、カートのチェックを実行する関数を作成する必要があります。以下は、`Bookable`の商品に対してこれを行う例です。
 
@@ -112,7 +113,7 @@ WooCommerce Blocksに支払い方法を登録する方法の詳細について�
 
 ### まとめ
 
-このコード例では、`Pseudo_Booking_Class`というクラスがあり、`cart_contains_bookable_product`メソッドが使用可能であると仮定しています。このメソッドの実装はここでは関係ありません。
+このコード例では、`Pseudo_Booking_Class`というクラスがあり、`cart_contains_bookable_product`メソッドが利用可能であると仮定しています。このメソッドの実装はここでは関係ありません。
 
 ```php
 /**
@@ -150,4 +151,4 @@ add_action('woocommerce_blocks_loaded', function() {
 
 このコード・ブロックのコメントに注意することが重要で、独自の`ExtendSchema`をインスタンス化してはならない。
 
-正しい`supports`の値で支払い方法を正しく追加した場合、`Bookable`の商品をカートに入れた状態でチェックアウトのページに到達すると、`booking_availability`の要件を`supports`がサポートしていない方法は表示されず、`string`をサポートしている方法は表示されます。
+正しい`supports`の値で支払い方法を正しく追加した場合、`Bookable`の商品をカートに入れた状態でチェックアウトのページに到達すると、`booking_availability`の要件を`supports`がサポートしていない方法は表示されず、__INLINE_CODE_3__の要件を__INLINE_CODE_2__がサポートしている方法は表示されます。

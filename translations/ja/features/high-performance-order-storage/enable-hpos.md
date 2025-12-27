@@ -9,20 +9,20 @@ sidebar_label: Enable HPOS
 
 High-Performance Order Storageを有効にするには、既存ストアはまずpostsテーブルとordersテーブルを同期させる必要があります。
 
-1.WooCommerce &gt; 設定 &gt; 詳細 &gt; 機能**に移動します。
+1.WooCommerce > 設定 > 詳細 > 機能**に移動します。
 2.互換モードを有効にする（注文を投稿テーブルに同期する）"**設定をオンにします。
 
     ![Enable HPOS Screen](https://developer.woocommerce.com/wp-content/uploads/2023/12/New-Project-4.jpg)
 
 3.この設定を有効にすると、バックグラウンドのアクションがスケジュールされます。
 
-    - The action `wc_schedule_pending_batch_process` checks whether there are orders that need to be backfilled.
-    - If there are, it schedules another action `wc_run_batch_process` that actually backfills the orders to post storage.
-    - You can either wait for these actions to run on their own, which should be quite soon, or you can go to **WooCommerce > Status > Scheduled Actions**, find the actions and click on the run button.
-    - The action will backfill 25 orders at a time, if there are more orders to be synced, then more actions will be scheduled as soon as the previous actions are completed.
+    - アクション`wc_schedule_pending_batch_process`は、バックフィルが必要なオーダーがあるかどうかをチェックします。
+    - バックフィルが必要な注文があれば、`wc_run_batch_process` アクションをスケジュールします。
+    - これらのアクションが勝手に実行されるのを待つこともできますし、**WooCommerce > Status > Scheduled Actions** に移動し、アクションを見つけて実行ボタンをクリックすることもできます。
+    - アクションは一度に25件の注文をバックフィルします。もし同期される注文がもっとある場合、前のアクションが完了するとすぐにもっと多くのアクションがスケジュールされます。
 
     ![wc_schedule_pending_batch_process Screen](https://developer.woocommerce.com/wp-content/uploads/2023/12/2.jpg)
-    ![wc_run_batch_process Screen](https://developer.woocommerce.com/wp-content/uploads/2023/12/New-Project-5.jpg)
+    ![wc_run_batch_process スクリーン](https://developer.woocommerce.com/wp-content/uploads/2023/12/New-Project-5.jpg)
 
 4.両方のテーブルが正常に同期された後、High-Performance Order Storage (HPOS)に切り替えるオプションを選択できるようになる。
   

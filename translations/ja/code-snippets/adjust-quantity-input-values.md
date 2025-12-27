@@ -1,7 +1,8 @@
 ---
 post_title: Adjust the quantity input values
 ---
-# 数量の入力値を調整する
+
+# Adjust the quantity input values
 
 商品ページの数量入力フィールドの開始値、最大値、最小値、インクリメント量を設定します。
 
@@ -45,4 +46,4 @@ if ( ! function_exists( 'YOUR_PREFIX_woocommerce_available_variation' ) ) {
 }
 ```
 
-もう少しパワーをお望みでしたら、[Min/Max [Quantities](https://woocommerce.com/products/minmax-quantities)エクステンションをご覧ください！
+もう少しパワーをお望みでしたら、[Min/Max Quantities](https://woocommerce.com/products/minmax-quantities)エクステンションをご覧ください！

@@ -5,28 +5,26 @@ sidebar_label: How to create custom product tours
 
 # How to create custom product tours
 
-## Introduction
+## はじめに
 
-WooCommerce allows developers to extend or replace the product tour, offering a more customizable and engaging experience during product creation. This tutorial will guide you through adding a custom product tour to your WooCommerce store using the `experimental_woocommerce_admin_product_tour_steps` JavaScript filter.
+WooCommerceでは、開発者が商品ツアーを拡張または置き換えることができ、商品作成時にカスタマイズ可能で魅力的な体験を提供します。このチュートリアルでは、`experimental_woocommerce_admin_product_tour_steps` JavaScriptフィルタを使用して、WooCommerceストアにカスタム商品ツアーを追加する方法を説明します。
 
 これは、製品タイプのオンボーディングリストをカスタマイズする機能と連動しています。
 
-## Prerequisites
+## 前提条件
 
 - JavaScriptとPHPの基本的な理解
 - WordPressサイトにWooCommerce 8.8以降がインストールされていること。
 
-## Adding a JavaScript Filter
+## JavaScriptフィルタの追加
 
-To alter or create a product tour, we'll utilize the `@wordpress/hooks` package, specifically the `addFilter` function. If you're not already familiar, `@wordpress/hooks` allows you to modify or extend features within the WordPress and WooCommerce ecosystem without altering the core code.
+商品ツアーを変更または作成するには、`@wordpress/hooks`パッケージ、特に`addFilter`関数を使用します。ご存じない方もいらっしゃるかもしれませんが、`@wordpress/hooks`を使用すると、コアコードを変更することなく、WordPressとWooCommerceエコシステム内の機能を変更または拡張することができます。
 
-First, ensure you have the `@wordpress/hooks` package installed. If not, you can add it to your project using `npm` or `yarn`:
+まず、`@wordpress/hooks`パッケージがインストールされていることを確認してください。インストールされていない場合は、`npm`または`yarn`を使ってプロジェクトに追加してください：
 
-`npm install @wordpress/hooks`
+`npm install @wordpress/hooks`。
 
-or:
-
-`yarn add @wordpress/hooks`
+`yarn add @wordpress/hooks`。
 
 次に、次のJavaScriptコードをプロジェクトに追加します。このコードスニペットは、商品ツアーをカスタムツアーに置き換える方法を示しています：
 
@@ -69,10 +67,10 @@ addFilter(
 );
 ```
 
-This filter replaces the entire product tour for a `custom-product` product type. Using built-in JavaScript array manipulation functions, you can also customize the default tour (by altering, adding, or removing steps).
+このフィルタは、`custom-product`商品タイプの商品ツアー全体を置き換えます。組み込みのJavaScript配列操作関数を使用して、デフォルトのツアーをカスタマイズすることもできます（ステップを変更、追加、削除する）。
 
-The `tourType` is set by the `tutorial_type` GET parameter.
+`tourType`は、`tutorial_type` GETパラメータによって設定される。
 
-## Conclusion
+## 結論
 
 WooCommerceでは、商品ツアーの拡張とカスタマイズは簡単で、オンボーディングエクスペリエンスをカスタマイズするための大きな柔軟性を提供します。このチュートリアルで説明するステップに従うことで、WooCommerceストアを拡張し、商品追加ツアーをより適切で、特定のニーズに役立つものにすることができます。

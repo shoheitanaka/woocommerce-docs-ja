@@ -3,9 +3,9 @@ sidebar_label: Rate Limiting
 sidebar_position: 4
 ---
 
-# ストアAPIエンドポイントのレート制限 
+# Rate Limiting for Store API endpoints 
 
-[レート制限](https://github.com/woocommerce/woocommerce-blocks/pull/5962)は、ストアAPIエンドポイントで使用できます。これはオプションで、デフォルトでは無効になっています。以下の手順](#rate-limiting-options-filter)に従って有効にすることができます。
+[レート制限](https://github.com/woocommerce/woocommerce-blocks/pull/5962)は、ストアAPIエンドポイントで使用できます。これはオプションで、デフォルトでは無効になっています。[以下の手順](#rate-limiting-options-filter)に従って有効にすることができます。
 
 主な目的は、過剰な呼び出しによるエンドポイントの不正使用と、ストアを実行しているマシンのパフォーマンス低下を防ぐことである。
 
@@ -15,11 +15,11 @@ sidebar_position: 4
 
 ## UIコントロール
 
-現在のところ、この機能は`woocommerce_store_api_rate_limit_options`フィルターを通してのみ制御できます。UIで制御するには、以下のコミュニティプラグインをご利用ください：[Rate [Limiting UI for WooCommerce](https://wordpress.org/plugins/rate-limiting-ui-for-woocommerce/).
+現在、この機能は`woocommerce_store_api_rate_limit_options`フィルターを通してのみ制御できます。UIで制御するには、以下のコミュニティプラグインをご利用ください：[Rate Limiting UI for WooCommerce](https://wordpress.org/plugins/rate-limiting-ui-for-woocommerce/).
 
-#チェックアウト率制限
+## チェックアウト率制限
 
-WooCommerce -&gt; Settings -&gt; Advanced -&gt; Featuresで「Rate limiting Checkout block and Store API」を有効にすることで、UIからCheckout place orderと`POST /checkout`エンドポイントのみレート制限を有効にすることができます。
+WooCommerce -> Settings -> Advanced -> Featuresで「Rate limiting Checkout block and Store API」を有効にすることで、UIからCheckout place orderと`POST /checkout`エンドポイントのみレート制限を有効にすることができます。
 
 UIで有効にすると、レート制限は`POST /checkout`およびチェックアウトブロックの注文フローにのみ適用されます。制限は60秒あたり最大3リクエストまでです。
 
@@ -52,7 +52,7 @@ add_filter( 'woocommerce_store_api_rate_limit_options', function() {
 
 * `X_REAL_IP`|`CLIENT_IP` _リクエストの発信元IPの取得を簡略化する、一般的なカスタム実装__ `X_FORWARDED_FOR` _発信元IPを特定するための事実上の標準ヘッダー、 [Document](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For)
 * __INLINE_CODE_2__ _発信元IPを特定するためのデファクトスタンダードヘッダー、 [ドキュメント](__URL_0__)_
-* `X_FORWARDED` _[ドキュメント](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded)、[RFC [7239](https://datatracker.ietf.org/doc/html/rfc7239)__。
+* `X_FORWARDED` _[ドキュメント](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded)、[RFC 7239](https://datatracker.ietf.org/doc/html/rfc7239)__。
 
 デフォルトでは無効になっている。
 

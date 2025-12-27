@@ -5,7 +5,7 @@ sidebar_label: Email editor logging
 
 # Email Editor Logging
 
-Email editor logging uses a severity threshold to reduce noise during normal operation. By default, only warnings and above are logged. To change the logging level, use the `woocommerce_email_editor_logging_threshold` filter:
+メールエディタのログは、通常操作時のノイズを減らすために重要度のしきい値を使用します。デフォルトでは、警告以上のログのみが記録されます。ロギングレベルを変更するには、`woocommerce_email_editor_logging_threshold`フィルタを使用してください：
 
 ```php
 add_filter( 'woocommerce_email_editor_logging_threshold', function() {

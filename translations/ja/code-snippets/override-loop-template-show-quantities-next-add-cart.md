@@ -1,9 +1,10 @@
 ---
 post_title: Override loop template and show quantities next to add to cart buttons
 ---
-# ループテンプレートを上書きし、カートに追加ボタンの横に数量を表示する
 
-このコードを子テーマの`functions.php`ファイルに追加するか、[Code [Snippets](https://wordpress.org/plugins/code-snippets/)プラグインのようなカスタム関数を追加できるプラグインを使用します。親テーマのfunctions.phpファイルに直接カスタムコードを追加することは避けてください。
+# Override loop template and show quantities next to add to cart buttons
+
+このコードを子テーマの`functions.php`ファイルに追加するか、[Code Snippets](https://wordpress.org/plugins/code-snippets/)プラグインのようなカスタム関数を追加できるプラグインを使用します。親テーマのfunctions.phpファイルに直接カスタムコードを追加することは避けてください。
 
 ```php
 if ( ! function_exists( 'YOUR_PREFIX_quantity_inputs_for_woocommerce_loop_add_to_cart_link' ) ) {

@@ -2,7 +2,8 @@
 sidebar_label: Integrating Protection with the Checkout Block
 sidebar_position: 6
 ---
-# チェックアウトブロックとプロテクションの統合
+
+# Integrating Protection with the Checkout Block
 
 もしあなたがCaptchaや詐欺防止プラグインの開発者なら、あなたのソリューションが[Store API](/docs/apis/store-api/)にフックし、チェックアウトブロックと統合していることを確認してください。このチュートリアルでは、WooCommerceチェックアウトブロックに保護メカニズムを追加する手順を説明します。
 
@@ -41,7 +42,7 @@ add_filter(
 );
 ```
 
-**このコードに関する重要なポイント:**
+**このコードに関する重要なポイント:**。
 
 -   フィルタの対象は`woocommerce/checkout-actions-block`で、これは注文ボタンを含むブロックです。
 -   優先順位は `999` で、他の修正よりも後にコンテンツが追加されるようにしています。
@@ -101,7 +102,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 ### コアの`rest_authentication_errors`フィルターを使う
 
-[INLINE_CODE_0__](https://developer.wordpress.org/reference/hooks/rest_authentication_errors/)フィルタは、チェックアウト処理が始まる前に実行されるため、プロテクトトークンを検証するのに理想的な場所です。
+[`rest_authentication_errors`](https://developer.wordpress.org/reference/hooks/rest_authentication_errors/)フィルタは、チェックアウト処理が始まる前に実行されるため、プロテクトトークンを検証するのに理想的な場所です。
 
 ```php
 add_filter( 'rest_authentication_errors', 'plugin_check_turnstile_token' );
@@ -156,7 +157,7 @@ function plugin_check_turnstile_token( $result ) {
 
 **サーバーサイド・バリデーションに関する重要なポイント:**.
 
--   チェックアウトエンドポイントへの POST リクエストをチェックします。
+-   チェックアウトエンドポイントへの POST リクエストを特にチェックします。
 -   保護トークンは`$request_body['extensions']['your-namespace']`でアクセスされます。
 -   他の認証チェックと干渉しないように、常に`$result`パラメータを返す
 -   認証に失敗した場合は `WP_Error` オブジェクトを返す
@@ -178,4 +179,4 @@ function plugin_check_turnstile_token( $result ) {
 1.チェックアウトブロックを有効にしてテスト
 2.トークンが提供されない場合にバリデーションが失敗することを確認する
 3.異なる支払い方法でテストする
-4.保護機能が正当なチェックアウトの流れを妨げないことを確認する。
+4.保護機能が正当なチェックアウトのフローを妨げないことを確認する。

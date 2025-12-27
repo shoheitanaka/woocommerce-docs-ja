@@ -4,7 +4,7 @@ sidebar_label: Commands
 sidebar_position: 4
 ---
 
-# WooCommerce CLIコマンド
+# WooCommerce CLI Commands
 
 ## 概要
 
@@ -30,23 +30,21 @@ wp wc [command] --help
 
 #### wc ブループリントのインポート [スキーマパス］
 
-- `--show-messages` - Show debug messages. Supported log levels: all, error, info, debug.
+- `--show-messages` - デバッグメッセージを表示する。サポートされるログレベル: all、error、info、debug。
 
-#### wc blueprint export [save-to-filename] (wcブループリントのエクスポート)
+#### wc blueprint export [save-to-filename] (ブループリントのエクスポート)
 
-- `--steps` - name of steps to export.
-
-### wc com
+- `--steps` - エクスポートするステップの名前。
 
 #### wc com 拡張子リスト
 
-- `--format` - Render output in a particular format.
+- `--format` - 特定のフォーマットで出力をレンダリングする。
 
 デフォルト：テーブル
 
 オプション：table、csv、json、yaml
 
-- `--fields` - Limit the output to specific object fields.
+- `--fields` - 特定のオブジェクト・フィールドに出力を制限する。
 
 デフォルト：すべて
 
@@ -54,30 +52,30 @@ wp wc [command] --help
 
 #### wc com 拡張機能インストール [拡張機能］
 
-- `--extension` - Install one plugin from the available extensions.Accepts a plugin slug
-- `--force` - If set, the command will overwrite any installed version of the extension without prompting for confirmation.
-- `--activate` - If set, after installation, the plugin will activate it.
-- `--activate-network` - If set, the plugin will be network activated immediately after installation
-- `--insecure` - Retry downloads without certificate validation if TLS handshake fails. Note: This makes the request vulnerable to a MITM attack.
+- `--extension` - 利用可能な拡張機能から1つのプラグインをインストールします。
+- `--force` - 設定すると、インストールされている拡張機能を上書きします。
+- `--activate` - 設定すると、インストール後にプラグインを有効にします。
+- `--activate-network` - 設定すると、インストール後すぐにプラグインをネットワークで有効にします。
+- `--insecure` - TLS ハンドシェイクに失敗した場合に、証明書の検証を行わずにダウンロードを再試行する。注意: この場合、リクエストはMITM攻撃に対して脆弱になります。
 
 ### WCカスタマー
 
 #### WC顧客リスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific IDs.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--email` - Limit result set to resources with a specific email.
-- `--role` - Limit result set to resources with a specific role.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--exclude` - 結果セットに特定の ID が含まれないようにする。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - オブジェクトの属性でコレクションをソートする
+- `--email` - 結果セットを、特定の email を持つリソースに限定する
+- `--role` - 結果セットを、特定のロールを持つリソースに限定する。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -85,23 +83,23 @@ wp wc [command] --help
 
 #### WCカスタマークリエイト
 
-- `--email` - New user email address. (*Required*)
-- `--first_name` - Customer first name.
-- `--last_name` - Customer last name.
-- `--username` - New user username.
-- `--password` - New user password. (*Required*)
-- `--billing` - List of billing address data.
-- `--shipping` - List of shipping address data.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--email` - 新しいユーザーのメールアドレス。(*必須*)
+- `--first_name` - お客様の姓。
+- `--last_name` - 顧客の姓。
+- `--username` - 新規ユーザーのユーザー名。
+- `--password` - 新しいユーザーパスワード。(*必須*)
+- `--billing` - 請求先住所データのリスト。
+- `--shipping` - 配送先住所データのリスト。
+- `--meta_data` - メタデータ。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc customer get [id]
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -109,33 +107,33 @@ wp wc [command] --help
 
 #### WC 顧客アップデート [ID］
 
-- `--id` - Unique identifier for the resource.
-- `--email` - The email address for the customer.
-- `--first_name` - Customer first name.
-- `--last_name` - Customer last name.
-- `--username` - Customer login name.
-- `--password` - Customer password.
-- `--billing` - List of billing address data.
-- `--shipping` - List of shipping address data.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--email` - 顧客のメールアドレス。
+- `--first_name` - 顧客の名前。
+- `--last_name` - 顧客の姓。
+- `--username` - 顧客のログイン名。
+- `--password` - 顧客のパスワード。
+- `--billing` - 請求先住所データのリスト。
+- `--shipping` - 配送先住所データのリスト。
+- `--meta_data` - メタデータ。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc customer delete [id]
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--reassign` - ID to reassign posts to.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - リソースはゴミ箱への移動をサポートしていないため、trueである必要があります。
+- `--reassign` - 投稿を再割り当てする ID。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 ### wc customer_download
 
 #### wc customer_download list `<customer_id>`
 
-- `--customer_id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--customer_id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -143,14 +141,14 @@ wp wc [command] --help
 
 ### wc order_note
 
-#### wc order_note list `<order_id>`
+#### wc order_note リスト `<order_id>`
 
-- `--order_id` - The order ID.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--type` - Limit result to customers or internal notes.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--order_id` - オーダーID。
+- `--context` - リクエストのスコープ。
+- `--type` - 結果を顧客または内部メモに限定します。
+- `--fields` - 応答を特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - 特定のフォーマットでレスポンスをレンダリングする。
 
 デフォルト：テーブル
 
@@ -158,39 +156,39 @@ wp wc [command] --help
 
 #### wc order_note create `<order_id>`
 
-- `--order_id` - The order ID.
-- `--note` - Order note content. (*Required*)
-- `--customer_note` - If true, the note will be shown to customers and they will be notified. If false, the note will be for admin reference only.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--order_id` - 注文 ID。
+- `--note` - 注文メモの内容。(*必須*)
+- `--customer_note` - trueの場合、注文メモが顧客に表示され、通知されます。falseの場合、メモは管理者の参照のみになります。
+- `--porcelain` - 操作が成功した場合、idだけを出力する。
 
-#### wc order_note get `<order_id>` [id]
+#### wc order_note get `<order_id>` [id].
 
-- `--id` - Unique identifier for the resource.
-- `--order_id` - The order ID.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--order_id` - オーダーID。
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc order_note delete `<order_id>` [id]
+#### wc order_note delete `<order_id>` [id].
 
-- `--id` - Unique identifier for the resource.
-- `--order_id` - The order ID.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--order_id` - オーダーID。
+- `--force` - リソースがトラッシュをサポートしていないため、true にする必要があります。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 ### wc payment_gateway
 
 #### wc payment_gateway リスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -198,11 +196,11 @@ wp wc [command] --help
 
 #### wc payment_gateway get [id].
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -210,49 +208,49 @@ wp wc [command] --help
 
 #### wc payment_gateway update [id].
 
-- `--id` - Unique identifier for the resource.
-- `--title` - Payment gateway title on checkout.
-- `--description` - Payment gateway description on checkout.
-- `--order` - Payment gateway sort order.
-- `--enabled` - Payment gateway enabled status.
-- `--settings` - Payment gateway settings.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--title` - チェックアウト時の支払いゲートウェイのタイトル。
+- `--description` - チェックアウト時の支払いゲートウェイの説明。
+- `--order` - ペイメントゲートウェイのソート順。
+- `--enabled` - ペイメントゲートウェイが有効な状態。
+- `--settings` - ペイメントゲートウェイの設定。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 ### WC製品
 
 #### WC製品リスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--after` - Limit response to resources published after a given ISO8601 compliant date.
-- `--before` - Limit response to resources published before a given ISO8601 compliant date.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--parent` - Limit result set to those of particular parent IDs.
-- `--parent_exclude` - Limit result set to all items except those of a particular parent ID.
-- `--slug` - Limit result set to products with a specific slug.
-- `--status` - Limit result set to products assigned a specific status.
-- `--type` - Limit result set to products assigned a specific type.
-- `--sku` - Limit result set to products with a specific SKU.
-- `--featured` - Limit result set to featured products.
-- `--category` - Limit result set to products assigned a specific category ID.
-- `--tag` - Limit result set to products assigned a specific tag ID.
-- `--shipping_class` - Limit result set to products assigned a specific shipping class ID.
-- `--attribute` - Limit result set to products with a specific attribute.
-- `--attribute_term` - Limit result set to products with a specific attribute term ID (required an assigned attribute).
-- `--tax_class` - Limit result set to products with a specific tax class.
-- `--in_stock` - Limit result set to products in stock or out of stock.
-- `--on_sale` - Limit result set to products on sale.
-- `--min_price` - Limit result set to products based on a minimum price.
-- `--max_price` - Limit result set to products based on a maximum price.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--after` - 指定した ISO8601 準拠の日付以降に公開されたリソースに限定する。
+- `--before` - 指定した ISO8601 準拠の日付より前に公開されたリソースにレスポンスを制限する。
+- `--exclude` - 結果セットが特定の ID を除外していることを確認する。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - オブジェクトの属性でコレクションをソートする
+- `--parent` - 結果セットを特定の親 ID のものに制限する
+- `--parent_exclude` - 結果セットを、特定の親 ID 以外のすべてのアイテムに制限する。
+- `--slug` - 結果セットを特定のスラッグを持つ商品に限定する。
+- `--status` - 特定のステータスが割り当てられている商品に結果セットを限定する。
+- `--type` - 指定した型に割り当てられた商品に結果を限定する。
+- `--sku` - 結果を特定の SKU を持つ商品に限定する。
+- `--featured` - 結果セットを目玉商品に限定する。
+- `--category` - 指定したカテゴリー ID の商品に結果を限定する。
+- `--tag` - 指定したタグ ID が割り当てられている商品に結果を限定する。
+- `--shipping_class` - 指定した配送クラス ID が割り当てられている商品に結果を限定します。
+- `--attribute` - 指定した属性の商品に結果を限定します。
+- `--attribute_term` - 結果セットを特定の属性ターム ID (割り当てられた属性が必要) を持つ商品に限定します。
+- `--tax_class` - 特定の税クラスを持つ商品に結果を限定します。
+- `--in_stock` - 結果セットを在庫のある商品または在庫切れの商品に限定します。
+- `--on_sale` - 結果をセール中の商品に限定する
+- `--min_price` - 結果セットを、最低価格に基づいている商品に限定する
+- `--max_price` - 結果セットを最高価格に基づく商品に制限する。
+- `--fields` - 特定のフィールドにレスポンスを制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -260,59 +258,59 @@ wp wc [command] --help
 
 #### WC プロダクトクリエイト
 
-- `--name` - Product name.
-- `--slug` - Product slug.
-- `--type` - Product type.
-- `--status` - Product status (post status).
-- `--featured` - Featured product.
-- `--catalog_visibility` - Catalog visibility.
-- `--description` - Product description.
-- `--short_description` - Product short description.
-- `--sku` - Unique identifier.
-- `--regular_price` - Product regular price.
-- `--sale_price` - Product sale price.
-- `--date_on_sale_from` - Start date of sale price, in the site's timezone.
-- `--date_on_sale_from_gmt` - Start date of sale price, as GMT.
-- `--date_on_sale_to` - End date of sale price, in the site's timezone.
-- `--date_on_sale_to_gmt` - End date of sale price, in the site's timezone.
-- `--virtual` - If the product is virtual.
-- `--downloadable` - If the product is downloadable.
-- `--downloads` - List of downloadable files.
-- `--download_limit` - Number of times downloadable files can be downloaded after purchase.
-- `--download_expiry` - Number of days until access to downloadable files expires.
-- `--external_url` - Product external URL. Only for external products.
-- `--button_text` - Product external button text. Only for external products.
-- `--tax_status` - Tax status.
-- `--tax_class` - Tax class.
-- `--manage_stock` - Stock management at product level.
-- `--stock_quantity` - Stock quantity.
-- `--in_stock` - Controls whether or not the product is listed as "in stock" or "out of stock" on the frontend.
-- `--backorders` - If managing stock, this controls if backorders are allowed.
-- `--sold_individually` - Allow one item to be bought in a single order.
-- `--weight` - Product weight (lbs).
-- `--dimensions` - Product dimensions.
-- `--shipping_class` - Shipping class slug.
-- `--reviews_allowed` - Allow reviews.
-- `--upsell_ids` - List of up-sell products IDs.
-- `--cross_sell_ids` - List of cross-sell products IDs.
-- `--parent_id` - Product parent ID.
-- `--purchase_note` - Optional note to send the customer after purchase.
-- `--categories` - List of categories.
-- `--tags` - List of tags.
-- `--images` - List of images.
-- `--attributes` - List of attributes.
-- `--default_attributes` - Defaults variation attributes.
-- `--menu_order` - Menu order, used to custom sort products.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - 製品名。
+- `--slug` - 製品スラッグ。
+- `--type` - 商品タイプ。
+- `--status` - 商品のステータス (投稿状況)。
+- `--featured` - 注目商品。
+- `--catalog_visibility` - カタログの表示。
+- `--description` - 商品の説明。
+- `--short_description` - 商品の簡単な説明。
+- `--sku` - 一意の識別子。
+- `--regular_price` - 商品の通常価格。
+- `--sale_price` - セール価格。
+- `--date_on_sale_from` - セール価格の開始日 (サイトのタイムゾーン)。
+- `--date_on_sale_from_gmt` - 販売価格の開始日 (GMT) です。
+- `--date_on_sale_to` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--date_on_sale_to_gmt` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--virtual`-商品がバーチャルである場合。
+- `--downloadable` - 製品がダウンロード可能である場合。
+- `--downloads` - ダウンロード可能なファイルのリスト。
+- `--download_limit` - 購入後にダウンロード可能なファイルの回数。
+- `--download_expiry` - ダウンロード可能なファイルへのアクセス期限が切れるまでの日数。
+- `--external_url` - 製品の外部URL。外部製品のみ。
+- `--button_text` - 商品の外部ボタンのテキスト。外部製品のみ。
+- `--tax_status` - タックスステータス。
+- `--tax_class` - タックスクラス。
+- `--manage_stock` - 商品レベルでの在庫管理。
+- `--stock_quantity` - 在庫数。
+- `--in_stock` - フロントエンドで商品を "在庫あり" あるいは "在庫切れ" として表示するかどうかを制御します。
+- `--backorders` - 在庫を管理する場合、バックオーダーを許可するかどうかを制御します。
+- `--sold_individually` - 1回の注文で1つの商品を購入できるようにします。
+- `--weight` - 商品の重量 (ポンド)。
+- `--dimensions` - 商品の寸法。
+- `--shipping_class` - 配送クラスのスラッグ。
+- `--reviews_allowed` - レビューを許可します。
+- `--upsell_ids` - アップセル商品の ID リスト。
+- `--cross_sell_ids` - クロスセル商品 ID のリスト。
+- `--parent_id` - 商品の親 ID。
+- 購入後に顧客に送るメモ (オプション)。
+- `--categories` - カテゴリーのリスト。
+- `--tags` - タグのリスト。
+- `--images` - 画像のリスト。
+- `--attributes` - 属性のリスト。
+- `--default_attributes` - デフォルトのバリエーション属性。
+- `--menu_order` - メニューの並び順。
+- `--meta_data` - メタデータ。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc product get [id]
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -320,79 +318,79 @@ wp wc [command] --help
 
 #### WC製品アップデート [ID］
 
-- `--id` - Unique identifier for the resource.
-- `--name` - Product name.
-- `--slug` - Product slug.
-- `--type` - Product type.
-- `--status` - Product status (post status).
-- `--featured` - Featured product.
-- `--catalog_visibility` - Catalog visibility.
-- `--description` - Product description.
-- `--short_description` - Product short description.
-- `--sku` - Unique identifier.
-- `--regular_price` - Product regular price.
-- `--sale_price` - Product sale price.
-- `--date_on_sale_from` - Start date of sale price, in the site's timezone.
-- `--date_on_sale_from_gmt` - Start date of sale price, as GMT.
-- `--date_on_sale_to` - End date of sale price, in the site's timezone.
-- `--date_on_sale_to_gmt` - End date of sale price, in the site's timezone.
-- `--virtual` - If the product is virtual.
-- `--downloadable` - If the product is downloadable.
-- `--downloads` - List of downloadable files.
-- `--download_limit` - Number of times downloadable files can be downloaded after purchase.
-- `--download_expiry` - Number of days until access to downloadable files expires.
-- `--external_url` - Product external URL. Only for external products.
-- `--button_text` - Product external button text. Only for external products.
-- `--tax_status` - Tax status.
-- `--tax_class` - Tax class.
-- `--manage_stock` - Stock management at product level.
-- `--stock_quantity` - Stock quantity.
-- `--in_stock` - Controls whether or not the product is listed as "in stock" or "out of stock" on the frontend.
-- `--backorders` - If managing stock, this controls if backorders are allowed.
-- `--sold_individually` - Allow one item to be bought in a single order.
-- `--weight` - Product weight (lbs).
-- `--dimensions` - Product dimensions.
-- `--shipping_class` - Shipping class slug.
-- `--reviews_allowed` - Allow reviews.
-- `--upsell_ids` - List of up-sell products IDs.
-- `--cross_sell_ids` - List of cross-sell products IDs.
-- `--parent_id` - Product parent ID.
-- `--purchase_note` - Optional note to send the customer after purchase.
-- `--categories` - List of categories.
-- `--tags` - List of tags.
-- `--images` - List of images.
-- `--attributes` - List of attributes.
-- `--default_attributes` - Defaults variation attributes.
-- `--menu_order` - Menu order, used to custom sort products.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--name` - 製品名。
+- `--slug` - 製品スラッグ。
+- `--type` - 製品タイプ。
+- `--status` - 商品のステータス (投稿状況)。
+- `--featured` - 注目商品。
+- `--catalog_visibility` - カタログの表示。
+- `--description` - 商品の説明。
+- `--short_description` - 商品の簡単な説明。
+- `--sku` - 一意の識別子。
+- `--regular_price` - 商品の通常価格。
+- `--sale_price` - セール価格。
+- `--date_on_sale_from` - セール価格の開始日 (サイトのタイムゾーン)。
+- `--date_on_sale_from_gmt` - 販売価格の開始日 (GMT) です。
+- `--date_on_sale_to` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--date_on_sale_to_gmt` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--virtual`-商品がバーチャルである場合。
+- `--downloadable` - 製品がダウンロード可能である場合。
+- `--downloads` - ダウンロード可能なファイルのリスト。
+- `--download_limit` - 購入後にダウンロード可能なファイルの回数。
+- `--download_expiry` - ダウンロード可能なファイルへのアクセス期限が切れるまでの日数。
+- `--external_url` - 製品の外部URL。外部製品の場合のみ。
+- `--button_text` - 商品の外部ボタンのテキスト。外部製品のみ。
+- `--tax_status` - タックスステータス。
+- `--tax_class` - タックスクラス。
+- `--manage_stock` - 商品レベルでの在庫管理。
+- `--stock_quantity` - 在庫数。
+- `--in_stock` - フロントエンドで商品を "在庫あり" あるいは "在庫切れ" として表示するかどうかを制御します。
+- `--backorders` - 在庫を管理する場合、バックオーダーを許可するかどうかを制御します。
+- `--sold_individually` - 1回の注文で1つの商品を購入できるようにします。
+- `--weight` - 商品の重量 (ポンド)。
+- `--dimensions` - 商品の寸法。
+- `--shipping_class` - 配送クラスのスラッグ。
+- `--reviews_allowed` - レビューを許可します。
+- `--upsell_ids` - アップセル商品の ID リスト。
+- `--cross_sell_ids` - クロスセル商品 ID のリスト。
+- `--parent_id` - 商品の親 ID。
+- 購入後に顧客に送るメモ (オプション)。
+- `--categories` - カテゴリーのリスト。
+- `--tags` - タグのリスト。
+- `--images` - 画像のリスト。
+- `--attributes` - 属性のリスト。
+- `--default_attributes` - デフォルトのバリエーション属性。
+- `--menu_order` - メニューの並び順。
+- `--meta_data` - メタデータ。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc product delete [id]
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Whether to bypass trash and force deletion.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - ゴミ箱をバイパスして強制的に削除するかどうか。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc product_attribute_term
 
 #### wc product_attribute_term list `<attribute_id>`
 
-- `--attribute_id` - Unique identifier for the attribute of the terms.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--exclude` - Ensure result set excludes specific ids.
-- `--include` - Limit result set to specific ids.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by resource attribute.
-- `--hide_empty` - Whether to hide resources not assigned to any products.
-- `--parent` - Limit result set to resources assigned to a specific parent.
-- `--product` - Limit result set to resources assigned to a specific product.
-- `--slug` - Limit result set to resources with a specific slug.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--attribute_id` - 項目の属性の一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定する。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--exclude` - 結果セットに特定の ID が含まれないようにする。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - リソース属性でコレクションをソートする。
+- `--hide_empty` - どの商品にも割り当てられていないリソースを非表示にするかどうか。
+- `--parent` - 結果セットを、特定の親に割り当てられたリソースに制限する。
+- `--product` - 結果セットを、特定の製品に割り当てられているリソースに限定する。
+- `--slug` - 結果セットを特定のスラッグを持つリソースに限定する
+- `--fields` - レスポンスを特定のフィールドに限定する。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -400,51 +398,51 @@ wp wc [command] --help
 
 #### wc product_attribute_term create `<attribute_id>`
 
-- `--attribute_id` - Unique identifier for the attribute of the terms.
-- `--name` - Name for the resource. (*Required*)
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--description` - HTML description of the resource.
-- `--menu_order` - Menu order, used to custom sort the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--attribute_id` - 用語の属性の一意な識別子。
+- `--name` - リソースの名前。(*必須*)
+- `--slug` - リソースのタイプに固有の英数字の識別子。
+- `--description` - リソースの HTML による説明。
+- `--menu_order` - メニューの並び順。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
-#### wc product_attribute_term get `<attribute_id>` [id]
+#### wc product_attribute_term get `<attribute_id>` [id].
 
-- `--id` - Unique identifier for the resource.
-- `--attribute_id` - Unique identifier for the attribute of the terms.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--attribute_id` - 項目の属性の一意な識別子。
+- `--context` - リクエストのスコープ。
+- `--fields` - 応答を特定のフィールドに限定する。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product_attribute_term update `<attribute_id>` [id]
+#### wc product_attribute_term update `<attribute_id>` [id].
 
-- `--id` - Unique identifier for the resource.
-- `--attribute_id` - Unique identifier for the attribute of the terms.
-- `--name` - Term name.
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--description` - HTML description of the resource.
-- `--menu_order` - Menu order, used to custom sort the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--attribute_id` - 用語の属性の一意な識別子。
+- `--name` - 用語の名前。
+- `--slug` - リソースのタイプに固有の英数字の識別子。
+- `--description` - リソースの HTML による説明。
+- `--menu_order` - メニューの並び順。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
-#### wc product_attribute_term delete `<attribute_id>` [id]
+#### wc product_attribute_term delete `<attribute_id>` [id].
 
-- `--id` - Unique identifier for the resource.
-- `--attribute_id` - Unique identifier for the attribute of the terms.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--attribute_id` - 項目の属性の一意な識別子。
+- `--force` - リソースがゴミ箱をサポートしていないため、trueである必要があります。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc product_attribute
 
 #### wc 製品属性リスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -452,20 +450,20 @@ wp wc [command] --help
 
 #### wc product_attribute create
 
-- `--name` - Name for the resource. (*Required*)
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--type` - Type of attribute.
-- `--order_by` - Default sort order.
-- `--has_archives` - Enable/Disable attribute archives.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - リソースの名前。(*必須*)
+- `--slug` - リソースの種類を表す英数字。
+- `--type` - 属性の種類。
+- `--order_by` - デフォルトのソート順。
+- `--has_archives` - 属性アーカイブの有効/無効。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 #### wc product_attribute get [id].
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -473,39 +471,39 @@ wp wc [command] --help
 
 #### wc product_attribute update [id].
 
-- `--id` - Unique identifier for the resource.
-- `--name` - Attribute name.
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--type` - Type of attribute.
-- `--order_by` - Default sort order.
-- `--has_archives` - Enable/Disable attribute archives.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--name` - 属性名。
+- `--slug` - リソースの種類を表す英数字。
+- `--type` - 属性の種類。
+- `--order_by` - デフォルトのソート順。
+- `--has_archives` - 属性アーカイブの有効/無効。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 #### wc product_attribute delete [id].
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc product_cat
 
 #### wc product_cat list
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--exclude` - Ensure result set excludes specific ids.
-- `--include` - Limit result set to specific ids.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by resource attribute.
-- `--hide_empty` - Whether to hide resources not assigned to any products.
-- `--parent` - Limit result set to resources assigned to a specific parent.
-- `--product` - Limit result set to resources assigned to a specific product.
-- `--slug` - Limit result set to resources with a specific slug.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--exclude` - 結果セットに特定の ID が含まれないようにする。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - リソース属性でコレクションをソートする。
+- `--hide_empty` - どの商品にも割り当てられていないリソースを非表示にするかどうか。
+- `--parent` - 結果セットを、特定の親に割り当てられたリソースに制限する。
+- `--product` - 結果セットを、特定の製品に割り当てられているリソースに限定する。
+- `--slug` - 結果セットを特定のスラッグを持つリソースに限定する
+- `--fields` - レスポンスを特定のフィールドに限定する。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -513,22 +511,22 @@ wp wc [command] --help
 
 #### wc product_cat create
 
-- `--name` - Name for the resource. (*Required*)
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--parent` - The ID for the parent of the resource.
-- `--description` - HTML description of the resource.
-- `--display` - Category archive display type.
-- `--image` - Image data.
-- `--menu_order` - Menu order, used to custom sort the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - リソースの名前。(*必須*)
+- `--slug` - リソースの種類を表す英数字。
+- `--parent` - リソースの親の ID。
+- `--description` - リソースの HTML による説明。
+- `--display` - カテゴリアーカイブの表示タイプ。
+- `--image` - 画像データ。
+- `--menu_order` - メニューの並び順。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 #### wc product_cat get [id].
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -536,32 +534,32 @@ wp wc [command] --help
 
 #### wc product_cat update [id].
 
-- `--id` - Unique identifier for the resource.
-- `--name` - Category name.
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--parent` - The ID for the parent of the resource.
-- `--description` - HTML description of the resource.
-- `--display` - Category archive display type.
-- `--image` - Image data.
-- `--menu_order` - Menu order, used to custom sort the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--name` - カテゴリ名。
+- `--slug` - リソースのタイプに固有の英数字の識別子。
+- `--parent` - リソースの親の ID。
+- `--description` - リソースの HTML による説明。
+- `--display` - カテゴリアーカイブの表示タイプ。
+- `--image` - 画像データ。
+- リソースをカスタムソートする際に使用します。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 #### wc product_cat delete [id].
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### WC製品レビュー
 
 #### wc product_review list `<product_id>`
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the variation.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--product_id` - 変数製品の一意識別子。
+- `--id` - バリエーションの一意識別子。
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -569,67 +567,67 @@ wp wc [command] --help
 
 #### wc product_review create `<product_id>`
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the variation.
-- `--review` - Review content. (*Required*)
-- `--date_created` - The date the review was created, in the site's timezone.
-- `--date_created_gmt` - The date the review was created, as GMT.
-- `--rating` - Review rating (0 to 5).
-- `--name` - Name of the reviewer. (*Required*)
-- `--email` - Email of the reviewer. (*Required*)
-- `--porcelain` - Output just the id when the operation is successful.
+- `--product_id` - 変数製品の一意識別子。
+- `--id` - バリエーションの一意識別子。
+- `--review` - レビュー内容。(*必須*)
+- `--date_created` - サイトのタイムゾーンで、レビューが作成された日付。
+- `--date_created_gmt` - GMT (グリニッジ標準時) で、レビューが作成された日付。
+- `--rating` - レビューの評価 (0 から 5)。
+- `--name` - レビュー投稿者の名前。(*必須*)
+- `--email` - レビュー投稿者のEメール。(*必須*)
+- `--porcelain` - 操作が成功した場合に、idだけを出力する。
 
-#### wc product_review get `<product_id>` [id]
+#### wc product_review get `<product_id>` [id].
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--product_id` - 変数製品の一意な識別子。
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product_review update `<product_id>` [id]
+#### wc product_review update `<product_id>` [id].
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the resource.
-- `--review` - The content of the review.
-- `--date_created` - The date the review was created, in the site's timezone.
-- `--date_created_gmt` - The date the review was created, as GMT.
-- `--rating` - Review rating (0 to 5).
-- `--name` - Reviewer name.
-- `--email` - Reviewer email.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--product_id` - 変数製品の一意な識別子。
+- `--id` - リソースの一意な識別子。
+- `--review` - レビューの内容。
+- `--date_created` - サイトのタイムゾーンで、レビューが作成された日付。
+- `--date_created_gmt` - GMT (グリニッジ標準時) で、レビューが作成された日付。
+- `--rating` - レビューの評価 (0 から 5)。
+- `--name` - レビュアー名。
+- `--email` - レビュアーのメールアドレス。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
-#### wc product_review delete `<product_id>` [id]
+#### wc product_review delete `<product_id>` [id].
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the resource.
-- `--force` - Whether to bypass trash and force deletion.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--product_id` - 変数製品の一意な識別子。
+- `--id` - リソースの一意な識別子。
+- `--force` - ゴミ箱をバイパスして強制的に削除するかどうか。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc product_shipping_class
 
 #### wc 製品出荷クラスリスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--exclude` - Ensure result set excludes specific ids.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by resource attribute.
-- `--hide_empty` - Whether to hide resources not assigned to any products.
-- `--product` - Limit result set to resources assigned to a specific product.
-- `--slug` - Limit result set to resources with a specific slug.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--exclude` - 結果セットに特定の ID が含まれないようにする。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定の項目数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - リソース属性でコレクションをソートする。
+- `--hide_empty` - どの商品にも割り当てられていないリソースを非表示にするかどうか。
+- `--product` - 結果セットを、特定の製品に割り当てられているリソースに制限する。
+- `--slug` - 結果セットを、特定のスラッグを持つリソースに限定する。
+- `--fields` - レスポンスを特定のフィールドに限定する。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -637,18 +635,18 @@ wp wc [command] --help
 
 #### wc product_shipping_class create
 
-- `--name` - Name for the resource. (*Required*)
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--description` - HTML description of the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - リソースの名前。(*必須*)
+- `--slug` - リソースの種類を表す英数字。
+- `--description` - リソースの HTML による説明。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc product_shipping_class get [id].
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -656,37 +654,37 @@ wp wc [command] --help
 
 #### wc product_shipping_class update [id].
 
-- `--id` - Unique identifier for the resource.
-- `--name` - Shipping class name.
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--description` - HTML description of the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--name` - 配送クラス名。
+- `--slug` - リソースのタイプに固有の英数字の識別子。
+- `--description` - リソースの HTML による説明。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc product_shipping_class delete [id].
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc product_tag
 
 #### wc product_tag list
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--exclude` - Ensure result set excludes specific ids.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by resource attribute.
-- `--hide_empty` - Whether to hide resources not assigned to any products.
-- `--product` - Limit result set to resources assigned to a specific product.
-- `--slug` - Limit result set to resources with a specific slug.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--exclude` - 結果セットに特定の ID が含まれないようにする。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定の項目数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - リソース属性でコレクションをソートする。
+- `--hide_empty` - どの商品にも割り当てられていないリソースを非表示にするかどうか。
+- `--product` - 結果セットを、特定の製品に割り当てられているリソースに制限する。
+- `--slug` - 結果セットを、特定のスラッグを持つリソースに限定する。
+- `--fields` - レスポンスを特定のフィールドに限定する。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -694,18 +692,18 @@ wp wc [command] --help
 
 #### wc product_tag create
 
-- `--name` - Name for the resource. (*Required*)
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--description` - HTML description of the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - リソースの名前。(*必須*)
+- `--slug` - リソースの種類を表す英数字。
+- `--description` - リソースの HTML による説明。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc product_tag get [id].
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -713,54 +711,54 @@ wp wc [command] --help
 
 #### wc product_tag update [id].
 
-- `--id` - Unique identifier for the resource.
-- `--name` - Tag name.
-- `--slug` - An alphanumeric identifier for the resource unique to its type.
-- `--description` - HTML description of the resource.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--name` - タグ名。
+- `--slug` - リソースのタイプに固有の英数字の識別子。
+- `--description` - リソースの HTML による説明。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 #### wc product_tag delete [id].
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc product_variation
 
-#### wc product_variation list `<product_id>`
+#### wc 製品バリエーションリスト `<product_id>`
 
-- `--product_id` - Unique identifier for the variable product.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--after` - Limit response to resources published after a given ISO8601 compliant date.
-- `--before` - Limit response to resources published before a given ISO8601 compliant date.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--parent` - Limit result set to those of particular parent IDs.
-- `--parent_exclude` - Limit result set to all items except those of a particular parent ID.
-- `--slug` - Limit result set to products with a specific slug.
-- `--status` - Limit result set to products assigned a specific status.
-- `--type` - Limit result set to products assigned a specific type.
-- `--sku` - Limit result set to products with a specific SKU.
-- `--featured` - Limit result set to featured products.
-- `--category` - Limit result set to products assigned a specific category ID.
-- `--tag` - Limit result set to products assigned a specific tag ID.
-- `--shipping_class` - Limit result set to products assigned a specific shipping class ID.
-- `--attribute` - Limit result set to products with a specific attribute.
-- `--attribute_term` - Limit result set to products with a specific attribute term ID (required an assigned attribute).
-- `--tax_class` - Limit result set to products with a specific tax class.
-- `--in_stock` - Limit result set to products in stock or out of stock.
-- `--on_sale` - Limit result set to products on sale.
-- `--min_price` - Limit result set to products based on a minimum price.
-- `--max_price` - Limit result set to products based on a maximum price.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--product_id` - バリアブル製品の一意な識別子。
+- `--context` - リクエストが行われるスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--after` - 指定した ISO8601 準拠の日付以降に公開されたリソースに限定する。
+- `--before` - 指定した ISO8601 準拠の日付より前に公開されたリソースにレスポンスを制限する。
+- `--exclude` - 結果セットが特定の ID を除外していることを確認する。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - オブジェクトの属性でコレクションをソートする
+- `--parent` - 結果セットを特定の親 ID のものに限定する
+- `--parent_exclude` - 結果セットを、特定の親 ID 以外のすべてのアイテムに制限する。
+- `--slug` - 結果セットを特定のスラッグを持つ商品に限定する。
+- `--status` - 特定のステータスが割り当てられている商品に結果セットを限定する。
+- `--type` - 指定した型に割り当てられた商品に結果を限定する。
+- `--sku` - 結果を特定の SKU を持つ商品に限定する。
+- `--featured` - 結果セットを目玉商品に限定する。
+- `--category` - 指定したカテゴリー ID の商品に結果を限定する。
+- `--tag` - 指定したタグ ID が割り当てられている商品に結果を限定する。
+- `--shipping_class` - 指定した配送クラス ID が割り当てられている商品に結果を限定します。
+- `--attribute` - 指定した属性の商品に結果を限定します。
+- `--attribute_term` - 結果セットを特定の属性ターム ID (割り当てられた属性が必要) を持つ商品に限定します。
+- `--tax_class` - 特定の税クラスを持つ商品に結果を限定します。
+- `--in_stock` - 結果セットを在庫のある商品または在庫切れの商品に限定します。
+- `--on_sale` - 結果をセール中の商品に限定する
+- `--min_price` - 結果セットを、最低価格に基づいている商品に限定する
+- `--max_price` - 結果セットを最高価格に基づく商品に制限する。
+- `--fields` - 特定のフィールドにレスポンスを制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -768,97 +766,97 @@ wp wc [command] --help
 
 #### wc product_variation create `<product_id>`
 
-- `--product_id` - Unique identifier for the variable product.
-- `--description` - Variation description.
-- `--sku` - Unique identifier.
-- `--regular_price` - Variation regular price.
-- `--sale_price` - Variation sale price.
-- `--date_on_sale_from` - Start date of sale price, in the site's timezone.
-- `--date_on_sale_from_gmt` - Start date of sale price, as GMT.
-- `--date_on_sale_to` - End date of sale price, in the site's timezone.
-- `--date_on_sale_to_gmt` - End date of sale price, in the site's timezone.
-- `--visible` - Define if the attribute is visible on the "Additional information" tab in the product's page.
-- `--virtual` - If the variation is virtual.
-- `--downloadable` - If the variation is downloadable.
-- `--downloads` - List of downloadable files.
-- `--download_limit` - Number of times downloadable files can be downloaded after purchase.
-- `--download_expiry` - Number of days until access to downloadable files expires.
-- `--tax_status` - Tax status.
-- `--tax_class` - Tax class.
-- `--manage_stock` - Stock management at variation level.
-- `--stock_quantity` - Stock quantity.
-- `--in_stock` - Controls whether or not the variation is listed as "in stock" or "out of stock" on the frontend.
-- `--backorders` - If managing stock, this controls if backorders are allowed.
-- `--weight` - Variation weight (lbs).
-- `--dimensions` - Variation dimensions.
-- `--shipping_class` - Shipping class slug.
-- `--image` - Variation image data.
-- `--attributes` - List of attributes.
-- `--menu_order` - Menu order, used to custom sort products.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--product_id` - 変数製品の一意な識別子です。
+- `--description` - バリエーションの説明。
+- `--sku` - 一意の識別子です。
+- `--regular_price` - バリエーションの通常価格です。
+- `--sale_price` - バリエーションのセール価格です。
+- `--date_on_sale_from` - セール価格の開始日 (サイトのタイムゾーン)。
+- `--date_on_sale_from_gmt` - 販売価格の開始日 (GMT) 。
+- `--date_on_sale_to` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--date_on_sale_to_gmt` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--visible` - 商品ページの[追加情報]タブで属性を表示するかどうかを定義します。
+- `--virtual` - バリエーションがバーチャルの場合。
+- `--downloadable` - バリエーションがダウンロード可能である場合。
+- `--downloads` - ダウンロード可能なファイルのリストです。
+- `--download_limit` - 購入後にダウンロード可能なファイルの回数。
+- `--download_expiry` - ダウンロード可能なファイルへのアクセス期限が切れるまでの日数。
+- `--tax_status` - タックスステータス。
+- `--tax_class` - タックスクラス。
+- `--manage_stock` - 変数レベルでの在庫管理。
+- `--stock_quantity` - 在庫量。
+- `--in_stock` - フロントエンドでバリエーションを「在庫あり」または「在庫切れ」として表示するかどうかを制御します。
+- `--backorders` - 在庫を管理する場合、バックオーダーを許可するかどうかを制御します。
+- `--weight` - バリエーションの重量（ポンド）です。
+- `--dimensions` - バリエーションの寸法です。
+- `--shipping_class` - 配送クラスのスラッグです。
+- バリエーション画像データ。
+- `--attributes` - 属性のリストです。
+- `--menu_order` - メニューの並び順。
+- メタデータ。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
-#### wc product_variation get `<product_id>` [id]
+#### wc product_variation get `<product_id>` [id].
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the variation.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--product_id` - 変数製品の一意識別子。
+- `--id` - バリエーションの一意識別子。
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc product_variation update `<product_id>` [id]
+#### wc product_variation update `<product_id>` [id].
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the variation.
-- `--description` - Variation description.
-- `--sku` - Unique identifier.
-- `--regular_price` - Variation regular price.
-- `--sale_price` - Variation sale price.
-- `--date_on_sale_from` - Start date of sale price, in the site's timezone.
-- `--date_on_sale_from_gmt` - Start date of sale price, as GMT.
-- `--date_on_sale_to` - End date of sale price, in the site's timezone.
-- `--date_on_sale_to_gmt` - End date of sale price, in the site's timezone.
-- `--visible` - Define if the attribute is visible on the "Additional information" tab in the product's page.
-- `--virtual` - If the variation is virtual.
-- `--downloadable` - If the variation is downloadable.
-- `--downloads` - List of downloadable files.
-- `--download_limit` - Number of times downloadable files can be downloaded after purchase.
-- `--download_expiry` - Number of days until access to downloadable files expires.
-- `--tax_status` - Tax status.
-- `--tax_class` - Tax class.
-- `--manage_stock` - Stock management at variation level.
-- `--stock_quantity` - Stock quantity.
-- `--in_stock` - Controls whether or not the variation is listed as "in stock" or "out of stock" on the frontend.
-- `--backorders` - If managing stock, this controls if backorders are allowed.
-- `--weight` - Variation weight (lbs).
-- `--dimensions` - Variation dimensions.
-- `--shipping_class` - Shipping class slug.
-- `--image` - Variation image data.
-- `--attributes` - List of attributes.
-- `--menu_order` - Menu order, used to custom sort products.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--product_id` - 変数製品の一意識別子。
+- `--id` - バリエーションの一意識別子です。
+- `--description` - バリエーションの説明。
+- `--sku` - 固有の識別子です。
+- `--regular_price` - バリエーションの通常価格です。
+- `--sale_price` - バリエーションのセール価格です。
+- `--date_on_sale_from` - セール価格の開始日 (サイトのタイムゾーン)。
+- `--date_on_sale_from_gmt` - 販売価格の開始日 (GMT) 。
+- `--date_on_sale_to` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--date_on_sale_to_gmt` - 販売価格の終了日 (サイトのタイムゾーン)。
+- `--visible` - 商品ページの[追加情報]タブで属性を表示するかどうかを定義します。
+- `--virtual` - バリエーションがバーチャルの場合。
+- `--downloadable` - バリエーションがダウンロード可能である場合。
+- `--downloads` - ダウンロード可能なファイルのリストです。
+- `--download_limit` - 購入後にダウンロード可能なファイルの回数。
+- `--download_expiry` - ダウンロード可能なファイルへのアクセス期限が切れるまでの日数。
+- `--tax_status` - タックスステータス。
+- `--tax_class` - タックスクラス。
+- `--manage_stock` - 変数レベルでの在庫管理。
+- `--stock_quantity` - 在庫量。
+- `--in_stock` - フロントエンドでバリエーションを「在庫あり」または「在庫切れ」として表示するかどうかを制御します。
+- `--backorders` - 在庫を管理する場合、バックオーダーを許可するかどうかを制御します。
+- `--weight` - バリエーションの重量（ポンド）です。
+- `--dimensions` - バリエーションの寸法です。
+- `--shipping_class` - 配送クラスのスラッグです。
+- バリエーション画像データ。
+- `--attributes` - 属性のリストです。
+- `--menu_order` - メニューの並び順。
+- メタデータ。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
-#### wc product_variation delete `<product_id>` [id]
+#### wc product_variation delete `<product_id>` [id].
 
-- `--product_id` - Unique identifier for the variable product.
-- `--id` - Unique identifier for the variation.
-- `--force` - Whether to bypass trash and force deletion.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--product_id` - 変数製品の一意識別子。
+- `--id` - バリエーションの一意な識別子。
+- `--force` - ゴミ箱をバイパスして強制的に削除するかどうか。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 ### WCセッティング
 
 #### wcの設定[id]を取得
 
-- `--group` - Settings group ID.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--group` - 設定グループID。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - 特定のフォーマットでレスポンスをレンダリングする。
 
 デフォルト：テーブル
 
@@ -866,19 +864,19 @@ wp wc [command] --help
 
 #### wc 設定更新 [id］
 
-- `--group` - Settings group ID.
-- `--id` - Unique identifier for the resource.
-- `--value` - Setting value.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--group` - 設定グループID。
+- `--id` - リソースの一意な識別子。
+- `--value` - 設定値。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### 発送方法
 
-#### wc 配送方法リスト
+#### wc 発送方法リスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -886,11 +884,11 @@ wp wc [command] --help
 
 #### wc shipping_method get [id].
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -900,9 +898,9 @@ wp wc [command] --help
 
 #### WC 出荷ゾーンリスト
 
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -910,16 +908,16 @@ wp wc [command] --help
 
 #### wc shipping_zone create
 
-- `--name` - Shipping zone name. (*Required*)
-- `--order` - Shipping zone order.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - 配送ゾーン名。(*必須*)
+- `--order` - 配送ゾーンの順番。
+- `--porcelain` - 操作が成功した場合に、idだけを出力する。
 
 #### wc shipping_zone get [id].
 
-- `--id` - Unique ID for the resource.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースのユニークID。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -927,25 +925,25 @@ wp wc [command] --help
 
 #### wc shipping_zone update [id].
 
-- `--id` - Unique ID for the resource.
-- `--name` - Shipping zone name.
-- `--order` - Shipping zone order.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの固有ID。
+- `--name` - 配送ゾーンの名前。
+- `--order` - 配送ゾーンの順番。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 #### wc shipping_zone delete [id].
 
-- `--id` - Unique ID for the resource.
-- `--force` - Whether to bypass trash and force deletion.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースのユニークID。
+- `--force` - ゴミ箱をバイパスして強制的に削除するかどうか。
+- `--porcelain` - 操作が成功した場合に ID だけを出力する。
 
 ### WC 出荷ゾーン・ロケーション
 
 #### wc 発送地リスト
 
-- `--id` - Unique ID for the resource.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースのユニークID。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -955,10 +953,10 @@ wp wc [command] --help
 
 #### wc shipping_zone_method リスト
 
-- `--zone_id` - Unique ID for the zone.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--zone_id` - ゾーンの固有ID。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -966,20 +964,20 @@ wp wc [command] --help
 
 #### wc shipping_zone_method create
 
-- `--zone_id` - Unique ID for the zone.
-- `--order` - Shipping method sort order.
-- `--enabled` - Shipping method enabled status.
-- `--settings` - Shipping method settings.
-- `--method_id` - Shipping method ID. (*Required*)
-- `--porcelain` - Output just the id when the operation is successful.
+- `--zone_id` - ゾーンの固有ID。
+- `--order` - 配送方法のソート順。
+- `--enabled` - 配送方法の有効状態。
+- `--settings` - 配送方法の設定。
+- `--method_id` - 配送方法のID。(*必須)
+- `--porcelain` - 操作が成功した場合に ID だけを出力します。
 
 #### wc shipping_zone_method get [id].
 
-- `--zone_id` - Unique ID for the zone.
-- `--instance_id` - Unique ID for the instance.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--zone_id` - ゾーンの固有ID。
+- `--instance_id` - インスタンスの一意なID。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個々のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -987,39 +985,39 @@ wp wc [command] --help
 
 #### wc shipping_zone_method 更新 [id].
 
-- `--zone_id` - Unique ID for the zone.
-- `--instance_id` - Unique ID for the instance.
-- `--order` - Shipping method sort order.
-- `--enabled` - Shipping method enabled status.
-- `--settings` - Shipping method settings.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--zone_id` - ゾーンの固有ID。
+- `--instance_id` - インスタンスのユニークID。
+- `--order` - 配送方法のソート順。
+- `--enabled` - 配送方法の有効状態。
+- `--settings` - 配送方法の設定。
+- `--porcelain` - 操作が成功した場合に、id だけを出力します。
 
 #### wc shipping_zone_method delete [id].
 
-- `--zone_id` - Unique ID for the zone.
-- `--instance_id` - Unique ID for the instance.
-- `--force` - Whether to bypass trash and force deletion.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--zone_id` - ゾーンの固有ID。
+- `--instance_id` - インスタンスの固有ID。
+- `--force` - ゴミ箱をバイパスして強制的に削除するかどうか。
+- `--porcelain` - 操作が成功した場合に ID だけを出力する。
 
 ### ショップクーポン
 
 #### WCショップクーポンリスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--after` - Limit response to resources published after a given ISO8601 compliant date.
-- `--before` - Limit response to resources published before a given ISO8601 compliant date.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--code` - Limit result set to resources with a specific code.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--after` - 指定した ISO8601 準拠の日付以降に公開されたリソースに限定する。
+- `--before` - 指定した ISO8601 準拠の日付より前に公開されたリソースにレスポンスを制限する。
+- `--exclude` - 結果セットが特定の ID を除外していることを確認する。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - オブジェクトの属性でコレクションをソートする
+- `--code` - 結果セットを、特定のコードを持つリソースに限定する
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールド。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1027,35 +1025,35 @@ wp wc [command] --help
 
 #### wc shop_coupon create
 
-- `--code` - Coupon code. (*Required*)
-- `--amount` - The amount of discount. Should always be numeric, even if setting a percentage.
-- `--discount_type` - Determines the type of discount that will be applied.
-- `--description` - Coupon description.
-- `--date_expires` - The date the coupon expires, in the site's timezone.
-- `--date_expires_gmt` - The date the coupon expires, as GMT.
-- `--individual_use` - If true, the coupon can only be used individually. Other applied coupons will be removed from the cart.
-- `--product_ids` - List of product IDs the coupon can be used on.
-- `--excluded_product_ids` - List of product IDs the coupon cannot be used on.
-- `--usage_limit` - How many times the coupon can be used in total.
-- `--usage_limit_per_user` - How many times the coupon can be used per customer.
-- `--limit_usage_to_x_items` - Max number of items in the cart the coupon can be applied to.
-- `--free_shipping` - If true and if the free shipping method requires a coupon, this coupon will enable free shipping.
-- `--product_categories` - List of category IDs the coupon applies to.
-- `--excluded_product_categories` - List of category IDs the coupon does not apply to.
-- `--exclude_sale_items` - If true, this coupon will not be applied to items that have sale prices.
-- `--minimum_amount` - Minimum order amount that needs to be in the cart before coupon applies.
-- `--maximum_amount` - Maximum order amount allowed when using the coupon.
-- `--email_restrictions` - List of email addresses that can use this coupon.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--code` - クーポンコード。(*必須*)
+- `--amount` - 割引額。パーセンテージを設定する場合でも、常に数値でなければなりません。
+- `--discount_type` - 適用される割引の種類を指定します。
+- `--description` - クーポンの説明。
+- `--date_expires` - クーポンの有効期限。
+- `--date_expires_gmt` - クーポンの有効期限日 (グリニッジ標準時)。
+- `--individual_use` - trueの場合、クーポンは個別にのみ使用できます。適用された他のクーポンはカートから削除されます。
+- `--product_ids` - クーポンを使用できる商品IDのリストです。
+- `--excluded_product_ids` - クーポンを使用できない商品IDのリストです。
+- `--usage_limit` - クーポンの合計使用可能回数。
+- `--usage_limit_per_user` - 顧客一人あたりの使用可能回数。
+- `--limit_usage_to_x_items` - クーポンを適用できるカートの最大アイテム数。
+- `--free_shipping` - trueの場合、送料無料クーポンが必要な場合、このクーポンは送料無料を有効にします。
+- `--product_categories` - クーポンが適用されるカテゴリIDのリストです。
+- `--excluded_product_categories` - クーポンが適用されないカテゴリーIDのリスト。
+- `--exclude_sale_items` - trueの場合、このクーポンはセール価格の商品には適用されません。
+- `--minimum_amount` - クーポンが適用される前にカートに入れる必要のある最低注文金額。
+- `--maximum_amount` - クーポンを使用できる最大注文金額です。
+- `--email_restrictions` - このクーポンを使用できるメールアドレスのリスト。
+- `--meta_data` - メタデータ。
+- `--porcelain` - 操作が成功した場合に、idだけを出力する。
 
 #### wc shop_coupon get [id].
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1063,59 +1061,59 @@ wp wc [command] --help
 
 #### wc shop_coupon update [id].
 
-- `--id` - Unique identifier for the resource.
-- `--code` - Coupon code.
-- `--amount` - The amount of discount. Should always be numeric, even if setting a percentage.
-- `--discount_type` - Determines the type of discount that will be applied.
-- `--description` - Coupon description.
-- `--date_expires` - The date the coupon expires, in the site's timezone.
-- `--date_expires_gmt` - The date the coupon expires, as GMT.
-- `--individual_use` - If true, the coupon can only be used individually. Other applied coupons will be removed from the cart.
-- `--product_ids` - List of product IDs the coupon can be used on.
-- `--excluded_product_ids` - List of product IDs the coupon cannot be used on.
-- `--usage_limit` - How many times the coupon can be used in total.
-- `--usage_limit_per_user` - How many times the coupon can be used per customer.
-- `--limit_usage_to_x_items` - Max number of items in the cart the coupon can be applied to.
-- `--free_shipping` - If true and if the free shipping method requires a coupon, this coupon will enable free shipping.
-- `--product_categories` - List of category IDs the coupon applies to.
-- `--excluded_product_categories` - List of category IDs the coupon does not apply to.
-- `--exclude_sale_items` - If true, this coupon will not be applied to items that have sale prices.
-- `--minimum_amount` - Minimum order amount that needs to be in the cart before coupon applies.
-- `--maximum_amount` - Maximum order amount allowed when using the coupon.
-- `--email_restrictions` - List of email addresses that can use this coupon.
-- `--meta_data` - Meta data.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--code` - クーポンコード。
+- `--amount` - 割引額。パーセンテージを設定する場合でも、常に数値で指定する必要があります。
+- `--discount_type` - 適用される割引の種類を指定します。
+- `--description` - クーポンの説明。
+- `--date_expires` - クーポンの有効期限。
+- `--date_expires_gmt` - クーポンの有効期限日 (グリニッジ標準時)。
+- `--individual_use` - trueの場合、クーポンは個別にのみ使用できます。適用された他のクーポンはカートから削除されます。
+- `--product_ids` - クーポンを使用できる商品IDのリストです。
+- `--excluded_product_ids` - クーポンを使用できない商品IDのリストです。
+- `--usage_limit` - クーポンの合計使用可能回数。
+- `--usage_limit_per_user` - 顧客一人あたりの使用可能回数。
+- `--limit_usage_to_x_items` - クーポンを適用できるカートの最大アイテム数。
+- `--free_shipping` - trueの場合、また送料無料クーポンが必要な場合、このクーポンは送料無料を有効にします。
+- `--product_categories` - クーポンが適用されるカテゴリーIDのリストです。
+- `--excluded_product_categories` - クーポンが適用されないカテゴリーIDのリスト。
+- `--exclude_sale_items` - trueの場合、このクーポンはセール価格の商品には適用されません。
+- `--minimum_amount` - クーポンが適用される前にカートに入れる必要のある最低注文金額。
+- `--maximum_amount` - クーポンを使用できる最大注文金額です。
+- `--email_restrictions` - このクーポンを使用できるメールアドレスのリスト。
+- `--meta_data` - メタデータ。
+- `--porcelain` - 操作が成功した場合に、idだけを出力する。
 
 #### wc shop_coupon delete [id].
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Whether to bypass trash and force deletion.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - ゴミ箱をバイパスして強制的に削除するかどうか。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc shop_order
 
 #### wc shop_order list
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--after` - Limit response to resources published after a given ISO8601 compliant date.
-- `--before` - Limit response to resources published before a given ISO8601 compliant date.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--parent` - Limit result set to those of particular parent IDs.
-- `--parent_exclude` - Limit result set to all items except those of a particular parent ID.
-- `--status` - Limit result set to orders assigned a specific status.
-- `--customer` - Limit result set to orders assigned a specific customer.
-- `--product` - Limit result set to orders assigned a specific product.
-- `--dp` - Number of decimal points to use in each resource.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--after` - 指定した ISO8601 準拠の日付以降に公開されたリソースに限定する。
+- `--before` - 指定した ISO8601 準拠の日付より前に公開されたリソースにレスポンスを制限する。
+- `--exclude` - 結果セットが特定の ID を除外していることを確認する。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - オブジェクトの属性でコレクションをソートする
+- `--parent` - 結果セットを特定の親 ID のものに制限する
+- `--parent_exclude` - 結果セットを、特定の親 ID 以外のすべてのアイテムに制限する。
+- `--status` - 結果セットを特定のステータスが割り当てられた注文に限定します。
+- `--customer` - 結果セットを特定の顧客に割り当てられた注文に制限します。
+- `--product` - 特定の商品が割り当てられた注文に結果を限定します。
+- `--dp` - 各リソースで使用する小数点の数。
+- `--fields` - 応答を特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1123,31 +1121,31 @@ wp wc [command] --help
 
 #### wc shop_order create
 
-- `--parent_id` - Parent order ID.
-- `--status` - Order status.
-- `--currency` - Currency the order was created with, in ISO format.
-- `--customer_id` - User ID who owns the order. 0 for guests.
-- `--customer_note` - Note left by customer during checkout.
-- `--billing` - Billing address.
-- `--shipping` - Shipping address.
-- `--payment_method` - Payment method ID.
-- `--payment_method_title` - Payment method title.
-- `--transaction_id` - Unique transaction ID.
-- `--meta_data` - Meta data.
-- `--line_items` - Line items data.
-- `--shipping_lines` - Shipping lines data.
-- `--fee_lines` - Fee lines data.
-- `--coupon_lines` - Coupons line data.
-- `--set_paid` - Define if the order is paid. It will set the status to processing and reduce stock items.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--parent_id` - 親注文ID。
+- `--status` - 注文ステータス。
+- `--currency` - ISOフォーマットで、注文が作成された通貨。
+- `--customer_id` - オーダーを所有するユーザーID。ゲストの場合は0。
+- `--customer_note` - チェックアウト時に顧客が残したメモ。
+- `--billing` - 請求先住所。
+- `--shipping` - 配送先住所。
+- `--payment_method` - 支払い方法ID。
+- `--payment_method_title` - 支払い方法のタイトル。
+- `--transaction_id` - 一意のトランザクション ID。
+- `--meta_data` - メタデータ。
+- `--line_items` - 行項目データ。
+- `--shipping_lines` - 出荷行データ。
+- `--fee_lines` - 料金行データ。
+- `--coupon_lines` - クーポン行データ。
+- `--set_paid` - 注文が支払い済みかどうかを定義します。ステータスを処理中に設定し、在庫を減らします。
+- `--porcelain` - 操作が成功した場合に、id だけを出力します。
 
 #### wc shop_order get [id]
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1155,53 +1153,53 @@ wp wc [command] --help
 
 #### wc shop_order update [id].
 
-- `--id` - Unique identifier for the resource.
-- `--parent_id` - Parent order ID.
-- `--status` - Order status.
-- `--currency` - Currency the order was created with, in ISO format.
-- `--customer_id` - User ID who owns the order. 0 for guests.
-- `--customer_note` - Note left by customer during checkout.
-- `--billing` - Billing address.
-- `--shipping` - Shipping address.
-- `--payment_method` - Payment method ID.
-- `--payment_method_title` - Payment method title.
-- `--transaction_id` - Unique transaction ID.
-- `--meta_data` - Meta data.
-- `--line_items` - Line items data.
-- `--shipping_lines` - Shipping lines data.
-- `--fee_lines` - Fee lines data.
-- `--coupon_lines` - Coupons line data.
-- `--set_paid` - Define if the order is paid. It will set the status to processing and reduce stock items.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--parent_id` - 親オーダーID。
+- `--status` - オーダーステータス。
+- `--currency` - ISO フォーマットで、オーダーが作成された通貨。
+- `--customer_id` - オーダーを所有するユーザーID。ゲストの場合は0。
+- `--customer_note` - チェックアウト時に顧客が残したメモ。
+- `--billing` - 請求先住所。
+- `--shipping` - 配送先住所。
+- `--payment_method` - 支払い方法ID。
+- `--payment_method_title` - 支払い方法のタイトル。
+- `--transaction_id` - 一意のトランザクション ID。
+- `--meta_data` - メタデータ。
+- `--line_items` - 行項目データ。
+- `--shipping_lines` - 出荷行データ。
+- `--fee_lines` - 料金行データ。
+- `--coupon_lines` - クーポン行データ。
+- `--set_paid` - 注文が支払い済みかどうかを定義します。ステータスを処理中に設定し、在庫アイテムを減らします。
+- `--porcelain` - 操作が成功した場合に、id だけを出力します。
 
 #### wc shop_order delete [id]
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Whether to bypass trash and force deletion.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - ゴミ箱をバイパスして強制的に削除するかどうか。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc shop_order_refund
 
-#### wc shop_order_refund list `<order_id>`
+#### wc shop_order_refundリスト `<order_id>`
 
-- `--order_id` - The order ID.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--after` - Limit response to resources published after a given ISO8601 compliant date.
-- `--before` - Limit response to resources published before a given ISO8601 compliant date.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--parent` - Limit result set to those of particular parent IDs.
-- `--parent_exclude` - Limit result set to all items except those of a particular parent ID.
-- `--dp` - Number of decimal points to use in each resource.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--order_id` - オーダーID。
+- `--context` - リクエストが行われたスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--after` - 指定した ISO8601 準拠の日付以降に公開されたリソースに限定する。
+- `--before` - 指定した ISO8601 準拠の日付より前に公開されたリソースにレスポンスを制限する。
+- `--exclude` - 結果セットが特定の ID を除外していることを確認する。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - オブジェクトの属性でコレクションをソートする
+- `--parent` - 結果セットを特定の親 ID のものに限定する
+- `--parent_exclude` - 結果セットを、特定の親 ID 以外のすべてのアイテムに制限する。
+- `--dp` - 各リソースで使用する小数点の数。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1209,52 +1207,50 @@ wp wc [command] --help
 
 #### wc shop_order_refund create `<order_id>`
 
-- `--order_id` - The order ID.
-- `--amount` - Refund amount.
-- `--reason` - Reason for refund.
-- `--refunded_by` - User ID of user who created the refund.
-- `--meta_data` - Meta data.
-- `--line_items` - Line items data.
-- `--api_refund` - When true, the payment gateway API is used to generate the refund.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--order_id` - 注文ID。
+- `--amount` - 返金額。
+- `--reason` - 返金の理由。
+- `--refunded_by` - 払い戻しを行ったユーザーのユーザーID。
+- `--meta_data` - メタデータ。
+- `--line_items` - 行項目データ。
+- `--api_refund` - trueの場合、ペイメントゲートウェイAPIが返金の生成に使用されます。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
-#### wc shop_order_refund get `<order_id>` [id]
+#### wc shop_order_refund get `<order_id>` [id].
 
-- `--order_id` - The order ID.
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--order_id` - オーダーID。
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
 オプション：テーブル、json、csv、ids、yaml、カウント、ヘッダー、ボディ、エンベロープ
 
-#### wc shop_order_refund delete `<order_id>` [id]
+#### wc shop_order_refund delete `<order_id>` [id].
 
-- `--order_id` - The order ID.
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
-
-### wc tax
+- `--order_id` - オーダーID。
+- `--id` - リソースの一意な識別子。
+- `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
+- `--porcelain` - 操作が成功した場合に、id だけを出力する。
 
 #### WCタックスリスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific IDs.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--class` - Sort by tax class.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--exclude` - 結果セットに特定の ID が含まれないようにする。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性の昇順あるいは降順を指定する。
+- `--orderby` - オブジェクトの属性でコレクションをソートする。
+- `--class` - タックスクラスでソートする
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する
+- `--format` - レスポンスを特定の形式でレンダリングします。
 
 デフォルト：テーブル
 
@@ -1262,26 +1258,26 @@ wp wc [command] --help
 
 #### WCタックスクリエイト
 
-- `--country` - Country ISO 3166 code.
-- `--state` - State code.
-- `--postcode` - Postcode / ZIP.
-- `--city` - City name.
-- `--rate` - Tax rate.
-- `--name` - Tax rate name.
-- `--priority` - Tax priority.
-- `--compound` - Whether or not this is a compound rate.
-- `--shipping` - Whether or not this tax rate also gets applied to shipping.
-- `--order` - Indicates the order that will appear in queries.
-- `--class` - Tax class.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--country` - 国の ISO 3166 コード。
+- `--state` - 都道府県コード。
+- `--postcode` - 郵便番号 / ZIP。
+- `--city` - 都市名。
+- `--rate` - 税率。
+- `--name` - 税率名。
+- `--priority` - 税金の優先順位。
+- `--compound` - 複利税率であるかどうか。
+- `--shipping` - この税率が配送にも適用されるかどうか。
+- `--order` - クエリで表示される順序を示します。
+- `--class` - 税クラス。
+- `--porcelain` - 操作が成功した場合に id だけを出力します。
 
 #### wc tax get [id]
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1289,34 +1285,34 @@ wp wc [command] --help
 
 #### WC税の更新 [ID］
 
-- `--id` - Unique identifier for the resource.
-- `--country` - Country ISO 3166 code.
-- `--state` - State code.
-- `--postcode` - Postcode / ZIP.
-- `--city` - City name.
-- `--rate` - Tax rate.
-- `--name` - Tax rate name.
-- `--priority` - Tax priority.
-- `--compound` - Whether or not this is a compound rate.
-- `--shipping` - Whether or not this tax rate also gets applied to shipping.
-- `--order` - Indicates the order that will appear in queries.
-- `--class` - Tax class.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--country` - 国の ISO 3166 コード。
+- `--state` - 州コード。
+- `--postcode` - 郵便番号 / ZIP。
+- `--city` - 都市名。
+- `--rate` - 税率。
+- `--name` - 税率名。
+- `--priority` - 税金の優先順位。
+- `--compound` - 複利税率であるかどうか。
+- `--shipping` - この税率が配送にも適用されるかどうか。
+- `--order` - クエリで表示される順番を指定します。
+- `--class` - 税クラス。
+- `--porcelain` - 操作が成功した場合に id だけを出力します。
 
 #### wc tax delete [id]
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc tax_class
 
 #### wc tax_classリスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得する。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1324,34 +1320,34 @@ wp wc [command] --help
 
 #### wc tax_class create
 
-- `--name` - Tax class name. (*Required*)
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - タックスクラス名。(*必須*)
+- `--porcelain` - 操作が成功した場合に、idだけを出力する。
 
 #### wc tax_class delete [id].
 
-- `--slug` - Unique slug for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--slug` - リソースのユニークなスラッグ。
+- `--force` - リソースがゴミ箱をサポートしていないため、true にする必要があります。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc ウェブフック
 
 #### wc ウェブフックリスト
 
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--page` - Current page of the collection.
-- `--per_page` - Maximum number of items to be returned in result set. Defaults to 100 items.
-- `--search` - Limit results to those matching a string.
-- `--after` - Limit response to resources published after a given ISO8601 compliant date.
-- `--before` - Limit response to resources published before a given ISO8601 compliant date.
-- `--exclude` - Ensure result set excludes specific IDs.
-- `--include` - Limit result set to specific ids.
-- `--offset` - Offset the result set by a specific number of items.
-- `--order` - Order sort attribute ascending or descending.
-- `--orderby` - Sort collection by object attribute.
-- `--status` - Limit result set to webhooks assigned a specific status.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--context` - リクエストのスコープ。
+- `--page` - コレクションの現在のページ。
+- `--per_page` - 結果セットに返されるアイテムの最大数。デフォルトは 100 アイテム。
+- `--search` - 文字列にマッチする結果に制限する。
+- `--after` - 指定した ISO8601 準拠の日付以降に公開されたリソースに限定する。
+- `--before` - 指定した ISO8601 準拠の日付より前に公開されたリソースにレスポンスを制限する。
+- `--exclude` - 結果セットが特定の ID を除外していることを確認する。
+- `--include` - 結果セットを特定の ID に制限する。
+- `--offset` - 結果セットを特定のアイテム数だけオフセットする。
+- `--order` - ソート属性を昇順あるいは降順に並べる。
+- `--orderby` - オブジェクトの属性でコレクションをソートする
+- `--status` - 指定したステータスが割り当てられているウェブフックに結果セットを限定する
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個々のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1359,20 +1355,20 @@ wp wc [command] --help
 
 #### wc ウェブフック作成
 
-- `--name` - A friendly name for the webhook.
-- `--status` - Webhook status.
-- `--topic` - Webhook topic. (*Required*)
-- `--secret` - Webhook secret. (*Required*)
-- `--delivery_url` - Webhook delivery URL. (*Required*)
-- `--porcelain` - Output just the id when the operation is successful.
+- `--name` - ウェブフックのフレンドリーな名前。
+- `--status` - ウェブフックのステータス。
+- `--topic` - ウェブフックのトピック。(*必須*)
+- `--secret` - ウェブフックの秘密。(*必須*)
+- `--delivery_url` - Webhook の配信 URL。(*必須*)
+- `--porcelain` - 操作が成功したら、id だけを出力する。
 
 #### wc ウェブフック取得 [id］
 
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。レスポンスに含まれるフィールドを決定します。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1380,28 +1376,28 @@ wp wc [command] --help
 
 #### wc ウェブフック更新 [id］
 
-- `--id` - Unique identifier for the resource.
-- `--name` - A friendly name for the webhook.
-- `--status` - Webhook status.
-- `--topic` - Webhook topic.
-- `--secret` - Secret key used to generate a hash of the delivered webhook and provided in the request headers. This will default is a MD5 hash from the current user's ID|username if not provided.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--name` - ウェブフックのフレンドリーな名前。
+- `--status` - ウェブフックのステータス。
+- `--topic` - ウェブフックのトピック。
+- `--secret` - リクエストヘッダで提供される、配信された Webhook のハッシュを生成するために使用される秘密鍵。リクエストヘッダで提供されます。 提供されない場合、デフォルトでは現在のユーザーの ID| ユーザー名から MD5 ハッシュが生成されます。
+- `--porcelain` - 操作が成功したときに id だけを出力する。
 
 #### wc ウェブフック削除 [id］
 
-- `--id` - Unique identifier for the resource.
-- `--force` - Required to be true, as resource does not support trashing.
-- `--porcelain` - Output just the id when the operation is successful.
+- `--id` - リソースの一意な識別子。
+- `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
+- `--porcelain` - 操作が成功した場合に id だけを出力する。
 
 ### wc webhook_delivery
 
 #### wc ウェブフック配信リスト
 
-- `--webhook_id` - Unique identifier for the webhook.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--webhook_id` - ウェブフックの一意な識別子。
+- `--context` - リクエストが行われる範囲。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 
@@ -1409,12 +1405,12 @@ wp wc [command] --help
 
 #### wc webhook_delivery get [id].
 
-- `--webhook_id` - Unique identifier for the webhook.
-- `--id` - Unique identifier for the resource.
-- `--context` - Scope under which the request is made; determines fields present in response.
-- `--fields` - Limit response to specific fields. Defaults to all fields.
-- `--field` - Get the value of an individual field.
-- `--format` - Render response in a particular format.
+- `--webhook_id` - ウェブフックの一意な識別子。
+- `--id` - リソースの一意な識別子。
+- `--context` - リクエストのスコープ。
+- `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
+- `--field` - 個別のフィールドの値を取得します。
+- `--format` - レスポンスを特定のフォーマットでレンダリングする。
 
 デフォルト：テーブル
 

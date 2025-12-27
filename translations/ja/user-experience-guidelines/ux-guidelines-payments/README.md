@@ -6,7 +6,7 @@ post_title: Payments guidelines
 
 # Payments Guidelines
 
-When building payments extensions, you should ensure you follow the [WooCommerce Extension Guidelines](https://developer.woocommerce.com/docs/extensions/ux-guidelines-extensions/).
+ペイメントエクステンションを構築する際は、[WooCommerceエクステンションガイドライン](https://developer.woocommerce.com/docs/extensions/ux-guidelines-extensions/) に従ってください。
 
 ペイメントプラグインには、ペイメントプロセッサーやゲートウェイ、ウォレット、Buy Now Pay Later、暗号など、さまざまな種類があります。
 
@@ -15,6 +15,6 @@ When building payments extensions, you should ensure you follow the [WooCommerce
 加盟店は以下の方法でペイメントプラグインを発見することができる：
 
 - WordPressプラグインからの直接インストール。
-- マーケットプレイスでWooが公開している決済サービスのリストを通して。
+- Wooのマーケットプレイスで公開されている決済サービスのリストを通して。
 - 管理画面のオンボーディングタスクと支払い設定。ペイメントプラグインをWoo管理画面のペイメントゲートウェイのリストに追加するには、このガイドラインに記載されている基準を満たしている必要があります。
 

@@ -19,14 +19,14 @@ sidebar_position: 1
 
 - **コアのインターフェイスを変更しないでください。Wooの管理画面でコンテナの形を変えて、あなたのブランドを表現しないでください。
 
-- **体験**に焦点を当てる。顧客が製品をインストールした後は、体験に主眼を置くべきです。物事をシンプルにし、セットアップが成功するようにユーザーを導いてください。ブランディング、自己宣伝、大きなバナーなど、邪魔なもので体験を複雑にしたり、ユーザーの気を散らしたりしないでください。
+- **体験**に焦点を当てる。顧客が製品をインストールした後は、体験に主眼を置くべきです。物事をシンプルに保ち、セットアップが成功するようにユーザーを導いてください。ブランディング、自己宣伝、大きなバナーなど、邪魔なもので体験を複雑にしたり、ユーザーの気を散らしたりしないでください。
 
 - **コピーは短くシンプルに。インターフェイス内の指示は120-140文字に制限してください。それ以上の長さのものは製品ドキュメントに記載すること。
 
 - **ユーザーとのコミュニケーションでは一貫した口調を保つこと。エクステンション全体で同じコミュニケーションスタイルと用語を維持し、略語や頭字語は避ける。
 
-    - In extensions:
-        - Use sentences for descriptions, feedback, and headlines. Avoid all-caps text.
-        - Use standard punctuation and avoid excessive exclamation marks.
-        - Use American English.
-        - For more, read our [Grammar, Punctuation, and Capitalization guide](https://woocommerce.com/document/grammar-punctuation-style-guide/).
+    - エクステンションで
+        - 説明、フィードバック、見出しには文章を使いましょう。全角文字は避ける。
+        - 標準的な句読点を使用し、過度の感嘆符は避ける。
+        - アメリカ英語を使いましょう。
+        - 詳しくは[文法、句読点、大文字小文字ガイド](https://woocommerce.com/document/grammar-punctuation-style-guide/)をお読みください。

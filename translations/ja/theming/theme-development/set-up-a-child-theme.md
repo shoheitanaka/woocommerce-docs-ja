@@ -2,7 +2,8 @@
 post_title: How to set up and use a child theme
 sidebar_label: Set up and use a child theme
 ---
-# 子テーマの設定と使い方
+
+# How to set up and use a child theme
 
 **注意:** このドキュメントはクラシックな子テーマの作成と使用を目的としています。子ブロックテーマの作成とクラシックテーマとブロックテーマの違いを理解するための包括的なガイドについては、[WooCommerce ブロックテーマ開発](../block-theme-development/theming-woo-blocks.md) および [WordPress ブロック子テーマ開発](https://learn.wordpress.org/lesson-plan/create-a-basic-child-theme-for-block-themes/) を参照してください。
 
@@ -55,7 +56,7 @@ Template: storefront
 /* --------------- Theme customization starts here ----------------- */
 ```
 
-**注意:** Storefrontでは、親テーマの`functions.php`ファイルや`@import`ファイルを子テーマの`style.css`ファイルにPHPでエンキューする必要はありません。
+**注:** Storefrontでは、親テーマの`functions.php`ファイルや`@import`ファイルを子テーマの`style.css`ファイルにPHPでエンキューする必要はありません。
 
 Storefrontでは、子テーマを作成するのに必要なのは空白の`functions.php`ファイルと`style.css`ファイルだけです。
 

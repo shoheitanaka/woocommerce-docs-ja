@@ -6,50 +6,50 @@ sidebar_position: 3
 
 # Backporting in WooCommerce
 
-Backporting is the process of applying changes from `trunk` to a release branch. This ensures critical fixes reach customers in upcoming releases.  Note that these flows apply only to UPCOMING RELEASES  (not patches to already-released versions).
+バックポートは、`trunk`からの変更をリリースブランチに適用するプロセスです。これにより、クリティカルな修正が次のリリースで確実に顧客に届くようになります。  これらのフローはUPCOMING RELEASESにのみ適用されることに注意してください（すでにリリースされたバージョンへのパッチは適用されません）。
 
-## Release Branch Lifecycle
+## リリースブランチのライフサイクル
 
-When a release branch is created, it's copied from `trunk` at the time of feature freeze. After creation:
+リリースブランチが作成されると、機能フリーズ時に`trunk`からコピーされます。作成後
 
-- The release branch no longer receives new feature updates
-- Only critical changes are allowed
-- Because we do not merge the release branches back into `trunk`, any fixes in a release branch must also be applied to `trunk`.
+- リリースブランチは新機能のアップデートを受けなくなりました。
+- クリティカルな変更のみが許可されます。
+- リリースブランチは `trunk` にマージされないので、リリースブランチの修正は `trunk` にも適用されなければなりません。
 
-## Qualifying Changes for Backporting
+## バックポートの対象となる変更
 
-変更がバックポートの対象となるのは、変更がバックポートの対象となる場合のみである：
+変更がバックポートの対象となるのは、その変更がバックポートの対象となる場合のみである：
 
 - リリースに影響する**バグ修正**。
 - WooCommerceの機能に影響を与える**パフォーマンスの改善**。
 - ビジネスゴールに影響する**タイムセンシティブ機能**。
 - WooCommerceのために**契約上必要な機能**。
 
-## Backporting Process for Contributors
+## 投稿者のためのバックポート・プロセス
 
-### Standard Workflow: Trunk to Release Branch
+### 標準的なワークフロー：トランクからリリースブランチへ
 
 **使用する場合：** ほとんどのバックポートシナリオ
 
-1. **Target `trunk`** as your base branch
-2. **Add milestone** matching your target release (e.g., `9.8.0`)
-3. **Get PR reviewed and merged** into `trunk`
-4. **Automated workflow** creates a cherry-pick PR for the release branch
-5. **The original contributor or merger** reviews and merges the backport PR
+1. **INLINE_CODE_0__**をベースブランチとする。
+2. **ターゲット・リリースに一致するマイルストーン** を追加します (例: `9.8.0`)
+3. **PRをレビューしてもらい、`trunk`にマージする。
+4. **自動化されたワークフロー** で、リリースブランチ用のチェリーピック PR が作成されます。
+5. **元の貢献者またはマージ担当者** がバックポートPRをレビューし、マージする。
 
-&gt; 注意:** リリース期限間近の緊急修正については、リリースリーダーに直接連絡してください。
+> 注意:** リリース期限間近の緊急修正については、リリースリーダーに直接連絡してください。
 
-### Alternative Workflow: Release Branch to Trunk
+### 代替ワークフロー：ブランチをトランクにリリースする
 
 **使用する場合：** リリース・ブランチを直接対象としなければならないクリティカルな修正
 
-1. **Target the release branch** as your base branch
-2. **Add label** `cherry pick to trunk` if the change should also go to `trunk`
-3. **Get PR reviewed and merged** into the release branch
-4. **Automated workflow** creates a forward-port PR for `trunk`
-5. **Merge the trunk PR** as soon as possible to avoid delays
+1. **リリースブランチ**をベースブランチとする。
+2. **この変更が `trunk` にも適用される場合は、`cherry pick to trunk` のラベルを追加します。
+3. **PRのレビューを受け、リリースブランチにマージする
+4. **自動ワークフロー** が `trunk` のフォワードポート PR を作成します。
+5. **遅れを避けるため、できるだけ早くトランクPR**をマージする
 
-## Important Notes
+## 重要なお知らせ
 
 - 変更はバックポート資格を満たしていなければならない
 - 凍結リリースでは、重要なバグ修正のみを受け入れること
