@@ -2,9 +2,8 @@
 post_title: Naming conventions
 sidebar_label: Naming conventions
 ---
-# 命名規則
 
-## PHP
+# Naming conventions
 
 WooCommerceコアは一般的に[WordPress PHP命名規則](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#naming-conventions)に従います。 
 
@@ -53,8 +52,6 @@ WooCommerceコアは一般的に[WordPress PHP命名規則](https://make.wordpre
 
 - `woocommerce_after_checkout_validation`
 - `woocommerce_get_formatted_order_total`。
-
-## JS
 
 WooCommerceコアは[WordPress JS命名規則](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/#naming-conventions)に従っています。
 

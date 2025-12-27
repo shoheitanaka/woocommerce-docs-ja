@@ -2,7 +2,8 @@
 post_title: How to manage WooCommerce Data Stores
 sidebar_label: Manage data stores
 ---
-# WooCommerce データストアの管理方法
+
+# How to manage WooCommerce Data Stores
 
 ## はじめに
 

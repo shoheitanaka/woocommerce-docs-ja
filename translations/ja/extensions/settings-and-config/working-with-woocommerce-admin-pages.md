@@ -2,7 +2,8 @@
 post_title: Integrating admin pages into WooCommerce extensions
 sidebar_label: Integrating admin pages
 ---
-# WooCommerceエクステンションに管理ページを統合する
+
+# Integrating admin pages into WooCommerce extensions
 
 ## はじめに
 

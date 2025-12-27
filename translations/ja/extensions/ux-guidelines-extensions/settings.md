@@ -2,8 +2,6 @@
 post_title: Settings
 sidebar_label: Settings
 ---
-# Settings
-
 **製品の全体的な機能にとって重要な設定オプションのみを含める。
 
 **加盟店に設定を求めるのではなく、可能な限り**スマートなデフォルトを使用すること。

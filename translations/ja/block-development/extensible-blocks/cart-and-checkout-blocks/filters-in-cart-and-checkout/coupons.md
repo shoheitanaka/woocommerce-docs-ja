@@ -2,8 +2,6 @@
 post_title: Coupons
 sidebar_label: Coupons
 ---
-# Coupons
-
 以下のクーポンフィルターが利用可能です：
 
 -   `coupons`

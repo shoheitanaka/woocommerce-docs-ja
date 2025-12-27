@@ -1,7 +1,8 @@
 ---
 post_title: HPOS extension recipe book
 ---
-# HPOS拡張レシピブック
+
+# HPOS extension recipe book
 
 ## 高性能オーダーストレージ（HPOS）とは？
 

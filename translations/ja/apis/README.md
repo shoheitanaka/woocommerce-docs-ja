@@ -2,7 +2,8 @@
 post_title: Getting Started with WooCommerce APIs
 sidebar_label: Getting started
 ---
-# WooCommerce APIを始めよう
+
+# Getting Started with WooCommerce APIs
 
 WooCommerceは、WooCommerceストアのデータとやり取りするためのプログラムAPIを多数提供しています。
 

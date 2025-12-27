@@ -2,7 +2,8 @@
 post_title: How to Add Additional Fields
 sidebar_label: How to add additional fields in checkout
 ---
-# WooCommerceチェックアウトブロックに追加フィールドを追加する方法
+
+# How to Add Additional Fields to the WooCommerce Checkout Block
 
 この機能にはWooCommerce 8.9.0以上が必要です。
 
@@ -44,8 +45,6 @@ add_action( 'woocommerce_init', function() {
 
 ここのフィールドはチェックアウトフォームの上部にEメールフィールドと並んで表示されます。ここに保存されたデータはお客様のアカウントの一部となり、お客様の「アカウント詳細」セクションに表示されます。
 
-Example:
-
 ```php
 woocommerce_register_additional_checkout_field(
     array(
@@ -63,8 +62,6 @@ woocommerce_register_additional_checkout_field(
 
 これらのフィールドは、配送先と請求先の両方のフォームに表示されます。これらのフィールドは、顧客と注文の両方に保存されるため、リピーターが再入力する必要はありません。
 
-Example:
-
 ```php
 woocommerce_register_additional_checkout_field(
     array(
@@ -81,8 +78,6 @@ woocommerce_register_additional_checkout_field(
 ### 注文情報 (`order`)
 
 この場所のフィールドは、別の「注文情報」ブロックに表示され、顧客のアカウントではなく、注文にのみ保存されます。将来の購入のために覚えておく必要のない注文固有の詳細には最適です。
-
-Example:
 
 ```php
 woocommerce_register_additional_checkout_field(

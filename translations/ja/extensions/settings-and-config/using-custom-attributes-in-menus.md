@@ -2,7 +2,8 @@
 post_title: Managing custom attributes in WooCommerce menus and taxonomy archives
 sidebar_label: Custom attributes in menus
 ---
-# WooCommerceのメニューとタクソノミーアーカイブでカスタム属性を管理する
+
+# Managing custom attributes in WooCommerce menus and taxonomy archives
 
 レイヤーナビに使用できる属性はカスタムタクソノミーであり、メニューに表示したり、属性別に商品を表示したりすることができます。これにはいくつかの作業が必要で、アーカイブを有効にする必要があります。
 

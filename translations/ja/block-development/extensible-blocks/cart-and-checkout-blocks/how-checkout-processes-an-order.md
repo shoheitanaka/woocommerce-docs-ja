@@ -3,7 +3,8 @@ post_title: How the checkout block processes an order
 sidebar_label: Processing an order
 sidebar_position: 1
 ---
-# チェックアウトブロックがどのように注文を処理するか
+
+# How the checkout block processes an order
 
 このドキュメントでは、チェックアウトフローの内部構造について説明します。具体的には、ユーザーが "注文する "ボタンを押した後に何が起こるかについてです。
 
@@ -47,8 +48,6 @@ const { onPaymentSetup } = usePaymentEventsContext();
 ## チェックアウト・プロバイダー
 
 [チェックアウト・プロバイダー](https://github.com/woocommerce/woocommerce-blocks/blob/trunk/assets/js/base/context/providers/cart-checkout/checkout-provider.js)は、上記のすべてのコンテキストを`CheckoutProcessor`コンポーネントにラップします。
-
----
 
 ## チェックアウト・ユーザーフロー
 

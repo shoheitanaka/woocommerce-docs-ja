@@ -1,13 +1,12 @@
 ---
 post_title: Customizing checkout fields using actions and filters
 ---
-# アクションとフィルターを使ったチェックアウトフィールドのカスタマイズ
+
+# Customizing checkout fields using actions and filters
 
 コードや潜在的なコンフリクトの解決に不慣れな場合は、お役に立てるエクステンションがあります：[WooCommerce Checkout Field Editor](https://woocommerce.com/products/woocommerce-checkout-field-editor/).この拡張機能をインストールし、有効化することで、あなたが実装しようとした以下のコードが上書きされます。また、拡張機能が有効化されている場合、functions.phpファイルにカスタムチェックアウトフィールドのコードを記述することはできません。
 
 カスタムコードは、子テーマの**functions.php**ファイルにコピーしてください。
-
-## Note
 
 チェックアウトブロックにフィールドを追加するには、[追加チェックアウトフィールドのドキュメント](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/additional-checkout-fields/)を参照してください。
 
@@ -17,13 +16,9 @@ post_title: Customizing checkout fields using actions and filters
 
 これらのフィールドを返す前に、WooCommerceはフィールドを_filter_に通します。これにより、サードパーティのプラグインやテーマ、独自のカスタムコードで編集できるようになります。
 
-Billing:
-
 ```php
 $address_fields = apply_filters( 'woocommerce_billing_fields', $address_fields );
 ```
-
-Shipping:
 
 ```php
 $address_fields = apply_filters( 'woocommerce_shipping_fields', $address_fields );
@@ -139,7 +134,7 @@ function custom_override_checkout_fields( $fields ) {
     -   __`shipping_first_name`
     -   発送 `shipping_last_name`
     -   発送 `shipping_company`
-    -   発送 `billing_country`
+    -   発送 __INLINE_CODE_12__
     -   発送 `shipping_address_2`
     -   インラインコード
     -   `shipping_postcode`
@@ -210,7 +205,7 @@ priority引数は、どのフックに接続し、カスタム関数の名前を
 
 下の例では、青い文字が修正するフックの名前、緑の文字がカスタム関数の名前、赤が設定した優先順位です。
 
-![フック機能の優先順位設定](https://developer.woocommerce.com/wp-content/uploads/2023/12/priority-markup.png)
+![Setting priority for the hooked function](https://developer.woocommerce.com/wp-content/uploads/2023/12/priority-markup.png)
 
 ## 例
 
@@ -299,7 +294,7 @@ function my_custom_checkout_field_display_admin_order_meta($order){
 }
 ```
 
-![カスタム明細と請求フィールドの追加](https://developer.woocommerce.com/wp-content/uploads/2023/12/Webp-to-PNG-Shipping-Field-Hook.png)
+![adding custom sthipping and billing fields](https://developer.woocommerce.com/wp-content/uploads/2023/12/Webp-to-PNG-Shipping-Field-Hook.png)
 
 生きている！
 
@@ -337,7 +332,7 @@ function my_custom_checkout_field( $checkout ) {
 
 これによって私たちは
 
-![WooCommerce Codex - チェックアウトフィールドフック](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Hook.png)
+![WooCommerce Codex - Checkout Field Hook](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Hook.png)
 
 次に、チェックアウトフォームが投稿されたときにフィールドをバリデートする必要があります。この例では、フィールドに文字だけが含まれていることをチェックしましょう：
 
@@ -357,7 +352,7 @@ function my_custom_checkout_field_process() {
 
 フィールドが空白の場合、チェックアウトエラーが表示されます：
 
-![WooCommerce Codex - チェックアウトフィールドのお知らせ](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Notice.png)
+![WooCommerce Codex - Checkout Field Notice](https://developer.woocommerce.com/wp-content/uploads/2023/12/WooCommerce-Codex-Checkout-Field-Notice.png)
 
 最後に、以下のコードを使って、新しいフィールドをカスタムフィールドの注文に保存しましょう：
 

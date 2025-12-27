@@ -1,7 +1,8 @@
 ---
 post_title: CSS SASS coding guidelines and naming conventions
 ---
-# CSS SASSコーディングガイドラインと命名規則
+
+# CSS SASS coding guidelines and naming conventions
 
 我々のガイドラインは、それ自体がBEMの方法論に従っている[Calypso](https://github.com/Automattic/wp-calypso)で使用されているものに基づいている。詳細は[このドキュメント](https://wpcalypso.wordpress.com/devdocs/docs/coding-guidelines/css.md?term=css)を参照してください。ただし、WooCommerceにはいくつかの違いがあり、その概要は以下のとおりです；
 
@@ -31,11 +32,9 @@ CalypsoはReactで構築されており、コンポーネント名を使用し�
 * `.woocommerce-loop-product__button-add-to-cart {}` (要素)。
 * `.woocommerce-loop-product__button-add-to-cart--added {}` (修飾子)。
 
-**注:** `.woocommerce-loop-product` は、`.woocommerce-loop` の中にネストされているため、`.woocommerce-` というクラス名ではありません。なぜなら、ブロックは`.woocommerce-loop {}`の中に入れ子になっているからです。ネストされたブロックは親のフルネームを継承する必要はありません。
+**注:** `.woocommerce-loop-product` は、`.woocommerce-loop` の中にネストされているため、__INLINE_CODE_0__ というクラス名ではありません。なぜなら、ブロックは__INLINE_CODE_1__の中に入れ子になっているからです。ネストされたブロックは親のフルネームを継承する必要はありません。
 
 BEMのキーコンセプトについては、[BEMの方法論のドキュメントで](https://en.bem.info/methodology/key-concepts/)詳しく読むことができます。
-
-#### TL;DR
 
 * ここと矛盾しない限り、[WP Coding standards for CSS](https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/) に従ってください。
 * [Calypsoガイドライン](https://wpcalypso.wordpress.com/devdocs/docs/coding-guidelines/css.md?term=css)に従うこと。

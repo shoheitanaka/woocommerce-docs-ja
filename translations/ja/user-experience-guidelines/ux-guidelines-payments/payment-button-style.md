@@ -2,19 +2,16 @@
 post_title: Payment button style
 sidebar_label: Payment button style
 ---
-# 決済ボタンのスタイル
+
+# Payment Button Style
 
 サイトのテーマに応じて、適切なボタンスタイルを使用してください。
 
 ![ボタンスタイル.png](/img/doc_images/button-styles.png)
 
-## Dark
-
 白または明るい色の背景で使用してください。黒や暗い背景では使用しないでください。
 
 ![Dark.png](/img/doc_images/Dark.png)
-
-## Light
 
 濃い色の背景で使用してください。白や明るい背景には使用しないでください。
 

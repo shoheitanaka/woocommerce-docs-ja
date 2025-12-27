@@ -1,11 +1,10 @@
 ---
 sidebar_label: Hook alternatives
 ---
-# 代替フック
+
+# Hook alternatives
 
 これらはカート/チェックアウトのショートコードとブロックをロードするときに実行されるフックです。いくつかは一般的なWooCommerceライフサイクルフックであり、いくつかはカートとチェックアウトページに特化したものです。これらは`do_action`と`apply_filters`への各呼び出しをログし、古い[WooCommerce Blocksリポジトリ](https://github.com/woocommerce/woocommerce-blocks/)の「フック」と「フィルタ(複数可)」について言及している問題を確認することで生成されました。
-
-## Legend
 
 | アイコン | 説明 |
 | --- | --- |
@@ -41,26 +40,26 @@ sidebar_label: Hook alternatives
 
 ### WooCommerce ライフサイクルフィルター
 
-| 古いフック｜ブロックで動く？| 注意事項
+| Old hook | Works in blocks? | Notes |
 | --- | --- | --- |
-| `woocommerce_notice_types` | Unknown ❓ | WC Blocksはコア通知以外の追加通知タイプを扱いません。サポートされていない通知は "info "通知として表示されます。|
-| `woocommerce_kses_notice_allowed_tags` | 不明❓｜｜｜｜ WC Blocksはコア通知以外の追加通知を扱いません。
-| `woocommerce_product_get_stock_status` | 完全にサポートされています。
-| `woocommerce_product_is_in_stock` | 完全にサポートされています。
+| `woocommerce_notice_types` | Unknown ❓ | WC Blocks does not handle additional notice types outside of the core ones. Non-supported notices would be displayed as "info" notices. |
+| `woocommerce_kses_notice_allowed_tags` | Unknown ❓ | |
+| `woocommerce_product_get_stock_status` | Fully supported ✅ | |
+| `woocommerce_product_is_in_stock` | Fully supported ✅ | |
 | `woocommerce_product_get_manage_stock` | Unknown ❓ | |
-| `woocommerce_product_get_tax_class` | 完全にサポートされています。
+| `woocommerce_product_get_tax_class` | Fully supported ✅ | |
 | `woocommerce_product_get_tax_status` | Unknown ❓ | |
 | `woocommerce_prices_include_tax` | Unknown ❓ | |
 | `woocommerce_apply_base_tax_for_local_pickup` | Unknown ❓ | |
-| `woocommerce_local_pickup_methods` | サポートされていません ❌ | ブロック・ベースのローカル・ピックアップ・メソッドには影響しません。
-| `woocommerce_customer_get_shipping_postcode` | 完全にサポートされています。
-| `woocommerce_customer_get_shipping_city` | 完全にサポートされています。
+| `woocommerce_local_pickup_methods` | Not supported ❌ | Does not affect the blocks-based local pickup methods |
+| `woocommerce_customer_get_shipping_postcode` | Fully supported ✅ | |
+| `woocommerce_customer_get_shipping_city` | Fully supported ✅ | |
 | `woocommerce_customer_taxable_address` | Unknown ❓ | |
-| `woocommerce_shipping_methods` | 完全にサポートされています。
+| `woocommerce_shipping_methods` | Fully supported ✅ | |
 | `woocommerce_format_localized_price` | Unknown ❓ | |
-| `woocommerce_shipping_local_pickup_option` | サポートされていません ❌ | ブロック・ベースのローカル・ピックアップ・メソッドには影響しません。
-| `woocommerce_shipping_pickup_location_option` | 不明 ❓ | これを変更することで、ローカルピックアップがカート/チェックアウトに表示される方法が変わるかどうかは不明です。
-| `woocommerce_shipping_method_supports` | 完全にサポートされています。
+| `woocommerce_shipping_local_pickup_option` | Not supported ❌ | Does not affect the blocks-based local pickup methods |
+| `woocommerce_shipping_pickup_location_option` | Unknown ❓ | Unsure if changing this changes the way local pickup shows in the Cart/Checkout |
+| `woocommerce_shipping_method_supports` | Fully supported ✅ | |
 | `woocommerce_get_tax_location` | Unknown ❓ | |
 | `woocommerce_format_postcode` | Unknown ❓ | |
 | `woocommerce_matched_tax_rates` | Unknown ❓ | |
@@ -70,148 +69,146 @@ sidebar_label: Hook alternatives
 | `woocommerce_adjust_non_base_location_prices` | Unknown ❓ | |
 | `woocommerce_product_is_taxable` | Fully supported ✅ | |
 | `woocommerce_price_ex_tax_amount` | Fully supported ✅ | |
-| `woocommerce_tax_round` | 完全にサポートされています。
-| `woocommerce_calc_tax` | 完全にサポートされています。
-| `woocommerce_calculate_item_totals_taxes`｜完全対応 ✅｜｜｜｜｜｜｜完全対応
-| `woocommerce_cart_ready_to_calc_shipping`｜完全にサポートされています。
-| `woocommerce_product_get_virtual`｜完全にサポートされています。
-| | `woocommerce_is_virtual` | 完全にサポートされている ✅ | | | 。
+| `woocommerce_tax_round` | Fully supported ✅ | |
+| `woocommerce_calc_tax` | Fully supported ✅ | |
+| `woocommerce_calculate_item_totals_taxes` | Fully supported ✅ | |
+| `woocommerce_cart_ready_to_calc_shipping` | Fully supported ✅ | |
+| `woocommerce_product_get_virtual` | Fully supported ✅ | |
+| `woocommerce_is_virtual` | Fully supported ✅ | |
 | `woocommerce_product_needs_shipping` | Fully supported ✅ | |
-| `woocommerce_cart_needs_shipping`｜完全対応 ✅｜｜｜｜｜｜｜｜完全対応
-| `woocommerce_customer_get_shipping_address_1` | 完全にサポートされています。
-| `woocommerce_customer_get_shipping_address_2` | 完全にサポートされています。
-| `woocommerce_cart_display_prices_including_tax` | 完全にサポートされています。
-| `woocommerce_cart_get_subtotal` | 完全にサポートされています。
-| `woocommerce_cart_shipping_packages`｜完全にサポートされています。
-| `woocommerce_product_get_shipping_class_id`｜完全にサポートされています。
-| | `woocommerce_countries_shipping_countries` | 完全にサポートされている ✅ | | | 。
-| `woocommerce_get_zone_criteria`｜完全にサポートされています。
-| `woocommerce_shipping_zone_shipping_methods` | 完全にサポートされています。
+| `woocommerce_cart_needs_shipping` | Fully supported ✅ | |
+| `woocommerce_customer_get_shipping_address_1` | Fully supported ✅ | |
+| `woocommerce_customer_get_shipping_address_2` | Fully supported ✅ | |
+| `woocommerce_cart_display_prices_including_tax` | Fully supported ✅ | |
+| `woocommerce_cart_get_subtotal` | Fully supported ✅ | |
+| `woocommerce_cart_shipping_packages` | Fully supported ✅ | |
+| `woocommerce_product_get_shipping_class_id` | Fully supported ✅ | |
+| `woocommerce_countries_shipping_countries` | Fully supported ✅ | |
+| `woocommerce_get_zone_criteria` | Fully supported ✅ | |
+| `woocommerce_shipping_zone_shipping_methods` | Fully supported ✅ | |
 | `woocommerce_shipping_free_shipping_is_available` | Unknown ❓ | |
 | `woocommerce_product_get_name` | Fully supported ✅ | |
-| `woocommerce_shipping_method_add_rate` | 完全にサポートされている ✅ | | | 。
-| `woocommerce_shipping_flat_rate_is_available` | 完全にサポートされています。
-| `woocommerce_evaluate_shipping_cost_args`｜完全にサポートされています。
-| `woocommerce_calc_shipping_tax`｜完全にサポートされています。
-| `woocommerce_localisation_address_formats`｜完全対応 ✅｜｜｜｜｜｜｜｜完全対応
+| `woocommerce_shipping_method_add_rate` | Fully supported ✅ | |
+| `woocommerce_shipping_flat_rate_is_available` | Fully supported ✅ | |
+| `woocommerce_evaluate_shipping_cost_args` | Fully supported ✅ | |
+| `woocommerce_calc_shipping_tax` | Fully supported ✅ | |
+| `woocommerce_localisation_address_formats` | Fully supported ✅ | |
 | `woocommerce_countries_base_country` | Unknown ❓ | |
 | `woocommerce_formatted_address_force_country_display` | Unknown ❓ | |
 | `woocommerce_states` | Fully supported ✅ | |
 | `woocommerce_formatted_address_replacements` | Unknown ❓ | |
-| `woocommerce_package_rates` | 完全にサポートされている ✅｜｜｜｜｜｜｜ |`woocommerce_customer_get_shipping_address_1` | 不明
-| `woocommerce_shipping_packages` | 完全にサポートされている ✅ | | 。
-| `woocommerce_shipping_rate_method_id` | 完全にサポートされている ✅ | | | 。
-| `woocommerce_shipping_rate_taxes`｜完全対応 ✅｜｜｜｜｜｜｜｜完全対応
-| `woocommerce_shipping_rate_cost` | 完全にサポートされています。
-| `woocommerce_cart_totals_get_fees_from_cart_taxes` | 完全にサポートされています。
-| `woocommerce_calculated_total` | 非対応 ❌｜これは何の効果もないようだ。
-| `woocommerce_cart_get_discount_total` | 完全にサポートされています。
-| `woocommerce_cart_get_cart_contents_total` | 完全にサポートされています。
-| `woocommerce_get_price_excluding_tax` | 非対応 ❌｜これは何の効果もないようだ。
-| `raw_woocommerce_price` | サポートされていません ❌ | これは何の効果もないようです。
-| `formatted_woocommerce_price` | サポートされていません ❌ | これは何の効果もないようです。
-| `woocommerce_price_trim_zeros` | 非対応 ❌ | これは何の効果もないようだ。
-| `woocommerce_get_cart_page_permalink` | サポートされていません ❌ | これは何の効果もないようです。
-| `woocommerce_get_cart_url` | サポートされていません ❌ | これは何の効果もないようです。
-| `woocommerce_checkout_registration_enabled` | 完全にサポートされています ✅ | これは何の効果もないようです。
-| `woocommerce_get_checkout_page_permalink` | 非対応 ❌ | 効果はないようです。
-| `woocommerce_get_checkout_url` | 非対応 ❌ | これは何の効果もないようだ。
-| `woocommerce_checkout_get_value` | 非対応 ❌ | これは何の効果もないようだ。
-
-| `woocommerce_default_address_fields` | サポートされていません ❌ | これは何の効果もないようです。
-| `default_checkout_billing_country` | サポートされていません ↪So_274｜ これは何の効果もないようです。
-| `default_checkout_shipping_country` | サポートされていません ❌ | これは何の効果もないようです。
-| `woocommerce_get_country_locale` | 完全にサポートされています。
+| `woocommerce_package_rates` | Fully supported ✅ | |
+| `woocommerce_shipping_packages` | Fully supported ✅ | |
+| `woocommerce_shipping_rate_method_id` | Fully supported ✅ | |
+| `woocommerce_shipping_rate_taxes` | Fully supported ✅ | |
+| `woocommerce_shipping_rate_cost` | Fully supported ✅ | |
+| `woocommerce_cart_totals_get_fees_from_cart_taxes` | Fully supported ✅ | |
+| `woocommerce_calculated_total` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_cart_get_discount_total` | Fully supported ✅ | |
+| `woocommerce_cart_get_cart_contents_total` | Fully supported ✅ | |
+| `woocommerce_get_price_excluding_tax` | Not supported ❌ | This does not seem to have any effect |
+| `raw_woocommerce_price` | Not supported ❌ | This does not seem to have any effect |
+| `formatted_woocommerce_price` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_price_trim_zeros` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_get_cart_page_permalink` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_get_cart_url` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_checkout_registration_enabled` | Fully supported ✅ | This does not seem to have any effect |
+| `woocommerce_get_checkout_page_permalink` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_get_checkout_url` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_checkout_get_value` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_default_address_fields` | Not supported ❌ | This does not seem to have any effect |
+| `default_checkout_billing_country` | Not supported ❌ | This does not seem to have any effect |
+| `default_checkout_shipping_country` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_get_country_locale` | Fully supported ✅ | |
 | `woocommerce_get_country_locale_default` | Unknown ❓ | |
 | `woocommerce_get_country_locale_base` | Unknown ❓ | |
-| `woocommerce_billing_fields` | 部分的にサポートされています 🔶 | コアフィールドの編集はサポートされていませんが、Additional Checkout Fields APIを介して追加することができます。
-|`woocommerce_shipping_fields` | 部分的にサポートされています 🔶 | コアフィールドの編集はサポートされていません。
-|`woocommerce_checkout_fields` | 部分的にサポートされています 🔶 | コアフィールドの編集はサポートされていません。
-|`woocommerce_cart_item_product` | サポートされていません ❌ | 個々のカートアイテムの変更はできません。
-| `woocommerce_payment_gateway_supports` | 完全にサポートされています。
-| `woocommerce_customer_get_billing_first_name` | 完全にサポートされています。
-| 完全にサポートされています。
-| `woocommerce_customer_get_billing_company` | 完全にサポートされています。
-| `woocommerce_customer_get_billing_address_1` | 完全にサポートされています。
-| `woocommerce_customer_get_billing_address_2` | 完全にサポートされています。
-| `woocommerce_customer_get_billing_city` | 完全にサポートされています。
-| `woocommerce_customer_get_billing_postcode` | 完全にサポートされています。
-| `woocommerce_customer_get_billing_phone` | 完全にサポートされています。
-| `woocommerce_customer_get_shipping_first_name`｜完全対応
-| `woocommerce_customer_get_shipping_last_name`｜完全対応 ✅｜｜｜｜｜｜｜｜完全対応
-| `woocommerce_customer_get_shipping_company`｜完全にサポートされています。
-| チェックアウト・ブロックは、メタデータからほとんどのHTMLを取り除き、a、b、em、i、strong、br、abbr、spanだけを許可します。|
-| `woocommerce_cart_get_subtotal_tax` | サポートされていません ❌ | これは何の効果もないようです。
-| `woocommerce_shipping_package_name` | 完全にサポートされています。
+| `woocommerce_billing_fields` | Partially supported 🔶 | Editing core fields is not supported, but adding them is via Additional Checkout Fields API |
+| `woocommerce_shipping_fields` | Partially supported 🔶 | Editing core fields is not supported, but adding them is via Additional Checkout Fields API |
+| `woocommerce_checkout_fields` | Partially supported 🔶 | Editing core fields is not supported, but adding them is via Additional Checkout Fields API |
+| `woocommerce_cart_item_product` | Not supported ❌ | Modifying individual cart items is not possible |
+| `woocommerce_payment_gateway_supports` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_first_name` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_last_name` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_company` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_address_1` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_address_2` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_city` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_postcode` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_phone` | Fully supported ✅ | |
+| `woocommerce_customer_get_shipping_first_name` | Fully supported ✅ | |
+| `woocommerce_customer_get_shipping_last_name` | Fully supported ✅ | |
+| `woocommerce_customer_get_shipping_company` | Fully supported ✅ | |
+| `woocommerce_get_item_data` | Partially supported 🔶 | Checkout blocks strip most HTML from metadata, allowing only a, b, em, i, strong, br, abbr, and span. |
+| `woocommerce_cart_get_subtotal_tax` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_shipping_package_name` | Fully supported ✅ | |
 | `woocommerce_shipping_rate_id` | Unknown ❓ | |
 | `woocommerce_shipping_rate_label` | Fully supported ✅ | |
 | `woocommerce_cart_get_shipping_taxes` | Fully supported ✅ | |
 | `woocommerce_cart_get_fee_taxes` | Fully supported ✅ | |
-| `woocommerce_cart_get_taxes`｜完全対応 ✅｜｜｜｜｜｜｜完全対応
+| `woocommerce_cart_get_taxes` | Fully supported ✅ | |
 | `woocommerce_rate_code` | Unknown ❓ | |
 | `woocommerce_rate_compound` | Unknown ❓ | |
 | `woocommerce_rate_label` | Fully supported ✅ | |
 | `woocommerce_cart_hide_zero_taxes` | Unknown ❓ | |
 | `woocommerce_cart_tax_totals` | Fully supported ✅ | |
 | `woocommerce_cart_needs_payment` | Fully supported ✅ | |
-| `woocommerce_order_class` | 完全にサポートされている ✅ | | | 。
+| `woocommerce_order_class` | Fully supported ✅ | |
 | `woocommerce_checkout_registration_required` | Unknown ❓ | |
-| `woocommerce_privacy_policy_page_id` | 完全にサポートされています。
+| `woocommerce_privacy_policy_page_id` | Fully supported ✅ | |
 | `woocommerce_get_terms_page_id` | Unknown ❓ | |
 | `woocommerce_terms_and_conditions_page_id` | Unknown ❓ | |
 | `woocommerce_cart_contents_count` | Unknown ❓ | |
-| `woocommerce_country_locale_field_selectors` | サポートされていません。
-| `woocommerce_get_return_url` | 完全にサポートされている
-| `woocommerce_cart_hash` | 完全にサポートされています。
-| | `woocommerce_cart_get_fee_tax` | 完全にサポートされている ✅ | | | 。
-| `woocommerce_customer_default_location_array`｜完全にサポートされています。
-| `woocommerce_countries`｜完全にサポートされています。
-| `woocommerce_sort_countries` | 非対応 ❌｜これは何の効果もないようだ。
-| `woocommerce_countries_allowed_countries` | 完全にサポートされています。
-| `woocommerce_customer_default_location_array` | 完全にサポートされています。
-| `woocommerce_customer_get_billing_country` | 完全にサポートされています。
-| `woocommerce_customer_get_shipping_country`｜完全対応 ✅｜｜｜｜｜｜｜完全対応
+| `woocommerce_country_locale_field_selectors` | Not supported ❌ | |
+| `woocommerce_get_return_url` | Fully supported ✅ | |
+| `woocommerce_cart_hash` | Fully supported ✅ | |
+| `woocommerce_cart_get_fee_tax` | Fully supported ✅ | |
+| `woocommerce_customer_default_location_array` | Fully supported ✅ | |
+| `woocommerce_countries` | Fully supported ✅ | |
+| `woocommerce_sort_countries` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_countries_allowed_countries` | Fully supported ✅ | |
+| `woocommerce_customer_default_location_array` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_country` | Fully supported ✅ | |
+| `woocommerce_customer_get_shipping_country` | Fully supported ✅ | |
 | `woocommerce_customer_get_billing_state` | Fully supported ✅ | |
-| `woocommerce_customer_get_shipping_state`｜完全対応 ✅｜｜｜｜｜｜｜｜完全対応
-| `woocommerce_customer_get_billing_email` | 完全にサポートされています。
-| `woocommerce_cart_session_initialize` | 完全にサポートされています。
-| `woocommerce_get_checkout_page_id` | 完全にサポートされています。
-| `woocommerce_get_cart_page_id`｜完全対応 ✅｜｜｜｜｜｜｜｜完全対応
-| `woocommerce_is_checkout` | 完全にサポートされています。
-| `woocommerce_currency` | 完全にサポートされています。
-| `woocommerce_currency_symbols` | 完全にサポートされています。
-| `woocommerce_currency_symbol`｜完全にサポートされています。
-| | `woocommerce_price_format` | 完全にサポートされている ✅ | | | 。
-| `woocommerce_coupons_enabled`｜完全にサポートされています。
-完全対応 ✅ | | `woocommerce_get_shop_page_id` | 完全対応 ✅ | | | `woocommerce_shipping_method_add_rate` | 完全対応
-| `current_theme_supports-woocommerce` | 完全にサポートされています。
-| |`woocommerce_payment_gateways` | 部分的にサポートされています 🔶 | WCブロックとの統合は、ゲートウェイの設定を解除する以上にまだ必要です。
-| 完全にサポートされています。
-| `woocommerce_gateway_icon` | サポートされていません ❌｜アイコンが表示されないので、このフックは効果がありません。|
-
+| `woocommerce_customer_get_shipping_state` | Fully supported ✅ | |
+| `woocommerce_customer_get_billing_email` | Fully supported ✅ | |
+| `woocommerce_cart_session_initialize` | Fully supported ✅ | |
+| `woocommerce_get_checkout_page_id` | Fully supported ✅ | |
+| `woocommerce_get_cart_page_id` | Fully supported ✅ | |
+| `woocommerce_is_checkout` | Fully supported ✅ | |
+| `woocommerce_currency` | Fully supported ✅ | |
+| `woocommerce_currency_symbols` | Fully supported ✅ | |
+| `woocommerce_currency_symbol` | Fully supported ✅ | |
+| `woocommerce_price_format` | Fully supported ✅ | |
+| `woocommerce_coupons_enabled` | Fully supported ✅ | |
+| `woocommerce_get_shop_page_id` | Fully supported ✅ | |
+| `current_theme_supports-woocommerce` | Fully supported ✅ | |
+| `woocommerce_payment_gateways` | Partially supported 🔶 | Integration with WC Blocks is still required, beyond unsetting gateways, manipulating the payment gateways here may not work in the Cart and Checkout blocks |
+| `woocommerce_get_base_location` | Fully supported ✅ | |
+| `woocommerce_gateway_icon` | Not supported ❌ | This hook has no effect since icons are not displayed. |
 | `woocommerce_get_image_size_thumbnail` | Fully supported ✅ | |
-| `woocommerce_get_image_size_single` | 完全にサポートされています。
-| `woocommerce_product_stock_status_options` | 完全にサポートされています。
-| `woocommerce_cart_item_name` | 非対応 ❌ [`itemName` チェックアウトフィルター](https://developer.woocommerce.com/docs/cart-and-checkout-filters-cart-line-items/#2-itemname)を使用する。|
-| `woocommerce_product_get_status` | 完全にサポートされています。
-| `woocommerce_product_get_price` | 完全にサポートされています。
-| `woocommerce_is_purchasable` | 完全にサポートされています。
-| `woocommerce_cart_item_is_purchasable`｜完全対応 ✅｜｜｜｜｜｜完全対応
-| | `woocommerce_cart_item_data_to_validate` | 完全にサポートされています。
-| | `woocommerce_get_cart_item_from_session` | 完全にサポートされています。
-| `woocommerce_cart_contents_changed` | 完全にサポートされています。
-| `woocommerce_get_cart_contents`｜完全にサポートされています。
-| 完全対応 ✅ | | `woocommerce_stock_amount` | 完全対応
-| `woocommerce_cart_item_remove_link` | 非対応 ❌ | [`showRemoveItemLink` チェックアウトフィルター](https://developer.woocommerce.com/docs/cart-and-checkout-filters-cart-line-items/#4-showremoveitemlink)を使用してください。|
-| `woocommerce_cart_item_quantity` | 未対応 ❌ `woocommerce_store_api_product_quantity_{$value_type}` フィルタでカートアイテムの quantity_limits プロパティを変更することで可能です。|
-| `woocommerce_product_get_image` | サポートされていません ❌ | `woocommerce_store_api_cart_item_images` ([PRリンク](https://github.com/woocommerce/woocommerce/pull/52310))を使用してください。|
-| `woocommerce_cart_no_shipping_available_html` | 非対応 ❌ | 編集できません。
-| `woocommerce_available_payment_gateways` | 部分的にサポートされています 🔶 | WCブロックとの統合がまだ必要です。ゲートウェイの設定を解除する以上に、ここで決済ゲートウェイを操作しても、カートブロックとチェックアウトブロックでは動作しないかもしれません。
-| 完全にサポートされています。
-| `woocommerce_cart_get_fee_tax` | 完全にサポートされています。
-| 完全にサポートされています。
-| | `woocommerce_cart_get_shipping_tax` | 完全対応
-| `woocommerce_cart_get_shipping_total` | 完全にサポートされている ✅ | | 。
+| `woocommerce_get_image_size_single` | Fully supported ✅ | |
+| `woocommerce_product_stock_status_options` | Fully supported ✅ | |
+| `woocommerce_cart_item_name` | Not supported ❌ | Use the [`itemName` checkout filter](https://developer.woocommerce.com/docs/cart-and-checkout-filters-cart-line-items/#2-itemname). |
+| `woocommerce_product_get_status` | Fully supported ✅ | |
+| `woocommerce_product_get_price` | Fully supported ✅ | |
+| `woocommerce_is_purchasable` | Fully supported ✅ | |
+| `woocommerce_cart_item_is_purchasable` | Fully supported ✅ | |
+| `woocommerce_cart_item_data_to_validate` | Fully supported ✅ | |
+| `woocommerce_get_cart_item_from_session` | Fully supported ✅ | |
+| `woocommerce_cart_contents_changed` | Fully supported ✅ | |
+| `woocommerce_get_cart_contents` | Fully supported ✅ | |
+| `woocommerce_stock_amount` | Fully supported ✅ | |
+| `woocommerce_cart_item_remove_link` | Not supported ❌ | Use the [`showRemoveItemLink` checkout filter](https://developer.woocommerce.com/docs/cart-and-checkout-filters-cart-line-items/#4-showremoveitemlink). |
+| `woocommerce_cart_item_quantity` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_product_get_image` | Not supported ❌ | Use `woocommerce_store_api_cart_item_images` ([PR Link](https://github.com/woocommerce/woocommerce/pull/52310) with example.) |
+| `woocommerce_cart_no_shipping_available_html` | Not supported ❌ | This is not editable |
+| `woocommerce_available_payment_gateways` | Partially supported 🔶 | Integration with WC Blocks is still required, beyond unsetting gateways, manipulating the payment gateways here may not work in the Cart and Checkout blocks |
+| `woocommerce_cart_get_total` | Fully supported ✅ | |
+| `woocommerce_cart_get_fee_tax` | Fully supported ✅ | |
+| `woocommerce_cart_get_cart_contents_tax` | Fully supported ✅ | |
+| `woocommerce_cart_get_shipping_tax` | Fully supported ✅ | |
+| `woocommerce_cart_get_shipping_total` | Fully supported ✅ | |
 
 ### カート・アクション
 
@@ -231,7 +228,7 @@ sidebar_label: Hook alternatives
 | `woocommerce_before_cart_collaterals` | サポートされていません。多分、"Cart items "ブロックにインナーブロックを追加すればうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
 | `woocommerce_cart_collaterals` | サポートされていません ❌｜この領域に相当するものはなく、Slot/fillもありません。多分、"Cart items "ブロックにインナーブロックを追加すればうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
 | [`ExperimentalOrderMeta` slot/fill](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#0-experimentalordermeta) | サポートされていません。
-| [`woocommerce_cart_totals_before_shipping` スロット/フィル](https://developer.wordpress.org/reference/hooks/render_block_this-name/) | サポートされていません。
+| [`woocommerce_cart_totals_before_shipping` スロット/フィル](__URL_4__) | サポートされていません。
 | [ExperimentalOrderShippingPackages](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#1-experimentalordershippingpackages) | サポートされていません。
 | `woocommerce_before_shipping_calculator` | サポートされていません ❌ | 特に同等のものはありません。最も近いのはExperimentalOrderShippingPackagesです。
 | `woocommerce_after_shipping_calculator` | サポートされていません。最も近いものはExperimentalOrderShippingPackagesです。
@@ -244,128 +241,125 @@ sidebar_label: Hook alternatives
 
 ### カート・フィルター
 
-| 古いフック｜ブロックで動く？| 注意事項
+| Old hook | Works in blocks? | Notes |
 | --- | --- | --- |
-| `woocommerce_cart_item_product_id` | サポートされていません。
-| `woocommerce_cart_item_visible` | サポートされていません ❌ | 効果はないようです。
-| `woocommerce_get_remove_url` | サポートされていません ❌ | アイテムの削除は Cart ブロックで非同期に処理されます。|
-| `woocommerce_cart_item_remove_link` | 非対応 ❌｜アイテムの削除はCartブロック内で非同期に処理されます。|
-| `woocommerce_cart_item_thumbnail` | 非対応 ❌｜この方法でのサムネイルの変更はサポートされていません。`woocommerce_store_api_cart_item_images` ([PRリンク](https://github.com/woocommerce/woocommerce/pull/52310))を参照してください。|
-| `woocommerce_cart_product_price` | サポートされていません。
-| `woocommerce_cart_item_price` | サポートされていません。
-| `woocommerce_quantity_input_classes` | サポートされていません。
-| これは、`woocommerce_store_api_product_quantity_{$value_type}`フィルタでカートアイテムのquantity_limitsプロパティを変更することで可能です。|
-| `woocommerce_quantity_input_min` | 非対応 ❌ `woocommerce_store_api_product_quantity_{$value_type}` フィルタでカートアイテムの quantity_limits プロパティを変更することで可能です。|
-| `woocommerce_quantity_input_step` | 非対応 ❌ `woocommerce_store_api_product_quantity_{$value_type}` フィルタでカートアイテムの quantity_limits プロパティを変更することで可能です。|
-| `woocommerce_quantity_input_pattern` | 非対応 ❌｜これは`woocommerce_store_api_product_quantity_{$value_type}`フィルタのカートアイテムのquantity_limitsプロパティを変更することで可能です。|
-| `woocommerce_quantity_input_inputmode` | 非対応 ❌ `woocommerce_store_api_product_quantity_{$value_type}` フィルタでカートアイテムの quantity_limits プロパティを変更することで可能です。|
-| `woocommerce_quantity_input_placeholder` | 非対応 ❌｜これは`woocommerce_store_api_product_quantity_{$value_type}`フィルタのカートアイテムのquantity_limitsプロパティを変更することで可能です。|
-| `woocommerce_quantity_input_autocomplete` | 非対応 ❌｜これは`woocommerce_store_api_product_quantity_{$value_type}`フィルタのカートアイテムのquantity_limitsプロパティを変更することで可能です。|
-| `woocommerce_quantity_input_args` | 非対応 ❌｜これは`woocommerce_store_api_product_quantity_{$value_type}`フィルタのカートアイテムのquantity_limitsプロパティを変更することで可能です。|
-| `woocommerce_quantity_input_type` | 未対応 ❌ `woocommerce_store_api_product_quantity_{$value_type}` フィルタでカートアイテムの quantity_limits プロパティを変更することで可能です。|
-| `woocommerce_cart_item_quantity` | 非対応 ❌｜これは`woocommerce_store_api_product_quantity_{$value_type}`フィルタのカートアイテムのquantity_limitsプロパティを変更することで可能です。|
-| `woocommerce_cart_product_subtotal` | サポートされていません。
-| `woocommerce_cart_item_subtotal` | サポートされていません。
-| `woocommerce_cross_sells_columns` | 非対応 ❌｜クロスセルはインナーブロックとしてレンダリングされる。|
-| `woocommerce_cross_sells_orderby` | 非対応 ❌ | クロスセルはインナーブロックとしてレンダリングされる。|
-| `woocommerce_cross_sells_order` | 非対応 ❌ | クロスセルはインナーブロックとしてレンダリングされる。|
-| `woocommerce_cross_sells_total` | 非対応 ❌ | クロスセルはインナーブロックとしてレンダリングされる。|
-| `woocommerce_product_cross_sells_products_heading` | 非対応 ❌ | エディターで変更可能です。|
-| `woocommerce_is_downloadable` | Not supported ❌ | Cart/Checkoutブロックでは効果がないようです。|
-| `woocommerce_loop_product_link` | サポートされていません ❌ | カートブロックでは、商品リンクの変更はサポートされていません。|
-| `woocommerce_product_loop_title_classes` | Not supported ❌｜カートブロックでは、商品タイトルへのクラスの変更はサポートされていません。|
-| `woocommerce_product_add_to_cart_aria_describedby` | 非対応 ❌｜商品の`aria-describedby`を変更することは、カートブロックではサポートされていません。|
-| `woocommerce_sale_flash` | サポートされていません ❌｜これは[`saleBadgePriceFormat`チェックアウトフィルター](https://developer.woocommerce.com/docs/cart-and-checkout-filters-cart-line-items/#3-salebadgepriceformat)で変更できます。|
-| `woocommerce_cart_subtotal` | サポートされていません ❌ | カート/チェックアウトブロックでは、カートの小計表示の変更はサポートされていません。
-| `oocommerce_shipping_package_details_array` | サポートされていません ❌ | このフックはカートブロックのレンダリング中には発生しません。
-| `woocommerce_shipping_show_shipping_calculator` | サポートされていません ❌ | カートテンプレートのレンダリング時にのみ使用されます。|
-| `woocommerce_cart_shipping_method_full_label` | 非対応 ❌ | このフックはカート/チェックアウト・ブロックでは効果がありません。|
-| `woocommerce_get_shipping_tax` | サポートされていません ❌ | このフィルターはカート/チェックアウト・ブロックでは使用されません。|
-
-|`woocommerce_shipping_calculator_enable_country` | サポートされていません ❌｜このフィルターはカート/チェックアウト・ブロックでは使用されません。|
-| `woocommerce_shipping_calculator_enable_state` | 未サポート ❌｜このフィルターはカート/レジブロックでは使用されません。|
-| `woocommerce_shipping_calculator_enable_city` | 非対応 ❌｜このフィルターはカート/レジブロックでは使用されません。|
-| `woocommerce_shipping_calculator_enable_postcode` | 非対応 ❌｜このフィルターはカート/レジブロックでは使用されません。|
-| `woocommerce_cart_totals_fee_html` | サポートされていません ❌ | Cart/Checkoutブロックでは、料金表示の変更はサポートされていません。
-| `woocommerce_countries_estimated_for_prefix` | サポートされていません。
-| `woocommerce_cart_total` | 非対応 ❌ | カート/レジブロックでは、このフックを使用したカート合計の変更はサポートされていません。
-| `woocommerce_cart_totals_order_total_html` | サポートされていません ❌ | このフックを使用したカート合計の変更はカート/レジブロックではサポートされていません。
+| `woocommerce_cart_item_product_id` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_cart_item_visible` | Not supported ❌ | This does not seem to have any effect |
+| `woocommerce_get_remove_url` | Not supported ❌ | The removal of items is handled async in the Cart block. |
+| `woocommerce_cart_item_remove_link` | Not supported ❌ | The removal of items is handled async in the Cart block. |
+| `woocommerce_cart_item_thumbnail` | Not supported ❌ | Changing the thumbnail this way is not supported. See `woocommerce_store_api_cart_item_images` ([PR Link](https://github.com/woocommerce/woocommerce/pull/52310) with example.) |
+| `woocommerce_cart_product_price` | Not supported ❌ | |
+| `woocommerce_cart_item_price` | Not supported ❌ | |
+| `woocommerce_quantity_input_classes` | Not supported ❌ | |
+| `woocommerce_quantity_input_max` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_min` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_step` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_pattern` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_inputmode` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_placeholder` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_autocomplete` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_args` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_quantity_input_type` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_cart_item_quantity` | Not supported ❌ | This is possible by modifying the quantity_limits property of the cart item in the `woocommerce_store_api_product_quantity_{$value_type}` filter. |
+| `woocommerce_cart_product_subtotal` | Not supported ❌ | |
+| `woocommerce_cart_item_subtotal` | Not supported ❌ | |
+| `woocommerce_cross_sells_columns` | Not supported ❌ | The cross sells are rendered as an inner block. |
+| `woocommerce_cross_sells_orderby` | Not supported ❌ | The cross sells are rendered as an inner block. |
+| `woocommerce_cross_sells_order` | Not supported ❌ | The cross sells are rendered as an inner block. |
+| `woocommerce_cross_sells_total` | Not supported ❌ | The cross sells are rendered as an inner block. |
+| `woocommerce_product_cross_sells_products_heading` | Not supported ❌ | This can be modified in the editor. |
+| `woocommerce_is_downloadable` | Not supported ❌ | Does not seem to have any effect in Cart/Checkout blocks. |
+| `woocommerce_loop_product_link` | Not supported ❌ | Changing the product links is not supported in the Cart block. |
+| `woocommerce_product_loop_title_classes` | Not supported ❌ | Changing classes to product titles is not supported in the Cart block. |
+| `woocommerce_product_add_to_cart_aria_describedby` | Not supported ❌ | Changing `aria-describedby` on products is not supported in the Cart block. |
+| `woocommerce_sale_flash` | Not supported ❌ | This can be modified with the [`saleBadgePriceFormat` checkout filter](https://developer.woocommerce.com/docs/cart-and-checkout-filters-cart-line-items/#3-salebadgepriceformat). |
+| `woocommerce_cart_subtotal` | Not supported ❌ | Modifying the cart subtotal display is not supported in the Cart/Checkout blocks |
+| `oocommerce_shipping_package_details_array` | Not supported ❌ | This hook is not fired during Cart block rendering |
+| `woocommerce_shipping_show_shipping_calculator` | Not supported ❌ | This is only used when rendering cart templates, which does not happen in the blocks. |
+| `woocommerce_cart_shipping_method_full_label` | Not supported ❌ | This hook has no effect in the Cart/Checkout blocks. |
+| `woocommerce_get_shipping_tax` | Not supported ❌ | This filter is not used in the Cart/Checkout blocks. |
+| `woocommerce_shipping_calculator_enable_country` | Not supported ❌ | This filter is not used in the Cart/Checkout blocks. |
+| `woocommerce_shipping_calculator_enable_state` | Not supported ❌ | This filter is not used in the Cart/Checkout blocks. |
+| `woocommerce_shipping_calculator_enable_city` | Not supported ❌ | This filter is not used in the Cart/Checkout blocks. |
+| `woocommerce_shipping_calculator_enable_postcode` | Not supported ❌ | This filter is not used in the Cart/Checkout blocks. |
+| `woocommerce_cart_totals_fee_html` | Not supported ❌ | Modifying the fees display is not supported in the Cart/Checkout blocks |
+| `woocommerce_countries_estimated_for_prefix` | Not supported ❌ | |
+| `woocommerce_cart_total` | Not supported ❌ | Modifying the cart total using this hook is not supported in the Cart/Checkout blocks |
+| `woocommerce_cart_totals_order_total_html` | Not supported ❌ | Modifying the cart total using this hook is not supported in the Cart/Checkout blocks |
 
 ### チェックアウト_アクション
 
-| 古いフック｜ブロックで動く？| 注意事項
+| Old hook | Works in blocks? | Notes |
 | --- | --- | --- |
-| `woocommerce_before_checkout_form_cart_notices` | サポートされていません。多分、"Checkout Fields "ブロックにインナーブロックを追加すれば機能するかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_before_checkout_form`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_before_customer_details` | サポートされていません ❌｜この領域に相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_billing`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_before_checkout_billing_form` | サポートされていません ❌｜この領域に相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_after_checkout_billing_form` | サポートされていません ❌｜この領域に相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-|`woocommerce_checkout_shipping` | サポートされていません ❌ | 位置の関係で直接等価ではありませんが、[ExperimentalOrderShippingPackages](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#1-experimentalordershippingpackages)は動作する可能性があります。
-| `woocommerce_before_checkout_shipping_form` | サポートされていません ❌ | 位置の関係で直接等価ではありませんが、[ExperimentalOrderShippingPackages](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#1-experimentalordershippingpackages)は動作する可能性があります。
-| `woocommerce_after_checkout_shipping_form` | サポートされていません ❌ | 位置の関係で直接等価ではありませんが、[ExperimentalOrderShippingPackages](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#1-experimentalordershippingpackages)は動作する可能性があります。
-| `woocommerce_before_order_notes` | サポートされていません ❌ 特定の等価物はなく、この領域のSlot/fillもありません。多分、"Checkout Fields "ブロックにインナーブロックを追加することは可能ですが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_after_order_notes`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_after_customer_details` | サポートされていません ❌｜このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_before_order_review_heading` | サポートされていません ❌｜このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_before_order_review`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_order_review` | サポートされていません ❌｜このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_before_cart_contents`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_after_cart_contents` | Not supported ❌｜このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-
-| `woocommerce_review_order_before_shipping`｜ サポートされていません ❌｜ この領域に相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_after_shipping_rate`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_after_shipping`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_before_order_total`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_after_order_total` | Not supported ❌｜このエリアに相当するものはなく、Slot/fillもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_before_payment` | サポートされていません ❌｜このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックまたは "Payment "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_before_terms_and_conditions`｜ サポートされていません ❌｜ このエリアに相当するものはなく、スロット/フィルもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_terms_and_conditions` | サポートされていません ❌｜この領域に相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_after_terms_and_conditions` | サポートされていません ❌｜この領域に相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_before_submit` | サポートされていません ❌｜この領域に相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_after_submit`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_review_order_after_payment` | サポートされていません ❌｜このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックまたは "Payment "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_checkout_after_order_review`｜ サポートされていません ❌｜ このエリアに相当するものはなく、スロット/フィルもありません。多分、"Checkout Order Summary "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-| `woocommerce_after_checkout_form`｜ サポートされていません ❌｜ このエリアに相当するものはなく、Slot/fillもありません。Checkout Fields "ブロックにインナーブロックを追加するとうまくいくかもしれませんが、マーチャントが手動で配置する必要があります。|
-|`woocommerce_checkout_update_order_review` | サポートされていません ❌｜カート/チェックアウトブロックを使用している場合、これらのタイプのAJAXイベントは発生しません。
+| `woocommerce_before_checkout_form_cart_notices` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_before_checkout_form` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_before_customer_details` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_billing` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_before_checkout_billing_form` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_after_checkout_billing_form` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_shipping` | Not supported ❌ | Not directly equivalent due to positioning, but [ExperimentalOrderShippingPackages](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#1-experimentalordershippingpackages) could work - so could adding an inner block to the shipping block |
+| `woocommerce_before_checkout_shipping_form` | Not supported ❌ | Not directly equivalent due to positioning, but [ExperimentalOrderShippingPackages](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#1-experimentalordershippingpackages) could work - so could adding an inner block to the shipping block |
+| `woocommerce_after_checkout_shipping_form` | Not supported ❌ | Not directly equivalent due to positioning, but [ExperimentalOrderShippingPackages](https://developer.woocommerce.com/docs/cart-and-checkout-available-slots/#1-experimentalordershippingpackages) could work - so could adding an inner block to the shipping block |
+| `woocommerce_before_order_notes` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_after_order_notes` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_after_customer_details` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_before_order_review_heading` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_before_order_review` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_order_review` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_before_cart_contents` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_after_cart_contents` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_before_shipping` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_after_shipping_rate` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_after_shipping` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_before_order_total` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_after_order_total` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_before_payment` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block or Payment block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_before_terms_and_conditions` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_terms_and_conditions` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_after_terms_and_conditions` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_before_submit` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_after_submit` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_review_order_after_payment` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block or Payment block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_after_order_review` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Order Summary" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_after_checkout_form` | Not supported ❌ | No specific equivalent and no Slot/fill for this area. Maybe adding an inner block to the "Checkout Fields" block could work, but it would have to be positioned manually by the merchant. |
+| `woocommerce_checkout_update_order_review` | Not supported ❌ | These type of AJAX events do not occur when using the Cart/Checkout blocks |
 
 ### チェックアウト_フィルター
 
-[| 古いフック｜ブロックで動く？| 注意事項
+| Old hook | Works in blocks? | Notes |
 | --- | --- | --- |
-| `woocommerce_add_notice` | 部分的にサポートされています 🔶 これらの通知はカート/チェックアウトブロックのページロード時にのみ追加されます。APIリクエスト中に発生したものは保存され、次の全ページロード時に出力されます。|
-| `woocommerce_checkout_coupon_message` | サポートされていません ❌｜クーポンメッセージは、このフィルターを使用してカスタマイズすることはできません。|
-| `woocommerce_form_field_args` | サポートされていません ❌ | カート/チェックアウトブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| `woocommerce_form_field_text` ｜未サポート ❌｜カート/レジブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| `woocommerce_form_field` | 未サポート ❌｜カート/チェックアウトブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| `woocommerce_form_field_country` ｜未サポート ❌｜カート/チェックアウトブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| `woocommerce_form_field_state` | 未サポート ❌｜カート/チェックアウトブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| `woocommerce_form_field_tel` | 未サポート ❌｜カート/チェックアウトブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| `woocommerce_form_field_email` | 未サポート ❌｜カート/チェックアウトブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| データストア](../data-store/cart.md)を使用して制御してください。|
-| `woocommerce_ship_to_different_address_checked` | サポートされていません ❌ [`wc/store/checkout` データストア](../data-store/checkout.md)を使用して、このチェックボックスがチェックされているかどうかを確認してください。|
-|`woocommerce_enable_order_notes_field` | サポートされていません ❌ | このブロックはエディタで削除する必要があります。
-| このフィルターはチェックアウトブロックでの存在には影響しません。｜`woocommerce_form_field_textarea`｜未サポート ❌｜カート/チェックアウトブロックでは、コアフォームフィールドの変更はまだサポートされていません。|
-| `woocommerce_checkout_cart_item_visible` | サポートされていません ❌｜カート/チェックアウトブロックでは、注文サマリーからカートアイテムをフィルターすることはできません。|
-| `woocommerce_cart_item_class` | 未サポート ❌｜カート/レジブロックの注文サマリーで、特定のカートアイテムにクラスを追加することはできません。|
-| `woocommerce_checkout_cart_item_quantity` | サポートされていません ❌｜カート/レジブロックの注文サマリーで、カートアイテムの数量表示を変更することはできません。|
-|`woocommerce_cart_product_subtotal` | 非対応 ❌｜カート/レジブロックでは、商品の小計表示を変更することはできません。
-| `woocommerce_cart_item_subtotal` | サポートされていません ❌ | カート/レジブロックでは、商品小計表示の変更はサポートされていません。
-| `woocommerce_cart_subtotal` | サポートされていません ❌ | カート/レジブロックでは、カート小計表示の変更はサポートされていません。
-| `woocommerce_cart_shipping_method_full_label` | サポートされていません ❌ | カート/レジブロックでは配送方法表示の変更はサポートされていません。
-| `woocommerce_get_shipping_tax` | サポートされていません ❌｜このフィルターはカート/レジブロックでは使用されません。|
-|`woocommerce_cart_totals_fee_html` | サポートされていません ❌ | Cart/Checkoutブロックでは料金表示の変更はサポートされていません。
-| `woocommerce_cart_total` | サポートされていません ❌ | カート/レジブロックでは、このフックを使用したカート合計の変更はサポートされていません。
-| `woocommerce_cart_totals_order_total_html` | サポートされていません ❌ | このフックを使用した注文合計htmlの変更は、カート/チェックアウト・ブロックではサポートされていません。|
-| `woocommerce_order_button_text` | 非対応 ❌｜このフックを使用した注文ボタンhtmlの変更はカート/チェックアウト・ブロックではサポートされていません - エディターを使って編集してください。|
-|`woocommerce_gateway_title` | サポートされていません ❌｜これらはカート/チェックアウト・ブロックに登録されたゲートウェイによってレンダリングされる "コンテンツ "に含めることができますが、PHPフィルターを通してこれを制御することはできません。|
-| ゲートウェイアイコンは表示されません。カート/チェックアウトブロックに登録されたゲートウェイによってレンダリングされる "コンテンツ "に含めることはできますが、PHPフィルターによってこれを制御することはできません。|
-
-| ゲートウェイはJavaScriptを使用してCart/Checkoutブロックに登録する必要があり、サードパーティの拡張機能はこれらのフロントエンドの詳細を変更できません。|
-| `woocommerce_checkout_show_terms`｜ サポートされていません ❌｜ このフィルターでは制御できません。このブロックはエディタで削除できます。|
-| `woocommerce_get_privacy_policy_text` | 非対応 ❌｜このフィルターを使用したプライバシーポリシーテキストの変更はサポートされていません。エディターで変更できます。|
-| `woocommerce_order_button_html` | 非対応 ❌ | このフックを使用したカート/チェックアウトブロックでの注文ボタンhtmlの変更はサポートされていません。|
-|`woocommerce_update_order_review_fragments` | サポートされていません ❌ | Cart/Checkoutブロックではフラグメントは使用されません。|
+| `woocommerce_add_notice` | Partially supported 🔶 | These notices are only added on page load of the Cart/Checkout blocks. Any that happen during API requests are stored and output on the next full page load. |
+| `woocommerce_checkout_coupon_message` | Not supported ❌ | The coupon message cannot be customised using this filter. |
+| `woocommerce_form_field_args` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_form_field_text` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_form_field` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_form_field_country` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_form_field_state` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_form_field_tel` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_form_field_email` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_cart_needs_shipping_address` | Not supported ❌ | The [`wc/store/cart` data store](../data-store/cart.md) should be used to control this. |
+| `woocommerce_ship_to_different_address_checked` | Not supported ❌ | The [`wc/store/checkout` data store](../data-store/checkout.md) should be used to check if this checkbox is checked. |
+| `woocommerce_enable_order_notes_field` | Not supported ❌ | This block must be removed in the editor, this filter will not affect its presence in the Checkout block |
+| `woocommerce_form_field_textarea` | Not supported ❌ | Modifying core form fields is not supported yet in the Cart/Checkout blocks. |
+| `woocommerce_checkout_cart_item_visible` | Not supported ❌ | It is not possible to filter cart items from the order summary in the Cart/Checkout blocks. |
+| `woocommerce_cart_item_class` | Not supported ❌ | It is not possible to add classes to specific cart items in the order summary in the Cart/Checkout blocks. |
+| `woocommerce_checkout_cart_item_quantity` | Not supported ❌ | It is not possible to modify the quantity display of cart items in the order summary in the Cart/Checkout blocks. |
+| `woocommerce_cart_product_subtotal` | Not supported ❌ | Modifying the product subtotal display is not supported in the Cart/Checkout blocks |
+| `woocommerce_cart_item_subtotal` | Not supported ❌ | Modifying the product subtotal display is not supported in the Cart/Checkout blocks |
+| `woocommerce_cart_subtotal` | Not supported ❌ | Modifying the cart subtotal display is not supported in the Cart/Checkout blocks |
+| `woocommerce_cart_shipping_method_full_label` | Not supported ❌ | Modifying the shipping method display is not supported in the Cart/Checkout blocks |
+| `woocommerce_get_shipping_tax` | Not supported ❌ | This filter is not used in the Cart/Checkout blocks. |
+| `woocommerce_cart_totals_fee_html` | Not supported ❌ | Modifying the fees display is not supported in the Cart/Checkout blocks |
+| `woocommerce_cart_total` | Not supported ❌ | Modifying the cart total using this hook is not supported in the Cart/Checkout blocks |
+| `woocommerce_cart_totals_order_total_html` | Not supported ❌ | Modifying the order total html using this hook is not supported in the Cart/Checkout blocks - edit it using the editor. |
+| `woocommerce_order_button_text` | Not supported ❌ | Modifying the order button html using this hook is not supported in the Cart/Checkout blocks - edit it using the editor. |
+| `woocommerce_gateway_title` | Not supported ❌ | These can be included in the "Content" rendered by gateways registered with the Cart/Checkout block but it is not possible to control this via PHP filters. |
+| `woocommerce_gateway_icon` | Not supported ❌ | Gateway icons are not shown. They can be included in the "Content" rendered by gateways registered with the Cart/Checkout block but it is not possible to control this via PHP filters. |
+| `woocommerce_gateway_description` | Not supported ❌ | Changing gateways this way is not possible, gateways need to register with the Cart/Checkout blocks using JavaScript and third party extensions can't modify these front-end details. |
+| `woocommerce_checkout_show_terms` | Not supported ❌ | This is not controllable via this filter. The block can be removed in the editor. |
+| `woocommerce_get_privacy_policy_text` | Not supported ❌ | Modifying the privacy policy text using this filter is not supported. It can be modified in the editor. |
+| `woocommerce_order_button_html` | Not supported ❌ | Modifying the order button html using this hook is not supported in the Cart/Checkout blocks - edit it using the editor. |
+| `woocommerce_update_order_review_fragments` | Not supported ❌ | Fragments are not used on the Cart/Checkout blocks. |
 
 ### 注文を出す_アクション
 
@@ -440,3 +434,14 @@ sidebar_label: Hook alternatives
 ### カートブロック
 
 #### 修正不要で完全サポート
+
+- 両ブロック」セクションですでにカバーされていないものはない。
+
+#### 部分的に支持される、または代替アプローチによって支持される
+
+- カートアイテムの数量選択を制限できるようになりました。これまでは`woocommerce_quantity_input_step`のようなフィルタを使用していました。
+    - これは、`woocommerce_store_api_product_quantity_{`$value_type`}`フィルタのカートアイテムのquantity_limitsプロパティを変更することで可能になります。
+
+#### 全くサポートされていない
+
+- テンプレートファイルを変更してレイアウトを変更する（ブロックテーマとカスタムテンプレートを使用している場合を除く）

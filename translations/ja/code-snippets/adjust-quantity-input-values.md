@@ -1,7 +1,8 @@
 ---
 post_title: Adjust the quantity input values
 ---
-# 数量の入力値を調整する
+
+# Adjust the quantity input values
 
 商品ページの数量入力フィールドの開始値、最大値、最小値、インクリメント量を設定します。
 

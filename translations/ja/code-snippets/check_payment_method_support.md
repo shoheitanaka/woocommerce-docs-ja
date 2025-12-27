@@ -4,7 +4,8 @@ sidebar_label: 'Payment method support for refunds, subscriptions, pre-orders'
 current wccom url: >-
   https://woocommerce.com/document/check-if-payment-gateway-supports-refunds-subscriptions-preorders/
 ---
-# 支払い方法が払い戻し、定期購読、予約注文に対応しているかどうかを確認する
+
+# Check if a Payment Method Support Refunds, Subscriptions or Pre-orders
 
 ペイメントメソッドのドキュメントにサポートされている機能の概要が明確に記載されていない場合、ペイメントメソッドのコードを見れば、どの機能がサポートされているかがわかることが多い。
 

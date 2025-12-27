@@ -2,7 +2,8 @@
 post_title: Working with webhooks in WooCommerce
 sidebar_label: Using webhooks
 ---
-# WooCommerceでウェブフックを使う
+
+# Working with webhooks in WooCommerce
 
 ## ウェブフックとは？
 
@@ -20,7 +21,7 @@ Webhookはまた、サードパーティアプリとWooCommerceの統合を容�
 
 ## ウェブフックの作成
 
-![WebHooksスクリーン](https://woocommerce.com/wp-content/uploads/2013/01/woo-webhooks.png)
+![WebHooks screen](https://woocommerce.com/wp-content/uploads/2013/01/woo-webhooks.png)
 
 新しいウェブフックを作成するには
 
@@ -29,7 +30,7 @@ Webhookはまた、サードパーティアプリとWooCommerceの統合を容�
 
 2/ **Create a new webhook** (first incident)または**Add webhook**を選択します。ウェブフックデータ**ボックスが表示されます。
 
-![ウェブフック作成](https://woocommerce.com/wp-content/uploads/2013/01/woo-webhooks.png)
+![WebHooks creation](https://woocommerce.com/wp-content/uploads/2013/01/woo-webhooks.png)
 
 3/ **Enter**。
 
@@ -57,12 +58,12 @@ Webhookは投稿や商品と同じように表示されます。
 2.  名前にカーソルを合わせると、**Edit**と**Delete permanently**オプションが表示されます。
 3.  **削除**するか、**編集**して**変更を保存**してください。ドロップダウンで一括削除も可能です。
 
-![ウェブフック削除](https://woocommerce.com/wp-content/uploads/2013/01/editdelete-webhook.png)
+![WebHooks deletion](https://woocommerce.com/wp-content/uploads/2013/01/editdelete-webhook.png)
 
 ## ウェブフック・ログ
 
 WooCommerceはWebhookをトリガーしたすべてのイベントのログを保存します。ウェブフックのログは  **WooCommerce > Status > Logs**.
 
-![WebHooksログ](https://woocommerce.com/wp-content/uploads/2022/11/Viewing-WooCommerce-Webhook-Logs.png?w=650)
+![WebHooks logs](https://woocommerce.com/wp-content/uploads/2022/11/Viewing-WooCommerce-Webhook-Logs.png?w=650)
 
 ログを確認することで、サーバーからの配信と応答を確認することができ、統合とデバッグがより簡単になる。

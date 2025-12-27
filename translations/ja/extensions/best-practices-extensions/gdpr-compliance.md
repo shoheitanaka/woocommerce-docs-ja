@@ -2,7 +2,8 @@
 post_title: GDPR compliance guidelines for WooCommerce extensions
 sidebar_label: GDPR compliance
 ---
-# WooCommerceエクステンションのGDPR対応ガイドライン
+
+# GDPR compliance guidelines for WooCommerce extensions
 
 ## はじめに
 

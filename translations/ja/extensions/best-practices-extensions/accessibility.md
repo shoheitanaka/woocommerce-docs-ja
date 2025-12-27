@@ -3,7 +3,8 @@ post_title: Accessibility Standards for WooCommerce extensions
 sidebar_label: Accessibility
 sidebar_position: 1
 ---
-# アクセシビリティのベストプラクティス
+
+# Accessibility Best Practices
 
 世界中の多くの場所で、eコマースストアは障害者にとってアクセシブルであることが求められています。WooCommerce拡張機能の開発者として、あなたのコードはそれを使用するショップのアクセシビリティに直接影響し、マーチャントのアクセシビリティ法への準拠に影響を与える可能性があります。
 

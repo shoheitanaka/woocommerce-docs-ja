@@ -2,11 +2,9 @@
 post_title: Fields
 sidebar_label: Fields
 ---
-# Fields
-
 フィールドは最もシンプルな拡張機能です。この拡張機能により、ユーザーは製品情報を追加したり、特定の製品タイプに割り当てられた他のフィールドを置き換えたり、可視性を管理したり、他のフィールドの内容を制御したりすることができます。
 
-![フィールドの例](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-fields.png)
+![Fields example](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-fields.png)
 
 ## ♪何のためにあるのか
 

@@ -3,7 +3,8 @@ post_title: Creating custom settings for WooCommerce extensions
 sidebar_label: Creating custom settings
 sidebar_position: 1
 ---
-# WooCommerceエクステンションのカスタム設定の作成
+
+# Creating custom settings for WooCommerce extensions
 
 WooCommerceをカスタマイズしたり、独自の機能を追加したりする場合、おそらく何らかの設定ページが必要になるでしょう。設定ページを作成する最も簡単な方法の1つは、[`WC_Integration` class](https://woocommerce.github.io/code-reference/classes/WC-Integration.html 'WC_Integration Class') を利用することです。Integrationクラスを使用すると、自動的に**WooCommerce > Settings > Integrations**の下に新しい設定ページが作成され、自動的にデータが保存され、サニタイズされます。このチュートリアルでは、新しいインテグレーションを作成する方法を説明します。
 

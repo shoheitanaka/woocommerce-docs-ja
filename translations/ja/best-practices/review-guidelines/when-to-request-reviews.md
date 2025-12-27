@@ -2,7 +2,8 @@
 post_title: When to request WooCommerce extension reviews
 sidebar_label: When to request reviews
 ---
-# WooCommerce拡張機能のレビューを依頼するタイミング
+
+# When to request WooCommerce extension reviews
 
 トップスターレビューを増やすための最良のアプローチは、マーチャントがレビューを残す可能性の高い、マーチャント・ジャーニーにおける重要な瞬間を特定し、積極的にレビューを依頼することである。
 

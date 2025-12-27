@@ -3,7 +3,8 @@ sidebar_label: Available Hooks and Filters
 category_slug: cart-and-checkout-available-filters
 post_title: Cart and Checkout - Available Filters
 ---
-# 利用可能なフィルター
+
+# Available Filters
 
 このドキュメントでは、現在エクステンションで利用可能なフィルタの一覧と、それぞれのフィルタの使用法について説明します。フィルタの登録に関する情報は、[チェックアウト - フィルタ登録](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/filter-registry/README.md) ページにあります。
 
@@ -20,7 +21,7 @@ post_title: Cart and Checkout - Available Filters
 
 以下のスクリーンショットは、個々のフィルターがどの部分に影響するかを示しています：
 
-![カート・ライン・アイテム](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-13.12.33.png)
+![Cart Line Items](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-13.12.33.png)
 
 ## オーダー概要項目フィルター
 
@@ -33,7 +34,7 @@ post_title: Cart and Checkout - Available Filters
 
 以下のスクリーンショットは、個々のフィルターがどの部分に影響するかを示しています：
 
-![注文概要項目](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-16.29.45.png)
+![Order Summary Items](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-16.29.45.png)
 
 ## フッターアイテムフィルター
 
@@ -114,4 +115,4 @@ registerCheckoutFilters( 'example-extension', {
 管理者としてストアにログインしている場合、フィルターが正しく動作していないと、このようなエラーが表示されます。
 エラーが表示されます。このエラーはコンソールにも表示されます。
 
-![トラブルシューティング](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-30-at-10.52.53.png)
+![Troubleshooting](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-30-at-10.52.53.png)

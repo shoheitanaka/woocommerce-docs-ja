@@ -2,7 +2,8 @@
 post_title: How to fix outdated WooCommerce templates
 sidebar_label: Fix outdated templates
 ---
-# 古くなったWooCommerceテンプレートを修正する方法
+
+# How to fix outdated WooCommerce templates
 
 ## テンプレートの更新と変更
 
@@ -29,8 +30,6 @@ WooCommerceバージョン3.3から、ほとんどのテーマがWooCommerceと�
 4.Sublime、Visual Code、BBEdit、Notepad++などのテキストエディタで、テーマフォルダに貼り付けたテンプレートを開き、以前のテンプレートに加えた変更を、新しく更新したテンプレートファイルに反映させます。
 
 私たちはそれが時間のかかることだと認識しています。そのため、WooCommerceテンプレートを変更しないようにしていますが、後方互換性を壊すことが賢明な場合もあります。
-
-## FAQ
 
 ### WooCommerceの最新バージョンはどこで入手できますか？
 

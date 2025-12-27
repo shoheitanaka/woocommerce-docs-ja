@@ -2,11 +2,9 @@
 post_title: Sections
 sidebar_label: Sections
 ---
-# Sections
-
 セクションはフォームの重要な部分であり、複数のサブセクションとフィールドで構成されます。商品に関する情報を記入する際に加盟店が選択肢に圧倒されないよう、フォーム全体でまばらに使用する必要があります。
 
-![セクションの例](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-sections.png)
+![Sections example](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-sections.png)
 
 ## ♪何のためにあるのか
 
@@ -19,8 +17,6 @@ sidebar_label: Sections
 - 1-2フィールドのシンプルなエクステンション
 - 読み取り専用の説明、セットアップガイド、広告
 - 複数ステップのセットアップウィザードと外部コンテンツ
-
-## Example
 
 マーチャントが購入したアイテムの数に応じて割引を提供できるようなエクステンションを開発している場合、価格設定タブに新しいセクションを追加することを検討してください。そうすることで、情報を見やすく簡単に表示するための十分なスペースを確保することができます。
 

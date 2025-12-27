@@ -3,7 +3,8 @@ post_title: WooCommerce Pre-releases
 sidebar_label: WooCommerce Pre-releases
 sidebar_position: 5
 ---
-# WooCommerceプレリリース
+
+# WooCommerce Pre-releases
 
 WooCommerceのプレリリースは、開発者、テスター、およびコミュニティが将来のリリースに備えることができるように、今後の機能や改善への早期アクセスを提供します。
 
@@ -34,8 +35,6 @@ WooCommerceのプレリリースは、開発者、テスター、およびコミ
 これは自動生成されるタグで、現在のサイクルで機能凍結が起こると同時に作成される。例えば、`10.1.0`の機能フリーズが発生すると、`10.1.0-dev`がタグ付けされます。
 
 これは内部開発用のタグで、GitHub リポジトリでのみ利用可能で、WordPress.org では利用できません。
-
-### Beta
 
 プラグイン作者やアーリーアダプターが次期バージョンの機能や特徴をテストするために使用します。最初のベータ版は通常、機能フリーズの1週間後にリリースされます。
 

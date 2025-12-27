@@ -2,7 +2,8 @@
 post_title: Customizing WooCommerce endpoint URLs
 sidebar_label: Customizing endpoint URLs
 ---
-# WooCommerceのエンドポイントURLをカスタマイズする
+
+# Customizing WooCommerce endpoint URLs
 
 始める前に、[WooCommerce Endpoints](./woocommerce-endpoints.md) をチェックしてください。 
 
@@ -18,7 +19,7 @@ sidebar_label: Customizing endpoint URLs
 
 メニューにエンドポイントを含めたい場合は、リンクセクションを使用する必要があります：
 
-![WordPressのメニュー項目のリンクセクション](https://developer.woocommerce.com/wp-content/uploads/2023/12/2014-02-26-at-14.26.png)
+![The Links section of a menu item in WordPress](https://developer.woocommerce.com/wp-content/uploads/2023/12/2014-02-26-at-14.26.png)
 
 エンドポイントへの完全なURLを入力し、それをメニューに挿入する。
 
@@ -29,8 +30,6 @@ view-orderのようないくつかのエンドポイントは、動作するた�
 WooCommerceはこれらのURLを取得するためのヘルパー関数を注文クラスに提供しています。それらは
 
 `$order->get_checkout_payment_url( $on_checkout = false );`。
-
-and:
 
 `$order->get_checkout_order_received_url();`。
 
@@ -76,4 +75,4 @@ Windowsサーバーでは、エンドポイントが正しく動作するよう�
 
 マイアカウント」ページの「ダウンロード」エンドポイントを表示する必要がない場合があります。これは**WooCommerce > Settings > Advanced > Account endpoints**に行き、Downloads endpointフィールドをクリアすることで削除することができます。
 
-![アカウントのエンドポイント](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-04-09-at-11.45.58-PM.png)
+![Account endpoints](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-04-09-at-11.45.58-PM.png)

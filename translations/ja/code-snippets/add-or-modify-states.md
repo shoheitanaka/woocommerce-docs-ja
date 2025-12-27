@@ -1,7 +1,8 @@
 ---
 post_title: Add or modify states
 ---
-# ステートを追加または変更する
+
+# Add or modify states
 
 WooCommerceに独自の配送方法を追加したり、変更したりできます。
 

@@ -2,13 +2,14 @@
 post_title: Dialogue extensions (future feature)
 sidebar_label: Dialogue extensions
 ---
-# ダイアログ拡張（将来の機能）
+
+# Dialogue Extensions (future feature)
 
 ダイアログエクステンションは他のエクステンションとは異なり、製品フォーム内のどのセクションや機能とも無関係です。サードパーティのシステムに接続したり、複雑なインターフェイスが付属していることもあり、別個の集中したエクスペリエンスを必要とします。
 
 ダイアログは異なるサイズ（小、中、大、カスタム）とトリガー位置（フォームの任意の場所、またはフォームのトップバーのテキストまたはアイコンボタン）を持つことができます。
 
-![ダイアログの例](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-dialog-extensions.png)
+![Dialog example](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-dialog-extensions.png)
 
 ## ♪何のためにあるのか
 
@@ -27,3 +28,4 @@ sidebar_label: Dialogue extensions
 - サードパーティのフルフィルメント、倉庫管理、会計サービスの統合
 - 複雑なインタラクションが可能な堅牢な画像編集ツール
 - 豊富なビデオとインタラクティブなチュートリアルを備えた、メディアを多用したナレッジベース
+

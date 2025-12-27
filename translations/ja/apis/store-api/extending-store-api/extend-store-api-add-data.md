@@ -314,3 +314,4 @@ class WC_Subscriptions_Extend_Store_Endpoint {
 ## データのフォーマット
 
 データが正しい形式でStore APIに渡されるように、既存のフォーマッタを使用することもできます。フォーマッタの詳細については、[StoreApi Formatters documentation](./extend-store-api-formatters.md) を参照してください。
+

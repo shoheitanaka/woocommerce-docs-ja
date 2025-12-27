@@ -2,7 +2,8 @@
 post_title: How to optimize performance for WooCommerce stores
 sidebar_label: Optimize store performance
 ---
-# WooCommerceストアのパフォーマンスを最適化する方法
+
+# How to optimize performance for WooCommerce stores
 
 ## はじめに
 

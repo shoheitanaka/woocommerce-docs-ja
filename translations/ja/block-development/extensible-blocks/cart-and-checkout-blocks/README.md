@@ -3,7 +3,8 @@ sidebar_label: Cart and Checkout blocks
 category_slug: cart-and-checkout
 post_title: Cart and Checkout blocks
 ---
-# カートとチェックアウトの拡張性を始める
+
+# Getting started with Cart and Checkout extensibility
 
 このドキュメントは、カートブロックとチェックアウトブロックを拡張するために必要な可動部の高レベルの概要です。
 

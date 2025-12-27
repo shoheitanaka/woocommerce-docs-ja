@@ -2,6 +2,7 @@
 post_title: WooCommerce Payment Token API
 sidebar_label: Payment Token API
 ---
+
 # WooCommerce Payment Token API
 
 WooCommerce 2.6では、ゲートウェイ用の支払いトークンを保存および管理するためのAPIが導入されました。ユーザーはアカウント設定からこれらのトークンを管理し、チェックアウト時に保存された支払いトークンから選択することもできます。
@@ -209,8 +210,6 @@ $token->save()
 ```
 
 または、`WC_Payment_Tokens::get( $token_id )`を使用した場合に返される。
-
-## Classes
 
 ### WC_Payment_Tokens
 

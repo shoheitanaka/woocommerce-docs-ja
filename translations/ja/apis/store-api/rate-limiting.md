@@ -2,7 +2,8 @@
 sidebar_label: Rate Limiting
 sidebar_position: 4
 ---
-# ストアAPIエンドポイントのレート制限 
+
+# Rate Limiting for Store API endpoints 
 
 [レート制限](https://github.com/woocommerce/woocommerce-blocks/pull/5962)は、ストアAPIエンドポイントで使用できます。これはオプションで、デフォルトでは無効になっています。[以下の手順](#rate-limiting-options-filter)に従って有効にすることができます。
 
@@ -50,7 +51,7 @@ add_filter( 'woocommerce_store_api_rate_limit_options', function() {
 ストアがプロキシ、ロードバランサー、キャッシュサービス、CDNなどの後ろで動作している場合、IPによるキーイング制限は、標準的なIPフォワーディングヘッダーによってサポートされます：
 
 * `X_REAL_IP`|`CLIENT_IP` _リクエストの発信元IPの取得を簡略化する、一般的なカスタム実装__ `X_FORWARDED_FOR` _発信元IPを特定するための事実上の標準ヘッダー、 [Document](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For)
-* `woocommerce_store_api_rate_limit_options` _発信元IPを特定するためのデファクトスタンダードヘッダー、 [ドキュメント](https://github.com/woocommerce/woocommerce-blocks/pull/5962)_
+* __INLINE_CODE_2__ _発信元IPを特定するためのデファクトスタンダードヘッダー、 [ドキュメント](__URL_0__)_
 * `X_FORWARDED` _[ドキュメント](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded)、[RFC 7239](https://datatracker.ietf.org/doc/html/rfc7239)__。
 
 デフォルトでは無効になっている。

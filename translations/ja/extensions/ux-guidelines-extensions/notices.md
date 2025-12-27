@@ -2,8 +2,6 @@
 post_title: Notices
 sidebar_label: Notices
 ---
-# Notices
-
 お知らせは、主にアクションに対するユーザーのフィードバックを提供するために使用してください。オファーやお知らせを伝えるためにお知らせを使用するのは避けましょう。お知らせにブランドカラー、フォント、イラストを使用しない。
 
 ポストアクティベーション通知が必要な場合は、WordPressのプラグイン領域内にとどめ、ダッシュボードやプラットフォームの他の部分には表示しないでください。
@@ -16,11 +14,9 @@ WordPressの標準通知フォーマットとWooCommerceの管理者通知APIを
 
 何が起こっているかを伝える、短いが意味のあるメッセージを使用する。メッセージは、ユーザーが続行するために必要なことを指示していることを確認してください。メッセージに複数の文が含まれる場合は、適切な句読点を使用すること。略語は避ける。
 
-## Design
-
 フィードバックは、ユーザーが気づくように配置することが重要です。例えば、ユーザーにデータの入力を促すために検証メッセージが必要な場合、データの修正が必要な入力の近くにメッセージを表示することで、ユーザーの注意を引くことができます。
 
-![4つの異なる予告デザインが隣り合うビジュアライゼーション](https://developer.woocommerce.com/wp-content/uploads/2023/12/notices1.png)
+![visualization of four different notice designs next to one another](https://developer.woocommerce.com/wp-content/uploads/2023/12/notices1.png)
 
 **成功**メッセージ：ユーザーが実行したアクションが成功した場合。
 
@@ -32,4 +28,4 @@ WordPressの標準通知フォーマットとWooCommerceの管理者通知APIを
 
 ### 例
 
-![お知らせとしての情報メッセージの例](https://developer.woocommerce.com/wp-content/uploads/2023/12/informational-notice.png)
+![an example of an informational message as a notice](https://developer.woocommerce.com/wp-content/uploads/2023/12/informational-notice.png)

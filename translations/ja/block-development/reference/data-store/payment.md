@@ -1,7 +1,8 @@
 ---
 sidebar_label: Payment Store
 ---
-# 決済ストア (`wc/store/payment`) 
+
+# Payment Store (`wc/store/payment`) 
 
 ## 概要
 
@@ -68,8 +69,6 @@ sidebar_label: Payment Store
 }
 ```
 
-## Usage
-
 このストアを利用するには、`paymentStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、このキーをインポートすることができます：
 
 ```js
@@ -93,7 +92,7 @@ const { paymentStore } = window.wc.wcBlocksData;
    	-  _availablePaymentMethods_ `object`: 利用可能な支払い方法：利用可能な支払い方法。これは現在、支払い方法IDをキーとするオブジェクトです。各メンバーには、ペイメントメソッドIDを値とする`name`エントリーが含まれます。
    	-  _availableExpressPaymentMethods_`object`：利用可能なエクスプレス決済方法。これは現在、支払方法IDをキーとするオブジェクトです。各メンバーには、支払い方法IDを値とする`name`エントリが含まれます。
    	-  savedPaymentMethods_`object`：現在の顧客の保存された支払い方法。これはオブジェクトで、各支払方法に固有です。例として、Stripeの保存されたトークンは次のように返されます：
-   	- paymentMethodData`object`：現在の支払い方法のデータ。paymentMethodData`object`：現在の支払い方法データ。これは各支払い方法に固有なので、ここでは詳細を説明できません。
+   	- paymentMethodData`object`：現在の支払い方法のデータ。paymentMethodData__INLINE_CODE_16__：現在の支払い方法データ。これは各支払い方法に固有なので、ここでは詳細を説明できません。
    	- _paymentResult_ `object`:以下のプロパティを持つオブジェクト：
       		- message`string`：決済ゲートウェイから返されたメッセージ：ペイメントゲートウェイから返されるメッセージ。
       		- _paymentStatus_ `string`:支払いのステータス。とりうる値は以下のとおり：`success`、`failure`、`pending`、`error`、`not set`。
@@ -544,7 +543,7 @@ const isPaymentFailed = store.isPaymentFailed();
 #### を返す。 
 
 -   `object`：現在の支払い状況：
-    -   _isPristine_ `boolean`:isPristine`paymentStore`：支払い処理が開始されておらず、エラーもなく、終了していない場合は真。これは初期状態では真です。
+    -   _isPristine_ `boolean`:isPristine__INLINE_CODE_1__：支払い処理が開始されておらず、エラーもなく、終了していない場合は真。これは初期状態では真です。
     -   isStarted_ `boolean`：支払い処理が開始された場合、真。
     -   _isProcessing`boolean`：支払い処理中であれば真。
     -   hasError_ `boolean`: エラー：支払い処理でエラーが発生した場合は true。
@@ -558,3 +557,4 @@ const isPaymentFailed = store.isPaymentFailed();
 const store = select( paymentStore );
 const currentStatus = store.getCurrentStatus();
 ```
+

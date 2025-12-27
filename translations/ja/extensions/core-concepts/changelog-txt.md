@@ -2,7 +2,8 @@
 post_title: Formatting for Changelog.txt
 sidebar_label: Changelog.txt
 ---
-# Changelog.txtのフォーマット
+
+# Formatting for Changelog.txt
 
 ## changelog.txt ファイル
 
@@ -53,4 +54,4 @@ YYYY-MM-DD - version 1.0.0
 
 これは WooCommerce.com のモーダルで解析された変更ログが表示される方法で、各エントリーのタイプはアイコンに置き換えられています。タイプを持たない変更履歴エントリは [その他] アイコンで表示され、ネストされたエントリはアイコンを持ちません。 
 
-![WooCommerce.comに掲載されている変更履歴の例](https://woocommerce.com/wp-content/uploads/2025/11/changelog-formatting.png)
+![Example changelog as shown on WooCommerce.com](https://woocommerce.com/wp-content/uploads/2025/11/changelog-formatting.png)

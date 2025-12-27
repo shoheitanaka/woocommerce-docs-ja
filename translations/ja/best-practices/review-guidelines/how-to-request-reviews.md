@@ -2,7 +2,8 @@
 post_title: How to request WooCommerce extension reviews
 sidebar_label: Requesting reviews
 ---
-# WooCommerce拡張機能のレビュー依頼方法
+
+# How to request WooCommerce extension reviews
 
 ## レビュー依頼の方法
 

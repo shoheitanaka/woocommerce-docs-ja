@@ -68,8 +68,6 @@ curl "https://example-store.com/wp-json/wc/store/v1/products/brands"
 GET /products/brands/:id
 ```
 
-or 
-
 ```http
 GET /products/brands/:slug
 ```
@@ -81,8 +79,6 @@ GET /products/brands/:slug
 ```sh
 curl "https://example-store.com/wp-json/wc/store/v1/products/brands/1"
 ```
-
-or
 
 ```sh
 curl "https://example-store.com/wp-json/wc/store/v1/products/brands/adidas"

@@ -3,7 +3,8 @@ post_title: How to use WooCommerce CLI
 sidebar_label: Using WooCommerce CLI
 sidebar_position: 2
 ---
-# WooCommerce CLIの使い方
+
+# How to Use WooCommerce CLI
 
 ## はじめに
 

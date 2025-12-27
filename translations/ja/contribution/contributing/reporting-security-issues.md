@@ -2,7 +2,8 @@
 post_title: Reporting security issues
 sidebar_label: Reporting security issues
 ---
-# セキュリティ問題の報告
+
+# Reporting security issues
 
 WooCommerceはセキュリティに深く配慮し、マーチャントとその顧客の安全を守るために努力しています。 
 

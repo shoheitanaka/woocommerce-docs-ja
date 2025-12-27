@@ -2,7 +2,8 @@
 post_title: Developing using WooCommerce CRUD objects
 sidebar_label: Using CRUD objects
 ---
-# WooCommerce CRUDオブジェクトを使った開発
+
+# Developing using WooCommerce CRUD objects
 
 CRUDとは、データベースやリソースに対して行うことができる4つの基本的な操作（Create、Read、Update、Delete）の略語です。
 
@@ -24,8 +25,6 @@ CRUDとは、データベースやリソースに対して行うことができ�
 [`WC_Data`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/abstracts/abstract-wc-data.php)クラスはCRUDオブジェクトの基本的な実装であり、すべてのCRUDオブジェクトはこれを継承しています。最も重要なプロパティは`$data`で、これは各オブジェクトでサポートされているプロップの配列であり、`$id`はオブジェクトのIDです。
 
 [クーポン・オブジェクト・クラス](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/includes/class-wc-coupon.php)は、`WC_Data`を拡張し、すべてのプロパティにCRUD関数を追加した良い例です。
-
-### Data
 
 `$data`はプロパティ名とデフォルト値を格納する：
 
@@ -100,8 +99,6 @@ public function set_used_by( $used_by ) {
 ### コンストラクタ
 
 CRUDオブジェクトのコンストラクタは、データベースからの読み込みを容易にします。実際の読み込みはCRUDクラスではなく、そのデータストアが行います。
-
-Example:
 
 ```php
 /**

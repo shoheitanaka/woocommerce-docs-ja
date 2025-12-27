@@ -2,7 +2,8 @@
 post_title: How to add a custom field to simple and variable products
 sidebar_label: Add custom fields to products
 ---
-# カスタムフィールドを単純商品と可変商品に追加する方法
+
+# How to add a custom field to simple and variable products
 
 このチュートリアルでは、商品のカスタムフィールドを作成してストアに表示する方法を学びます。一緒にスケルトンプラグインをセットアップし、WPの命名規則とWooCommerceフックについて学びましょう。最終的には、カスタムフィールドを追加するためのプラグインが機能するようになります。
 

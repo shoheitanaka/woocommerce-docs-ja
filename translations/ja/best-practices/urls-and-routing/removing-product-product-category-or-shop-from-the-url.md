@@ -2,9 +2,8 @@
 post_title: Understanding the risks of removing URL bases in WooCommerce
 sidebar_label: Risks of removing URL bases
 ---
-# WooCommerceでURLベースを削除するリスクを理解する
 
-## In sum
+# Understanding the risks of removing URL bases in WooCommerce
 
 URLから`/product/`、`/product-category/`、`/shop/`を削除することは、WordPressのURL解決方法上、お勧めできません。WordPressは、`product-category`（またはその他のテキスト）をURLのベースにして、それが商品カテゴリーにつながるURLであることを検出します。このベースを削除できるSEOプラグインもありますが、パフォーマンスや重複URLなど、さまざまな問題を引き起こす可能性があります。
 

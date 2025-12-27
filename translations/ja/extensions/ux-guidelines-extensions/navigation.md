@@ -2,7 +2,8 @@
 post_title: Navigation
 sidebar_label: Navigation
 ---
-# ナビゲーション
+
+# Navigation
 
 既存のWooCommerceメニュー構造内に商品ナビゲーション要素を配置します。
 

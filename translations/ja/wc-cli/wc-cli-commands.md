@@ -3,7 +3,8 @@ post_title: WooCommerce CLI commands
 sidebar_label: Commands
 sidebar_position: 4
 ---
-# WooCommerce CLIコマンド
+
+# WooCommerce CLI Commands
 
 ## 概要
 
@@ -34,8 +35,6 @@ wp wc [command] --help
 #### wc blueprint export [save-to-filename] (ブループリントのエクスポート)
 
 - `--steps` - エクスポートするステップの名前。
-
-### wc com
 
 #### wc com 拡張子リスト
 
@@ -186,7 +185,7 @@ wp wc [command] --help
 
 #### wc payment_gateway リスト
 
-- `--context` - リクエストが行われる範囲を指定します。
+- `--context` - リクエストのスコープ。
 - `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
 - `--field` - 個別のフィールドの値を取得する。
 - `--format` - レスポンスを特定のフォーマットでレンダリングする。
@@ -440,7 +439,7 @@ wp wc [command] --help
 
 #### wc 製品属性リスト
 
-- `--context` - リクエストが行われる範囲。
+- `--context` - リクエストのスコープ。
 - `--fields` - レスポンスを特定のフィールドに制限します。デフォルトはすべてのフィールドです。
 - `--field` - 個別のフィールドの値を取得する。
 - `--format` - レスポンスを特定のフォーマットでレンダリングする。
@@ -1236,8 +1235,6 @@ wp wc [command] --help
 - `--id` - リソースの一意な識別子。
 - `--force` - true にする必要があります。リソースはトラッシングをサポートしていません。
 - `--porcelain` - 操作が成功した場合に、id だけを出力する。
-
-### wc tax
 
 #### WCタックスリスト
 

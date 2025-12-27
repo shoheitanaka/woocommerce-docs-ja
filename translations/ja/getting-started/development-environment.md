@@ -3,7 +3,8 @@ post_title: Setting up your development environment
 sidebar_label: Local Development
 sidebar_position: 2
 ---
-# 開発環境のセットアップ
+
+# Setting up your development environment
 
 ## 推奨ソフトウェア
 
@@ -26,8 +27,6 @@ WooCommerceエクステンションを開発する際に考慮する必要があ
 ### ワードプレススタジオ - 推奨アプローチ
 
 簡単なローカル開発環境としては、[WordPress.com](https://developer.wordpress.com) チームがサポートするローカル開発環境である [WordPress Studio](https://developer.wordpress.com/studio/) をお勧めします。Studioには、複数のローカルウェブサイト環境を管理する機能や、コードエディタやターミナルとの統合機能が含まれています。Studioには、WordPress専用のAIアシスタント、WordPressのバックアップからの簡単なインポート、ブループリントのサポート、無料の公開プレビューサイト、WordPress.comまたはPressableでホストされているサイトとの双方向同期などの機能もあります。
-
-### wp-env
 
 [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/)はWordPressコミュニティによって管理されているコマンドラインユーティリティで、[Docker](https://www.docker.com/)とJSONマニフェストを使用してカスタムWordPress環境をセットアップして実行することができます。このリポジトリには、WooCommerceコアに貢献するための`.wp-env.json`ファイルが含まれています。
 

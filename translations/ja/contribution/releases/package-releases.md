@@ -3,7 +3,8 @@ post_title: WooCommerce Package Releases
 sidebar_label: Package Releases
 sidebar_position: 8
 ---
-# JavaScriptパッケージリリース
+
+# JavaScript Package Releases
 
 WooCommerceモノレポには、NPM経由で配布されている`@woocommerce/components`など、WooCommerce開発をサポートするJavaScriptパッケージが多数含まれています。このリリースプロセスはGitHub Actionsで管理されています。
 

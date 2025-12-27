@@ -62,8 +62,6 @@ extensionCartUpdate( {
 
 このことを念頭に置いて、エクステンションに複数のクライアントサイドインタラクションがあり、その結果サーバーサイドで実行されるコードパスが異なる場合、`extensionCartUpdate`に追加のデータを渡すとよいでしょう。例えば、ユーザーができるアクションが2つあり、1つは割引を追加するアクション、もう1つは割引を削除するアクションです。そして、コールバックでこの値をチェックすることで、どのコードパスを実行すべきかを区別することができます。
 
-Example:
-
 ```php
 <?php
 function add_discount() {
@@ -95,8 +93,6 @@ add_action('woocommerce_blocks_loaded', function() {
 
 ## API定義
 
-### PHP
-
 `ExtendSchema::register_update_callback`：指定された名前空間で `cart/extensions` エンドポイントがヒットしたときに実行されるコールバックを登録するために使用します。引数の配列を受け取ります。
 
 | 属性 | タイプ | 必須 | 説明 |
@@ -124,7 +120,7 @@ add_action('woocommerce_blocks_loaded', function() {
 
 実装されると、サイドバーにはこのようにコントロールが追加される：
 
-![画像](https://user-images.githubusercontent.com/5656702/125109827-bf7c8300-e0db-11eb-9e51-59921b38a0c2.png)
+![image](https://user-images.githubusercontent.com/5656702/125109827-bf7c8300-e0db-11eb-9e51-59921b38a0c2.png)
 
 ### 換金」ボタン
 
@@ -174,3 +170,4 @@ add_action('woocommerce_blocks_loaded', function() {
 ```
 
 これで登録が完了し、ボタンが押されると`cart/extensions`エンドポイントがヒットし、`super-coupons`の`namespace`を持つ`redeem_points`関数が実行されます。この処理が終了すると、WooCommerce Blocksによってクライアントサイドのカートが更新されます。
+

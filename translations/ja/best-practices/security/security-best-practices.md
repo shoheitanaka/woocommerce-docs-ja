@@ -2,7 +2,8 @@
 post_title: WooCommerce security best practices
 sidebar_label: Security best practices
 ---
-# WooCommerce セキュリティのベストプラクティス
+
+# WooCommerce security best practices
 
 ## セキュリティー入門
 

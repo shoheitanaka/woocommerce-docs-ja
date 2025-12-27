@@ -2,7 +2,8 @@
 post_title: 'Handling scripts, styles, and data'
 sidebar_label: 'Script, styles, and data handling'
 ---
-# スクリプト、スタイル、データを扱う
+
+# Handling scripts, styles, and data
 
 ## 問題
 

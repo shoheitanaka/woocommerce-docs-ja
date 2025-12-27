@@ -2,13 +2,10 @@
 post_title: Classic theme development handbook
 sidebar_label: Classic theme development
 ---
-# クラシックテーマ開発ハンドブック
 
----
+# Classic theme development handbook
 
 [**注意:** このドキュメントはクラシックテーマの開発を対象としています。ブロックテーマの開発](../block-theme-development/theming-woo-blocks.md)については別のドキュメントを確認してください。
-
----
 
 WooCommerceは、バージョン3.3以降のすべてのWordPressテーマと相性が良く、たとえWooCommerce専用テーマでなく、正式にサポートを表明していないテーマであっても、見栄えが良くなります。テンプレートはコンテンツ内部でレンダリングされるため、サイト上ですべてを自然に見せることができます。
 

@@ -2,7 +2,8 @@
 post_title: Filtering payment methods in the Checkout block
 sidebar_label: Filtering payment methods
 ---
-# チェックアウトブロックにおける支払い方法のフィルタリング
+
+# Filtering payment methods in the Checkout block
 
 ## 問題
 
@@ -150,4 +151,4 @@ add_action('woocommerce_blocks_loaded', function() {
 
 このコード・ブロックのコメントに注意することが重要で、独自の`ExtendSchema`をインスタンス化してはならない。
 
-正しい`supports`の値で支払い方法を正しく追加した場合、`Bookable`の商品をカートに入れた状態でチェックアウトのページに到達すると、`booking_availability`の要件を`supports`がサポートしていない方法は表示されず、`string`の要件を`namespace`がサポートしている方法は表示されます。
+正しい`supports`の値で支払い方法を正しく追加した場合、`Bookable`の商品をカートに入れた状態でチェックアウトのページに到達すると、`booking_availability`の要件を`supports`がサポートしていない方法は表示されず、__INLINE_CODE_3__の要件を__INLINE_CODE_2__がサポートしている方法は表示されます。

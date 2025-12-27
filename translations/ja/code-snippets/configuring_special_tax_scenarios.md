@@ -4,7 +4,8 @@ sidebar_label: Configuring special tax scenarios
 current wccom url: >-
   https://woocommerce.com/document/setting-up-taxes-in-woocommerce/configuring-specific-tax-setups-in-woocommerce/#configuring-special-tax-setups
 ---
-# 特別税のシナリオを設定するためのコードスニペット
+
+# Code snippets for configuring special tax scenarios
 
 ## シナリオA：場所や税金に関係なく同じ料金を請求する
 
@@ -74,3 +75,4 @@ WooCommerceの税金設定の1つは、商品価格に追加情報を追加す�
 ```php
 add_filter( 'woocommerce_show_variation_price', '__return_true' );
 ```
+

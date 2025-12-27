@@ -3,7 +3,8 @@ post_title: Project structure
 sidebar_label: Project structure
 sidebar_position: 1
 ---
-# プロジェクト体制
+
+# Project Structure
 
 ## 前提条件
 

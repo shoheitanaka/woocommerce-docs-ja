@@ -2,7 +2,8 @@
 post_title: WooCommerce Git Flow
 sidebar_label: WooCommerce Git Flow
 ---
-# WooCommerce Gitの流れ
+
+# WooCommerce Git Flow
 
 ## 慣例
 

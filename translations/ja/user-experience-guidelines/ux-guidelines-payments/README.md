@@ -3,7 +3,8 @@ sidebar_label: Payments
 category_slug: user-experience-payments
 post_title: Payments guidelines
 ---
-# 支払いガイドライン
+
+# Payments Guidelines
 
 ペイメントエクステンションを構築する際は、[WooCommerceエクステンションガイドライン](https://developer.woocommerce.com/docs/extensions/ux-guidelines-extensions/) に従ってください。
 
@@ -16,3 +17,4 @@ post_title: Payments guidelines
 - WordPressプラグインからの直接インストール。
 - Wooのマーケットプレイスで公開されている決済サービスのリストを通して。
 - 管理画面のオンボーディングタスクと支払い設定。ペイメントプラグインをWoo管理画面のペイメントゲートウェイのリストに追加するには、このガイドラインに記載されている基準を満たしている必要があります。
+

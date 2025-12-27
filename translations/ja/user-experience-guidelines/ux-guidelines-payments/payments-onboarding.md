@@ -2,7 +2,8 @@
 post_title: Payments onboarding and setup
 sidebar_label: Payments onboarding and setup
 ---
-# ペイメントのオンボーディングとセットアップ
+
+# Payments Onboarding and Setup
 
 ## ペイメント・オンボーディング
 

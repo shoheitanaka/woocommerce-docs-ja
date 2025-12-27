@@ -2,7 +2,8 @@
 post_title: Payment button layout
 sidebar_label: Payment button layout
 ---
-# 決済ボタンのレイアウト
+
+# Payment Button Layout
 
 コンテナに対するボタンの位置と配置を定義し、ボタン間の階層と間隔を均等にします。
 
@@ -11,8 +12,6 @@ sidebar_label: Payment button layout
 横長または縦長のレイアウトで「カートに入れる」ボタンに対して支払いボタンを正しく配置し、支払いボタンを「カートに入れる」ボタンの右側または下に配置する。
 
 ![商品ページレイアウト.png](/img/doc_images/商品ページレイアウト.png)
-
-## Cart
 
 縦型レイアウトの「チェックアウトに進む」ボタンに対して、支払いボタンを正しく配置する。決済ボタンは「チェックアウトに進む」ボタンの上に配置してください。支払いボタンはボタンの下や間に配置しないでください。
 

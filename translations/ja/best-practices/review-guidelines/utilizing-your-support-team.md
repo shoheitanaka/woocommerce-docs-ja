@@ -2,7 +2,8 @@
 post_title: Utilizing your support team to respond to feedback
 sidebar_label: Utilizing your support team
 ---
-# サポートチームを活用してフィードバックに対応する
+
+# Utilizing your support team to respond to feedback
 
 サポートチームは通常、マーチャントが貴社に連絡する際の主要なコンタクトポイントです。チケットとチャットは、マーチャントと会話し、ソフトウェアのペインポイントを理解し、フィードバックを聞き、機能要求を分析するための最高のツールです。サポートチームは一丸となって、製品とその使用方法を熟知しています。この情報は、製品チームやエンジニアリング・チームに引き継ぐために不可欠です。
 

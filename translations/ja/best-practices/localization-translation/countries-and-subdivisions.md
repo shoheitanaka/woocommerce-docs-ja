@@ -2,7 +2,8 @@
 post_title: Updating countries and subdivisions
 sidebar_label: Countries and subdivisions
 ---
-# 国や小部門の更新
+
+# Updating countries and subdivisions
 
 WooCommerceには、ユーザーインターフェースの様々な部分で使用される国や小区分（州や州など）の包括的なリストが付属しています。
 
@@ -12,3 +13,4 @@ CLDRが更新を受け付けるまでに時間がかかることがあるため�
 
 - [国を追加するスニペット](/docs/code-snippets/add-a-country)
 - [州を追加または修正するスニペット](/docs/code-snippets/add-or-modify-states)
+

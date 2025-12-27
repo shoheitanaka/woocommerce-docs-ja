@@ -2,7 +2,8 @@
 post_title: WooCommerce Plugin API callbacks
 sidebar_label: Plugin API callbacks
 ---
-# WooCommerceプラグインAPIコールバック
+
+# WooCommerce Plugin API callbacks
 
 ## 概要
 

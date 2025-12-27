@@ -3,7 +3,8 @@ post_title: How to design a simple extension
 sidebar_label: Design a simple extension
 sidebar_position: 1
 ---
-# シンプルなエクステンションの設計方法
+
+# How to design a simple extension
 
 ## はじめに
 

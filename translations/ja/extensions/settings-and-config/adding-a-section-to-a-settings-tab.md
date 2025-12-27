@@ -2,7 +2,8 @@
 post_title: How to add a section to a settings tab
 sidebar_label: Add a section to a settings tab
 ---
-# 設定タブにセクションを追加する方法
+
+# How to add a section to a settings tab
 
 WooCommerceの拡張機能で何らかの設定が必要な場合、自問することが重要です：  **もしあなたのエクステンションがいくつかの簡単な設定を持つだけなら、それ専用の新しいタブを作る必要があるでしょうか？ほとんどの場合、答えはノーです。
 

@@ -2,7 +2,8 @@
 post_title: Managing extension deactivation and uninstallation
 sidebar_label: Deactivation and uninstallation
 ---
-# 拡張機能の無効化とアンインストールの管理
+
+# Managing extension deactivation and uninstallation
 
 ## はじめに
 

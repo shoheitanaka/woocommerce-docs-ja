@@ -2,7 +2,8 @@
 post_title: Critical flows within the WooCommerce Core API
 sidebar_label: API critical flows
 ---
-# WooCommerce Core API内の重要なフロー
+
+# Critical flows within the WooCommerce Core API
 
 私たちのドキュメントでは、WooCommerce Core API内の重要なユーザーフローを特定しました。これらのフローは
 私たちのテストイニシアチブの羅針盤となり、最も重要なところに私たちの努力を集中させる助けとなります。また
@@ -24,8 +25,6 @@ sidebar_label: API critical flows
 | Products | Can update a product       | `/wp-json/wc/v3/products/{id}` | `tests/api-core-tests/tests/products/products-crud.test.js` |
 | 商品｜商品を削除できる｜`/wp-json/wc/v3/products/{id}`｜`tests/api-core-tests/tests/products/products-crud.test.js` |
 
-## Orders
-
 | ルート│フロー名│エンドポイント│テストファイル
 |--------|------------------------------------------------------------------|------------------------------|-----------------------------------------------------------|
 | Orders | Can create an order                                              | `/wp-json/wc/v3/orders`      | `tests/api-core-tests/tests/orders/orders-crud.test.js`   |
@@ -36,13 +35,9 @@ sidebar_label: API critical flows
 | Orders | Can search orders                                                | `/wp-json/wc/v3/orders`      | `tests/api-core-tests/tests/orders/order-search.test.js`  |
 | 注文｜複数の商品タイプや税クラスを複合した新しい注文を追加できる｜ `/wp-json/wc/v3/orders` | `tests/api-core-tests/tests/orders/order-complex.test.js` |
 
-## Refunds
-
 | ルート│フロー名│エンドポイント│テストファイル
 |---------|---------------------|--------------------------------------|-----------------------------------------------------|
 | Refunds | Can refund an order | `/wp-json/wc/v3/orders/{id}/refunds` | `tests/api-core-tests/tests/refunds/refund.test.js` |
-
-## Coupons
 
 | ルート│フロー名│エンドポイント│テストファイル
 |---------|---------------------------|--------------------------------------|------------------------------------------------------|
@@ -58,3 +53,4 @@ sidebar_label: API critical flows
 | 配送ゾーン｜配送ゾーンを作成できる｜`/wp-json/wc/v3/shipping/zones`｜`tests/api-core-tests/tests/shipping/shipping-zones.test.js`｜｜配送方法｜配送ゾーンに配送方法を作成できる
 | 配送方法｜配送ゾーンへの配送方法を作成できます。
 | 配送クラス｜商品の配送クラスを作成できます。
+

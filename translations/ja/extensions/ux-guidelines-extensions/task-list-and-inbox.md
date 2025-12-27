@@ -2,7 +2,8 @@
 post_title: Task list and inbox
 sidebar_label: Task list and inbox
 ---
-# タスクリストと受信トレイ
+
+# Task List and Inbox
 
 プラグインは、以下のガイドラインに基づいて、タスクノートと受信トレイノートのどちらを実装するかを選択する必要があります。同じメッセージにタスクと受信トレイノートの両方を実装することは避けてください。
 
@@ -10,7 +11,7 @@ sidebar_label: Task list and inbox
 
 ## タスクリスト
 
-![タスクリストのタスクの例](https://developer.woocommerce.com/wp-content/uploads/2023/12/task-list1.png)
+![an example of a task in the task list](https://developer.woocommerce.com/wp-content/uploads/2023/12/task-list1.png)
 
 行動が**必要**なものは、タスクリストに入れるべきである。
 
@@ -25,15 +26,11 @@ sidebar_label: Task list and inbox
     - 機能のお知らせやプラグインの使い方のヒントなどの情報通知は、クリティカルではなく、アクションを必要としないため、受信トレイに表示されるべきです。
     - ユーザーアクティビティからの通知は、定期的なフィードバック通知（成功、情報、エラー、警告）として表示されます。
 
-Examples:
-
-![「次にやること」の見出しの下にあるタスクリストに3つのタスクが表示され、その下に「さらに3つのタスクを表示する」オプションがある](https://developer.woocommerce.com/wp-content/uploads/2023/12/task-list-example.png)
-
-## Inbox
+![three tasks in the task list under the heading "Things to do next" with the option to expand at the bottom to "show 3 more tasks" ](https://developer.woocommerce.com/wp-content/uploads/2023/12/task-list-example.png)
 
 受信トレイは、ユーザーに情報、有用、補足的なコンテンツを提供し、一方、重要な通知やセットアップ・タスクは、それぞれ独立した適切な場所に置かれる。
 
-![受信トレイ通知の例](https://developer.woocommerce.com/wp-content/uploads/2023/12/inbox1.png)
+![an example of an inbox notification](https://developer.woocommerce.com/wp-content/uploads/2023/12/inbox1.png)
 
 - *受信箱*に表示されるもの：
     - 重要でないリマインダーなどの情報通知。
@@ -45,6 +42,4 @@ Examples:
 
     - アクションが必要な通知、延長設定タスク、または定期的なフィードバック通知。
 
-Examples:
-
-![管理画面の "受信トレイ "セクションに表示される2つの受信トレイ通知の例](https://developer.woocommerce.com/wp-content/uploads/2023/12/inbox-examples.png)
+![an example of two inbox notifications listed under the "Inbox" section of the admin](https://developer.woocommerce.com/wp-content/uploads/2023/12/inbox-examples.png)

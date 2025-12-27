@@ -2,7 +2,8 @@
 post_title: Accessibility
 sidebar_label: Accessibility
 ---
-# アクセシビリティ
+
+# Accessibility
 
 あなたのテーマは[WordPressアクセシビリティコーディングスタンダード](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/accessibility/)を満たしている必要があります。 
 

@@ -3,11 +3,7 @@ post_title: AI
 sidebar_label: AI
 sidebar_position: 3
 ---
-# AI
-
 このガイドでは、AIツールの概要と、WooCommerce開発ワークフローを強化するためのAIツールの使用方法について説明します。
-
-## MCP
 
 WooCommerceはモデルコンテキストプロトコル(MCP)のネイティブサポートを含んでおり、AIアシスタントやツールが標準化されたプロトコルを介してWooCommerceストアと直接対話することを可能にします。詳しくは[MCPドキュメント](/docs/features/mcp/)をご覧ください。
 

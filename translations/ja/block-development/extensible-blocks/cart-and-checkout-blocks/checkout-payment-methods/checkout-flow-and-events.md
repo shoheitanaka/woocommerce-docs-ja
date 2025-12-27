@@ -2,7 +2,8 @@
 post_title: Checkout flow and events
 sidebar_label: Checkout flow and events
 ---
-# チェックアウトの流れとイベント
+
+# Checkout flow and events
 
 このドキュメントでは、WooCommerceチェックアウトブロックにおけるチェックアウトのフローの概要と、一般的なアーキテクチャの概要を説明します。
 
@@ -15,7 +16,7 @@ sidebar_label: Checkout flow and events
 
 以下は、その流れの概略である：
 
-![チェックアウトの流れ](https://user-images.githubusercontent.com/1628454/113739726-f8c9df00-96f7-11eb-80f1-78e25ccc88cb.png)
+![checkout flow diagram](https://user-images.githubusercontent.com/1628454/113739726-f8c9df00-96f7-11eb-80f1-78e25ccc88cb.png)
 
 ## 一般概念
 
@@ -233,7 +234,7 @@ const MyPaymentMethodComponent = ( { emitResponse } ) => {
 
 すべてのオブザーバーがこのイベントに対して`true`を返した場合、チェックアウトのステータスは`PROCESSING`に変更されます。
 
-このイベントエミッタサブスクライバは、`useCheckoutContext`フックを使用してチェックアウトコンテキストから取得するか、登録されたコンポーネントのpropとして支払いメソッドエクステンションに渡すことができます：
+このイベントエミッタサブスクライバは、`useCheckoutContext`フックを使用してチェックアウトコンテキストから取得するか、登録されたコンポーネントのpropとして支払いメソッドエクステンションから取得することができます：
 
 "内部開発のために:_
 
@@ -304,8 +305,6 @@ const successResponse = { type: 'success' };
 
 `billingAddress`または`shippingAddress`プロパティがレスポンスオブジェクトにない場合、データの状態はそのままになります。
 
-#### Fail
-
 決済処理にエラーが発生した場合、フェイル・レスポンスが返されます。レスポンスがこの形状のオブジェクトである場合、フェイル・レスポンスとみなされます：
 
 ```js
@@ -318,8 +317,6 @@ const failResponse = { type: 'failure' };
 -   `messageContext`：指定された場合、指定された領域をエラー通知の対象とします（ここで前述の`noticeContexts`が登場します）。そうでない場合は、 `noticeContexts.PAYMENTS` の領域に追加されます。
 -   `paymentMethodData`：（成功応答の場合と同じです）。
 -   `billingAddress`：（成功応答の場合と同じ）。
-
-#### Error
 
 チェックアウトフォームのユーザー入力にエラーがある場合、エラーレスポンスが返されます。レスポンスがこの形状のオブジェクトである場合、エラーレスポンスとみなされます：
 

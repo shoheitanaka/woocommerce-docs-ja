@@ -2,7 +2,8 @@
 post_title: Email editor logging
 sidebar_label: Email editor logging
 ---
-# メールエディターログ
+
+# Email Editor Logging
 
 メールエディタのログは、通常操作時のノイズを減らすために重要度のしきい値を使用します。デフォルトでは、警告以上のログのみが記録されます。ロギングレベルを変更するには、`woocommerce_email_editor_logging_threshold`フィルタを使用してください：
 

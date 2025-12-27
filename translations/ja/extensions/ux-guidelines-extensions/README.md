@@ -3,15 +3,14 @@ sidebar_label: Extension guidelines
 category_slug: user-experience-extensions
 post_title: Extension guidelines
 ---
-# エクステンション・ガイドライン
+
+# Extension Guidelines
 
 このセクションでは、使いやすさ、シームレスな統合、および強力な採用のために、製品エクスペリエンスをWooCommerceと一致させるために従うべき一般的なガイドラインとベストプラクティスについて説明します。
 
 ユーザーエクスペリエンスと分類学に慣れるために、現在の[WooCommerceセットアップ体験](https://woocommerce.com/documentation/plugins/woocommerce/getting-started/)を確認することを強くお勧めします。
 
 また、[WordPressコアガイドライン](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/)を確認し、コンテンツスタイルに関する[参考資料](https://woocommerce.com/document/grammar-punctuation-style-guide/)を確認することをお勧めします。
-
-## General
 
 既存のWordPress/WooCommerce UI、組み込みコンポーネント（テキストフィールド、チェックボックスなど）、および既存のメニュー構造を使用します。
 

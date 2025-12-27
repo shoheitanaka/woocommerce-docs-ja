@@ -2,7 +2,8 @@
 post_title: Compatibility and interoperability for WooCommerce extensions
 sidebar_label: Compatibility
 ---
-# WooCommerce 拡張機能の互換性と相互運用性
+
+# Compatibility and interoperability for WooCommerce extensions
 
 WooCommerceエクステンションがコアプラットフォーム、様々なコンポーネント、および他のエクステンションと互換性があり、相互運用可能であることを確認することは、ユーザにシームレスなエクスペリエンスを提供するための基本です。このドキュメントでは、互換性の重要性、自己宣言による互換性チェックのプロセス、互換性の問題に対する手動テスト、一般的な問題のトラブルシューティングについて説明します。
 

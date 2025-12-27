@@ -1,7 +1,8 @@
 ---
 post_title: Useful core functions
 ---
-# 便利なコア機能
+
+# Useful core functions
 
 WooCommerceのコア関数はフロントエンドと管理画面の両方で利用できます。これらは`includes/wc-core-functions.php`にあり、プラグインのテーマで使用することができます。
 

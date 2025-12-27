@@ -1,5 +1,3 @@
-# Hooks
-
 エクステンションで使用できるフックがいくつかありますが、いくつかは新しく、いくつかはWooCommerceコアにすでに存在するフックです。
 
 - [フィルター](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/hooks/filters.md)

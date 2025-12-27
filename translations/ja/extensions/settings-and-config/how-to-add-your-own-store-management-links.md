@@ -2,7 +2,8 @@
 post_title: How to add store management links
 sidebar_label: Add store management links
 ---
-# 店舗管理リンクの追加方法
+
+# How to add store management links
 
 ## はじめに
 
@@ -29,8 +30,6 @@ sidebar_label: Add store management links
 店舗管理リンクの追加はすべてJavaScriptで行われるので、最初のステップは、店舗管理リンクを追加するスクリプトをエンキューすることです。ここで最も重要なことは、店舗管理リンクセクションがレンダリングされる前にスクリプトが実行されるようにすることです。
 
 あなたのスクリプトが私たちのスクリプトより先に実行されるようにするには、優先度を15より高くしてエンキューする必要があります。また、`addFilter`にアクセスするには、`wp-hooks`に依存する必要がある。
-
-Example:
 
 ```php
 function enqueue_management_link_script() {
@@ -74,4 +73,4 @@ addFilter(
 
 新しいカスタム店舗管理リンクを使用したスクリーンショットです：
 
-![wp-adminのカスタムストア管理リンクのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/yvXeSya.png)
+![screen shot of custom store management link in wp-admin](https://developer.woocommerce.com/wp-content/uploads/2023/12/yvXeSya.png)

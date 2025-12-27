@@ -2,7 +2,8 @@
 post_title: Maintaining and updating WooCommerce extensions
 sidebar_label: Maintainability and updates
 ---
-# WooCommerceエクステンションのメンテナンスとアップデート
+
+# Maintaining and updating WooCommerce extensions
 
 WooCommerce エクステンションのメンテナンスとアップデートは、進化し続ける WordPress エコシステムの中で互換性、安全性、機能性を維持するために非常に重要です。このドキュメントでは、容易な保守性を確保し、更新頻度と更新プロセスを遵守し、手動で更新チェックを行うためのベストプラクティスを概説します。
 

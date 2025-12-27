@@ -2,7 +2,8 @@
 post_title: WooCommerce performance best practices
 sidebar_label: Performance best practices
 ---
-# WooCommerceエクステンションのパフォーマンスに関するベストプラクティス
+
+# Performance best practices for WooCommerce extensions
 
 WooCommerceエクステンションのパフォーマンスを最適化することは、オンラインストアを円滑に運営し、優れたユーザーエクスペリエンスを提供し、検索エンジンの検索結果で上位に表示されるようにするために不可欠です。このガイドでは、WooCommerce エクステンションのスピードと効率の向上を目指す開発者向けに、パフォーマンスへの影響の理解、ベンチマーク、テスト、改善のための戦略の実施に焦点を当てています。
 

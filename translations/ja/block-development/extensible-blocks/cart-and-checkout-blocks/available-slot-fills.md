@@ -3,7 +3,8 @@ post_title: Available slots
 sidebar_label: Available slots
 sidebar_position: 2
 ---
-# 利用可能なスロット
+
+# Available slots
 
 このドキュメントでは、カスタムコンテンツ（フィル）を追加するために使用できるスロットのリストを示します。
 
@@ -36,13 +37,9 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-Cart:
+![Example of ExperimentalOrderMeta in the Cart block](https://user-images.githubusercontent.com/1628454/154517779-117bb4e4-568e-413c-904c-855fc3450dfa.png)
 
-![カートブロック内のExperimentalOrderMetaの例](https://user-images.githubusercontent.com/1628454/154517779-117bb4e4-568e-413c-904c-855fc3450dfa.png)
-
-Checkout:
-
-![チェックアウト・ブロック内のExperimentalOrderMetaの例](https://user-images.githubusercontent.com/1628454/154697224-de245182-6783-4914-81ba-1dbcf77292eb.png)
+![Example of ExperimentalOrderMeta in the Checkout block](https://user-images.githubusercontent.com/1628454/154697224-de245182-6783-4914-81ba-1dbcf77292eb.png)
 
 ### パラメーター
 
@@ -73,13 +70,9 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-Cart:
+![Example of ExperimentalOrderShippingPackages in the Cart block](https://user-images.githubusercontent.com/6165348/118399054-2b4dec80-b653-11eb-94a0-989e2e6e362a.png)
 
-![カートブロック内のExperimentalOrderShippingPackagesの例](https://user-images.githubusercontent.com/6165348/118399054-2b4dec80-b653-11eb-94a0-989e2e6e362a.png)
-
-Checkout:
-
-![チェックアウト・ブロック内のExperimentalOrderShippingPackagesの例](https://user-images.githubusercontent.com/6165348/118399133-90094700-b653-11eb-8ff0-c917947c199f.png)
+![Example of ExperimentalOrderShippingPackages in the Checkout block](https://user-images.githubusercontent.com/6165348/118399133-90094700-b653-11eb-8ff0-c917947c199f.png)
 
 ### パラメーター
 
@@ -121,9 +114,7 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-Checkout:
-
-![チェックアウト・ブロック内のExperimentalOrderLocalPickupPackagesの例](https://user-images.githubusercontent.com/5656702/222814945-a449d016-0621-4a70-b0f4-2ae1ce6487f1.png)
+![Example of ExperimentalOrderLocalPickupPackages in the Checkout block](https://user-images.githubusercontent.com/5656702/222814945-a449d016-0621-4a70-b0f4-2ae1ce6487f1.png)
 
 ### パラメーター
 
@@ -157,13 +148,9 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-Cart:
+![Cart showing ExperimentalDiscountsMeta location](https://user-images.githubusercontent.com/5656702/122774218-ea27a880-d2a0-11eb-9450-11f119567f26.png)
 
-![ExperimentalDiscountsMetaロケーションを表示するカート](https://user-images.githubusercontent.com/5656702/122774218-ea27a880-d2a0-11eb-9450-11f119567f26.png)
-
-Checkout:
-
-![ExperimentalDiscountsMetaロケーションを表示するチェックアウト](https://user-images.githubusercontent.com/5656702/122779606-efd3bd00-d2a5-11eb-8c84-6525eca5d704.png)
+![Checkout showing ExperimentalDiscountsMeta location](https://user-images.githubusercontent.com/5656702/122779606-efd3bd00-d2a5-11eb-8c84-6525eca5d704.png)
 
 ### パラメーター
 

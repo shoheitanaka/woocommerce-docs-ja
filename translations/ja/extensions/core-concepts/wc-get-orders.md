@@ -272,8 +272,6 @@ $args = array(
 $orders = wc_get_orders( $args );
 ```
 
-### Date
-
 日付の引数は、以下に説明する標準的な書式に従って値を受け取るので、より柔軟なクエリが可能になる。
 
 |パラメータ|ディスクリプション
@@ -331,8 +329,6 @@ $orders = wc_get_orders( $args );
 
 詳細と例については、[HPOS order querying](/docs/features/high-performance-order-storage/wc-order-query-improvements#metadata-queries-meta_query) ガイドを参照してください。
 
-:::warning
-
 `meta_query`のサポートはHPOSが注文データストレージとして設定されている場合のみ有効です。
 
 使用する前に`OrderUtil::custom_orders_table_usage_is_enabled()`で有効になっているかチェックすること。
@@ -371,8 +367,6 @@ $orders = wc_get_orders(
 
 詳細と例については、[HPOS order querying](/docs/features/high-performance-order-storage/wc-order-query-improvements#order-field-queries-field_query) ガイドを参照してください。
 
-:::warning
-
 `field_query`のサポートはHPOSが注文データストレージとして設定されている場合のみ有効です。
 
 使用する前に`OrderUtil::custom_orders_table_usage_is_enabled()`で有効になっているかチェックすること。
@@ -410,8 +404,6 @@ $orders = wc_get_orders(
 <!-- markdownlint-enable MD033 -->
 
 詳細と例については、[HPOS order querying](/docs/features/high-performance-order-storage/wc-order-query-improvements#date-queries-date_query) ガイドを参照してください。
-
-:::warning
 
 `date_query`のサポートはHPOSが注文データストレージとして設定されている場合のみ有効です。
 
@@ -503,8 +495,6 @@ if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
     );
 }
 ```
-
-Usage:
 
 ```php
 $orders = wc_get_orders( array( 'customvar' => 'somevalue' ) );

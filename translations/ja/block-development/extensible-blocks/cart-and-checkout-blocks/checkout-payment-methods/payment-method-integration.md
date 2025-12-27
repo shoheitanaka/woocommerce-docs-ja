@@ -2,7 +2,8 @@
 post_title: Payment method integration
 sidebar_label: Payment method integration
 ---
-# 支払い方法の統合
+
+# Payment method integration
 
 ## クライアント側の統合
 
@@ -16,7 +17,7 @@ sidebar_label: Payment method integration
 
 エクスプレス決済とは、Stripe、ApplePay、GooglePayなど、買い物客がワンボタンで決済を開始できる決済方法である。
 
-![エクスプレス決済エリア](https://user-images.githubusercontent.com/1429108/79565636-17fed500-807f-11ea-8e5d-9af32e43b71d.png)
+![Express Payment Area](https://user-images.githubusercontent.com/1429108/79565636-17fed500-807f-11ea-8e5d-9af32e43b71d.png)
 
 ### 登録
 
@@ -58,23 +59,24 @@ const options = {
 };
 ```
 
-#### `WooCommerceDependencyExtractionWebpackPlugin`
+#### `ExpressPaymentMethodConfiguration`
 
-| オプション|タイプ|説明|必須
+| Option                | Type       | Description                                                                                                                                                                                                                                                                                                                                                     | Required |
 |-----------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-|`name` | String | ゲートウェイ・クライアント側の一意の識別子。                                                                                                                                            | はい。
-| `title`｜文字列｜支払い方法の可読性のある名前。エディタでマーチャントに表示されます。                                                                                                                                                                                                                        | いいえ。
-| `description`｜文字列｜決済ゲートウェイを説明する1～2文。エディタでマーチャントに表示されます。                                                                                                                                                                                                                                                                  | いいえ
-| `gatewayId`｜文字列｜サーバー側に登録されているペイメントゲートウェイのID。エディタ内でマーチャントを正しい設定ページに誘導するために使用されます。これが指定されていない場合、マーチャントは一般的なWoo支払い設定ページにリダイレクトされます。                                                                                                                                   | いいえ
-| `content` | ReactNode｜フロントエンドでブロックがレンダリングされたときに、express支払い方法エリアに出力されるReactノード。チェックアウト支払い方法のインターフェイスからpropsを受け取る。                                                                                                                                                                                                     | はい
-| `edit`｜ReactNode｜ エディタでブロックがレンダリングされるときに、エクスプレス支払い方法エリアに出力されるReactノード。支払い方法インターフェースからチェックアウトへのプロップを受け取ります(プレビューデータ付き)。                                                                                                                                                                                | はい
-| `canMakePayment` | 関数｜支払い方法が買い物客にとって利用可能であるべきかを決定するコールバック。                                                                                                                                                          | 関数 | はい
-| はい｜`paymentMethodId`｜文字列｜サーバへのチェックアウト処理リクエストに付随する識別子。支払いを処理するための支払い方法ゲートウェイクラスを識別するために使用される。                                                                                                                                                                                                            | いいえ
-
-| `supports:features`｜Array｜ ゲートウェイがサポートする支払い機能の配列。支払い方法がカートの内容に使用可能かどうかをクロスチェックするために使用します。値が提供されない場合、デフォルトは `['products']` です。                                                                                                                                                                              | デフォルトは `wc` です。
-| これはexpress支払い方法でサポートされるスタイルのバリエーションの配列です。これらはすべてのアクティブなエクスプレス決済ボタンに適用されるスタイルで、エディターのエクスプレス決済ブロックから制御できます。これらのサポートされる値は`['height', 'borderRadius']`のいずれかです。                                                                                                                                 | いいえ
+| `name`                | String     | Unique identifier for the gateway client side.                                                                                                                                            | Yes      |
+| `title`               | String     | Human readable name of your payment method. Displayed to the merchant in the editor.                                                                                                                                                                                                                        | No       |
+| `description`         | String     | One or two sentences describing your payment gateway. Displayed to the merchant in the editor.                                                                                                                                                                                                                                                                  | No       |
+| `gatewayId`           | String     | ID of the Payment Gateway registered server side. Used to direct the merchant to the right settings page within the editor. If this is not provided, the merchant will be redirected to the general Woo payment settings page.                                                                                                                                   | No       |
+| `content`             | ReactNode  | React node output in the express payment method area when the block is rendered in the frontend. Receives props from the checkout payment method interface.                                                                                                                                                                                                     | Yes      |
+| `edit`                | ReactNode  | React node output in the express payment method area when the block is rendered in the editor. Receives props from the payment method interface to checkout (with preview data).                                                                                                                                                                                | Yes      |
+| `canMakePayment`      | Function   | Callback to determine whether the payment method should be available for the shopper.                                                                                                                                                          | Yes      |
+| `paymentMethodId`     | String     | Identifier accompanying the checkout processing request to the server. Used to identify the payment method gateway class for processing the payment.                                                                                                                                                                                                            | No       |
+| `supports:features`   | Array      | Array of payment features supported by the gateway. Used to crosscheck if the payment method can be used for the cart content. Defaults to `['products']` if no value is provided.                                                                                                                                                                              | No       |
+| `supports:style`      | Array      | This is an array of style variations supported by the express payment method. These are styles that are applied across all the active express payment buttons and can be controlled from the express payment block in the editor. Supported values for these are one of `['height', 'borderRadius']`.                                                                                                                                 | No       |
 
 #### `canMakePayment` オプション
+
+`canMakePayment` は、買い物客のオプションとして支払い方法が利用可能かどうかを判断するためのコールバックです。この関数には、現在の注文に関するデータを含むオブジェクトが渡されます。
 
 ```ts
 canMakePayment( {
@@ -88,8 +90,6 @@ canMakePayment( {
 } )
 ```
 
-`canMakePayment` は、買い物客のオプションとして支払い方法が利用可能かどうかを判断するためのコールバックです。この関数には、現在の注文に関するデータを含むオブジェクトが渡されます。
-
 `canMakePayment`はブール値を返します。ゲートウェイが可用性を決定するために非同期の初期化を実行する必要がある場合、（booleanに解決する）プロミスを返すことができます。これにより、カートに物理的/発送可能な商品がある場合など、カートに基づいて支払い方法を非表示にすることができます (例: [__INLINE_COD_0__])：例: [`Cash on delivery`](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/e089ae17043fa525e8397d605f0f470959f2ae95/assets/js/payment-method-extensions/payment-methods/cod/index.js#L48-L70)); または、他の条件によって利用可能かどうかを制御する支払い方法。
 
 `canMakePayment`はストアのフロントエンドでのみ実行されます。エディタコンテキストでは、`canMakePayment`を使用する代わりに、エディタは支払い方法が利用可能（true）であるとみなし、定義された`edit`コンポーネントがマーチャントに表示されます。
@@ -99,6 +99,8 @@ canMakePayment( {
 ### エクスプレス決済のボタン属性
 
 このAPIは、一貫したショッパーエクスペリエンスのために、エクスプレスペイメントボタンのルックアンドフィールを同期する方法を提供します。エクスプレス・ペイメント・メソッドは、`buttonAttributes`で指定された値を優先し、カートまたはチェックアウト・ブロック以外の場所にボタンが表示される場合は、バックアップとして独自のコンフィギュレーション設定を使用する必要があります。
+
+例えば、ボタン・コンポーネントでは次のようにする：
 
 ```js
 // Get your extension specific settings and set defaults if not available
@@ -117,33 +119,31 @@ if ( typeof buttonAttributes !== 'undefined' ) {
 return <button style={height: `${height}px`, borderRadius: `${borderRadius}px`} />
 ```
 
-例えば、ボタン・コンポーネントでは次のようにする：
-
 ## 支払方法
 
 支払い方法は、チェックアウトブロックに表示される支払い方法のオプションです。例としては、_cheque_、PayPal Standard、Stripe Credit Cardなどがあります。
 
-![画像 2021-02-24 at 4 24 05 PM](https://user-images.githubusercontent.com/1429108/109067640-c7073680-76bc-11eb-98e5-f04d35ddef99.jpg)
+![Image 2021-02-24 at 4 24 05 PM](https://user-images.githubusercontent.com/1429108/109067640-c7073680-76bc-11eb-98e5-f04d35ddef99.jpg)
 
 ### 登録
+
+支払い方法を登録するには、ブロック・レジストリの`registerPaymentMethod`関数を使用する。 
 
 ```js
 const { registerPaymentMethod } = window.wc.wcBlocksRegistry;
 ```
 
-支払い方法を登録するには、ブロック・レジストリの`registerPaymentMethod`関数を使用する。 
+`@woocommerce/blocks-registry`のエイリアス・インポートを使っている場合は、このように関数をインポートできる：
 
 ```js
 import { registerPaymentMethod } from '@woocommerce/blocks-registry';
 ```
 
-`@woocommerce/blocks-registry`のエイリアス・インポートを使っている場合は、このように関数をインポートできる：
+レジストリ関数は、支払い方法に固有のオプションを持つJavaScriptオブジェクトを期待します：
 
 ```js
 registerPaymentMethod( options );
 ```
-
-レジストリ関数は、支払い方法に固有のオプションを持つJavaScriptオブジェクトを期待します：
 
 コンフィギュレーション・インスタンスに与えるオプションは、この形のオブジェクトでなければなりません（`PaymentMethodRegistrationOptions` typedef参照）。コンフィギュレーション・インスタンスに与えるオプションは、エクスプレス・ペイメント・メソッドのものと同じですが、以下のものが追加されます：
 
@@ -161,35 +161,41 @@ registerPaymentMethod( options );
 
 ペイメントメソッド統合の大部分は、提供されたノードがクローンされ、ブロックマウント上でレンダリングされるときに、ペイメントメソッドがpropsを介して使用するために公開されるインタフェースです。すべてのpropsは以下にリストされていますが、[このファイルに記述されているtypedefs](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce-blocks/assets/js/types/type-defs/payment-method-interface.ts)を介して、propsが参照するもの、それらの型などの詳細を見つけることができます。
 
-| プロパティ｜タイプ｜説明
+| Property                 | Type                                                                                                                                                                                                                                                                                                                                                                      | Description                                                                                                                                                                                                                                                                                                        |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `activePaymentMethod` | String | チェックアウトで現在有効な支払い方法のスラッグ。                                                                                                                                                                                                                                                     |
-|`billing` | billingAddress、cartTotal、currency、cartTotalItems、displayPricesIncludingTax、appliedCoupons、customerIdプロパティを持つオブジェクト。                                                                                                                                                                                                                                                                            |
-| カートのアイテム、料金、登録されたエクステンションデータを含みます。このデータはイミュータブル(不変)として扱われるべきです(変更/変異されるべきではありません)。                                                                                          |
+| `activePaymentMethod`    | String                                                                                                                                                                                                                                                                                                                                                                    | The slug of the current active payment method in the checkout.                                                                                                                                                                                                                                                     |
+| `billing`                | Object with billingAddress, cartTotal, currency, cartTotalItems, displayPricesIncludingTax, appliedCoupons, customerId properties                                                                                                                                                                                                                                             | Contains everything related to billing.                                                                                                                                                                                                                                                                            |
+| `cartData`               | Object with cartItems, cartFees, extensions properties                                                                                                                                                                                                                                                                                                                                 | Data exposed from the cart including items, fees, and any registered extension data. Note that this data should be treated as immutable (should not be modified/mutated) or it will result in errors in your application.                                                                                          |
+| `checkoutStatus`         | Object with isCalculating, isComplete, isIdle, isProcessing properties                                                                                                                                                                                                                                                                                                               | The current checkout status exposed as various boolean state.                                                                                                                                                                                                                                                      |
+| `components`             | Object with ValidationInputError, PaymentMethodLabel, PaymentMethodIcons, LoadingMask properties                                                                                                                                                                                                                                                                                      | It exposes React components that can be implemented by your payment method for various common interface elements used by payment methods.                                                                                                                                                                          |
+| `emitResponse`           | Object with noticeContexts and responseTypes properties                                                                                                                                                                                                                                                                                                                      | Contains some constants that can be helpful when using the event emitter. Read the _[Emitting Events](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/e267cd96a4329a4eeef816b2ef627e113ebb72a5/docs/extensibility/checkout-flow-and-events.md#emitting-events)_ section for more details. |
+| `eventRegistration`      | Object with onCheckoutValidation, onCheckoutSuccess, onCheckoutFail, onPaymentSetup, onShippingRateSuccess, onShippingRateFail, onShippingRateSelectSuccess, onShippingRateSelectFail properties                                                                                                                                                                            | Contains all the checkout event emitter registration functions. These are functions the payment method can register observers on to interact with various points in the checkout flow (see [this doc](./checkout-flow-and-events.md) for more info).                                                               |
+| `onClick`                | Function                                                                                                                                                                                                                                                                                                                                                                   | **Provided to express payment methods** that should be triggered when the payment method button is clicked (which will signal to checkout the payment method has taken over payment processing)                                                                                                                    |
+| `onClose`                | Function                                                                                                                                                                                                                                                                                                                                                                   | **Provided to express payment methods** that should be triggered when the express payment method modal closes and control is returned to checkout.                                                                                                                                                                 |
+| `onSubmit`               | Function                                                                                                                                                                                                                                                                                                                                                                   | Submits the checkout and begins processing                                                                                                                                                                                                                                                                         |
+| `buttonAttributes`       | Object with height, borderRadius properties                                                                                                                                                                                                                                                                                                                                              | Styles set by the merchant that should be respected by all express payment buttons                                                                                                                                                                                                                                 |
+| `paymentStatus`          | Object                                                                                                                                                                                                                                                                       | Various payment status helpers. Note, your payment method does not have to handle setting this status client side. Checkout will handle this via the responses your payment method gives from observers registered to [checkout event emitters](./checkout-flow-and-events.md).                                    |
+| `paymentStatus.isPristine`             | Boolean                                                                                                                                                                                                                                                                                                                                                                    | This is true when the current payment status is `PRISTINE`.                                                                                                                                                                                                                                                        |
+| `paymentStatus.isStarted`              | Boolean                                                                                                                                                                                                                                                                                                                                                                    | This is true when the current payment status is `EXPRESS_STARTED`.                                                                                                                                                                                                                                                  |
+| `paymentStatus.isProcessing`           | Boolean                                                                                                                                                                                                                                                                                                                                                                    | This is true when the current payment status is `PROCESSING`.                                                                                                                                                                                                                                                      |
+| `paymentStatus.isFinished`             | Boolean                                                                                                                                                                                                                                                                                                                                                                    | This is true when the current payment status is one of `ERROR`, `FAILED`, or `SUCCESS`.                                                                                                                                                                                                                            |
+| `paymentStatus.hasError`               | Boolean                                                                                                                                                                                                                                                                                                                                                                    | This is true when the current payment status is `ERROR`.                                                                                                                                                                                                                                                           |
+| `paymentStatus.hasFailed`              | Boolean                                                                                                                                                                                                                                                                                                                                                                    | This is true when the current payment status is `FAILED`.                                                                                                                                                                                                                                                          |
+| `paymentStatus.isSuccessful`           | Boolean                                                                                                                                                                                                                                                                                                                                                                    | This is true when the current payment status is `SUCCESS`.                                                                                                                                                                                                                                                         |
+| `setExpressPaymentError` | Function                                                                                                                                                                                                                                                                                                                                                                   | Receives a string and allows express payment methods to set an error notice for the express payment area on demand. This can be necessary because some express payment method processing might happen outside of checkout events.                                                                                  |
+| `shippingData`           | Object with shippingRates, shippingRatesLoading, selectedRates, setSelectedRates, isSelectingRate, shippingAddress, setShippingAddress, needsShipping properties                                                                                                                                                                                                             | Contains all shipping related data (outside of the shipping status).                                                                                                                                                                                                                                               |
+| `shippingStatus`         | Object with shippingErrorStatus, shippingErrorTypes properties                                                                                                                                                                                                                                                                                                                            | Various shipping status helpers.                                                                                                                                                                                                                                                                                   |
+| `shouldSavePayment`      | Boolean                                                                                                                                                                                                                                                                                                                                                                    | Indicates whether or not the shopper has selected to save their payment method details (for payment methods that support saved payments). True if selected, false otherwise. Defaults to false.                                                                                                                    |
 
-| `checkoutStatus` | isCalculating、isComplete、isIdle、isProcessingプロパティを持つオブジェクト。                                                                                                                                                                                                                                                      |
-| ValidationInputError, PaymentMethodLabel, PaymentMethodIcons, LoadingMaskプロパティを持つオブジェクト。                                                                                                                                                                          |
-| イベントエミッターを使用する際に役立つ定数がいくつか含まれています。詳しくは_[イベントの発行](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/e267cd96a4329a4eeef816b2ef627e113ebb72a5/docs/extensibility/checkout-flow-and-events.md#emitting-events)_セクションをお読みください。|
-| onCheckoutValidation、onCheckoutSuccess、onCheckoutFail、onPaymentSetup、onShippingRateSuccess、onShippingRateFail、onShippingRateSelectSuccess、onShippingRateSelectFailプロパティを持つオブジェクトです。これらは、支払いメソッドがチェックアウトフローの様々なポイントと対話するためにオブザーバを登録できる関数です(詳細については[このドキュメント](./checkout-flow-and-events.md)を参照してください)。                                                               |
-| `onClick`｜ 関数｜ **支払いメソッドボタンがクリックされたときにトリガーされる(支払いメソッドが支払い処理を引き継いだことをチェックアウトに知らせる)**支払いメソッドを表現するために提供される関数です。
+登録された `savedTokenComponent` ノードは `token` プロップも受け取ります。しかし、これはあくまでデータベース内のトークンを表す id (およびショッパーがチェックしたラジオ入力の値) であり、実際の顧客の支払いトークンではないことに注意してください (通常、トークンを使用した処理はセキュリティのためにサーバで行われるため)。
 
-| `onClose` ｜ 関数｜ **エクスプレス決済メソッドに提供される**もので、エクスプレス決済メソッドのモーダルが閉じられ、コントロールがチェックアウトに戻されたときにトリガーされます。                                                                                                                                                                 |
-|`onSubmit` | 関数｜チェックアウトを送信し、処理を開始します。
-| `buttonAttributes` | height、borderRadiusプロパティを持つオブジェクト｜マーチャントが設定したスタイルで、すべてのエクスプレス決済ボタンが尊重する必要があります。
-| オブジェクト｜様々な支払いステータスヘルパー。このステータスをクライアント側で設定する必要はありません。チェックアウトは、[checkout event emitters](./checkout-flow-and-events.md)に登録されたオブザーバから、支払いメソッドが返すレスポンスによって、この処理を行います。                                    |
-| `paymentStatus.isPristine` | Boolean | 現在の支払いステータスが`PRISTINE`の場合にtrueになります。                                                                                                                                                                                                                                                        |
+## サーバーサイドの統合
 
-| `paymentStatus.isStarted`｜論理値｜現在の支払いステータスが`EXPRESS_STARTED`のときに真になります。                                                                                                                                                                                                                                                  |
-| `paymentStatus.isProcessing`｜論理値｜現在の支払いステータスが`PROCESSING`の場合に真となります。                                                                                                                                                                                                                                                      |
-| Boolean | 現在の支払いステータスが`ERROR`、_`FAILED`、`SUCCESS`のいずれかである場合に真となります。                                                                                                                                                                                                                            |
-| `paymentStatus.hasError`｜論理値｜現在の支払いステータスが`ERROR`の場合に真になります。                                                                                                                                                                                                                                                           |
-| `paymentStatus.hasFailed`｜Boolean｜ 現在の支払いステータスが `FAILED` の場合に真となります。                                                                                                                                                                                                                                                          |
+サーバー側の統合には、`Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType`クラスを継承したクラスを作成する必要があります。 
 
-| `paymentStatus.isSuccessful`｜論理値｜現在の支払いステータスが`SUCCESS`のときに真になります。                                                                                                                                                                                                                                                         |
-| `setExpressPaymentError` | 関数｜文字列を受け取り、エクスプレス決済メソッドが必要に応じてエクスプレス決済エリアにエラー通知を設定できるようにします。これは、いくつかのエクスプレス決済メソッドの処理がチェックアウトイベントの外で発生する可能性があるため、必要になることがあります。                                                                                  |
-| オブジェクトはshippingRates, shippingRatesLoading, selectedRates, setSelectedRates, isSelectingRate, shippingAddress, setShippingAddress, needsShippingプロパティを持ちます。                                                                                                                                                                                                                                               |
-| `shippingStatus`｜shippingErrorStatus、shippingErrorTypesプロパティを持つオブジェクト｜様々な配送状況ヘルパー。                                                                                                                                                                                                                                                                                   |
-| `shouldSavePayment`｜論理値｜ ショッパーが支払い方法の詳細を保存することを選択したかどうかを示します。選択されていればtrue、そうでなければfalse。デフォルトはfalseです。                                                                                                                    |
+このクラスは、支払い方法をサーバーサイドで表現します。このクラスは、Store APIとCheckoutブロックへの支払い方法アセットの登録を適切なタイミングで処理するために使用されます。決済処理のために別途実装する必要がある[Payment Gateway API](/features/payments/payment-gateway-api.md)とは異なります。
+
+### 支払方法統合クラスの例
 
 ```php
 <?php
@@ -283,11 +289,11 @@ final class MyPaymentMethodType extends AbstractPaymentMethodType {
 }
 ```
 
-登録された `savedTokenComponent` ノードは `token` プロップも受け取ります。しかし、これはあくまでデータベース内のトークンを表す id (およびショッパーがチェックしたラジオ入力の値) であり、実際の顧客の支払いトークンではないことに注意してください (通常、トークンを使用した処理はセキュリティのためにサーバで行われるため)。
+### 支払方法の統合登録
 
-## サーバーサイドの統合
+`Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType`を継承したクラスを作成したら、サーバー側で処理する支払いメソッドに登録する必要があります。 
 
-サーバー側の統合には、`Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType`クラスを継承したクラスを作成する必要があります。 
+これは、`PaymentMethodRegistry`クラスの`register`メソッドを使うことで可能です。 
 
 ```php
 use MyPlugin\MyPaymentMethod\MyPaymentMethodType;
@@ -301,23 +307,9 @@ add_action(
 );
 ```
 
-このクラスは、支払い方法をサーバーサイドで表現します。このクラスは、Store APIとCheckoutブロックへの支払い方法アセットの登録を適切なタイミングで処理するために使用されます。決済処理のために別途実装する必要がある[Payment Gateway API](/features/payments/payment-gateway-api.md)とは異なります。
-
-### 支払方法統合クラスの例
-
-### 支払方法の統合登録
-
-`Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType`を継承したクラスを作成したら、サーバー側で処理する支払いメソッドに登録する必要があります。 
-
-これは、`PaymentMethodRegistry`クラスの`register`メソッドを使うことで可能です。 
-
 ## 支払処理（レガシーサポート）
 
 支払いは引き続き[Payment Gateway API](/features/payments/payment-gateway-api.md)を介して処理されます。これは、上記の支払い方法の統合に使用されるものとは別のAPIです。
-
-```php
-do_action_ref_array( 'woocommerce_rest_checkout_process_payment_with_context', [ $context, &$result ] );
-```
 
 チェックアウトブロックは、クライアントサイドスクリプトによって提供された`payment_data`を`$_POST`に変換し、ペイメントゲートウェイの`process_payment`メソッドを呼び出します。 
 
@@ -328,6 +320,21 @@ do_action_ref_array( 'woocommerce_rest_checkout_process_payment_with_context', [
 前述したレガシーな支払い処理が、既存の支払い方法との統合で機能しないような、より高度なケースも考えられます。このような場合、Store APIに特化した、より多くのコンテキストを提供する、注文のサーバー側処理を処理するために使用できるアクションフックもあります。
 
 このフックは、支払い処理をフックする場所として推奨されます：
+
+```php
+do_action_ref_array( 'woocommerce_rest_checkout_process_payment_with_context', [ $context, &$result ] );
+```
+
+> 注：このフックにコールバックを登録するのに適した場所は、先に作成した支払い方法タイプクラスの`initialize`メソッド内である。
+
+このフックのコールバックが受け取る：
+
+- 選択された`payment_method`（これは、支払い方法の登録時に定義された`paymentMethodId`と同じです）、設置される`order`、および支払い方法のクライアントが提供する追加の`payment_data`を含む`PaymentContext`オブジェクト。
+- `PaymentResult`オブジェクトを使用して、ステータス、リダイレクトURL、追加の支払い詳細をStore API経由でクライアントに返します。
+
+提供された`PaymentResult`オブジェクトにステータスを設定すると、レガシーな支払い処理は無視されます。エラーが発生した場合、コールバックはStore APIによって処理される例外を投げることができます。 
+
+以下はコールバックの例である：
 
 ```php
 add_action(
@@ -356,9 +363,9 @@ add_action(
 );
 ```
 
-> 注：このフックにコールバックを登録するのに適した場所は、先に作成した支払い方法タイプクラスの`initialize`メソッド内である。
+## クライアントからサーバー側の支払い処理に値を渡す
 
-このフックのコールバックが受け取る：
+この例では、BACS支払い方法からサーバーにデータを渡します。BACSの登録は次のようになります：
 
 ```js
 // Get our settings that were provided when the payment method was registered
@@ -388,8 +395,7 @@ const bankTransferPaymentMethod = {
 };
 ```
 
-- 選択された`payment_method`（これは、支払い方法の登録時に定義された`paymentMethodId`と同じです）、設置される`order`、および支払い方法のクライアントが提供する追加の`payment_data`を含む`PaymentContext`オブジェクト。
-- `PaymentResult`オブジェクトを使用して、ステータス、リダイレクトURL、追加の支払い詳細をStore API経由でクライアントに返します。
+支払い方法ノードは、[usePaymentMethodInterfaceフック](https://github.com/woocommerce/woocommerce-blocks/blob/trunk/docs/internal-developers/block-client-apis/checkout/checkout-api.md#usepaymentmethodinterface)からすべてを渡されます。そのため、`<Content />`コンポーネントでは、次のようにこれを使用することができます：
 
 ```js
 const Content = ( props ) => {
@@ -431,7 +437,7 @@ const Content = ( props ) => {
 };
 ```
 
-提供された`PaymentResult`オブジェクトにステータスを設定すると、レガシーな支払い処理は無視されます。エラーが発生した場合、コールバックはStore APIによって処理される例外を投げることができます。 
+注文が発注されたとき、APIリクエストのペイロードを見ると、以下のJSONを見ることができる：
 
 ```json
 {
@@ -450,6 +456,10 @@ const Content = ( props ) => {
 }
 ```
 
-以下はコールバックの例である：
+その後、`woocommerce_rest_checkout_process_payment_with_context`のコールバックがこのデータにアクセスし、支払い処理に使用することができる。
 
-## クライアントからサーバー側の支払い処理に値を渡す
+php
+add_action( 'woocommerce_rest_checkout_process_payment_with_context', function( $context, $result ) { )
+  if ( $context->payment_method === 'bacs' ) { { $myGatewayCustoms
+    myGatewayCustomData = $context->payment_data['myGatewayCustomData']；
+    // ここでは、$myGatewayCustomData を使用して支払いを処理します。

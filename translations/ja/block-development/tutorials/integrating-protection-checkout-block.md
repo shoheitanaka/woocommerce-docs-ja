@@ -2,7 +2,8 @@
 sidebar_label: Integrating Protection with the Checkout Block
 sidebar_position: 6
 ---
-# チェックアウトブロックとプロテクションの統合
+
+# Integrating Protection with the Checkout Block
 
 もしあなたがCaptchaや詐欺防止プラグインの開発者なら、あなたのソリューションが[Store API](/docs/apis/store-api/)にフックし、チェックアウトブロックと統合していることを確認してください。このチュートリアルでは、WooCommerceチェックアウトブロックに保護メカニズムを追加する手順を説明します。
 

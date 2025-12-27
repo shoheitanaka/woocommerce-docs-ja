@@ -2,7 +2,8 @@
 post_title: Payment button size
 sidebar_label: Payment button size
 ---
-# 決済ボタンのサイズと構造
+
+# Payment Button Size and Anatomy
 
 支払いボタンは、ショッパーエクスペリエンス内の他のボタンと視覚的に統一されていなければなりません。
 
@@ -11,8 +12,6 @@ sidebar_label: Payment button size
 - 小：高さ40px
 - デフォルト：高さ48px
 - 大高さ 55px
-
-## Anatomy
 
 支払いボタンは、ボタンコンポーネント、支払いロゴ、およびオプションのラベルの最大3つの要素で構成されます。
 

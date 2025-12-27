@@ -2,7 +2,8 @@
 post_title: Customization
 sidebar_label: Customization
 ---
-# カスタマイズ
+
+# Customization
 
 > このガイドラインのこのページは、ブロックテーマ以外の開発のみに適用されます。ブロックテーマの開発に関するより具体的なガイダンスについては、[WordPress Developer's Guide to Block Themes](https://learn.wordpress.org/course/a-developers-guide-to-block-themes-part-1/) を参照してください。
 

@@ -2,7 +2,8 @@
 post_title: Blocks reference
 sidebar_label: Blocks reference
 ---
-# ブロックの参照
+
+# Blocks reference
 
 このページはパッケージに含まれるWooブロックの一覧です。(まだblock.json定義を使っていないブロックがあるので、不完全です）。
 

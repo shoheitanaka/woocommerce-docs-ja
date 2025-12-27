@@ -3,7 +3,8 @@ post_title: Version control and deployment
 sidebar_label: Version control and deployment
 sidebar_position: 8
 ---
-# バージョン管理と配備
+
+# Version control and deployment
 
 WordPressとWooCommerceは、開発者向けのフレームワークであると同時に*コンテンツ管理システムでもあるため、コードをバージョン管理し、変更をライブ環境にデプロイする方法を事前に計画することが重要です。一般的なルールとして、「コードは上に、コンテンツは下に」というものがあります。つまり、カスタムコードはローカルまたはステージング環境からプッシュしますが、`wp-content/uploads`ディレクトリにあるデータベースの内容やユーザーが作成したコンテンツは決してプッシュしないということです。
 

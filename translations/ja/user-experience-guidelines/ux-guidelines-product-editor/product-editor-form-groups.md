@@ -2,11 +2,9 @@
 post_title: Groups
 sidebar_label: Groups
 ---
-# Groups
-
 新商品フォームは、現在タブとして表示されているグループで構成されています。それぞれが独立したビューで、いくつでもセクションやサブセクションを含むことができます。全てのエリアには特定の目的があり、マーチャントが探している情報を素早く見つけることができます（デフォルトのWoo機能と拡張機能の両方）。
 
-![商品フォームグループ](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-form-groups.gif)
+![Product form groups](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-form-groups.gif)
 
 タブにセクションがない場合、加盟店には表示されません。
 

@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
 ---
-# ノンス・トークン 
+
+# Nonce Tokens 
 
 [Noncesは、セキュリティの目的でリクエストの発信元と意図を確認するために使用される生成番号です。Nonces については WordPress codex](https://developer.wordpress.org/apis/security/nonces/) を参照してください。
 

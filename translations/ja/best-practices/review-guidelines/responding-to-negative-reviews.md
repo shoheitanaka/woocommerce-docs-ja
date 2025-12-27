@@ -2,7 +2,8 @@
 post_title: How to respond to negative WooCommerce extension reviews
 sidebar_label: Responding to negative reviews
 ---
-# 否定的なWooCommerce拡張機能のレビューへの対応方法
+
+# How to respond to negative WooCommerce extension reviews
 
 加盟店の旅の中で不快な出来事があると、その加盟店は公開された否定的なレビューを残すことになる。このような出来事は通常
 

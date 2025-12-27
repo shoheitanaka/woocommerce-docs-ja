@@ -4,7 +4,8 @@ category_slug: code-snippets
 post_title: Using the Code Snippets Plugin for WooCommerce Customizations
 sidebar_position: 1
 ---
-# コード・スニペット・プラグインを使う
+
+# Using the Code Snippets Plugin
 
 ## コードスニペットとは？  
 
@@ -61,3 +62,4 @@ add_action('woocommerce_before_checkout_form', function() {
 ## 次のステップ  
 
 より高度なカスタマイズについては、[WooCommerce Developer Documentation](https://developer.woocommerce.com/) を参照して、ブロックや拡張機能などを構築してください！  
+

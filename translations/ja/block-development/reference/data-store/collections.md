@@ -1,21 +1,18 @@
 ---
 sidebar_label: Collections Store
 ---
-# コレクションストア (`wc/store/collections`) 
+
+# Collections Store (`wc/store/collections`) 
 
 ## 概要
 
 コレクションストアはWooCommerceブロック内の商品関連コレクションを取得することができます。
-
-## Usage
 
 このストアを利用するには、それを参照するモジュールでCOLLECTIONS_STORE_KEYをインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、このキーをインポートできます：
 
 ```js
 const { COLLECTIONS_STORE_KEY } = window.wc.wcBlocksData;
 ```
-
-## Actions
 
 ### receiveCollection( namespace, resourceName, queryString,ids = [], items = [], replace = false )
 
@@ -94,8 +91,6 @@ dispatch( receiveLastModified( timestamp ) );
     - ids_ `array`：コレクションルートにidsのプレースホルダがある場合は、この配列にプレースホルダの値を指定します (順番に)。
    	- type_ `string`: コレクションのタイプ `items`.
 
-or
-
 - `array` | `null` | `undefined`：指定された引数にマッチするヘッダがコレクションにない場合に、フォールバック値 (パラメータとして指定) を返します。
 
 #### 例 
@@ -121,11 +116,7 @@ const state = store.getFromState( state, namespace, resourceName, queryString, i
 
 -   `undefined`を返します：コレクションにヘッダがあるが、与えられた `header` 引数にマッチするヘッダがない場合、 `undefined` が返されます。
 
-or
-
 -   `null`を返します：コレクションが与えられた引数にマッチするヘッダを持っていない場合、 `null` が返されます。
-
-or
 
 -   `object`：コレクションが与えられた引数にマッチするヘッダーを持つ場合、以下のプロパティを持つオブジェクトが返される：
     -   nameespace_ `string`：コレクションのルート名前空間、例： `/wc/blocks`.
@@ -178,3 +169,4 @@ const error = store.getCollectionError( state, namespace, resourceName, queryStr
 const store = select( COLLECTIONS_STORE_KEY );
 const lastModified = store.getCollectionLastModified( state, namespace, resourceName, queryString );
 ```
+

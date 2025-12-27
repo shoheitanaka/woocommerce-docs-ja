@@ -1,7 +1,8 @@
 ---
 post_title: HPOS order querying APIs
 ---
-# HPOSオーダー照会API
+
+# HPOS order querying APIs
 
 HPOSの導入に伴い、WCのクエリー機能を強化しました。現在、よく知られている[既存のAPI](/docs/extensions/core-concepts/wc-get-orders)に加えて、注文やそのプロパティに関する複雑なクエリを簡単に作成できるように、カスタム注文のメタデータをクエリする機能など、いくつかの機能を追加しています。
 

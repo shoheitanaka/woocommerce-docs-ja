@@ -3,7 +3,8 @@ post_title: WooCommerce developer tools
 sidebar_label: Developer tools
 sidebar_position: 5
 ---
-# 開発ツール
+
+# Developer tools
 
 このガイドでは、WooCommerceの開発に不可欠なツールとライブラリの概要を説明します。WooCommerceプロジェクトを効率的に強化したい開発者を対象としています。
 

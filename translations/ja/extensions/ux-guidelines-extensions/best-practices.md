@@ -2,7 +2,8 @@
 post_title: User experience best practices
 sidebar_position: 1
 ---
-# ベストプラクティス
+
+# Best Practices
 
 - **プラグイン名はプラグインの機能をシンプルに記述し、既存のコア機能や拡張機能をタイトルに使用しないでください**。プラグイン名は常に機能的でオリジナルの名前としてUIに表示されるべきです。例えば、"VendorXYZ Bookings Plugin for WooCommerce "ではなく、"Appointments "です。
 

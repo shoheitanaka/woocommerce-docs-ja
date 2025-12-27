@@ -2,7 +2,8 @@
 post_title: Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
-# よくある質問
+
+# Frequently Asked Questions
 
 このドキュメントは、WooCommerce Blocksを拡張する開発者からよく寄せられる質問にお答えすることを目的としています。
 
@@ -79,7 +80,7 @@ const unsubscribe = subscribe( () => {
 
 例として、あなたのサイトに「メーリングリストに登録すると10%オフ」チェックボックスを追加するには、`extensionCartUpdate`を使用して、自動的に10%クーポンをカートに適用することができます。
 
-![画像](https://github.com/user-attachments/assets/e0d114b1-4e4c-4b34-9675-5571136b36d0)
+![Image](https://github.com/user-attachments/assets/e0d114b1-4e4c-4b34-9675-5571136b36d0)
 
 Additional Checkout Fields APIを通じて、またはインナーブロックを作成することによって、チェックボックスをすでに追加したと仮定すると、次のステップは、チェックボックスがチェックされている場合はクーポンを適用し、チェックされていない場合はクーポンを削除するサーバー側のコードを登録することです。
 

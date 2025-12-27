@@ -3,7 +3,8 @@ post_title: How to extend WooCommerce analytics reports
 sidebar_label: Extend analytics reports
 sidebar_position: 1
 ---
-# WooCommerceの分析レポートを拡張する方法
+
+# How to extend WooCommerce analytics reports
 
 ## はじめに
 
@@ -43,7 +44,7 @@ wp-env start
 
 そうしたら、WC-Adminで`/wp-admin/admin.php?page=wc-admin&period=today&path=%2Fanalytics%2Forders&compare=previous_year`にアクセスして注文が表示されていることを確認してください。WooCommerceの設定で現在表示されている通貨はニュージーランドドルです。
 
-![注文処理中のwp-adminのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.11.34-pm.png?w=851)
+![screenshot of wp-admin showing processing orders](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.11.34-pm.png?w=851)
 
 `wp_posts`テーブルで以下のクエリを実行し、`wp_postmeta`を結合して通貨メタ値を収集することで、各注文の通貨を確認できます。結果はNZD、USD、MXNでの注文を示しています。このクエリは、このガイドの後半で実装する、通貨値を収集して表示するクエリと似ています。
 
@@ -60,7 +61,7 @@ ORDER BY wp_posts.post_date DESC
 LIMIT 3
 ```
 
-![クエリー結果のスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.33.45-pm.png?w=756)
+![screenshot of resulting query](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-12.33.45-pm.png?w=756)
 
 ## UIドロップダウンを追加する
 
@@ -97,7 +98,7 @@ add_action( 'init', 'add_currency_settings' );
 
 コンソールでは、データが無事にクライアントに届いたことを確認できる。
 
-![コンソールのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.11.50-pm.png?w=476)
+![screenshot of console](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.11.50-pm.png?w=476)
 
 `index.js`でカスタム通貨フィルターを作成し、注文レポートに追加します。
 
@@ -128,7 +129,7 @@ addFilter(
 
 注文レポートをチェックアウトすると、新しいドロップダウンが表示されます。実際に操作してみると、通貨クエリパラメータがURLに追加されていることがわかります。Network]タブを確認すると、この値がレポートの入力に使用されるデータのリクエストに含まれていることもわかります。例えば、`/wp-json/wc-analytics/reports/orders/stats`という注文統計エンドポイントへのリクエストを見てください。次に、このクエリ・パラメータを使ってレポート結果を調整します。
 
-![wp-adminのUIドロップダウンを示すスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.16.44-pm.png?w=512)
+![screenshot showing UI dropdown in wp-admin](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.16.44-pm.png?w=512)
 
 ## サーバー上で通貨パラメーターを処理する
 
@@ -214,7 +215,7 @@ add_filter( 'woocommerce_analytics_clauses_select_orders_stats_interval', 'add_s
 
 注文レポートに戻り、うまくいくか確認してみよう。ドロップダウンを操作して、関連する注文が表に反映されるのを確認できます。
 
-wp-adminのWooCommerce Ordersタブのスクリーンショット。
+![screenshot of WooCommerce Orders tab in wp-admin showing the relevant order reflected in the table.](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-1.38.54-pm.png?w=585)
 
 ## 仕上げ
 
@@ -254,15 +255,15 @@ const addTableColumn = (reportTableData) => {
 addFilter("woocommerce_admin_report_table", "dev-blog-example", addTableColumn);
 ```
 
-![カスタマイズされたテーブルのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.02.15-pm.png?w=861)
+![screenshot of customized table](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.02.15-pm.png?w=861)
 
 カラムを追加することは確かに便利だが、表やグラフの通貨数値は店舗の通貨しか反映しない。
 
-![レポートのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.03.42-pm.png?w=865)
+![screenshot of report](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-02-19-at-4.03.42-pm.png?w=865)
 
 レポートの通貨と数値の書式を変更するには、`woocommerce_admin_report_currency` JSフックを使用します。ストアのデフォルトは`wcSettings.currency`でクライアントに送信されますが、クエリパラメータ`?currency=NZD`で指定された表示通貨に応じて変更する必要があります。
 
-![通貨設定のスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.18.42-am.png?w=238)
+![screenshot of currency settings](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.18.42-am.png?w=238)
 
 まず、index.jsにいくつかの設定を作る。
 
@@ -306,7 +307,7 @@ addFilter(
 
 🎉 オーダーレポートが表示され、レポート全体を通して通貨が金額に反映されているのを確認できるようになりました。
 
-![カスタマイズ注文レポートのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.29.05-am.png?w=912)
+![Screenshot of customized order report](https://developer.woocommerce.com/wp-content/uploads/2023/12/screen-shot-2020-04-03-at-11.29.05-am.png?w=912)
 
 ## 結論
 

@@ -45,8 +45,6 @@ woocommerce_store_api_register_endpoint_data(
 );
 ```
 
-## Cart
-
 メインの`wc/store/cart`エンドポイントは、ExtendSchemaによって拡張可能です。データはレスポンスの `extensions` キーで利用できます。
 
 このエンドポイントは、`CartSchema::IDENTIFIER` キーを使って拡張することができます。このエンドポイントでは、`data_callback`関数と`schema_callback`関数に追加のパラメータは渡されません。

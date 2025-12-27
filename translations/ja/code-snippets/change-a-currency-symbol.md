@@ -1,7 +1,8 @@
 ---
 post_title: Change a currency symbol
 ---
-# 通貨記号の変更
+
+# Change a currency symbol
 
 WooCommerceでは、各通貨はコードとシンボルに関連付けられています。例えば、オーストラリアドルは`AUD`というコードと`WooCommerceでは、各通貨はコードとシンボルに関連付けられています。例えば、オーストラリアドルは`AUD`というコードとというシンボルを持っています（もし興味があれば、[ソースコード](https://github.com/woocommerce/woocommerce/blob/9.6.1/plugins/woocommerce/includes/wc-core-functions.php#L682)でコードとシンボルの完全なリストを見ることができます）。 
 

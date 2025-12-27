@@ -6,7 +6,8 @@ current wccom url: >-
 combined with: >-
   https://woocommerce.com/document/hide-other-shipping-methods-when-free-shipping-is-available/#use-a-plugin
 ---
-# 送料無料カスタマイズ
+
+# Free Shipping Customizations
 
 ## 送料無料詳細設定/カスタマイズ
 

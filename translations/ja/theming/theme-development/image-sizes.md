@@ -2,7 +2,8 @@
 post_title: Image sizing for theme developers
 sidebar_label: Image sizing
 ---
-# テーマ開発者のための画像サイズ調整
+
+# Image sizing for theme developers
 
 [**注意:** このドキュメントは（ブロックテーマではなく）クラシックテーマを開発する際に使用するために作成されました。ブロックテーマの開発](../block-theme-development/theming-woo-blocks.md)については別のドキュメントを確認してください。
 

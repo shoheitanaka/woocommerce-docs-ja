@@ -4,7 +4,8 @@ sidebar_label: SSL and HTTPS and WooCommerce
 current wccom url: >-
   https://woocommerce.com/document/ssl-and-https/#websites-behind-load-balancers-or-reverse-proxies
 ---
-# SSLとHTTPSとWooCommerce
+
+# SSL and HTTPS and WooCommerce
 
 ## ロードバランサーやリバースプロキシの背後にあるウェブサイト
 

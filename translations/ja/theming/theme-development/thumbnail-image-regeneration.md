@@ -1,7 +1,8 @@
 ---
 post_title: Thumbnail image regeneration
 ---
-# サムネイル画像再生
+
+# Thumbnail image regeneration
 
 WooCommerce 3.3からサムネイル再生成機能が導入されました。これまでは画像サイズの設定を変更する場合、外部プラグインをインストールし、WordPressのすべての画像サムネイルを再生成してからでないと変更が表示されませんでした。
 

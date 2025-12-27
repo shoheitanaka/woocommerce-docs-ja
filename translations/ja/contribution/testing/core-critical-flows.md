@@ -2,7 +2,8 @@
 post_title: WooCommerce core critical flows
 sidebar_label: Core critical flows
 ---
-# WooCommerceコアのクリティカルフロー
+
+# WooCommerce core critical flows
 
 WooCommerce Coreで最も重要だと思われるユーザーフローを特定しました。これらのフローはテストに集中し、優先順位をつけるのに役立ちます。また、変更の影響や問題の優先順位を検討するのにも役立ちます。
 

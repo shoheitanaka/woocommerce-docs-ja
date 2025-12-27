@@ -2,7 +2,8 @@
 post_title: Utilizing WooCommerce extension feature requests
 sidebar_label: Utilizing feature requests
 ---
-# WooCommerce 拡張機能のリクエストの活用
+
+# Utilizing WooCommerce extension feature requests
 
 すべての機能要望を記録し、その製品がどのようなフィードバックを受けているかを誰でも確認できる何らかの記録システムを持つことが重要である。 
 

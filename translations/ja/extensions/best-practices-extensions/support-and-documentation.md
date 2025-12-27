@@ -2,7 +2,8 @@
 post_title: Support and documentation for WooCommerce extensions
 sidebar_label: Support and documentation
 ---
-# WooCommerce 拡張機能のサポートとドキュメント
+
+# Support and documentation for WooCommerce extensions
 
 効果的なサポートと包括的なドキュメントはWooCommerceエクステンションの成功の基本です。これらはユーザーエクスペリエンスを向上させるだけでなく、メンテナンスや開発を容易にします。このドキュメントでは、ドキュメントの作成、サポートの提供、フィードバックの仕組みを確立するためのベストプラクティスの概要を説明します。
 

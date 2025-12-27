@@ -1,7 +1,8 @@
 ---
 sidebar_label: Cart store
 ---
-# カートストア (`wc/store/cart`) 
+
+# Cart Store (`wc/store/cart`) 
 
 > カートストアとレジストアの違いは何ですか？
 >
@@ -13,15 +14,11 @@ sidebar_label: Cart store
 
 カートストアは、WooCommerce ブロックのカート関連データを管理・取得するためのセレクタとメソッドのコレクションを提供します。カートの詳細情報の取得から、クーポンの適用や配送情報の更新といった顧客とのやり取りを管理する機能まで提供します。
 
-## Usage
-
 このストアを利用するには、`cartStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`StoreDescriptor`をインポートすることができます：
 
 ```js
 const { cartStore } = window.wc.wcBlocksData;
 ```
-
-## Actions
 
 ### setCartData
 
@@ -100,7 +97,7 @@ dispatch( setErrorData( newErrorData ) );
 
 -   __cartContents_ `object`：カートコンテンツ API レスポンス。
     -   クーポン_ `array`：カート内のクーポンアイテム。
-    -   配送料金 `array`: カートの配送料金 (`wc/store/checkout` を参照ください)：カートの配送料金(`getShippingRates`セレクタを参照)。
+    -   配送料金 `array`: カートの配送料金 (__INLINE_CODE_2__ を参照ください)：カートの配送料金(`getShippingRates`セレクタを参照)。
     -   配送先住所 `object`：配送先住所 (`getCustomerData` セレクタを参照ください)。
     -   請求先住所 (`object` セレクタを参照ください)：請求先住所 (`getCustomerData` セレクタを参照ください)。
     -   _items`array`：カートアイテム。

@@ -2,7 +2,8 @@
 post_title: Technical documentation style guide
 sidebar_label: Style guide
 ---
-# 技術文書スタイルガイド
+
+# Technical Documentation Style Guide
 
 このスタイルガイドは、WooCommerce技術文書のための効果的でユーザーフレンドリーなチュートリアルとハウツーガイドを作成するためのガイドラインを提供することを目的としています。
 
@@ -158,8 +159,6 @@ WooCommerceでは、技術文書の一貫した高品質な標準を維持する
 
 - "**WordPress Admin dashboard**"は、記事内で最初に表示されるときは完全な形で表示し、その後に括弧で囲んだ省略形（"WP Admin"）を表示します。それ以降、同じ記事内でWordPress管理ダッシュボードを参照する場合は、省略形を使用することができます。
 - WordPress AdminダッシュボードのURLを参照する場合は、短縮形の`wp-admin`を使用できます。
-
-## Testing
 
 チュートリアルやガイドを公開する前に、その手順が正確でわかりやすいものであるかどうかを徹底的にテストすることが重要です。
 

@@ -2,7 +2,8 @@
 post_title: Custom product types
 sidebar_label: Custom product types
 ---
-# カスタム製品タイプ
+
+# Custom Product Types
 
 カスタム商品タイプを使用すると、カスタムフォームを設計し、その構造を完全に制御することができます。マーチャントが最初から最後まで商品を作成できるエクステンションに便利です。
 

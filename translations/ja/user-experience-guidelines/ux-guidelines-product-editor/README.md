@@ -3,7 +3,8 @@ sidebar_label: Product Editor
 category_slug: user-experience-product-editor
 post_title: Product Editor guidelines
 ---
-# 商品編集者のガイドライン
+
+# Product Editor guidelines
 
 私たちの調査によると、Wooで新しい商品を作成する際、マーチャント様はタスクとゴールという観点で考えています。例えば、商品価格の追加や編集は、画像のアップロードや在庫の管理とは別のタスクです。
 

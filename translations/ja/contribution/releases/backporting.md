@@ -3,7 +3,8 @@ post_title: Backporting in WooCommerce
 sidebar_label: Backporting
 sidebar_position: 3
 ---
-# WooCommerceにおけるバックポート
+
+# Backporting in WooCommerce
 
 バックポートは、`trunk`からの変更をリリースブランチに適用するプロセスです。これにより、クリティカルな修正が次のリリースで確実に顧客に届くようになります。  これらのフローはUPCOMING RELEASESにのみ適用されることに注意してください（すでにリリースされたバージョンへのパッチは適用されません）。
 

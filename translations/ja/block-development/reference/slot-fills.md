@@ -2,7 +2,8 @@
 post_title: Slot and fill
 sidebar_label: Slot and fill
 ---
-# スロットとフィル
+
+# Slot and fill
 
 ## 問題
 

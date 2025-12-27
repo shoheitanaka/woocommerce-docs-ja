@@ -3,7 +3,8 @@ post_title: Point Release Requests in WooCommerce
 sidebar_label: Point Release Requests
 sidebar_position: 4
 ---
-# WooCommerceにおけるポイント解放リクエスト
+
+# Point Release Requests in WooCommerce
 
 ポイントリリースは既に出荷されたWooCommerceのバージョンで発見された重大な問題に対処します。これらはパッチリリース（例：9.9.0 → 9.9.1）で、本番環境に必要な修正のみが含まれています。
 

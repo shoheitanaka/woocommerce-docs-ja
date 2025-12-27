@@ -3,7 +3,8 @@ sidebar_label: Theme design
 category_slug: user-experience-themes
 post_title: Theme design guidelines
 ---
-# テーマ設計ガイドライン
+
+# Theme Design guidelines
 
 このセクションでは、テーマのエクスペリエンスをeコマース業界の標準とWooCommerceに合致させ、優れたオンラインショッピング体験を提供し、売上を最大化し、使いやすさ、シームレスな統合、強力なUXの採用を保証するために従うべき一般的なガイドラインとベストプラクティスを説明します。
 

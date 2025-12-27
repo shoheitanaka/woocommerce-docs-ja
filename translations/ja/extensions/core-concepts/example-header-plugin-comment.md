@@ -2,7 +2,8 @@
 post_title: Example WordPress plugin header comment for WooCommerce extensions
 sidebar_label: Plugin header comments
 ---
-# WooCommerce 拡張機能のための WordPress プラグインのヘッダーコメントの例
+
+# Example WordPress plugin header comment for WooCommerce extensions
 
 これはWordPressのプラグインヘッダーコメントです。WordPressにプラグインのメタデータを提供するために使用されます。 
 

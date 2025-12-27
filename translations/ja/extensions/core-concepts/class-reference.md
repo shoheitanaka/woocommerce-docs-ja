@@ -3,7 +3,8 @@ post_title: Classes in WooCommerce
 sidebar_label: Classes
 sidebar_position: 1
 ---
-# WooCommerceのクラス
+
+# Classes in WooCommerce
 
 ## WooCommerceのクラス一覧
 

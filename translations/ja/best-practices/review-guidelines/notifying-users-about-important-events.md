@@ -2,7 +2,8 @@
 post_title: Notifying users about bug fixes and feature requests
 sidebar_label: Notifying users about bug fixes and feature requests
 ---
-# バグフィックスや機能要望をユーザーに知らせる
+
+# Notifying users about bug fixes and feature requests
 
 バグや不足している機能は、加盟店にとって大きな障害となる可能性があります。バグが積み重なったり、人気のある機能が実装されていなかったりすると、否定的なレビューがついたり、加盟店が競合他社のソリューションに目を向けたりする可能性がある。
 

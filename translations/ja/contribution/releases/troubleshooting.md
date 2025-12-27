@@ -3,7 +3,8 @@ post_title: Release Troubleshooting
 sidebar_label: Troubleshooting
 sidebar_position: 7
 ---
-# リリースのトラブルシューティングとリカバリー
+
+# Release Troubleshooting & Recovery
 
 このページでは、WooCommerceのリリースプロセス中に発生する可能性のある問題のトラブルシューティングとリカバリに関するガイダンスを提供します。一般的なシナリオ、推奨されるアクション、ベストプラクティスをカバーし、リリースがスムーズに処理され、問題が効率的に解決されるように支援します。
 

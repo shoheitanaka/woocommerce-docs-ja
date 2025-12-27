@@ -1,21 +1,18 @@
 ---
 sidebar_label: Query State Store
 ---
-# クエリ・ステート・ストア (`wc/store/query-state`) 
+
+# Query State Store (`wc/store/query-state`) 
 
 ## 概要
 
 クエリステートストアは、個々のブロックなどの特定のコンテキスト内でクエリ関連データを処理・操作するためのアクションを提供します。これにより、クエリ状態の値の動的な更新と取得が容易になり、WooCommerce Blocks内での正確でコンテキストに特化したデータ管理が保証されます。
 
-## Usage
-
-このストアを利用するには、`QUERY_STATE_STORE_KEY`を参照するモジュールで`wc/store/query-state`をインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`@woocommerce/block-data`を介してキーをインポートすることができます：
+このストアを利用するには、`QUERY_STATE_STORE_KEY`を参照するモジュールで__INLINE_CODE_0__をインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、__INLINE_CODE_2__を介してキーをインポートすることができます：
 
 ```js
 const { QUERY_STATE_STORE_KEY } = window.wc.wcBlocksData;
 ```
-
-## Actions
 
 > ⚠️ 新しい値は、ストア内の既存のエントリーを常に上書きする。
 
@@ -37,3 +34,4 @@ const { QUERY_STATE_STORE_KEY } = window.wc.wcBlocksData;
 
 -   コンテクスト `string`：保存されるクエリ状態のコンテキスト、例えばブロック名。
 -   value_ `object`：コンテキストにアタッチされるクエリ状態のキーと値のペアのオブジェクト。
+

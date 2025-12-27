@@ -2,7 +2,8 @@
 post_title: Email preview integration
 sidebar_label: Email preview integration
 ---
-# メールプレビューの統合
+
+# Email Preview Integration
 
 <!-- markdownlint-disable MD024 -->
 

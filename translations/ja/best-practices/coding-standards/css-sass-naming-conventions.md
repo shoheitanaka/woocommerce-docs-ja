@@ -1,7 +1,8 @@
 ---
 post_title: CSS/Sass naming conventions
 ---
-# CSS/Sass の命名規則
+
+# CSS/Sass naming conventions
 
 ## はじめに
 
@@ -48,8 +49,6 @@ WordPressのプラグインとして、WooCommerceはWordPressコアや他のプ
 ```
 
 **注：** `.woocommerce-loop-product`は、`.woocommerce-loop`の中に入れ子になっているため、このような名前にはなっていません。これは、単品商品、カート商品などに別々のクラスを持てるようにするためです。 **入れ子になったブロックは、親のフルネームを継承する必要はありません。
-
-## TL;DR
 
 [- WordPress Coding standards for CSS](https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/) に従ってください。
 - [CSSのCalypsoガイドライン](https://wpcalypso.wordpress.com/devdocs/docs/coding-guidelines/css.md)に従う。

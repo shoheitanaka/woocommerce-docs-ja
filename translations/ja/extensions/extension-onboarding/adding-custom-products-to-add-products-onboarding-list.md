@@ -2,7 +2,8 @@
 post_title: How to add custom product types to Add Products onboarding list
 sidebar_label: Add custom product types to Add Products onboarding list
 ---
-# カスタム商品タイプを商品追加リストに追加する方法
+
+# How to add custom product types to Add Products onboarding list
 
 ## はじめに
 
@@ -20,8 +21,6 @@ WooCommerceでは、開発者が商品タイプオンボーディングリスト
 まず、`@wordpress/hooks`パッケージがインストールされていることを確認してください。インストールされていない場合は、`npm`または`yarn`を使ってプロジェクトに追加してください：
 
 `npm install @wordpress/hooks`。
-
-or:
 
 `yarn add @wordpress/hooks`。
 

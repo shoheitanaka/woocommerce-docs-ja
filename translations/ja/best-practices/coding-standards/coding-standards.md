@@ -2,15 +2,14 @@
 post_title: WooCommerce coding standards
 sidebar_label: Coding standards
 ---
-# WooCommerce コーディングスタンダード
+
+# WooCommerce coding standards
 
 WooCommerce コーディングスタンダードの遵守は、高いコード品質を維持し、互換性を確保し、メンテナンスとアップデートを容易にするために不可欠です。このドキュメントでは、フックの使用、関数のプレフィックス、翻訳可能なテキスト、コード構造など、WooCommerceエコシステム内で作業する開発者に推奨されるコーディングプラクティスの概要を説明します。
 
 ## フックの位置
 
 WordPressとWooCommerceのエコシステムで一般的なパターンに合わせるために、フックを関数呼び出しの下に配置します。
-
-Example:
 
 ```php
 /**
@@ -26,8 +25,6 @@ add_action( 'wp_footer', 'YOUR_PREFIX_custom_message' );
 
 衝突を避けるため、すべての関数呼び出しに一貫した接頭辞を使用してください。このレポのコード・スニペットでは、`YOUR_PREFIX`を使用してください。
 
-Example:
-
 ```php
 /**
  * Add custom discount.
@@ -42,8 +39,6 @@ add_filter( 'woocommerce_product_get_price', 'YOUR_PREFIX_custom_discount', 10, 
 
 すべてのプレーン・テキストが翻訳可能であることを確認し、国際化のベスト・プラクティスに従って一貫したテキスト・ドメインを使用してください。このレポのコード・スニペットでは、テキストドメイン `YOUR-TEXTDOMAIN` を使用してください。
 
-Example:
-
 ```php
 /**
  * Add welcome message.
@@ -57,8 +52,6 @@ add_action( 'wp_footer', 'YOUR_PREFIX_welcome_message' );
 ## function_exists()の使用
 
 関数の再宣言によるエラーを防ぐには、すべての関数呼び出しを `function_exists()` で囲みます。
-
-Example:
 
 ```php
 /**

@@ -2,7 +2,8 @@
 post_title: Common issues
 sidebar_label: Common issues
 ---
-# 共通の問題
+
+# Common issues
 
 このページは、既知の問題、よく遭遇する問題、そしてその解決策や回避策を包括的に文書化することを目的としています。もし、ここに記載されていない問題や、記載すべき問題に遭遇した場合は、遠慮なくリストに追加してください。
 
@@ -33,8 +34,6 @@ composer 2.0.7の[変更](https://github.com/composer/composer/commit/b574f10d9d
 ```bash
 mysqladmin: CREATE DATABASE failed; error: 'Access denied for user 'wp'@'localhost' to database 'wordpress-one-tests''
 ```
-
-To fix:
 
 -   MySQLを`sudo mysql`で開く。
 -   `GRANT ALL PRIVILEGES ON * . * TO 'wp'@'localhost';`を実行する。`exit;`を入力して終了する。
@@ -109,7 +108,7 @@ localStorage.setItem( 'debug', 'wc-admin:tracks' );
 ## Vagrant (VVV) を使って PHP のユニットテストを実行する
 
 1.Vagrant に SSH でログインする (`vagrant ssh`)
-2.`cd /srv/www/<WP_INSTANCE>/public_html/wp-content/plugins/woocommerce-admin` (`AutoloadGenerator`)
+2.`cd /srv/www/<WP_INSTANCE>/public_html/wp-content/plugins/woocommerce-admin` (__INLINE_CODE_1__)
 3.設定するセットアップ: `bin/install-wp-tests.sh wc-admin-tests root root`
 4.高速テスト：`./vendor/bin/phpunit --group fast`
 5.すべてのテスト：すべてのテスト： `./vendor/bin/phpunit`

@@ -1,7 +1,8 @@
 ---
 post_title: Unhook and remove WooCommerce emails
 ---
-# WooCommerceのメールを解除して削除する
+
+# Unhook and remove WooCommerce emails
 
 このコードにより、WooCommerceのデフォルトEメールのフックを外し、削除することができます。
 

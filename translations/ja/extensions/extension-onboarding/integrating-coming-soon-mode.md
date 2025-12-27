@@ -1,7 +1,8 @@
 ---
 post_title: Integrating with coming soon mode
 ---
-# カミングスーンモードとの統合
+
+# Integrating with coming soon mode
 
 このガイドでは、サードパーティの開発者やホスティングプロバイダー向けに、WooCommerceのcoming soonモードとシステムを統合する方法を例示しています。詳細は[開発者ブログ記事](https://developer.woocommerce.com/2024/06/18/introducing-coming-soon-mode/)をお読みください。サイトの表示設定については、[管理者向けドキュメント](https://woocommerce.com/document/configuring-woocommerce-settings/coming-soon-mode/) を参照してください。
 

@@ -7,8 +7,6 @@ sidebar_label: Store Notices Store
 
 お知らせストアでは、お知らせ用のコンテナを登録したり解除したりできます。これはカスタムブロックのような特定の場所にお知らせを表示するのに便利です。
 
-## Usage
-
 このストアを利用するには、`storeNoticesStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`StoreDescriptor`をインポートすることができます：
 
 ```js
@@ -20,8 +18,6 @@ import { storeNoticesStore } from '@woocommerce/block-data';
 ```js
 const { storeNoticesStore } = window.wc.wcBlocksData;
 ```
-
-## Example
 
 以下のコード・スニペットは、通知用コンテナの登録方法を示している。
 
@@ -49,8 +45,6 @@ export default function Block( attributes ) {
 > 内部的には、`StoreNoticesContainer`コンポーネントが`registerContainer`アクションをディスパッチします。
 
 これは単純な例であることに注意してください。実際には、フォームを送信するなどのユーザーアクションに応じて`createNotice`アクションをトリガーしたいでしょう。
-
-## Actions
 
 ### 登録コンテナ( containerContext )
 

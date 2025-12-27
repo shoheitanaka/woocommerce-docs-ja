@@ -3,7 +3,8 @@ post_title: WooCommerce Release Monitoring
 sidebar_label: Release Monitoring
 sidebar_position: 7
 ---
-# WooCommerceリリース監視
+
+# WooCommerce Release Monitoring
 
 リリース後、リリースリーダーは、最新バージョンに直接関連するバグがないか、以下の監視を継続する必要があります。  メジャーリリースの場合は3日間、ポイントリリースの場合は1日間、監視を続ける必要があります。
 

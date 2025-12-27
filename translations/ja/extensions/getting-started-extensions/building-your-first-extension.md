@@ -3,7 +3,8 @@ post_title: How to build your first extension
 sidebar_label: Build your first extension
 sidebar_position: 2
 ---
-# 最初のエクステンションの作り方
+
+# How to build your first extension
 
 このガイドでは、[create-woo-extension](https://www.npmjs.com/package/@woocommerce/create-woo-extension)を使用してWooCommerce拡張機能の足場を作る方法を説明します。create-woo-extensionを使用することで、手動で一から作成するよりも以下のような様々な利点があります：
 
@@ -33,7 +34,7 @@ sidebar_position: 2
 
 カスタム拡張名を設定したい場合は、`my-extension-name`を任意のスラッグに置き換えることができます。スラッグにはスペースを入れてはいけません。
 
-`Need to install the following packages`のようなプロンプトが表示されたら、`@wordpress/create-block@4.34.0. Ok to proceed?`を押します：`Need to install the following packages`のようなプロンプトが表示されたら、`Y`を押す。
+`Need to install the following packages`のようなプロンプトが表示されたら、`@wordpress/create-block@4.34.0. Ok to proceed?`を押します：__INLINE_CODE_1__のようなプロンプトが表示されたら、`Y`を押す。
 
 パッケージが拡張機能を生成し終わったら、拡張機能フォルダに移動します。 
 

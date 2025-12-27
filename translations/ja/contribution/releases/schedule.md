@@ -3,18 +3,15 @@ post_title: WooCommerce Release Schedule
 sidebar_label: Release Schedule
 sidebar_position: 6
 ---
-# WooCommerce リリーススケジュール
+
+# WooCommerce Release Schedule
 
 WooCommerceは予測可能なリリーススケジュールで運営されており、およそ5週間ごとに新機能、機能強化、バグ修正のアップデートを提供しています。
 このページでは、機能の凍結、ベータ版とリリース候補の期間、最終版とパッチリリースのタイミングなど、リリースプロセスの主な段階についてまとめています。
 
 モノレポ内でのリリースサイクルの詳細については、[Git Flow docs](/docs/contribution/contributing/woocommerce-git-flow) を参照してください。
 
-:::tip
-
 現在および今後のリリースに関する実際のスケジュールは、[リリースカレンダー](https://developer.woocommerce.com/release-calendar/)をご覧ください。
-
-:::
 
 ![リリース・サイクル・フローチャート](/img/doc_images/release-cycle.png)
 
@@ -63,8 +60,6 @@ WooCommerceは予測可能なリリーススケジュールで運営されてお
 
 - リリースブランチにのみ存在するバグは、リリースブランチ `release/x.y` に対して修正されます。
 - `trunk`で修正されたバグは[バックポート](/docs/contribution/releases/backporting)されます。
-
-## Delays
 
 ビジネス上の必要性やテスト中に発見された重大なバグにより、リリース日が変更される場合があります。
 

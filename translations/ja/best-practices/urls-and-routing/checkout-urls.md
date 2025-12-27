@@ -2,7 +2,8 @@
 post_title: Shareable Checkout URLs
 sidebar_label: Checkout URLs
 ---
-# 共有可能なチェックアウトURL
+
+# Shareable Checkout URLs
 
 カスタムチェックアウトリンクは、特定の商品を自動的にカートに入れ、ユニークなセッションIDで顧客をチェックアウトに直接リダイレクトします。 
 
@@ -18,15 +19,11 @@ products=123:2,456:1
 
 商品IDと数量のカンマ区切りリスト。例えば、`123:2,456:1`。この機能は、追加オプションのないシンプルな商品をサポートします。正しいバリエーションIDを使用することで、個々のバリエーションをカートに追加することもできます。
 
-### Coupon
-
 ```plaintext
 coupon=SPRING10
 ```
 
 カートに適用するクーポンコード。例えば、`SPRING10`。
-
-## Example
 
 ```plaintext
 https://yourstore.com/checkout-link/?products=123:2,456:1&coupon=SPRING10

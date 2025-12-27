@@ -2,7 +2,8 @@
 post_title: How to configure caching plugins for WooCommerce
 sidebar_label: Configure caching plugins
 ---
-# WooCommerceのキャッシュプラグインの設定方法
+
+# How to configure caching plugins for WooCommerce
 
 ## キャッシュからページを除外する
 

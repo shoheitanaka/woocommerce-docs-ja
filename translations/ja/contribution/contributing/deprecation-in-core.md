@@ -2,7 +2,8 @@
 post_title: Deprecation in core
 sidebar_label: Deprecation in core
 ---
-# コアでの非推奨
+
+# Deprecation in core
 
 非推奨（Deprecation）とは、後方互換性を破壊したり、その使用を完全に禁止したりすることなく、ある機能や慣習の使用を控え、他のものを優先させる方法である。非推奨に関するウィキペディアの記事を引用する：
 

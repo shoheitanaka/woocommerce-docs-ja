@@ -1,7 +1,8 @@
 ---
 post_title: Settings API
 ---
-# 設定 API
+
+# Settings API
 
 WooCommerce Settings API は設定を表示、保存、ロードするためにエクステンションによって使用されます。あなたのエクステンションでAPIを利用する最善の方法は`WC_Settings_API`クラスを継承したクラスを作成することです：
 

@@ -2,7 +2,8 @@
 post_title: How to Add Conditional Additional Checkout Fields
 sidebar_label: How to add additional conditional fields in checkout
 ---
-# How to Make Your WooCommerce Additional Checkout Fields Conditionally Visible in Checkout Block
+
+# How to Make Your WooCommerce Additional Checkout Fields Conditionally Visible in the Checkout Block
 
 この機能にはWooCommerce 9.9.0以上が必要です。
 

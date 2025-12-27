@@ -2,7 +2,8 @@
 post_title: Email editor integration
 sidebar_label: Email editor integration
 ---
-# WooCommerceメールエディター統合ガイド
+
+# WooCommerce email editor integration guide
 
 このガイドでは、WooCommerce Email Editorと統合してカスタムメール通知を追加する方法を説明します。  
 **注意:** WooCommerce Email Editorは現在アルファ版です。これを有効にするには、**WooCommerce > Settings > Advanced > Features** に行き、**Block Email Editor (alpha)**を有効にしてください。
@@ -591,7 +592,5 @@ add_action( 'your_plugin_customer_joined_loyalty', function( $customer_id, $poin
     パーソナライズタグのコールバックが登録され、期待される値を返していることを確認してください。
 -   **メールが送信されません。
     WooCommerceの設定でメールが有効になっているか、トリガーアクションが期待通りに起動しているか確認してください。
-
----
 
 カスタムメールは**WooCommerce > Settings > Emails**に表示され、ブロックエディタを使って編集することができます。

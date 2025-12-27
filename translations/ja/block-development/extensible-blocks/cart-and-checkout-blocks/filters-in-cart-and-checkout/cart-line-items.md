@@ -2,7 +2,8 @@
 post_title: Cart line items
 sidebar_label: Cart Line Items
 ---
-# カートのラインアイテム
+
+# Cart line items
 
 <!-- markdownlint-disable MD024 -->
 
@@ -22,7 +23,7 @@ sidebar_label: Cart Line Items
 
 以下のスクリーンショットは、個々のフィルターがどの部分に影響するかを示しています：
 
-![カート・ライン・アイテム](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-13.12.33.png)
+![Cart Line Items](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-13.12.33.png)
 
 ## `cartItemClass`
 
@@ -417,7 +418,7 @@ registerCheckoutFilters( 'example-extension', {
 
 | 前
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|![Show Remove Item Link フィルタ適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a4254f3b-f056-47ad-b34a-d5f6d5500e56) |![Show Remove Item Link フィルタ適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/32c55dc7-ef65-4f35-ab90-9533bc79d362) |｜｜｜[Show Remove Item Link フィルタ適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a587a6ce-d051-4ed0-bba5-815b5d72179d)
+|![Show Remove Item Link フィルタ適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a4254f3b-f056-47ad-b34a-d5f6d5500e56) |![Show Remove Item Link フィルタ適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/32c55dc7-ef65-4f35-ab90-9533bc79d362) |｜｜｜[Show Remove Item Link フィルタ適用後](__URL_1__)
 
 ## `subtotalPriceFormat`
 

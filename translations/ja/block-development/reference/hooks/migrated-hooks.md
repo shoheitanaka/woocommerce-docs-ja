@@ -1,7 +1,8 @@
 ---
 sidebar_label: Migrated legacy hooks
 ---
-# レガシーフックの移行
+
+# Migrated legacy hooks
 
 以下はWooCommerceコアに存在し、WooCommerce Blocksに引き継がれたフックです。
 

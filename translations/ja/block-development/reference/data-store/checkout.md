@@ -1,7 +1,8 @@
 ---
 sidebar_label: Checkout Store
 ---
-# チェックアウトストア (`wc/store/checkout`) 
+
+# Checkout Store (`wc/store/checkout`) 
 
 > カートストアとレジストアの違いは何ですか？
 >
@@ -12,8 +13,6 @@ sidebar_label: Checkout Store
 ## 概要
 
 チェックアウトストアは、チェックアウトプロセス中のデータにアクセスし、管理するためのセレクタのコレクションを提供します。これらのセレクタにより、開発者は顧客情報、注文状況、その他のチェックアウト関連データなどの主要な詳細を取得することができます。
-
-## Usage
 
 このストアを利用するには、`checkoutStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`StoreDescriptor`をインポートすることができます：
 
@@ -217,8 +216,6 @@ const store = select( checkoutStore );
 const hasOrder = store.hasOrder();
 ```
 
-### isIdle
-
 チェックアウトのステータスが`IDLE`の場合、このフラグはtrueになります。ブロックがロードされた後にチェックアウトのステータスが変更されると、チェックアウトはこのステータスになります。また、エラー処理後に購入を再試行できる場合もこのステータスになります。
 
 #### を返す。<!-- omit in toc -->
@@ -355,8 +352,6 @@ const addressAutocompleteProviders = store.getRegisteredAutocompleteProviders();
 const store = select( checkoutStore );
 const activeBillingProvider = store.getActiveAutocompleteProvider( 'billing' );
 ```
-
-## Actions
 
 ### setPrefersCollection
 

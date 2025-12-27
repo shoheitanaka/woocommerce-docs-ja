@@ -4,7 +4,8 @@ sidebar_label: Review guidelines
 category_slug: review-guidelines
 post_title: Review guidelines
 ---
-# レビューガイドライン
+
+# Review guidelines
 
 レビューはオンラインショッピング体験に不可欠な要素であり、ソフトウェアをインストールする人々はレビューに注意を払います。あなたのエクステンションの見込みユーザは、ソフトウェアを選択する際に平均的な評価を考慮するでしょう。
 

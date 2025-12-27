@@ -2,7 +2,8 @@
 post_title: How to check if WooCommerce is active
 sidebar_label: Check if WooCommerce is active
 ---
-# WooCommerceが有効かどうかを確認する方法
+
+# How to check if WooCommerce is active
 
 WooCommerceの開発を行う場合、コードを実行する前にWooCommerceがインストールされ、有効になっていることを確認することが重要です。これにより、WooCommerceの関数やクラスが見つからないことによるエラーを防ぐことができます。
 

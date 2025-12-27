@@ -2,6 +2,7 @@
 post_title: WooCommerce Payment Gateway API
 sidebar_label: Payment Gateway API
 ---
+
 # WooCommerce Payment Gateway API
 
 WooCommerceの決済ゲートウェイはクラスベースで、従来のプラグインを通して追加することができます。このガイドではゲートウェイ開発の入門を提供します。

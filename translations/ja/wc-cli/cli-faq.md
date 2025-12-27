@@ -3,7 +3,8 @@ post_title: WooCommerce CLI frequently asked questions
 sidebar_label: Frequently asked questions
 sidebar_position: 5
 ---
-# WooCommerce CLI よくある質問
+
+# WooCommerce CLI Frequently Asked Questions
 
 ## 一般的な質問
 

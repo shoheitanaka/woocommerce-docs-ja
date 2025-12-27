@@ -2,7 +2,8 @@
 post_title: Theme design and user experience guidelines
 sidebar_label: Theme design and user experience guidelines
 ---
-# テーマ・デザインとユーザー・エクスペリエンス・ガイドライン
+
+# Theme design and user experience guidelines
 
 このガイドでは、優れたオンラインショッピング体験を提供し、売上を最大化し、使いやすさ、シームレスな統合、強力なUXの採用を保証するために、テーマのエクスペリエンスがeコマース業界の標準とWooCommerceに沿ったものであることを確認するために従うべき一般的なガイドラインとベストプラクティスをカバーしています。
 
@@ -10,11 +11,7 @@ sidebar_label: Theme design and user experience guidelines
 
 あなたのテーマが[WooCommerceテーマストア](https://woocommerce.com/product-category/themes)で現在利用可能な1つまたは複数の業種に適合することを確認してください。WooCommerceテーマストアの他のテーマと区別されるためには、テーマが親しみやすさを保ちながら、そのデザインに十分なオリジナリティと独自性を提供することが重要です。テーマは、WooCommerceテーマストアや他のWordPressテーママーケットにある既存のテーマをコピーしないようにする必要があります。
 
-## Design
-
 高品質のデザインはオンラインショップの重要な側面であり、それはテーマのデザインとコンテンツによって左右される。テーマのデザインは、シンプルで、一貫性があり、すっきりしていて、記憶に残りやすく、直感的で、効率的で、機能的でなければなりません。WooCommerceの新しいテーマをデザインする際には、以下の点に特別な注意を払う必要があります：
-
-### Layout
 
 テーマは、階層、フロー、コンテンツのバランス、ホワイトスペースの点で業界標準に達していなければならない。
 
@@ -35,8 +32,6 @@ sidebar_label: Theme design and user experience guidelines
 ### イコノグラフィー
 
 テーマで使用されているアイコンは、それが表現している行為や状況を直接的に意味するものであり、サイズや位置、色に関して一貫して使用されている。
-
-### Color
 
 テーマは、UI要素やすべてのページで調和のとれた一貫性のある配色に従わなければなりません。配色は、以下のような少数の色で構成する：
 

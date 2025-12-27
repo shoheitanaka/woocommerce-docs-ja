@@ -2,7 +2,8 @@
 post_title: Logging in WooCommerce
 sidebar_label: Logging
 ---
-# WooCommerceでのログ記録
+
+# Logging in WooCommerce
 
 WooCommerceには、開発中のデバッグ、本番環境でのエラーの検出、または特定のイベントが発生した際の通知の送信に使用できる、独自の堅牢なロギングシステムがあります。デフォルトでは、WooCommerceはこのロガーを使用して、エラー、警告、およびストアの問題のトラブルシューティングに役立つ可能性のあるその他の通知を記録します。WooCommerceの多くのエクステンションも同様の目的でロガーを使用します。
 
@@ -42,8 +43,6 @@ Logs 画面の **WooCommerce > Status > Logs** から、"Settings" リンクを�
 
 ![ログ設定画面](/img/doc_images/settings.png)
 
-### Logger
-
 すべてのログをオフにするには、ここのチェックボックスをオフにします。ロギングはあなたのサイトで何が起こっているかについての貴重な情報を提供することができるので、これはほとんどの状況ではお勧めしません！
 
 ### ログ保存
@@ -68,8 +67,6 @@ WooCommerceには2種類のログ保存方法が用意されています：
 ## ログの追加
 
 ログは`WC_Logger`クラスのメソッドによって追加される。このクラスのインスタンスには `wc_get_logger()` 関数を使用してアクセスします。ログ・エントリーを追加する基本的な方法は、[`WC_Logger::log( $level, $message, $context )`](https://woocommerce.github.io/code-reference/classes/WC-Logger.html#method_log)です。また、ログの重要度レベルごとに、例えば `WC_Logger::warning( $message, $context )` のようなショートカット・メソッドがあります。一般的な`log`メソッドではなく、ショートカット・メソッドを使用することが望ましいです。
-
-### Level
 
 ログには8つの異なる重大度レベルがある：
 

@@ -2,7 +2,8 @@
 post_title: How to translate WooCommerce
 sidebar_label: Translating WooCommerce
 ---
-# WooCommerceの翻訳方法
+
+# How to translate WooCommerce
 
 WooCommerceはすでにいくつかの言語に翻訳されており、箱から出してすぐに翻訳可能です。必要なのはあなたの言語の翻訳ファイルだけです。
 
@@ -34,17 +35,17 @@ WooCommerceの安定版と開発版の両方が翻訳可能です。WooCommerce�
 [1.translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/woocommerce)にアクセスし、リストの中からあなたの言語を探します。
 2.タイトルをクリックすると、その言語のセクションに移動します。
 
-    ![wordpress.orgのWooCommerce翻訳ページのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/2016-02-17-at-09.57.png)
+    ![screenshot of WooCommerce translation page on wordpress.org](https://developer.woocommerce.com/wp-content/uploads/2023/12/2016-02-17-at-09.57.png)
 
 3.INLINE_CODE_0__の見出しをクリックすると、安定版が表示され、ダウンロードできます。
 
-[    選択した言語で利用可能なバージョンのリスト](https://developer.woocommerce.com/wp-content/uploads/2023/12/2016-02-17-at-09.59.png)
+    ![list of versions available for selected language](https://developer.woocommerce.com/wp-content/uploads/2023/12/2016-02-17-at-09.59.png)
 
 4.一番下までスクロールすると、エクスポートのオプションが表示されます。あなたのサイトで使用するために`.mo`ファイルをエクスポートします。
 
 5.このファイルの名前を`woocommerce-YOURLANG.mo`に変更します（例：イギリス英語は`en_GB`）。対応する言語コードは、[https://translate.wordpress.org/projects/wp-plugins/woocommerce/](https://translate.wordpress.org/projects/wp-plugins/woocommerce/]にアクセスし、希望の言語を開くことで確認できます。言語コードは右上に表示されます。
 
-[    プラグインカードと関連言語コードのスクリーンショット](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-10-17-at-09.44.53.png)
+    ![screenshot of plugin card with associated language code](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-10-17-at-09.44.53.png)
 
 6.INLINE_CODE_0__にアップロードしてください。一度アップロードすれば、この翻訳ファイルを使用することができます。
 
@@ -110,13 +111,11 @@ function load_custom_plugin_translation_file( $mofile, $domain ) {
 
 [String Locator](https://wordpress.org/plugins/string-locator/)は、テーマ、プラグイン、WordPressコア内の素早い検索を可能にし、一致するテキストとその行番号を含むファイルのリストを表示します。
 
-## FAQ
-
 ### チェックアウトページの一部の文字列が翻訳されないのはなぜですか？
 
 チェックアウトページで、文字列の一部が翻訳されていないことがあります。例えば、下のスクリーンショットでは、`Local pickup`配送方法、`Cash on delivery`支払い方法、プライバシーポリシーに関するメッセージがロシア語に翻訳されていません：
 
-![翻訳されていない文字列があるチェックアウトページ](https://developer.woocommerce.com/wp-content/uploads/2023/12/not_translated.jpg)
+![checkout page with some strings not translated](https://developer.woocommerce.com/wp-content/uploads/2023/12/not_translated.jpg)
 
 これは通常、WooCommerceを最初にインストールし、デフォルトのサイト言語（英語）を選択し、後でサイト言語を別の言語に変更した場合に発生します。WooCommerceでは、スクリーンショットで翻訳されていない文字列は、最初のWooCommerceインストール後にデータベースに保存されます。そのため、サイトの言語が別の言語に変更された場合、WooCommerceが翻訳可能な文字列を検出する方法はありません。
 
@@ -153,8 +152,8 @@ function load_custom_plugin_translation_file( $mofile, $domain ) {
 
 このスクリーンショットは、Singular翻訳が利用可能であることを示しています：
 
-![このスクリーンショットは、シンギュラーの翻訳が利用可能であることを示しています:](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-10-17-at-10.10.06.png)
+![This screenshot shows that the Singular translation is available:](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-10-17-at-10.10.06.png)
 
 このスクリーンショットは、複数形翻訳が利用できないことを示している：
 
-![このスクリーンショットは複数形の翻訳が利用できないことを示している](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-10-17-at-10.10.21.png)
+![this screenshot shows that the Plural translation is not available](https://developer.woocommerce.com/wp-content/uploads/2023/12/Screenshot-2023-10-17-at-10.10.21.png)

@@ -2,7 +2,8 @@
 post_title: Conditional tags in WooCommerce
 sidebar_label: Conditional tags
 ---
-# WooCommerceの条件タグ
+
+# Conditional tags in WooCommerce
 
 ## 「条件付きタグ」とは？
 

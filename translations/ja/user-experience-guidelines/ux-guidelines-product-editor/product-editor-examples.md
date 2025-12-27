@@ -2,7 +2,8 @@
 post_title: Example use-cases
 sidebar_label: Example use-cases
 ---
-# 使用例
+
+# Example Use-Cases
 
 エクステンションのタイプ（およびユースケース）に応じて、ユーザーがどのようにエクステンションを操作するかに最も適したインターフェースの場所を選ぶことができます。
 

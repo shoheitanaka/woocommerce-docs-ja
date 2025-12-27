@@ -1,5 +1,3 @@
-# Cart API 
-
 カートAPIは、現在のセッションまたはログインしているユーザーのカートの現在の状態を返します。
 
 すべてのPOSTエンドポイントは[Nonce Token](/docs/apis/store-api/nonce-tokens)または[Cart Token](/docs/apis/store-api/cart-tokens)を必要とし、完了すると完全なカートの更新された状態を返します。

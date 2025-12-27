@@ -1,7 +1,8 @@
 ---
 post_title: WooCommerce payment gateway plugin base
 ---
-# WooCommerce支払いゲートウェイプラグインベース
+
+# WooCommerce payment gateway plugin base
 
 このコードは、WooCommerce用の独自のシンプルなカスタム決済ゲートウェイを作成するためのベースとして使用できます。カスタムプラグインで使用しない場合は、このコードを子テーマのfunctions.phpファイルに追加するか、[Code snippets](https://wordpress.org/plugins/code-snippets/) プラグインのようなカスタム関数を追加できるプラグインを使用する必要があります。親テーマのfunctions.phpファイルに直接カスタムコードを追加しないでください。
 

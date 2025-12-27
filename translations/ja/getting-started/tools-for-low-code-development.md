@@ -3,7 +3,8 @@ sidebar_position: 6
 post_title: Tools for low-code development
 sidebar_label: Low-code tools
 ---
-# ローコード開発のためのツール
+
+# Tools for low-code development
 
 ## はじめに
 

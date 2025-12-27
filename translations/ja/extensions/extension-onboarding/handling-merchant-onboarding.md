@@ -3,7 +3,8 @@ post_title: How to implement merchant onboarding
 sidebar_label: Implement merchant onboarding
 sidebar_position: 1
 ---
-# 加盟店オンボーディングの実施方法
+
+# How to implement merchant onboarding
 
 ## はじめに
 
@@ -12,8 +13,6 @@ sidebar_position: 1
 - セットアップタスク
 - 店舗管理リンク
 - 管理メモ
-
----
 
 ## ♪ はじめに
 
@@ -321,8 +320,6 @@ WordPressプラグインとしてカスタムタスクを追加する完全な�
 
 タスクリストの詳細については、[tasklist documentation](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/admin/docs/features/onboarding-tasks.md)を参照してください。
 
----
-
 ## 店舗管理リンクの使用
 
 マーチャントがオンボーディングタスクリストのすべての項目を完了すると、WooCommerceは便利なストア管理リンクのリストを含むセクションに置き換えます。このセクションは、エクステンションの主要な機能に注目させ、マーチャントのナビゲーションを助ける素晴らしい方法です。
@@ -387,8 +384,6 @@ addFilter(
     }
 );
 ```
-
----
 
 ## アドミンノートを使う
 

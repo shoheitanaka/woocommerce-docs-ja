@@ -2,7 +2,8 @@
 post_title: How to prevent data leaks in WooCommerce
 sidebar_label: Prevent data leaks
 ---
-# WooCommerceでデータ漏洩を防ぐ方法
+
+# How to Prevent Data Leaks in WooCommerce
 
 データ漏えいは機密情報を暴露し、WooCommerceサイトのセキュリティを危険にさらす可能性があります。データ漏えいの一般的な原因の一つは、PHPファイルへの直接アクセスです。このチュートリアルでは、この種のデータ漏えいを防ぐ方法を紹介します。
 

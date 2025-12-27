@@ -2,7 +2,8 @@
 post_title: Understanding WooCommerce endpoints
 sidebar_label: WooCommerce endpoints
 ---
-# WooCommerceのエンドポイントを理解する
+
+# Understanding WooCommerce endpoints
 
 エンドポイントとは、ウェブサイトのURLに含まれる余分な部分のことで、存在する場合に異なるコンテンツを表示するために検出される。
 

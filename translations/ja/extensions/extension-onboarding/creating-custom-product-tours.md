@@ -2,7 +2,8 @@
 post_title: How to create custom product tours
 sidebar_label: How to create custom product tours
 ---
-# カスタム商品ツアーの作り方
+
+# How to create custom product tours
 
 ## はじめに
 
@@ -22,8 +23,6 @@ WooCommerceでは、開発者が商品ツアーを拡張または置き換える
 まず、`@wordpress/hooks`パッケージがインストールされていることを確認してください。インストールされていない場合は、`npm`または`yarn`を使ってプロジェクトに追加してください：
 
 `npm install @wordpress/hooks`。
-
-or:
 
 `yarn add @wordpress/hooks`。
 

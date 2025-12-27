@@ -2,7 +2,8 @@
 post_title: Privacy standards for WooCommerce extensions
 sidebar_label: Privacy standards
 ---
-# WooCommerceエクステンションのプライバシー基準
+
+# Privacy Standards for WooCommerce extensions
 
 プライバシーとデータ保護はオンライン上でますます重要になってきており、WooCommerce エクステンションも例外ではありません。このドキュメントでは、WooCommerce エクステンションのプライバシーに関する品質の主な指標、コンプライアンスをテストするための現在の方法、ユーザーの信頼と法的コンプライアンスを確保するために開発者が遵守すべき標準について概説します。
 

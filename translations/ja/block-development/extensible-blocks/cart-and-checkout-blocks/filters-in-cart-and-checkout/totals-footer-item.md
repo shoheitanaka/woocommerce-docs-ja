@@ -2,7 +2,8 @@
 post_title: Totals footer item
 sidebar_label: Totals footer item
 ---
-# フッターの合計項目
+
+# Totals footer item
 
 以下の合計フッター項目フィルターが利用可能です：
 
@@ -162,7 +163,7 @@ registerCheckoutFilters( 'my-extension', {
 -   decsription_ `string` - カートアイテムの説明。
 -   extensions_ `object` (default: `{}`) - 拡張オブジェクト。
 -   id_ `number` - アイテムID。
--   images_ `array` - アイテム画像の配列。
+-   images_ `array` - アイテムの画像配列。
 -   item_data_ `array` - アイテムデータの配列。
 -   key_ `string` - アイテムのキー。
 -   __low_stock_remaining_ `number` - 残りの在庫数。
@@ -192,7 +193,7 @@ registerCheckoutFilters( 'my-extension', {
     -   minimum_ `number` - 最小量。
     -   multiple_of_ `number` - 数量の倍数。
 -   short_description_ `string` - 商品の短い説明。
--   show_backorder_badge_ `boolean` - バックオーダーのバッジを表示するかどうか。
+-   _show_backorder_badge_ `boolean` - バックオーダーのバッジを表示するかどうか。
 -   sku_ `string` - 商品のSKU。
 -   sold_individually_ `boolean` - アイテムが個別に販売されているかどうか。
 -   totals_ `object` - 以下のキーを持つ項目の合計オブジェクトです：

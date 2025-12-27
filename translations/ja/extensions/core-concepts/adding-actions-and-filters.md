@@ -3,7 +3,8 @@ post_title: How to add actions and filters
 sidebar_label: Actions and filters
 sidebar_position: 2
 ---
-# アクションとフィルタの追加方法
+
+# How to add actions and filters
 
 多くのWordPressプラグインがそうであるように、WooCommerceは、開発者がプラットフォームを拡張し、変更することができるアクションとフィルタの範囲を提供します。
 
@@ -78,8 +79,6 @@ function woocommerce_get_current_promotions( ...$args ) {
 
 型安全のため、関数が短絡された場合、戻り値の型が関数シグネチャや関数ドキュメントブロックに記述された戻り値の型と一致するように注意する必要がある。
 
-Example:
-
 ```php
 function get_product_metrics( $args ): array {
     $pre = apply_filters( 'pre_woocommerce_get_product_metrics', null, $args );
@@ -99,8 +98,6 @@ function get_product_metrics( $args ): array {
 
 これは控えめに、必要な場合にのみ行うべきである。他のコンポーネントが大規模なカスタマイズを行う機会を提供する一方で、変更されていない出力を期待する他のコンポーネントを頓挫させる可能性があることを覚えておいてほしい。
 
-Example:
-
 ```php
 function woocommerce_format_sale_price( ...$args ): string {
     /* Prep to fill in any missing $args values... */
@@ -113,8 +110,6 @@ function woocommerce_format_sale_price( ...$args ): string {
 ## IDよりもオブジェクトの受け渡しを優先
 
 アクションやフィルターによっては、オブジェクトID（商品IDなど）を主な値として渡すものもあれば、実際のオブジェクトそのもの（商品オブジェクトなど）を渡すものもあります。一貫性を保つためには、オブジェクトを渡すことが望ましいです。
-
-Example:
 
 ```php
 function get_featured_product_for_current_customer( ) {
@@ -192,7 +187,5 @@ if ( is_wp_error( $result ) ) {
 ```
 
 これを避ける第一の理由は、列挙セットの値が多ければ多いほど、開発者がコードに含めなければならないフィルターが増えるからだ。
-
-## Summary
 
 この文書は、フックのインクルージョンと配置に関するハイレベルなガイドであり、網羅的なリストではありません。時には例外もあるでしょうし、私たちが見落としている良いルールや方法論があるかもしれません。改善のための提案やアイデアがあれば、ぜひ声をかけてください！

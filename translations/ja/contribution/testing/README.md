@@ -3,8 +3,6 @@ sidebar_label: Testing
 category_slug: testing
 post_title: Testing
 ---
-# Testing
-
 WooCommerceコアにコントリビュートする際に、テスト環境を適切にセットアップし、テストを書くことは、私たちの開発パイプラインの重要な部分です。以下のリンクは GitHub の [Contributing Guidelines](https://github.com/woocommerce/woocommerce/blob/trunk/.github/CONTRIBUTING.md) にも含まれています。
 
 テストについて質問がある場合は、開発者コミュニティーの公開チャンネル（[開発者ブログ](https://developer.woocommerce.com/blog/)、[GitHub ディスカッション](https://github.com/woocommerce/woocommerce/discussions)、[コミュニティーSlack](https://woocommerce.com/community-slack/)）までご連絡ください。

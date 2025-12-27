@@ -2,7 +2,8 @@
 sidebar_label: Guiding principles
 sidebar_position: 0
 ---
-# ストア API の指針 
+
+# Store API Guiding principles 
 
 Store APIでエンドポイントを拡張、作成、更新する際には、以下の原則を考慮する必要がある。
 

@@ -2,11 +2,12 @@
 post_title: Subsections
 sidebar_label: Subsections
 ---
-# サブセクション
+
+# Subsections
 
 サブセクションは、既存のフォームグループに追加フィールドを追加するものです。サブセクションは小さなフォームで、複雑さは中程度から低レベルです。このインターフェイスの位置は、既存のWooの機能をベースに追加機能を追加するエクステンションに最適です。
 
-![サブセクションの例](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-subsections.png)
+![Subsections example](https://developer.woocommerce.com/wp-content/uploads/2023/12/product-editor-ext-guidelines-subsections.png)
 
 ## ♪何のためにあるのか
 
@@ -19,8 +20,6 @@ sidebar_label: Subsections
 - 1～2フィールドのシンプルなエクステンション
 - マルチステップのフォームと複雑なテーブル
 - 読み取り専用の説明、セットアップガイド、広告
-
-## Example
 
 もし、マーチャントが360の画像や動画をアップロードできるエクステンションを開発しているのであれば、一般タブの画像セクションにフィールドまたはボタンとして追加することができます。こうすることで、加盟店は複数のタブを行き来することなく、完璧な商品ギャラリーを作成することができます。
 

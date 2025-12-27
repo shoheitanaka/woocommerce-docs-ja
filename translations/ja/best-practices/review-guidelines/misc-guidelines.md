@@ -2,7 +2,8 @@
 post_title: Miscellaneous guidelines and advice
 sidebar_label: Miscellaneous guidelines
 ---
-# その他のガイドラインとアドバイス
+
+# Miscellaneous guidelines and advice
 
 WordPress.orgのプラグインリポジトリでは、検索キーワードに直接マッチする投稿者の名前が非常に高くランク付けされます。つまり、WordPress.orgのユーザーがあなたのビジネスにちなんだ名前を持っていれば（それがあなたのプラグインの検索キーワードであれば）、競合するプラグインよりも優位に立てる可能性があるということです。
 

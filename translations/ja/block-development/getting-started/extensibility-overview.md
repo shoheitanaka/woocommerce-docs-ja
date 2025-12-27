@@ -3,7 +3,8 @@ sidebar_label: Extensibility in blocks
 category_slug: extensibility-in-blocks
 post_title: Extensibility in blocks
 ---
-# ブロックの拡張性
+
+# Extensibility in blocks
 
 これらのドキュメントはすべて様々なWooCommerceブロックの拡張性を扱っています。
 
@@ -50,7 +51,7 @@ import { registerCheckoutFilters } from '@woocommerce/blocks-checkout';
 
 ## チェックアウト・ブロック
 
-以下の参考資料に加えて、[`block-checkout`パッケージのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/README.md)(`@woocommerce/dependency-extraction-webpack-plugin`パッケージのドキュメント)(https://www.npmjs.com/package/@woocommerce/dependency-extraction-webpack-plugin)を参照してください。
+以下の参考資料に加えて、[`block-checkout`パッケージのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/README.md)(__INLINE_CODE_0__パッケージのドキュメント)(__URL_0__)を参照してください。
 
 [| ドキュメント
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |

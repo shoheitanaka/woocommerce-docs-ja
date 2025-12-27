@@ -3,7 +3,8 @@ sidebar_label: High Performance Order Storage
 category_slug: hpos
 post_title: High Performance Order Storage (HPOS)
 ---
-# ハイパフォーマンス・オーダー・ストレージ（HPOS）
+
+# High Performance Order Storage (HPOS)
 
 WooCommerceは従来、店舗の注文と関連する注文情報（払い戻しなど）をWordPressのカスタム投稿タイプまたは投稿メタレコードとして保存してきました。これにはパフォーマンスの問題があります。
 
@@ -122,26 +123,26 @@ High-Performance Order Storage**」と「**Compatibility mode**」が有効な�
 
 -   WordPress Post Tables "**を選択した場合、システムは`_post`および`_postmeta`テーブルに注文データを保存します。このシナリオでは、注文テーブルは使用されません。
 
-![WordPressの投稿テーブルを選択](https://woocommerce.com/wp-content/uploads/2023/10/image-18.png?w=650)
+![Select WordPress Post Tables](https://woocommerce.com/wp-content/uploads/2023/10/image-18.png?w=650)
 
 -   High-Performance Order Storage "**を選択した場合、システムは新しいWooCommerce注文テーブル内に注文データを保存します。
 
-![セレクト・ハイパフォーマンス・オーダー・ストレージ](https://woocommerce.com/wp-content/uploads/2023/10/image-19.png?w=650)
+![Select High-Performance Order Storage](https://woocommerce.com/wp-content/uploads/2023/10/image-19.png?w=650)
 
 -   WordPress Post Tables "**と "Enable compatibility mode "**を選択した場合、システムは投稿/ポストメタとWooCommerce注文テーブル間で注文データを同期します。
 
-![WordPressの投稿テーブルを選択し、互換モードを有効にする](https://woocommerce.com/wp-content/uploads/2023/10/image-20.png?w=650)
+![Select WordPress Post Tables and Enable compatibility mode](https://woocommerce.com/wp-content/uploads/2023/10/image-20.png?w=650)
 
 ## 互換性のないプラグイン
 
 High-Performance Order Storageと互換性のないプラグインを使用している場合、HPOSオプションは**WooCommerce > Settings > Advanced > Features**で無効になります。
 
-![互換性のないプラグイン](https://woocommerce.com/wp-content/uploads/2023/10/image-21.png?w=650)
+![Incompatible plugin](https://woocommerce.com/wp-content/uploads/2023/10/image-21.png?w=650)
 
 -   互換性のないプラグインのリストを確認するには、"**表示と管理**"をクリックしてください。
 -   または、`https://example.com/wp-admin/plugins.php?plugin_status=incompatible_with_feature&feature_id=custom_order_tables`にアクセスして、互換性のないプラグインのリストを確認することもできます（`example.com`をあなたのサイトのドメインに置き換えてください）。
 
-![プラグインのページ](https://woocommerce.com/wp-content/uploads/2023/10/image-22.png?w=650)
+![Plugins page](https://woocommerce.com/wp-content/uploads/2023/10/image-22.png?w=650)
 
 > もし、High-Performance Order Storageで正しく動作しないサードパーティの拡張機能を使用している場合は、その拡張機能の開発者に通知し、HPOSをサポートするように拡張機能をアップデートするよう依頼してください。HPOSのサポートを追加するかどうかは、拡張機能の開発者次第です。私たちは[開発者向けリソースとドキュメント](https://developer.woocommerce.com/2022/09/14/high-performance-order-storage-progress-report/)を用意していますので、統合作業を手伝ってください。
 
@@ -151,7 +152,7 @@ High-Performance Order Storageと互換性のないプラグインを使用し�
 
 これを行うには、**WooCommerce ▸ 設定 ▸ 詳細 ▸ 機能**に移動し、**互換モード**が有効になっていることを確認することから始めます。まだ有効になっていない場合、注文データがデータストア間で同期されるまでしばらく待つ必要があるかもしれません。
 
-![WooCommerce ▸ 設定 ▸ 詳細 ▸ 機能画面](https://woocommerce.com/wp-content/uploads/2023/10/hpos-feature-settings.png?w=650)
+![WooCommerce ▸ Settings ▸ Advanced ▸ Features Screen](https://woocommerce.com/wp-content/uploads/2023/10/hpos-feature-settings.png?w=650)
 
 同期が完了したら、**WordPress posts storage (legacy)** を選択してください。この時点で互換モードを無効にすることもできます。HPOSを再有効化する準備ができたら、[この文書の冒頭](https://github.com/woocommerce/woocommerce/blob/trunk/docs/high-performance-order-storage/#section-3)に掲載されている手順に従ってください。最後に、変更と変更の間にこのページを保存することを忘れないでください！
 

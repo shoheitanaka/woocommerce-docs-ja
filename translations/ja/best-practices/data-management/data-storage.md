@@ -2,7 +2,8 @@
 post_title: Data storage primer
 sidebar_label: Data storage
 ---
-# データ保管入門
+
+# Data storage primer
 
 WordPressやWooCommerce向けに開発する場合、データの性質と永続性を考慮することが重要です。そうすることで、最適な保存方法を決めることができます。ここで簡単な入門知識をご紹介します：
 
@@ -25,8 +26,6 @@ WordPressやWooCommerce向けに開発する場合、データの性質と永続
 ## タクソノミ
 
 もしデータがエンティティをソート/分類する手段であれば、[タクソノミー](https://developer.wordpress.org/taxonomy/)を検討してください。タクソノミーは物事をグループ化する方法です。
-
-## Logging
 
 ログは、[WC_Logger](https://woocommerce.com/wc-apidocs/class-WC_Logger.html) クラスを使ってファイルに書き込む必要があります。これはデバッグのためにイベントやエラーを記録するシンプルで標準的な方法です。
 

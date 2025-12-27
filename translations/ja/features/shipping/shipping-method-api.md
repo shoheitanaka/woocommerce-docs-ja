@@ -2,7 +2,8 @@
 post_title: Shipping method API
 sidebar_label: Shipping method API
 ---
-# 配送方法 API
+
+# Shipping method API
 
 WooCommerceには独自の料金を追加するためにプラグインが使用できるShipping Method APIがあります。この記事では、Shipping APIと連動するコアのFlat Rateメソッドに基づいて、新しい配送方法を作成する手順を説明します。
 

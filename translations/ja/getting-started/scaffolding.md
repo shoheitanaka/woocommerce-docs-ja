@@ -3,7 +3,8 @@ post_title: Scaffolding and sample store data
 sidebar_label: Scaffolding and sample data
 sidebar_position: 4
 ---
-# スカフォールドとサンプルストアのデータ
+
+# Scaffolding and sample store data
 
 WooCommerceは、あなたが構築しようとしているものに応じて、多くのスターターキットや足場を提供しています。
 

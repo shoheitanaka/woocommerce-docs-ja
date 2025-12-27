@@ -3,7 +3,8 @@ post_title: DOM events
 sidebar_label: DOM Events
 sidebar_position: 3
 ---
-# DOMイベント
+
+# DOM events
 
 いくつかのブロックは、最新のデータを表示したり、特定の方法で動作するために、特定のイベントに反応する必要があります。例えば、カートの中身を更新するために'add to cart'イベントをリッスンする必要があるCartブロックや、商品がカートに追加されるたびに開かれるMini-Cartブロックがそうです。
 

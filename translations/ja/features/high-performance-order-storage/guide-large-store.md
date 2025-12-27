@@ -2,7 +2,8 @@
 post_title: A large store's guide to enable HPOS on WooCommerce
 sidebar_label: Enable HPOS for large stores
 ---
-# WooCommerceでHPOSを有効にするための大規模店舗ガイド
+
+# A large store's guide to enable HPOS on WooCommerce
 
 大量のWooCommerceストアを運営していますか？HPOS (High Performance Order Storage) を有効にする作業に着手しようとしていますか？より多くの大量ストアをHPOSに移行していく中で、このタスクに直面するかもしれない方々のためにガイドラインを文書化することにしました。
 
@@ -28,7 +29,7 @@ sidebar_label: Enable HPOS for large stores
 
 WooCommerce > 設定 > 詳細 > 機能**で、"**互換モードを有効にする**"チェックボックスをオンにすることで、[同期を切り替える](https://woocommerce.com/document/high-performance-order-storage/#section-5)ことができます。
 
-![同期の切り替え](https://woocommerce.com/wp-content/uploads/2023/10/image-18.png)
+![Toggle synchronization](https://woocommerce.com/wp-content/uploads/2023/10/image-18.png)
 
 ### レビュー第1段階チェックリスト
 
@@ -136,3 +137,4 @@ add_filter( 'woocommerce_hpos_enable_sync_on_read', '__return_false' );
 2.[テスト中や移行中に発生した問題はすべて文書化する。
 3.[テストの進捗と結果について、利害関係者と定期的にコミュニケーションをとる。
 4.問題が発生した場合に投稿に戻すことができるように、フォールバックシナリオの可能性を計画する。
+

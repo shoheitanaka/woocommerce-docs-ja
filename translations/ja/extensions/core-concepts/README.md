@@ -15,3 +15,4 @@
 ## プラグインの構造と標準
 
 必要なすべてのメタデータを含む、拡張機能のメインプラグインファイルのヘッダの [ヘッダプラグインコメント例](./example-header-plugin-comment.md) フォーマットを参照してください。また、拡張機能の変更履歴ファイルに変更を記録するための標準の [変更履歴フォーマット](./changelog-txt.md) を学び、シームレスな機能のために WooCommerce のプラグイン API と適切に統合するための [WooCommerce プラグイン API コールバック](./woocommerce-plugin-api-callback.md) を理解しましょう。
+

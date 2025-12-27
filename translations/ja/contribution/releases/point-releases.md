@@ -3,7 +3,8 @@ post_title: WooCommerce Point Releases
 sidebar_label: Point Releases
 sidebar_position: 2
 ---
-# ポイントリリース
+
+# Point Releases
 
 ## ポイント・リリースとは？
 

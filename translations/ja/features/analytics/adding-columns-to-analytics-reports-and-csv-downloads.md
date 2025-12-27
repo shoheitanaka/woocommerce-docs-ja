@@ -3,7 +3,8 @@ post_title: How to add columns to analytics reports and CSV downloads
 sidebar_label: Add columns to analytics reports
 sidebar_position: 2
 ---
-# アナリティクス・レポートとCSVダウンロードに列を追加する方法
+
+# How to add columns to analytics reports and CSV downloads
 
 アナリティクスレポートにカラムを追加することは、WooCommerceに機能を追加する本当に面白い方法です。CSVを生成することで、ユーザーインターフェイスのテーブルビューや、ユーザーのお気に入りのスプレッドシートやサードパーティアプリケーションで新しいデータを消費することができます。
 

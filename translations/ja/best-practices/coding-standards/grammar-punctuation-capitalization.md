@@ -2,11 +2,10 @@
 post_title: 'WooCommerce grammar, punctuation and capitalization guide'
 sidebar_label: 'Grammar, punctuation and capitalization'
 ---
-# WooCommerce 文法、句読点、大文字小文字ガイド
+
+# WooCommerce grammar, punctuation and capitalization guide
 
 文法、句読点、スタイルのガイドラインに従うことで、一貫したプレゼンテーションを保つことができます。ユーザーが何を期待し、どこに必要な情報があるかを知っていれば、ユーザーはより良い体験をすることができます。
-
-## Basics
 
 **民主的であれ**。一字一句読む人もいる。スキャンして検索する人もいれば、ビデオを好む人もいる。すべての人を助けてください。
 
@@ -56,8 +55,6 @@ sidebar_label: 'Grammar, punctuation and capitalization'
 
 慎重に使用してください。I'mやthere'sのような短縮形は、文章にカジュアルで会話的な雰囲気を与えますが、内容を翻訳する場合には不適切な場合があります。例えば、don'tのnotがオンライン翻訳者によって無視されることがあります。
 
-### Emoji
-
 絵文字は、あなたのコンテンツに微妙な感情やユーモアを加えたり、視覚的な注目を集めたりすることができます。まれに、そして意図的に使いましょう。
 
 ### 数字
@@ -84,8 +81,6 @@ sidebar_label: 'Grammar, punctuation and capitalization'
 - €995
 - ¥5,000
 - £18.99
-
-#### Dates
 
 曜日と月を綴る：
 
@@ -121,8 +116,6 @@ sidebar_label: 'Grammar, punctuation and capitalization'
 - 27°C
 - 98°F
 
-#### Times
-
 数字とamまたはpmはピリオドを使わず、スペースを入れて使う。
 
 - 午前7:00
@@ -140,8 +133,6 @@ sidebar_label: 'Grammar, punctuation and capitalization'
 - 中央時間CDTまたはCST
 - 山岳部時間MDTまたはMST
 - 太平洋時間PDTまたはPST
-
-#### Years
 
 数十年の略称
 
@@ -212,8 +203,6 @@ sidebar_label: 'Grammar, punctuation and capitalization'
 - 引用符の内側
 - 括弧内部分がより大きな文章の一部である場合は括弧外
 - 括弧の中の部分が単独で成り立つ場合は括弧の中
-
-Examples
 
 - ジェイクは "最高の一日だった "と言った。
 - 彼女はスーパーに行った（ネイルサロンにも行った）。
@@ -313,8 +302,6 @@ he/him/hisやshe/her/herを適宜使う。代名詞として "one "は使わな�
 本、映画、アルバムのタイトルを示すにはイタリック体を使う。
 
 - オーレン・クラフ著『Pitch Anything』が5.99ドルで販売中。
-
-Avoid:
 
 - 下線の書式設定
 - 斜体、太字、大文字、下線の組み合わせ

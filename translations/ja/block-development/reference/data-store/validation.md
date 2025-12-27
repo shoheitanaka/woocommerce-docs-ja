@@ -1,7 +1,8 @@
 ---
 sidebar_label: Validation Store
 ---
-# 検証ストア (`wc/store/validation`) 
+
+# Validation Store (`wc/store/validation`) 
 
 ## 概要
 
@@ -26,19 +27,15 @@ sidebar_label: Validation Store
 
 チェックアウトプロセスが始まると、このデータストアにエントリーがあるかどうかをチェックし、もしあればチェックアウトプロセスの進行を止めます。また、非表示になっているエラーも表示されます。エラーを非表示に設定しても、データストアからそのエラーが消去されることはありません！
 
-## Usage
-
 このストアを利用するには、`validationStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`StoreDescriptor`をインポートすることができます：
 
 ```js
 const { validationStore } = window.wc.wcBlocksData;
 ```
 
-## Example
-
 バリデーションストアの理解を深めるために、利用規約の必須チェックボックスを例にしてみましょう。ページエディターにおいて、マーチャントはチェックボックスを必須にすることで、バイヤーが利用規約に同意しなければならないことを定義することができます。
 
-![画像](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.22.45.png)
+![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.22.45.png)
 
 WooCommerce Blocksでは、`useEffect`フックを使ってチェックボックスが必須かどうか、チェックされているかどうかをチェックしています。チェックボックスが必須でチェックされていない場合、ストアにバリデーションエラーを追加します。チェックボックスが必須でチェックされている場合は、ストアからバリデーションエラーをクリアします。
 
@@ -74,11 +71,11 @@ useEffect( () => {
 
 デフォルトでは、バリデーションエラーは非表示です。これは、購入者がフォームを送信しようとするまでエラーメッセージを表示したくないからです。チェックアウトフォームを送信する前に、バリデーションメッセージはすでにバリデーションストアで見ることができます。
 
-![画像](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.28.56.png)
+![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.28.56.png)
 
 購入者が利用規約チェックボックスをチェックせずにチェックアウトフォームを送信すると、`hidden: true`の項目が`hidden: false`に変更され、検証メッセージが表示されます。
 
-![画像](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.33.01.png)
+![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.33.01.png)
 
 WooCommerce Blocksでは、以下のコードを使ってテキスト入力フィールドにバリデーションエラーがあるかどうかをチェックしています：
 
@@ -95,7 +92,7 @@ const hasError = validationError?.message && ! validationError?.hidden;
 
 場合によっては、ユーザーにバリデーションエラーメッセージを表示したいこともあります。例えば、購入者が必須項目を入力せずにチェックアウトフォームを送信しようとした場合です。例えば、姓、名、住所のフィールドを空のままにした場合です：
 
-![画像](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-25-at-18.28.30.png)
+![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-25-at-18.28.30.png)
 
 WooCommerce Blocksでは、以下の関数がバリデーションエラーメッセージの表示ロジックを処理します：
 
@@ -140,8 +137,6 @@ export const ValidationInputError = ( {
 	);
 }
 ```
-
-## Actions
 
 ### ClearValidationError( errorId )
 

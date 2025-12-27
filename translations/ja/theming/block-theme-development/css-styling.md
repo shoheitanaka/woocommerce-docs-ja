@@ -2,7 +2,8 @@
 post_title: CSS styling for themes
 sidebar_label: CSS styling for themes
 ---
-# テーマのCSSスタイル
+
+# CSS styling for themes
 
 ## ブロックとコンポーネントのクラス名
 
@@ -45,7 +46,7 @@ WooCommerce Blocksは[コーディングガイドラインに記載されてい�
 | | 521px-700px | `is-large` |
 | 521px-700px | `is-medium`
 | 401px-520px | `is-small`
-| | 401px-520px | `wc-block-sort-select`
+| | 401px-520px | __INLINE_CODE_2__
 
 例として、コンテナの幅が521px以上のときに、チェックアウトのフォントサイズを10％大きくしたい場合は、次のようなコードになります：
 

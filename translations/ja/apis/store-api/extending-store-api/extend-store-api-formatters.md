@@ -80,7 +80,7 @@ $price_response = $extend->get_formatter( 'currency' )->format( [
 | 引数 | タイプ | 説明 |
 | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `$value` | `number` | 金額にフォーマットしたい数値
-| `$options` `array` `decimals` `integer`, `format` の2つのキーを含む。
+| `$options` `array` `decimals` `integer`, __INLINE_CODE_5__ の2つのキーを含む。
 | `$options['decimals']`      | `number` | Used to control how many decimal places should be displayed in the monetary value.デフォルトはストア設定です。                                                                                                                |
 |`$options['rounding_mode']` | `number` | 金額を丸める方法を指定します。これは、[PHP round() documentation](https://www.php.net/manual/en/function.round.php) で説明されている PHP の丸めモードのいずれかでなければなりません。デフォルトは `PHP_ROUND_HALF_UP` です。|
 
@@ -127,8 +127,6 @@ get_formatter( 'currency' )->format( [
 ] );
 ```
 
-returns
-
 ```text
 'price' => '1800'
 'regular_price' => '1800'
@@ -165,10 +163,9 @@ get_formatter( 'html' )->format(
 );
 ```
 
-returns:
-
 ```text
 alert('bad script!') This &#8220;coffee&#8221; is <strong>very strong</strong>.
 ```
 
 このフォーマッタは、StoreAPI から HTML を返す際に使用します。そうすることで、コンシューマ/クライアントがエンコーディングの問題なしに安全に HTML を表示できるようになります。
+

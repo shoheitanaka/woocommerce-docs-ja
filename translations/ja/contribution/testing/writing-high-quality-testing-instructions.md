@@ -2,7 +2,8 @@
 post_title: Writing high quality testing instructions
 sidebar_label: Writing testing instructions
 ---
-# 高品質なテスト指示書の作成
+
+# Writing high quality testing instructions
 
 ## はじめに
 
@@ -83,48 +84,36 @@ sidebar_label: Writing testing instructions
 
 #### 例1
 
-![良質なインストラクションのサンプル](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682695-3dc51613-b836-4e7e-93ef-f75078ab48ac.png)
+![Sample of good quality instructions](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682695-3dc51613-b836-4e7e-93ef-f75078ab48ac.png)
 
 #### 例2
 
-![良質なインストラクションのサンプル](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682778-b552ab07-a518-48a7-9358-16adc5762aca.png)
+![Another sample of good quality instructions](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682778-b552ab07-a518-48a7-9358-16adc5762aca.png)
 
 ### 実際のテスト指示の改善
 
 このセクションでは、改善の余地があるテスト指示の実際の例（before）と、それをどのように調整するか（after）を紹介する。
 
-Before:
+![Instructions needing improvement](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682396-8c52d20e-1fca-4ac1-8345-f381c15a102a.png)
 
-![改善が必要な指示](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682396-8c52d20e-1fca-4ac1-8345-f381c15a102a.png)
-
-After:
-
-![改善指示](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682480-c01e0e84-5969-4456-8f43-70cbb8509e8d.png)
+![Improved instructions](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682480-c01e0e84-5969-4456-8f43-70cbb8509e8d.png)
 
 改善された：
 
-![変更点](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682597-8d06e638-35dd-4ff8-9236-63c6ec5d05b8.jpg)
+![Changes made](https://developer.woocommerce.com/wp-content/uploads/2023/12/213682597-8d06e638-35dd-4ff8-9236-63c6ec5d05b8.jpg)
 
-Before:
+![example before providing improved instructions](https://developer.woocommerce.com/wp-content/uploads/2023/12/216365611-b540a814-3b8f-40f3-ae64-81018b9f97fb.png)
 
-![改善指示前の例](https://developer.woocommerce.com/wp-content/uploads/2023/12/216365611-b540a814-3b8f-40f3-ae64-81018b9f97fb.png)
-
-After:
-
-![改善指示後の例](https://developer.woocommerce.com/wp-content/uploads/2023/12/216366043-967e5daa-6a23-4ab8-adda-5f3082d1ebf7.png)
+![example after providing improved instructions](https://developer.woocommerce.com/wp-content/uploads/2023/12/216366043-967e5daa-6a23-4ab8-adda-5f3082d1ebf7.png)
 
 改善された：
 
-![改善例](https://developer.woocommerce.com/wp-content/uploads/2023/12/216366152-b331648d-bcef-443b-b126-de2621a20862.png)
+![example of improvements](https://developer.woocommerce.com/wp-content/uploads/2023/12/216366152-b331648d-bcef-443b-b126-de2621a20862.png)
 
-Before:
+![example before providing improved instructions](https://developer.woocommerce.com/wp-content/uploads/2023/12/216388785-8806ea74-62e6-42da-8887-c8e291e7dfe2-1.png)
 
-![改善指示前の例](https://developer.woocommerce.com/wp-content/uploads/2023/12/216388785-8806ea74-62e6-42da-8887-c8e291e7dfe2-1.png)
-
-After:
-
-![改善指示後の例](https://developer.woocommerce.com/wp-content/uploads/2023/12/216388842-e5ab433e-d288-4306-862f-72f6f81ab2cd.png)
+![example after providing improved instructions](https://developer.woocommerce.com/wp-content/uploads/2023/12/216388842-e5ab433e-d288-4306-862f-72f6f81ab2cd.png)
 
 改善された：
 
-![改善例](https://developer.woocommerce.com/wp-content/uploads/2023/12/216388874-c5b21fc3-f693-4a7e-a58a-c5d1b6606682.png)
+![example of improvements](https://developer.woocommerce.com/wp-content/uploads/2023/12/216388874-c5b21fc3-f693-4a7e-a58a-c5d1b6606682.png)

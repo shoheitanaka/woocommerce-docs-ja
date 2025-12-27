@@ -2,7 +2,8 @@
 post_title: Contributing technical documentation
 sidebar_label: Contributing docs
 ---
-# 技術文書の作成
+
+# Contributing technical documentation
 
 WooCommerceの開発者向けドキュメントの改善にご協力いただきありがとうございます。私たちのドキュメントはDocusaurusを利用しており、monorepoの[`woocommerce/docs/`](https://github.com/woocommerce/woocommerce/tree/trunk/docs)フォルダ内にあります。
 
@@ -45,7 +46,7 @@ WooCommerceの開発者向けドキュメントの改善にご協力いただき
 * **サポート・ツールとコンフィグ**はここにある：
     * [`woocommerce/docs/_docu-tools/`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/_docu-tools/)
 * **トップレベルのサイドバーとナバー**は[`sidebars.ts`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/_docu-tools/sidebars.ts)に設定されています：
-    * [`copy the trunk branch only`](https://docs.github.com/en/get-started/quickstart/hello-world)
+    * [__INLINE_CODE_1__](__URL_1__)
     * [`docusaurus.config.ts`](https://github.com/woocommerce/woocommerce/blob/trunk/docs/_docu-tools/docusaurus.config.ts)
 
 ### ドキュメントファイル
@@ -98,3 +99,4 @@ docs/_docu-tools/static/img/doc_images/
 * Google Docsのようなリッチテキストエディタからの貼り付けは避けてください。
 * 詳しい書き方のガイドラインは[docs style guide](style-guide)を参照してください。
 * [ドキュソー文書](https://docusaurus.io/docs)を参照してください。
+

@@ -3,13 +3,10 @@ post_title: Building and Publishing a Release
 sidebar_label: Building and Publishing
 sidebar_position: 1
 ---
-# リリースの構築と発表
 
-:::note
+# Building and Publishing a Release
 
 リリースの過程で何らかの問題が発生した場合は、[リリースのトラブルシューティングとリカバリーガイド](/docs/contribution/releases/troubleshooting)を参照して、一般的な問題のステップバイステップの解決策とリカバリーの手順を確認してください。
-
-:::
 
 ## 前提条件
 

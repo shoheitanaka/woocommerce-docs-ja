@@ -3,18 +3,15 @@ post_title: Model Context Protocol (MCP) Integration
 sidebar_label: MCP Integration
 category_slug: mcp
 ---
-# モデル・コンテキスト・プロトコル（MCP）の統合
+
+# Model Context Protocol (MCP) Integration
 
 ## はじめに
 
 WooCommerceはモデルコンテキストプロトコル（MCP）のネイティブサポートを含み、AIアシスタントやツールが標準化されたプロトコルを介してWooCommerceストアと直接対話することを可能にします。この統合は、AIクライアントが適切な認証と権限でストア操作を実行するために使用できる検出可能なツールとしてWooCommerceの機能を公開します。
 
-:::info
-
 **開発者プレビューのお知らせ
 WooCommerceのMCP実装は現在開発者プレビューです。機能の成熟に伴い、実装の詳細、API、統合パターンが今後のリリースで変更される可能性があります。
-
-:::
 
 ## 背景
 
@@ -46,12 +43,8 @@ WooCommerceのMCP統合は、AIアシスタントに店舗のコア業務への�
 
 すべての操作はWooCommerceの既存の権限システムを尊重し、WooCommerce REST APIキーを使用して認証されます。
 
-:::warning
-
 **データプライバシーに関するお知らせ
 注文および顧客業務は、氏名、電子メールアドレス、物理的住所、支払詳細など、個人を特定できる情報（PII）を公開する可能性があります。お客様は、適用されるデータ保護規制を遵守する責任を負います。最小特権 API スコープを使用し、REST API キーを定期的にローテーションおよび失効させ、組織のデータ保持および取り扱いポリシーに従ってください。
-
-:::
 
 ## 建築
 

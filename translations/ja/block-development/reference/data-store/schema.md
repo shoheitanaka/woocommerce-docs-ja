@@ -7,15 +7,11 @@ sidebar_label: Schema Store
 
 スキーマストアは WooCommerce ブロックに関連するルートを管理し、与えられた名前空間のルートデータの効率的な取得と更新を可能にします。このストアはリソースルートとのやりとりを効率化し、モジュールが必要に応じてエンドポイントパスに簡単にアクセスできるようにします。
 
-## Usage
-
-このストアを利用するには、`SCHEMA_STORE_KEY`を参照するモジュールで`wc/store/schema`をインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`@woocommerce/block-data`を介してキーをインポートすることができます：
+このストアを利用するには、`SCHEMA_STORE_KEY`を参照するモジュールで__INLINE_CODE_0__をインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、__INLINE_CODE_2__を介してキーをインポートすることができます：
 
 ```js
 const { SCHEMA_STORE_KEY } = window.wc.wcBlocksData;
 ```
-
-## Actions
 
 > ⚠️ これらのアクションは、リゾルバによって内部的に使用されることがほとんどなので、直接使用する必要はほとんどないはずです。
 
@@ -32,7 +28,7 @@ const { SCHEMA_STORE_KEY } = window.wc.wcBlocksData;
 
 -   `object`：以下のキーを持つリソースルートのリストでストアを更新するために使われるアクションオブジェクト：
     -   type_ `string`：アクションタイプ。
-    -   _routes`object`：アクションタイプ：routes`@woocommerce/block-data`：ルート名をキーとするルートのオブジェクト。
+    -   _routes`object`：アクションタイプ：routes__INLINE_CODE_2__：ルート名をキーとするルートのオブジェクト。
     -   nameespace_ `string`: ルートが属する名前空間：ルートが属する名前空間、例 `/wc/blocks`.
 
 ## セレクタ

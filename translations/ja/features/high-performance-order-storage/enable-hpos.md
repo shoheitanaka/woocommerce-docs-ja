@@ -2,7 +2,8 @@
 post_title: How to enable High Performance Order Storage
 sidebar_label: Enable HPOS
 ---
-# ハイパフォーマンス・オーダー・ストレージを有効にする方法
+
+# How to enable High Performance Order Storage
 
 2023年10月にリリースされたWooCommerce 8.2から、新規インストール時にHPOSがデフォルトで有効になりました。既存のストアは、以下の手順で「WordPress Posts Storage」から「High-Performance Order Storage」に切り替えることができます。
 
@@ -11,7 +12,7 @@ High-Performance Order Storageを有効にするには、既存ストアはま�
 1.WooCommerce > 設定 > 詳細 > 機能**に移動します。
 2.互換モードを有効にする（注文を投稿テーブルに同期する）"**設定をオンにします。
 
-[    HPOS画面を有効にする](https://developer.woocommerce.com/wp-content/uploads/2023/12/New-Project-4.jpg)
+    ![Enable HPOS Screen](https://developer.woocommerce.com/wp-content/uploads/2023/12/New-Project-4.jpg)
 
 3.この設定を有効にすると、バックグラウンドのアクションがスケジュールされます。
 
@@ -26,3 +27,4 @@ High-Performance Order Storageを有効にするには、既存ストアはま�
 4.両方のテーブルが正常に同期された後、High-Performance Order Storage (HPOS)に切り替えるオプションを選択できるようになる。
   
     - シームレスな移行を確実にするため、しばらく互換モードを維持することをお勧めします。問題が発生した場合は、即座にポストテーブルに戻すことができます。
+
