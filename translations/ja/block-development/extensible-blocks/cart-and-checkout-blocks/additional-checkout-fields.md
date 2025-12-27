@@ -7,7 +7,7 @@ sidebar_position: 4
 
 開発者やマーチャントにとって一般的なユースケースは、顧客や注文に関する追加データを収集するために、チェックアウトフォームに新しいフィールドを追加することです。
 
-このドキュメントでは、エクステンションがチェックアウトフィールドを追加登録するために取るべき手順を説明します。
+このドキュメントでは、エクステンションがチェックアウトフィールドを追加登録するための手順を説明します。
 
 ## 利用可能なフィールドロケーション
 
@@ -25,7 +25,7 @@ sidebar_position: 4
 
 現在、連絡先情報セクションはフォームの一番上に表示されます。`email`フィールドとその他のフィールドが含まれます。
 
-![Showing the contact information section with two fields rendered, email and an additional checkout field (optional)](https://github.com/woocommerce/woocommerce/assets/5656702/097c2596-c629-4eab-9604-577ee7a14cfe)
+![Eメールと追加のチェックアウトフィールド（オプション）の2つのフィールドがレンダリングされた連絡先情報セクションを表示する](https://github.com/woocommerce/woocommerce/assets/5656702/097c2596-c629-4eab-9604-577ee7a14cfe)
 
 ここでレンダリングされたフィールドは買い物客のアカウントに保存されます。これらのフィールドは買い物客の "アカウント詳細 "セクションに表示され、編集可能です。
 
@@ -33,7 +33,7 @@ sidebar_position: 4
 
 住所」セクションには現在、配送先住所と請求先住所のフォームがあります。これらのフォームに表示されるように、追加のチェックアウトフィールドを登録することができます。
 
-![The shipping address form showing the additional checkout field at the bottom](https://github.com/woocommerce/woocommerce/assets/5656702/746d280f-3354-4d37-a78a-a2518eb0e5de)
+![下部にチェックアウト欄が追加された配送先住所フォーム](https://github.com/woocommerce/woocommerce/assets/5656702/746d280f-3354-4d37-a78a-a2518eb0e5de)
 
 ここで登録されたフィールドは、顧客と注文の両方に保存されます。
 
@@ -43,17 +43,17 @@ sidebar_position: 4
 
 ### 注文情報
 
-追加チェックアウトフィールド機能の一環として、チェックアウトブロックに「注文情報ブロック」と呼ばれる新しいインナーブロックが追加されました。
+チェックアウトフィールドの追加機能の一環として、チェックアウトブロックに「注文情報ブロック」と呼ばれる新しいインナーブロックが追加されました。
 
 このブロックは、連絡先情報や住所情報の一部ではないフィールドをレンダリングするために使用されます。例えば、「どのようにして当サイトをお知りになりましたか」フィールドや「ギフトメッセージ」フィールドなどです。
 
 ここでレンダリングされたフィールドは注文に保存されます。これらは顧客の保存された住所やアカウント情報の一部にはなりません。新しい注文には、以前に使用された値は入力されません。
 
-![The order information section containing an additional checkout field](https://github.com/woocommerce/woocommerce/assets/5656702/295b3048-a22a-4225-96b0-6b0371a7cd5f)
+![追加のチェックアウトフィールドを含む注文情報セクション](https://github.com/woocommerce/woocommerce/assets/5656702/295b3048-a22a-4225-96b0-6b0371a7cd5f)
 
 デフォルトでは、このブロックはチェックアウトフォームの最後のステップとしてレンダリングされますが、エディタのGutenbergブロックコントロールを使って移動させることができます。
 
-![The order information block in the post editor"](https://github.com/woocommerce/woocommerce/assets/5656702/05a3d7d9-b3af-4445-9318-443ae2c4d7d8)
+![投稿エディターの注文情報ブロック"](https://github.com/woocommerce/woocommerce/assets/5656702/05a3d7d9-b3af-4445-9318-443ae2c4d7d8)
 
 ## 値へのアクセス
 
@@ -211,13 +211,13 @@ These options apply to all field types (except in a few circumstances which are 
 | Option name         | Description                                                                                                                         | Required? | Example                                      | Default value                                                                                                                                                                                                                                                                                  |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `id`                | The field's ID. This should be a unique identifier for your field. It is composed of a namespace and field name separated by a `/`. | Yes       | `plugin-namespace/how-did-you-hear`          | No default - this must be provided.                                                                                                                                                                                                                                                            |
-| `label`             | The label shown on your field. This will be the placeholder too.                                                                    | Yes       | `どのようにして当サイトをお知りになりましたか？`                 | No default - this must be provided.                                                                                                                                                                                                                                                            |
+| `label`             | The label shown on your field. This will be the placeholder too.                                                                    | Yes       | `どのようにして当サイトをお知りになりましたか？(オプション)`                 | No default - this must be provided.                                                                                                                                                                                                                                                            |
 | `optionalLabel`     | The label shown on your field if it is optional. This will be the placeholder too.                                                  | No        | `どのようにして当サイトをお知りになりましたか？(Optional)`      | The default value will be the value of `label` with `(optional)` appended.                                                                                                                                                                                                                     |
 | `location`          | The location to render your field.                                                                                                  | Yes       | `contact`, `address`, or `order`        | No default - this must be provided.                                                                                                                                                                                                                                                            |
 | `type`              | The type of field you're rendering. It defaults to `text` and must match one of the supported field types.                          | No        | `text`, `select`, or `checkbox`              | `text`                                                                                                                                                                                                                                                                                         |
-| `attributes`        | An array of additional attributes to render on the field's input element. This is _not_ supported for `select` fields.              | No        | `[	'data-custom-data' =&gt; 'my-custom-data' ]` | `[]`                                                                                                                                                                                                                                                                                           |
-| `required`          | Can be a boolean or a JSON Schema array. If boolean and `true`, the shopper _must_ provide a value for this field during the checkout process. For checkbox fields, the shopper must check the box to place the order. If a JSON Schema array, the field will be required based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `true` or `["type" =&gt; "object","properties" =&gt; ...]]` | `false` |
-| `hidden`            | Can be a boolean or a JSON Schema array. Must be `false` when used as a boolean. If a JSON Schema array, the field will be hidden based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `false` or `["type" =&gt; "object", "properties" =&gt; ...]]` | `false` |
+| `attributes`        | An array of additional attributes to render on the field's input element. This is _not_ supported for `select` fields.              | No        | `[	'data-custom-data' => 'my-custom-data' ]` | `[]`                                                                                                                                                                                                                                                                                           |
+| `required`          | Can be a boolean or a JSON Schema array. If boolean and `true`, the shopper _must_ provide a value for this field during the checkout process. For checkbox fields, the shopper must check the box to place the order. If a JSON Schema array, the field will be required based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `true` or `["type" => "object","properties" => ...]]` | `false` |
+| `hidden`            | Can be a boolean or a JSON Schema array. Must be `false` when used as a boolean. If a JSON Schema array, the field will be hidden based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `false` or `["type" => "object", "properties" => ...]]` | `false` |
 | `validation`        | An array of JSON Schema objects that define validation rules for the field. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `[{"type": "object", "properties": {...}}]` | `[]` |
 | `sanitize_callback` | A function called to sanitize the customer provided value when posted.                                                              | No        | See example below                            | By default the field's value is returned unchanged.                                                                                                                                                                                                                          |
 | `validate_callback` | A function called to validate the customer provided value when posted. This runs _after_ sanitization.                              | No        | See example below                            | The default validation function will add an error to the response if the field is required and does not have a value. [See the default validation function.](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Blocks/Domain/Services/CheckoutFields.php#L270-L281) |
@@ -493,7 +493,7 @@ When adding your error to the `WP_Error` object, it should have a unique error c
 
 ###### Example of single-field validation
 
-The below example shows how to apply custom validation to the `namespace/gov-id` text field from above. The code here ensures the field is made up of 5 characters, either upper-case letters or numbers. The sanitization function from the example above ensures that all whitespace is removed and all letters are capitalized, so this check is an extra safety net to ensure the input matches the pattern.
+The below example shows how to apply custom validation to the `namespace/gov-ID` text field from above. The code here ensures the field is made up of 5 characters, either upper-case letters or numbers. The sanitization function from the example above ensures that all whitespace is removed and all letters are capitalized, so this check is an extra safety net to ensure the input matches the pattern.
 
 ```php
 add_action(
@@ -521,9 +521,39 @@ There are cases where the validity of a field depends on the value of another fi
 
 To solve this, it is possible to validate a field in the context of the location it renders in. The other fields in that location will be passed to this action.
 
-##### Using the `woocommerce_blocks_validate_location_{location}_fields` action
+##### Using the `woocommerce_blocks_validate_location_{location}_fields__INLI
 
-This action will be fired for each location that additional fields can render in (`address`, `contact`, and `order`). For `address` it fires twice, once for the billing address and once for the shipping address.
+```php
+add_filter(
+	"woocommerce_get_default_value_for_my-plugin-namespace/address-field",
+	function ( $value, $group, $wc_object ) {
+
+		if ( 'billing' === $group ) {
+			$my_plugin_key = 'existing_billing_address_field_key';
+		} else {
+			$my_plugin_key = 'existing_shipping_address_field_key';
+		}
+
+		return $wc_object->get_meta( $my_plugin_key );
+	},
+	10,
+	3
+);
+
+add_filter(
+	"woocommerce_get_default_value_for_my-plugin-namespace/my-other-field",
+	function ( $value, $group, $wc_object ) {
+
+		$my_plugin_key = 'existing_order_field_key';
+
+		return $wc_object->get_meta( $my_plugin_key );
+	},
+	10,
+	3
+);
+```
+
+NE_CODE_126__address`, `contact`, and `order`). For `address` it fires twice, once for the billing address and once for the shipping address.
 
 The callback receives the keys and values of the other additional fields in the same location.
 
@@ -1063,43 +1093,11 @@ This way, you can ensure existing systems will continue working and your integra
 
 ### React to reading fields
 
-You can use the `woocommerce_get_default_value_for_{$key}`フィルターで異なるデフォルト値(たとえば、別のメタフィールドからの値)を提供します：
-
-```php
-add_filter(
-	"woocommerce_get_default_value_for_my-plugin-namespace/address-field",
-	function ( $value, $group, $wc_object ) {
-
-		if ( 'billing' === $group ) {
-			$my_plugin_key = 'existing_billing_address_field_key';
-		} else {
-			$my_plugin_key = 'existing_shipping_address_field_key';
-		}
-
-		return $wc_object->get_meta( $my_plugin_key );
-	},
-	10,
-	3
-);
-
-add_filter(
-	"woocommerce_get_default_value_for_my-plugin-namespace/my-other-field",
-	function ( $value, $group, $wc_object ) {
-
-		$my_plugin_key = 'existing_order_field_key';
-
-		return $wc_object->get_meta( $my_plugin_key );
-	},
-	10,
-	3
-);
-```
+You can use the `woocommerce_get_default_value_for_{$key}`フィルタを使用して異なるデフォルト値(たとえば別のメタフィールドからの値)を提供します：
 
 ## 完全な例
 
 この完全な例では、政府IDテキスト・フィールドを登録し、それが特定のパターンに適合していることを検証する。
-
-この例は、上記で紹介した例を組み合わせたものに過ぎない。
 
 ```php
 add_action(

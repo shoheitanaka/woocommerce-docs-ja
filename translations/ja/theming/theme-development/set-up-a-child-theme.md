@@ -2,34 +2,32 @@
 post_title: How to set up and use a child theme
 sidebar_label: Set up and use a child theme
 ---
+# 子テーマの設定と使い方
 
-# How to set up and use a child theme
-
-**Note:** This document is intended for creating and using classic child themes. For a comprehensive guide on creating a child block theme and understanding the differences between a classic and block theme, please refer to [WooCommerce block theme development](../block-theme-development/theming-woo-blocks.md) and [WordPress block child theme development](https://learn.wordpress.org/lesson-plan/create-a-basic-child-theme-for-block-themes/).
-
+**注意:** このドキュメントはクラシックな子テーマの作成と使用を目的としています。子ブロックテーマの作成とクラシックテーマとブロックテーマの違いを理解するための包括的なガイドについては、[WooCommerce ブロックテーマ開発](../block-theme-development/theming-woo-blocks.md) および [WordPress ブロック子テーマ開発](https://learn.wordpress.org/lesson-plan/create-a-basic-child-theme-for-block-themes/) を参照してください。
 
 時には、テーマやWooCommerceをオプションで設定できる範囲を超えてカスタマイズする必要があるかもしれません。このガイドラインでは、子テーマを使用してサイトをカスタマイズする方法の基本について説明します。
 
-## What is a child theme?
+## 子テーマとは？
 
 始める前に、子テーマとは何かを理解しておくことが重要です。要するに、子テーマとは親テーマの上に置くレイヤーのことで、ゼロから新しいテーマを開発することなく変更を加えることができます。子テーマを使う主な理由は2つあります：
 
-- Theme developers can use child themes as a way to offer variations on a theme, similar to what we do with the [Storefront child themes](https://woocommerce.com/products/storefront/)
-- Developers can use child themes to host customizations of the parent theme or any plugin on the site since the child theme will get priority over the plugins and parent theme
+- テーマ開発者は、[ストアフロントの子テーマ](https://woocommerce.com/products/storefront/) と同様に、テーマのバリエーションを提供する方法として子テーマを使用できます。
+- 子テーマはプラグインや親テーマよりも優先されるので、開発者は子テーマを使って親テーマやサイトのプラグインのカスタマイズをホストすることができます。
 
-Read [this guide from the WordPress Codex](https://developer.wordpress.org/themes/advanced-topics/child-themes/).
+[WordPress Codexのこのガイド](https://developer.wordpress.org/themes/advanced-topics/child-themes/)をお読みください。
 
-## Make a backup
+## バックアップを取る
 
-Before customizing a website, you should always ensure that you have a backup of your site in case anything goes wrong. More info at: [Backing up WordPress content](https://woocommerce.com/document/backup-wordpress-content/).
+ウェブサイトをカスタマイズする前に、何か問題が発生した場合に備えて、必ずサイトのバックアップを取っておく必要があります。詳しくは[WordPressコンテンツのバックアップ](https://woocommerce.com/document/backup-wordpress-content/).
 
-## Getting started
+## ♪ はじめに
 
 手始めに、子テーマを用意する必要がある。
 
-### Making the child theme
+### 子テーマの作成
 
-First, we need to create a new stylesheet for our child theme. Create a new file called `style.css` and put this code in it:
+まず、子テーマ用の新しいスタイルシートを作成する必要があります。`style.css`という新しいファイルを作成し、その中に次のコードを記述する：
 
 ```css
 /*
@@ -42,7 +40,7 @@ Template: themedir
 */
 ```
 
-Next, we need to change the **Template** field to point to our installed WooTheme. In this example, we'll use the Storefront theme, which is installed under `wp-content/themes/storefront/`. The result will look like this:
+次に、インストールしたWooThemeを指すように**Template**フィールドを変更する必要があります。この例では、`wp-content/themes/storefront/`にインストールされているStorefrontテーマを使用します。結果はこのようになります：
 
 ```css
 /*
@@ -57,26 +55,26 @@ Template: storefront
 /* --------------- Theme customization starts here ----------------- */
 ```
 
-**Note:** With Storefront, you do not need to enqueue any of the parent theme style files with PHP from the theme's `functions.php` file or `@import` these into the child themes `style.css` file as the main parent Storefront theme does this for you.
+**注意:** Storefrontでは、親テーマの`functions.php`ファイルや`@import`ファイルを子テーマの`style.css`ファイルにPHPでエンキューする必要はありません。
 
-With Storefront, a child theme only requires a blank `functions.php` file and a `style.css` file to get up and running.
+Storefrontでは、子テーマを作成するのに必要なのは空白の`functions.php`ファイルと`style.css`ファイルだけです。
 
-## Uploading and activating
+## アップロードとアクティベーション
 
 子テーマをアップロードするには、FTPクライアントを使用するか、WordPressの新規テーマ追加オプションを使用します。
 
 - **FTPを使用する場合、ウェブサイトのフォルダに直接アクセスすることになります。つまり、新しい子テーマをアップロードするためには、ホストに**FTPアクセス**が必要です。もしこれがない場合は、ホストに相談してFTPログインの詳細を教えてもらい、ファイルをアップロードするためのFTPプログラムをダウンロードしてください。
-- **WPダッシュボードを通して。**あなたの子テーマフォルダの.zipファイルを作成した場合は、単に**WordPress &gt;外観&gt;テーマ&gt;新規追加**セクションからあなたのサイトにそれをアップロードすることができます。
+- **WPダッシュボードを通して。**あなたの子テーマフォルダの.zipファイルを作成した場合は、単に**WordPress >外観>テーマ>新規追加**セクションからあなたのサイトにそれをアップロードすることができます。
 
-Once you've done that, your child theme will be uploaded to a new folder in `wp-content/themes/`, for example, `wp-content/themes/storefront-child/`. Once uploaded, we can go to our **WP Dashboard > Appearance > Themes** and activate the child theme.
+そうすると、子テーマが`wp-content/themes/`の新しいフォルダ、例えば`wp-content/themes/storefront-child/`にアップロードされます。アップロードが完了したら、**WPダッシュボード > 外観 > テーマ**に移動し、子テーマを有効化します。
 
-## Customizing design and functionality
+## デザインと機能のカスタマイズ
 
 これで、子テーマを変更する準備が整いました。親テーマに触れずに子テーマをカスタマイズする方法の例をいくつか見てみましょう。
 
-### Design customization
+### デザインのカスタマイズ
 
-Let's do an example together where we change the color of the site title. Add this to your `/storefront-child/style.css`:
+サイトのタイトルの色を変える例を一緒にやってみよう。これを`/storefront-child/style.css`に追加してください：
 
 ```css
 .site-branding h1 a {
@@ -86,19 +84,19 @@ Let's do an example together where we change the color of the site title. Add th
 
 ファイルを保存してブラウザをリフレッシュすると、サイトタイトルの色が変わっているのがわかります！
 
-### Template changes
+### テンプレートの変更
 
-**Note:** This doesn't apply to Storefront child themes. Any customizations to a Storefront child theme's files will be lost when updating. Instead of customizing the Storefront child theme's files directly, we recommended that you add code snippets to a customization plugin. We've created one to do just this. Download [Theme Customizations](https://github.com/woocommerce/theme-customisations) for free.
+[**Storefrontの子テーマには適用されません。Storefrontの子テーマのファイルをカスタマイズした場合は、アップデート時に失われます。Storefront子テーマのファイルを直接カスタマイズする代わりに、カスタマイズプラグインにコードスニペットを追加することをお勧めします。そのためのプラグインを作成しました。Theme Customizations](https://github.com/woocommerce/theme-customisations)を無料でダウンロードしてください。
 
-But wait, there's more! You can do the same with the template files (`*.php`) in the theme folder. For example if w, wanted to modify some code in the header, we need to copy header.php from our parent theme folder `wp-content/themes/storefront/header.php` to our child theme folder `wp-content/themes/storefront-child/header.php`. Once we have copied it to our child theme, we edit `header.php` and customize any code we want. The `header.php` in the child theme will be used instead of the parent theme's `header.php`.
+しかし、まだあります！テーマフォルダ内のテンプレートファイル（`*.php`）でも同じことができます。例えば、wがヘッダーのコードを変更したい場合、親テーマフォルダ`wp-content/themes/storefront/header.php`から子テーマフォルダ`wp-content/themes/storefront-child/header.php`にheader.phpをコピーする必要があります。子テーマにコピーしたら、`header.php`を編集し、好きなコードをカスタマイズします。子テーマの`header.php`は、親テーマの`header.php`の代わりに使用されます。
 
-The same goes for WooCommerce templates. If you create a new folder in your child theme called "WooCommerce", you can make changes to the WooCommerce templates there to make it more in line with the overall design of your website. More on WooCommerce's template structure [can be found here](https://woocommerce.com/document/template-structure/).
+WooCommerceテンプレートも同様です。子テーマに「WooCommerce」という新しいフォルダを作成すれば、そこにあるWooCommerceテンプレートに変更を加えて、ウェブサイト全体のデザインに沿ったものにすることができます。WooCommerceのテンプレート構造についての詳細は[こちら](https://woocommerce.com/document/template-structure/)をご覧ください。
 
-### Functionality changes
+### 機能変更
 
 **注意**：子テーマのfunctions.phpは**空**にして、親テーマのfunctions.phpのものを含めないようにしてください。
 
-The `functions.php` in your child theme is loaded **before** the parent theme's `functions.php`. If a function in the parent theme is **pluggable**, it allows you to copy a function from the parent theme into the child theme's `functions.php` and have it replace the one in your parent theme. The only requirement is that the parent theme's function is **pluggable**, which basically means it is wrapped in a conditional if statement e.g:
+子テーマの`functions.php`は、親テーマの`functions.php`の **前に**ロードされます。親テーマの関数が **プラグイン可能** であれば、親テーマの関数を子テーマの `functions.php` にコピーして、親テーマの関数を置き換えることができます。唯一の条件は、親テーマの関数が **pluggable** であることです：
 
 ```php
 if ( ! function_exists( "parent_function_name" ) ) {
@@ -108,18 +106,18 @@ if ( ! function_exists( "parent_function_name" ) ) {
 }
 ```
 
-If the parent theme function is **pluggable**, you can copy it to the child theme `functions.php` and modify the function to your liking.
+親テーマの関数が**プラグイン可能**であれば、それを子テーマの`functions.php`にコピーし、好みに応じて関数を変更することができます。
 
-## Template directory vs stylesheet directory
+## テンプレートディレクトリ vs スタイルシートディレクトリ
 
-WordPress has a few things that it handles differently in child themes. If you have a template file in your child theme, you have to modify how WordPress includes files. `get_template_directory()` will reference the parent theme. To make it use the file in the child theme, you need to change use `get_stylesheet_directory();`.
+WordPressには、子テーマで異なる処理をするものがいくつかあります。子テーマにテンプレートファイルがある場合、WordPressがファイルをインクルードする方法を変更する必要があります。`get_template_directory()`は親テーマを参照します。子テーマのファイルを使用するには、`get_stylesheet_directory();`を使用するように変更する必要があります。
 
-[More info on this from the WP Codex](https://developer.wordpress.org/themes/advanced-topics/child-themes/#referencing-or-including-other-files)
+[詳細はWP Codexから](https://developer.wordpress.org/themes/advanced-topics/child-themes/#referencing-or-including-other-files)
 
-## Child theme support
+## 子テーマのサポート
 
-Although we do offer basic child theme support that can easily be answered, it still falls under theme customization, so please refer to our [support policy](https://woocommerce.com/support-policy/) to see the extent of support we give. We highly advise anybody confused with child themes to use the [WordPress forums](https://wordpress.org/support/forums/) for help.
+基本的な子テーマのサポートは行っており、簡単に回答することができますが、テーマのカスタマイズに該当するため、どの程度のサポートを行っているかは[サポートポリシー](https://woocommerce.com/support-policy/)を参照してください。子テーマでお困りの方は、[WordPressフォーラム](https://wordpress.org/support/forums/) をご利用ください。
 
-## Sample child theme
+## サンプル子テーマ
 
 この記事の一番上にあるサンプルの子テーマをダウンロードして始めましょう。子テーマを親テーマと一緒に**wp-content/themes/**フォルダに置きます。

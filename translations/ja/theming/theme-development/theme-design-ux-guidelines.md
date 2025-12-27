@@ -2,17 +2,15 @@
 post_title: Theme design and user experience guidelines
 sidebar_label: Theme design and user experience guidelines
 ---
-
-# Theme design and user experience guidelines
+# テーマ・デザインとユーザー・エクスペリエンス・ガイドライン
 
 このガイドでは、優れたオンラインショッピング体験を提供し、売上を最大化し、使いやすさ、シームレスな統合、強力なUXの採用を保証するために、テーマのエクスペリエンスがeコマース業界の標準とWooCommerceに沿ったものであることを確認するために従うべき一般的なガイドラインとベストプラクティスをカバーしています。
 
-We recommend you review the [UI best practices for WordPress](https://developer.wordpress.org/themes/advanced-topics/ui-best-practices/) to ensure your theme is aligned with the WordPress theme requirements.
+[WordPressのUIベストプラクティス](https://developer.wordpress.org/themes/advanced-topics/ui-best-practices/)を確認し、お使いのテーマがWordPressのテーマ要件に沿っていることを確認することをお勧めします。
 
-Make sure your theme fits one or more industries currently available in the [WooCommerce themes store](https://woocommerce.com/product-category/themes). It's important that the theme offers enough originality and distinctiveness in its design, while keeping it familiar, in order to be distinguished from other themes on the WooCommerce theme store. Your theme should avoid copying existing themes on the WooCommerce theme store or other WordPress theme marketplaces.
+あなたのテーマが[WooCommerceテーマストア](https://woocommerce.com/product-category/themes)で現在利用可能な1つまたは複数の業種に適合することを確認してください。WooCommerceテーマストアの他のテーマと区別されるためには、テーマが親しみやすさを保ちながら、そのデザインに十分なオリジナリティと独自性を提供することが重要です。テーマは、WooCommerceテーマストアや他のWordPressテーママーケットプレイスにある既存のテーマのコピーは避けるべきです。
 
 ## Design
-
 
 高品質のデザインはオンラインショップの重要な側面であり、それはテーマのデザインとコンテンツによって左右される。テーマのデザインは、シンプルで、一貫性があり、すっきりしていて、記憶に残りやすく、直感的で、効率的で、機能的でなければなりません。WooCommerceの新しいテーマをデザインする際には、以下の点に特別な注意を払う必要があります：
 
@@ -24,7 +22,7 @@ Make sure your theme fits one or more industries currently available in the [Woo
 
 テーマは、ラップトップ、タブレット、スマートフォンなどの一般的なデバイスでアクセスできるよう、完全に機能し、最適化されることが期待される。
 
-### Typography
+### タイポグラフィ
 
 テーマは、快適な読書体験を促進するエレガントで読みやすいフォントの組み合わせを提供する必要があります。
 
@@ -34,7 +32,7 @@ Make sure your theme fits one or more industries currently available in the [Woo
 
 ボタンやタブなど一部のUI要素を除き）すべて大文字を避け、適切な大文字を使用する。
 
-### Iconography
+### イコノグラフィー
 
 テーマで使用されているアイコンは、それが表現している行為や状況を直接的に意味するものであり、サイズや位置、色に関して一貫して使用されている。
 
@@ -43,12 +41,12 @@ Make sure your theme fits one or more industries currently available in the [Woo
 テーマは、UI要素やすべてのページで調和のとれた一貫性のある配色に従わなければなりません。配色は、以下のような少数の色で構成する：
 
 - 原色／アクセントの支配色
-- 原色を補う1色または2色の副色
+- 原色を補う1色か2色の副色
 - 中間色（白、黒、グレー）
 
-The color palette used in text and graphical UI components must be compliant with the [WCAG AA conformance level](https://www.w3.org/TR/WCAG20/#conformance) or above.
+テキストやグラフィカルなUIコンポーネントで使用されるカラーパレットは、[WCAG AA適合レベル](https://www.w3.org/TR/WCAG20/#conformance)以上に準拠している必要があります。
 
-### Patterns
+### パターン
 
 テーマは、次のような、ページ全体で使用される一貫した一連のパターンを採用しなければならない：
 
@@ -59,32 +57,32 @@ The color palette used in text and graphical UI components must be compliant wit
 - リスト
 - お知らせ
 
-## Accessibility
+## アクセシビリティ
 
-The theme must meet the [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG20/) (WCAG). Meeting 100% conformance with WCAG 2.0 is hard work; meet the AA level of conformance at a minimum.
+テーマは、[ウェブコンテンツ・アクセシビリティ・ガイドライン](https://www.w3.org/TR/WCAG20/)(WCAG)に適合していなければなりません。WCAG 2.0に100％適合するのは大変な作業ですが、最低でもAAレベルの適合を満たしてください。
 
-For more information on accessibility, check out the [WordPress accessibility quick start guide](https://make.wordpress.org/accessibility/handbook/best-practices/quick-start-guide/).
+アクセシビリティの詳細については、[WordPressアクセシビリティ クイックスタートガイド](https://make.wordpress.org/accessibility/handbook/best-practices/quick-start-guide/) をご覧ください。
 
-## Customization
+## カスタマイズ
 
 テーマは、どのような初期設定もカスタマイザーに頼らなければならない。特定のオンボーディングフローは許可されていません。
 
 レイアウトオプション、追加機能、ブロックオプションなど、テーマがサポートするあらゆるカスタマイズは、カスタマイザーまたはテーマに含まれるブロックのブロック設定で提供されるべきです。
 
-Themes should not bundle or require the installation of additional plugins/extensions (or frameworks) that provide additional options or functionality. For more information on customisation, check out the [WordPress theme customization API](https://codex.wordpress.org/Theme_Customization_API)**.**
+テーマは、追加のオプションや機能を提供する追加のプラグイン/拡張機能（またはフレームワーク）をバンドルしたり、インストールを要求すべきではありません。カスタマイズの詳細については、[WordPress theme customization API](https://codex.wordpress.org/Theme_Customization_API)**.** をご覧ください。
 
 アクティベーションの際、テーマがWordPressテーマのアクティベーションフローを上書きして、ユーザーを他のページに移動させるようなことがあってはなりません。
 
-## Branding
+## ブランディング
 
 テーマには、オンラインストアの正常な運営を妨げるような場所に、テーマ作者のブランド名やリファレンスを含めてはなりません。テーマ作者は、テーマフッターに自分のウェブサイトへのリンクを含めることができます。アフィリエイトリンクは許可されません。
 
 管理インターフェイスでは、告知、バナー、大きなロゴ、宣伝用資料の使用は禁止されています。
 
-## Demos and sample content
+## デモとサンプルコンテンツ
 
 テーマ作成者は、テーマ提出の際、テーマを展示しテストする方法を提供しなければなりません。サンプルコンテンツ/デモは、商人の混乱や期待の裏切りを避けるため、成果物に存在しないカスタムグラフィック/アセットの使用を控えること（例：ロゴ、イラストの使用）。特定のバーティカルテーマのためにテーマを作成する場合は、そのバーティカルテーマに沿ったサンプルコンテンツを使用することを検討してください。
 
 すべての画像と文章は、すべての年齢層に適したものでなければならない。テーマ作成者は、年齢や国籍などを包括したイメージの使用を検討すべきである。テーマは「ストックフォト」のようなイメージの使用は控えること。
 
-テーマは、画像、フォント、アイコンなどのアセットに必要なライセンスがすべてクリアされた状態で配布されなければなりません。
+テーマは配布され、画像、フォント、アイコンなどの資産に必要なライセンスがすべてクリアされている必要があります。

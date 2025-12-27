@@ -552,6 +552,22 @@ function fixDeepLMarkdownIssues(original, translated) {
     console.log('   ⚠ Auto-fixed: Decoded HTML entities (&gt; → >, etc.)');
   }
   
+  // ===== 0.5. 全角括弧・記号を半角に変換 =====
+  // DeepLが Markdown の [] を全角の【】に変換することがあるので、元に戻す
+  // 特に画像の alt text で発生しやすい: ![alt text] → alt text】
+  // また、画像マーカー ![ が全角の！[ になることもある
+  let hasBracketIssue = false;
+  if (translated.includes('】') || translated.includes('【') || translated.includes('！[')) {
+    const beforeBracket = translated;
+    translated = translated.replace(/【/g, '[').replace(/】/g, ']');
+    // 画像マーカーの全角感嘆符を半角に変換: ！[ → ![
+    translated = translated.replace(/！\[/g, '![');
+    if (translated !== beforeBracket) {
+      hasBracketIssue = true;
+      console.log('   ⚠ Auto-fixed: Converted full-width brackets/symbols (【】！ → []!)');
+    }
+  }
+  
   // ===== 1. DeepL APIがプレースホルダーを翻訳してしまう問題を修正 =====
   // "コード_ブロック_0__" → "__CODE_BLOCK_0__"
   if (original.match(/__CODE_BLOCK_\d+__/)) {
@@ -616,6 +632,15 @@ function fixDeepLMarkdownIssues(original, translated) {
       translated = '[' + translated;
       console.log('   ⚠ Auto-fixed: Added missing [');
     }
+  }
+  
+  // テーブルセル内の画像パターン: |![alt](url) → |alt](url)
+  // 元のテキストに |![ があるのに、翻訳に | があって ![ がない場合
+  if (original.match(/\|\!\[/) && translated.match(/\|[^\[]*\]\([^)]+\)/) && !translated.match(/\|\!\[/)) {
+    translated = translated.replace(/\|([^\[]+\]\([^)]+\))/g, (match, content) => {
+      console.log('   ⚠ Auto-fixed: Added missing ![ in table cell');
+      return '|![' + content;
+    });
   }
   
   // "The [Link]" パターンの場合

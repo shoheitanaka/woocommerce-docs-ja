@@ -2,20 +2,19 @@
 post_title: Image sizing for theme developers
 sidebar_label: Image sizing
 ---
+# テーマ開発者のための画像サイズ調整
 
-# Image sizing for theme developers
-
-**注意:** このドキュメントは（ブロックテーマではなく）クラシックテーマを開発する際に使用するために作成されました。ブロックテーマの開発](../block-theme-development/theming-woo-blocks.md)については別のドキュメントを確認してください。
+[**注意:** このドキュメントは（ブロックテーマではなく）クラシックテーマを開発する際に使用するために作成されました。ブロックテーマの開発](../block-theme-development/theming-woo-blocks.md)については別のドキュメントを確認してください。
 
 カタログに画像を表示するために、WooCommerceは使用される実際の画像寸法を定義するいくつかの画像サイズを登録します。これらのサイズには以下が含まれます：
 
-- `woocommerce_thumbnail` - used in the product 'grids' in places such as the shop page.
-- `woocommerce_single` - used on single product pages.
-- `woocommerce_gallery_thumbnail` - used below the main image on the single product page to switch the gallery.
+- `woocommerce_thumbnail` - ショップページなどの商品の「グリッド」で使用されます。
+- `woocommerce_single` - 単品商品ページで使用されます。
+- `woocommerce_gallery_thumbnail` - 単品商品ページのメイン画像の下に使用され、ギャラリーを切り替えます。
 
-`woocommerce_single` shows the full product image, as uploaded, so is always uncropped by default. It defaults to 600px width. `woocommerce_gallery_thumbnail` is always square cropped and defaults to 100x100 pixels. This is used for navigating images in the gallery. `woocommerce_thumbnail` defaults to 300px width, square cropped so the product grids look neat. The aspect ratio for cropping can be customized by the store owner. It is important to note that despite the actual image widths that are set, themes can ultimately change the size images are displayed using CSS, and image widths may be limited by the product grid/column widths.
+`woocommerce_single`は、アップロードされたままの商品画像を表示するため、デフォルトでは常にノートリミングで表示されます。デフォルトの幅は600pxです。`woocommerce_gallery_thumbnail`は常に正方形にトリミングされ、デフォルトは100x100ピクセルです。これはギャラリー内の画像をナビゲートするために使用されます。`woocommerce_thumbnail`のデフォルトは幅300pxで、正方形にトリミングされます。トリミングの縦横比はストアオーナーがカスタマイズできます。実際の画像幅が設定されているにもかかわらず、テーマは最終的にCSSを使用して画像の表示サイズを変更することができ、画像幅は商品グリッド/カラム幅によって制限される可能性があることに注意することが重要です。
 
-## Themes can define image sizes
+## テーマは画像サイズを定義できる
 
 WooCommerce 3.3.0から、テーマはWooCommerceのサポートを宣言する際に、どのサイズを使用するかを宣言できるようになりました。テーマが画像サイズ（幅）を定義した場合、ストアオーナーは変更することはできませんが、定義されたサイズはテーマに最適なものでなければなりません。
 
@@ -27,7 +26,7 @@ add_theme_support( 'woocommerce', array(
 ) );
 ```
 
-When calling WordPress functions which expect an image size e.g. [`wp_get_attachment_image_src`](https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src), you should use the image size names - these are:
+例えば、[`wp_get_attachment_image_src`](https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src)のように画像サイズを指定するWordPress関数を呼び出す場合は、画像サイズ名を使用する必要があります：
 
 - `woocommerce_thumbnail`
 - `woocommerce_single`
@@ -35,9 +34,9 @@ When calling WordPress functions which expect an image size e.g. [`wp_get_attach
 
 店舗のオーナーは、アスペクト比やトリミングをコントロールできる（下記参照）。
 
-## Customize image sizes in the customizer
+## カスタマイザーで画像サイズをカスタマイズする
 
-The customizer houses the options which control thumbnails in WooCommerce. ![Settings in the customizer](https://woocommerce.wordpress.com/wp-content/uploads/2017/12/imagefeature.png?w=712) If the theme is declaring image sizes, the top section will be hidden and only the cropping option will be visible. Changing the cropping option, or widths, will update the preview on the right side to show how things will look. Changes will not be visible to customers until the customizer is  'published' and [the thumbnails have been regenerated to the new dimensions](./thumbnail-image-regeneration.md). The thumbnail cropping section in the customizer allows store owners to select one of three cropping ratio settings for images in the catalog:
+[カスタマイザーには、WooCommerceのサムネイルを制御するオプションが格納されています。カスタマイザーでの設定](https://woocommerce.wordpress.com/wp-content/uploads/2017/12/imagefeature.png?w=712) テーマが画像サイズを宣言している場合、上部のセクションは非表示になり、トリミングオプションのみが表示されます。トリミングオプションまたは幅を変更すると、右側のプレビューが更新され、どのように見えるかが表示されます。カスタマイザーが'公開'され、[サムネイルが新しい寸法に再生成](./thumbnail-image-regeneration.md)されるまで、変更はお客様には見えません。カスタマイザーのサムネイル切り抜きセクションでは、ストアオーナーがカタログ内の画像の切り抜き比率を3つの設定から1つ選ぶことができます：
 
 - 1:1（正方形トリミング）
 - カスタム（ストアオーナーがカスタムアスペクト比を入力可能）
@@ -45,9 +44,9 @@ The customizer houses the options which control thumbnails in WooCommerce. ![Set
 
 実際の画像寸法は、選択された切り抜きオプションと画像幅に基づいて計算されます。
 
-## Changing image sizes via hooks
+## フックによる画像サイズの変更
 
-Whilst themes can fix image sizes at certain widths, and store owners can control widths and aspect ratios, if you need more control over thumbnail sizes there are some hooks available to you. The `wc_get_image_size` function is used by WooCommerce to get the image size dimensions. The return value of this is passed through a filter: `woocommerce_get_image_size_{SIZE_NAME_WITHOUT_WOOCOMMERCE_PREFIX}` If using this hook you'll be passed an array of sizes, similar to this:
+テーマは特定の幅で画像サイズを固定することができ、ストアオーナーは幅と縦横比をコントロールすることができますが、サムネイルサイズをよりコントロールする必要がある場合は、いくつかのフックを利用することができます。`wc_get_image_size`関数はWooCommerceが画像サイズの寸法を取得するために使用します。この関数の戻り値はフィルターを通して渡されます：`woocommerce_get_image_size_{SIZE_NAME_WITHOUT_WOOCOMMERCE_PREFIX}` このフックを使用すると、以下のようなサイズの配列が渡されます：
 
 ```php
 array(
@@ -69,21 +68,21 @@ add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
 } );
 ```
 
-We don't recommend plugins and themes go this route because it removes control from the store owner and their settings won't be respected, but the option is there for store owners. **Note:** after making changes to image sizes you may need to [regenerate your thumbnails](https://github.com/woocommerce/woocommerce/wiki/Thumbnail-Image-Regeneration-in-3.3) so the new sizes are used for existing images.
+プラグインやテーマがこのような方法をとることは、ストアオーナーからのコントロールを排除し、彼らの設定が尊重されないため、お勧めしませんが、ストアオーナーにはオプションがあります。 **注意:**画像サイズを変更した後は、新しいサイズが既存の画像に使用されるように、[サムネイルを再生成](https://github.com/woocommerce/woocommerce/wiki/Thumbnail-Image-Regeneration-in-3.3)する必要があるかもしれません。
 
-## Changing what image sizes are used in WooCommerce via hooks
+## WooCommerceで使用する画像サイズをフックで変更する
 
 上記のフックと同様に、WooCommerceのいくつかのテンプレート関数は画像サイズをフィルタを通して実行するので、WooCommerceに登録されている画像サイズ以外を使用することができます。以下のフィルタがあります：
 
-| Filter                                | Description                                                       | Default                            |
+| フィルター｜説明｜デフォルト
 |---------------------------------------|-------------------------------------------------------------------|------------------------------------|
-| `single_product_archive_thumbnail_size` | Controls the size used in the product grid/catalog.                | `woocommerce_thumbnail`            |
-| `subcategory_archive_thumbnail_size`    | Controls the size used in the product grid/catalog for category images. | `woocommerce_thumbnail`            |
-| `woocommerce_gallery_thumbnail_size`    | Controls the size used in the product gallery, below to main image, to switch to a different image. | Array representing the dimensions of the `gallery_thumbnail` image size. Usually `array( 100, 100 )`. |
-| `woocommerce_gallery_image_size`        | Controls the size used in the product gallery.                    | `woocommerce_single`               |
-| `woocommerce_gallery_full_size`         | Controls the size used in the product gallery to zoom or view the full size image. | `full`                             |
+|`single_product_archive_thumbnail_size` | 商品グリッド/カタログで使用されるサイズを制御します。                | `woocommerce_thumbnail` | 商品グリッド/カタログで使用されるサイズを制御します。
+|`subcategory_archive_thumbnail_size` | 商品グリッド/カタログでカテゴリー画像に使用されるサイズをコントロールします。| `woocommerce_thumbnail`｜カテゴリ画像のサイズをコントロールします。
+|`woocommerce_gallery_thumbnail_size` | メイン画像の下にある商品ギャラリーで、別の画像に切り替える際に使用するサイズをコントロールします。| `gallery_thumbnail`画像サイズの寸法を表す配列。通常は`array( 100, 100 )`です。|
+| `woocommerce_gallery_image_size`｜商品ギャラリーで使用されるサイズをコントロールします。                    | `woocommerce_single`｜商品ギャラリーで使用されるサイズをコントロールします。
+| `woocommerce_gallery_full_size`｜商品ギャラリーで使用されるズームまたはフルサイズの画像を表示するサイズをコントロールします。| `full`｜商品ギャラリーで使用されるサイズをコントロールします。
 
-**Note:** `full` is a size registered by WordPress and set in `Settings > Media.` As an example, let's say I wanted to make the gallery thumbnail size used the `thumbnail` size registered by WordPress instead of `woocommerce_gallery_thumbnail`. The following snippet would do the job:
+**注:** `full`はWordPressが登録し、`Settings > Media.`に設定されたサイズです。 例として、ギャラリーのサムネイルサイズを`woocommerce_gallery_thumbnail`ではなく、WordPressが登録した`thumbnail`にしたいとします。以下のスニペットで実現できる：
 
 ```php
 add_filter( 'woocommerce_gallery_thumbnail_size', function( $size ) {
@@ -91,4 +90,4 @@ add_filter( 'woocommerce_gallery_thumbnail_size', function( $size ) {
 } );
 ```
 
-**注意:** 上記のフックはWooCommerceコアで使用されます。テーマがカスタムテンプレートファイルを持っていたり、独自の関数を使用して画像を出力している場合、これらのフィルタは使用されない可能性があります。
+**注意:** 上記のフックはWooCommerceコアによって使用されます。テーマがカスタムテンプレートファイルを持っていたり、独自の関数を使用して画像を出力している場合、これらのフィルタは使用されない可能性があります。

@@ -1,221 +1,730 @@
 {
   "segments": {
-    "a273a1330221977fbba749525005c08bb6edaef8bb125836ed519c7cbda586c8": {
-      "original": "# Cart and checkout blocks theming ",
-      "translated": "# カートとチェックアウトのブロック ",
+    "6160a082fd9f9654c492421b54dcd4ab2ecd031d9615c69670c900e8720f63d8": {
+      "original": "# Cart line items",
+      "translated": "# カートのラインアイテム",
       "metadata": {
-        "original": "# Cart and checkout blocks theming ",
+        "original": "# Cart line items",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": []
       }
     },
-    "6d980fe0817659cb25519fd12eedc6060d7e2e3f2fa630d4b04854f9ee7ea9f1": {
-      "original": "> [!IMPORTANT]\n> We strongly discourage writing CSS code based on existing block class names and prioritize using global styles when possible. We especially discourage writing CSS selectors that rely on a specific block being a descendant of another one, as users can move blocks around freely, so they are prone to breaking. Similar to WordPress itself, we consider the HTML structure within components, blocks, and block templates to be \"private\", and subject to further change in the future, so using CSS to target the internals of a block or a block template is _not recommended or supported_.",
-      "translated": "> 重要\n> 私たちは、既存のブロック・クラス名に基づいてCSSコードを記述することを強く禁じ、可能な限りグローバル・スタイルを使用することを優先します。特に、特定のブロックが別のブロックの子孫であることに依存する CSS セレクタを記述することはお勧めしません。ユーザーがブロックを自由に移動できるため、壊れやすいからです。WordPress 自体と同様に、コンポーネント、ブロック、ブロックテンプレート内の HTML 構造は「プライベート」であり、将来さらに変更される可能性があると考えています。したがって、CSS を使用してブロックやブロックテンプレートの内部をターゲットにすることは推奨されませんし、サポートされません。",
+    "dbc35457bc37add8a5e8b527220794d190ca08ebb7f93b1bddeeec033e323491": {
+      "original": "<!-- markdownlint-disable MD024 -->",
+      "translated": "<!-- markdownlint-disable MD024 -->",
       "metadata": {
-        "original": "> [!IMPORTANT]\n> We strongly discourage writing CSS code based on existing block class names and prioritize using global styles when possible. We especially discourage writing CSS selectors that rely on a specific block being a descendant of another one, as users can move blocks around freely, so they are prone to breaking. Similar to WordPress itself, we consider the HTML structure within components, blocks, and block templates to be \"private\", and subject to further change in the future, so using CSS to target the internals of a block or a block template is _not recommended or supported_.",
+        "original": "<!-- markdownlint-disable MD024 -->",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": []
       }
     },
-    "d150de296fd5344cc5307b63bb6c218c9343b50c49c56eeb9e3c1cb1fc5a6272": {
-      "original": "WC Blocks introduces the button component, it differs from a generic __INLINE_CODE_0__ in that it has some default styles to make it correctly fit in the Blocks design.",
-      "translated": "WC Blocksではボタン・コンポーネントを導入していますが、一般的な__INLINE_CODE_0__とは異なり、Blocksのデザインに正しくフィットするよう、デフォルトのスタイルがいくつか用意されています。",
+    "24d18319a64bc7901156fb9e9098325edfe70b9c4cc192a6a1832a8e091b5e5c": {
+      "original": "The following Cart Line Items filters are available:",
+      "translated": "以下のカート項目フィルターが利用可能です：",
       "metadata": {
-        "original": "WC Blocks introduces the button component, it differs from a generic __INLINE_CODE_0__ in that it has some default styles to make it correctly fit in the Blocks design.",
+        "original": "The following Cart Line Items filters are available:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "262de209e66623fd6cc5923917ebf2e057cf9af99c09d535d965f89cf7702825": {
+      "original": "-   __INLINE_CODE_0__\n-   __INLINE_CODE_1__\n-   __INLINE_CODE_2__\n-   __INLINE_CODE_3__\n-   __INLINE_CODE_4__\n-   __INLINE_CODE_5__",
+      "translated": "-   ____INLINE_CODE_0__\n-   ____INLINE_CODE_1__\n-   ____INLINE_CODE_2__\n-   ____INLINE_CODE_3__\n-   ラインコード\n-   インラインコード5",
+      "metadata": {
+        "original": "-   __INLINE_CODE_0__\n-   __INLINE_CODE_1__\n-   __INLINE_CODE_2__\n-   __INLINE_CODE_3__\n-   __INLINE_CODE_4__\n-   __INLINE_CODE_5__",
         "codeBlocks": [],
         "inlineCodes": [
-          "`button`"
+          "`cartItemClass`",
+          "`cartItemPrice`",
+          "`itemName`",
+          "`saleBadgePriceFormat`",
+          "`showRemoveItemLink`",
+          "`subtotalPriceFormat`"
         ],
         "urls": []
       }
     },
-    "56ab62921003d934f15761479087ad4dd6b079862ff6143e355701fc52288d0a": {
-      "original": "![Button screenshot](__URL_0__)",
-      "translated": "![ボタンのスクリーンショット](__URL_0__)",
+    "5fad229686779d0776142832a4a91f4a3f50aa916177f00f5e72d74ed5927387": {
+      "original": "The following objects are shared between the filters:",
+      "translated": "以下のオブジェクトはフィルター間で共有される：",
       "metadata": {
-        "original": "![Button screenshot](__URL_0__)",
-        "codeBlocks": [],
-        "inlineCodes": [],
-        "urls": [
-          "https://user-images.githubusercontent.com/3616980/86381945-e6fd6c00-bc8d-11ea-8811-7e546bea69b9.png"
-        ]
-      }
-    },
-    "dffbd6f0eb3733fc5e9bed4d8410ed0c22e7013b0825595b00dd4db969a7e468": {
-      "original": "Themes can still style them to match theme colors or styles as follows:",
-      "translated": "テーマは、以下のように、テーマの色やスタイルに合うようにスタイルを変更することができる：",
-      "metadata": {
-        "original": "Themes can still style them to match theme colors or styles as follows:",
+        "original": "The following objects are shared between the filters:",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": []
       }
     },
-    "4cb9efef78d78f0184feacdb559d1ec8458cd00e6a547ec69f16f2ef3d83be5f": {
-      "original": "![Button screenshot with custom styles](__URL_0__)",
-      "translated": "![カスタムスタイルのボタンのスクリーンショット](__URL_0__)",
+    "1d8bb0e82ccccf35b2531e75666688b06813526624ef9a3f022f96aba1898c09": {
+      "original": "-   Cart object\n-   Cart Item object",
+      "translated": "-   カートオブジェクト\n-   カートアイテムオブジェクト",
       "metadata": {
-        "original": "![Button screenshot with custom styles](__URL_0__)",
+        "original": "-   Cart object\n-   Cart Item object",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "efcb028f285d93aeb675056d7f244eb7160db4bc3a06c8dd44b4779c56999628": {
+      "original": "The following screenshot shows which parts the individual filters affect:",
+      "translated": "以下のスクリーンショットは、個々のフィルターがどの部分に影響するかを示しています：",
+      "metadata": {
+        "original": "The following screenshot shows which parts the individual filters affect:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4e4f856509cc5224bd3d633270765b0eb3c714158207969a3c68a59fb12dce97": {
+      "original": "![Cart Line Items](__URL_0__)",
+      "translated": "![カート・ライン・アイテム](__URL_0__)",
+      "metadata": {
+        "original": "![Cart Line Items](__URL_0__)",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": [
-          "https://user-images.githubusercontent.com/3616980/86381505-b6b5cd80-bc8d-11ea-8ceb-cfbe84b411d4.png"
+          "https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-13.12.33.png"
         ]
       }
     },
-    "fa0ad461541d23b3cf72fd824ebc05491d47161e2484dc479707c2d5af97466c": {
-      "original": "Notice the button component doesn't have the __INLINE_CODE_0__ class name. So themes that wrote some styles for buttons might want to apply some (or all) of those styles to the button component as well.",
-      "translated": "ボタン・コンポーネントには__INLINE_CODE_0__クラス名がないことに注意してください。そのため、ボタン用のスタイルを書いたテーマは、それらのスタイルの一部（または全部）をボタン・コンポーネントにも適用したくなるかもしれません。",
+    "cf598e99d455936d14c87fefad6cd45718c3eb358f04b1177bd652a09ee8f60c": {
+      "original": "## __INLINE_CODE_0__",
+      "translated": "## __INLINE_CODE_0__",
       "metadata": {
-        "original": "Notice the button component doesn't have the __INLINE_CODE_0__ class name. So themes that wrote some styles for buttons might want to apply some (or all) of those styles to the button component as well.",
+        "original": "## __INLINE_CODE_0__",
         "codeBlocks": [],
         "inlineCodes": [
-          "`.button`"
+          "`subtotalPriceFormat`"
         ],
         "urls": []
       }
     },
-    "2833b667e23d8ab04e8b58231cc42ad00866f06a5e3456793640ef39641b7ef2": {
-      "original": "## Mobile submit container",
-      "translated": "## モバイル投稿コンテナ",
+    "035755a98fc148afc18a1d67d98a2af38519c264747916276ecc478792220134": {
+      "original": "### Description <!-- omit in toc -->",
+      "translated": "### 説明<!-- omit in toc -->",
       "metadata": {
-        "original": "## Mobile submit container",
+        "original": "### Description <!-- omit in toc -->",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": []
       }
     },
-    "e539c595b8e038ad0f50e4e2f5ad60dfe4f18a721bcf2288ab7a0c388ffb6197": {
-      "original": "In small viewports, the Cart block displays the _Proceed to Checkout_ button inside a container fixed at the bottom of the screen.",
-      "translated": "小さなビューポートでは、カートブロックは画面下部に固定されたコンテナ内に_Proceed to Checkout_ボタンを表示します。",
+    "5e3823d5c17486848b5e33c20c9d9cb1b80941567eb2829eadd544b894d5b020": {
+      "original": "The __INLINE_CODE_0__ filter allows to change the cart item class.",
+      "translated": "__INLINE_CODE_0__フィルタはカートアイテムのクラスを変更することができます。",
       "metadata": {
-        "original": "In small viewports, the Cart block displays the _Proceed to Checkout_ button inside a container fixed at the bottom of the screen.",
-        "codeBlocks": [],
-        "inlineCodes": [],
-        "urls": []
-      }
-    },
-    "d10b73776b314cd8713f20e0e4e55c0c196f9781505d739ddb763bc6a17ab6b9": {
-      "original": "![Submit container screenshot](__URL_0__)",
-      "translated": "![コンテナのスクリーンショットを投稿する](__URL_0__)",
-      "metadata": {
-        "original": "![Submit container screenshot](__URL_0__)",
-        "codeBlocks": [],
-        "inlineCodes": [],
-        "urls": [
-          "https://user-images.githubusercontent.com/3616980/86382876-393e8d00-bc8e-11ea-8d0b-e4e347ea4773.png"
-        ]
-      }
-    },
-    "c2a3c34b5340be733adcecf7e30c69d9d4ec1e5b1e95f5aed2043f5628575290": {
-      "original": "By default, the container has a white background so it plays well with the button component default colors. Themes that want to apply the same background color as the rest of the page can do it with the following code snippet:",
-      "translated": "デフォルトでは、コンテナの背景は白なので、ボタンコンポーネントのデフォルトカラーとうまく調和します。ページの他の部分と同じ背景色を適用したいテーマは、次のコード・スニペットでそれを行うことができます：",
-      "metadata": {
-        "original": "By default, the container has a white background so it plays well with the button component default colors. Themes that want to apply the same background color as the rest of the page can do it with the following code snippet:",
-        "codeBlocks": [],
-        "inlineCodes": [],
-        "urls": []
-      }
-    },
-    "327c585efb370fa89bdbc950c8aa51f2310e0f2f7e51419dc9cc60015a64645a": {
-      "original": "Take into consideration the container has a top box shadow that might not play well with some dark background colors. If needed, it can be modified directly setting the __INLINE_CODE_0__ property (internally, shadow color uses __INLINE_CODE_1__, so it honors the __INLINE_CODE_2__ property):",
-      "translated": "コンテナにはトップボックスのシャドウがあり、暗い背景色とは相性が悪いことを考慮してください。必要であれば、__INLINE_CODE_0__プロパティを設定して直接変更することができます（内部的には、シャドウの色は__INLINE_CODE_1__を使用するため、__INLINE_CODE_2__プロパティが優先されます）：",
-      "metadata": {
-        "original": "Take into consideration the container has a top box shadow that might not play well with some dark background colors. If needed, it can be modified directly setting the __INLINE_CODE_0__ property (internally, shadow color uses __INLINE_CODE_1__, so it honors the __INLINE_CODE_2__ property):",
+        "original": "The __INLINE_CODE_0__ filter allows to change the cart item class.",
         "codeBlocks": [],
         "inlineCodes": [
-          "`color`",
-          "`currentColor`",
-          "`color`"
+          "`cartItemClass`"
         ],
         "urls": []
       }
     },
-    "8441bb39c1427002d77cd65fd896787c9d34eb991c0a13db7bf9cf82d52207ff": {
-      "original": "Alternatively, themes can override the __INLINE_CODE_0__ property completely:",
-      "translated": "あるいは、テーマは __INLINE_CODE_0__ プロパティを完全にオーバーライドすることもできます：",
+    "0a1469a35557567d0791ce552c6ff14db4c981562007628613a06de1e0dfbd11": {
+      "original": "### Parameters <!-- omit in toc -->",
+      "translated": "### パラメーター<!-- omit in toc -->",
       "metadata": {
-        "original": "Alternatively, themes can override the __INLINE_CODE_0__ property completely:",
+        "original": "### Parameters <!-- omit in toc -->",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "de7e4344540e8e60c9547aaf07639be5c9161444fbeb04fbc6e222b7955a37a0": {
+      "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item class.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.",
+      "translated": "-   _defaultValue_ __INLINE_CODE_0__ (デフォルト: __INLINE_CODE_1__) - デフォルトのカートアイテムクラス。\n-   __extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - 拡張オブジェクト。\n-   args_ __INLINE_CODE_4__ - 以下のキーを持つ引数オブジェクト：\n    -   cart_ __INLINE_CODE_5__ - __INLINE_CODE_6__ のカートオブジェクト。\n    -   cartItem_ __INLINE_CODE_7__ - __INLINE_CODE_8__ のカート・アイテム・オブジェクト。\n    -   _context_ __INLINE_CODE_9__ (指定可能な値: __INLINE_CODE_10__ または __INLINE_CODE_11__) - アイテムのコンテキスト。",
+      "metadata": {
+        "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item class.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.",
         "codeBlocks": [],
         "inlineCodes": [
-          "`box-shadow`"
+          "`object`",
+          "`''`",
+          "`object`",
+          "`{}`",
+          "`object`",
+          "`object`",
+          "`wc/store/cart`",
+          "`object`",
+          "`wc/store/cart`",
+          "`string`",
+          "`cart`",
+          "`summary`"
         ],
         "urls": []
       }
     },
-    "7fb29c2f1d0155e2e413891b8cbdee5eda15a966f1127c8dea64c427e238bdf1": {
-      "original": "![Submit container screenshot with custom styles](__URL_0__)",
-      "translated": "![カスタムスタイルのコンテナスクリーンショットを投稿](__URL_0__)",
+    "a109e021c5647acb06e1ca09a53b1f2f2596b62e0bae70ccd83f6c18683c0446": {
+      "original": "### Returns <!-- omit in toc -->",
+      "translated": "### リターン<!-- omit in toc -->",
       "metadata": {
-        "original": "![Submit container screenshot with custom styles](__URL_0__)",
-        "codeBlocks": [],
-        "inlineCodes": [],
-        "urls": [
-          "https://user-images.githubusercontent.com/3616980/86382693-27f58080-bc8e-11ea-894e-de378af3e2bb.png"
-        ]
-      }
-    },
-    "97f646b1d0e8e991b7fd0ea3b8eb163495abbc0a95c459ec5dabe4ffff0f9a41": {
-      "original": "## Item quantity badge",
-      "translated": "## 商品数量バッジ",
-      "metadata": {
-        "original": "## Item quantity badge",
+        "original": "### Returns <!-- omit in toc -->",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": []
       }
     },
-    "aee73c4bea0470a5d3ce5e4a04064cb5e2cda707bdd4548e4a8a323e796c4311": {
-      "original": "The item quantity badge is the number that appears next to the image in the _Order summary_ section of the _Checkout_ block sidebar.",
-      "translated": "商品の数量バッジは、_Checkout_ブロックのサイドバーの_Order summary_セクションの画像の横に表示される数字です。",
+    "a159add67f95fb36e015a92905c9a3f39cb7980f29977c40935001ed4b2eb970": {
+      "original": "-   __INLINE_CODE_0__ - The modified cart item class, or an empty string.",
+      "translated": "-   __INLINE_CODE_0__ - 変更されたカートアイテムのクラス、または空の文字列。",
       "metadata": {
-        "original": "The item quantity badge is the number that appears next to the image in the _Order summary_ section of the _Checkout_ block sidebar.",
+        "original": "-   __INLINE_CODE_0__ - The modified cart item class, or an empty string.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`"
+        ],
+        "urls": []
+      }
+    },
+    "4945116f4a7e5dbaa73630f944cafd6d8128b5f3c96e59933afc6bc6e3edbf6e": {
+      "original": "### Code examples <!-- omit in toc -->",
+      "translated": "### コード例<!-- omit in toc -->",
+      "metadata": {
+        "original": "### Code examples <!-- omit in toc -->",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": []
       }
     },
-    "17d06c046c68601a6388569d3bf5b9185704513ccb3c6899075da1134db72e09": {
-      "original": "![Order summary screenshot](__URL_0__)",
-      "translated": "![注文概要スクリーンショット](__URL_0__)",
+    "13a4986b21f499e80a2eab36c790d9b5ef2c6c7de30cd150b242c1f781055d05": {
+      "original": "#### Basic example <!-- omit in toc -->",
+      "translated": "#### 基本例<!-- omit in toc -->",
       "metadata": {
-        "original": "![Order summary screenshot](__URL_0__)",
-        "codeBlocks": [],
-        "inlineCodes": [],
-        "urls": [
-          "https://user-images.githubusercontent.com/3616980/83862844-c8559500-a722-11ea-9653-2fc8bcd544d2.png"
-        ]
-      }
-    },
-    "a811d7a5ffa740be1df24c8be69948d115e408475409b0c3b7b214e165d2c8e6": {
-      "original": "By default, it uses a combination of black and white borders and shadows so it has enough contrast with themes with light and dark backgrounds. Themes can modify the colors with their own palette with a single CSS selector and four properties. For example:",
-      "translated": "デフォルトでは、黒と白のボーダーとシャドウの組み合わせを使っているので、背景が明るいテーマや暗いテーマと十分なコントラストがあります。テーマは、1つのCSSセレクタと4つのプロパティを使って、独自のパレットで色を変更できます。例えば",
-      "metadata": {
-        "original": "By default, it uses a combination of black and white borders and shadows so it has enough contrast with themes with light and dark backgrounds. Themes can modify the colors with their own palette with a single CSS selector and four properties. For example:",
+        "original": "#### Basic example <!-- omit in toc -->",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": []
       }
     },
-    "daf7be384b8feb396fdfeb52a36c071a3bff37eac45c03b79fdfaae75957061f": {
-      "original": "![Order summary screenshot with custom styles for the item quantity badge](__URL_0__)",
-      "translated": "![数量バッジのカスタムスタイルを使った注文サマリーのスクリーンショット](__URL_0__)",
+    "00d4e4cbbb2b98f6327a839970ded92f47dfc3a0d3f05f0fc35df9d513348f66": {
+      "original": "#### Advanced example <!-- omit in toc -->",
+      "translated": "#### 高度な例<!-- omit in toc -->",
       "metadata": {
-        "original": "![Order summary screenshot with custom styles for the item quantity badge](__URL_0__)",
+        "original": "#### Advanced example <!-- omit in toc -->",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a35346d260ff7fa3a3db9f60458f46c8821f8ac946a78d835624e3aa4583858a": {
+      "original": "> Filters can be also combined. See [Combined filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/) for an example.",
+      "translated": "> フィルターは組み合わせることもできます。例として[Combined filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)を参照してください。",
+      "metadata": {
+        "original": "> Filters can be also combined. See [Combined filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/) for an example.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "13ee9e8c7c7430e6a61cb825a4fc62233251daeec4d23a509793bfb5da06a727": {
+      "original": "### Screenshots <!-- omit in toc -->",
+      "translated": "### スクリーンショット<!-- omit in toc -->",
+      "metadata": {
+        "original": "### Screenshots <!-- omit in toc -->",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3360869ef9a9454e9767cf0e9fa29da19a44b76d2d5d14d2f00f54e7b3d24673": {
+      "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Cart Item Class filter](__URL_0__) |![After applying the Cart Item Class filter](__URL_1__) |",
+      "translated": "| 前\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![カート項目クラスフィルター適用前](__URL_0__) |![カート項目クラスフィルター適用後](__URL_1__) |｜...",
+      "metadata": {
+        "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Cart Item Class filter](__URL_0__) |![After applying the Cart Item Class filter](__URL_1__) |",
         "codeBlocks": [],
         "inlineCodes": [],
         "urls": [
-          "https://user-images.githubusercontent.com/3616980/83863109-2e421c80-a723-11ea-9bf7-2033a96cf5b2.png"
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a587a6ce-d051-4ed0-bba5-815b5d72179d",
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/9b25eeae-6d81-4e28-b177-32f942e1d0c2"
         ]
+      }
+    },
+    "9dd342c0c26ac2dca8b407a31a2ebca8261d2edddc026c58ca39f6cd3c076635": {
+      "original": "The __INLINE_CODE_0__ filter allows to format the cart item price.",
+      "translated": "__INLINE_CODE_0__フィルタはカートアイテムの価格をフォーマットすることができます。",
+      "metadata": {
+        "original": "The __INLINE_CODE_0__ filter allows to format the cart item price.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`cartItemPrice`"
+        ],
+        "urls": []
+      }
+    },
+    "6f55600b411134cc284006d4f6be96ef70496f83dbc75681755296a23e244fbd": {
+      "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item price.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.\n-   _validation_ __INLINE_CODE_12__ - Checks if the return value contains the substring __INLINE_CODE_13__.",
+      "translated": "-   _defaultValue_ __INLINE_CODE_0__ (デフォルト: __INLINE_CODE_1__) - デフォルトのカートアイテムの価格。\n-   __extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - 拡張オブジェクト。\n-   args_ __INLINE_CODE_4__ - 以下のキーを持つ引数オブジェクト：\n    -   cart_ __INLINE_CODE_5__ - __INLINE_CODE_6__ のカートオブジェクト。\n    -   cartItem_ __INLINE_CODE_7__ - __INLINE_CODE_8__ のカート・アイテム・オブジェクト。\n    -   _context_ __INLINE_CODE_9__ (指定可能な値: __INLINE_CODE_10__ または __INLINE_CODE_11__) - アイテムのコンテキスト。\n-   validation_ __INLINE_CODE_12__ - 返り値が部分文字列 __INLINE_CODE_13__ を含むかどうかを調べます。",
+      "metadata": {
+        "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item price.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.\n-   _validation_ __INLINE_CODE_12__ - Checks if the return value contains the substring __INLINE_CODE_13__.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`<price/>`",
+          "`object`",
+          "`{}`",
+          "`object`",
+          "`object`",
+          "`wc/store/cart`",
+          "`object`",
+          "`wc/store/cart`",
+          "`string`",
+          "`cart`",
+          "`summary`",
+          "`boolean`",
+          "`<price/>`"
+        ],
+        "urls": []
+      }
+    },
+    "8c8bee6ca6359e6ebb4d22c0b556a33bd93fac9a4d8021d4c2aee1b685a0240a": {
+      "original": "-   __INLINE_CODE_0__ - The modified format of the cart item price, which must contain the substring __INLINE_CODE_1__, or the original price format.",
+      "translated": "-   __INLINE_CODE_0__ - 部分文字列__INLINE_CODE_1__を含む必要がある、カートアイテムの価格の変更フォーマット、または元の価格フォーマット。",
+      "metadata": {
+        "original": "-   __INLINE_CODE_0__ - The modified format of the cart item price, which must contain the substring __INLINE_CODE_1__, or the original price format.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`<price/>`"
+        ],
+        "urls": []
+      }
+    },
+    "cfd02fb590dddb49ee5112a449076d18883ac4d338e52f7c1223830e4812aaf2": {
+      "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Cart Item Price filter](__URL_0__) |![After applying the Cart Item Price filter](__URL_1__) |",
+      "translated": "| 前\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![カート商品価格フィルター適用前](__URL_0__) |![カート商品価格フィルター適用後](__URL_1__) |｜...",
+      "metadata": {
+        "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Cart Item Price filter](__URL_0__) |![After applying the Cart Item Price filter](__URL_1__) |",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/bbaeb68a-492e-41e7-87b7-4b8b05ca3709",
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/bbaeb68a-492e-41e7-87b7-4b8b05ca3709"
+        ]
+      }
+    },
+    "83e5d1459427b7dfe6693ea73f132d47d1835156fccbdeb4d858b0a0fda0c6e8": {
+      "original": "The __INLINE_CODE_0__ filter allows to change the cart item name.",
+      "translated": "__INLINE_CODE_0__フィルタはカートアイテム名を変更することができます。",
+      "metadata": {
+        "original": "The __INLINE_CODE_0__ filter allows to change the cart item name.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`itemName`"
+        ],
+        "urls": []
+      }
+    },
+    "e5ef23dd8ab9cb4864e9e672f15c55314dff7581692125515c8efdf74610025a": {
+      "original": "-   _defaultValue_ __INLINE_CODE_0__ - The default cart item name.\n-   _extensions_ __INLINE_CODE_1__ (default: __INLINE_CODE_2__) - The extensions object.\n-   _args_ __INLINE_CODE_3__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_4__ - The cart object from __INLINE_CODE_5__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_6__ - The cart item object from __INLINE_CODE_7__, see Cart Item object.\n    -   _context_ __INLINE_CODE_8__ (allowed values: __INLINE_CODE_9__ or __INLINE_CODE_10__) - The context of the item.",
+      "translated": "-   _defaultValue_ __INLINE_CODE_0__ - デフォルトのカートアイテム名。\n-   _extensions_ __INLINE_CODE_1__ (default: __INLINE_CODE_2__) - 拡張オブジェクト。\n-   args_ __INLINE_CODE_3__ - 以下のキーを持つ引数オブジェクト：\n    -   cart_ __INLINE_CODE_4__ - __INLINE_CODE_5__ のカートオブジェクト。\n    -   cartItem_ __INLINE_CODE_6__ - __INLINE_CODE_7__ のカート・アイテム・オブジェクト。\n    -   _context_ __INLINE_CODE_8__ (指定可能な値: __INLINE_CODE_9__ または __INLINE_CODE_10__) - アイテムのコンテキスト。",
+      "metadata": {
+        "original": "-   _defaultValue_ __INLINE_CODE_0__ - The default cart item name.\n-   _extensions_ __INLINE_CODE_1__ (default: __INLINE_CODE_2__) - The extensions object.\n-   _args_ __INLINE_CODE_3__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_4__ - The cart object from __INLINE_CODE_5__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_6__ - The cart item object from __INLINE_CODE_7__, see Cart Item object.\n    -   _context_ __INLINE_CODE_8__ (allowed values: __INLINE_CODE_9__ or __INLINE_CODE_10__) - The context of the item.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`object`",
+          "`{}`",
+          "`object`",
+          "`object`",
+          "`wc/store/cart`",
+          "`object`",
+          "`wc/store/cart`",
+          "`string`",
+          "`cart`",
+          "`summary`"
+        ],
+        "urls": []
+      }
+    },
+    "a25ff5c6a9de948938196f69238da28eecefd1366e82cc5e1c05508a37f8b861": {
+      "original": "-   __INLINE_CODE_0__ - The original or modified cart item name.",
+      "translated": "-   __INLINE_CODE_0__ - 変更前または変更後のカートアイテム名。",
+      "metadata": {
+        "original": "-   __INLINE_CODE_0__ - The original or modified cart item name.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`"
+        ],
+        "urls": []
+      }
+    },
+    "538027bfae5db77ef935c816ac0a943c6c2e8e0c49557c4c4214e8c994cc3be9": {
+      "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Item Name filter](__URL_0__) |![After applying the Item Name filter](__URL_1__) |",
+      "translated": "|![ 前\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|項目名フィルター適用前](__URL_0__) |!",
+      "metadata": {
+        "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Item Name filter](__URL_0__) |![After applying the Item Name filter](__URL_1__) |",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/97d0f501-138e-4448-93df-a4d865b524e6",
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/69381932-d064-4e8f-b378-c2477fef56ae"
+        ]
+      }
+    },
+    "eeb5d1fa071e6aac53c4ba317bdae13c76481b29e0db23925cb5b9126ad2e289": {
+      "original": "The __INLINE_CODE_0__ filter allows to format the cart item sale badge price.",
+      "translated": "__INLINE_CODE_0__フィルタは、カートアイテムのセールバッジ価格をフォーマットすることができます。",
+      "metadata": {
+        "original": "The __INLINE_CODE_0__ filter allows to format the cart item sale badge price.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`saleBadgePriceFormat`"
+        ],
+        "urls": []
+      }
+    },
+    "c8de4ed4aecc8eb9d8559fb4449627eb67bb550fd6515e7073470477d736ee48": {
+      "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item sale badge price.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.\n-   _validation_ __INLINE_CODE_12__ - Checks if the return value contains the substring __INLINE_CODE_13__.",
+      "translated": "-   _defaultValue_ __INLINE_CODE_0__ (デフォルト: __INLINE_CODE_1__) - デフォルトのカートアイテム販売バッジ価格。\n-   __extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - 拡張オブジェクト。\n-   args_ __INLINE_CODE_4__ - 以下のキーを持つ引数オブジェクト：\n    -   cart_ __INLINE_CODE_5__ - __INLINE_CODE_6__ のカートオブジェクト。\n    -   cartItem_ __INLINE_CODE_7__ - __INLINE_CODE_8__ のカート・アイテム・オブジェクト。\n    -   _context_ __INLINE_CODE_9__ (指定可能な値: __INLINE_CODE_10__ または __INLINE_CODE_11__) - アイテムのコンテキスト。\n-   validation_ __INLINE_CODE_12__ - 返り値が部分文字列 __INLINE_CODE_13__ を含むかどうかを調べます。",
+      "metadata": {
+        "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item sale badge price.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.\n-   _validation_ __INLINE_CODE_12__ - Checks if the return value contains the substring __INLINE_CODE_13__.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`<price/>`",
+          "`object`",
+          "`{}`",
+          "`object`",
+          "`object`",
+          "`wc/store/cart`",
+          "`object`",
+          "`wc/store/cart`",
+          "`string`",
+          "`cart`",
+          "`summary`",
+          "`boolean`",
+          "`<price/>`"
+        ],
+        "urls": []
+      }
+    },
+    "69bae48fa784cf22fcb009075c12c2d304cc35f30a5fd0184e767db20dfa2beb": {
+      "original": "-   __INLINE_CODE_0__ - The modified format of the cart item sale badge price, which must contain the substring __INLINE_CODE_1__, or the original price format.",
+      "translated": "-   __INLINE_CODE_0__ - 部分文字列__INLINE_CODE_1__を含む必要がある、カートアイテムの販売バッジ価格の変更フォーマット、または元の価格フォーマット。",
+      "metadata": {
+        "original": "-   __INLINE_CODE_0__ - The modified format of the cart item sale badge price, which must contain the substring __INLINE_CODE_1__, or the original price format.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`<price/>`"
+        ],
+        "urls": []
+      }
+    },
+    "8c165935b2e3e43bcad2d42f2440ba205afd8726433320281d5c93c3f23ede86": {
+      "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Sale Badge Price Format filter](__URL_0__) |![After applying the Sale Badge Price Format filter](__URL_1__) |",
+      "translated": "[| 前\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|セール・バッジ価格形式フィルター適用前](__URL_0__) |![セール・バッジ価格形式フィルター適用後](__URL_1__) |｜...",
+      "metadata": {
+        "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Sale Badge Price Format filter](__URL_0__) |![After applying the Sale Badge Price Format filter](__URL_1__) |",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/d2aeb206-e620-44e0-93c1-31484cfcdca6",
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/6b929695-5d89-433b-8694-b9201a7c0519"
+        ]
+      }
+    },
+    "2b880a1fd040c60aba72e1c078c3fb6551f2c9257b0721ede56351048fe3fb62": {
+      "original": "The __INLINE_CODE_0__ is used to show or hide the cart item remove link.",
+      "translated": "__INLINE_CODE_0__は、カートアイテム削除リンクの表示/非表示に使用します。",
+      "metadata": {
+        "original": "The __INLINE_CODE_0__ is used to show or hide the cart item remove link.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`showRemoveItemLink`"
+        ],
+        "urls": []
+      }
+    },
+    "37b567a947c81a5624d62cbd0b975160cb0de614c5a9b99b4f7d7cdf0f7650e4": {
+      "original": "-   _defaultValue_ (type: __INLINE_CODE_0__, default: __INLINE_CODE_1__) - The default value of the remove link.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.",
+      "translated": "-   _defaultValue_ (type: __INLINE_CODE_0__、 default: __INLINE_CODE_1__) - 削除リンクのデフォルト値。\n-   extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - 拡張オブジェクト。\n-   args_ __INLINE_CODE_4__ - 以下のキーを持つ引数オブジェクト：\n    -   cart_ __INLINE_CODE_5__ - __INLINE_CODE_6__ のカートオブジェクト。\n    -   cartItem_ __INLINE_CODE_7__ - __INLINE_CODE_8__ のカート・アイテム・オブジェクト。\n    -   _context_ __INLINE_CODE_9__ (指定可能な値: __INLINE_CODE_10__ または __INLINE_CODE_11__) - アイテムのコンテキスト。",
+      "metadata": {
+        "original": "-   _defaultValue_ (type: __INLINE_CODE_0__, default: __INLINE_CODE_1__) - The default value of the remove link.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`boolean`",
+          "`true`",
+          "`object`",
+          "`{}`",
+          "`object`",
+          "`object`",
+          "`wc/store/cart`",
+          "`object`",
+          "`wc/store/cart`",
+          "`string`",
+          "`cart`",
+          "`summary`"
+        ],
+        "urls": []
+      }
+    },
+    "8e61026803bcc8869e153278f011357f2aed50788fa7d4f3907681630b8ac5bf": {
+      "original": "-   __INLINE_CODE_0__ - __INLINE_CODE_1__ if the cart item remove link should be shown, __INLINE_CODE_2__ otherwise.",
+      "translated": "-   __INLINE_CODE_0__ - カートアイテムの削除リンクを表示する場合は __INLINE_CODE_1__ 、そうでない場合は __INLINE_CODE_2__ 。",
+      "metadata": {
+        "original": "-   __INLINE_CODE_0__ - __INLINE_CODE_1__ if the cart item remove link should be shown, __INLINE_CODE_2__ otherwise.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`boolean`",
+          "`true`",
+          "`false`"
+        ],
+        "urls": []
+      }
+    },
+    "2a2b22faef4981e315c342917a72117c3f3e3d3c321e2f7f714b17372a4ea787": {
+      "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Show Remove Item Link filter](__URL_0__) |![After applying the Show Remove Item Link filter](__URL_1__) |",
+      "translated": "| 前\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Show Remove Item Link フィルタ適用前](__URL_0__) |![Show Remove Item Link フィルタ適用後](__URL_1__) |｜｜｜[Show Remove Item Link フィルタ適用後](__URL_1__)",
+      "metadata": {
+        "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Show Remove Item Link filter](__URL_0__) |![After applying the Show Remove Item Link filter](__URL_1__) |",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a4254f3b-f056-47ad-b34a-d5f6d5500e56",
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/32c55dc7-ef65-4f35-ab90-9533bc79d362"
+        ]
+      }
+    },
+    "8b43fda1072c4da467411da1e280a6916db618e827cebac06712ec3eb0cfbe84": {
+      "original": "The __INLINE_CODE_0__ filter allows to format the cart item subtotal price.",
+      "translated": "__INLINE_CODE_0__フィルタはカートアイテムの小計価格をフォーマットすることができます。",
+      "metadata": {
+        "original": "The __INLINE_CODE_0__ filter allows to format the cart item subtotal price.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`subtotalPriceFormat`"
+        ],
+        "urls": []
+      }
+    },
+    "80de49273a9e30e67e3abf2712be708d0ecaf05ff43a2d8697fe86aa33840db4": {
+      "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item subtotal price.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.\n-   _validation_ __INLINE_CODE_12__ - Checks if the return value contains the substring __INLINE_CODE_13__.",
+      "translated": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - デフォルトのカートアイテムの小計価格。\n-   __extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - 拡張オブジェクト。\n-   args_ __INLINE_CODE_4__ - 以下のキーを持つ引数オブジェクト：\n    -   cart_ __INLINE_CODE_5__ - __INLINE_CODE_6__ のカートオブジェクト。\n    -   cartItem_ __INLINE_CODE_7__ - __INLINE_CODE_8__ のカート・アイテム・オブジェクト。\n    -   _context_ __INLINE_CODE_9__ (指定可能な値: __INLINE_CODE_10__ または __INLINE_CODE_11__) - アイテムのコンテキスト。\n-   validation_ __INLINE_CODE_12__ - 返り値が部分文字列 __INLINE_CODE_13__ を含むかどうかを調べます。",
+      "metadata": {
+        "original": "-   _defaultValue_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The default cart item subtotal price.\n-   _extensions_ __INLINE_CODE_2__ (default: __INLINE_CODE_3__) - The extensions object.\n-   _args_ __INLINE_CODE_4__ - The arguments object with the following keys:\n    -   _cart_ __INLINE_CODE_5__ - The cart object from __INLINE_CODE_6__, see Cart object.\n    -   _cartItem_ __INLINE_CODE_7__ - The cart item object from __INLINE_CODE_8__, see Cart Item object.\n    -   _context_ __INLINE_CODE_9__ (allowed values: __INLINE_CODE_10__ or __INLINE_CODE_11__) - The context of the item.\n-   _validation_ __INLINE_CODE_12__ - Checks if the return value contains the substring __INLINE_CODE_13__.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`<price/>`",
+          "`object`",
+          "`{}`",
+          "`object`",
+          "`object`",
+          "`wc/store/cart`",
+          "`object`",
+          "`wc/store/cart`",
+          "`string`",
+          "`cart`",
+          "`summary`",
+          "`boolean`",
+          "`<price/>`"
+        ],
+        "urls": []
+      }
+    },
+    "b55173d33ca0312ce3b143f2cc9c5cf7c61e3a08bd86826c3497c2b5006d59b9": {
+      "original": "-   __INLINE_CODE_0__ - The modified format of the cart item subtotal price, which must contain the substring __INLINE_CODE_1__, or the original price format.",
+      "translated": "-   __INLINE_CODE_0__ - サブ文字列__INLINE_CODE_1__を含む必要がある、カートアイテムの小計価格の変更フォーマット、または元の価格フォーマット。",
+      "metadata": {
+        "original": "-   __INLINE_CODE_0__ - The modified format of the cart item subtotal price, which must contain the substring __INLINE_CODE_1__, or the original price format.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`<price/>`"
+        ],
+        "urls": []
+      }
+    },
+    "ec9acce320800da752294a14678b97c446e736f75596794d07dc872729a2e180": {
+      "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Subtotal Price Format filter](__URL_0__) |![After applying the Subtotal Price Format filter](__URL_1__) |",
+      "translated": "| 前\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![小計価格フォーマットフィルター適用前](__URL_0__) |![小計価格フォーマットフィルター適用後](__URL_1__) |｜...",
+      "metadata": {
+        "original": "| Before                                                                 | After                                                                 |\n|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|\n|![Before applying the Subtotal Price Format filter](__URL_0__) |![After applying the Subtotal Price Format filter](__URL_1__) |",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/a392cb24-4c40-4e25-8396-bf4971830e22",
+          "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/af69b26f-662a-4ef9-a288-3713b6e46373"
+        ]
+      }
+    },
+    "7155bf20b5d2b682f329e04a8cabf901f23c06bb5df1eb4a21d0e7af8c0e27ce": {
+      "original": "## Cart object",
+      "translated": "## カートオブジェクト",
+      "metadata": {
+        "original": "## Cart object",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b5b2999f489de1fb7e05d28878a0de05202d35de1b3d0719727f65e04ec0ea66": {
+      "original": "The Cart object of the filters above has the following keys:",
+      "translated": "上記のフィルターのCartオブジェクトは以下のキーを持つ：",
+      "metadata": {
+        "original": "The Cart object of the filters above has the following keys:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "fe2a515d58470c504cb1e0e19a73c5c8eda7190a87d1209182b89019fb5baca9": {
+      "original": "-   _billingAddress_ __INLINE_CODE_0__ - The billing address object with the following keys:\n    -   _address_1_ __INLINE_CODE_1__ - The first line of the address.\n    -   _address_2_ __INLINE_CODE_2__ - The second line of the address.\n    -   _city_ __INLINE_CODE_3__ - The city of the address.\n    -   _company_ __INLINE_CODE_4__ - The company of the address.\n    -   _country_ __INLINE_CODE_5__ - The country of the address.\n    -   _email_ __INLINE_CODE_6__ - The email of the address.\n    -   _first_name_ __INLINE_CODE_7__ - The first name of the address.\n    -   _last_name_ __INLINE_CODE_8__ - The last name of the address.\n    -   _phone_ __INLINE_CODE_9__ - The phone of the address.\n    -   _postcode_ __INLINE_CODE_10__ - The postcode of the address.\n    -   _state_ __INLINE_CODE_11__ - The state of the address.\n-   ~~_billingData_~~ __INLINE_CODE_12__ - The billing data object with the same keys as the __INLINE_CODE_13__ object.\n-   _cartCoupons_ __INLINE_CODE_14__ - The cart coupons array.\n-   _cartErrors_ __INLINE_CODE_15__ - The cart errors array.\n-   _cartFees_ __INLINE_CODE_16__ - The cart fees array.\n-   _cartHasCalculatedShipping_ __INLINE_CODE_17__ - Whether the cart has calculated shipping.\n-   _cartIsLoading_ __INLINE_CODE_18__ - Whether the cart is loading.\n-   _cartItemErrors_ __INLINE_CODE_19__ - The cart item errors array.\n-   _cartItems_ __INLINE_CODE_20__ - The cart items array with cart item objects, see Cart Item object.\n-   _cartItemsCount_ __INLINE_CODE_21__ - The cart items count.\n-   _cartItemsWeight_ __INLINE_CODE_22__ - The cart items weight.\n-   _cartNeedsPayment_ __INLINE_CODE_23__ - Whether the cart needs payment.\n-   _cartNeedsShipping_ __INLINE_CODE_24__ - Whether the cart needs shipping.\n-   _cartTotals_ __INLINE_CODE_25__ - The cart totals object with the following keys:\n    -   _currency_code_ __INLINE_CODE_26__ - The currency code.\n    -   _currency_decimal_separator_ __INLINE_CODE_27__ - The currency decimal separator.\n    -   _currency_minor_unit_ __INLINE_CODE_28__ - The currency minor unit.\n    -   _currency_prefix_ __INLINE_CODE_29__ - The currency prefix.\n    -   _currency_suffix_ __INLINE_CODE_30__ - The currency suffix.\n    -   _currency_symbol_ __INLINE_CODE_31__ - The currency symbol.\n    -   _currency_thousand_separator_ __INLINE_CODE_32__ - The currency thousand separator.\n    -   _tax_lines_ __INLINE_CODE_33__ - The tax lines array with tax line objects with the following keys:\n        -   _name_ __INLINE_CODE_34__ - The name of the tax line.\n        -   _price_ __INLINE_CODE_35__ - The price of the tax line.\n        -   _rate_ __INLINE_CODE_36__ - The rate ID of the tax line.\n    -   _total_discount_ __INLINE_CODE_37__ - The total discount.\n    -   _total_discount_tax_ __INLINE_CODE_38__ - The total discount tax.\n    -   _total_fees_ __INLINE_CODE_39__ - The total fees.\n    -   _total_fees_tax_ __INLINE_CODE_40__ - The total fees tax.\n    -   _total_items_ __INLINE_CODE_41__ - The total items.\n    -   _total_items_tax_ __INLINE_CODE_42__ - The total items tax.\n    -   _total_price_ __INLINE_CODE_43__ - The total price.\n    -   _total_shipping_ __INLINE_CODE_44__ - The total shipping.\n    -   _total_shipping_tax_ __INLINE_CODE_45__ - The total shipping tax.\n    -   _total_tax_ __INLINE_CODE_46__ - The total tax.\n-   _crossSellsProducts_ __INLINE_CODE_47__ - The cross sells products array with cross sells product objects.\n-   _extensions_ __INLINE_CODE_48__ (default: __INLINE_CODE_49__) - The extensions object.\n-   _isLoadingRates_ __INLINE_CODE_50__ - Whether the cart is loading shipping rates.\n-   _paymentRequirements_ __INLINE_CODE_51__ - The payment requirements array.\n-   _shippingAddress_ __INLINE_CODE_52__ - The shipping address object with the same keys as the __INLINE_CODE_53__ object.\n-   _shippingRates_ __INLINE_CODE_54__ - The shipping rates array.",
+      "translated": "-   _billingAddress_ __INLINE_CODE_0__ - 以下のキーを持つ請求先住所オブジェクト：\n    -   address_1_ __INLINE_CODE_1__ - 住所の1行目。\n    -   _address_2_ __INLINE_CODE_2__ - 住所の2行目。\n    -   city_ __INLINE_CODE_3__ - 住所の都市。\n    -   company_ __INLINE_CODE_4__ - 住所の会社。\n    -   国 __INLINE_CODE_5__ - 住所の国。\n    -   email_ __INLINE_CODE_6__ - 住所のEメール。\n    -   first_name_ __INLINE_CODE_7__ - 住所の姓。\n    -   last_name_ __INLINE_CODE_8__ - 住所の姓。\n    -   phone_ __INLINE_CODE_9__ - 住所の電話番号。\n    -   postcode_ __INLINE_CODE_10__ - 住所の郵便番号。\n    -   state_ __INLINE_CODE_11__ - 住所の都道府県。\n-   ~~_billingData_~~ __INLINE_CODE_12__ - __INLINE_CODE_13__ オブジェクトと同じキーを持つ請求データオブジェクト。\n-   __cartCoupons_ __INLINE_CODE_14__ - カートクーポンの配列。\n-   __cartErrors_ __INLINE_CODE_15__ - カートのエラー配列。\n-   _cartFees_ __INLINE_CODE_16__ - カート料金の配列。\n-   __cartHasCalculatedShipping_ __INLINE_CODE_17__ - カートが送料を計算しているかどうか。\n-   __cartIsLoading_ __INLINE_CODE_18__ - カートが読み込まれているかどうか。\n-   __cartItemErrors_ __INLINE_CODE_19__ - カート項目のエラー配列。\n-   cartItems_ __INLINE_CODE_20__ - カートアイテムオブジェクトを含むカートアイテム配列。\n-   cartItemsCount_ __INLINE_CODE_21__ - カートアイテムの数。\n-   __cartItemsWeight_ __INLINE_CODE_22__ - カートアイテムの重量。\n-   _cartNeedsPayment_ __INLINE_CODE_23__ - カートに支払いが必要かどうか。\n-   _cartNeedsShipping_ __INLINE_CODE_24__ - カートに配送が必要かどうか。\n-   _cartTotals_ __INLINE_CODE_25__ - 以下のキーを持つカート合計オブジェクト：\n    -   _currency_code_ __INLINE_CODE_26__ - 通貨コード。\n    -   __currency_decimal_separator_ __INLINE_CODE_27__ - 通貨の小数点セパレータ。\n    -   __currency_minor_unit_ __INLINE_CODE_28__ - 通貨の小単位。\n    -   __currency_prefix_ __INLINE_CODE_29__ - 通貨のプレフィックス。\n    -   __currency_suffix_ __INLINE_CODE_30__ - 通貨のサフィックス。\n    -   __currency_symbol_ __INLINE_CODE_31__ - 通貨記号。\n    -   __currency_thousand_separator_ __INLINE_CODE_32__ - 通貨の千の区切り文字。\n    -   tax_lines_ __INLINE_CODE_33__ - 以下のキーを持つ税目オブジェクトを含む税目配列：\n        -   name_ __INLINE_CODE_34__ - タックスラインの名前。\n        -   price_ __INLINE_CODE_35__ - タックスラインの価格。\n        -   rate_ __INLINE_CODE_36__ - タックス・ラインの税率ID。\n    -   total_discount_ __INLINE_CODE_37__ - 割引総額。\n    -   _total_discount_tax_ __INLINE_CODE_38__ - 割引税の合計。\n    -   _total_fees_ __INLINE_CODE_39__ - 料金合計。\n    -   _total_fees_tax_ __INLINE_CODE_40__ - 料金にかかる税金の合計。\n    -   total_items_ __INLINE_CODE_41__ - 合計アイテム。\n    -   __total_items_tax_ __INLINE_CODE_42__ - 合計商品税。\n    -   total_price_ __INLINE_CODE_43__ - 合計価格。\n    -   _total_shipping_ __INLINE_CODE_44__ - 送料の合計。\n    -   _total_shipping_tax_ __INLINE_CODE_45__ - 配送にかかる税金の合計。\n    -   _total_tax_ __INLINE_CODE_46__ - 合計税金。\n-   _crossSellsProducts_ __INLINE_CODE_47__ - クロスセル商品オブジェクトを含むクロスセル商品配列。\n-   extensions_ __INLINE_CODE_48__ (default: __INLINE_CODE_49__) - 拡張オブジェクト。\n-   _isLoadingRates_ __INLINE_CODE_50__ - カートが配送料金を読み込んでいるかどうか。\n-   _paymentRequirements_ __INLINE_CODE_51__ - 支払い条件の配列。\n-   shippingAddress_ __INLINE_CODE_52__ - __INLINE_CODE_53__ オブジェクトと同じキーを持つ配送先住所オブジェクト。\n-   shippingRates_ __INLINE_CODE_54__ - 配送料金の配列。",
+      "metadata": {
+        "original": "-   _billingAddress_ __INLINE_CODE_0__ - The billing address object with the following keys:\n    -   _address_1_ __INLINE_CODE_1__ - The first line of the address.\n    -   _address_2_ __INLINE_CODE_2__ - The second line of the address.\n    -   _city_ __INLINE_CODE_3__ - The city of the address.\n    -   _company_ __INLINE_CODE_4__ - The company of the address.\n    -   _country_ __INLINE_CODE_5__ - The country of the address.\n    -   _email_ __INLINE_CODE_6__ - The email of the address.\n    -   _first_name_ __INLINE_CODE_7__ - The first name of the address.\n    -   _last_name_ __INLINE_CODE_8__ - The last name of the address.\n    -   _phone_ __INLINE_CODE_9__ - The phone of the address.\n    -   _postcode_ __INLINE_CODE_10__ - The postcode of the address.\n    -   _state_ __INLINE_CODE_11__ - The state of the address.\n-   ~~_billingData_~~ __INLINE_CODE_12__ - The billing data object with the same keys as the __INLINE_CODE_13__ object.\n-   _cartCoupons_ __INLINE_CODE_14__ - The cart coupons array.\n-   _cartErrors_ __INLINE_CODE_15__ - The cart errors array.\n-   _cartFees_ __INLINE_CODE_16__ - The cart fees array.\n-   _cartHasCalculatedShipping_ __INLINE_CODE_17__ - Whether the cart has calculated shipping.\n-   _cartIsLoading_ __INLINE_CODE_18__ - Whether the cart is loading.\n-   _cartItemErrors_ __INLINE_CODE_19__ - The cart item errors array.\n-   _cartItems_ __INLINE_CODE_20__ - The cart items array with cart item objects, see Cart Item object.\n-   _cartItemsCount_ __INLINE_CODE_21__ - The cart items count.\n-   _cartItemsWeight_ __INLINE_CODE_22__ - The cart items weight.\n-   _cartNeedsPayment_ __INLINE_CODE_23__ - Whether the cart needs payment.\n-   _cartNeedsShipping_ __INLINE_CODE_24__ - Whether the cart needs shipping.\n-   _cartTotals_ __INLINE_CODE_25__ - The cart totals object with the following keys:\n    -   _currency_code_ __INLINE_CODE_26__ - The currency code.\n    -   _currency_decimal_separator_ __INLINE_CODE_27__ - The currency decimal separator.\n    -   _currency_minor_unit_ __INLINE_CODE_28__ - The currency minor unit.\n    -   _currency_prefix_ __INLINE_CODE_29__ - The currency prefix.\n    -   _currency_suffix_ __INLINE_CODE_30__ - The currency suffix.\n    -   _currency_symbol_ __INLINE_CODE_31__ - The currency symbol.\n    -   _currency_thousand_separator_ __INLINE_CODE_32__ - The currency thousand separator.\n    -   _tax_lines_ __INLINE_CODE_33__ - The tax lines array with tax line objects with the following keys:\n        -   _name_ __INLINE_CODE_34__ - The name of the tax line.\n        -   _price_ __INLINE_CODE_35__ - The price of the tax line.\n        -   _rate_ __INLINE_CODE_36__ - The rate ID of the tax line.\n    -   _total_discount_ __INLINE_CODE_37__ - The total discount.\n    -   _total_discount_tax_ __INLINE_CODE_38__ - The total discount tax.\n    -   _total_fees_ __INLINE_CODE_39__ - The total fees.\n    -   _total_fees_tax_ __INLINE_CODE_40__ - The total fees tax.\n    -   _total_items_ __INLINE_CODE_41__ - The total items.\n    -   _total_items_tax_ __INLINE_CODE_42__ - The total items tax.\n    -   _total_price_ __INLINE_CODE_43__ - The total price.\n    -   _total_shipping_ __INLINE_CODE_44__ - The total shipping.\n    -   _total_shipping_tax_ __INLINE_CODE_45__ - The total shipping tax.\n    -   _total_tax_ __INLINE_CODE_46__ - The total tax.\n-   _crossSellsProducts_ __INLINE_CODE_47__ - The cross sells products array with cross sells product objects.\n-   _extensions_ __INLINE_CODE_48__ (default: __INLINE_CODE_49__) - The extensions object.\n-   _isLoadingRates_ __INLINE_CODE_50__ - Whether the cart is loading shipping rates.\n-   _paymentRequirements_ __INLINE_CODE_51__ - The payment requirements array.\n-   _shippingAddress_ __INLINE_CODE_52__ - The shipping address object with the same keys as the __INLINE_CODE_53__ object.\n-   _shippingRates_ __INLINE_CODE_54__ - The shipping rates array.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`object`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`object`",
+          "`billingAddress`",
+          "`array`",
+          "`array`",
+          "`array`",
+          "`boolean`",
+          "`boolean`",
+          "`array`",
+          "`array`",
+          "`number`",
+          "`number`",
+          "`boolean`",
+          "`boolean`",
+          "`object`",
+          "`string`",
+          "`string`",
+          "`number`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`array`",
+          "`string`",
+          "`number`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`array`",
+          "`object`",
+          "`{}`",
+          "`boolean`",
+          "`array`",
+          "`object`",
+          "`billingAddress`",
+          "`array`"
+        ],
+        "urls": []
+      }
+    },
+    "140bc761fcb23e030448ef55c29c75a625bf36f86daf17c19ca848e14152c882": {
+      "original": "## Cart Item object",
+      "translated": "## カートアイテムオブジェクト",
+      "metadata": {
+        "original": "## Cart Item object",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "788fb6f2ff527698606a43c5aa3656952e4061eb384e1cb3993ae8820e1ded40": {
+      "original": "The Cart Item object of the filters above has the following keys:",
+      "translated": "上記のフィルターのCart Itemオブジェクトは以下のキーを持ちます：",
+      "metadata": {
+        "original": "The Cart Item object of the filters above has the following keys:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3e08ad1f7c88bc4626ea098a4b2eaea366039dd86f2f720ac54df7f8e42f040c": {
+      "original": "-   _backorders_allowed_ __INLINE_CODE_0__ - Whether backorders are allowed.\n-   _catalog_visibility_ __INLINE_CODE_1__ - The catalog visibility.\n-   _decsription_ __INLINE_CODE_2__ - The cart item description.\n-   _extensions_ __INLINE_CODE_3__ (default: __INLINE_CODE_4__) - The extensions object.\n-   _id_ __INLINE_CODE_5__ - The item ID.\n-   _images_ __INLINE_CODE_6__ - The item images array.\n-   _item_data_ __INLINE_CODE_7__ - The item data array.\n-   _key_ __INLINE_CODE_8__ - The item key.\n-   _low_stock_remaining_ __INLINE_CODE_9__ - The low stock remaining.\n-   _name_ __INLINE_CODE_10__ - The item name.\n-   _permalink_ __INLINE_CODE_11__ - The item permalink.\n-   _prices_ __INLINE_CODE_12__ - The item prices object with the following keys:\n    -   _currency_code_ __INLINE_CODE_13__ - The currency code.\n    -   _currency_decimal_separator_ __INLINE_CODE_14__ - The currency decimal separator.\n    -   _currency_minor_unit_ __INLINE_CODE_15__ - The currency minor unit.\n    -   _currency_prefix_ __INLINE_CODE_16__ - The currency prefix.\n    -   _currency_suffix_ __INLINE_CODE_17__ - The currency suffix.\n    -   _currency_symbol_ __INLINE_CODE_18__ - The currency symbol.\n    -   _currency_thousand_separator_ __INLINE_CODE_19__ - The currency thousand separator.\n    -   _price_ __INLINE_CODE_20__ - The price.\n    -   _price_range_ __INLINE_CODE_21__ - The price range.\n    -   _raw_prices_ __INLINE_CODE_22__ - The raw prices object with the following keys:\n        -   _precision_ __INLINE_CODE_23__ - The precision.\n        -   _price_ __INLINE_CODE_24__ - The price.\n        -   _regular_price_ __INLINE_CODE_25__ - The regular price.\n        -   _sale_price_ __INLINE_CODE_26__ - The sale price.\n    -   _regular_price_ __INLINE_CODE_27__ - The regular price.\n    -   _sale_price_ __INLINE_CODE_28__ - The sale price.\n-   _quantity_ __INLINE_CODE_29__ - The item quantity.\n-   _quantity_limits_ __INLINE_CODE_30__ - The item quantity limits object with the following keys:\n    -   _editable_ __INLINE_CODE_31__ - Whether the quantity is editable.\n    -   _maximum_ __INLINE_CODE_32__ - The maximum quantity.\n    -   _minimum_ __INLINE_CODE_33__ - The minimum quantity.\n    -   _multiple_of_ __INLINE_CODE_34__ - The multiple of quantity.\n-   _short_description_ __INLINE_CODE_35__ - The item short description.\n-   _show_backorder_badge_ __INLINE_CODE_36__ - Whether to show the backorder badge.\n-   _sku_ __INLINE_CODE_37__ - The item SKU.\n-   _sold_individually_ __INLINE_CODE_38__ - Whether the item is sold individually.\n-   _totals_ __INLINE_CODE_39__ - The item totals object with the following keys:\n    -   _currency_code_ __INLINE_CODE_40__ - The currency code.\n    -   _currency_decimal_separator_ __INLINE_CODE_41__ - The currency decimal separator.\n    -   _currency_minor_unit_ __INLINE_CODE_42__ - The currency minor unit.\n    -   _currency_prefix_ __INLINE_CODE_43__ - The currency prefix.\n    -   _currency_suffix_ __INLINE_CODE_44__ - The currency suffix.\n    -   _currency_symbol_ __INLINE_CODE_45__ - The currency symbol.\n    -   _currency_thousand_separator_ __INLINE_CODE_46__ - The currency thousand separator.\n    -   _line_subtotal_ __INLINE_CODE_47__ - The line subtotal.\n    -   _line_subtotal_tax_ __INLINE_CODE_48__ - The line subtotal tax.\n    -   _line_total_ __INLINE_CODE_49__ - The line total.\n    -   _line_total_tax_ __INLINE_CODE_50__ - The line total tax.\n-   _type_ __INLINE_CODE_51__ - The item type.\n-   _variation_ __INLINE_CODE_52__ - The item variation array.\n",
+      "translated": "-   backorders_allowed_ __INLINE_CODE_0__ - バックオーダーを許可するかどうか。\n-   catalog_visibility_ __INLINE_CODE_1__ - カタログの表示。\n-   decsription_ __INLINE_CODE_2__ - カートアイテムの説明。\n-   extensions_ __INLINE_CODE_3__ (default: __INLINE_CODE_4__) - 拡張オブジェクト。\n-   id_ __INLINE_CODE_5__ - アイテムID。\n-   images_ __INLINE_CODE_6__ - アイテム画像の配列。\n-   item_data_ __INLINE_CODE_7__ - アイテムデータの配列。\n-   key_ __INLINE_CODE_8__ - アイテムのキー。\n-   __low_stock_remaining_ __INLINE_CODE_9__ - 残りの在庫数。\n-   name_ __INLINE_CODE_10__ - アイテム名。\n-   permalink_ __INLINE_CODE_11__ - アイテムのパーマリンク。\n-   prices_ __INLINE_CODE_12__ - 以下のキーを持つアイテム価格オブジェクト：\n    -   currency_code_ __INLINE_CODE_13__ - 通貨コード。\n    -   __currency_decimal_separator_ __INLINE_CODE_14__ - 通貨の小数点セパレータ。\n    -   __currency_minor_unit_ __INLINE_CODE_15__ - 通貨の小単位。\n    -   __currency_prefix_ __INLINE_CODE_16__ - 通貨のプレフィックス。\n    -   __currency_suffix_ __INLINE_CODE_17__ - 通貨のサフィックス。\n    -   __currency_symbol_ __INLINE_CODE_18__ - 通貨記号。\n    -   currency_thousand_separator_ __INLINE_CODE_19__ - 通貨の千単位区切り文字。\n    -   price_ __INLINE_CODE_20__ - 価格。\n    -   price_range_ __INLINE_CODE_21__ - 価格帯。\n    -   raw_prices_ __INLINE_CODE_22__ - 以下のキーを持つ生の価格オブジェクト：\n        -   precision_ __INLINE_CODE_23__ - 精度。\n        -   price_ __INLINE_CODE_24__ - 価格。\n        -   regular_price_ __INLINE_CODE_25__ - 通常価格。\n        -   sale_price_ __INLINE_CODE_26__ - セール価格。\n    -   regular_price_ __INLINE_CODE_27__ - 通常価格。\n    -   sale_price_ __INLINE_CODE_28__ - セール価格。\n-   数量 __INLINE_CODE_29__ - 商品の数量。\n-   __quantity_limits_ __INLINE_CODE_30__ - 以下のキーを持つ数量制限オブジェクトです：\n    -   editable_ __INLINE_CODE_31__ - 数量を編集可能かどうか。\n    -   maximum_ __INLINE_CODE_32__ - 最大数量。\n    -   minimum_ __INLINE_CODE_33__ - 最小量。\n    -   multiple_of_ __INLINE_CODE_34__ - 数量の倍数。\n-   short_description_ __INLINE_CODE_35__ - 商品の短い説明。\n-   show_backorder_badge_ __INLINE_CODE_36__ - バックオーダーのバッジを表示するかどうか。\n-   sku_ __INLINE_CODE_37__ - 商品のSKU。\n-   sold_individually_ __INLINE_CODE_38__ - アイテムが個別に販売されているかどうか。\n-   totals_ __INLINE_CODE_39__ - 以下のキーを持つ項目の合計オブジェクトです：\n    -   currency_code_ __INLINE_CODE_40__ - 通貨コード。\n    -   currency_decimal_separator_ __INLINE_CODE_41__ - 通貨の小数点セパレータ。\n    -   __currency_minor_unit_ __INLINE_CODE_42__ - 通貨の小単位。\n    -   __currency_prefix_ __INLINE_CODE_43__ - 通貨のプレフィックス。\n    -   __currency_suffix_ __INLINE_CODE_44__ - 通貨のサフィックス。\n    -   __currency_symbol_ __INLINE_CODE_45__ - 通貨記号。\n    -   __currency_thousand_separator_ __INLINE_CODE_46__ - 通貨の千の区切り文字。\n    -   line_subtotal_ __INLINE_CODE_47__ - 行の小計。\n    -   line_subtotal_tax_ __INLINE_CODE_48__ - 行の小計の税金。\n    -   line_total_ __INLINE_CODE_49__ - 行の合計。\n    -   line_total_tax_ __INLINE_CODE_50__ - 行の合計税額。\n-   type_ __INLINE_CODE_51__ - 商品のタイプ。\n-   variation_ __INLINE_CODE_52__ - 項目のバリエーション配列。\n",
+      "metadata": {
+        "original": "-   _backorders_allowed_ __INLINE_CODE_0__ - Whether backorders are allowed.\n-   _catalog_visibility_ __INLINE_CODE_1__ - The catalog visibility.\n-   _decsription_ __INLINE_CODE_2__ - The cart item description.\n-   _extensions_ __INLINE_CODE_3__ (default: __INLINE_CODE_4__) - The extensions object.\n-   _id_ __INLINE_CODE_5__ - The item ID.\n-   _images_ __INLINE_CODE_6__ - The item images array.\n-   _item_data_ __INLINE_CODE_7__ - The item data array.\n-   _key_ __INLINE_CODE_8__ - The item key.\n-   _low_stock_remaining_ __INLINE_CODE_9__ - The low stock remaining.\n-   _name_ __INLINE_CODE_10__ - The item name.\n-   _permalink_ __INLINE_CODE_11__ - The item permalink.\n-   _prices_ __INLINE_CODE_12__ - The item prices object with the following keys:\n    -   _currency_code_ __INLINE_CODE_13__ - The currency code.\n    -   _currency_decimal_separator_ __INLINE_CODE_14__ - The currency decimal separator.\n    -   _currency_minor_unit_ __INLINE_CODE_15__ - The currency minor unit.\n    -   _currency_prefix_ __INLINE_CODE_16__ - The currency prefix.\n    -   _currency_suffix_ __INLINE_CODE_17__ - The currency suffix.\n    -   _currency_symbol_ __INLINE_CODE_18__ - The currency symbol.\n    -   _currency_thousand_separator_ __INLINE_CODE_19__ - The currency thousand separator.\n    -   _price_ __INLINE_CODE_20__ - The price.\n    -   _price_range_ __INLINE_CODE_21__ - The price range.\n    -   _raw_prices_ __INLINE_CODE_22__ - The raw prices object with the following keys:\n        -   _precision_ __INLINE_CODE_23__ - The precision.\n        -   _price_ __INLINE_CODE_24__ - The price.\n        -   _regular_price_ __INLINE_CODE_25__ - The regular price.\n        -   _sale_price_ __INLINE_CODE_26__ - The sale price.\n    -   _regular_price_ __INLINE_CODE_27__ - The regular price.\n    -   _sale_price_ __INLINE_CODE_28__ - The sale price.\n-   _quantity_ __INLINE_CODE_29__ - The item quantity.\n-   _quantity_limits_ __INLINE_CODE_30__ - The item quantity limits object with the following keys:\n    -   _editable_ __INLINE_CODE_31__ - Whether the quantity is editable.\n    -   _maximum_ __INLINE_CODE_32__ - The maximum quantity.\n    -   _minimum_ __INLINE_CODE_33__ - The minimum quantity.\n    -   _multiple_of_ __INLINE_CODE_34__ - The multiple of quantity.\n-   _short_description_ __INLINE_CODE_35__ - The item short description.\n-   _show_backorder_badge_ __INLINE_CODE_36__ - Whether to show the backorder badge.\n-   _sku_ __INLINE_CODE_37__ - The item SKU.\n-   _sold_individually_ __INLINE_CODE_38__ - Whether the item is sold individually.\n-   _totals_ __INLINE_CODE_39__ - The item totals object with the following keys:\n    -   _currency_code_ __INLINE_CODE_40__ - The currency code.\n    -   _currency_decimal_separator_ __INLINE_CODE_41__ - The currency decimal separator.\n    -   _currency_minor_unit_ __INLINE_CODE_42__ - The currency minor unit.\n    -   _currency_prefix_ __INLINE_CODE_43__ - The currency prefix.\n    -   _currency_suffix_ __INLINE_CODE_44__ - The currency suffix.\n    -   _currency_symbol_ __INLINE_CODE_45__ - The currency symbol.\n    -   _currency_thousand_separator_ __INLINE_CODE_46__ - The currency thousand separator.\n    -   _line_subtotal_ __INLINE_CODE_47__ - The line subtotal.\n    -   _line_subtotal_tax_ __INLINE_CODE_48__ - The line subtotal tax.\n    -   _line_total_ __INLINE_CODE_49__ - The line total.\n    -   _line_total_tax_ __INLINE_CODE_50__ - The line total tax.\n-   _type_ __INLINE_CODE_51__ - The item type.\n-   _variation_ __INLINE_CODE_52__ - The item variation array.\n",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`boolean`",
+          "`string`",
+          "`string`",
+          "`object`",
+          "`{}`",
+          "`number`",
+          "`array`",
+          "`array`",
+          "`string`",
+          "`number`",
+          "`string`",
+          "`string`",
+          "`object`",
+          "`string`",
+          "`string`",
+          "`number`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`object`",
+          "`number`",
+          "`number`",
+          "`number`",
+          "`number`",
+          "`string`",
+          "`string`",
+          "`number`",
+          "`object`",
+          "`boolean`",
+          "`number`",
+          "`number`",
+          "`number`",
+          "`string`",
+          "`boolean`",
+          "`string`",
+          "`boolean`",
+          "`object`",
+          "`string`",
+          "`string`",
+          "`number`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`string`",
+          "`array`"
+        ],
+        "urls": []
       }
     }
   },
-  "docs/theming/block-theme-development/cart-and-checkout.md": {
-    "hash": "7200bfb0e4770c180a4d9dbfa5aa33ab8800f5a526da6b24b0f185ea252482df",
-    "translatedAt": "2025-12-27T00:49:50.018Z",
-    "segments": 19
+  "docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items.md": {
+    "hash": "5e2b5aba8259190d5f5413c491724d7f3200505bf24eed4c87b09b43e18c0429",
+    "translatedAt": "2025-12-27T01:23:46.306Z",
+    "segments": 91
   }
 }
