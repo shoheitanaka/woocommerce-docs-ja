@@ -10,7 +10,7 @@ sidebar_position: 2
 
 新しいSlotFillコンポーネントを追加したい場合は、[Checkout - Slot Fill document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/slot/README.md)をチェックしてください。スロットとフィルについての詳細は、[スロットとフィルのドキュメント](/docs/block-development/reference/slot-fills/)をご覧ください。
 
-**ネーミングについての注意事項： ** `Experimental`がプレフィックスとして付いているスロットは実験的なものであり、変更または削除される可能性があります。実験的な段階から卒業すると、ネーミングが変更され、`Experimental`の接頭辞は削除されます。詳しくは[Feature Gating document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/internal-developers/blocks/feature-flags-and-experimental-interfaces.md)をご覧ください。
+**ネーミングについての注意事項：** `Experimental`がプレフィックスとして付いているスロットは実験的なものであり、変更または削除される可能性があります。実験的な段階から卒業すると、ネーミングが変更され、`Experimental`の接頭辞は削除されます。詳しくは[Feature Gating document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/internal-developers/blocks/feature-flags-and-experimental-interfaces.md)をご覧ください。
 
 ## ExperimentalOrderMeta
 
