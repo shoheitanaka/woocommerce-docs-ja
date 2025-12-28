@@ -11,7 +11,7 @@ sidebar_label: Payment button layout
 
 横長または縦長のレイアウトで「カートに入れる」ボタンに対して支払いボタンを正しく配置し、支払いボタンを「カートに入れる」ボタンの右側または下に配置する。
 
-![商品ページレイアウト.png](https://github.com/shoheitanaka/woocommerce-docs-ja/tree/main/docs/_docu-tools/static/img/Product-page-layout.png)
+![商品ページレイアウト.png](https://github.com/shoheitanaka/woocommerce-docs-ja/tree/main/docs/_docu-tools/static/img/doc_images/Product-page-layout.png)
 
 縦型レイアウトの「チェックアウトに進む」ボタンに対して、支払いボタンを正しく配置する。決済ボタンは「チェックアウトに進む」ボタンの上に配置してください。支払いボタンはボタンの下や間に配置しないでください。
 
