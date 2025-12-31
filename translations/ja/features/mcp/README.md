@@ -192,7 +192,7 @@ https://yourstore.com/wp-json/woocommerce/mcp
 
 Claude コードを WooCommerce MCP サーバーに接続します：
 
-1.WooCommerce → 設定 → 詳細 → REST API*** へ移動します。
+1.**WooCommerce → 設定 → 詳細 → REST API** へ移動します。
 2.Read/Write "権限で新しいAPIキーを作成します。
 3.Claude コードを使用してAPIキーでMCPを設定します：
 
