@@ -5,30 +5,30 @@ sidebar_label: Payment Gateway API
 
 # WooCommerce Payment Gateway API
 
-WooCommerceの決済ゲートウェイはクラスベースで、従来のプラグインを通して追加することができます。このガイドではゲートウェイ開発の入門を提供します。
+WooCommerce の決済ゲートウェイはクラスベースで、従来のプラグインを通して追加することができます。このガイドではゲートウェイ開発の入門を提供します。
 
 ## 決済ゲートウェイの種類
 
 ペイメントゲートウェイにはいくつかの種類がある：
 
-1.  **フォームベース** - これは、ユーザーがフォーム上のボタンをクリックする必要があり、その後、ゲートウェイ自身のウェブサイト上の支払いプロセッサにリダイレクトされます。例PayPalスタンダード、Authorize.net DPM
-2.  **iFrameベース** - これは、ゲートウェイの決済システムがあなたのストアのiframe内にロードされる場合です。例SagePayフォーム、PayPalアドバンスド
-3.  **ダイレクト** - これは、支払いフィールドがチェックアウトページに直接表示され、'注文する'が押されたときに支払いが行われる場合です。例PayPal Pro、Authorize.net AIM
+1.  **フォームベース** - これは、ユーザーがフォーム上のボタンをクリックする必要があり、その後、ゲートウェイ自身のウェブサイト上の支払いプロセッサにリダイレクトされます。例 PayPal スタンダード、Authorize.net DPM
+2.  **iFrameベース** - これは、ゲートウェイの決済システムがあなたのストアの iframe 内にロードされる場合です。例: SagePay フォーム、PayPalアドバンスド
+3.  **ダイレクト** - これは、支払いフィールドがチェックアウトページに直接表示され、'注文する'が押されたときに支払いが行われる場合です。例: PayPal Pro、Authorize.net AIM
 4.  **オフライン** - オンライン決済は行われません。例小切手、銀行振込
 
-フォームとiFrameベースのゲートウェイは、データをオフサイトにポストするため、考えるべきセキュリティの問題が少なくなります。しかし、ダイレクト・ゲートウェイは、サーバー・セキュリティ（[SSL証明書](https://woocommerce.com/document/ssl-and-https/)など）を実装する必要があり、また、[PCIコンプライアンス](https://woocommerce.com/document/pci-dss-compliance-and-woocommerce/)のレベルが必要になる場合もあります。
+フォームと iFrame ベースのゲートウェイは、データをオフサイトにポストするため、考えるべきセキュリティの問題が少なくなります。しかし、ダイレクト・ゲートウェイは、サーバー・セキュリティ（[SSL 証明書](https://woocommerce.com/document/ssl-and-https/)など）を実装する必要があり、また、[PCI コンプライアンス](https://woocommerce.com/document/pci-dss-compliance-and-woocommerce/)のレベルが必要になる場合もあります。
 
 ## 基本的な決済ゲートウェイの作成
 
 **注意:** 以下の説明はデフォルトのチェックアウトページのためのものです。新しいチェックアウトブロックにカスタム支払い方法を追加したい場合は、[支払い方法統合ドキュメント](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration)をチェックしてください。
 
-ペイメントゲートウェイはWooCommerceにフックする追加プラグインとして作成する必要があります。プラグインの内部では、プラグインがロードされた後にクラスを作成する必要があります。例
+ペイメントゲートウェイは WooCommerce にフックする追加プラグインとして作成する必要があります。プラグインの内部では、プラグインがロードされた後にクラスを作成する必要があります。例
 
 ```php
 add_action( 'plugins_loaded', 'init_your_gateway_class' );
 ```
 
-ゲートウェイクラスがWooCommerceのベースゲートウェイクラスを継承していることも重要で、重要なメソッドや[設定API](https://developer.woocommerce.com/docs/settings-api/)にアクセスできるようになります：
+ゲートウェイクラスが WooCommerce のベースゲートウェイクラスを継承していることも重要で、重要なメソッドや[設定 API](https://developer.woocommerce.com/docs/settings-api/)にアクセスできるようになります：
 
 ```php
 function init_your_gateway_class() {
@@ -36,9 +36,9 @@ function init_your_gateway_class() {
 }
 ```
 
-APIドキュメントの[WC_Payment_Gatewayクラス](https://woocommerce.github.io/code-reference/classes/WC-Payment-Gateway.html)を参照してください。
+APIドキュメントの[WC_Payment_Gateway クラス](https://woocommerce.github.io/code-reference/classes/WC-Payment-Gateway.html)を参照してください。
 
-クラスを定義するだけでなく、WooCommerce (WC) にその存在を知らせる必要があります。これは_woocommerce_payment_gateways_をフィルタリングすることで行います：
+クラスを定義するだけでなく、WooCommerce (WC) にその存在を知らせる必要があります。これは _woocommerce_payment_gateways_ をフィルタリングすることで行います：
 
 ```php
 function add_your_gateway_class( $methods ) {
@@ -59,9 +59,9 @@ add_filter( 'woocommerce_payment_gateways', 'add_your_gateway_class' );
 
 コンストラクター内で、以下の変数を定義する：
 
-- `$this->id` - あなたのゲートウェイのユニークID、例えば'your_gateway'
-- `$this->icon` - フロントエンドでゲートウェイの名前の横に画像を表示したい場合は、画像のURLを入力します。
-- `$this->has_fields` - ブール値。チェックアウト時に支払いフィールドを表示したい場合、trueを設定します（直接統合する場合）。
+- `$this->id` - あなたのゲートウェイのユニーク ID、例えば'your_gateway'
+- `$this->icon` - フロントエンドでゲートウェイの名前の横に画像を表示したい場合は、画像の URL を入力します。
+- `$this->has_fields` - ブール値。チェックアウト時に支払いフィールドを表示したい場合、true を設定します（直接統合する場合）。
 - `$this->method_title` - 管理ページに表示される支払い方法のタイトル。
 - `$this->method_description` - 管理ページに表示される支払い方法の説明。
 
@@ -88,9 +88,9 @@ add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $
 
 #### init_form_fields()
 
-このメソッドを使用して、`$this->form_fields`を設定します - これらはゲートウェイ設定ページの管理画面に表示されるオプションで、[WC Settings API](https://developer.woocommerce.com/docs/settings-api/)を使用します。
+このメソッドを使用して、`$this->form_fields` を設定します - これらはゲートウェイ設定ページの管理画面に表示されるオプションで、[WC Settings API](https://developer.woocommerce.com/docs/settings-api/)を使用します。
 
-ゲートウェイの基本的な設定は、_enabled_、_title_、_description_で構成されます：
+ゲートウェイの基本的な設定は、_enabled_、_title_、_description_ で構成されます：
 
 ```php
 $this->form_fields = array(
@@ -117,7 +117,7 @@ $this->form_fields = array(
 
 #### process_payment( $order_id )
 
-さて、ゲートウェイの最も重要な部分である支払いの処理と注文の処理です。process_paymentはWCにユーザーをどこにリダイレクトするかも伝えます。
+さて、ゲートウェイの最も重要な部分である支払いの処理と注文の処理です。process_payment は WC にユーザーをどこにリダイレクトするかも伝えます。
 
 以下は、小切手ゲートウェイの process_payment 関数の例です：
 
@@ -146,7 +146,7 @@ $order = new WC_Order( $order_id );
 - 処理中の注文を取得して更新する
 - 成功とリダイレクトURL（この場合はサンクスページ）を返す
 
-小切手では、支払いが自動的に確認できないため、注文は保留状態になります。しかし、ダイレクトゲートウェイを構築している場合は、代わりにここで注文を完了させることができます。注文の支払いが完了したら、update_statusを使うのではなく、payment_completeを使うべきです：
+小切手では、支払いが自動的に確認できないため、注文は保留状態になります。しかし、ダイレクトゲートウェイを構築している場合は、代わりにここで注文を完了させることができます。注文の支払いが完了したら、update_status を使うのではなく、payment_complete を使うべきです：
 
 ```php
 $order->payment_complete();
@@ -165,7 +165,7 @@ return array(
 
 WooCommerceはこのエラーをキャッチし、チェックアウトページに表示します。
 
-在庫レベルはアクション（`woocommerce_payment_complete`および注文ステータス間の遷移）を介して更新されるため、支払い処理中に在庫レベルを下げるメソッドを手動で呼び出す必要はなくなりました。
+在庫レベルはアクション（`woocommerce_payment_complete` および注文ステータス間の遷移）を介して更新されるため、支払い処理中に在庫レベルを下げるメソッドを手動で呼び出す必要はなくなりました。
 
 ### 注文ステータスの更新とメモの追加
 
@@ -184,9 +184,9 @@ $order->add_order_note( __('IPN payment completed', 'woothemes') );
 
 ### 注文状況のベストプラクティス
 
-- 注文は完了したが、管理者が手動で支払いを確認する必要がある場合は、**On-Hold**を使用します。
-- 注文が失敗し、すでに作成されている場合、**Failed**に設定します。
-- 支払いが完了した場合、ステータスはWooCommerceに任せ、`$order->payment_complete()`を使用します。WooCommerceは**Completed**または**Processing**ステータスを使用し、在庫を処理します。
+- 注文は完了したが、管理者が手動で支払いを確認する必要がある場合は、**On-Hold** を使用します。
+- 注文が失敗し、すでに作成されている場合、**Failed** に設定します。
+- 支払いが完了した場合、ステータスはWooCommerceに任せ、`$order->payment_complete()`を使用します。WooCommerce は **Completed** または **Processing** ステータスを使用し、在庫を処理します。
 
 ## ダイレクトゲートウェイに関する注意事項
 
@@ -196,13 +196,13 @@ $order->add_order_note( __('IPN payment completed', 'woothemes') );
 $this->has_fields = true;
 ```
 
-これは、次に定義する直接支払いフォームを含む'payment_box'を出力するようにチェックアウトに指示します。
+これは、次に定義する直接支払いフォームを含む 'payment_box' を出力するようにチェックアウトに指示します。
 
 `payment_fields()`というメソッドを作成する。
 
-次に追加するオプションのメソッドは `validate_fields()` です。フォームのバリデーションに合格した場合はtrueを返し、不合格の場合はfalseを返します。エラーを追加してユーザーに表示したい場合は、 `wc_add_notice()` 関数を使用します。
+次に追加するオプションのメソッドは `validate_fields()` です。フォームのバリデーションに合格した場合は true を返し、不合格の場合は false を返します。エラーを追加してユーザーに表示したい場合は、 `wc_add_notice()` 関数を使用します。
 
-最後に、`process_payment( $order_id )`メソッド内に支払いコードを追加する必要があります。これは投稿されたフォームデータを受け取り、支払いプロバイダーを通して直接支払いを試みます。
+最後に、`process_payment( $order_id )` メソッド内に支払いコードを追加する必要があります。これは投稿されたフォームデータを受け取り、支払いプロバイダーを通して直接支払いを試みます。
 
 支払いに失敗した場合は、エラーを出力して失敗の配列を返す：
 
@@ -228,11 +228,11 @@ return array(
 );
 ```
 
-## PayPal IPNのような決済ゲートウェイコールバックの処理
+## PayPal IPN のような決済ゲートウェイコールバックの処理
 
 注文のステータスを伝えるためにストアにコールバックを行うゲートウェイを構築している場合、ゲートウェイ内でこれを処理するコードを追加する必要があります。
 
-コールバックとコールバックハンドラを追加する最善の方法は、WC-APIフックを使用することです。例えば、PayPal Standardが行っているような方法です。コールバック/IPN URLを次のように設定します：
+コールバックとコールバックハンドラを追加する最善の方法は、WC-API フックを使用することです。例えば、PayPal Standardが行っているような方法です。コールバック/IPN URLを次のように設定します：
 
 ```php
 str_replace( 'https:', 'http:', add_query_arg( 'wc-api', 'WC_Gateway_Paypal', home_url( '/' ) ) );
@@ -244,12 +244,12 @@ str_replace( 'https:', 'http:', add_query_arg( 'wc-api', 'WC_Gateway_Paypal', ho
 add_action( 'woocommerce_api_wc_gateway_paypal', array( $this, 'check_ipn_response' ) );
 ```
 
-WooCommerceはあなたのゲートウェイを呼び出し、URLが呼び出されたときにアクションを実行します。
+WooCommerce はあなたのゲートウェイを呼び出し、URLが呼び出されたときにアクションを実行します。
 
-詳細は[WC_API - WooCommerce APIコールバック](https://woocommerce.com/document/wc_api-the-woocommerce-api-callback/)をご覧ください。
+詳細は[WC_API - WooCommerce API コールバック](https://woocommerce.com/document/wc_api-the-woocommerce-api-callback/)をご覧ください。
 
 ## ゲートウェイのフック
 
 ゲートウェイクラス内にフックを追加してもトリガーされない可能性があることに注意することが重要です。ゲートウェイはチェックアウト時や管理画面の設定ページなど、必要なときにのみ読み込まれます。
 
-クラスからWordPressのイベントにフックする必要がある場合は、フックをクラスの外に置くか、WC-APIを使用する必要があります。
+クラスから WordPress のイベントにフックする必要がある場合は、フックをクラスの外に置くか、WC-API を使用する必要があります。
