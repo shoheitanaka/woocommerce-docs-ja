@@ -145,10 +145,10 @@ X-MCP-API-Key: ck_your_consumer_key:cs_your_consumer_secret
 
 API キーを作成する：
 
-1.**WooCommerce → 設定 → 詳細 → REST API** に移動します。
-2.**キーを追加**をクリックします。
-3.適切なパーミッションを設定する (`read`, `write`, または `read_write`)
-4.コンシューマー・キーとシークレットを生成し、安全に保存する。
+1. **WooCommerce → 設定 → 詳細 → REST API** に移動します。
+2. **キーを追加**をクリックします。
+3. 適切なパーミッションを設定する (`read`, `write`, または `read_write`)
+4. コンシューマー・キーとシークレットを生成し、安全に保存する。
 
 ### HTTPS の施行
 
