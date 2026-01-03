@@ -23,11 +23,14 @@ WooCommerceの公式ドキュメントを日本語に翻訳し、WordPressサイ
 │   ├── sync-upstream.js            # 上流リポジトリ同期
 │   ├── translate.js                # 翻訳実行
 │   ├── deploy.js                   # WordPressデプロイ
+│   ├── deploy-pro.js               # WC4JP Proサイトデプロイ
 │   └── cache-manager.js            # キャッシュ管理
 ├── translations/           # 翻訳データ
 │   ├── cache/                      # 翻訳キャッシュ（APIコール削減）
 │   │   └── hash-map.json          # ファイルハッシュマップ
 │   ├── ja/                         # 日本語訳ファイル
+│   ├── deploy-metadata/            # デプロイメタデータ
+│   ├── deploy-metadata-pro/        # Proサイトデプロイメタデータ
 │   └── versions/                   # バージョン管理
 ├── wordpress-plugin/       # WordPress プラグイン
 │   ├── woocommerce-docs-ja.php    # メインプラグインファイル

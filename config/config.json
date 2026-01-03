@@ -38,6 +38,14 @@
     "menuLocation": "primary",
     "slugPrefix": "wc-docs"
   },
+  "wordpressPro": {
+    "url": "https://wc4jp-pro.work",
+    "postType": "epkb_post_type_2",
+    "taxonomy": "epkb_post_type_2_category",
+    "postStatus": "publish",
+    "categoryPrefix": "WooCommerce Docs",
+    "slugPrefix": "wc-docs-ja"
+  },
   "versioning": {
     "enabled": true,
     "strategy": "git-tags",

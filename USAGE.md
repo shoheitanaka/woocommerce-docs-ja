@@ -74,6 +74,38 @@ npm run deploy
 node scripts/deploy.js translations/ja/specific-file.md
 ```
 
+### WC4JP Pro サイトへのデプロイ
+
+WC4JP Pro サイト（https://wc4jp-pro.work/）への専用デプロイスクリプトを使用します。
+
+#### 環境設定
+
+まず `.env` ファイルに以下を設定:
+
+```bash
+WORDPRESS_PRO_URL=https://wc4jp-pro.work
+WORDPRESS_PRO_USERNAME=your_username
+WORDPRESS_PRO_APP_PASSWORD=xxxx xxxx xxxx xxxx xxxx xxxx
+```
+
+#### デプロイの実行
+
+```bash
+# 全ファイルをProサイトにデプロイ
+node scripts/deploy-pro.js
+
+# 特定のファイルをProサイトにデプロイ
+node scripts/deploy-pro.js translations/ja/specific-file.md
+
+# 複数ファイルをProサイトにデプロイ
+node scripts/deploy-pro.js translations/ja/file1.md translations/ja/file2.md
+```
+
+**注意**: WC4JP Pro サイトは以下の設定で動作します:
+- 投稿タイプ: `epkb_post_type_2`
+- タクソノミー: `epkb_post_type_2_category`
+- デプロイメタデータ保存先: `translations/deploy-metadata-pro/`
+
 ## 🎯 PRレビューのベストプラクティス
 
 ### 翻訳品質のチェックポイント

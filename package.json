@@ -7,6 +7,7 @@
     "sync": "node scripts/sync-upstream.js",
     "translate": "node scripts/translate.js",
     "deploy": "node scripts/deploy.js",
+    "deploy:pro": "node scripts/deploy-pro.js",
     "cache:clear": "node scripts/cache-manager.js clear",
     "cache:stats": "node scripts/cache-manager.js stats",
     "test": "jest",
