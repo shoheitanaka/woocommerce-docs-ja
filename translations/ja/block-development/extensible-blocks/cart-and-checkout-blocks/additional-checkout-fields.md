@@ -372,15 +372,15 @@ add_action(
 );
 ```
 
-This results in the following contact information section:
+これにより、次の連絡先情報セクションが表示されます:
 
-![The contact information section with a newsletter subscription checkbox rendered inside it](https://github.com/woocommerce/woocommerce/assets/5656702/7444e41a-97cc-451d-b2c9-4eedfbe05724)
+![ニュースレター購読のチェックボックスがレンダリングされた連絡先情報セクション](https://github.com/woocommerce/woocommerce/assets/5656702/7444e41a-97cc-451d-b2c9-4eedfbe05724)
 
-Note that because an `optionalLabel` was not supplied, the string `(optional)` is appended to the label. To remove that an `optionalLabel` property should be supplied to override this.
+`optionalLabel`が提供されていないため、文字列`(optional)`がラベルに追加されることに注意してください。これを削除するには、これを上書きするために `optionalLabel` プロパティを指定する必要があります。
 
-### Rendering a select field
+### 選択フィールドのレンダリング
 
-This example demonstrates rendering a select field in the order information section:
+次の例は、注文情報セクションで選択フィールドのレンダリングを示しています:
 
 ```php
 add_action(
@@ -417,17 +417,17 @@ add_action(
 );
 ```
 
-This results in the order information section being rendered like so:
+これにより、注文情報セクションが次のようにレンダリングされます:
 
-### The select input before being focused
+### フォーカスする前に入力を選択する
 
-![The select input before being focused](https://github.com/woocommerce/woocommerce/assets/5656702/bbe17ad0-7c7d-419a-951d-315f56f8898a)
+![フォーカスする前に入力を選択する](https://github.com/woocommerce/woocommerce/assets/5656702/bbe17ad0-7c7d-419a-951d-315f56f8898a)
 
-### The select input when focused
+### フォーカス時の選択入力
 
-![The select input when focused](https://github.com/woocommerce/woocommerce/assets/5656702/bd943906-621b-404f-aa84-b951323e25d3)
+![フォーカス時の選択入力](https://github.com/woocommerce/woocommerce/assets/5656702/bd943906-621b-404f-aa84-b951323e25d3)
 
-If it is undesirable to force the shopper to select a value, mark the select as optional by setting the `required` option to `false`.
+買い物客に値を強制的に選択させるのが望ましくない場合は、`required`オプションを`false`に設定して、選択をオプションとしてマークします。
 
 ## Validation and sanitization
 
