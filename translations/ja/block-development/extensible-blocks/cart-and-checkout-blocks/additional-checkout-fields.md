@@ -429,31 +429,31 @@ add_action(
 
 買い物客に値を強制的に選択させるのが望ましくない場合は、`required`オプションを`false`に設定して、選択をオプションとしてマークします。
 
-## Validation and sanitization
+## 検証とサニタイズ
 
-It is possible to add custom validation and sanitization for additional checkout fields using WordPress action hooks.
+WordPressアクションフックを使用して、追加のチェックアウトフィールドにカスタム検証とサニタイズを追加できます。
 
-These actions happen in two places:
+これらのアクションは2つの場所で行われます。
 
-1. Updating and submitting the form during the checkout process and,
-2. Updating address/contact information in the "My account" area.
+1. チェックアウトプロセス中にフォームを更新して送信し、
+2. 「マイアカウント」エリアの住所/連絡先情報を更新します。
 
-### Sanitization
+### サニタイズ
 
-Sanitization is used to ensure the value of a field is in a specific format. An example is when taking a government ID, you may want to format it so that all letters are capitalized and there are no spaces. At this point, the value should **not** be checked for _validity_. That will come later. This step is only intended to set the field up for validation.
+サニタイズは、フィールドの値が特定の形式であることを確認するために使用されます。たとえば、政府発行の身分証明書を取る場合、すべての文字が大文字でスペースがないようにフォーマットする必要があります。この時点で、値は_validity_の**not**をチェックする必要があります。それは後で来ます。この手順は、検証のためにフィールドを設定することのみを目的としています。
 
-#### Using the `woocommerce_sanitize_additional_field` filter
+#### `woocommerce_sanitize_additional_field`フィルタの使用
 
-To run a custom sanitization function for a field you can use the `sanitize_callback` function on registration, or the `woocommerce_sanitize_additional_field` filter.
+フィールドのカスタムサニタイズ関数を実行するには、登録時に `sanitize_callback` 関数、または `woocommerce_sanitize_additional_field` フィルターを使用します。
 
 | Argument     | Type              | Description                                                             |
 |--------------|-------------------|-------------------------------------------------------------------------|
-| `$field_value` | `boolean\|string` | The value of the field.                                                 |
-| `$field_key`   | `string` | The ID of the field. This is the same ID the field was registered with. |
+| `$field_value` | `boolean\|string` | フィールドの値。                                                 |
+| `$field_key`   | `string` | フィールドの ID。これはフィールドが登録されたのと同じ ID です。 |
 
-##### Example of sanitization
+##### サニタイズの例
 
-This example shows how to remove whitespace and capitalize all letters in the example Government ID field we added above.
+この例は、上で追加した政府IDフィールドの例で、空白を削除し、すべての文字を大文字にする方法を示しています。
 
 ```php
 add_action(
@@ -470,31 +470,31 @@ add_action(
 );
 ```
 
-### Validation
+### バリデーション
 
-There are two phases of validation in the additional checkout fields system. The first is validating a single field based on its key and value.
+追加のチェックアウトフィールドシステムには、検証には2つのフェーズがあります。1つ目は、キーと値に基づいて単一のフィールドを検証することです。
 
-#### Single field validation
+#### 単一フィールド検証
 
-##### Using the `woocommerce_validate_additional_field` action
+##### `woocommerce_validate_additional_field`アクションの使用
 
-When the `woocommerce_validate_additional_field` action is fired  the callback receives the field's key, the field's value, and a `WP_Error` object.
+`woocommerce_validate_additional_field`アクションが起動されると、コールバックはフィールドのキー、フィールドの値、および`WP_Error`オブジェクトを受け取ります。
 
-To add validation errors to the response, use the [`WP_Error::add`](https://developer.wordpress.org/reference/classes/wp_error/add/) method.
+応答に検証エラーを追加するには、[`WP_Error::add`](https://developer.wordpress.org/reference/classes/wp_error/add/)メソッドを使用します。
 
 | Argument     | Type              | Description                                                                                                                                                                           |
 |--------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$errors`      | `WP_Error`        | An error object containing errors that were already encountered while processing the request. If no errors were added yet, it will still be a `WP_Error` object but it will be empty. |
-| `$field_key`   | `string`          | The id of the field. This is the ID the field was registered with.                                                                                                                    |
-| `$field_value` | `boolean\|string` | The value of the field                                                                                                                                                                |
+| `$errors`      | `WP_Error`        | 要求の処理中にすでに発生したエラーを含むエラーオブジェクト。エラーがまだ追加されていない場合、`WP_Error`オブジェクトのままですが、空になります。 |
+| `$field_key`   | `string`          | フィールドの ID。これはフィールドが登録された ID です。                                                                                                                    |
+| `$field_value` | `boolean\|string` | フィールドの値                                                                                                                                                                |
 
-###### The `WP_Error` object
+###### `WP_Error`オブジェクト
 
-When adding your error to the `WP_Error` object, it should have a unique error code. You may want to prefix the error code with the plugin namespace to reduce the chance of collision. Using codes that are already in use across other plugins may result in the error message being overwritten or showing in a different location.
+`WP_Error` オブジェクトにエラーを追加する場合、一意のエラーコードが必要です。衝突の可能性を減らすために、エラーコードの前にプラグインの名前空間を付けたい場合があります。他のプラグインですでに使用されているコードを使用すると、エラーメッセージが上書きされたり、別の場所に表示されたりする可能性があります。
 
-###### Example of single-field validation
+###### 単一フィールド検証の例
 
-The below example shows how to apply custom validation to the `namespace/gov-id` text field from above. The code here ensures the field is made up of 5 characters, either upper-case letters or numbers. The sanitization function from the example above ensures that all whitespace is removed and all letters are capitalized, so this check is an extra safety net to ensure the input matches the pattern.
+以下の例は、上記の `namespace/gov-id` テキストフィールドにカスタム検証を適用する方法を示しています。ここのコードは、フィールドが大文字または数字の5文字で構成されていることを保証します。上記の例のサニタイズ機能は、すべての空白が削除され、すべての文字が大文字になるようにします。したがって、このチェックは、入力がパターンに一致することを確認するための追加のセーフティネットです。
 
 ```php
 add_action(
@@ -512,46 +512,51 @@ add_action(
 );
 ```
 
-It is important to note that this action must _add_ errors to the `WP_Error` object it receives. Returning a new `WP_Error` object or any other value will result in the errors not showing.
+このアクションは、受信した `WP_Error` オブジェクトにエラーを _add_ しなければならないことに注意することが重要です。新しい `WP_Error` オブジェクトまたは他の値を返すと、エラーが表示されません。
 
-If no validation errors are encountered the function can just return void.
+検証エラーが発生しない場合、関数は無効を返すだけです。
 
-#### Multiple field validation
+#### 複数のフィールドの検証
 
-There are cases where the validity of a field depends on the value of another field, for example validating the format of a government ID based on what country the shopper is in. In this case, validating only single fields (as above) is not sufficient as the country may be unknown during the `woocommerce_validate_additional_field` action.
+フィールドの有効性が別のフィールドの値に依存する場合があります。たとえば、買い物客がいる国に基づいて政府 ID の形式を検証します。この場合、単一のフィールド（上記のように）のみを検証するだけでは、`woocommerce_validate_additional_field`アクション中に国が不明な場合があるため、十分ではありません。
 
-To solve this, it is possible to validate a field in the context of the location it renders in. The other fields in that location will be passed to this action.
+これを解決するために、フィールドがレンダリングされる場所のコンテキストでフィールドを検証することができます。その場所の他のフィールドは、このアクションに渡されます。
 
-##### Using the `woocommerce_blocks_validate_location_{location}_fields` action
+##### `woocommerce_blocks_validate_location_{location}_fields`アクションの使用
 
-This action will be fired for each location that additional fields can render in (`address`, `contact`, and `order`). For `address` it fires twice, once for the billing address and once for the shipping address.
+このアクションは、追加のフィールドがレンダリングできる場所（`address`、`contact`、および`order`）ごとにトリガーされます。`address` の場合、請求先住所と配送先住所の 2 回発生します。
 
-The callback receives the keys and values of the other additional fields in the same location.
+コールバックは、同じ場所にある他の追加フィールドのキーと値を受け取ります。
 
-It is important to note that any fields rendered in other locations will not be passed to this action, however it might be possible to get those values by accessing the customer or order object, however this is not supported and there are no guarantees regarding backward compatibility in future versions.
+他の場所でレンダリングされたフィールドは、このアクションに渡されませんが、顧客または注文オブジェクトにアクセスしてこれらの値を取得することは可能かもしれませんが、これはサポートされていませんし、将来のバージョンでの下位互換性に関する保証はありません。
 
 | Argument | Type                        | Description                                                                                                                                                                           |
 |----------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$errors`  | `WP_Error`                  | An error object containing errors that were already encountered while processing the request. If no errors were added yet, it will still be a `WP_Error` object but it will be empty. |
-| `$fields`  | `array`                     | The fields rendered in this locations.                                                                                                                                                |
-| `$group`   | `'billing'\|'shipping'\|'other'` | If the action is for the address location, the type of address will be set here. If it is for contact or order, this will be 'other'.                                   |
+| `$errors`  | `WP_Error`                  | 要求の処理中にすでに発生したエラーを含むエラーオブジェクト。エラーがまだ追加されていない場合、`WP_Error`オブジェクトのままですが、空になります。 |
+| `$fields`  | `array`                     | この場所でレンダリングされたフィールド。                                                                                                                                                |
+| `$group`   | `'billing'\|'shipping'\|'other'` | アクションが住所の場所の場合、住所のタイプはここで設定されます。連絡または注文の場合、これは「その他」になります。                                   |
 
-There are several places where these hooks are fired.
+これらのフックが発射される場所はいくつかあります。
 
-- When checking out using the Checkout block or Store API.
-    - `woocommerce_blocks_validate_location_address_fields` (x2)
-    - `woocommerce_blocks_validate_location_contact_fields`
-    - `woocommerce_blocks_validate_location_other_fields`
-- When updating addresses in the "My account" area
-    - `woocommerce_blocks_validate_location_address_fields` (**x1** - only the address being edited)
-- When updating the "Account details" section in the "My account" area
-    - `woocommerce_blocks_validate_location_contact_fields`
+- チェックアウトブロックまたはストアAPIを使用してチェックアウトするとき。
 
-##### Example of location validation
+- `woocommerce_blocks_validate_location_address_fields` (x2)
+- `woocommerce_blocks_validate_location_contact_fields`
+- `woocommerce_blocks_validate_location_other_fields`
 
-In this example, assume there is another field registered alongside the `namespace/gov-id` called `namespace/confirm-gov-id`. This field will be a confirmation for the Government ID field.
+- 「マイアカウント」エリアで住所を更新するとき
 
-The example below illustrates how to verify that the value of the confirmation field matches the value of the main field.
+- `woocommerce_blocks_validate_location_address_fields` (**x1** - 編集中のアドレスのみ)
+
+- 「マイアカウント」エリアの「アカウントの詳細」セクションを更新するとき
+
+- `woocommerce_blocks_validate_location_contact_fields`
+
+##### 場所の確認の例
+
+この例では、`namespace/gov-id`の横に`namespace/confirm-gov-id`という別のフィールドが登録されていると仮定します。このフィールドは、政府IDフィールドの確認になります。
+
+以下の例は、確認フィールドの値がメインフィールドの値と一致することを確認する方法を示しています。
 
 ```php
 add_action(
@@ -566,19 +571,19 @@ add_action(
 );
 ```
 
-If these fields were rendered in the "contact" location instead, the code would be the same except the hook used would be: `woocommerce_blocks_validate_location_contact_fields`.
+これらのフィールドが代わりに「連絡先」の場所にレンダリングされた場合、コードは同じですが、使用されるフックは`woocommerce_blocks_validate_location_contact_fields`になります。
 
 ## Conditional visibility and validation via JSON Schema
 
-The `required`, `hidden`, and `validation` properties accept an `array` of [JSON Schema](https://json-schema.org/understanding-json-schema/about) to create conditional logic for fields. This allows you to dynamically control field visibility, requirement status, and validation rules based on the values of other fields.
+`required`、`hidden`、および`validation`プロパティは、フィールドの条件付きロジックを作成するために、[JSON Schema]（https://json-schema.org/understanding-json-schema/about）の`array`を受け入れます。これにより、他のフィールドの値に基づいて、フィールドの可視性、要件のステータス、および検証ルールを動的に制御できます。
 
-Schema is evaluated in the frontend in real-time, and on the backend at any update. This ensures fast and responsive UI, and consistent results between the client and server.
+スキーマはフロントエンドでリアルタイムで評価され、バックエンドでは更新時に評価されます。これにより、高速で応答性の高い UI と、クライアントとサーバー間の一貫した結果が保証されます。
 
-### JSON Schema Structure
+### JSONスキーマ構造
 
-Each schema in the array should be a valid JSON Schema object that defines conditions for when the property should be applied. The schema is evaluated against the current cart and checkout state, which includes all field values and various options (payment, shipping, customer).
+配列内の各スキーマは、プロパティを適用する条件を定義する有効なJSONスキーマオブジェクトである必要があります。スキーマは、すべてのフィールド値とさまざまなオプション（支払い、配送、顧客）を含む現在のカートとチェックアウトの状態に対して評価されます。
 
-Basic structure of a JSON Schema object:
+JSONスキーマオブジェクトの基本構造：
 
 ```json
 {
@@ -592,15 +597,15 @@ Basic structure of a JSON Schema object:
 }
 ```
 
-If you're not familiar with JSON Schema, you can get a quick introduction to it [from the official website](https://json-schema.org/understanding-json-schema/basics), or from one of the libraries used [like AJV](https://ajv.js.org/json-schema.html) or [OPIS.](https://opis.io/json-schema/2.x/examples.html) Checkout builds an abstraction on top of both of them.
+JSON スキーマに慣れていない場合は、[公式 Web サイト] (https://json-schema.org/understanding-json-schema/basics)、または [AJV など] (https://ajv.js.org/json-schema.html) または [OPIS.](https://opis.io/json-schema/2.x/examples.html) から簡単に紹介することができます。チェックアウトは、両方の上に抽象化を構築します。
 
-### Document object
+### ドキュメントオブジェクト
 
-When you're writing your rules, you're writing a partial schema for the document object, essentially describing the ideal state you want for your field to be required or hidden. 
+ルールを書くときは、ドキュメントオブジェクトの部分的なスキーマを書き、基本的にフィールドを必須または非表示にしたい理想的な状態を記述します。
 
-**Important:** All properties in the document object use snake_case naming convention (e.g., `total_price`, `shipping_rates`, `customer_note`), not camelCase.
+**重要：**ドキュメントオブジェクトのすべてのプロパティは、camelCaseではなく、snake_caseの命名規則（例：`total_price`、`shipping_rates`、`customer_note`）を使用します。
 
-An example of the document object looks like this:
+ドキュメントオブジェクトの例は次のようになります。
 
 <!-- markdownlint-disable MD033 -->
 <details>
@@ -695,7 +700,7 @@ An example of the document object looks like this:
 <!-- markdownlint-enable MD033 -->
 
 
-It's full schema is this one:
+完全なスキーマはこれです:
 <!-- markdownlint-disable MD033 -->
 <details>
 	<summary>Document schema</summary>
@@ -919,11 +924,11 @@ It's full schema is this one:
 </details>
 <!-- markdownlint-enable MD033 -->
 
-### Examples
+### 例
 
-#### Required and visible field
+#### 必須フィールドと表示フィールド
 
-In this example we make the field required and visible only if local pickup is being used.
+この例では、ローカルピックアップが使用されている場合にのみ、フィールドを必須で表示します。
 
 ```php
 'required' => [
@@ -952,14 +957,14 @@ In this example we make the field required and visible only if local pickup is b
 ]
 ```
 
-Notice that for hidden, we inverse the field, meaning, this field should only be hidden if `prefers_collection` is false, which is almost all cases except when it's selected. In the examples above, we used [the keyword `const`](https://ajv.js.org/json-schema.html#const).
+非表示の場合、フィールドは逆になります。つまり、このフィールドは `prefers_collection` が false の場合のみ非表示にする必要があります。これは、選択されている場合を除き、ほとんどすべてのケースです。上記の例では、[キーワード `const`](https://ajv.js.org/json-schema.html#const) を使用しました。
 
 
-#### Validation schema example
+#### 検証スキーマの例
 
-Validation is slightly different from conditional visibility and requirement. In validation, you will pass in a subset of schema (only applicable to your field), and its role is to validate the field and show any errors if there.
+検証は、条件付きの可視性と要件とは少し異なります。検証では、スキーマのサブセット（フィールドにのみ適用可能）を渡します。その役割は、フィールドを検証し、エラーがある場合は表示することです。
 
-In this example, we ensure that VAT is made up of a country code and 8-12 numbers.
+この例では、VAT が国番号と 8 ～ 12 桁で構成されていることを確認します:
 
 ```php
 'validation' => [
@@ -969,7 +974,7 @@ In this example, we ensure that VAT is made up of a country code and 8-12 number
 ]
 ```
 
-Validation can also be against other fields, for example, an alternative email field that shouldn't match the current email:
+検証は、現在のメールと一致しない別のメールフィールドなど、他のフィールドに対して行うこともできます:
 
 ```php
 'validation' => [
@@ -982,26 +987,25 @@ Validation can also be against other fields, for example, an alternative email f
 ]
 ```
 
-In the example above, we used [format keyword](https://github.com/ajv-validator/ajv-formats) and `$data` to refer to the current field value via [JSON pointers](https://ajv.js.org/guide/combining-schemas.html#data-reference). We also used the `errorMessage` property to provide a custom error message.
+上記の例では、[formatキーワード](https://github.com/ajv-validator/ajv-formats)と`$data`を使用して、[JSONポインタ](https://ajv.js.org/guide/combining-schemas.html#data-reference)を介して現在のフィールド値を参照しました。また、カスタムエラーメッセージを提供するために、`errorMessage`プロパティも使用しました。
 
-#### `$data` keyword and JSON pointers
+#### `$data`キーワードとJSONポインタ
 
-`$data` keyword is a way in JSON schema to reference another field's value. In the above example, we use it to refer to the billing email via [JSON pointers](https://ajv.js.org/guide/combining-schemas.html#data-reference).
+`$data` キーワードは、JSON スキーマで別のフィールドの値を参照する方法です。上記の例では、[JSONポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して請求メールを参照するために使用します。
 
-When dealing with JSON pointers, there are some things to keep in mind:
+JSONポインタを扱う場合、心に留めておくべきことがいくつかあります。
 
-- The forward slash `/` is used to navigate through the JSON object, so for additional fields, a field named `my-plugin-namespace/my-field` will need to be referenced as `my-plugin-namespace~1my-field`.
-- Navigation in JSON pointers can be from the current field backward, or from the root. If you have an address field and want to validate say the phone field, this means you will validate 2 values, one for shipping, and one for billing, so you can reference the phone field in 2 ways:
-    - `0/customer/address/phone` which uses root navigation (via the `0/`) prefix, and uses the dynamic `address` group, which will change depending if the billing or shipping value is being validated.
-    - `1/phone` which uses relative pointers to step back, in this case, it will access its sibling field, the `phone` field. Increase the number to step back even further, for example, `2/id` will access the customer ID.
+- スラッシュ `/` は JSON オブジェクトをナビゲートするために使用されるため、追加のフィールドの場合は、`my-plugin-namespace/my-field` という名前のフィールドを `my-plugin-namespace~1my-field` として参照する必要があります。
+- JSONポインタでのナビゲーションは、現在のフィールドから後方に、またはルートから移動できます。住所フィールドがあり、電話フィールドを検証したい場合、これは2つの値を検証することを意味します。1つは配送用、もう1つは請求用です。そのため、電話フィールドは2つの方法で参照できます。
+  - `0/customer/address/phone` はルートナビゲーション (`0/`) プレフィックスを介して) を使用し、動的 `address` グループを使用します。これは、請求または出荷値の検証のかどうかに応じて変化します。
+  - `1/phone` は相対ポインタを使用して後退します。この場合、兄弟フィールドである `phone` フィールドにアクセスします。数を増やしてさらに後退します。たとえば、`2/id`は顧客IDにアクセスします。
 
-### Keywords and values that are not in spec
+### 仕様にないキーワードと値
 
-We support [JSON Schema Draft-07](https://json-schema.org/draft-07), which is simple and doesn't support all the keywords and values that are in the latest spec, but we feel like it covers most of the use cases. On top of that, we introduced some non-standard keywords and values that are not in the spec, their implementation might be different between Opis and AJV (or any future implementation), this is the list of such keywords and values:
+[JSON Schema Draft-07](https://json-schema.org/draft-07) をサポートしています。これはシンプルで、最新の仕様にあるすべてのキーワードと値をサポートしていませんが、ほとんどのユースケースをカバーしているように感じます。その上、仕様にない非標準的なキーワードと値をいくつか導入しました。その実装は、OpisとAJV（または将来の実装）間で異なる可能性があります。これは、そのようなキーワードと値のリストです。
 
-- `errorMessage`: Custom error message for validation, in AJV, this is `errorMessage` and in Opis, this is `$error`, we only support `errorMessage` and maps that internally for Opis. We also don't support templates in `errorMessage` for now.
-- `$data`: Refers to the current field value via [JSON pointers](https://ajv.js.org/guide/combining-schemas.html#data-reference), both Opis and AJV use the same implementation.
-
+- `errorMessage`：検証用のカスタムエラーメッセージ、AJVでは、これは`errorMessage`、Opisでは、これは`$error`です。`errorMessage`のみをサポートし、Opis用に内部的にマッピングします。また、現在、`errorMessage`のテンプレートはサポートしていません。
+- `$data`：[JSONポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して現在のフィールド値を参照し、OpisとAJVの両方が同じ実装を使用します。
 
 ### Evaluation Logic
 
