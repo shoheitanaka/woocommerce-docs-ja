@@ -1007,25 +1007,25 @@ JSONポインタを扱う場合、心に留めておくべきことがいくつ�
 - `errorMessage`：検証用のカスタムエラーメッセージ、AJVでは、これは`errorMessage`、Opisでは、これは`$error`です。`errorMessage`のみをサポートし、Opis用に内部的にマッピングします。また、現在、`errorMessage`のテンプレートはサポートしていません。
 - `$data`：[JSONポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して現在のフィールド値を参照し、OpisとAJVの両方が同じ実装を使用します。
 
-### Evaluation Logic
+### 評価ロジック
 
-- For `required`: If any schema in the array matches the current checkout state, the field will be required.
-- For `hidden`: If any schema in the array matches the current checkout state, the field will be hidden.
-- For `validation`: The value of the field will be evaluated against the partial schema provided and an error will be shown if it didn't match.
+- `required`の場合：配列内のスキーマが現在のチェックアウト状態と一致する場合、フィールドは必須になります。
+- `hidden`の場合：配列内のスキーマが現在のチェックアウト状態に一致する場合、フィールドは非表示になります。
+- `検証`の場合：フィールドの値は、提供された部分的なスキーマに対して評価され、一致しない場合はエラーが表示されます。
 
-### Performance Considerations
+### パフォーマンスに関する考慮事項
 
-Complex JSON Schema conditions can impact checkout performance. Keep your schemas as simple as possible and limit the number of conditions to what's necessary for your use case.
+複雑なJSONスキーマ条件は、チェックアウトのパフォーマンスに影響を与える可能性があります。スキーマをできるだけシンプルに保ち、条件の数をユースケースに必要なものに制限します。
 
-## Backward compatibility
+## 下位互換性
 
-Due to technical reasons, it's not yet possible to specify the meta key for fields, as we want them to be prefixed and managed. Plugins with existing fields in shortcode Checkout can be compatible and react to reading and saving fields using hooks.
+技術的な理由により、フィールドに接頭辞を付けて管理したいため、フィールドのメタキーを指定することはできません。ショートコード Checkout に既存のフィールドを持つプラグインは互換性があり、フックを使用してフィールドの読み取りと保存に反応します。
 
-Assuming 2 fields, named `my-plugin-namespace/address-field` in the address step and `my-plugin-namespace/my-other-field` in the order step, you can:
+アドレスステップで`my-plugin-namespace/address-field`、順序ステップで`my-plugin-namespace/my-other-field`という2つのフィールドを仮定すると、次のことができます:
 
-### React to saving fields
+### フィールドの保存に対応する
 
-You can react to those fields being saved by hooking into `woocommerce_set_additional_field_value` action.
+`woocommerce_set_additional_field_value`アクションにフックすることで、これらのフィールドが保存されていることに反応することができます。
 
 ```php
 add_action(
@@ -1063,12 +1063,12 @@ add_action(
 );
 ```
 
-This way, you can ensure existing systems will continue working and your integration will continue to work. However, ideally, you should migrate your existing data and systems to use the new meta fields.
+このようにして、既存のシステムが引き続き機能し、統合が引き続き機能することを保証できます。ただし、理想的には、既存のデータとシステムを移行して、新しいメタフィールドを使用する必要があります。
 
 
-### React to reading fields
+### 読み取りフィールドに反応する
 
-You can use the `woocommerce_get_default_value_for_{$key}` filters to provide a different default value (a value coming from another meta field for example):
+`woocommerce_get_default_value_for_{$key}`フィルターを使用して、別のデフォルト値（たとえば、別のメタフィールドからの値）を指定できます。
 
 ```php
 add_filter(
