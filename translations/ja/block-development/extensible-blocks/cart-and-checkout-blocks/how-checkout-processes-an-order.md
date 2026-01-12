@@ -34,12 +34,12 @@ const { onPaymentSetup } = usePaymentEventsContext();
 
 チェックアウトのコンテキストは以下の通り：
 
-| コンテキスト
+| コンテキスト | 説明 |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| [CheckoutEvents](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/checkout-events/index.tsx#L4) | いくつかのチェックアウト関連のイベントハンドラを提供します。
-| [ PaymentEvents ](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/payment-methods/payment-method-events-context.tsx#L3) | 支払いに関連するイベントハンドラを提供します。
-| [ CustomerData ](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/customer/index.tsx#L1) | 現在の顧客に関連するデータを提供します。
-| [ ShippingData ](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/shipping/index.js#L1) | 配送エラーに関するデータとアクションを提供します。
+| [CheckoutEvents](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/checkout-events/index.tsx#L4) | いくつかのチェックアウト関連のイベントハンドラを提供します。|
+| [ PaymentEvents ](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/payment-methods/payment-method-events-context.tsx#L3) | 支払いに関連するイベントハンドラを提供します。|
+| [ CustomerData ](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/customer/index.tsx#L1) | 現在の顧客に関連するデータを提供します。|
+| [ ShippingData ](https://github.com/woocommerce/woocommerce-blocks/blob/4af2c0916a936369be8a4f0044683b90b3af4f0d/assets/js/base/context/providers/cart-checkout/shipping/index.js#L1) | 配送エラーに関するデータとアクションを提供します。|
 
 ### チェックアウト・プロセッサー（checkout-processor.js）
 
