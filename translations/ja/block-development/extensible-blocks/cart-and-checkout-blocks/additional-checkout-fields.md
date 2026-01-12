@@ -24,7 +24,7 @@ sidebar_position: 4
 
 ### 連絡先
 
-現在、連絡先情報セクションはフォームの一番上に表示されます。`email`フィールドとその他のフィールドが含まれます。
+現在、連絡先情報セクションはフォームの一番上に表示されます。`email` フィールドとその他のフィールドが含まれます。
 
 ![連絡先情報セクションに、メールアドレスと追加のチェックアウトフィールド（オプション）の 2 つのフィールドを表示しています。](https://github.com/woocommerce/woocommerce/assets/5656702/097c2596-c629-4eab-9604-577ee7a14cfe)
 
@@ -376,7 +376,7 @@ add_action(
 
 ![ニュースレター購読のチェックボックスがレンダリングされた連絡先情報セクション](https://github.com/woocommerce/woocommerce/assets/5656702/7444e41a-97cc-451d-b2c9-4eedfbe05724)
 
-`optionalLabel`が提供されていないため、文字列`(optional)`がラベルに追加されることに注意してください。これを削除するには、これを上書きするために `optionalLabel` プロパティを指定する必要があります。
+`optionalLabel` が提供されていないため、文字列 `(optional)` がラベルに追加されることに注意してください。これを削除するには、これを上書きするために `optionalLabel` プロパティを指定する必要があります。
 
 ### 選択フィールドのレンダリング
 
@@ -427,11 +427,11 @@ add_action(
 
 ![フォーカス時の選択入力](https://github.com/woocommerce/woocommerce/assets/5656702/bd943906-621b-404f-aa84-b951323e25d3)
 
-買い物客に値を強制的に選択させるのが望ましくない場合は、`required`オプションを`false`に設定して、選択をオプションとしてマークします。
+買い物客に値を強制的に選択させるのが望ましくない場合は、`required` オプションを `false` に設定して、選択をオプションとしてマークします。
 
 ## 検証とサニタイズ
 
-WordPressアクションフックを使用して、追加のチェックアウトフィールドにカスタム検証とサニタイズを追加できます。
+WordPress アクションフックを使用して、追加のチェックアウトフィールドにカスタム検証とサニタイズを追加できます。
 
 これらのアクションは2つの場所で行われます。
 
@@ -440,7 +440,7 @@ WordPressアクションフックを使用して、追加のチェックアウ�
 
 ### サニタイズ
 
-サニタイズは、フィールドの値が特定の形式であることを確認するために使用されます。たとえば、政府発行の身分証明書を取る場合、すべての文字が大文字でスペースがないようにフォーマットする必要があります。この時点で、値は_validity_の**not**をチェックする必要があります。それは後で来ます。この手順は、検証のためにフィールドを設定することのみを目的としています。
+サニタイズは、フィールドの値が特定の形式であることを確認するために使用されます。たとえば、政府発行の身分証明書を取る場合、すべての文字が大文字でスペースがないようにフォーマットする必要があります。この時点で、値は _validity_ の **not** をチェックする必要があります。それは後で来ます。この手順は、検証のためにフィールドを設定することのみを目的としています。
 
 #### `woocommerce_sanitize_additional_field`フィルタの使用
 
@@ -476,9 +476,9 @@ add_action(
 
 #### 単一フィールド検証
 
-##### `woocommerce_validate_additional_field`アクションの使用
+##### `woocommerce_validate_additional_field` アクションの使用
 
-`woocommerce_validate_additional_field`アクションが起動されると、コールバックはフィールドのキー、フィールドの値、および`WP_Error`オブジェクトを受け取ります。
+`woocommerce_validate_additional_field` アクションが起動されると、コールバックはフィールドのキー、フィールドの値、および `WP_Error` オブジェクトを受け取ります。
 
 応答に検証エラーを追加するには、[`WP_Error::add`](https://developer.wordpress.org/reference/classes/wp_error/add/)メソッドを使用します。
 
@@ -522,7 +522,7 @@ add_action(
 
 これを解決するために、フィールドがレンダリングされる場所のコンテキストでフィールドを検証することができます。その場所の他のフィールドは、このアクションに渡されます。
 
-##### `woocommerce_blocks_validate_location_{location}_fields`アクションの使用
+##### `woocommerce_blocks_validate_location_{location}_fields` アクションの使用
 
 このアクションは、追加のフィールドがレンダリングできる場所（`address`、`contact`、および`order`）ごとにトリガーされます。`address` の場合、請求先住所と配送先住所の 2 回発生します。
 
@@ -538,7 +538,7 @@ add_action(
 
 これらのフックが発射される場所はいくつかあります。
 
-- チェックアウトブロックまたはストアAPIを使用してチェックアウトするとき。
+- チェックアウトブロックまたはストア API を使用してチェックアウトするとき。
 
 - `woocommerce_blocks_validate_location_address_fields` (x2)
 - `woocommerce_blocks_validate_location_contact_fields`
@@ -554,7 +554,7 @@ add_action(
 
 ##### 場所の確認の例
 
-この例では、`namespace/gov-id`の横に`namespace/confirm-gov-id`という別のフィールドが登録されていると仮定します。このフィールドは、政府IDフィールドの確認になります。
+この例では、`namespace/gov-id` の横に `namespace/confirm-gov-id` という別のフィールドが登録されていると仮定します。このフィールドは、政府 ID フィールドの確認になります。
 
 以下の例は、確認フィールドの値がメインフィールドの値と一致することを確認する方法を示しています。
 
@@ -571,19 +571,19 @@ add_action(
 );
 ```
 
-これらのフィールドが代わりに「連絡先」の場所にレンダリングされた場合、コードは同じですが、使用されるフックは`woocommerce_blocks_validate_location_contact_fields`になります。
+これらのフィールドが代わりに「連絡先」の場所にレンダリングされた場合、コードは同じですが、使用されるフックは `woocommerce_blocks_validate_location_contact_fields` になります。
 
-## Conditional visibility and validation via JSON Schema
+## JSON スキーマによる条件付き可視性と検証
 
-`required`、`hidden`、および`validation`プロパティは、フィールドの条件付きロジックを作成するために、[JSON Schema]（https://json-schema.org/understanding-json-schema/about）の`array`を受け入れます。これにより、他のフィールドの値に基づいて、フィールドの可視性、要件のステータス、および検証ルールを動的に制御できます。
+`required`、`hidden`、および `validation` プロパティは、フィールドの条件付きロジックを作成するために、[JSON Schema]（https://json-schema.org/understanding-json-schema/about）の`array`を受け入れます。これにより、他のフィールドの値に基づいて、フィールドの可視性、要件のステータス、および検証ルールを動的に制御できます。
 
 スキーマはフロントエンドでリアルタイムで評価され、バックエンドでは更新時に評価されます。これにより、高速で応答性の高い UI と、クライアントとサーバー間の一貫した結果が保証されます。
 
-### JSONスキーマ構造
+### JSON スキーマ構造
 
 配列内の各スキーマは、プロパティを適用する条件を定義する有効なJSONスキーマオブジェクトである必要があります。スキーマは、すべてのフィールド値とさまざまなオプション（支払い、配送、顧客）を含む現在のカートとチェックアウトの状態に対して評価されます。
 
-JSONスキーマオブジェクトの基本構造：
+JSON スキーマオブジェクトの基本構造：
 
 ```json
 {
@@ -603,7 +603,7 @@ JSON スキーマに慣れていない場合は、[公式 Web サイト] (https:
 
 ルールを書くときは、ドキュメントオブジェクトの部分的なスキーマを書き、基本的にフィールドを必須または非表示にしたい理想的な状態を記述します。
 
-**重要：**ドキュメントオブジェクトのすべてのプロパティは、camelCaseではなく、snake_caseの命名規則（例：`total_price`、`shipping_rates`、`customer_note`）を使用します。
+**重要：**ドキュメントオブジェクトのすべてのプロパティは、camelCase ではなく、snake_case の命名規則（例：`total_price`、`shipping_rates`、`customer_note`）を使用します。
 
 ドキュメントオブジェクトの例は次のようになります。
 
@@ -987,45 +987,45 @@ JSON スキーマに慣れていない場合は、[公式 Web サイト] (https:
 ]
 ```
 
-上記の例では、[formatキーワード](https://github.com/ajv-validator/ajv-formats)と`$data`を使用して、[JSONポインタ](https://ajv.js.org/guide/combining-schemas.html#data-reference)を介して現在のフィールド値を参照しました。また、カスタムエラーメッセージを提供するために、`errorMessage`プロパティも使用しました。
+上記の例では、[format キーワード](https://github.com/ajv-validator/ajv-formats)と `$data` を使用して、[JSONポインタ](https://ajv.js.org/guide/combining-schemas.html#data-reference)を介して現在のフィールド値を参照しました。また、カスタムエラーメッセージを提供するために、 `errorMessage` プロパティも使用しました。
 
-#### `$data`キーワードとJSONポインタ
+#### `$data` キーワードと JSON ポインタ
 
-`$data` キーワードは、JSON スキーマで別のフィールドの値を参照する方法です。上記の例では、[JSONポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して請求メールを参照するために使用します。
+`$data` キーワードは、JSON スキーマで別のフィールドの値を参照する方法です。上記の例では、[JSON ポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して請求メールを参照するために使用します。
 
-JSONポインタを扱う場合、心に留めておくべきことがいくつかあります。
+JSON ポインタを扱う場合、心に留めておくべきことがいくつかあります。
 
 - スラッシュ `/` は JSON オブジェクトをナビゲートするために使用されるため、追加のフィールドの場合は、`my-plugin-namespace/my-field` という名前のフィールドを `my-plugin-namespace~1my-field` として参照する必要があります。
 - JSONポインタでのナビゲーションは、現在のフィールドから後方に、またはルートから移動できます。住所フィールドがあり、電話フィールドを検証したい場合、これは2つの値を検証することを意味します。1つは配送用、もう1つは請求用です。そのため、電話フィールドは2つの方法で参照できます。
   - `0/customer/address/phone` はルートナビゲーション (`0/`) プレフィックスを介して) を使用し、動的 `address` グループを使用します。これは、請求または出荷値の検証のかどうかに応じて変化します。
-  - `1/phone` は相対ポインタを使用して後退します。この場合、兄弟フィールドである `phone` フィールドにアクセスします。数を増やしてさらに後退します。たとえば、`2/id`は顧客IDにアクセスします。
+  - `1/phone` は相対ポインタを使用して後退します。この場合、兄弟フィールドである `phone` フィールドにアクセスします。数を増やしてさらに後退します。たとえば、`2/id`は顧客 IDにアクセスします。
 
 ### 仕様にないキーワードと値
 
-[JSON Schema Draft-07](https://json-schema.org/draft-07) をサポートしています。これはシンプルで、最新の仕様にあるすべてのキーワードと値をサポートしていませんが、ほとんどのユースケースをカバーしているように感じます。その上、仕様にない非標準的なキーワードと値をいくつか導入しました。その実装は、OpisとAJV（または将来の実装）間で異なる可能性があります。これは、そのようなキーワードと値のリストです。
+[JSON Schema Draft-07](https://json-schema.org/draft-07) をサポートしています。これはシンプルで、最新の仕様にあるすべてのキーワードと値をサポートしていませんが、ほとんどのユースケースをカバーしているように感じます。その上、仕様にない非標準的なキーワードと値をいくつか導入しました。その実装は、Opis と AJV（または将来の実装）間で異なる可能性があります。これは、そのようなキーワードと値のリストです。
 
-- `errorMessage`：検証用のカスタムエラーメッセージ、AJVでは、これは`errorMessage`、Opisでは、これは`$error`です。`errorMessage`のみをサポートし、Opis用に内部的にマッピングします。また、現在、`errorMessage`のテンプレートはサポートしていません。
-- `$data`：[JSONポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して現在のフィールド値を参照し、OpisとAJVの両方が同じ実装を使用します。
+- `errorMessage`：検証用のカスタムエラーメッセージ、AJV では、これは `errorMessage`、Opis では、これは `$error` です。 `errorMessage` のみをサポートし、Opis 用に内部的にマッピングします。また、現在、`errorMessage` のテンプレートはサポートしていません。
+- `$data`：[JSON ポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して現在のフィールド値を参照し、Opis と AJV の両方が同じ実装を使用します。
 
 ### 評価ロジック
 
-- `required`の場合：配列内のスキーマが現在のチェックアウト状態と一致する場合、フィールドは必須になります。
-- `hidden`の場合：配列内のスキーマが現在のチェックアウト状態に一致する場合、フィールドは非表示になります。
+- `required` の場合：配列内のスキーマが現在のチェックアウト状態と一致する場合、フィールドは必須になります。
+- `hidden` の場合：配列内のスキーマが現在のチェックアウト状態に一致する場合、フィールドは非表示になります。
 - `検証`の場合：フィールドの値は、提供された部分的なスキーマに対して評価され、一致しない場合はエラーが表示されます。
 
 ### パフォーマンスに関する考慮事項
 
-複雑なJSONスキーマ条件は、チェックアウトのパフォーマンスに影響を与える可能性があります。スキーマをできるだけシンプルに保ち、条件の数をユースケースに必要なものに制限します。
+複雑な JSON スキーマ条件は、チェックアウトのパフォーマンスに影響を与える可能性があります。スキーマをできるだけシンプルに保ち、条件の数をユースケースに必要なものに制限します。
 
 ## 下位互換性
 
 技術的な理由により、フィールドに接頭辞を付けて管理したいため、フィールドのメタキーを指定することはできません。ショートコード Checkout に既存のフィールドを持つプラグインは互換性があり、フックを使用してフィールドの読み取りと保存に反応します。
 
-アドレスステップで`my-plugin-namespace/address-field`、順序ステップで`my-plugin-namespace/my-other-field`という2つのフィールドを仮定すると、次のことができます:
+アドレスステップで`my-plugin-namespace/address-field`、順序ステップで `my-plugin-namespace/my-other-field` という2つのフィールドを仮定すると、次のことができます:
 
 ### フィールドの保存に対応する
 
-`woocommerce_set_additional_field_value`アクションにフックすることで、これらのフィールドが保存されていることに反応することができます。
+`woocommerce_set_additional_field_value` アクションにフックすることで、これらのフィールドが保存されていることに反応することができます。
 
 ```php
 add_action(
@@ -1068,7 +1068,7 @@ add_action(
 
 ### 読み取りフィールドに反応する
 
-`woocommerce_get_default_value_for_{$key}`フィルターを使用して、別のデフォルト値（たとえば、別のメタフィールドからの値）を指定できます。
+`woocommerce_get_default_value_for_{$key}` フィルターを使用して、別のデフォルト値（たとえば、別のメタフィールドからの値）を指定できます。
 
 ```php
 add_filter(
@@ -1102,7 +1102,7 @@ add_filter(
 
 ## 完全な例
 
-この完全な例では、政府IDテキスト・フィールドを登録し、それが特定のパターンに適合していることを検証する。
+この完全な例では、政府 ID テキスト・フィールドを登録し、それが特定のパターンに適合していることを検証する。
 
 この例は、上記で紹介した例を組み合わせたものに過ぎない。
 
