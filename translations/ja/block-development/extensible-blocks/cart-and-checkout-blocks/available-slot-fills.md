@@ -8,7 +8,7 @@ sidebar_position: 2
 
 このドキュメントでは、カスタムコンテンツ（フィル）を追加するために使用できるスロットのリストを示します。
 
-新しいSlotFillコンポーネントを追加したい場合は、[Checkout - スロットとフィルのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/slot/README.md)をチェックしてください。スロットとフィルについての詳細は、[スロットとフィルのドキュメント](/docs/block-development/reference/slot-fills/)をご覧ください。
+新しい SlotFill コンポーネントを追加したい場合は、[Checkout - スロットとフィルのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/slot/README.md)をチェックしてください。スロットとフィルについての詳細は、[スロットとフィルのドキュメント](/docs/block-development/reference/slot-fills/)をご覧ください。
 
 **ネーミングについての注意事項：** `Experimental` がプレフィックスとして付いているスロットは実験的なものであり、変更または削除される可能性があります。実験的な段階から卒業すると、ネーミングが変更され、`Experimental` の接頭辞は削除されます。詳しくは[機能ゲーティングドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/internal-developers/blocks/feature-flags-and-experimental-interfaces.md)をご覧ください。
 
@@ -78,8 +78,8 @@ registerPlugin( 'slot-and-fill-examples', {
 
 -   `collapsible`：`Boolean|undefined` 配送パッケージパネルが折りたたみ可能かどうか、これはCheckoutではfalse、Cartでは未定義です。
 -   `collapse`：`Boolean` パネルをデフォルトで折りたたむかどうか。
--   これは、パネルが折りたたみ可能な場合に真となります：`Boolean|undefined` 各パッケージの内容を表示するかどうか。これはCartとCheckoutでは未定義で、実際のパッケージロジックに任されています。
--   `noResultsMessage`：配送オプションがない場合にレンダリングするReact要素。
+-   これは、パネルが折りたたみ可能な場合に真となります：`Boolean|undefined` 各パッケージの内容を表示するかどうか。これは Cart と Checkout では未定義で、実際のパッケージロジックに任されています。
+-   `noResultsMessage`：配送オプションがない場合にレンダリングする React 要素。
 -   `renderOption`: 料金オブジェクトを受け取り、レンダーオプションを返すレンダー関数。
 -   `cart`：`wc/store/cart`のデータですが、`snake_case` の代わりに `camelCase` です。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
 -   `extensions`：サードパーティの開発者が `ExtendSchema` を使用して登録した外部データで、 `wc/store/cart` で `ExtendSchema` を使用した場合は、ここにある名前空間の下にデータがあります。
