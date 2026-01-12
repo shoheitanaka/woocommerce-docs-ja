@@ -8,7 +8,7 @@ sidebar_position: 3
 
 いくつかのブロックは、最新のデータを表示したり、特定の方法で動作するために、特定のイベントに反応する必要があります。例えば、カートの中身を更新するために 'add to cart' イベントをリッスンする必要がある Cart ブロックや、商品がカートに追加されるたびに開かれるMini-Cartブロックがそうです。
 
-## WooCommerceコアイベント in WooCommerceブロック
+## WooCommerce コアイベント in WooCommerce ブロック
 
 WooCommerce のコアは、商品がカートに追加された時やカートから削除された時など、特定のイベントをトリガーしたりリッスンするために jQuery イベントを使用しています。WooCommerce Blocks では jQuery を使用しませんが、これらのイベントをリッスンする必要があります。これを実現するために、[`translatejQueryEventToNative()`](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/3f7c3e517d7bf13008a22d0c2eb89434a9c35ae7/assets/js/base/utils/legacy-events.ts#L79-L106)というユーティリティを用意し、jQuery イベントをリッスンし、イベントがトリガーされるたびに、関連する DOM ネイティブイベント(`wc-blocks_` プレフィックス付き)をトリガーします。
 
