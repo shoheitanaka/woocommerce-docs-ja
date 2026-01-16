@@ -1,11 +1,10 @@
 {
-  "syncDate": "2025-12-27T02:36:17.282Z",
-  "upstreamCommit": "e35122244b70e25dba1c02389fa452c00a10fbd5",
-  "filesChanged": 4,
+  "syncDate": "2026-01-16T02:41:42.902Z",
+  "upstreamCommit": "cb7523c569ff32a5e909d075dad9fe8997025b05",
+  "filesChanged": 3,
   "files": [
-    "docs/apis/store-api/resources-endpoints/product-brands.md",
-    "docs/apis/store-api/resources-endpoints/product-categories.md",
-    "docs/apis/store-api/resources-endpoints/product-tags.md",
-    "docs/apis/store-api/resources-endpoints/products.md"
+    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/README.md",
+    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md",
+    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-utilities.md"
   ]
 }
