@@ -3,7 +3,8 @@ sidebar_label: Cart and Checkout blocks
 category_slug: cart-and-checkout
 post_title: Cart and Checkout blocks
 ---
-# カートとチェックアウトの拡張性を始める
+
+# Getting started with Cart and Checkout extensibility
 
 このドキュメントは、カートブロックとチェックアウトブロックを拡張するために必要な可動部分のハイレベルな概要です。
 
@@ -95,9 +96,9 @@ wp_register_script(
 
 ### フロントエンドで既存の値を変更する
 
-たとえば、拡張機能がフィルターを通して既存のコンテンツを変更するだけの場合、拡張機能を思い通りに動作させるためにブロックを作成する必要はないかもしれません。
+たとえば、拡張機能がフィルターを通して既存のコンテンツを変更するだけなら、拡張機能を思い通りに動作させるためにブロックを作成する必要はないかもしれません。
 
-この場合、サンプルブロックからブロックフォルダを削除し、そのディレクトリから読み込まないようにWebpackの設定ファイルを修正し、エントリのJavaScriptファイルに必要なコードを含めることができます。
+この場合、サンプルブロックからブロックフォルダを削除し、そのディレクトリから読み込まなくなるようにWebpackの設定ファイルを修正し、エントリのJavaScriptファイルに必要なコードを含めることができます。
 
 フィルタの使い方の詳細は、[Filter Registry](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/filter-registry/README.md)と[Available Filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)のドキュメントを参照してください。
 
