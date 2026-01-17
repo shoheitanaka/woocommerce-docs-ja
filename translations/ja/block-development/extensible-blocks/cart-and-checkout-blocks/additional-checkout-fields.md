@@ -4,7 +4,7 @@ sidebar_label: Additional checkout fields
 sidebar_position: 4
 ---
 
-# 追加のチェックアウトフィールド
+# Additional checkout fields
 
 開発者やマーチャントにとって一般的なユースケースは、顧客や注文に関する追加データを収集するために、チェックアウトフォームに新しいフィールドを追加することです。
 
@@ -14,19 +14,19 @@ sidebar_position: 4
 
 追加のチェックアウトフィールドは、3つの異なる場所に登録することができます：
 
-| タイトル | Identifier |
-| --------------- | ---------- |
+| タイトル
+| ------------------------------------ | ---------- |
 | 連絡先情報 | **`contact`** |
 | 住所 (配送先および請求先) | **`address`** |
-| ご注文情報   | **`order`** |
+| ご注文情報｜ **`order`** |
 
 フィールドは1つの場所にしか表示できません。同じ登録で、同じフィールドを複数の場所に表示することはできません。
 
 ### 連絡先
 
-現在、連絡先情報セクションはフォームの一番上に表示されます。`email` フィールドとその他のフィールドが含まれます。
+現在、連絡先情報セクションはフォームの一番上に表示されます。`email`フィールドとその他のフィールドが含まれます。
 
-![連絡先情報セクションに、メールアドレスと追加のチェックアウトフィールド（オプション）の 2 つのフィールドを表示しています。](https://github.com/woocommerce/woocommerce/assets/5656702/097c2596-c629-4eab-9604-577ee7a14cfe)
+![Showing the contact information section with two fields rendered, email and an additional checkout field (optional)](https://github.com/woocommerce/woocommerce/assets/5656702/097c2596-c629-4eab-9604-577ee7a14cfe)
 
 ここでレンダリングされたフィールドは買い物客のアカウントに保存されます。これらのフィールドは買い物客の "アカウント詳細 "セクションに表示され、編集可能です。
 
@@ -34,7 +34,7 @@ sidebar_position: 4
 
 住所」セクションには現在、配送先住所と請求先住所のフォームがあります。これらのフォームに表示されるように、追加のチェックアウトフィールドを登録することができます。
 
-![配送先住所フォームの下部に追加のチェックアウトフィールドが表示されている](https://github.com/woocommerce/woocommerce/assets/5656702/746d280f-3354-4d37-a78a-a2518eb0e5de)
+![The shipping address form showing the additional checkout field at the bottom](https://github.com/woocommerce/woocommerce/assets/5656702/746d280f-3354-4d37-a78a-a2518eb0e5de)
 
 ここで登録されたフィールドは、顧客と注文の両方に保存されます。
 
@@ -50,1025 +50,448 @@ sidebar_position: 4
 
 ここでレンダリングされたフィールドは注文に保存されます。これらは顧客の保存された住所やアカウント情報の一部にはなりません。新しい注文には、以前に使用された値は入力されません。
 
-![追加のチェックアウトフィールドを含む注文情報セクション](https://github.com/woocommerce/woocommerce/assets/5656702/295b3048-a22a-4225-96b0-6b0371a7cd5f)
+![The order information section containing an additional checkout field](https://github.com/woocommerce/woocommerce/assets/5656702/295b3048-a22a-4225-96b0-6b0371a7cd5f)
 
-デフォルトでは、このブロックはチェックアウトフォームの最後のステップとしてレンダリングされますが、エディタの Gutenberg ブロックコントロールを使って移動させることができます。
+デフォルトでは、このブロックはチェックアウトフォームの最後のステップとしてレンダリングされますが、エディタのGutenbergブロックコントロールを使って移動させることができます。
 
-![投稿エディタの注文情報ブロック](https://github.com/woocommerce/woocommerce/assets/5656702/05a3d7d9-b3af-4445-9318-443ae2c4d7d8)
+![The order information block in the post editor"](https://github.com/woocommerce/woocommerce/assets/5656702/05a3d7d9-b3af-4445-9318-443ae2c4d7d8)
 
 ## 値へのアクセス
 
 追加フィールドは、顧客メタと注文メタの両方で個別のメタキーに保存されます。ヘルパーメソッドを使うか、メタキーを直接使ってアクセスすることができます。
 
-住所フィールドには、配送先と請求先の2つの値が保存されます。顧客が「請求先に同じ住所を使用する」を選択した場合、値は同じになりますが、それぞれ独立して保存されます。
+For address fields, two values are saved: one for shipping, and one for billing. If the customer has selected 'Use same address for billing` then the values will be the same, but still saved independently of each other.
 
-連絡先フィールドと注文フィールドでは、フィールドごとに1つの値のみが保存されます。
+For contact and order fields, only one value is saved per field.
 
-### ヘルパーメソッド
+### Helper methods
 
-`CheckoutFields` は、顧客と注文の両方から値にアクセスするための関数を提供します。これは `get_field_from_object` です。
+`CheckoutFields` provides a function to access values from both customers and orders, it's are `get_field_from_object`.
 
-顧客の請求額や配送額にアクセスするには:
+To access a customer billing and/or shipping value:
 
-```php
-use Automattic\WooCommerce\Blocks\Package;
-use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
+__CODE_BLOCK_0__
 
-$field_id = 'my-plugin-namespace/my-field';
-$customer = wc()->customer; // Or new WC_Customer( $id )
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$my_customer_billing_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'billing' );
-$my_customer_shipping_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'shipping' );
-```
+To access an order field:
 
-注文フィールドにアクセスするには:
+__CODE_BLOCK_1__
 
-```php
-use Automattic\WooCommerce\Blocks\Package;
-use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
+After an order is placed, the data saved to the customer and the data saved to the order will be the same. Customers can change the values for _future_ orders, or from within their My Account page. If you're looking at a customer value at a specific point in time (i.e. when the order was placed), access it from the order object, if you're looking for the most up to date value regardless, access it from the customer object.
 
-$field_id = 'my-plugin-namespace/my-field';
-$order = wc_get_order( 1234 );
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$my_order_billing_field = $checkout_fields->get_field_from_object( $field_id, $order, 'billing' );
-$my_order_shipping_field = $checkout_fields->get_field_from_object( $field_id, $order, 'shipping' );
-```
+#### Guest customers
 
-注文が確定すると、顧客に保存されたデータと注文に保存されたデータは同一になります。顧客は、今後の注文の値、またはマイアカウントページから値を変更できます。特定の時点（注文確定時など）の顧客値を確認したい場合は、注文オブジェクトからアクセスしてください。最新の値を確認したい場合は、顧客オブジェクトからアクセスしてください。
+When a guest customer places an order with additional fields, those fields will be saved to its session, so as long as the customer still has a valid session going, the values will always be there.
 
-#### ゲスト顧客
+#### Logged-in customers
 
-ゲスト顧客が追加フィールドを含む注文を行うと、それらのフィールドはセッションに保存されるため、顧客の有効なセッションが継続している限り、値は常にそこに存在します。
+For logged-in customers, the value is only persisted once they place an order. Accessing a logged-in customer object during the place order lifecycle will return null or stale data.
 
-#### ログイン顧客
+If you're at a place order hook, doing this will return previous data (not the currently inserted one):
 
-ログイン済みの顧客の場合、値は注文が確定した時点でのみ保持されます。注文確定ライフサイクル中にログイン済みの顧客オブジェクトにアクセスすると、null または古いデータが返されます。
+__CODE_BLOCK_2__
 
-注文確定フックでこれを行うと、以前のデータ（現在挿入されているデータではありません）が返されます:
+Instead, always access the latest data if you want to run some extra validation/data-moving:
 
-```php
-$customer = new WC_Customer( $order->customer_id ); // Or new WC_Customer( 1234 )
-$my_customer_billing_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'billing' );
-```
+__CODE_BLOCK_3__
 
-代わりに、追加の検証/データ移動を実行する場合は、常に最新のデータにアクセスします:
+#### Accessing all fields
 
-```php
-$customer = wc()->customer // This will return the current customer with its session.
-$my_customer_billing_field = $checkout_fields->get_field_from_object( $field_id, $customer, 'billing' );
-```
+You can use `get_all_fields_from_object` to access all additional fields saved to an order or a customer.
 
-#### すべてのフィールドへのアクセス
+__CODE_BLOCK_4__
 
-`get_all_fields_from_object` を使用すると、注文または顧客に保存されているすべての追加フィールドにアクセスできます。
+This will return an array of all values, it will only include fields currently registered, if you want to include fields no longer registered, you can pass a third `true` parameter.
 
-```php
-use Automattic\WooCommerce\Blocks\Package;
-use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
+__CODE_BLOCK_5__
 
-$order = wc_get_order( 1234 );
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$order_additional_billing_fields = $checkout_fields->get_all_fields_from_object( $order, 'billing' );
-$order_additional_shipping_fields = $checkout_fields->get_all_fields_from_object( $order, 'shipping' );
-$order_other_additional_fields = $checkout_fields->get_all_fields_from_object( $order, 'other' ); // Contact and Order are saved in the same place under the additional group.
-```
+### Accessing values directly
 
-これはすべての値の配列を返します。現在登録されているフィールドのみが含まれます。登録されていないフィールドを含める場合は、3 番目の `true` パラメータを渡すことができます。
+While not recommended, you can use the direct meta key to access certain values, this is useful for external engines or page/email builders who only provide access to meta values.
 
-```php
-$order = wc_get_order( 1234 );
-$checkout_fields = Package::container()->get( CheckoutFields::class );
-$order_additional_billing_fields = $checkout_fields->get_all_fields_from_object( $order, 'billing' ); // array( 'my-plugin-namespace/my-field' => 'my-value' );
-
-$order_additional_billing_fields = $checkout_fields->get_all_fields_from_object( $order, 'billing', true  ); // array( 'my-plugin-namespace/my-field' => 'my-value', 'old-namespace/old-key' => 'old-value' );
-```
-
-### 値に直接アクセスする
-
-推奨はされませんが、特定の値にアクセスするために直接メタキーを使用することは可能です。これは、メタ値へのアクセスのみを提供する外部エンジンやページ/メールビルダーで役立ちます。
-
-値は定義済みのプレフィックスで保存されます。これは、フィールドがどのIDで登録されているかを知らなくてもフィールドをクエリできるようにするために必要です。例えば、キーが「my-plugin-namespace/my-field」であるフィールドの場合、アドレスフィールドであればメタキーは次のようになります。
+Values are saved under a predefined prefix, this is needed to able to query fields without knowing which ID the field was registered under, for a field with key `'my-plugin-namespace/my-field'`, it's meta key will be the following if it's an address field:
 
 - `_wc_billing/my-plugin-namespace/my-field`
 - `_wc_shipping/my-plugin-namespace/my-field`
 
-または、連絡先/注文フィールドの場合は次のようになります: 
+Or the following if it's a contact/order field:
 
 - `_wc_other/my-plugin-namespace/my-field`.
 
-これらのプレフィックスは `CheckoutFields` クラスの一部であり、次の定数を使用してアクセスできます:
+Those prefixes are part of `CheckoutFields` class, and can be accessed using the following constants:
 
-```php
-echo ( CheckoutFields::BILLING_FIELDS_PREFIX ); // _wc_billing/
-echo ( CheckoutFields::SHIPPING_FIELDS_PREFIX ); // _wc_shipping/
-echo ( CheckoutFields::OTHER_FIELDS_PREFIX ); // _wc_other/
-```
+__CODE_BLOCK_6__
 
-`CheckoutFields` は、グループ名またはキーをどちらかに基づいて取得するためのヘルパーをいくつか提供します:
+`CheckoutFields` provides a couple of helpers to get the group name or key based on one or the other:
 
-```php
-CheckoutFields::get_group_name( "_wc_billing" ); // "billing"
-CheckoutFields::get_group_name( "_wc_billing/" ); // "billing"
+__CODE_BLOCK_7__
 
-CheckoutFields::get_group_key( "shipping" ); // "_wc_shipping/"
-```
+Use cases here would be to build the key name to access the meta directly:
 
-ここでの使用例は、メタに直接アクセスするためのキー名を構築することです:
+__CODE_BLOCK_8__
 
-```php
-$key      = CheckoutFields::get_group_key( "other" ) . 'my-plugin/is-opt-in';
-$opted_in = get_user_meta( 123, $key, true ) === "1" ? true : false;
-```
+#### Checkboxes values
 
-#### チェックボックスの値
+When accessing a checkbox values directly, it will either return `"1"` for true, `"0"` for false, or `""` if the value doesn't exist, only the provided functions will sanitize that to a boolean.
 
-チェックボックスの値に直接アクセスすると、true の場合は `"1"`、false の場合は `"0"`、値が存在しない場合は `""` が返されます。提供されている関数のみがそれをブール値にサニタイズします。
+## Supported field types
 
-## サポートされているフィールドタイプ
-
-次のフィールド タイプがサポートされています。
+The following field types are supported:
 
 - `select`
 - `text`
 - `checkbox`
 
-このリストを拡張する予定ですが、現時点ではこれらのタイプが利用可能です。
+There are plans to expand this list, but for now these are the types available.
 
-## API の使用
+## Using the API
 
-追加のチェックアウトフィールドを登録するには、`woocommerce_register_additional_checkout_field` 関数を使用する必要があります。
+To register additional checkout fields you must use the `woocommerce_register_additional_checkout_field` function.
 
-この関数は、`woocommerce_init` アクションの後に実行することをお勧めします。
+It is recommended to run this function after the `woocommerce_init` action.
 
-登録関数は、フィールドを記述するオプションの配列を受け取ります。一部のフィールドタイプでは、追加のオプションを受け取ることができます。
+The registration function takes an array of options describing your field. Some field types take additional options.
 
-### オプション
+### Options
 
-#### 全般オプション
+#### General options
 
-これらのオプションは、すべてのフィールド タイプに適用されます (インラインで示されているいくつかの状況を除く)。
+These options apply to all field types (except in a few circumstances which are noted inline).
 
 | Option name         | Description                                                                                                                         | Required? | Example                                      | Default value                                                                                                                                                                                                                                                                                  |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`                | フィールドのID。これはフィールド固有の識別子である必要があります。名前空間とフィールド名を `/` で区切って指定します。| Yes       | `plugin-namespace/how-did-you-hear`          | デフォルトはありません。これは必ず指定する必要があります。                                                                                                                                                                                                                                                            |
-| `label`             | フィールドに表示されるラベル。プレースホルダーとしても機能します。                                                                    | Yes       | `How did you hear about us?`                 | デフォルトはありません。これは必ず指定する必要があります。                                                                                                                                                                                                                                                            |
-| `optionalLabel`     | 入力欄がオプションの場合に表示されるラベル。これもプレースホルダーとして機能します。                                                  | No        | `How did you hear about us? (Optional)`      | デフォルト値は、`label` の値に `(optional)` が追加された値になります。                                                                                                                                                                                                                    |
-| `location`          | フィールドをレンダリングする場所。                                                                                                  | Yes       | `contact`, `address`, or `order`        | デフォルトはありません。これは必ず指定する必要があります。                                                                                                                                                                                                                                                            |
-| `type`              | レンダリングするフィールドのタイプ。デフォルトは `text` で、サポートされているフィールドタイプのいずれかと一致する必要があります。                          | No        | `text`, `select`, or `checkbox`              | `text`                                                                                                                                                                                                                                                                                         |
-| `attributes`        | フィールドの入力要素にレンダリングする追加属性の配列。これは `select` フィールドではサポートされていません。              | No        | `[	'data-custom-data' => 'my-custom-data' ]` | `[]`                                                                                                                                                                                                                                                                                           |
-| `required`          | ブール値または　JSON　スキーマ配列を指定できます。ブール値かつ「true」の場合、買い物客はチェックアウト時にこのフィールドに値を入力する必要があります。チェックボックスフィールドの場合、買い物客は注文を確定するためにチェックボックスをオンにする必要があります。JSON　スキーマ配列の場合、スキーマの条件に基づいてフィールドが必須になります。 [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema)をご覧ください。 | No | `true` or `["type" => "object", "properties" => [...]]` | `false` |
-| `hidden`            | ブール値または　JSON　スキーマ配列を指定できます。ブール値として使用する場合は「false」を指定する必要があります。JSON　スキーマ配列の場合、フィールドはスキーマ条件に基づいて非表示になります。  [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema)をご覧ください。 | No | `false` or `["type" => "object", "properties" => [...]]` | `false` |
-| `validation`        | フィールドの検証ルールを定義する JSON スキーマ オブジェクトの配列。 [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema)をご覧ください。 | No | `[{"type": "object", "properties": {...}}]` | `[]` |
-| `sanitize_callback` | 投稿時に顧客が提供した値をサニタイズするために呼び出される関数。                                                              | No        | See example below                            | デフォルトでは、フィールドの値は変更されずに返されます。                                                                                                                                                                                                                          |
-| `validate_callback` | 顧客が投稿時に入力した値を検証するために呼び出される関数。これはサニタイズ処理の後に実行されます。                              | No        | See example below                            | デフォルトの検証関数は、フィールドが必須で値がない場合に応答にエラーを追加します。 [デフォルトの検証機能を参照してください。](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Blocks/Domain/Services/CheckoutFields.php#L270-L281) |
+| `id`                | The field's ID. This should be a unique identifier for your field. It is composed of a namespace and field name separated by a `/`. | Yes       | `plugin-namespace/how-did-you-hear`          | No default - this must be provided.                                                                                                                                                                                                                                                            |
+| `label`             | The label shown on your field. This will be the placeholder too.                                                                    | Yes       | `How did you hear about us?`                 | No default - this must be provided.                                                                                                                                                                                                                                                            |
+| `optionalLabel`     | The label shown on your field if it is optional. This will be the placeholder too.                                                  | No        | `How did you hear about us? (Optional)`      | The default value will be the value of `label` with `(optional)` appended.                                                                                                                                                                                                                     |
+| `location`          | The location to render your field.                                                                                                  | Yes       | `contact`, `address`, or `order`        | No default - this must be provided.                                                                                                                                                                                                                                                            |
+| `type`              | The type of field you're rendering. It defaults to `text` and must match one of the supported field types.                          | No        | `text`, `select`, or `checkbox`              | `text`                                                                                                                                                                                                                                                                                         |
+| `attributes`        | An array of additional attributes to render on the field's input element. This is _not_ supported for `select` fields.              | No        | `[	'data-custom-data' => 'my-custom-data' ]` | `[]`                                                                                                                                                                                                                                                                                           |
+| `required`          | Can be a boolean or a JSON Schema array. If boolean and `true`, the shopper _must_ provide a value for this field during the checkout process. For checkbox fields, the shopper must check the box to place the order. If a JSON Schema array, the field will be required based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `true` or `["type" => "object", "properties" => [...]]` | `false` |
+| `hidden`            | Can be a boolean or a JSON Schema array. Must be `false` when used as a boolean. If a JSON Schema array, the field will be hidden based on the schema conditions. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `false` or `["type" => "object", "properties" => [...]]` | `false` |
+| `validation`        | An array of JSON Schema objects that define validation rules for the field. See [Conditional visibility and validation via JSON Schema](#conditional-visibility-and-validation-via-json-schema). | No | `[{"type": "object", "properties": {...}}]` | `[]` |
+| `sanitize_callback` | A function called to sanitize the customer provided value when posted.                                                              | No        | See example below                            | By default the field's value is returned unchanged.                                                                                                                                                                                                                          |
+| `validate_callback` | A function called to validate the customer provided value when posted. This runs _after_ sanitization.                              | No        | See example below                            | The default validation function will add an error to the response if the field is required and does not have a value. [See the default validation function.](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Blocks/Domain/Services/CheckoutFields.php#L270-L281) |
 
-##### `sanitize_callback`　の例。この関数は値からスペースを削除します。 <!-- omit from toc -->
+##### Example of `sanitize_callback`. This function will remove spaces from the value <!-- omit from toc -->
 
-```php
-'sanitize_callback' => function( $field_value ) {
-	return str_replace( ' ', '', $field_value );
-},
-```
+__CODE_BLOCK_9__
 
-##### `validate_callback` の例。この関数は値がメールアドレスかどうかを確認します。 <!-- omit from toc -->
+##### Example of `validate_callback`. This function will check if the value is an email <!-- omit from toc -->
 
-```php
-'validate_callback' => function( $field_value ) {
-	if ( ! is_email( $field_value ) ) {
-		return new WP_Error( 'invalid_alt_email', 'Please ensure your alternative email matches the correct format.' );
-	}
-},
-```
+__CODE_BLOCK_10__
 
-#### `text` フィールドのオプション
+#### Options for `text` fields
 
-テキストフィールドには、上記の一般的なオプション以外に追加のオプションはありません。
+Text fields don't have any additional options beyond the general options listed above.
 
-#### `select` フィールドのオプション
+#### Options for `select` fields
 
-上記のオプションに加えて、選択フィールドも `options` オプションで登録する必要があります。これは、買い物客が選択できるオプションを指定するために使用されます。
+As well as the options above, select fields must also be registered with an  `options` option. This is used to specify what options the shopper can select.
 
-選択フィールドはデフォルトで値が未選択の状態でマウントされます。フィールドが必須の場合、ユーザーは値を選択する必要があります。
+Select fields will mount with no value selected by default, if the field is required, the user will be required to select a value.
 
-フィールドを登録する際に `placeholder` 値を渡すことで、選択フィールドに表示されるプレースホルダを設定できます。これは選択フィールドの最初のオプションとなり、フィールドが必須の場合は選択できません。
+You can set a placeholder to be shown on the select by passing a `placeholder` value when registering the field. This will be the first option in the select and will not be selectable if the field is required.
 
 | Option name | Description | Required? | Example        | Default value |
 |-----|-----|-----|----------------|--------------|
-| `options` | 選択入力欄に表示するオプションの配列です。各オプションは、`label` プロパティと `value` プロパティを含む配列である必要があります。各エントリには一意の `value` が必要です。重複するオプションは削除されます。`value` はチェックアウト時にサーバーに送信され、`label` はこの値をユーザーフレンドリーに表現したものです。サーバーに送信されることはありません。 | Yes | see below | デフォルトはありません。これは必ず指定する必要があります。 |
-| `placeholder` | この値が設定されている場合、買い物客は選択時にこのオプションが表示されます。選択が必須の場合、買い物客はこのオプションを選択できません。 | No | `Select a role` | Select a $label |
+| `options` | An array of options to show in the select input. Each options must be an array containing a `label` and `value` property. Each entry must have a unique `value`. Any duplicate options will be removed. The `value` is what gets submitted to the server during checkout and the `label` is simply a user-friendly representation of this value. It is not transmitted to the server in any way. | Yes | see below | No default - this must be provided. |
+| `placeholder` | If this value is set, the shopper will see this option in the select. If the select is required, the shopper cannot select this option. | No | `Select a role` | Select a $label |
 
-##### `options`値の例
+##### Example of `options` value
 
+__CODE_BLOCK_11__
 
-```php
-[
+#### Options for `checkbox` fields
 
-	[
-		'value' => 'store_1',
-		'label' => 'Our London Store'
-	],
-	[
-		'value' => 'store_2',
-		'label' => 'Our Paris Store'
-	],
-	[
-		'value' => 'store_3',
-		'label' => 'Our New York Store'
-	]
-]
-```
+As well as the options above, checkbox field support showing an error message if it's required and not checked.
 
-#### `checkbox` フィールドのオプション
-
-上記のオプションに加えて、チェックボックス フィールドでは、必須であるにもかかわらずチェックされていない場合にエラー メッセージを表示することがサポートされています。
-
-| オプション名     | 説明                                                                  | 必須? | 例                                                      | 初期値 |
+| Option name     | Description                                                                  | Required? | Example                                                      | Default value |
 |-----------------|------------------------------------------------------------------------------|-----------|--------------------------------------------------------------|---|
-| `error_message` | ボックスがチェックされていない場合に表示されるカスタムメッセージ。                            | No | 「注文する前に、18 歳以上であることを確認する必要があります。」 | 「続行する場合はこのボックスにチェックを入れてください。」 |
+| `error_message` | A custom message to show if the box is unchecked.                            | No | `You must confirm you are over 18 before placing the order.` | `Please check this box if you want to proceed.` |
 
-### 属性
+### Attributes
 
-チェックボックスとテキストフィールドへの属性追加はサポートされています。選択フィールドへの属性追加は**現時点では**できません。
+Adding additional attributes to checkbox and text fields is supported. Adding them to select fields is **not possible for now**.
 
-これらの属性は、`input` 要素の HTML 属性と 1:1 でマッピングされます（チェックボックスの `pattern` を除く）。
+These attributes have a 1:1 mapping to the HTML attributes on `input` elements (except `pattern` on checkbox).
 
-サポートされている属性は次のとおりです。
+The supported attributes are:
 
 - `data-*` attributes
 - `aria-*` attributes
 - `autocomplete`
 - `autocapitalize`
-- `pattern` (チェックボックスフィールドではサポートされません)
+- `pattern` (not supported on checkbox fields)
 - `title`
-- `maxLength` （`maxlength` HTML 属性に相当）
-- `readOnly` (`readonly` HTML 属性に相当)
+- `maxLength` (equivalent to `maxlength` HTML attribute)
+- `readOnly` (equivalent to `readonly` HTML attribute)
 
-`maxLength` と `readOnly` はキャメルケース形式です。これは、これらの属性が React 要素上でレンダリングされ、この形式で受け取る必要があるためです。
+`maxLength` and `readOnly` are in camelCase because the attributes are rendered on a React element which must receive them in this format.
 
-`autofocus` と `disabled` といった一部の属性は、意図的にフィールドに渡されません。有効なユースケースが提示された場合は、フィードバックをお待ちしており、この動作を調整いたします。
+Certain attributes are not passed through to the field intentionally, these are `autofocus` and `disabled`. We are welcome to hear feedback and adjust this behaviour if valid use cases are provided.
 
-## 使用例
+## Usage examples
 
-### テキストフィールドのレンダリング
+### Rendering a text field
 
-この例では、アドレスセクションにテキストフィールドをレンダリングする方法を示します。
+This example demonstrates rendering a text field in the address section:
 
-```php
-add_action(
-	'woocommerce_init',
-	function() {
-		woocommerce_register_additional_checkout_field(
-			array(
-				'id'            => 'namespace/gov-id',
-				'label'         => 'Government ID',
-				'optionalLabel' => 'Government ID (optional)',
-				'location'      => 'address',
-				'required'      => true,
-				'attributes'    => array(
-					'autocomplete'     => 'government-id',
-					'aria-describedby' => 'some-element',
-					'aria-label'       => 'custom aria label',
-					'pattern'          => '[A-Z0-9]{5}', // A 5-character string of capital letters and numbers.
-					'title'            => 'Title to show on hover',
-					'data-custom'      => 'custom data',
-				),
-			),
-		);
-	}
-);
-```
+__CODE_BLOCK_12__
 
-これにより、次の住所形式が作成されます (請求書形式も同じになります)。
+This results in the following address form (the billing form will be the same):
 
-![政府 ID フィールドが下部に表示された配送先住所フォーム](https://github.com/woocommerce/woocommerce/assets/5656702/f6eb3c6f-9178-4978-8e74-e6b2ea353192)
+![The shipping address form with the Government ID field rendered at the bottom](https://github.com/woocommerce/woocommerce/assets/5656702/f6eb3c6f-9178-4978-8e74-e6b2ea353192)
 
-レンダリングされたマークアップは次のようになります。
+The rendered markup looks like this:
 
-```html
-	<input type="text" id="shipping-namespace-gov-id" autocapitalize="off"
-       autocomplete="government-id" aria-label="custom aria label"
-       aria-describedby="some-element" required="" aria-invalid="true"
-       title="Title to show on hover" pattern="[A-Z0-9]{5}"
-       data-custom="custom data" value="">
-```
+__CODE_BLOCK_13__
 
-### チェックボックスフィールドのレンダリング
+### Rendering a checkbox field
 
-この例では、連絡先情報セクションのチェックボックス フィールドのレンダリングを示します: 
+This example demonstrates rendering a checkbox field in the contact information section:
 
-```php
-add_action(
-	'woocommerce_init',
-	function() {
-		woocommerce_register_additional_checkout_field(
-			array(
-				'id'       => 'namespace/marketing-opt-in',
-				'label'    => 'Do you want to subscribe to our newsletter?',
-				'location' => 'contact',
-				'type'     => 'checkbox',
-			)
-		);
-	}
-);
-```
+__CODE_BLOCK_14__
 
-これにより、次の連絡先情報セクションが表示されます:
+This results in the following contact information section:
 
-![ニュースレター購読のチェックボックスがレンダリングされた連絡先情報セクション](https://github.com/woocommerce/woocommerce/assets/5656702/7444e41a-97cc-451d-b2c9-4eedfbe05724)
+![The contact information section with a newsletter subscription checkbox rendered inside it](https://github.com/woocommerce/woocommerce/assets/5656702/7444e41a-97cc-451d-b2c9-4eedfbe05724)
 
-`optionalLabel` が提供されていないため、文字列 `(optional)` がラベルに追加されることに注意してください。これを削除するには、これを上書きするために `optionalLabel` プロパティを指定する必要があります。
+Note that because an `optionalLabel` was not supplied, the string `(optional)` is appended to the label. To remove that an `optionalLabel` property should be supplied to override this.
 
-### 選択フィールドのレンダリング
+### Rendering a select field
 
-次の例は、注文情報セクションで選択フィールドのレンダリングを示しています:
+This example demonstrates rendering a select field in the order information section:
 
-```php
-add_action(
-	'woocommerce_init',
-	function() {
-		woocommerce_register_additional_checkout_field(
-			array(
-				'id'          => 'namespace/how-did-you-hear-about-us',
-				'label'       => 'How did you hear about us?',
-				'placeholder' => 'Select a source',
-				'location'    => 'order',
-				'type'        => 'select',
-				'options'     => [
-					[
-						'value' => 'google',
-						'label' => 'Google'
-					],
-					[
-						'value' => 'facebook',
-						'label' => 'Facebook'
-					],
-					[
-						'value' => 'friend',
-						'label' => 'From a friend'
-					],
-					[
-						'value' => 'other',
-						'label' => 'Other'
-					],
-				]
-			)
-		);
-	}
-);
-```
+__CODE_BLOCK_15__
 
-これにより、注文情報セクションが次のようにレンダリングされます:
+This results in the order information section being rendered like so:
 
-### フォーカスする前に入力を選択する
+### The select input before being focused
 
-![フォーカスする前に入力を選択する](https://github.com/woocommerce/woocommerce/assets/5656702/bbe17ad0-7c7d-419a-951d-315f56f8898a)
+![The select input before being focused](https://github.com/woocommerce/woocommerce/assets/5656702/bbe17ad0-7c7d-419a-951d-315f56f8898a)
 
-### フォーカス時の選択入力
+### The select input when focused
 
-![フォーカス時の選択入力](https://github.com/woocommerce/woocommerce/assets/5656702/bd943906-621b-404f-aa84-b951323e25d3)
+![The select input when focused](https://github.com/woocommerce/woocommerce/assets/5656702/bd943906-621b-404f-aa84-b951323e25d3)
 
-買い物客に値を強制的に選択させるのが望ましくない場合は、`required` オプションを `false` に設定して、選択をオプションとしてマークします。
+If it is undesirable to force the shopper to select a value, mark the select as optional by setting the `required` option to `false`.
 
-## 検証とサニタイズ
+## Validation and sanitization
 
-WordPress アクションフックを使用して、追加のチェックアウトフィールドにカスタム検証とサニタイズを追加できます。
+It is possible to add custom validation and sanitization for additional checkout fields using WordPress action hooks.
 
-これらのアクションは2つの場所で行われます。
+These actions happen in two places:
 
-1. チェックアウトプロセス中にフォームを更新して送信し、
-2. 「マイアカウント」エリアの住所/連絡先情報を更新します。
+1. Updating and submitting the form during the checkout process and,
+2. Updating address/contact information in the "My account" area.
 
-### サニタイズ
+### Sanitization
 
-サニタイズは、フィールドの値が特定の形式であることを確認するために使用されます。たとえば、政府発行の身分証明書を取る場合、すべての文字が大文字でスペースがないようにフォーマットする必要があります。この時点で、値は _validity_ の **not** をチェックする必要があります。それは後で来ます。この手順は、検証のためにフィールドを設定することのみを目的としています。
+Sanitization is used to ensure the value of a field is in a specific format. An example is when taking a government ID, you may want to format it so that all letters are capitalized and there are no spaces. At this point, the value should **not** be checked for _validity_. That will come later. This step is only intended to set the field up for validation.
 
-#### `woocommerce_sanitize_additional_field`フィルタの使用
+#### Using the `woocommerce_sanitize_additional_field` filter
 
-フィールドのカスタムサニタイズ関数を実行するには、登録時に `sanitize_callback` 関数、または `woocommerce_sanitize_additional_field` フィルターを使用します。
+To run a custom sanitization function for a field you can use the `sanitize_callback` function on registration, or the `woocommerce_sanitize_additional_field` filter.
 
 | Argument     | Type              | Description                                                             |
 |--------------|-------------------|-------------------------------------------------------------------------|
-| `$field_value` | `boolean\|string` | フィールドの値。                                                 |
-| `$field_key`   | `string` | フィールドの ID。これはフィールドが登録されたのと同じ ID です。 |
+| `$field_value` | `boolean\|string` | The value of the field.                                                 |
+| `$field_key`   | `string` | The ID of the field. This is the same ID the field was registered with. |
 
-##### サニタイズの例
+##### Example of sanitization
 
-この例は、上で追加した政府IDフィールドの例で、空白を削除し、すべての文字を大文字にする方法を示しています。
+This example shows how to remove whitespace and capitalize all letters in the example Government ID field we added above.
 
-```php
-add_action(
-	'woocommerce_sanitize_additional_field',
-	function ( $field_value, $field_key ) {
-		if ( 'namespace/gov-id' === $field_key ) {
-			$field_value = str_replace( ' ', '', $field_value );
-			$field_value = strtoupper( $field_value );
-		}
-		return $field_value;
-	},
-	10,
-	2
-);
-```
+__CODE_BLOCK_16__
 
-### バリデーション
+### Validation
 
-追加のチェックアウトフィールドシステムには、検証には2つのフェーズがあります。1つ目は、キーと値に基づいて単一のフィールドを検証することです。
+There are two phases of validation in the additional checkout fields system. The first is validating a single field based on its key and value.
 
-#### 単一フィールド検証
+#### Single field validation
 
-##### `woocommerce_validate_additional_field` アクションの使用
+##### Using the `woocommerce_validate_additional_field` action
 
-`woocommerce_validate_additional_field` アクションが起動されると、コールバックはフィールドのキー、フィールドの値、および `WP_Error` オブジェクトを受け取ります。
+When the `woocommerce_validate_additional_field` action is fired  the callback receives the field's key, the field's value, and a `WP_Error` object.
 
-応答に検証エラーを追加するには、[`WP_Error::add`](https://developer.wordpress.org/reference/classes/wp_error/add/)メソッドを使用します。
+To add validation errors to the response, use the [`WP_Error::add`](https://developer.wordpress.org/reference/classes/wp_error/add/) method.
 
 | Argument     | Type              | Description                                                                                                                                                                           |
 |--------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$errors`      | `WP_Error`        | 要求の処理中にすでに発生したエラーを含むエラーオブジェクト。エラーがまだ追加されていない場合、`WP_Error`オブジェクトのままですが、空になります。 |
-| `$field_key`   | `string`          | フィールドの ID。これはフィールドが登録された ID です。                                                                                                                    |
-| `$field_value` | `boolean\|string` | フィールドの値                                                                                                                                                                |
+| `$errors`      | `WP_Error`        | An error object containing errors that were already encountered while processing the request. If no errors were added yet, it will still be a `WP_Error` object but it will be empty. |
+| `$field_key`   | `string`          | The id of the field. This is the ID the field was registered with.                                                                                                                    |
+| `$field_value` | `boolean\|string` | The value of the field                                                                                                                                                                |
 
-###### `WP_Error`オブジェクト
+###### The `WP_Error` object
 
-`WP_Error` オブジェクトにエラーを追加する場合、一意のエラーコードが必要です。衝突の可能性を減らすために、エラーコードの前にプラグインの名前空間を付けたい場合があります。他のプラグインですでに使用されているコードを使用すると、エラーメッセージが上書きされたり、別の場所に表示されたりする可能性があります。
+When adding your error to the `WP_Error` object, it should have a unique error code. You may want to prefix the error code with the plugin namespace to reduce the chance of collision. Using codes that are already in use across other plugins may result in the error message being overwritten or showing in a different location.
 
-###### 単一フィールド検証の例
+###### Example of single-field validation
 
-以下の例は、上記の `namespace/gov-id` テキストフィールドにカスタム検証を適用する方法を示しています。ここのコードは、フィールドが大文字または数字の5文字で構成されていることを保証します。上記の例のサニタイズ機能は、すべての空白が削除され、すべての文字が大文字になるようにします。したがって、このチェックは、入力がパターンに一致することを確認するための追加のセーフティネットです。
+The below example shows how to apply custom validation to the `namespace/gov-id` text field from above. The code here ensures the field is made up of 5 characters, either upper-case letters or numbers. The sanitization function from the example above ensures that all whitespace is removed and all letters are capitalized, so this check is an extra safety net to ensure the input matches the pattern.
 
-```php
-add_action(
-	'woocommerce_validate_additional_field',
-	function ( WP_Error $errors, $field_key, $field_value ) {
-		if ( 'namespace/gov-id' === $field_key ) {
-			$match = preg_match( '/[A-Z0-9]{5}/', $field_value );
-			if ( 0 === $match || false === $match ) {
-				$errors->add( 'invalid_gov_id', 'Please ensure your government ID matches the correct format.' );
-			}
-		}
-	},
-	10,
-	3
-);
-```
+__CODE_BLOCK_17__
 
-このアクションは、受信した `WP_Error` オブジェクトにエラーを _add_ しなければならないことに注意することが重要です。新しい `WP_Error` オブジェクトまたは他の値を返すと、エラーが表示されません。
+It is important to note that this action must _add_ errors to the `WP_Error` object it receives. Returning a new `WP_Error` object or any other value will result in the errors not showing.
 
-検証エラーが発生しない場合、関数は無効を返すだけです。
+If no validation errors are encountered the function can just return void.
 
-#### 複数のフィールドの検証
+#### Multiple field validation
 
-フィールドの有効性が別のフィールドの値に依存する場合があります。たとえば、買い物客がいる国に基づいて政府 ID の形式を検証します。この場合、単一のフィールド（上記のように）のみを検証するだけでは、`woocommerce_validate_additional_field`アクション中に国が不明な場合があるため、十分ではありません。
+There are cases where the validity of a field depends on the value of another field, for example validating the format of a government ID based on what country the shopper is in. In this case, validating only single fields (as above) is not sufficient as the country may be unknown during the `woocommerce_validate_additional_field` action.
 
-これを解決するために、フィールドがレンダリングされる場所のコンテキストでフィールドを検証することができます。その場所の他のフィールドは、このアクションに渡されます。
+To solve this, it is possible to validate a field in the context of the location it renders in. The other fields in that location will be passed to this action.
 
-##### `woocommerce_blocks_validate_location_{location}_fields` アクションの使用
+##### Using the `woocommerce_blocks_validate_location_{location}_fields` action
 
-このアクションは、追加のフィールドがレンダリングできる場所（`address`、`contact`、および`order`）ごとにトリガーされます。`address` の場合、請求先住所と配送先住所の 2 回発生します。
+This action will be fired for each location that additional fields can render in (`address`, `contact`, and `order`). For `address` it fires twice, once for the billing address and once for the shipping address.
 
-コールバックは、同じ場所にある他の追加フィールドのキーと値を受け取ります。
+The callback receives the keys and values of the other additional fields in the same location.
 
-他の場所でレンダリングされたフィールドは、このアクションに渡されませんが、顧客または注文オブジェクトにアクセスしてこれらの値を取得することは可能かもしれませんが、これはサポートされていませんし、将来のバージョンでの下位互換性に関する保証はありません。
+It is important to note that any fields rendered in other locations will not be passed to this action, however it might be possible to get those values by accessing the customer or order object, however this is not supported and there are no guarantees regarding backward compatibility in future versions.
 
 | Argument | Type                        | Description                                                                                                                                                                           |
 |----------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$errors`  | `WP_Error`                  | 要求の処理中にすでに発生したエラーを含むエラーオブジェクト。エラーがまだ追加されていない場合、`WP_Error`オブジェクトのままですが、空になります。 |
-| `$fields`  | `array`                     | この場所でレンダリングされたフィールド。                                                                                                                                                |
-| `$group`   | `'billing'\|'shipping'\|'other'` | アクションが住所の場所の場合、住所のタイプはここで設定されます。連絡または注文の場合、これは「その他」になります。                                   |
+| `$errors`  | `WP_Error`                  | An error object containing errors that were already encountered while processing the request. If no errors were added yet, it will still be a `WP_Error` object but it will be empty. |
+| `$fields`  | `array`                     | The fields rendered in this locations.                                                                                                                                                |
+| `$group`   | `'billing'\|'shipping'\|'other'` | If the action is for the address location, the type of address will be set here. If it is for contact or order, this will be 'other'.                                   |
 
-これらのフックが発射される場所はいくつかあります。
+There are several places where these hooks are fired.
 
-- チェックアウトブロックまたはストア API を使用してチェックアウトするとき。
+- When checking out using the Checkout block or Store API.
+    - `woocommerce_blocks_validate_location_address_fields` (x2)
+    - `woocommerce_blocks_validate_location_contact_fields`
+    - `woocommerce_blocks_validate_location_other_fields`
+- When updating addresses in the "My account" area
+    - `woocommerce_blocks_validate_location_address_fields` (**x1** - only the address being edited)
+- When updating the "Account details" section in the "My account" area
+    - `woocommerce_blocks_validate_location_contact_fields`
 
-- `woocommerce_blocks_validate_location_address_fields` (x2)
-- `woocommerce_blocks_validate_location_contact_fields`
-- `woocommerce_blocks_validate_location_other_fields`
+##### Example of location validation
 
-- 「マイアカウント」エリアで住所を更新するとき
+In this example, assume there is another field registered alongside the `namespace/gov-id` called `namespace/confirm-gov-id`. This field will be a confirmation for the Government ID field.
 
-- `woocommerce_blocks_validate_location_address_fields` (**x1** - 編集中のアドレスのみ)
+The example below illustrates how to verify that the value of the confirmation field matches the value of the main field.
 
-- 「マイアカウント」エリアの「アカウントの詳細」セクションを更新するとき
+__CODE_BLOCK_18__
 
-- `woocommerce_blocks_validate_location_contact_fields`
+If these fields were rendered in the "contact" location instead, the code would be the same except the hook used would be: `woocommerce_blocks_validate_location_contact_fields`.
 
-##### 場所の確認の例
+## Conditional visibility and validation via JSON Schema
 
-この例では、`namespace/gov-id` の横に `namespace/confirm-gov-id` という別のフィールドが登録されていると仮定します。このフィールドは、政府 ID フィールドの確認になります。
+The `required`, `hidden`, and `validation` properties accept an `array` of [JSON Schema](https://json-schema.org/understanding-json-schema/about) to create conditional logic for fields. This allows you to dynamically control field visibility, requirement status, and validation rules based on the values of other fields.
 
-以下の例は、確認フィールドの値がメインフィールドの値と一致することを確認する方法を示しています。
+Schema is evaluated in the frontend in real-time, and on the backend at any update. This ensures fast and responsive UI, and consistent results between the client and server.
 
-```php
-add_action(
-	'woocommerce_blocks_validate_location_address_fields',
-	function ( \WP_Error $errors, $fields, $group ) {
-		if ( $fields['namespace/gov-id'] !== $fields['namespace/confirm-gov-id'] ) {
-			$errors->add( 'gov_id_mismatch', 'Please ensure your government ID matches the confirmation.' );
-		}
-	},
-	10,
-	3
-);
-```
+### JSON Schema Structure
 
-これらのフィールドが代わりに「連絡先」の場所にレンダリングされた場合、コードは同じですが、使用されるフックは `woocommerce_blocks_validate_location_contact_fields` になります。
+Each schema in the array should be a valid JSON Schema object that defines conditions for when the property should be applied. The schema is evaluated against the current cart and checkout state, which includes all field values and various options (payment, shipping, customer).
 
-## JSON スキーマによる条件付き可視性と検証
+Basic structure of a JSON Schema object:
 
-`required`、`hidden`、および `validation` プロパティは、フィールドの条件付きロジックを作成するために、[JSON Schema]（https://json-schema.org/understanding-json-schema/about）の`array`を受け入れます。これにより、他のフィールドの値に基づいて、フィールドの可視性、要件のステータス、および検証ルールを動的に制御できます。
+__CODE_BLOCK_19__
 
-スキーマはフロントエンドでリアルタイムで評価され、バックエンドでは更新時に評価されます。これにより、高速で応答性の高い UI と、クライアントとサーバー間の一貫した結果が保証されます。
+If you're not familiar with JSON Schema, you can get a quick introduction to it [from the official website](https://json-schema.org/understanding-json-schema/basics), or from one of the libraries used [like AJV](https://ajv.js.org/json-schema.html) or [OPIS.](https://opis.io/json-schema/2.x/examples.html) Checkout builds an abstraction on top of both of them.
 
-### JSON スキーマ構造
+### Document object
 
-配列内の各スキーマは、プロパティを適用する条件を定義する有効なJSONスキーマオブジェクトである必要があります。スキーマは、すべてのフィールド値とさまざまなオプション（支払い、配送、顧客）を含む現在のカートとチェックアウトの状態に対して評価されます。
+When you're writing your rules, you're writing a partial schema for the document object, essentially describing the ideal state you want for your field to be required or hidden. 
 
-JSON スキーマオブジェクトの基本構造：
+**Important:** All properties in the document object use snake_case naming convention (e.g., `total_price`, `shipping_rates`, `customer_note`), not camelCase.
 
-```json
-{
-  "type": "object",
-  "properties": {
-    "fieldId": {
-      "enum": ["value1", "value2"]
-    }
-  },
-  "required": ["fieldId"]
-}
-```
-
-JSON スキーマに慣れていない場合は、[公式 Web サイト] (https://json-schema.org/understanding-json-schema/basics)、または [AJV など] (https://ajv.js.org/json-schema.html) または [OPIS.](https://opis.io/json-schema/2.x/examples.html) から簡単に紹介することができます。チェックアウトは、両方の上に抽象化を構築します。
-
-### ドキュメントオブジェクト
-
-ルールを書くときは、ドキュメントオブジェクトの部分的なスキーマを書き、基本的にフィールドを必須または非表示にしたい理想的な状態を記述します。
-
-**重要：**ドキュメントオブジェクトのすべてのプロパティは、camelCase ではなく、snake_case の命名規則（例：`total_price`、`shipping_rates`、`customer_note`）を使用します。
-
-ドキュメントオブジェクトの例は次のようになります。
+An example of the document object looks like this:
 
 <!-- markdownlint-disable MD033 -->
 <details>
 	<summary>Document object</summary>
 
-```json
-{
-	"cart": {
-		"coupons": [
-			"my_coupon"
-		],
-		"shipping_rates": [
-			"free_shipping:1"
-		],
-		"items": [
-			27,
-			27,
-			68
-		],
-		"items_type": [
-			"simple",
-			"variation"
-		],
-		"items_count": 3,
-		"items_weight": 0,
-		"needs_shipping": true,
-		"prefers_collection": false,
-		"totals": {
-			"total_price": 6600,
-			"total_tax": 600
-		},
-		"extensions": {}
-	},
-	"checkout": {
-		"create_account": false,
-		"customer_note": "",
-		"additional_fields": {
-			"namespace/myorder-field": "myvalue"
-		},
-		"payment_method": "bacs"
-	},
-	"customer": {
-		"id": 1,
-		"billing_address": {
-			"first_name": "First Name",
-			"last_name": "Last Name",
-			"company": "Company",
-			"address_1": "Address 1",
-			"address_2": "Address 2",
-			"city": "City",
-			"state": "State",
-			"postcode": "08000",
-			"country": "US",
-			"email": "email@example.com",
-			"phone": "1234567890",
-			"namespace/myfield": "myvalue"
-		},
-		"shipping_address": {
-			"first_name": "First Name",
-			"last_name": "Last Name",
-			"company": "Company",
-			"address_1": "Address 1",
-			"address_2": "Address 2",
-			"city": "City",
-			"state": "State",
-			"postcode": "08000",
-			"country": "US",
-			"phone": "1234567890",
-			"namespace/myfield": "myvalue"
-		},
-		"additional_fields": {
-			"namespace/mycontact-field": "myvalue"
-		},
-		"address": {
-			"first_name": "First Name",
-			"last_name": "Last Name",
-			"company": "Company",
-			"address_1": "Address 1",
-			"address_2": "Address 2",
-			"city": "City",
-			"state": "State",
-			"postcode": "08000",
-			"country": "US",
-			"phone": "1234567890",
-			"namespace/myfield": "myvalue"
-		}
-	}
-}
-```
+__CODE_BLOCK_20__
 
 </details>
 <!-- markdownlint-enable MD033 -->
 
 
-完全なスキーマはこれです:
+It's full schema is this one:
 <!-- markdownlint-disable MD033 -->
 <details>
 	<summary>Document schema</summary>
 	
-```json
-{
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Cart and Checkout Document Object Schema",
-	"description": "Document object schema for cart, checkout, and customer information, to be used for conditional visibility, requirement, and validation of fields.",
-	"type": "object",
-	"properties": {
-		"cart": {
-			"type": "object",
-			"description": "Information about the shopping cart",
-			"properties": {
-				"coupons": {
-					"type": "array",
-					"description": "List of coupon codes applied to the cart",
-					"items": {
-						"type": "string"
-					}
-				},
-				"shipping_rates": {
-					"type": "array",
-					"description": "List of currently selected shipping rates",
-					"items": {
-						"type": "string",
-						"description": "Shipping rate identifier using the full shipping rate ID so method_id:instance_id, for example: flat_rate:1"
-					}
-				},
-				"items": {
-					"type": "array",
-					"description": "List of product IDs in the cart, IDs will be duplicated depending on the quantity of the product in the cart, so if you have 2 of product ID 1, the array will have 2 entries of product ID 1. This only supports integer quantities, not floats (which round up to the nearest integer).",
-					"items": {
-						"type": "integer"
-					}
-				},
-				"items_type": {
-					"type": "array",
-					"description": "Types of items in the cart, for example: simple, variation, subscription, etc.",
-					"items": {
-						"type": "string"
-					}
-				},
-				"items_count": {
-					"type": "integer",
-					"description": "Total number of items in the cart",
-					"minimum": 0
-				},
-				"items_weight": {
-					"type": "number",
-					"description": "Total weight of items in the cart",
-					"minimum": 0
-				},
-				"needs_shipping": {
-					"type": "boolean",
-					"description": "Whether the items in the cart require shipping"
-				},
-				"prefers_collection": {
-					"type": "boolean",
-					"description": "Whether the customer prefers using Local Pickup"
-				},
-				"totals": {
-					"type": "object",
-					"description": "Cart totals information",
-					"properties": {
-						"total_price": {
-							"type": "integer",
-							"description": "Total price of the cart in smallest currency unit (e.g., cents), after applying all discounts, shipping, and taxes"
-						},
-						"total_tax": {
-							"type": "integer",
-							"description": "Total tax amount in smallest currency unit (e.g., cents), after applying all discounts, shipping, and taxes"
-						}
-					},
-					"additionalProperties": false
-				},
-				"extensions": {
-					"type": "object",
-					"description": "Additional cart extension data, this is similar to what's passed in Store API's extensions parameter"
-				}
-			},
-			"additionalProperties": false
-		},
-		"checkout": {
-			"type": "object",
-			"description": "Checkout preferences and settings",
-			"properties": {
-				"create_account": {
-					"type": "boolean",
-					"description": "Whether the customer checked the create account checkbox, this will be false if the customer is logged in, cannot create an account, or forced to create an account."
-				},
-				"customer_note": {
-					"type": "string",
-					"description": "Customer's note or special instructions for the order, this will be empty if the customer didn't add a note."
-				},
-				"additional_fields": {
-					"type": "object",
-					"description": "Additional checkout fields with 'order' location. These fields are rendered in the order information section.",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"patternProperties": {
-						"^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$": {
-							"type": "string",
-							"description": "Custom fields with namespace identifiers"
-						}
-					}
-				},
-				"payment_method": {
-					"type": "string",
-					"description": "Selected payment method identifier, this will be the payment method ID regardless if the customer selected a saved payment method or new payment method"
-				}
-			},
-			"additionalProperties": false
-		},
-		"customer": {
-			"type": "object",
-			"description": "Customer information",
-			"properties": {
-				"id": {
-					"type": "integer",
-					"description": "Customer ID, this will be 0 if the customer is not logged in"
-				},
-				"billing_address": {
-					"$ref": "#/definitions/address",
-					"description": "Customer's billing address"
-				},
-				"shipping_address": {
-					"$ref": "#/definitions/address",
-					"description": "Customer's shipping address"
-				},
-				"additional_fields": {
-					"type": "object",
-					"description": "Additional checkout fields with 'contact' location. These fields are rendered in the contact information section.",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"patternProperties": {
-						"^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$": {
-							"type": "string",
-							"description": "Custom fields with namespace identifiers"
-						}
-					}
-				},
-				"address": {
-					"$ref": "#/definitions/address",
-					"description": "This is a dynamic field that will be the billing or shipping address depending on the context of the field being evaluated."
-				}
-			},
-			"additionalProperties": false
-		}
-	},
-	"additionalProperties": false,
-	"definitions": {
-		"address": {
-			"type": "object",
-			"description": "Customer address information",
-			"properties": {
-				"first_name": {
-					"type": "string",
-					"description": "First name of the recipient"
-				},
-				"last_name": {
-					"type": "string",
-					"description": "Last name of the recipient"
-				},
-				"company": {
-					"type": "string",
-					"description": "Company name"
-				},
-				"address_1": {
-					"type": "string",
-					"description": "Primary address line"
-				},
-				"address_2": {
-					"type": "string",
-					"description": "Secondary address line"
-				},
-				"city": {
-					"type": "string",
-					"description": "City name"
-				},
-				"state": {
-					"type": "string",
-					"description": "State or province, this will be the state code if it's a predefined list, for example: CA, TX, NY, etc, or the field value if it's a freeform state, for example: London."
-				},
-				"postcode": {
-					"type": "string",
-					"description": "Postal or ZIP code"
-				},
-				"country": {
-					"type": "string",
-					"description": "Country code (e.g., US, UK)"
-				},
-				"email": {
-					"type": "string",
-					"format": "email",
-					"description": "Email address"
-				},
-				"phone": {
-					"type": "string",
-					"description": "Phone number"
-				}
-			},
-			"additionalProperties": {
-				"type": "string",
-				"description": "Additional fields with 'address' location appear here as properties within the address objects"
-			},
-			"patternProperties": {
-				"^[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$": {
-					"type": "string",
-					"description": "Additional fields with 'address' location using namespace identifiers (e.g., 'namespace/field-name')"
-				}
-			}
-		}
-	}
-}
-```
+__CODE_BLOCK_21__
 
 </details>
 <!-- markdownlint-enable MD033 -->
 
-### 例
+### Examples
 
-#### 必須フィールドと表示フィールド
+#### Required and visible field
 
-この例では、ローカルピックアップが使用されている場合にのみ、フィールドを必須で表示します。
+In this example we make the field required and visible only if local pickup is being used.
 
-```php
-'required' => [
-    "type" => "object",
-	"properties" => [
-		"cart" => [
-			"properties" => [
-				"prefers_collection" => [
-					"const" => true
-				]
-			]
-		]
-	]
-],
-'hidden' => [
-	"type" => "object",
-	"properties" => [
-		"cart" => [
-			"properties" => [
-				"prefers_collection" => [
-					"const" => false
-				]
-			]
-		]
-	]
-]
-```
+__CODE_BLOCK_22__
 
-非表示の場合、フィールドは逆になります。つまり、このフィールドは `prefers_collection` が false の場合のみ非表示にする必要があります。これは、選択されている場合を除き、ほとんどすべてのケースです。上記の例では、[キーワード `const`](https://ajv.js.org/json-schema.html#const) を使用しました。
+Notice that for hidden, we inverse the field, meaning, this field should only be hidden if `prefers_collection` is false, which is almost all cases except when it's selected. In the examples above, we used [the keyword `const`](https://ajv.js.org/json-schema.html#const).
 
 
-#### 検証スキーマの例
+#### Validation schema example
 
-検証は、条件付きの可視性と要件とは少し異なります。検証では、スキーマのサブセット（フィールドにのみ適用可能）を渡します。その役割は、フィールドを検証し、エラーがある場合は表示することです。
+Validation is slightly different from conditional visibility and requirement. In validation, you will pass in a subset of schema (only applicable to your field), and its role is to validate the field and show any errors if there.
 
-この例では、VAT が国番号と 8 ～ 12 桁で構成されていることを確認します:
+In this example, we ensure that VAT is made up of a country code and 8-12 numbers.
 
-```php
-'validation' => [
-	"type" => "string",
-	"pattern" => "^[A-Z]{2}[0-9]{8,12}$",
-	"errorMessage" => "Please enter a valid VAT code with 2 letters for country code and 8-12 numbers."
-]
-```
+__CODE_BLOCK_23__
 
-検証は、現在のメールと一致しない別のメールフィールドなど、他のフィールドに対して行うこともできます:
+Validation can also be against other fields, for example, an alternative email field that shouldn't match the current email:
 
-```php
-'validation' => [
-	"type" => "string",
-	"format" => "email",
-	"not" => [
-		"const" => [ '$data' => "/customer/billing_address/email" ]
-	],
-	"errorMessage" => "Please enter a valid alternative email."
-]
-```
+__CODE_BLOCK_24__
 
-上記の例では、[format キーワード](https://github.com/ajv-validator/ajv-formats)と `$data` を使用して、[JSONポインタ](https://ajv.js.org/guide/combining-schemas.html#data-reference)を介して現在のフィールド値を参照しました。また、カスタムエラーメッセージを提供するために、 `errorMessage` プロパティも使用しました。
+In the example above, we used [format keyword](https://github.com/ajv-validator/ajv-formats) and `$data` to refer to the current field value via [JSON pointers](https://ajv.js.org/guide/combining-schemas.html#data-reference). We also used the `errorMessage` property to provide a custom error message.
 
-#### `$data` キーワードと JSON ポインタ
+#### `$data` keyword and JSON pointers
 
-`$data` キーワードは、JSON スキーマで別のフィールドの値を参照する方法です。上記の例では、[JSON ポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して請求メールを参照するために使用します。
+`$data` keyword is a way in JSON schema to reference another field's value. In the above example, we use it to refer to the billing email via [JSON pointers](https://ajv.js.org/guide/combining-schemas.html#data-reference).
 
-JSON ポインタを扱う場合、心に留めておくべきことがいくつかあります。
+When dealing with JSON pointers, there are some things to keep in mind:
 
-- スラッシュ `/` は JSON オブジェクトをナビゲートするために使用されるため、追加のフィールドの場合は、`my-plugin-namespace/my-field` という名前のフィールドを `my-plugin-namespace~1my-field` として参照する必要があります。
-- JSONポインタでのナビゲーションは、現在のフィールドから後方に、またはルートから移動できます。住所フィールドがあり、電話フィールドを検証したい場合、これは2つの値を検証することを意味します。1つは配送用、もう1つは請求用です。そのため、電話フィールドは2つの方法で参照できます。
-  - `0/customer/address/phone` はルートナビゲーション (`0/`) プレフィックスを介して) を使用し、動的 `address` グループを使用します。これは、請求または出荷値の検証のかどうかに応じて変化します。
-  - `1/phone` は相対ポインタを使用して後退します。この場合、兄弟フィールドである `phone` フィールドにアクセスします。数を増やしてさらに後退します。たとえば、`2/id`は顧客 IDにアクセスします。
+- The forward slash `/` is used to navigate through the JSON object, so for additional fields, a field named `my-plugin-namespace/my-field` will need to be referenced as `my-plugin-namespace~1my-field`.
+- Navigation in JSON pointers can be from the current field backward, or from the root. If you have an address field and want to validate say the phone field, this means you will validate 2 values, one for shipping, and one for billing, so you can reference the phone field in 2 ways:
+    - `0/customer/address/phone` which uses root navigation (via the `0/`) prefix, and uses the dynamic `address` group, which will change depending if the billing or shipping value is being validated.
+    - `1/phone` which uses relative pointers to step back, in this case, it will access its sibling field, the `phone` field. Increase the number to step back even further, for example, `2/id` will access the customer ID.
 
-### 仕様にないキーワードと値
+### Keywords and values that are not in spec
 
-[JSON Schema Draft-07](https://json-schema.org/draft-07) をサポートしています。これはシンプルで、最新の仕様にあるすべてのキーワードと値をサポートしていませんが、ほとんどのユースケースをカバーしているように感じます。その上、仕様にない非標準的なキーワードと値をいくつか導入しました。その実装は、Opis と AJV（または将来の実装）間で異なる可能性があります。これは、そのようなキーワードと値のリストです。
+We support [JSON Schema Draft-07](https://json-schema.org/draft-07), which is simple and doesn't support all the keywords and values that are in the latest spec, but we feel like it covers most of the use cases. On top of that, we introduced some non-standard keywords and values that are not in the spec, their implementation might be different between Opis and AJV (or any future implementation), this is the list of such keywords and values:
 
-- `errorMessage`：検証用のカスタムエラーメッセージ、AJV では、これは `errorMessage`、Opis では、これは `$error` です。 `errorMessage` のみをサポートし、Opis 用に内部的にマッピングします。また、現在、`errorMessage` のテンプレートはサポートしていません。
-- `$data`：[JSON ポインタ]（https://ajv.js.org/guide/combining-schemas.html#data-reference）を介して現在のフィールド値を参照し、Opis と AJV の両方が同じ実装を使用します。
-
-### 評価ロジック
-
-- `required` の場合：配列内のスキーマが現在のチェックアウト状態と一致する場合、フィールドは必須になります。
-- `hidden` の場合：配列内のスキーマが現在のチェックアウト状態に一致する場合、フィールドは非表示になります。
-- `検証`の場合：フィールドの値は、提供された部分的なスキーマに対して評価され、一致しない場合はエラーが表示されます。
-
-### パフォーマンスに関する考慮事項
-
-複雑な JSON スキーマ条件は、チェックアウトのパフォーマンスに影響を与える可能性があります。スキーマをできるだけシンプルに保ち、条件の数をユースケースに必要なものに制限します。
-
-## 下位互換性
-
-技術的な理由により、フィールドに接頭辞を付けて管理したいため、フィールドのメタキーを指定することはできません。ショートコード Checkout に既存のフィールドを持つプラグインは互換性があり、フックを使用してフィールドの読み取りと保存に反応します。
-
-アドレスステップで`my-plugin-namespace/address-field`、順序ステップで `my-plugin-namespace/my-other-field` という2つのフィールドを仮定すると、次のことができます:
-
-### フィールドの保存に対応する
-
-`woocommerce_set_additional_field_value` アクションにフックすることで、これらのフィールドが保存されていることに反応することができます。
-
-```php
-add_action(
-	'woocommerce_set_additional_field_value',
-	function ( $key, $value, $group, $wc_object ) {
-		if ( 'my-plugin-namespace/address-field' !== $key ) {
-			return;
-		}
-
-		if ( 'billing' === $group ) {
-			$my_plugin_address_key = 'existing_billing_address_field_key';
-		} else {
-			$my_plugin_address_key = 'existing_shipping_address_field_key';
-		}
-
-		$wc_object->update_meta_data( $my_plugin_address_key, $value, true );
-	},
-	10,
-	4
-);
-
-add_action(
-	'woocommerce_set_additional_field_value',
-	function ( $key, $value, $group, $wc_object ) {
-		if ( 'my-plugin-namespace/my-other-field' !== $key ) {
-			return;
-		}
-
-		$my_plugin_key = 'existing_order_field_key';
-
-		$wc_object->update_meta_data( $my_plugin_key, $value, true );
-	},
-	10,
-	4
-);
-```
-
-このようにして、既存のシステムが引き続き機能し、統合が引き続き機能することを保証できます。ただし、理想的には、既存のデータとシステムを移行して、新しいメタフィールドを使用する必要があります。
+- `errorMessage`: Custom error message for validation, in AJV, this is `errorMessage` and in Opis, this is `$error`, we only support `errorMessage` and maps that internally for Opis. We also don't support templates in `errorMessage` for now.
+- `$data`: Refers to the current field value via [JSON pointers](https://ajv.js.org/guide/combining-schemas.html#data-reference), both Opis and AJV use the same implementation.
 
 
-### 読み取りフィールドに反応する
+### Evaluation Logic
 
-`woocommerce_get_default_value_for_{$key}` フィルターを使用して、別のデフォルト値（たとえば、別のメタフィールドからの値）を指定できます。
+- For `required`: If any schema in the array matches the current checkout state, the field will be required.
+- For `hidden`: If any schema in the array matches the current checkout state, the field will be hidden.
+- For `validation`: The value of the field will be evaluated against the partial schema provided and an error will be shown if it didn't match.
+
+### Performance Considerations
+
+Complex JSON Schema conditions can impact checkout performance. Keep your schemas as simple as possible and limit the number of conditions to what's necessary for your use case.
+
+## Backward compatibility
+
+Due to technical reasons, it's not yet possible to specify the meta key for fields, as we want them to be prefixed and managed. Plugins with existing fields in shortcode Checkout can be compatible and react to reading and saving fields using hooks.
+
+Assuming 2 fields, named `my-plugin-namespace/address-field` in the address step and `my-plugin-namespace/my-other-field` in the order step, you can:
+
+### React to saving fields
+
+You can react to those fields being saved by hooking into `woocommerce_set_additional_field_value` action.
+
+__CODE_BLOCK_25__
+
+This way, you can ensure existing systems will continue working and your integration will continue to work. However, ideally, you should migrate your existing data and systems to use the new meta fields.
+
+
+### React to reading fields
+
+You can use the `woocommerce_get_default_value_for_{$key}` filters to provide a different default value (a value coming from another meta field for example):
 
 ```php
 add_filter(
@@ -1102,7 +525,7 @@ add_filter(
 
 ## 完全な例
 
-この完全な例では、政府 ID テキスト・フィールドを登録し、それが特定のパターンに適合していることを検証する。
+この完全な例では、政府IDテキスト・フィールドを登録し、それが特定のパターンに適合していることを検証する。
 
 この例は、上記で紹介した例を組み合わせたものに過ぎない。
 

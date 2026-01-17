@@ -4,9 +4,9 @@ sidebar_label: Removing checkout fields
 sidebar_position: 5
 ---
 
-# チェックアウトフィールドの削除
+# Removing checkout fields
 
-新しいチェックアウト・ブロックを拡張しようとしている場合、以前の `checkout_fields` が機能していないことに気づくかもしれません。これは意図的なものです。とはいえ、最もよくあるリクエストの1つは、特定の注文タイプでチェックアウトフィールドを無効にする方法です。これは私たちが推奨するものではありませんが、要望が多いため詳細を共有します。
+新しいチェックアウト・ブロックを拡張しようとしている場合、以前の`checkout_fields`が機能していないことに気づくかもしれません。これは意図的なものです。とはいえ、最もよくあるリクエストの1つは、特定の注文タイプでチェックアウトフィールドを無効にする方法です。これは私たちが推奨するものではありませんが、要望が多いため詳細を共有します。
 
 ## フィールドの削除を推奨しない理由
 
@@ -14,7 +14,7 @@ sidebar_position: 5
 
 ## 単一国のフィールドを無効にする
 
-チェックアウトのフィールドは依然としてその国のロケールを尊重しています。つまり、PHP を使ってその国のフィールドを変更することができます。次の請求フォームには10個のフィールドがあり、そのうち7個は必須です：
+チェックアウトのフィールドは依然としてその国のロケールを尊重しています。つまり、PHPを使ってその国のフィールドを変更することができます。次の請求フォームには10個のフィールドがあり、そのうち7個は必須です：
 
 ![Image](https://github.com/user-attachments/assets/63d83769-c20c-4c85-aebf-da8510d1d9ae)
 
@@ -92,7 +92,7 @@ add_filter('woocommerce_get_country_locale', function( $locale ) {
 
 ![Image](https://github.com/user-attachments/assets/53740d32-4ccd-4d5e-b08f-91a8b8b7d055)
 
-これが結果：
+これが結果だろう：
 
 ![Image](https://github.com/user-attachments/assets/3bb8dc23-22cc-4787-8577-648081e57644)
 
@@ -104,7 +104,7 @@ add_filter('woocommerce_get_country_locale', function( $locale ) {
 - `woocommerce_checkout_company_field`
 - `woocommerce_checkout_address_2_field`
 
-これらのオプションの値は `required`、`optional`、`hidden` です。これらはフィールドのデフォルト状態を管理します。そのため、編集することはできますが、マーチャントが適切と思うように設定することができます。また、ロケール/国に基づいて編集することもできます。
+これらのオプションの値は`required`、`optional`、`hidden`です。これらはフィールドのデフォルト状態を管理します。そのため、編集することはできますが、マーチャントが適切と思うように設定することができます。また、ロケール/国に基づいて編集することもできます。
 
 デフォルト値を編集するには
 
@@ -185,7 +185,7 @@ add_filter('woocommerce_get_country_locale', function( $locale ) {
 
 ![Image](https://github.com/user-attachments/assets/ab56c4ca-39ba-47ab-83d1-1ce6dfefc0c3)
 
-`get_address_formats` 関数の値は `woocommerce_localisation_address_formats` フィルタを通過するので、PHP を使って編集することができます。
+`get_address_formats`関数の値は`woocommerce_localisation_address_formats`フィルタを通過するので、PHPを使って編集することができます。
 
 次のコードが使える：
 
