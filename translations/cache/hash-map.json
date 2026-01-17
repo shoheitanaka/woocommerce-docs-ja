@@ -1100,9 +1100,9 @@
     "size": 52767
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/README.md": {
-    "hash": "9894050d618c33ffb1b0719e33db2b154ed740dec3fbcdd2244c6db15b8fc790",
-    "updatedAt": "2025-12-27T02:36:17.941Z",
-    "size": 8407
+    "hash": "2cc122ecd65aa8cb3c6ae5fa15f7260a580f4a2025a14e25d32cdd4f99312a51",
+    "updatedAt": "2026-01-17T02:36:06.543Z",
+    "size": 8603
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/products.md": {
     "hash": "4ef88f2db3fe382c8891382204f0cb9c97501c05e86f64a5d86279a16362fc65",
@@ -1240,9 +1240,9 @@
     "size": 4137
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md": {
-    "hash": "8b04862f2412a3ca1be5417a7291ad75ecb1a37ef32e6b359ed3a8e2eebcdda1",
-    "updatedAt": "2025-12-27T02:36:17.947Z",
-    "size": 40286
+    "hash": "bd855a9430cc9ff866f65627e603639970598fbf06a320bf4ab32731b7e662da",
+    "updatedAt": "2026-01-17T02:36:06.548Z",
+    "size": 28276
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/filtering-payment-methods.md": {
     "hash": "5896dce9d94d1dac83f6c399d3849aacdc8570a48753297cbc14b9e1425c33fb",
@@ -1253,5 +1253,10 @@
     "hash": "813e3f7f94488c620ebf96b9ec5c331f2d58d729206f909715df86fc2e012436",
     "updatedAt": "2025-12-27T02:36:17.947Z",
     "size": 31807
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-utilities.md": {
+    "hash": "273f39d06c9a03fabf35c86dd642c5bd6cd6a56a566377200b7236e23ed85f72",
+    "updatedAt": "2026-01-17T02:36:06.542Z",
+    "size": 1834
   }
 }
