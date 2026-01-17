@@ -4,13 +4,13 @@ sidebar_label: Available slots
 sidebar_position: 2
 ---
 
-# 利用可能なスロット
+# Available slots
 
 このドキュメントでは、カスタムコンテンツ（フィル）を追加するために使用できるスロットのリストを示します。
 
-新しい SlotFill コンポーネントを追加したい場合は、[Checkout - スロットとフィルのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/slot/README.md)をチェックしてください。スロットとフィルについての詳細は、[スロットとフィルのドキュメント](/docs/block-development/reference/slot-fills/)をご覧ください。
+新しいSlotFillコンポーネントを追加したい場合は、[Checkout - Slot Fill document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/slot/README.md)をチェックしてください。スロットとフィルについての詳細は、[スロットとフィルのドキュメント](/docs/block-development/reference/slot-fills/)をご覧ください。
 
-**ネーミングについての注意事項：** `Experimental` がプレフィックスとして付いているスロットは実験的なものであり、変更または削除される可能性があります。実験的な段階から卒業すると、ネーミングが変更され、`Experimental` の接頭辞は削除されます。詳しくは[機能ゲーティングドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/internal-developers/blocks/feature-flags-and-experimental-interfaces.md)をご覧ください。
+**ネーミングについての注意事項： ** `Experimental`がプレフィックスとして付いているスロットは実験的なものであり、変更または削除される可能性があります。実験的な段階から卒業すると、ネーミングが変更され、`Experimental`の接頭辞は削除されます。詳しくは[Feature Gating document](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/internal-developers/blocks/feature-flags-and-experimental-interfaces.md)をご覧ください。
 
 ## ExperimentalOrderMeta
 
@@ -37,15 +37,15 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-![カートブロックの ExperimentalOrderMeta の例](https://user-images.githubusercontent.com/1628454/154517779-117bb4e4-568e-413c-904c-855fc3450dfa.png)
+![Example of ExperimentalOrderMeta in the Cart block](https://user-images.githubusercontent.com/1628454/154517779-117bb4e4-568e-413c-904c-855fc3450dfa.png)
 
-![Checkout ブロックの ExperimentalOrderMeta の例](https://user-images.githubusercontent.com/1628454/154697224-de245182-6783-4914-81ba-1dbcf77292eb.png)
+![Example of ExperimentalOrderMeta in the Checkout block](https://user-images.githubusercontent.com/1628454/154697224-de245182-6783-4914-81ba-1dbcf77292eb.png)
 
 ### パラメーター
 
--   `cart`：`wc/store/cart` のデータが、`snake_case` ではなく `camelCase` になっている。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
--   `extensions`：サードパーティの開発者が `ExtendSchema` を使用して登録した外部データ。もしあなたが `wc/store/cart` で `ExtendSchema` を使用した場合、あなたのネームスペースの下にあるデータはここにあります。
--   `context` は、塗りつぶしがレンダリングされるブロックの名前に等しい：`woocommerce/cart` または `woocommerce/checkout`。
+-   `cart`：`wc/store/cart`のデータが、`snake_case`ではなく`camelCase`になっている。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
+-   `extensions`：サードパーティの開発者が`ExtendSchema`を使用して登録した外部データ。もしあなたが`wc/store/cart`で`ExtendSchema`を使用した場合、あなたのネームスペースの下にあるデータはここにあります。
+-   `context`は、塗りつぶしがレンダリングされるブロックの名前に等しい：`woocommerce/cart`または`woocommerce/checkout`。
 
 ## 実験的注文出荷パッケージ
 
@@ -70,21 +70,21 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-![カートブロック内の ExperimentalOrderShippingPackages の例](https://user-images.githubusercontent.com/6165348/118399054-2b4dec80-b653-11eb-94a0-989e2e6e362a.png)
+![Example of ExperimentalOrderShippingPackages in the Cart block](https://user-images.githubusercontent.com/6165348/118399054-2b4dec80-b653-11eb-94a0-989e2e6e362a.png)
 
-![Checkout ブロックの ExperimentalOrderShippingPackages の例](https://user-images.githubusercontent.com/6165348/118399133-90094700-b653-11eb-8ff0-c917947c199f.png)
+![Example of ExperimentalOrderShippingPackages in the Checkout block](https://user-images.githubusercontent.com/6165348/118399133-90094700-b653-11eb-8ff0-c917947c199f.png)
 
 ### パラメーター
 
 -   `collapsible`：`Boolean|undefined` 配送パッケージパネルが折りたたみ可能かどうか、これはCheckoutではfalse、Cartでは未定義です。
 -   `collapse`：`Boolean` パネルをデフォルトで折りたたむかどうか。
--   これは、パネルが折りたたみ可能な場合に真となります：`Boolean|undefined` 各パッケージの内容を表示するかどうか。これは Cart と Checkout では未定義で、実際のパッケージロジックに任されています。
--   `noResultsMessage`：配送オプションがない場合にレンダリングする React 要素。
+-   これは、パネルが折りたたみ可能な場合に真となります：`Boolean|undefined` 各パッケージの内容を表示するかどうか。これはCartとCheckoutでは未定義で、実際のパッケージロジックに任されています。
+-   `noResultsMessage`：配送オプションがない場合にレンダリングするReact要素。
 -   `renderOption`: 料金オブジェクトを受け取り、レンダーオプションを返すレンダー関数。
--   `cart`：`wc/store/cart`のデータですが、`snake_case` の代わりに `camelCase` です。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
--   `extensions`：サードパーティの開発者が `ExtendSchema` を使用して登録した外部データで、 `wc/store/cart` で `ExtendSchema` を使用した場合は、ここにある名前空間の下にデータがあります。
--   `components`: 独自の配送料金をレンダリングするために使用できるコンポーネントを含むオブジェクトで、 `ShippingRatesControlPackage` が含まれています。
--   `context`: 塗りつぶしがレンダリングされるブロックの名前です：`woocommerce/cart` または `woocommerce/checkout`。
+-   `cart`：`wc/store/cart`のデータですが、`snake_case`の代わりに`camelCase`です。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
+-   `extensions`：サードパーティの開発者が`ExtendSchema`を使用して登録した外部データで、`wc/store/cart`で`ExtendSchema`を使用した場合は、ここにある名前空間の下にデータがあります。
+-   `components`: 独自の配送料金をレンダリングするために使用できるコンポーネントを含むオブジェクトで、`ShippingRatesControlPackage`が含まれています。
+-   `context`: 塗りつぶしがレンダリングされるブロックの名前です：`woocommerce/cart`または`woocommerce/checkout`。
 
 ## ExperimentalOrderLocalPickupPackages
 
@@ -114,18 +114,18 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-![Checkout ブロックの ExperimentalOrderLocalPickupPackages の例](https://user-images.githubusercontent.com/5656702/222814945-a449d016-0621-4a70-b0f4-2ae1ce6487f1.png)
+![Example of ExperimentalOrderLocalPickupPackages in the Checkout block](https://user-images.githubusercontent.com/5656702/222814945-a449d016-0621-4a70-b0f4-2ae1ce6487f1.png)
 
 ### パラメーター
 
 -   `renderPickupLocation`: 現地ピックアップオプションの住所の詳細をレンダリングするレンダー関数。
--   `cart`：`wc/store/cart`のデータですが、`snake_case` の代わりに `camelCase` です。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
--   `extensions`：サードパーティの開発者が `ExtendSchema` を使用して登録した外部データで、`wc/store/cart` で `ExtendSchema` を使用した場合は、ここに名前空間のデータがあります。
--   `components`：独自のピックアップ・レートをレンダリングするために使用できるコンポーネントを含むオブジェクトで、 `ShippingRatesControlPackage` と `RadioControl` が含まれます。
+-   `cart`：`wc/store/cart`のデータですが、`snake_case`の代わりに`camelCase`です。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
+-   `extensions`：サードパーティの開発者が`ExtendSchema`を使用して登録した外部データで、`wc/store/cart`で`ExtendSchema`を使用した場合は、ここに名前空間のデータがあります。
+-   `components`：独自のピックアップ・レートをレンダリングするために使用できるコンポーネントを含むオブジェクトで、`ShippingRatesControlPackage`と`RadioControl`が含まれます。
 
 ## ExperimentalDiscountsMeta
 
-このスロットは `CouponCode` 入力の下にレンダリングされる。
+このスロットは`CouponCode`入力の下にレンダリングされる。
 
 ```ts
 const { __ } = window.wp.i18n;
@@ -148,12 +148,12 @@ registerPlugin( 'slot-and-fill-examples', {
 } );
 ```
 
-![ExperimentalDiscountsMeta の場所を示すカート](https://user-images.githubusercontent.com/5656702/122774218-ea27a880-d2a0-11eb-9450-11f119567f26.png)
+![Cart showing ExperimentalDiscountsMeta location](https://user-images.githubusercontent.com/5656702/122774218-ea27a880-d2a0-11eb-9450-11f119567f26.png)
 
-![チェックアウトに ExperimentalDiscountsMeta の場所が表示されている](https://user-images.githubusercontent.com/5656702/122779606-efd3bd00-d2a5-11eb-8c84-6525eca5d704.png)
+![Checkout showing ExperimentalDiscountsMeta location](https://user-images.githubusercontent.com/5656702/122779606-efd3bd00-d2a5-11eb-8c84-6525eca5d704.png)
 
 ### パラメーター
 
 -   `cart`：`wc/store/cart`のデータが、`snake_case`ではなく`camelCase`になっている。[オブジェクトの内訳](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/c00da597efe4c16fcf5481c213d8052ec5df3766/assets/js/type-defs/cart.ts#L172-L188)
--   `extensions`：サードパーティの開発者が `ExtendSchema` を使用して登録した外部データで、`wc/store/cart` で `ExtendSchema` を使用した場合は、ここに名前空間のデータがあります。
--   `context`、塗りつぶしがレンダリングされるブロックの名前に等しい：`woocommerce/cart` または `woocommerce/checkout`。
+-   `extensions`：サードパーティの開発者が`ExtendSchema`を使用して登録した外部データで、`wc/store/cart`で`ExtendSchema`を使用した場合は、ここに名前空間のデータがあります。
+-   `context`、塗りつぶしがレンダリングされるブロックの名前に等しい：`woocommerce/cart`または`woocommerce/checkout`。

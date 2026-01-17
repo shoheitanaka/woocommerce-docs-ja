@@ -96,7 +96,7 @@
         "original": "## __INLINE_CODE_0__",
         "codeBlocks": [],
         "inlineCodes": [
-          "`additionalCartCheckoutInnerBlockTypes`"
+          "`useValidateCheckout`"
         ],
         "urls": []
       }
@@ -21511,7 +21511,7 @@
         "original": "#### __INLINE_CODE_0__",
         "codeBlocks": [],
         "inlineCodes": [
-          "`wc global`"
+          "`ExpressPaymentMethodConfiguration`"
         ],
         "urls": []
       }
@@ -65238,7 +65238,7 @@
     },
     "b226f7aeb9099c0b6daddbc19ddf2a3a707f32f8e6ccbe5b419b99e4da69f5d4": {
       "original": "(Note: the code in the repository linked above will not be very useful alone; the code there is templating code. It will be transformed into regular JS and PHP after following the README instructions.)",
-      "translated": "(注意：上記のリンク先のリポジトリにあるコードは、それだけではあまり役に立ちません。そこにあるコードはテンプレートコードです。READMEの指示に従うと、通常のJSやPHPに変換されます)。",
+      "translated": "(注意: 上記のリンク先のリポジトリにあるコードは、それだけではあまり役に立ちません; そこにあるコードはテンプレートコードです。READMEの指示に従うと、通常のJSやPHPに変換されます)。",
       "metadata": {
         "original": "(Note: the code in the repository linked above will not be very useful alone; the code there is templating code. It will be transformed into regular JS and PHP after following the README instructions.)",
         "codeBlocks": [],
@@ -65278,7 +65278,7 @@
     },
     "b40791166ef53128ac45890f4584aad6eb1d9b295f3eff37988df1a1460ab466": {
       "original": "Some extensions may be very simple and include only a single JavaScript file, other extensions may be complex and the code may be split into multiple files. Either way, it is recommended that the files are bundled together and minified into a single output file. If your extension has several distinct parts that only load on specific pages, bundle splitting is recommended, though that is out of scope for this document.",
-      "translated": "ある拡張モジュールはとてもシンプルで、JavaScriptファイルをひとつだけ含むかもしれないし、他の拡張モジュールは複雑で、コードが複数のファイルに分かれているかもしれない。いずれにせよ、ファイルはバンドルされ、単一の出力ファイルにミニファイされることが推奨されます。拡張モジュールが特定のページでのみ読み込まれるような複数の異なる部分を持つ場合は、バンドル分割を推奨しますが、このドキュメントの範囲外です。",
+      "translated": "ある拡張モジュールは非常にシンプルで、JavaScriptファイルを1つだけ含むかもしれませんし、他の拡張モジュールは複雑で、コードが複数のファイルに分割されるかもしれません。いずれにせよ、ファイルはバンドルされ、単一の出力ファイルにミニファイされることが推奨されます。拡張モジュールが特定のページでのみ読み込まれるような複数の異なる部分を持つ場合は、バンドル分割を推奨しますが、このドキュメントの範囲外です。",
       "metadata": {
         "original": "Some extensions may be very simple and include only a single JavaScript file, other extensions may be complex and the code may be split into multiple files. Either way, it is recommended that the files are bundled together and minified into a single output file. If your extension has several distinct parts that only load on specific pages, bundle splitting is recommended, though that is out of scope for this document.",
         "codeBlocks": [],
@@ -65304,7 +65304,7 @@
     },
     "e5b7bbf7ca6f57c1c5822d84cb887fdf6a0748bbcac8703e28b63891a474381a": {
       "original": "The base configuration of the __INLINE_CODE_0__ script in  __INLINE_CODE_1__ can be overridden by creating a __INLINE_CODE_2__ file in the root of your plugin. The example block shows how the base config can be extended.",
-      "translated": "__INLINE_CODE_1__にある__INLINE_CODE_0__スクリプトの基本設定は、プラグインのルートに__INLINE_CODE_2__ファイルを作成することで上書きすることができます。例のブロックは、基本設定をどのように拡張できるかを示しています。",
+      "translated": "__INLINE_CODE_1__の__INLINE_CODE_0__スクリプトの基本設定は、プラグインのルートに__INLINE_CODE_2__ファイルを作成することで上書きすることができます。例のブロックは、基本設定をどのように拡張できるかを示しています。",
       "metadata": {
         "original": "The base configuration of the __INLINE_CODE_0__ script in  __INLINE_CODE_1__ can be overridden by creating a __INLINE_CODE_2__ file in the root of your plugin. The example block shows how the base config can be extended.",
         "codeBlocks": [],
@@ -65409,7 +65409,7 @@
     },
     "004c8af61ef2b5f7d9e7b141d91c5cc7c3437b3c578daf7ec3ca4e60877f5965": {
       "original": "In the example block, there is a \"checkout-newsletter-subscription-block\" directory which contains the files needed to register an inner block in the Checkout. The example block template is only set up to import and build a single block, but the Webpack config can be modified to build multiple blocks. Doing this is not supported as part of this document, refer to the [Webpack documentation](__URL_0__) instead.",
-      "translated": "サンプルブロックの中には、「checkout-newsletter-subscription-block」ディレクトリがあり、Checkoutにインナーブロックを登録するために必要なファイルが含まれています。サンプルのブロックテンプレートは、単一のブロックをインポートしてビルドするように設定されているだけですが、Webpackの設定を変更することで、複数のブロックをビルドすることができます。このドキュメントはサポートしていませんので、代わりに [Webpack ドキュメント](__URL_0__) を参照してください。",
+      "translated": "サンプルブロックの中には、Checkoutにインナーブロックを登録するために必要なファイルを含む「checkout-newsletter-subscription-block」ディレクトリがあります。サンプルのブロックテンプレートは、単一のブロックをインポートしてビルドするように設定されているだけですが、Webpackの設定を変更することで、複数のブロックをビルドすることができます。このドキュメントはサポートしていませんので、代わりに [Webpack ドキュメント](__URL_0__) を参照してください。",
       "metadata": {
         "original": "In the example block, there is a \"checkout-newsletter-subscription-block\" directory which contains the files needed to register an inner block in the Checkout. The example block template is only set up to import and build a single block, but the Webpack config can be modified to build multiple blocks. Doing this is not supported as part of this document, refer to the [Webpack documentation](__URL_0__) instead.",
         "codeBlocks": [],
@@ -65453,7 +65453,7 @@
     },
     "4612279a317e9ed8982911a35c9b8b6ca8c91d36b82ce32553fa315fb74cc83c": {
       "original": "In this case, you could remove the block folder from the example block, modify the Webpack config file so it no longer reads from that directory, and include the code you need in the entry JavaScript file.",
-      "translated": "この場合、サンプルブロックからブロックフォルダを削除し、そのディレクトリから読み込まないようにWebpackの設定ファイルを修正し、エントリのJavaScriptファイルに必要なコードを含めることができます。",
+      "translated": "この場合、サンプルブロックからブロックフォルダを削除し、そのディレクトリから読み込まなくなるようにWebpackの設定ファイルを修正し、エントリのJavaScriptファイルに必要なコードを含めることができます。",
       "metadata": {
         "original": "In this case, you could remove the block folder from the example block, modify the Webpack config file so it no longer reads from that directory, and include the code you need in the entry JavaScript file.",
         "codeBlocks": [],
@@ -65485,7 +65485,7 @@
     },
     "f12d8b63210b7472fcfc3ad8bb37c72f8d0f0408aaf7caa04045a069e53103bd": {
       "original": "Components can be imported from __INLINE_CODE_0__ (externalized to __INLINE_CODE_1__ by __INLINE_CODE_2__). The list of available components can be seen in [the WooCommerce Storybook](__URL_0__), listed under \"WooCommerce Blocks -> External components\".",
-      "translated": "コンポーネントは__INLINE_CODE_0__からインポートできます（__INLINE_CODE_2__によって__INLINE_CODE_1__に外部化されます）。利用可能なコンポーネントのリストは[WooCommerce Storybook](__URL_0__)の「WooCommerce Blocks -> External components」で確認できます。",
+      "translated": "コンポーネントは__INLINE_CODE_0__からインポートできます（__INLINE_CODE_2__によって__INLINE_CODE_1__に外部化されます）。利用可能なコンポーネントのリストは[WooCommerce Storybook](__URL_0__)の[WooCommerce Blocks -> External components]で確認できます。",
       "metadata": {
         "original": "Components can be imported from __INLINE_CODE_0__ (externalized to __INLINE_CODE_1__ by __INLINE_CODE_2__). The list of available components can be seen in [the WooCommerce Storybook](__URL_0__), listed under \"WooCommerce Blocks -> External components\".",
         "codeBlocks": [],
@@ -70640,7 +70640,7 @@
     },
     "d15dd594d92c150d85be65e6ef55762cbfc788bb91211c4d07028eee7fef35e0": {
       "original": "__INLINE_CODE_0__ is a callback to determine whether the payment method should be available as an option for the shopper. The function will be passed an object containing data about the current order.",
-      "translated": "__INLINE_CODE_0__ は、買い物客のオプションとして支払い方法が利用可能かどうかを判断するためのコールバックです。この関数には、現在の注文に関するデータを含むオブジェクトが渡されます。",
+      "translated": "__INLINE_CODE_0__ は、買い物客のオプションとして支払い方法が利用可能かどうかを決定するコールバックです。この関数には、現在の注文に関するデータを含むオブジェクトが渡されます。",
       "metadata": {
         "original": "__INLINE_CODE_0__ is a callback to determine whether the payment method should be available as an option for the shopper. The function will be passed an object containing data about the current order.",
         "codeBlocks": [],
@@ -70681,7 +70681,7 @@
     },
     "4ba50bf558a50b7573c9f1ea9db4c08d2d6065555fe5abdb120c892f7da99fb1": {
       "original": "**Keep in mind this function could be invoked multiple times in the lifecycle of the checkout and thus any expensive logic in the callback provided on this property should be memoized.**",
-      "translated": "**この関数はチェックアウトのライフサイクルの中で複数回呼び出される可能性があるため、このプロパティで提供されるコールバック内の高価なロジックはすべてメモ化する必要があることに留意してください。",
+      "translated": "**この関数はチェックアウトのライフサイクルの中で複数回呼び出される可能性があるため、このプロパティで提供されるコールバック内の高価なロジックはすべてメモ化されるべきであることに留意してください。",
       "metadata": {
         "original": "**Keep in mind this function could be invoked multiple times in the lifecycle of the checkout and thus any expensive logic in the callback provided on this property should be memoized.**",
         "codeBlocks": [],
@@ -71094,7 +71094,7 @@
     },
     "3ad842057b2ad0e239e7a2f9982d65c19cbd29ef5f0afc3c70b2d25db8ec7d8a": {
       "original": "- A __INLINE_CODE_0__ object which contains the chosen __INLINE_CODE_1__ (this is the same as the __INLINE_CODE_2__ value defined when registering your payment method), the __INLINE_CODE_3__ being placed, and any additional __INLINE_CODE_4__ provided by the payment method client.\n- A __INLINE_CODE_5__ object which you can use to set the status, redirect url, and any additional payment details back to the client via the Store API.",
-      "translated": "- 選択された__INLINE_CODE_1__（これは、支払い方法の登録時に定義された__INLINE_CODE_2__と同じです）、設置される__INLINE_CODE_3__、および支払い方法のクライアントが提供する追加の__INLINE_CODE_4__を含む__INLINE_CODE_0__オブジェクト。\n- __INLINE_CODE_5__オブジェクトを使用して、ステータス、リダイレクトURL、追加の支払い詳細をStore API経由でクライアントに返します。",
+      "translated": "- 選択された__INLINE_CODE_1__（支払い方法の登録時に定義された__INLINE_CODE_2__と同じです）、設置される__INLINE_CODE_3__、および支払い方法のクライアントが提供する追加の__INLINE_CODE_4__を含む__INLINE_CODE_0__オブジェクト。\n- __INLINE_CODE_5__オブジェクトを使用して、ステータス、リダイレクトURL、追加の支払い詳細をStore API経由でクライアントに返します。",
       "metadata": {
         "original": "- A __INLINE_CODE_0__ object which contains the chosen __INLINE_CODE_1__ (this is the same as the __INLINE_CODE_2__ value defined when registering your payment method), the __INLINE_CODE_3__ being placed, and any additional __INLINE_CODE_4__ provided by the payment method client.\n- A __INLINE_CODE_5__ object which you can use to set the status, redirect url, and any additional payment details back to the client via the Store API.",
         "codeBlocks": [],
@@ -72905,6 +72905,310 @@
         "inlineCodes": [],
         "urls": []
       }
+    },
+    "210ccda2f4ec8bd0d43e68a51c162cc4231dcb17177218632669ded7f332ab49": {
+      "original": "# Checkout Utilities",
+      "translated": "# チェックアウト・ユーティリティ",
+      "metadata": {
+        "original": "# Checkout Utilities",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "618f1498a06442099b02a7505eca2ec5ee9a17e827c53aee5ed38156aa624d97": {
+      "original": "Utility functions and React hooks for checkout functionality, available from __INLINE_CODE_0__.",
+      "translated": "__INLINE_CODE_0__から利用可能な、チェックアウト機能のためのユーティリティ関数とReactフック。",
+      "metadata": {
+        "original": "Utility functions and React hooks for checkout functionality, available from __INLINE_CODE_0__.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`@woocommerce/blocks-checkout`"
+        ],
+        "urls": []
+      }
+    },
+    "6cc54f8d4fa7fc6c52d91be7d56ae5a68087cc738bcd1120683b650eb57f4fb2": {
+      "original": "A hook that validates the checkout form and automatically scrolls to the first validation error if any are found.",
+      "translated": "チェックアウトフォームのバリデーションを行い、最初のバリデーションエラーが見つかった場合は自動的にスクロールするフック。",
+      "metadata": {
+        "original": "A hook that validates the checkout form and automatically scrolls to the first validation error if any are found.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6c598a4f7321c7a2dde6d3cbad3d41cf9d536ba7b6d1f38f4c25bd111a9daf5e": {
+      "original": "This hook is primarily used internally by the __INLINE_CODE_0__ component to provide the __INLINE_CODE_1__ prop to custom place order button components. However, it can also be used directly if needed.",
+      "translated": "このフックは主に__INLINE_CODE_0__コンポーネントによって内部的に使用され、カスタム注文ボタンコンポーネントに__INLINE_CODE_1__プロップを提供します。しかし、必要に応じて直接使用することもできます。",
+      "metadata": {
+        "original": "This hook is primarily used internally by the __INLINE_CODE_0__ component to provide the __INLINE_CODE_1__ prop to custom place order button components. However, it can also be used directly if needed.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`PlaceOrderButton`",
+          "`validate`"
+        ],
+        "urls": []
+      }
+    },
+    "d4a82ceb8fd97563f10447ca62be124c84d978f5f58080356d974161c9fbfffd": {
+      "original": "### Return Value",
+      "translated": "### 戻り値",
+      "metadata": {
+        "original": "### Return Value",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e812eae002df249a90679c28f2eb40462a68d4e0605b4375acb2c34f8ece932c": {
+      "original": "The hook returns a function that, when called:",
+      "translated": "このフックは、呼び出されたときに関数を返す：",
+      "metadata": {
+        "original": "The hook returns a function that, when called:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "de95b94a79139a937e0eb9f1ee65c564fe608045bbc6934b14080fcadc52d15a": {
+      "original": "1. Emits the __INLINE_CODE_0__ event to run all registered validation callbacks\n2. Checks the validation store for any field-level validation errors\n3. If errors are found:\n    - Shows all validation errors\n    - Scrolls to and focuses the first error element\n4. Returns a promise that resolves to __INLINE_CODE_1__",
+      "translated": "1.INLINE_CODE_0__イベントを発行し、登録されているすべての検証コールバックを実行する。\n2.フィールドレベルのバリデーションエラーがないかバリデーションストアをチェックする\n3.エラーが見つかった場合\n    - すべての検証エラーを表示します。\n    - スクロールして最初のエラー要素にフォーカスを当てる\n4.INLINE_CODE_1__に解決するプロミスを返します。",
+      "metadata": {
+        "original": "1. Emits the __INLINE_CODE_0__ event to run all registered validation callbacks\n2. Checks the validation store for any field-level validation errors\n3. If errors are found:\n    - Shows all validation errors\n    - Scrolls to and focuses the first error element\n4. Returns a promise that resolves to __INLINE_CODE_1__",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`CHECKOUT_VALIDATION`",
+          "`{ hasError: boolean }`"
+        ],
+        "urls": []
+      }
+    },
+    "7a0008296f5e0bd3af713caeb76c0f030416d1c0f7cf802baae0ff51fad4f756": {
+      "original": "| Property   | Type      | Description                                      |\n|:-----------|:----------|:-------------------------------------------------|\n| __INLINE_CODE_0__ | __INLINE_CODE_1__ | __INLINE_CODE_2__ if validation failed, __INLINE_CODE_3__ if passed.  |\n",
+      "translated": "| プロパティ｜タイプ｜説明\n|:-----------|:----------|:-------------------------------------------------|\n| 検証失敗の場合は __INLINE_CODE_0__ | __INLINE_CODE_1__ | __INLINE_CODE_2__ 、合格の場合は __INLINE_CODE_3__ 。  |\n",
+      "metadata": {
+        "original": "| Property   | Type      | Description                                      |\n|:-----------|:----------|:-------------------------------------------------|\n| __INLINE_CODE_0__ | __INLINE_CODE_1__ | __INLINE_CODE_2__ if validation failed, __INLINE_CODE_3__ if passed.  |\n",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`hasError`",
+          "`boolean`",
+          "`true`",
+          "`false`"
+        ],
+        "urls": []
+      }
+    },
+    "945cb19e574256d3fa65e49c7045176df7074e7a61d8c9351d9ec0e78bf5e5a3": {
+      "original": "### Importing WooCommerce utilities and React hooks",
+      "translated": "### WooCommerceユーティリティとReactフックのインポート",
+      "metadata": {
+        "original": "### Importing WooCommerce utilities and React hooks",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "806213cc55b712c261ea6d38ddbd16d8c7f681765b191a6054d303cf69dc8d74": {
+      "original": "Some checkout utilities and React hooks are available for external use from __INLINE_CODE_0__. See the [Checkout Utilities](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-utilities/) documentation for available utilities.",
+      "translated": "一部のチェックアウト・ユーティリティとReactフックは、__INLINE_CODE_0__から外部で使用できます。利用可能なユーティリティについては、[Checkout Utilities](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-utilities/) ドキュメントを参照してください。",
+      "metadata": {
+        "original": "Some checkout utilities and React hooks are available for external use from __INLINE_CODE_0__. See the [Checkout Utilities](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-utilities/) documentation for available utilities.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`@woocommerce/blocks-checkout`"
+        ],
+        "urls": []
+      }
+    },
+    "f6b9d99b03deec266857c7a053c4aa4892646c6c660821dc243a222efcc655ad": {
+      "original": "For accessing store data, using the [__INLINE_CODE_0__](__URL_0__) data stores is preferred over importing internal hooks like __INLINE_CODE_1__.",
+      "translated": "店舗データへのアクセスには、__INLINE_CODE_1__のような内部フックをインポートするよりも、[__INLINE_CODE_0__](__URL_0__)データストアを使用する方が好ましい。",
+      "metadata": {
+        "original": "For accessing store data, using the [__INLINE_CODE_0__](__URL_0__) data stores is preferred over importing internal hooks like __INLINE_CODE_1__.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`wc/store/...`",
+          "`useStoreCart`"
+        ],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/data-store/"
+        ]
+      }
+    },
+    "3c46b4308e52f71e59f571a9990fc6bc5c843255a75d2531b47829d19fed4931": {
+      "original": "| Option | Type | Description | Required |\n| --- | --- | --- | --- |\n| __INLINE_CODE_0__ | String | Unique identifier for the gateway client side. | Yes |\n| __INLINE_CODE_1__ | String | Human readable name of your payment method. Displayed to the merchant in the editor. | No |\n| __INLINE_CODE_2__ | String | One or two sentences describing your payment gateway. Displayed to the merchant in the editor. | No |\n| __INLINE_CODE_3__ | String | ID of the Payment Gateway registered server side. Used to direct the merchant to the right settings page within the editor. If this is not provided, the merchant will be redirected to the general Woo payment settings page. | No |\n| __INLINE_CODE_4__ | ReactNode | React node output in the express payment method area when the block is rendered in the frontend. Receives props from the checkout payment method interface. | Yes |\n| __INLINE_CODE_5__ | ReactNode | React node output in the express payment method area when the block is rendered in the editor. Receives props from the payment method interface to checkout (with preview data). | Yes |\n| __INLINE_CODE_6__ | Function | Callback to determine whether the payment method should be available for the shopper. | Yes |\n| __INLINE_CODE_7__ | String | Identifier accompanying the checkout processing request to the server. Used to identify the payment method gateway class for processing the payment. | No |\n| __INLINE_CODE_8__ | Array | Array of payment features supported by the gateway. Used to crosscheck if the payment method can be used for the cart content. Defaults to __INLINE_CODE_9__ if no value is provided. | No |\n| __INLINE_CODE_10__ | Array | This is an array of style variations supported by the express payment method. These are styles that are applied across all the active express payment buttons and can be controlled from the express payment block in the editor. Supported values for these are one of __INLINE_CODE_11__. | No |",
+      "translated": "| オプション｜タイプ｜説明｜必須\n| --- | --- | --- | --- |\n| __INLINE_CODE_0__｜文字列｜ゲートウェイ・クライアント側の一意な識別子。| はい。\n| __INLINE_CODE_1__｜文字列｜支払い方法の可読性名前。エディタでマーチャントに表示されます。| いいえ。\n| __INLINE_CODE_2__｜文字列｜決済ゲートウェイを説明する1～2文。エディタでマーチャントに表示されます。| いいえ\n| __INLINE_CODE_3__｜文字列｜サーバー側に登録されているペイメントゲートウェイのID。エディタ内でマーチャントを正しい設定ページに誘導するために使用されます。これが指定されていない場合、マーチャントは一般的なWoo支払い設定ページにリダイレクトされます。| いいえ\n| __INLINE_CODE_4__ | ReactNode｜フロントエンドでブロックがレンダリングされたときに、express支払い方法エリアに出力されるReactノード。チェックアウト支払い方法のインターフェイスからpropsを受け取る。| はい\n| __INLINE_CODE_5__｜ReactNode｜ エディタでブロックがレンダリングされるときに、エクスプレス支払い方法エリアに出力されるReactノード。支払い方法インターフェースからチェックアウトへのプロップを受け取ります(プレビューデータ付き)。| はい\n| __INLINE_CODE_6__ | 関数｜支払い方法が買い物客にとって利用可能であるべきかを決定するコールバック。| 関数 | はい\n| はい｜__INLINE_CODE_7__｜文字列｜サーバへのチェックアウト処理リクエストに付随する識別子。支払いを処理するための支払い方法ゲートウェイクラスを識別するために使用される。| __INLINE_CODE_7__｜いいえ\n| ゲートウェイがサポートする支払い機能の配列。支払い方法がカートのコンテンツに使用できるかどうかをクロスチェックするために使用されます。値が提供されない場合、デフォルトは __INLINE_CODE_9__ です。| デフォルトは__INLINE_CODE_9__です。\n| これは、expressの支払い方法でサポートされるスタイルのバリエーションの配列です。これらはすべてのアクティブなエクスプレス決済ボタンに適用されるスタイルで、エディターのエクスプレス決済ブロックから制御できます。これらのサポートされる値は__INLINE_CODE_11__のいずれかです。| いいえ",
+      "metadata": {
+        "original": "| Option | Type | Description | Required |\n| --- | --- | --- | --- |\n| __INLINE_CODE_0__ | String | Unique identifier for the gateway client side. | Yes |\n| __INLINE_CODE_1__ | String | Human readable name of your payment method. Displayed to the merchant in the editor. | No |\n| __INLINE_CODE_2__ | String | One or two sentences describing your payment gateway. Displayed to the merchant in the editor. | No |\n| __INLINE_CODE_3__ | String | ID of the Payment Gateway registered server side. Used to direct the merchant to the right settings page within the editor. If this is not provided, the merchant will be redirected to the general Woo payment settings page. | No |\n| __INLINE_CODE_4__ | ReactNode | React node output in the express payment method area when the block is rendered in the frontend. Receives props from the checkout payment method interface. | Yes |\n| __INLINE_CODE_5__ | ReactNode | React node output in the express payment method area when the block is rendered in the editor. Receives props from the payment method interface to checkout (with preview data). | Yes |\n| __INLINE_CODE_6__ | Function | Callback to determine whether the payment method should be available for the shopper. | Yes |\n| __INLINE_CODE_7__ | String | Identifier accompanying the checkout processing request to the server. Used to identify the payment method gateway class for processing the payment. | No |\n| __INLINE_CODE_8__ | Array | Array of payment features supported by the gateway. Used to crosscheck if the payment method can be used for the cart content. Defaults to __INLINE_CODE_9__ if no value is provided. | No |\n| __INLINE_CODE_10__ | Array | This is an array of style variations supported by the express payment method. These are styles that are applied across all the active express payment buttons and can be controlled from the express payment block in the editor. Supported values for these are one of __INLINE_CODE_11__. | No |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`name`",
+          "`title`",
+          "`description`",
+          "`gatewayId`",
+          "`content`",
+          "`edit`",
+          "`canMakePayment`",
+          "`paymentMethodId`",
+          "`supports:features`",
+          "`['products']`",
+          "`supports:style`",
+          "`['height', 'borderRadius']`"
+        ],
+        "urls": []
+      }
+    },
+    "09a3180c0bda9c6a0f2934e0eaed92c72f3abee975ebc797e3d4f7560d73d777": {
+      "original": "| Property | Type | Description |\n| --- | --- | --- |\n| __INLINE_CODE_0__ | ReactNode | A React node that contains logic for handling saved payment methods. Rendered when a customer's saved token for this payment method is selected. |\n| __INLINE_CODE_1__ | ReactNode | A React node used to output the label for the payment method option. This can be text or images. |\n| __INLINE_CODE_2__ | string | The label read by screen-readers when the payment method is selected. |\n| __INLINE_CODE_3__ | string | Optional label to change the default \"Place Order\" button text when this payment method is selected. Mutually exclusive with __INLINE_CODE_4__. |\n| __INLINE_CODE_5__ | React Component | Optional React component to replace the default \"Place Order\" button when this payment method is selected. Mutually exclusive with __INLINE_CODE_6__. The component receives __INLINE_CODE_7__ props. |\n| __INLINE_CODE_8__ | object | Contains information about supported features: |\n| __INLINE_CODE_9__ | boolean | Determines if saved cards for this payment method are shown to the customer. |\n| __INLINE_CODE_10__ | boolean | Controls whether to show the checkbox for saving the payment method for future use. |",
+      "translated": "| プロパティ｜タイプ｜説明\n| --- | --- | --- |\n| __INLINE_CODE_0__ | ReactNode｜保存された支払い方法を処理するためのロジックを含むReactノード。この支払い方法のために顧客の保存されたトークンが選択されたときにレンダリングされます。|\n| __INLINE_CODE_1__ | ReactNode｜支払い方法オプションのラベルを出力するためのReactノード。テキストでも画像でもかまいません。|\n| __INLINE_CODE_2__ | string｜支払い方法が選択されたときにスクリーンリーダーによって読み取られるラベル。|\n| __INLINE_CODE_3__ | string | この支払い方法が選択されたときに、デフォルトの \"注文する \"ボタンのテキストを変更するオプションのラベル。__INLINE_CODE_4__と排他的です。|\n| __INLINE_CODE_5__ | Reactコンポーネント｜この支払い方法が選択されたときに、デフォルトの「注文する」ボタンを置き換えるReactコンポーネントを指定します。__INLINE_CODE_6__と排他的です。このコンポーネントは __INLINE_CODE_7__ プロップを受け取ります。|\n| __INLINE_CODE_8__｜オブジェクト｜サポートされる機能に関する情報を含みます：|\n| __INLINE_CODE_9__｜boolean｜この支払い方法で保存されたカードが顧客に表示されるかどうかを決定します。|\n| __INLINE_CODE_10__｜boolean｜将来の使用のために支払い方法を保存するチェックボックスを表示するかどうかを制御します。|",
+      "metadata": {
+        "original": "| Property | Type | Description |\n| --- | --- | --- |\n| __INLINE_CODE_0__ | ReactNode | A React node that contains logic for handling saved payment methods. Rendered when a customer's saved token for this payment method is selected. |\n| __INLINE_CODE_1__ | ReactNode | A React node used to output the label for the payment method option. This can be text or images. |\n| __INLINE_CODE_2__ | string | The label read by screen-readers when the payment method is selected. |\n| __INLINE_CODE_3__ | string | Optional label to change the default \"Place Order\" button text when this payment method is selected. Mutually exclusive with __INLINE_CODE_4__. |\n| __INLINE_CODE_5__ | React Component | Optional React component to replace the default \"Place Order\" button when this payment method is selected. Mutually exclusive with __INLINE_CODE_6__. The component receives __INLINE_CODE_7__ props. |\n| __INLINE_CODE_8__ | object | Contains information about supported features: |\n| __INLINE_CODE_9__ | boolean | Determines if saved cards for this payment method are shown to the customer. |\n| __INLINE_CODE_10__ | boolean | Controls whether to show the checkbox for saving the payment method for future use. |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`savedTokenComponent`",
+          "`label`",
+          "`ariaLabel`",
+          "`placeOrderButtonLabel`",
+          "`placeOrderButton`",
+          "`placeOrderButton`",
+          "`placeOrderButtonLabel`",
+          "`PaymentMethodInterface`",
+          "`supports`",
+          "`supports.showSavedCards`",
+          "`supports.showSaveOption`"
+        ],
+        "urls": []
+      }
+    },
+    "acbe2c6f60a61bdf7ce7f0c93d3a8ff266ea91b69d795f8ef2d0920a83db6806": {
+      "original": "### Using Custom Place Order Button",
+      "translated": "### カスタム発注ボタンの使用",
+      "metadata": {
+        "original": "### Using Custom Place Order Button",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b80f7c298ca539fa460c54eef8c864e101566fead5e6551f0981053ab725197d": {
+      "original": "The __INLINE_CODE_0__ property allows you to replace the default \"Place Order\" button with a custom component. This is useful for payment methods that require custom button styling (e.g., Google Pay, Apple Pay) or need to show a payment UI before submitting the order. If this doesn't apply to your payment method, omitting this property and using the default button is recommended.",
+      "translated": "__INLINE_CODE_0__プロパティを使用すると、デフォルトの「注文する」ボタンをカスタムコンポーネントで置き換えることができます。これは、カスタムボタンのスタイルを必要とする支払い方法（Google PayやApple Payなど）や、注文を送信する前に支払いUIを表示する必要がある場合に便利です。あなたの支払い方法に適用されない場合は、このプロパティを省略し、デフォルトのボタンを使用することをお勧めします。",
+      "metadata": {
+        "original": "The __INLINE_CODE_0__ property allows you to replace the default \"Place Order\" button with a custom component. This is useful for payment methods that require custom button styling (e.g., Google Pay, Apple Pay) or need to show a payment UI before submitting the order. If this doesn't apply to your payment method, omitting this property and using the default button is recommended.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`placeOrderButton`"
+        ],
+        "urls": []
+      }
+    },
+    "c5011986d1c26ea3892e98b15f52aee2c36cfaa958e276af2da82ce21fe7b427": {
+      "original": "Your custom button component receives all the same props as the payment method __INLINE_CODE_0__ component via the __INLINE_CODE_1__, plus additional button-specific props:",
+      "translated": "カスタムボタンコンポーネントは、__INLINE_CODE_1__を介して、支払いメソッド__INLINE_CODE_0__コンポーネントと同じプロップをすべて受け取り、さらにボタン固有のプロップも受け取ります：",
+      "metadata": {
+        "original": "Your custom button component receives all the same props as the payment method __INLINE_CODE_0__ component via the __INLINE_CODE_1__, plus additional button-specific props:",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`content`",
+          "`PaymentMethodInterface`"
+        ],
+        "urls": []
+      }
+    },
+    "cefb6a99c78a287b31d78a3a9acd9a1ac2e47ed835b5b24e0f1f80f9dc45de49": {
+      "original": "- __INLINE_CODE_0__ - Whether the checkout is processing\n- __INLINE_CODE_1__ - Whether the checkout is waiting to redirect after success\n- __INLINE_CODE_2__ - Whether the button should be disabled\n- __INLINE_CODE_3__ - Whether the button is being rendered in the block editor\n- __INLINE_CODE_4__ - Whether the button is being rendered in preview mode",
+      "translated": "- __INLINE_CODE_0__ - チェックアウト処理中かどうか。\n- __INLINE_CODE_1__ - チェックアウトが成功した後にリダイレクトされるのを待っているかどうか。\n- __INLINE_CODE_2__ - ボタンを無効にするかどうか\n- __INLINE_CODE_3__ - ブロックエディタでボタンがレンダリングされているかどうか\n- __INLINE_CODE_4__ - ボタンがプレビューモードでレンダリングされるかどうか",
+      "metadata": {
+        "original": "- __INLINE_CODE_0__ - Whether the checkout is processing\n- __INLINE_CODE_1__ - Whether the checkout is waiting to redirect after success\n- __INLINE_CODE_2__ - Whether the button should be disabled\n- __INLINE_CODE_3__ - Whether the button is being rendered in the block editor\n- __INLINE_CODE_4__ - Whether the button is being rendered in preview mode",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`waitingForProcessing`",
+          "`waitingForRedirect`",
+          "`disabled`",
+          "`isEditor`",
+          "`isPreview`"
+        ],
+        "urls": []
+      }
+    },
+    "8467c290c086bf5d8c58340e73c9fe2a6ea2587c18d2b461bd539f50952a40d7": {
+      "original": "Here's a simple example:",
+      "translated": "簡単な例を挙げよう：",
+      "metadata": {
+        "original": "Here's a simple example:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "154f1cd1ba4daa1a3b4e3d4651952bb8565b039473958eccfa4a3b970d15fcc1": {
+      "original": "**Note:** The custom button is only shown when the payment method is selected from the list. When a saved payment token is selected, the default \"Place Order\" button is used instead.",
+      "translated": "**カスタムボタンは、支払い方法がリストから選択された場合にのみ表示されます。保存された支払いトークンが選択された場合、代わりにデフォルトの「注文する」ボタンが使用されます。",
+      "metadata": {
+        "original": "**Note:** The custom button is only shown when the payment method is selected from the list. When a saved payment token is selected, the default \"Place Order\" button is used instead.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6f8cd99406e574d410c9222dbfc57cbcb7b3d36135896ed2f4b420fdf049b157": {
+      "original": "| Property | Type | Description |\n| --- | --- | --- |\n| __INLINE_CODE_0__ | String | The slug of the current active payment method in the checkout. |\n| __INLINE_CODE_1__ | Object with billingAddress, cartTotal, currency, cartTotalItems, displayPricesIncludingTax, appliedCoupons, customerId properties | Contains everything related to billing. |\n| __INLINE_CODE_2__ | Object with cartItems, cartFees, extensions properties | Data exposed from the cart including items, fees, and any registered extension data. Note that this data should be treated as immutable (should not be modified/mutated) or it will result in errors in your application. |\n| __INLINE_CODE_3__ | Object with isCalculating, isComplete, isIdle, isProcessing properties | The current checkout status exposed as various boolean state. |\n| __INLINE_CODE_4__ | Object with ValidationInputError, PaymentMethodLabel, PaymentMethodIcons, LoadingMask properties | It exposes React components that can be implemented by your payment method for various common interface elements used by payment methods. |\n| __INLINE_CODE_5__ | Object with noticeContexts and responseTypes properties | Contains some constants that can be helpful when using the event emitter. Read the _[Emitting Events](__URL_0__)_ section for more details. |\n| __INLINE_CODE_6__ | Object with onCheckoutValidation, onCheckoutSuccess, onCheckoutFail, onPaymentSetup, onShippingRateSuccess, onShippingRateFail, onShippingRateSelectSuccess, onShippingRateSelectFail properties | Contains all the checkout event emitter registration functions. These are functions the payment method can register observers on to interact with various points in the checkout flow (see [this doc](./checkout-flow-and-events.md) for more info). |\n| __INLINE_CODE_7__ | Function | **Provided to express payment methods** that should be triggered when the payment method button is clicked (which will signal to checkout the payment method has taken over payment processing) |\n| __INLINE_CODE_8__ | Function | **Provided to express payment methods** that should be triggered when the express payment method modal closes and control is returned to checkout. |\n| __INLINE_CODE_9__ | Function | Submits the checkout and begins processing |\n| __INLINE_CODE_10__ | Function | Async function that validates the checkout form without submitting. Returns a promise resolving to __INLINE_CODE_11__. Useful when you need to validate before showing a payment sheet. |\n| __INLINE_CODE_12__ | Object with height, borderRadius properties | Styles set by the merchant that should be respected by all express payment buttons |\n| __INLINE_CODE_13__ | Object | Various payment status helpers. Note, your payment method does not have to handle setting this status client side. Checkout will handle this via the responses your payment method gives from observers registered to [checkout event emitters](./checkout-flow-and-events.md). |\n| __INLINE_CODE_14__ | Boolean | This is true when the current payment status is __INLINE_CODE_15__. |\n| __INLINE_CODE_16__ | Boolean | This is true when the current payment status is __INLINE_CODE_17__. |\n| __INLINE_CODE_18__ | Boolean | This is true when the current payment status is __INLINE_CODE_19__. |\n| __INLINE_CODE_20__ | Boolean | This is true when the current payment status is one of __INLINE_CODE_21__, __INLINE_CODE_22__, or __INLINE_CODE_23__. |\n| __INLINE_CODE_24__ | Boolean | This is true when the current payment status is __INLINE_CODE_25__. |\n| __INLINE_CODE_26__ | Boolean | This is true when the current payment status is __INLINE_CODE_27__. |\n| __INLINE_CODE_28__ | Boolean | This is true when the current payment status is __INLINE_CODE_29__. |\n| __INLINE_CODE_30__ | Function | Receives a string and allows express payment methods to set an error notice for the express payment area on demand. This can be necessary because some express payment method processing might happen outside of checkout events. |",
+      "translated": "| プロパティ｜タイプ｜説明\n| --- | --- | --- |\n|__INLINE_CODE_0__ | String | チェックアウトで現在有効な支払方法のスラッグ。|\n| オブジェクトはbillingAddress、cartTotal、currency、cartTotalItems、displayPricesIncludingTax、appliedCoupons、customerIdプロパティを含みます。|\n| カートのアイテム、料金、登録されたエクステンションデータを含みます。このデータはイミュータブル(不変)として扱われるべきです(変更/変異されるべきではありません)。|\n| isCalculating、isComplete、isIdle、isProcessingプロパティを持つオブジェクト。|\n| ValidationInputError, PaymentMethodLabel, PaymentMethodIcons, LoadingMaskプロパティを持つオブジェクト。|\n| イベントエミッターを使用する際に役立つ定数がいくつか含まれています。詳しくは_[イベントの発行](__URL_0__)_セクションをお読みください。|\n| onCheckoutValidation、onCheckoutSuccess、onCheckoutFail、onPaymentSetup、onShippingRateSuccess、onShippingRateFail、onShippingRateSelectSuccess、onShippingRateSelectFailプロパティを持つオブジェクトです。これらは、支払いメソッドがチェックアウトフローの様々なポイントと対話するためにオブザーバを登録できる関数です(詳細については[このドキュメント](./checkout-flow-and-events.md)を参照してください)。|\n|__INLINE_CODE_7__ | 関数 | **支払い方法ボタンがクリックされたときにトリガーされる(支払い方法が支払い処理を引き継いだことをチェックアウトに知らせる)支払い方法**を表現するために提供されます。\n| __INLINE_CODE_8__ | 関数 | **エクスプレス決済メソッドに提供される**もので、エクスプレス決済メソッドのモーダルが閉じられ、チェックアウトにコントロールが戻されたときに起動されます。|\n|__INLINE_CODE_9__ | 関数｜チェックアウトを送信し、処理を開始します。\n| __INLINE_CODE_10__ | 関数｜チェックアウトフォームを送信せずにバリデーションを行う非同期関数。__INLINE_CODE_11__を解決するプロミスを返します。支払いシートを表示する前にバリデーションを行う必要がある場合に便利です。|\n|__INLINE_CODE_12__｜ 高さ、borderRadiusプロパティを持つオブジェクト｜マーチャントが設定したスタイル。\n| オブジェクト｜様々な支払いステータスヘルパー。このステータスをクライアント側で設定する必要はありません。Checkoutは、[checkout event emitters](./checkout-flow-and-events.md)に登録されたオブザーバから、支払いメソッドが返すレスポンスによって、この処理を行います。|\n| __INLINE_CODE_14__ | Boolean | 現在の支払いステータスが__INLINE_CODE_15__の場合にtrueになります。|\n| __INLINE_CODE_16__ | Boolean | 現在の支払いステータスが__INLINE_CODE_17__の場合に真となります。|\n| __INLINE_CODE_18__｜Boolean｜ 現在の支払いステータスが __INLINE_CODE_19__ の場合に真となる。|\n| __INLINE_CODE_20__｜Boolean｜ 現在の支払いステータスが__INLINE_CODE_21__、__INLINE_CODE_22__、__INLINE_CODE_23__のいずれかである場合に真となります。|\n| __INLINE_CODE_24__｜論理値｜現在の支払いステータスが__INLINE_CODE_25__の場合に真になります。|\n| __INLINE_CODE_26__｜論理値｜現在の支払いステータスが__INLINE_CODE_27__の場合に真となります。|\n| __INLINE_CODE_28__｜Boolean｜ 現在の支払いステータスが __INLINE_CODE_29__ の場合に真となる。|\n| 関数｜文字列を受け取り、エクスプレス決済メソッドが要求に応じてエクスプレス決済エリアにエラー通知を設定できるようにします。これは、いくつかのエクスプレス決済メソッドの処理がチェックアウトイベントの外で発生する可能性があるため、必要になる可能性があります。|",
+      "metadata": {
+        "original": "| Property | Type | Description |\n| --- | --- | --- |\n| __INLINE_CODE_0__ | String | The slug of the current active payment method in the checkout. |\n| __INLINE_CODE_1__ | Object with billingAddress, cartTotal, currency, cartTotalItems, displayPricesIncludingTax, appliedCoupons, customerId properties | Contains everything related to billing. |\n| __INLINE_CODE_2__ | Object with cartItems, cartFees, extensions properties | Data exposed from the cart including items, fees, and any registered extension data. Note that this data should be treated as immutable (should not be modified/mutated) or it will result in errors in your application. |\n| __INLINE_CODE_3__ | Object with isCalculating, isComplete, isIdle, isProcessing properties | The current checkout status exposed as various boolean state. |\n| __INLINE_CODE_4__ | Object with ValidationInputError, PaymentMethodLabel, PaymentMethodIcons, LoadingMask properties | It exposes React components that can be implemented by your payment method for various common interface elements used by payment methods. |\n| __INLINE_CODE_5__ | Object with noticeContexts and responseTypes properties | Contains some constants that can be helpful when using the event emitter. Read the _[Emitting Events](__URL_0__)_ section for more details. |\n| __INLINE_CODE_6__ | Object with onCheckoutValidation, onCheckoutSuccess, onCheckoutFail, onPaymentSetup, onShippingRateSuccess, onShippingRateFail, onShippingRateSelectSuccess, onShippingRateSelectFail properties | Contains all the checkout event emitter registration functions. These are functions the payment method can register observers on to interact with various points in the checkout flow (see [this doc](./checkout-flow-and-events.md) for more info). |\n| __INLINE_CODE_7__ | Function | **Provided to express payment methods** that should be triggered when the payment method button is clicked (which will signal to checkout the payment method has taken over payment processing) |\n| __INLINE_CODE_8__ | Function | **Provided to express payment methods** that should be triggered when the express payment method modal closes and control is returned to checkout. |\n| __INLINE_CODE_9__ | Function | Submits the checkout and begins processing |\n| __INLINE_CODE_10__ | Function | Async function that validates the checkout form without submitting. Returns a promise resolving to __INLINE_CODE_11__. Useful when you need to validate before showing a payment sheet. |\n| __INLINE_CODE_12__ | Object with height, borderRadius properties | Styles set by the merchant that should be respected by all express payment buttons |\n| __INLINE_CODE_13__ | Object | Various payment status helpers. Note, your payment method does not have to handle setting this status client side. Checkout will handle this via the responses your payment method gives from observers registered to [checkout event emitters](./checkout-flow-and-events.md). |\n| __INLINE_CODE_14__ | Boolean | This is true when the current payment status is __INLINE_CODE_15__. |\n| __INLINE_CODE_16__ | Boolean | This is true when the current payment status is __INLINE_CODE_17__. |\n| __INLINE_CODE_18__ | Boolean | This is true when the current payment status is __INLINE_CODE_19__. |\n| __INLINE_CODE_20__ | Boolean | This is true when the current payment status is one of __INLINE_CODE_21__, __INLINE_CODE_22__, or __INLINE_CODE_23__. |\n| __INLINE_CODE_24__ | Boolean | This is true when the current payment status is __INLINE_CODE_25__. |\n| __INLINE_CODE_26__ | Boolean | This is true when the current payment status is __INLINE_CODE_27__. |\n| __INLINE_CODE_28__ | Boolean | This is true when the current payment status is __INLINE_CODE_29__. |\n| __INLINE_CODE_30__ | Function | Receives a string and allows express payment methods to set an error notice for the express payment area on demand. This can be necessary because some express payment method processing might happen outside of checkout events. |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`activePaymentMethod`",
+          "`billing`",
+          "`cartData`",
+          "`checkoutStatus`",
+          "`components`",
+          "`emitResponse`",
+          "`eventRegistration`",
+          "`onClick`",
+          "`onClose`",
+          "`onSubmit`",
+          "`validate`",
+          "`{ hasError: boolean }`",
+          "`buttonAttributes`",
+          "`paymentStatus`",
+          "`paymentStatus.isPristine`",
+          "`PRISTINE`",
+          "`paymentStatus.isStarted`",
+          "`EXPRESS_STARTED`",
+          "`paymentStatus.isProcessing`",
+          "`PROCESSING`",
+          "`paymentStatus.isFinished`",
+          "`ERROR`",
+          "`FAILED`",
+          "`SUCCESS`",
+          "`paymentStatus.hasError`",
+          "`ERROR`",
+          "`paymentStatus.hasFailed`",
+          "`FAILED`",
+          "`paymentStatus.isSuccessful`",
+          "`SUCCESS`",
+          "`setExpressPaymentError`"
+        ],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/e267cd96a4329a4eeef816b2ef627e113ebb72a5/docs/extensibility/checkout-flow-and-events.md#emitting-events"
+        ]
+      }
+    },
+    "64cc14165c35f8d5b705bb7a08ea50e0da607c2c211f117adeb51d5d0188fa33": {
+      "original": "| __INLINE_CODE_0__ | Object with shippingRates, shippingRatesLoading, selectedRates, setSelectedRates, isSelectingRate, shippingAddress, setShippingAddress, needsShipping properties | Contains all shipping related data (outside of the shipping status). |\n| __INLINE_CODE_1__ | Object with shippingErrorStatus, shippingErrorTypes properties | Various shipping status helpers. |\n| __INLINE_CODE_2__ | Boolean | Indicates whether or not the shopper has selected to save their payment method details (for payment methods that support saved payments). True if selected, false otherwise. Defaults to false. |",
+      "translated": "| オブジェクトは、shippingRates、shippingRatesLoading、selectedRates、setSelectedRates、isSelectingRate、shippingAddress、setShippingAddress、needsShippingプロパティを持ちます。|\n| __INLINE_CODE_1__｜shippingErrorStatus、shippingErrorTypesプロパティを持つオブジェクト｜様々な配送状況ヘルパー。|\n| __INLINE_CODE_2__｜論理値｜ ショッパーが支払い方法の詳細を保存することを選択したかどうかを示します。選択されていればtrue、そうでなければfalse。デフォルトはfalseです。|",
+      "metadata": {
+        "original": "| __INLINE_CODE_0__ | Object with shippingRates, shippingRatesLoading, selectedRates, setSelectedRates, isSelectingRate, shippingAddress, setShippingAddress, needsShipping properties | Contains all shipping related data (outside of the shipping status). |\n| __INLINE_CODE_1__ | Object with shippingErrorStatus, shippingErrorTypes properties | Various shipping status helpers. |\n| __INLINE_CODE_2__ | Boolean | Indicates whether or not the shopper has selected to save their payment method details (for payment methods that support saved payments). True if selected, false otherwise. Defaults to false. |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`shippingData`",
+          "`shippingStatus`",
+          "`shouldSavePayment`"
+        ],
+        "urls": []
+      }
     }
   },
   "docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items.md": {
@@ -74013,9 +74317,9 @@
     "segments": 31
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/README.md": {
-    "hash": "9894050d618c33ffb1b0719e33db2b154ed740dec3fbcdd2244c6db15b8fc790",
-    "translatedAt": "2025-12-27T02:49:58.564Z",
-    "segments": 37
+    "hash": "2cc122ecd65aa8cb3c6ae5fa15f7260a580f4a2025a14e25d32cdd4f99312a51",
+    "translatedAt": "2026-01-16T02:42:06.867Z",
+    "segments": 38
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/products.md": {
     "hash": "4ef88f2db3fe382c8891382204f0cb9c97501c05e86f64a5d86279a16362fc65",
@@ -74153,9 +74457,9 @@
     "segments": 29
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md": {
-    "hash": "8b04862f2412a3ca1be5417a7291ad75ecb1a37ef32e6b359ed3a8e2eebcdda1",
-    "translatedAt": "2025-12-27T02:51:36.040Z",
-    "segments": 66
+    "hash": "bd855a9430cc9ff866f65627e603639970598fbf06a320bf4ab32731b7e662da",
+    "translatedAt": "2026-01-16T02:42:16.304Z",
+    "segments": 68
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/filtering-payment-methods.md": {
     "hash": "5896dce9d94d1dac83f6c399d3849aacdc8570a48753297cbc14b9e1425c33fb",
@@ -74166,5 +74470,10 @@
     "hash": "813e3f7f94488c620ebf96b9ec5c331f2d58d729206f909715df86fc2e012436",
     "translatedAt": "2025-12-27T02:51:57.915Z",
     "segments": 126
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-utilities.md": {
+    "hash": "273f39d06c9a03fabf35c86dd642c5bd6cd6a56a566377200b7236e23ed85f72",
+    "translatedAt": "2026-01-16T02:42:02.257Z",
+    "segments": 9
   }
 }
