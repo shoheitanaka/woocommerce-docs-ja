@@ -7,7 +7,7 @@ sidebar_label: Schema Store
 
 スキーマストアは WooCommerce ブロックに関連するルートを管理し、与えられた名前空間のルートデータの効率的な取得と更新を可能にします。このストアはリソースルートとのやりとりを効率化し、モジュールが必要に応じてエンドポイントパスに簡単にアクセスできるようにします。
 
-このストアを利用するには、`SCHEMA_STORE_KEY`を参照するモジュールで__INLINE_CODE_0__をインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、__INLINE_CODE_2__を介してキーをインポートすることができます：
+このストアを利用するには、`SCHEMA_STORE_KEY`を参照するモジュールで__INLINE_CODE_0__をインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、__INLINE_CODE_2__を介してキーをインポートすることができます: 
 
 ```js
 const { SCHEMA_STORE_KEY } = window.wc.wcBlocksData;
@@ -19,17 +19,17 @@ const { SCHEMA_STORE_KEY } = window.wc.wcBlocksData;
 
 提供されたリソースルートのリストでストアを更新するために使用されるアクションオブジェクトを返します。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   __routes_ `array`：例えば、 `[ '/wc/blocks/products', '/wc/blocks/products/attributes/(?P<id>[\d]+)' ]` です。
--   nameespace_ `string`：ルートが属する名前空間、例 `/wc/blocks`。
+- _routes_ `array`: 指定された名前空間にアタッチされたルートの配列。例: `[ '/wc/blocks/products', '/wc/blocks/products/attributes/(?P<id>[\d]+)' ]`。
+- _namespace_ `string`: ルートが属する名前空間。例: `/wc/blocks`。
 
-#### を返す。 
+#### _Returns_
 
--   `object`：以下のキーを持つリソースルートのリストでストアを更新するために使われるアクションオブジェクト：
-    -   type_ `string`：アクションタイプ。
-    -   _routes`object`：アクションタイプ：routes__INLINE_CODE_2__：ルート名をキーとするルートのオブジェクト。
-    -   nameespace_ `string`: ルートが属する名前空間：ルートが属する名前空間、例 `/wc/blocks`.
+- `object`: 以下のキーを持つリソースルートのリストでストアを更新するために使用するアクションオブジェクト。
+    - _type_ `string`: アクションタイプ。
+    - _routes_ `object`: ルート名をキーとするルートオブジェクト。
+    - _namespace_ `string`: ルートが属する名前空間（例: `/wc/blocks`）。
 
 ## セレクタ
 
@@ -37,20 +37,20 @@ const { SCHEMA_STORE_KEY } = window.wc.wcBlocksData;
 
 これは、指定された名前空間、リソース名、および (必要であれば) ID のルートを取得するために使用されます。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   状態_ `object`：元の状態。
--   名前空間_ `string`：ルートの名前空間 (例 `/wc/blocks`)、
--   リソース名 `string`：リクエストされるリソース、例 `products/attributes/terms`.
--   ids`array`：ルートがidsのプレースホルダを持っている場合にのみ必要です。
+- _state_ `object`: 元の状態。
+- _namespace_ `string`: ルートの名前空間（例: `/wc/blocks`）
+- _resourceName_ `string`: リクエストされるリソース（例: `products/attributes/terms`）
+- _ids_ `array`: ルートにIDのプレースホルダーがある場合にのみ必要です。
 
-#### を返す。 
+#### _Returns_
 
--   `string`：利用可能であればルート。
+-   `string`: 利用可能であればルート。
 
-#### 例 
+#### _例_ 
 
-もし、`wc/blocks`名前空間上の単一製品のルートを探しているのであれば、`[ 20 ]`をidとして持つことになります：
+もし、`wc/blocks`名前空間上の単一製品のルートを探しているのであれば、`[ 20 ]`をidとして持つことになります: 
 
 ```js
 // '/wc/blocks/products/20'
@@ -61,29 +61,29 @@ wp.data.select( SCHEMA_STORE_KEY ).getRoute( '/wc/blocks', 'products', [ 20 ] );
 
 これは指定された名前空間に登録されたすべてのルートをフラット配列として返します。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   状態 `object`：現在の状態。
--   namespace `string`: 現在の状態：ルートを返す名前空間。
+- _state_ `object`: 現在の状態。
+- namespace `string`: ルートを返す名前空間。
 
-#### を返す。 
+#### _Returns_
 
--   `array`：与えられた名前空間のすべてのルートの配列。
+-   `array`: 与えられた名前空間のすべてのルートの配列。
 
 ### getRouteFromResourceEntries
 
 これは、ルート状態の指定されたスライスからルートを返します。
 
-#### パラメーター 
+#### _Parameters_ 
 
 -   _stateSlice_ `object`:与えられた名前空間とリソース名のルート状態のスライス。
--   ids_ `array` (default: `[]`)：ルートプレースホルダーで置き換える id 参照の配列。
+-   _ids_ `array` (default: `[]`): ルートプレースホルダーで置き換える id 参照の配列。
 
-#### を返す。 
+#### _Returns_
 
--   `string`：指定されたリソースエントリーのルート。ルートが見つからない場合は空文字列。
+-   `string`: 指定されたリソースエントリーのルート。ルートが見つからない場合は空文字列。
 
-#### 例 
+#### _例_ 
 
 ```js
 const store = select( SCHEMA_STORE_KEY );
@@ -94,17 +94,17 @@ const route = store.getRouteFromResourceEntries( stateSlice, ids );
 
 これはプレースホルダを含む組み立てられたルートを返します。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   ルート `string`：組み立てるルート。
--   _routePlaceholders_ `array`: 組み立てるルート：ルートプレースホルダの配列。
--   id`array`：ルートプレースホルダーで置き換える id 参照の配列。
+- _route_ `string`: 組み立てるルート。
+- _routePlaceholders_ `array`: ルートプレースホルダーの配列。
+- _ids_ `array`: ルートプレースホルダー内で置換されるID参照の配列。
 
-#### を返す。 
+#### _Returns_
 
--   `string`：プレースホルダを実際の値に置き換えた、組み立てられたルート。
+-   `string`: プレースホルダを実際の値に置き換えた、組み立てられたルート。
 
-#### 例 
+#### _例_ 
 
 ```js
 const store = select( SCHEMA_STORE_KEY );

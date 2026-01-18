@@ -4,7 +4,7 @@ category_slug: cart-and-checkout-available-filters
 post_title: Cart and Checkout - Available Filters
 ---
 
-# Available Filters
+# 利用可能なフィルター
 
 このドキュメントでは、現在エクステンションで利用可能なフィルタの一覧と、それぞれのフィルタの使用法について説明します。フィルタの登録に関する情報は、[チェックアウト - フィルタ登録](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/filter-registry/README.md) ページにあります。
 
@@ -16,8 +16,8 @@ post_title: Cart and Checkout - Available Filters
 -   `cartItemPrice`
 -   `itemName`
 -   `saleBadgePriceFormat`
--   ラインコード
--   インラインコード5
+-   `showRemoveItemLink`
+-   `subtotalPriceFormat`
 
 以下のスクリーンショットは、個々のフィルターがどの部分に影響するかを示しています：
 

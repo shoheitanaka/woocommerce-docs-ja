@@ -4,9 +4,9 @@ category_slug: extensibility-in-blocks
 post_title: Extensibility in blocks
 ---
 
-# Extensibility in blocks
+# ブロックの拡張性
 
-これらのドキュメントはすべて様々なWooCommerceブロックの拡張性を扱っています。
+これらのドキュメントはすべて様々な WooCommerce ブロックの拡張性を扱っています。
 
 ## インポートと依存関係の抽出
 
@@ -16,7 +16,7 @@ post_title: Extensibility in blocks
 const { registerCheckoutFilters } = window.wc.blocksCheckout;
 ```
 
-しかし、依存関係の管理を強化するために`@woocommerce/dependency-extraction-webpack-plugin`を使う場合は、代わりにESモジュール構文を使うことができる：
+しかし、依存関係の管理を強化するために `@woocommerce/dependency-extraction-webpack-plugin` を使う場合は、代わりにESモジュール構文を使うことができる：
 
 ```js
 import { registerCheckoutFilters } from '@woocommerce/blocks-checkout';
@@ -49,17 +49,17 @@ import { registerCheckoutFilters } from '@woocommerce/blocks-checkout';
 | [支払い方法の統合](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration/)| 決済方法の実装に関する情報                                                             |
 | [支払い方法のフィルタリング](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/filtering-payment-methods/)    | チェックアウトブロックで利用可能な支払い方法のフィルタリングに関する情報。                            |
 
-## チェックアウト・ブロック
+## チェックアウトブロック
 
-以下の参考資料に加えて、[`block-checkout`パッケージのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/README.md)(__INLINE_CODE_0__パッケージのドキュメント)(__URL_0__)を参照してください。
+以下の参考資料に加えて、フィルター、スロットフィル、内部ブロックを使用してチェックアウトを拡張するために使用される [`block-checkout` パッケージのドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/README.md) も参照してください。
 
-[| ドキュメント
+| ドキュメント
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| チェックアウト・ブロックが注文を処理する方法](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/how-checkout-processes-an-order/)| チェックアウトフローの詳細な内部構造。                                                                 |
+| [チェックアウト・ブロックが注文を処理する方法](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/how-checkout-processes-an-order/)| チェックアウトフローの詳細な内部構造。                                                                 |
 | [IntegrationInterface](/docs/block-development/reference/integration-interface/) | `IntegrationInterface` クラスと、スクリプト、スタイル、データをWooCommerceブロックに登録するための使い方。|
 | [利用可能なフィルター](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)                                 | WooCommerceブロックの特定の要素の値を変更するために使用できるフィルタについて。                |
 | [スロットとフィル](/docs/block-development/reference/slot-fills/) | カートとチェックアウトで独自のコンポーネントをレンダリングするためのスロットフィルとその使用方法について説明しています。                       |
 | [利用可能なスロットフィル](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/available-slot-fills/)                                                | カートとチェックアウトで使用可能なスロットとその位置。                                        |
-| [DOMイベント](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/dom-events/)                                                               | ブロック間やWooCommerceの他の部分との通信に使用されるDOMイベントのリストです。         |
+| [DOM イベント](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/dom-events/)                                                               | ブロック間やWooCommerceの他の部分との通信に使用されるDOMイベントのリストです。         |
 | [フィルタレジストリ](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/packages/checkout/filter-registry/README.md) | フィルタレジストリは特定の値を操作するためにコールバックを登録することができます。                               |
 | [追加チェックアウトフィールド](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/additional-checkout-fields/)                               | フィルタ・レジストリでは、特定の値を操作するためにコールバックを登録することができます。                               |

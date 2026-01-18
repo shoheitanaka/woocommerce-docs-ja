@@ -2,6 +2,9 @@
 post_title: Coupons
 sidebar_label: Coupons
 ---
+
+# クーポン
+
 以下のクーポンフィルターが利用可能です：
 
 -   `coupons`
@@ -10,28 +13,28 @@ sidebar_label: Coupons
 
 ## `coupons`
 
-### 説明 
+### 説明
 
 現在の機能では、クーポンコードはカートとチェックアウトのサイドバーに表示されます。これは、ユーザーフレンドリーでないクーポンコードを動的に生成する場合、望ましくない可能性があります。したがって、このコードの表示方法を変更することが望ましいかもしれません。これを実現するために、`coupons`フィルタが存在します。このフィルタはクーポンの表示/非表示にも使用できます。このフィルタは、クーポンの値/合計を変更するために使用してはいけません。これはカートの合計には反映されません。
 
 ### パラメーター 
 
--   coupons_ `object` - 以下のキーを持つクーポン・オブジェクト：
-    -   code_ `string` - クーポンコード。
-    -   discount_type_ `string` - 割引の種類。`percent`または`fixed_cart`です。
-    -   totals_ `object` - 以下のキーを持つ合計オブジェクト：
-        -   currency_code_ `string` - 通貨コード。
-        -   currency_decimal_separator_ `string` - 通貨の小数点セパレータ。
-        -   __currency_minor_unit_ `number` - 通貨の小単位。
-        -   __currency_prefix_ `string` - 通貨のプレフィックス。
-        -   __currency_suffix_ `string` - 通貨のサフィックス。
-        -   __currency_symbol_ `string` - 通貨記号。
-        -   __currency_thousand_separator_ `string` - 通貨の千の区切り文字。
-        -   total_discount_ `string` - 割引総額。
-        -   __total_discount_tax_ `string` - 割引税額の合計。
--   extensions_ `object` (default: `{}`) - extensions オブジェクト。
--   args_ `object` - 引数オブジェクト：
-    -   context_ `string` (default: `summary`) - アイテムのコンテキスト。
+-   _coupons_ `object` - 以下のキーを持つクーポン・オブジェクト：
+    -   _code_ `string` - クーポンコード。
+    -   _discount_type_ `string` - 割引の種類。`percent`または`fixed_cart`です。
+    -   _totals_ `object` - 以下のキーを持つ合計オブジェクト：
+        -   _currency_code_ `string` - 通貨コード。
+        -   _currency_decimal_separator_ `string` - 通貨の小数点セパレータ。
+        -   _currency_minor_unit_ `number` - 通貨の小単位。
+        -   _currency_prefix_ `string` - 通貨のプレフィックス。
+        -   _currency_suffix_ `string` - 通貨のサフィックス。
+        -   _currency_symbol_ `string` - 通貨記号。
+        -   _currency_thousand_separator_ `string` - 通貨の千の区切り文字。
+        -   _total_discount_ `string` - 割引総額。
+        -   _total_discount_tax_ `string` - 割引税額の合計。
+-   _extensions_ `object` (default: `{}`) - extensions オブジェクト。
+-   _args_ `object` - 引数オブジェクト：
+    -   _context_ `string` (default: `summary`) - アイテムのコンテキスト。
 
 ### リターン 
 
@@ -74,10 +77,10 @@ registerCheckoutFilters( 'example-extension', {
 
 ### パラメーター 
 
--   value_ `boolean` (デフォルト: `true`) - クーポン適用通知を表示するかどうか。
+-   _value_ `boolean` (デフォルト: `true`) - クーポン適用通知を表示するかどうか。
 -   _extensions_ `object` (default: `{}`) - 拡張オブジェクト。
--   args_ `object` - 以下のキーを持つ引数オブジェクト：
-    -   context_ `string` (指定可能な値: `wc/cart` および `wc/checkout`) - クーポン通知のコンテキスト。
+-   _args_ `object` - 以下のキーを持つ引数オブジェクト：
+    -   _context_ `string` (指定可能な値: `wc/cart` および `wc/checkout`) - クーポン通知のコンテキスト。
     -   _couponCode_ `string` - クーポンコード。
 
 ### リターン 
@@ -132,10 +135,10 @@ registerCheckoutFilters( 'example-extension', {
 
 ### パラメーター 
 
--   value_ `boolean` (デフォルト: `true`) - クーポン削除通知を表示するかどうか。
+-   _value_ `boolean` (デフォルト: `true`) - クーポン削除通知を表示するかどうか。
 -   _extensions_ `object` (default: `{}`) - 拡張オブジェクト。
--   args_ `object` - 以下のキーを持つ引数オブジェクト：
-    -   context_ `string` (指定可能な値: `wc/cart` および `wc/checkout`) - クーポン通知のコンテキスト。
+-   _args_ `object` - 以下のキーを持つ引数オブジェクト：
+    -   _context_ `string` (指定可能な値: `wc/cart` および `wc/checkout`) - クーポン通知のコンテキスト。
     -   _couponCode_ `string` - クーポンコード。
 
 ### リターン 

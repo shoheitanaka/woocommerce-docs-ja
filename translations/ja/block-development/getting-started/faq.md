@@ -3,11 +3,11 @@ post_title: Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
 
-# Frequently Asked Questions
+# よくある質問
 
-このドキュメントは、WooCommerce Blocksを拡張する開発者からよく寄せられる質問にお答えすることを目的としています。
+このドキュメントは、WooCommerce Blocks を拡張する開発者からよく寄せられる質問にお答えすることを目的としています。
 
-FAQは質問を受け次第、追加していく予定です。
+FAQ は質問を受け次第、追加していく予定です。
 
 ここにない質問は、[GitHub Discussions](https://github.com/woocommerce/woocommerce/discussions) または [WooCommerce Community Slack](https://woocommerce.com/community-slack/) でお尋ねください。
 
@@ -21,7 +21,7 @@ FAQは質問を受け次第、追加していく予定です。
 
 これを行うには、コードの実行方法に応じて2つの方法がある。
 
-#### コードがReactコンポーネントで実行されている場合
+#### コードが React コンポーネントで実行されている場合
 
 コンポーネントがカート/チェックアウトのインナーブロックである場合、または[スロット/フィル](/docs/block-development/reference/slot-fills/)でレンダリングされる場合、関連するデータストアから必要なデータを直接選択し、データが変更されたときに必要なアクションを実行できます。利用可能なセレクタの詳細については、[関連するデータストアのドキュメント](https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/data-store)を参照してください。
 
@@ -68,9 +68,9 @@ const unsubscribe = subscribe( () => {
 }, cartStore );
 ```
 
-`subscribe`コールバックは、データストアがアクションを受け取るたびに実行されるので、キャッシュを使用して、不要なときに処理を行わないようにする必要があります。例えば、国が変わったときだけ処理を行いたいのであれば、タスクを実行する前に以前の値をキャッシュし、現在の値と比較する必要があります。
+`subscribe` コールバックは、データストアがアクションを受け取るたびに実行されるので、キャッシュを使用して、不要なときに処理を行わないようにする必要があります。例えば、国が変わったときだけ処理を行いたいのであれば、タスクを実行する前に以前の値をキャッシュし、現在の値と比較する必要があります。
 
-変更に反応する必要がなくなった場合は、上の例のように、`subscribe`メソッドから返される`unsubscribe`メソッドを使用して、データストアからの登録を解除することができる。
+変更に反応する必要がなくなった場合は、上の例のように、`subscribe` メソッドから返される `unsubscribe` メソッドを使用して、データストアからの登録を解除することができる。
 
 ## カートの改造
 
@@ -82,7 +82,7 @@ const unsubscribe = subscribe( () => {
 
 ![Image](https://github.com/user-attachments/assets/e0d114b1-4e4c-4b34-9675-5571136b36d0)
 
-Additional Checkout Fields APIを通じて、またはインナーブロックを作成することによって、チェックボックスをすでに追加したと仮定すると、次のステップは、チェックボックスがチェックされている場合はクーポンを適用し、チェックされていない場合はクーポンを削除するサーバー側のコードを登録することです。
+Additional Checkout Fields API を通じて、またはインナーブロックを作成することによって、チェックボックスをすでに追加したと仮定すると、次のステップは、チェックボックスがチェックされている場合はクーポンを適用し、チェックされていない場合はクーポンを削除するサーバー側のコードを登録することです。
 
 ```php
 add_action('woocommerce_blocks_loaded', function() {
@@ -118,7 +118,7 @@ const onChange = ( checked ) => {
 }
 ```
 
-このクーポンが注文サマリーのクーポンリストにどのように表示されるかを変更するには、`coupons`チェックアウトフィルターを次のように使用します：
+このクーポンが注文サマリーのクーポンリストにどのように表示されるかを変更するには、`coupons` チェックアウトフィルターを次のように使用します：
 
 ```js
 const { registerCheckoutFilters } = window.wc.blocksCheckout;
@@ -169,7 +169,7 @@ add_action(
 
 ### カートをサーバーから強制更新する方法
 
-これは、[`extensionCartUpdate`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/rest-api/extend-rest-api-update-cart.md)を使うのが望ましい方法ですが、有効なカートオブジェクトを持つ`wc/store/cart`データストアで`receiveCart`アクションを実行することによっても可能です：
+これは、[`extensionCartUpdate`](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/rest-api/extend-rest-api-update-cart.md)を使うのが望ましい方法ですが、有効なカートオブジェクトを持つ `wc/store/cart` データストアで `receiveCart` アクションを実行することによっても可能です：
 
 ```js
 const { dispatch } = window.wp.data;
@@ -177,7 +177,7 @@ const { dispatch } = window.wp.data;
 dispatch( 'wc/store/cart' ).receiveCart( cartObject )
 ```
 
-Store API上のすべてのカートルートは、ここで使用できるカートオブジェクトを返します。ここに無効なカートオブジェクトを渡すと、ブロックでエラーが発生します。
+Store API 上のすべてのカートルートは、ここで使用できるカートオブジェクトを返します。ここに無効なカートオブジェクトを渡すと、ブロックでエラーが発生します。
 
 使うこともできる：
 
@@ -191,21 +191,21 @@ dispatch('wc/store/cart').invalidateResolutionForStore()
 
 ### カートの各アイテムに何かをレンダリングするには？
 
-この方法は現在 ** 公式にはサポートされていませんが、DOM 操作や React ポータルを使用してこの方法を実行している開発者の話を聞いたことがあります。この方法を選択した場合、将来 Cart ブロックが変更されたときに、統合が機能しなくなる可能性があることに注意してください。 
+この方法は現在、公式には**サポートされていません**が、DOM 操作や React ポータルを使用してこの方法を実行している開発者の話を聞いたことがあります。この方法を選択した場合、将来 Cart ブロックが変更されたときに、統合が機能しなくなる可能性があることに注意してください。
 
 ## チェックアウトの修正
 
 ### チェックアウトフィールドを削除するには？
 
-WordPressとWooは様々なプラグインをサポートしているため、私たちはこれを推奨していません。これらの中にはチェックアウトフィールドに依存して機能するものもありますが、そのフィールドを削除しても問題ない場合は、[チェックアウトフィールドの削除](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/removing-checkout-fields/) をご覧ください。
+WordPress と Woo は様々なプラグインをサポートしているため、私たちはこれを推奨していません。これらの中にはチェックアウトフィールドに依存して機能するものもありますが、そのフィールドを削除しても問題ない場合は、[チェックアウトフィールドの削除](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/removing-checkout-fields/) をご覧ください。
 
 ### チェックアウト時に注文や顧客データを変更するにはどうすればよいですか？
 
-チェックアウト時に送信された注文データや顧客データを修正したい場合は、`woocommerce_store_api_checkout_order_processed`アクションを使用することができます。
+チェックアウト時に送信された注文データや顧客データを修正したい場合は、`woocommerce_store_api_checkout_order_processed` アクションを使用することができます。
 
-このアクションは支払いが処理される直前に実行されます。この時点で、WooCommerceのライフサイクルの他の時点と同じように注文を変更することができますが、変更を永続化するために`$order->save()`を呼び出す必要があります。
+このアクションは支払いが処理される直前に実行されます。この時点で、WooCommerce のライフサイクルの他の時点と同じように注文を変更することができますが、変更を永続化するために `$order->save()` を呼び出す必要があります。
 
-例として、ユーザーの姓と名が大文字であることを確認してみましょう：
+例として、ユーザーの姓と名が大文字であることを確認してみましょう:
 
 ```php
 add_action(

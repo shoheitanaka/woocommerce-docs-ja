@@ -3,9 +3,9 @@ post_title: Checkout flow and events
 sidebar_label: Checkout flow and events
 ---
 
-# Checkout flow and events
+# チェックアウトフローとイベント
 
-このドキュメントでは、WooCommerceチェックアウトブロックにおけるチェックアウトのフローの概要と、一般的なアーキテクチャの概要を説明します。
+このドキュメントでは、WooCommerce チェックアウトブロックにおけるチェックアウトのフローの概要と、一般的なアーキテクチャの概要を説明します。
 
 チェックアウト・ブロックのアーキテクチャーは、以下の原則に基づいている：
 
@@ -82,7 +82,7 @@ const MyComponent = ( props ) => {
 
 ###### `disableCheckoutFor` で `isCalculating` を制御する
 
-`isCalculating`は、`disableCheckoutFor`サンクを使ってプログラムで制御できる：
+`isCalculating`は、`disableCheckoutFor` thunk を使ってプログラムで制御できる：
 
 ```jsx
 const { dispatch } = window.wp.data;
@@ -96,7 +96,7 @@ dispatch( checkoutStore ).disableCheckoutFor( async () => {
 } );
 ```
 
-thunkは内部状態を制御し、提供されたプロミスが解決するまで、それが成功しても失敗しても、クライアントがフローを完了しようとできないことを保証する。
+thunk は内部状態を制御し、提供されたプロミスが解決するまで、それが成功しても失敗しても、クライアントがフローを完了しようとできないことを保証する。
 
 ##### **hasError**
 
@@ -185,7 +185,7 @@ const MyComponent = ( { onCheckoutValidation } ) => {
 };
 ```
 
-*`Event Emitter Utilities`***。
+**`Event Emitter Utilities`**
 
 イベントに関連して使用できるユーティリティ・メソッドがたくさんある。これらは`assets/js/base/context/event-emit/utils.ts`で利用可能で、以下のようにインポートできる：
 
@@ -236,7 +236,7 @@ const MyPaymentMethodComponent = ( { emitResponse } ) => {
 
 このイベントエミッタサブスクライバは、`useCheckoutContext`フックを使用してチェックアウトコンテキストから取得するか、登録されたコンポーネントのpropとして支払いメソッドエクステンションから取得することができます：
 
-"内部開発のために:_
+_内部開発のために:_
 
 ```jsx
 import { useCheckoutContext } from '@woocommerce/base-contexts';
@@ -252,7 +252,7 @@ const Component = () => {
 };
 ```
 
-_登録された支払い方法の構成要素について
+_登録された支払い方法の構成要素について:_
 
 ```jsx
 const { useEffect } = window.wp.element;
@@ -266,7 +266,7 @@ const PaymentMethodComponent = ( { eventRegistration } ) => {
 };
 ```
 
-"他のことについては
+_他のことについては:_
 
 ```jsx
 const { onCheckoutValidation } = wc.blocksCheckoutEvents;
@@ -337,7 +337,7 @@ const errorResponse = { type: 'error' };
 
 このイベントエミッタサブスクライバは、`usePaymentEventsContext`フックを使用してチェックアウトコンテキストから取得するか、登録されたコンポーネントのpropとして支払いメソッドエクステンションから取得することができます：
 
-"内部開発のために:_
+_内部開発のために:_
 
 ```jsx
 import { usePaymentEventsContext } from '@woocommerce/base-contexts';
@@ -353,7 +353,7 @@ const Component = () => {
 };
 ```
 
-_登録された支払い方法の構成要素について
+_登録された支払い方法の構成要素について:_
 
 ```jsx
 const { useEffect } = window.wp.element;
@@ -383,7 +383,7 @@ const onCheckoutProcessingData = {
 };
 ```
 
-物件は以下の通り：
+物件は以下の通り:
 
 -   `redirectUrl`：これはサーバーの処理によって返される、チェックアウトのリダイレクト先URLの文字列です。
 -   `orderId`：処理中のオーダーIDです。
@@ -410,7 +410,7 @@ const onCheckoutProcessingData = {
 
 このイベントエミッタサブスクライバは、`useCheckoutContext`フックを使用してチェックアウトコンテキストから取得するか、登録されたコンポーネントのpropとして支払いメソッドエクステンションから取得することができます：
 
-"内部開発のために:_
+_内部開発のために:_
 
 ```jsx
 import { useCheckoutContext } from '@woocommerce/base-contexts';
@@ -426,7 +426,7 @@ const Component = () => {
 };
 ```
 
-_登録された支払い方法の構成要素について
+_登録された支払い方法の構成要素について_
 
 ```jsx
 const { useEffect } = window.wp.element;
@@ -440,7 +440,7 @@ const PaymentMethodComponent = ( { eventRegistration } ) => {
 };
 ```
 
-"他のことについては
+_他のことについては:_
 
 ```jsx
 const { onCheckoutSuccess } = wc.blocksCheckoutEvents;
@@ -451,7 +451,7 @@ useEffect( () => {
 }, [ onCheckoutSuccess ] );
 ```
 
-### `onCheckoutFail`。
+### `onCheckoutFail`
 
 このイベントエミッタは、チェックアウトステータスが`AFTER_PROCESSING`で、チェックアウト`hasError`ステータスが`true`の場合に発生します。`AFTER_PROCESSING`ステータスは、チェックアウト処理リクエストに対するサーバからのレスポンスを受信した後、`CheckoutProcessor`コンポーネントによって設定されます。
 
@@ -463,7 +463,7 @@ useEffect( () => {
 
 このイベントエミッタサブスクライバは、`useCheckoutContext`フックを使用してチェックアウトコンテキストから取得するか、登録されたコンポーネントのpropとして支払いメソッドエクステンションから取得することができます：
 
-"内部開発のために:_
+_内部開発のために:_
 
 ```jsx
 import { useCheckoutContext } from '@woocommerce/base-contexts';
@@ -479,7 +479,7 @@ const Component = () => {
 };
 ```
 
-_登録された支払い方法の構成要素について
+_登録された支払い方法の構成要素について_
 
 ```jsx
 const { useEffect } = window.wp.element;
@@ -493,7 +493,7 @@ const PaymentMethodComponent = ( { eventRegistration } ) => {
 };
 ```
 
-"他のことについては
+_他のことについては_
 
 ```jsx
 const { onCheckoutFail } = wc.blocksCheckoutEvents;
@@ -504,25 +504,25 @@ useEffect( () => {
 }, [ onCheckoutFail ] );
 ```
 
-### `onShippingRateSuccess`。
+### `onShippingRateSuccess`
 
 このイベント・エミッターは、配送料金がロードされておらず、配送データ・コンテキストのエラー状態が`NONE`で、利用可能な配送料金がある場合に発生します。
 
 このイベントエミッターは、登録されたオブザーバーのレスポンスは気にせず、サーバーから取得した現在の配送料金を渡すだけで、すべての登録されたオブザーバーを実行します。
 
-### `onShippingRateFail`。
+### `onShippingRateFail`
 
 このイベント・エミッターは、配送料金がロードされず、配送データ・コンテキストのエラー状態が`UNKNOWN`または`INVALID_ADDRESS`の場合に発生します。
 
 このイベントエミッターは、登録されたオブザーバーのレスポンスは気にせず、単純に登録されたオブザーバーをすべて実行し、コンテキストの現在のエラーステータスを渡します。
 
-### `onShippingRateSelectSuccess`。
+### `onShippingRateSelectSuccess`
 
 このイベント・エミッターは、配送料金の選択がサーバーに永続化されておらず、選択可能な料金があり、コンテキストの現在のエラー・ステータスが`NONE`である場合に発生します。
 
 このイベントエミッターは、登録されたオブザーバーのレスポンスは気にせず、単に現在の選択されたレートを渡して登録されたオブザーバーをすべて実行する。
 
-### `onShippingRateSelectFail`。
+### `onShippingRateSelectFail`
 
 このイベント・エミッターは、配送料金の選択がサーバーに永続化されておらず、配送データ・コンテキストのエラー状態が`UNKNOWN`または`INVALID_ADDRESS`である場合に発生します。
 

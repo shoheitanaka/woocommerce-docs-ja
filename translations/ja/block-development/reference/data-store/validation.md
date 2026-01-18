@@ -8,9 +8,9 @@ sidebar_label: Validation Store
 
 バリデーションデータストアは、カートまたはチェックアウトブロックのフィールドのエラーを表示する方法を提供します。
 
-ストアのデータは1つのオブジェクトであるべきで、そのキーは_error ID_であり、値はそのエラー・メッセージに関連するデータである。オブジェクトの値には_message_と_hidden_が含まれていなければなりません。message_は表示するエラーメッセージで、_hidden_はエラーを表示するかどうかを示すブール値です。
+ストアのデータは1つのオブジェクトであるべきで、そのキーは _error ID_ であり、値はそのエラー・メッセージに関連するデータである。オブジェクトの値には _message_ と _hidden_ が含まれていなければなりません。_message_ は表示するエラーメッセージで、_hidden_ はエラーを表示するかどうかを示すブール値です。
 
-データの構造化の例：
+データの構造化の例: 
 
 ```js
 {
@@ -27,7 +27,7 @@ sidebar_label: Validation Store
 
 チェックアウトプロセスが始まると、このデータストアにエントリーがあるかどうかをチェックし、もしあればチェックアウトプロセスの進行を止めます。また、非表示になっているエラーも表示されます。エラーを非表示に設定しても、データストアからそのエラーが消去されることはありません！
 
-このストアを利用するには、`validationStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`StoreDescriptor`をインポートすることができます：
+このストアを利用するには、`validationStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data` が `wc.wcBlocksData` を指す外部として登録されていると仮定すると、`StoreDescriptor` をインポートすることができます: 
 
 ```js
 const { validationStore } = window.wc.wcBlocksData;
@@ -37,7 +37,7 @@ const { validationStore } = window.wc.wcBlocksData;
 
 ![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.22.45.png)
 
-WooCommerce Blocksでは、`useEffect`フックを使ってチェックボックスが必須かどうか、チェックされているかどうかをチェックしています。チェックボックスが必須でチェックされていない場合、ストアにバリデーションエラーを追加します。チェックボックスが必須でチェックされている場合は、ストアからバリデーションエラーをクリアします。
+WooCommerce Blocks では、`useEffect` フックを使ってチェックボックスが必須かどうか、チェックされているかどうかをチェックしています。チェックボックスが必須でチェックされていない場合、ストアにバリデーションエラーを追加します。チェックボックスが必須でチェックされている場合は、ストアからバリデーションエラーをクリアします。
 
 ```ts
 useEffect( () => {
@@ -73,28 +73,28 @@ useEffect( () => {
 
 ![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.28.56.png)
 
-購入者が利用規約チェックボックスをチェックせずにチェックアウトフォームを送信すると、`hidden: true`の項目が`hidden: false`に変更され、検証メッセージが表示されます。
+購入者が利用規約チェックボックスをチェックせずにチェックアウトフォームを送信すると、`hidden: true` の項目が `hidden: false` に変更され、検証メッセージが表示されます。
 
 ![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-17.33.01.png)
 
-WooCommerce Blocksでは、以下のコードを使ってテキスト入力フィールドにバリデーションエラーがあるかどうかをチェックしています：
+WooCommerce Blocksでは、以下のコードを使ってテキスト入力フィールドにバリデーションエラーがあるかどうかをチェックしています: 
 
 ```ts
 const hasError = validationError?.message && ! validationError?.hidden;
 ```
 
-> 💡 この例で覚えておくべき主なポイントは以下の通りです：
+> 💡 この例で覚えておくべき主なポイントは以下の通りです: 
 >
-> `hidden: true`はバリデーションエラーがあることを意味するが、ユーザーからは見えない。
+> `hidden: true` はバリデーションエラーがあることを意味するが、ユーザーからは見えない。
 > - `hidden: false` は、バリデーションエラーが積極的にユーザーに表示されていることを示します。
 
-上の例では、`message`は非表示になり、テキストの色だけが赤に変わり、このフィールドにバリデーション・エラーがあることが強調されている。
+上の例では、`message` は非表示になり、テキストの色だけが赤に変わり、このフィールドにバリデーション・エラーがあることが強調されている。
 
-場合によっては、ユーザーにバリデーションエラーメッセージを表示したいこともあります。例えば、購入者が必須項目を入力せずにチェックアウトフォームを送信しようとした場合です。例えば、姓、名、住所のフィールドを空のままにした場合です：
+場合によっては、ユーザーにバリデーションエラーメッセージを表示したいこともあります。例えば、購入者が必須項目を入力せずにチェックアウトフォームを送信しようとした場合です。例えば、姓、名、住所のフィールドを空のままにした場合です: 
 
 ![image](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-25-at-18.28.30.png)
 
-WooCommerce Blocksでは、以下の関数がバリデーションエラーメッセージの表示ロジックを処理します：
+WooCommerce Blocks では、以下の関数がバリデーションエラーメッセージの表示ロジックを処理します: 
 
 ```ts
 export const ValidationInputError = ( {
@@ -126,7 +126,7 @@ export const ValidationInputError = ( {
 };
 ```
 
-上記のコード・スニペットを簡略化すると以下のようになる：
+上記のコード・スニペットを簡略化すると以下のようになる: 
 
 ```js
 {
@@ -142,11 +142,11 @@ export const ValidationInputError = ( {
 
 バリデーションエラーをクリアする。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   _errorId_ `string`：検証エラーをクリアするためのエラーID。
+-   _errorId_ `string`: 検証エラーをクリアするためのエラー ID。
 
-#### 例 
+#### _例_ 
 
 ```js
 const store = dispatch( validationStore );
@@ -157,13 +157,13 @@ store.clearValidationError( 'billing-first-name' );
 
 複数のバリデーションエラーを一度にクリアする。エラー ID を省略した場合は、すべてのバリデーションエラーをクリアします。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   エラー_ `string[]`または`undefined`：バリデーションエラーをクリアするエラーID。未定義の場合は、すべてのバリデーションエラーがクリアされます。
+- _errors_ `string[]` または `undefined`: 検証エラーをクリアするエラーID。これは undefined にすることができ、その場合、すべての検証エラーがクリアされます。
 
-#### 例 
+#### _例_ 
 
-1.これは、配列で渡されたバリデーションエラーだけをクリアします。
+1. これは、配列で渡されたバリデーションエラーだけをクリアします。
 
 ```js
 const store = dispatch( validationStore );
@@ -174,7 +174,7 @@ store.clearValidationErrors( [
 ] );
 ```
 <!-- markdownlint-disable MD029 -->
-2.これはすべてのバリデーションエラーをクリアします。
+2. これはすべてのバリデーションエラーをクリアします。
 
 ```js
 const store = dispatch( validationStore );
@@ -185,11 +185,11 @@ store.clearValidationErrors();
 
 バリデーションエラーを設定します。errors_のエントリがバリデーションエラーのリストに_追加_されます。すでにリストに存在するエントリは、新しい値で _updated_ されます。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   エラー_ `object`：オブジェクトのキーは検証エラーIDで、値は_message_ `string`と_hidden_ `boolean`を含むオブジェクトでなければなりません。
+- _errors_ `object`: 新しい検証エラー。オブジェクトのキーは検証エラー ID であり、値は _message_ `string` と _hidden_​​ `boolean` を含むオブジェクトである必要があります。
 
-#### 例 
+#### _例_ 
 
 ```js
 const { dispatch } = wp.data;
@@ -211,11 +211,11 @@ setValidationErrors( {
 
 `hidden`プロパティを`true`に設定することで、 バリデーションエラーを隠します。これはデータストアからエラーを消去しません！
 
-#### パラメーター 
+#### _Parameters_ 
 
--   _errorId_ `string`：非表示にするエラーID。
+-   _errorId_ `string`: 非表示にするエラー ID。
 
-#### 例 
+#### _例_ 
 
 ```js
 const { dispatch } = wp.data;
@@ -228,11 +228,11 @@ hideValidationError( 'billing-first-name' );
 
 `hidden`プロパティを`false`に設定することで、バリデーションエラーを表示します。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   _errorId_ `string`：表示するエラーID。
+-   _errorId_ `string`: 表示するエラー ID。
 
-#### 例 
+#### _例_ 
 
 ```js
 const { dispatch } = wp.data;
@@ -245,7 +245,7 @@ showValidationError( 'billing-first-name' );
 
 `hidden`プロパティを`false`に設定することで、すべての検証エラーを表示します。
 
-#### 例 
+#### _例_ 
 
 ```js
 const { dispatch } = wp.data;
@@ -258,7 +258,7 @@ showAllValidationErrors();
 
 バリデーションエラーをすべてクリアし、ストアから削除します。
 
-#### 例 
+#### _例_ 
 
 ```js
 const { clearAllValidationErrors } = dispatch( validationStore );
@@ -271,15 +271,15 @@ clearAllValidationErrors();
 
 バリデーションエラーを返します。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   _errorId_ `string`：検証エラーを取得するためのエラーID。
+-   _errorId_ `string`: 検証エラーを取得するためのエラー ID。
 
-#### を返す。 
+#### _Returns_
 
--   `object`：メッセージ `string` と __hidden_ `boolean` を含むオブジェクト。
+-   `object`: メッセージ `string` と _hidden_ `boolean` を含むオブジェクト。
 
-#### 例 
+#### _例_ 
 
 ```js
 const store = select( validationStore );
@@ -290,15 +290,15 @@ const billingFirstNameError = store.getValidationError( 'billing-first-name' );
 
 HTML で使用するバリデーションエラー ID を取得します。 CSS セレクタとして使用したり、エラーメッセージを参照したりすることができます。ただし、バリデーションエラーに `hidden` が true に設定されているか、 バリデーションエラーがストアに存在しない場合はこの限りではありません。
 
-#### パラメーター 
+#### _Parameters_ 
 
--   _errorId_ `string`：バリデーションエラーIDを取得するためのエラーID。
+-   _errorId_ `string`: バリデーションエラーIDを取得するためのエラー ID。
 
-#### を返す。 
+#### _Returns_
 
--   `string`：HTMLで使用するバリデーションエラーID。
+-   `string`: HTML で使用するバリデーションエラー ID。
 
-#### 例 
+#### _例_ 
 
 ```js
 const store = select( validationStore );
@@ -310,11 +310,11 @@ const billingFirstNameErrorId =
 
 ストア内のすべてのバリデーションエラーを返します。
 
-#### を返す。 
+#### _Returns_
 
--   `Record<string, FieldValidationStatus>`：キーがエラーIDで値が_message_ `string`と_hidden_ `boolean`を含むFieldValidationStatusオブジェクトであるすべての検証エラー。
+-   `Record<string, FieldValidationStatus>`: キーがエラー ID で値が _message_ `string`と _hidden_ `boolean` を含む FieldValidationStatus オブジェクトであるすべての検証エラー。
 
-#### 例 
+#### _例_ 
 
 ```js
 const store = select( validationStore );
@@ -323,13 +323,13 @@ const allValidationErrors = store.getValidationErrors();
 
 ### hasValidationErrors
 
-バリデーションエラーが発生した場合はtrueを返し、そうでない場合はfalseを返します。
+バリデーションエラーが発生した場合はtrueを返し、そうでない場合は false を返します。
 
-#### を返す。 
+#### _Returns_
 
--   `boolean`：バリデーションエラーが発生したかどうか。
+-   `boolean`: バリデーションエラーが発生したかどうか。
 
-#### 例 
+#### _例_ 
 
 ```js
 const store = select( validationStore );
