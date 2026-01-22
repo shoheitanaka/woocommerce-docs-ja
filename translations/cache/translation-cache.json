@@ -34031,7 +34031,7 @@
     },
     "27fe1337d7dc11f8a4a771369ea72c49085018b8e9400c2dc11d92de3b494884": {
       "original": "1. **Open the workflow run details** in GitHub (under the **Actions** tab) to see exactly where and why the failure occurred. Most of the time, the workflow will display a clear error message.\n2. **Read the error message carefully.** Sometimes the problem is as simple as a missing workflow configuration or skipped step.\n3. **If you're unsure what the error means or how to proceed,** don't hesitate to ask for help in the release Slack channel. It's better to get a second opinion than to guess.",
-      "translated": "1. **GitHubの**Actions**タブにあるワークフロー実行の詳細**を開くと、失敗が発生した場所と原因を正確に確認することができます。ほとんどの場合、ワークフローには明確なエラーメッセージが表示されます。\n2. **エラーメッセージを注意深く読んでください。** 時には、ワークフロー設定の欠落やステップのスキップといった単純な問題であることもあります。\n3. **エラーの意味や進め方がわからない場合、**遠慮せずにリリースのSlackチャンネルで助けを求めてください。推測するよりも、セカンドオピニオンを得る方が良いでしょう。",
+      "translated": "1. **GitHubの**Actions**タブでワークフロー実行の詳細**を開き、失敗が発生した場所と原因を確認してください。ほとんどの場合、ワークフローには明確なエラーメッセージが表示されます。\n2. **エラーメッセージを注意深く読んでください。** 時には、ワークフロー設定の欠落やステップのスキップといった単純な問題であることもあります。\n3. **エラーの意味や進め方がわからない場合、**遠慮せずにリリースのSlackチャンネルで助けを求めてください。推測するよりも、セカンドオピニオンを得る方が良いでしょう。",
       "metadata": {
         "original": "1. **Open the workflow run details** in GitHub (under the **Actions** tab) to see exactly where and why the failure occurred. Most of the time, the workflow will display a clear error message.\n2. **Read the error message carefully.** Sometimes the problem is as simple as a missing workflow configuration or skipped step.\n3. **If you're unsure what the error means or how to proceed,** don't hesitate to ask for help in the release Slack channel. It's better to get a second opinion than to guess.",
         "codeBlocks": [],
@@ -34269,7 +34269,7 @@
     },
     "c98d9b7a19733482d8384c733a8ef6f93d70eca49de24d70600ba44dcf82134b": {
       "original": "1. Create an internal Slack thread to communicate with the engineering teams as well as Dev Advocacy. This also provides an opportunity for teams to share any additional context and verify or challenge schedule changes.\n2. Ask Dev Advocacy to communicate the delay publicly.\n3. If there's a clear ETA on the patch release with a fix, [update the release calendar](__URL_0__) with the new dates.",
-      "translated": "1.社内にSlackスレッドを作成し、エンジニアリングチームやDev Advocacyとコミュニケーションをとる。これは、チームが追加的なコンテキストを共有し、スケジュールの変更を確認したり、異議を唱えたりする機会にもなる。\n2.Dev Advocacyに遅延を公に伝えるよう依頼する。\n3.修正パッチのリリースに明確なETAがある場合は、[リリースカレンダー](__URL_0__)を新しい日付で更新する。",
+      "translated": "1.社内にSlackスレッドを作成し、エンジニアリングチームやDev Advocacyとコミュニケーションをとる。これは、チームが追加的なコンテキストを共有し、スケジュールの変更を確認したり、異議を唱えたりする機会にもなる。\n2.Dev Advocacyに遅延を公に伝えるよう依頼する。\n3.修正パッチのリリースに明確なETAがある場合、[リリースカレンダー](__URL_0__)を新しい日付で更新する。",
       "metadata": {
         "original": "1. Create an internal Slack thread to communicate with the engineering teams as well as Dev Advocacy. This also provides an opportunity for teams to share any additional context and verify or challenge schedule changes.\n2. Ask Dev Advocacy to communicate the delay publicly.\n3. If there's a clear ETA on the patch release with a fix, [update the release calendar](__URL_0__) with the new dates.",
         "codeBlocks": [],
@@ -34291,7 +34291,7 @@
     },
     "3daac57c70513782177aa7f0cb3e767cd4a8d2cdf4584b550d05046dda7a568c": {
       "original": "### The release was delayed. Can we still release after Tuesday? {#release-delay-weekend-id}",
-      "translated": "### リリースが遅れました。火曜日以降にリリースできますか？{#release-delay-weekend-id} です。",
+      "translated": "### リリースが遅れています。火曜日以降にリリースできますか？{#release-delay-weekend-id} です。",
       "metadata": {
         "original": "### The release was delayed. Can we still release after Tuesday? {#release-delay-weekend-id}",
         "codeBlocks": [],
@@ -74202,7 +74202,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/troubleshooting.md": {
     "hash": "a35a24a4166daccf215b3dac02a454995f5298ff9c65127fc9a74a4e69421616",
-    "translatedAt": "2026-01-22T02:46:04.631Z",
+    "translatedAt": "2026-01-22T02:46:04.797Z",
     "segments": 30
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/schedule.md": {
@@ -74237,7 +74237,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/building-and-publishing.md": {
     "hash": "53e623ce29bb8e50b52f2bbabd7bfa54d59f73cce85cc6bdb6f6a77f8182ebe6",
-    "translatedAt": "2026-01-22T02:46:07.939Z",
+    "translatedAt": "2026-01-22T02:46:08.110Z",
     "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/backporting.md": {
