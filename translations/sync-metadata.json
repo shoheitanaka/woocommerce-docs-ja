@@ -1,10 +1,12 @@
 {
-  "syncDate": "2026-01-16T02:41:42.902Z",
-  "upstreamCommit": "cb7523c569ff32a5e909d075dad9fe8997025b05",
-  "filesChanged": 3,
+  "syncDate": "2026-01-22T02:45:39.933Z",
+  "upstreamCommit": "2015b70804a9e4e39026f2fd52aa4c1621d96651",
+  "filesChanged": 5,
   "files": [
-    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/README.md",
-    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md",
-    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-utilities.md"
+    "docs/_docu-tools/package.json",
+    "docs/contribution/releases/building-and-publishing.md",
+    "docs/contribution/releases/troubleshooting.md",
+    "docs/_docu-tools/static/img/doc_images/release-process.excalidraw",
+    "docs/_docu-tools/static/img/doc_images/release-process.png"
   ]
 }
