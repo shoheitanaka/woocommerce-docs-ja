@@ -3,19 +3,19 @@ post_title: 'Handling scripts, styles, and data'
 sidebar_label: 'Script, styles, and data handling'
 ---
 
-# スクリプト、スタイル、データの処理
+# Handling scripts, styles, and data
 
 ## 問題
 
-エクステンションの開発者で、ユーザーがクライアントサイドでエクステンションとやりとりできるようにするために、CSS と JavaScript を書きました。JavaScriptはサーバーサイドのデータにも依存しており、スクリプトでこれを利用できるようにしたいと考えています。
+あなたはエクステンションの開発者で、ユーザーがクライアントサイドでエクステンションとやりとりできるようにするために、CSS と JavaScript を書きました。JavaScriptはサーバーサイドのデータにも依存しており、スクリプトでこれを利用できるようにしたいと考えています。
 
 ## 解決策
 
-`IntegrationRegistry` を使用して `IntegrationInterface` を登録することができ、これはスクリプト、スタイル、データのエンキューを処理するクラスになります。各ブロック (ミニカート、カート、チェックアウト) に異なる `IntegrationInterface` を使用することもできますし、同じものを使用することもできます。
+`IntegrationRegistry`を使用して`IntegrationInterface`を登録することができ、これはスクリプト、スタイル、データのエンキューを処理するクラスになります。各ブロック (ミニカート、カート、チェックアウト) に異なる `IntegrationInterface` を使用することもできますし、同じものを使用することもできます。
 
-フックを使うべきである：`woocommerce_blocks_mini-cart_block_registration`。`woocommerce_blocks_cart_block_registration` と `woocommerce_blocks_checkout_block_registration` です。これらのフックは、[`IntegrationRegistry`](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/trunk/src/Integrations/IntegrationRegistry.php)のインスタンスをコールバックに渡します。
+フックを使うべきである：`woocommerce_blocks_mini-cart_block_registration`。`woocommerce_blocks_cart_block_registration`と`woocommerce_blocks_checkout_block_registration`です。これらのフックは、[`IntegrationRegistry`](https://github.com/woocommerce/woocommerce-gutenberg-products-block/blob/trunk/src/Integrations/IntegrationRegistry.php)のインスタンスをコールバックに渡します。
 
-このオブジェクトの `register` メソッドを使用して、`IntegrationInterface` を登録することができます。
+このオブジェクトの`register`メソッドを使用して、`IntegrationInterface`を登録することができます。
 
 ## `IntegrationInterface` メソッド
 
@@ -23,23 +23,23 @@ sidebar_label: 'Script, styles, and data handling'
 
 このセクションでは、インターフェイスのメンバーを順を追って見ていき、それらが何に使われるのかを説明する。
 
-### `get_name()`
+### `get_name()`。
 
 これは、`IntegrationInterface`があなたの統合を名前空間化する方法です。ここで指定する名前は、拡張モジュール固有のものでなければなりません。このメソッドは文字列を返します。
 
-### `initialize()`
+### `initialize()`。
 
 ここには、統合のセットアップや初期化を行う必要があります。たとえば、拡張モジュールに必要なスクリプトやスタイルをここに登録することができます。このメソッドは何も返してはいけません。
 
-### `get_script_handles()`
+### `get_script_handles()`。
 
 フロントエンドコンテキストのクライアント側でエンキューさせたいスクリプトのハンドルをここに置きます。このメソッドは文字列の配列を返します。
 
-### `get_editor_script_handles()`
+### `get_editor_script_handles()`。
 
 エディタコンテキストのクライアントサイドでエンキューさせたいスクリプトのハンドルが置かれる場所です。このメソッドは文字列の配列を返す必要があります。
 
-### `get_script_data()`
+### `get_script_data()`。
 
 ここで、フロントエンドのスクリプトで使用したい値を設定します。このメソッドは連想配列を返す必要があり、そのキーは JavaScript の関数 `getSetting` を使用してデータを取得するために使用されます。
 
@@ -47,11 +47,11 @@ sidebar_label: 'Script, styles, and data handling'
 
 ## 使用例
 
-私たちが拡張機能の作者だとしよう：`WooCommerce Example Plugin`とします。ミニカート、カート、チェックアウトブロックのいずれかが使用されているときに、フロントエンドでスクリプト、スタイル、データをエンキューしたい。
+私たちが拡張機能の作者だとしよう：inline_code_0__とします。ミニカート、カート、チェックアウトブロックのいずれかが使用されているときに、フロントエンドでスクリプト、スタイル、データをエンキューしたい。
 
 また、サーバーサイドの関数からのデータをフロントエンドのスクリプトで利用できるようにしたい。
 
-以下の例では、`/build/index.asset.php` ファイルを参照しています。これは[`DependencyExtractionWebpackPlugin`](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin)によって作成され、クライアント側スクリプトの依存関係をマッピングしたPHPファイルを作成し、`wp_register_script` の `dependencies` 配列に追加できるようにします。
+以下の例では、`/build/index.asset.php` ファイルを参照しています。これは[`DependencyExtractionWebpackPlugin`](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin)によって作成され、クライアント側スクリプトの依存関係をマッピングしたPHPファイルを作成し、`wp_register_script`の`dependencies`配列に追加できるようにします。
 
 `IntegrationInterface`を作成しよう。
 
@@ -163,7 +163,7 @@ class WooCommerce_Example_Plugin_Integration implements IntegrationInterface {
 }
 ```
 
-前述の通り、WooCommerce Blocks に `IntegrationInterface` を登録する必要があります。ミニカート、カート、チェックアウトのいずれかが使用されたときにスクリプトが含まれるようにしたいので、3つのアクションのコールバックを登録する必要があります。
+前述の通り、WooCommerce Blocksに`IntegrationInterface`を登録する必要があります。ミニカート、カート、チェックアウトのいずれかが使用されたときにスクリプトが含まれるようにしたいので、3つのアクションのコールバックを登録する必要があります。
 
 ```php
 add_action(
@@ -186,12 +186,12 @@ add_action(
 );
 ```
 
-これで、どちらかのブロックを含むページをロードすると、`initialize` に登録したスクリプトがロードされるはずだ！
+これで、どちらかのブロックを含むページをロードすると、`initialize`に登録したスクリプトがロードされるはずだ！
 
-### `get_script_data` で追加されたデータの取得
+### `get_script_data`で追加されたデータの取得
 
-インターフェイスの `get_script_data` メソッドで、拡張機能にデータを関連付けた！
+インターフェイスの`get_script_data`メソッドで、拡張機能にデータを関連付けた！
 
-`@woocommerce/settings`パッケージには、`getSetting` というインポート可能なメソッドがある。このメソッドは文字列を受け取ります。`get_script_data` で追加されたデータを含む設定の名前は、 `_data` でサフィックスされたインテグレーション名（つまり `get_name` が返す値）になります。この例では `woocommerce-example-plugin_data` です。
+`@woocommerce/settings`パッケージには、`getSetting`というインポート可能なメソッドがある。このメソッドは文字列を受け取ります。`get_script_data`で追加されたデータを含む設定の名前は、`_data`でサフィックスされたインテグレーション名（つまり`get_name`が返す値）になります。この例では`woocommerce-example-plugin_data`です。
 
-ここで返される値は、`get_script_data` で返される配列のキーをキーとした、古い JavaScript オブジェクトで、値はシリアライズされます。
+ここで返される値は、`get_script_data`で返される配列のキーをキーとした、古いJavaScriptオブジェクトで、値はシリアライズされます。

@@ -2,19 +2,19 @@
 sidebar_label: Cart store
 ---
 
-# カートストア (`wc/store/cart`) 
+# Cart Store (`wc/store/cart`) 
 
 > カートストアとレジストアの違いは何ですか？
 >
-> **カートストア (`wc/store/cart`)** は、アイテム、顧客データ、クーポンなどのインタラクションを含む、ショッピングカートに関するデータを管理および取得します。
+> カートストア (`wc/store/cart`)** は、アイテム、顧客データ、クーポンなどのインタラクションを含む、ショッピングカートに関するデータを管理および取得します。
 >
-> **チェックアウトストア (`wc/store/checkout`)** は、チェックアウトプロセス、顧客ID、注文ID、チェックアウトステータスに関連するデータを管理および取得します。
+> チェックアウトストア (`wc/store/checkout`)** は、チェックアウトプロセス、顧客ID、注文ID、チェックアウトステータスに関連するデータを管理および取得します。
 
 ## 概要
 
 カートストアは、WooCommerce ブロックのカート関連データを管理・取得するためのセレクタとメソッドのコレクションを提供します。カートの詳細情報の取得から、クーポンの適用や配送情報の更新といった顧客とのやり取りを管理する機能まで提供します。
 
-このストアを利用するには、`cartStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data` が `wc.wcBlocksData` を指す外部として登録されていると仮定すると、`StoreDescriptor` をインポートすることができます: 
+このストアを利用するには、`cartStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`StoreDescriptor`をインポートすることができます：
 
 ```js
 const { cartStore } = window.wc.wcBlocksData;
@@ -24,27 +24,27 @@ const { cartStore } = window.wc.wcBlocksData;
 
 このアクションは、ストアにカートデータを設定するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
--   _cartData_ `object`: 以下のキーを持つ現在のカートデータ: 
-    -   _coupons_ `array`: カート内のクーポンアイテム。
-    -   _shippingRates_`array`: カート内のクーポンアイテム: カートの配送料金(`getShippingRates`セレクタを参照)。
-    -   _shippingAddress_ `object`: 配送先住所 (`getCustomerData` セレクタを参照ください)。
-    -   _billingAddress_ (`object` セレクタを参照ください): 請求先住所 (`getCustomerData` セレクタを参照ください)。
-    -   _items_ `array`: カートアイテム。
+-   __cartData_ `object`：以下のキーを持つ現在のカートデータ：
+    -   _coupons_ `array`：カート内のクーポンアイテム。
+    -   _shippingRates_`array`：カート内のクーポンアイテム：カートの配送料金(`getShippingRates`セレクタを参照)。
+    -   配送先住所 `object`：配送先住所 (`getCustomerData` セレクタを参照ください)。
+    -   請求先住所 (`object` セレクタを参照ください)：請求先住所 (`getCustomerData` セレクタを参照ください)。
+    -   _items`array`：カートアイテム。
     -   _itemsCount_ `number`:カート内のアイテムの総数
     -   _itemsWeight_ `number`:カート内のアイテムの総重量。
     -   _crossSells_ `array`:クロスセルのアイテム。
     -   _needsPayment_ `boolean`:カートに支払いが必要な場合。
     -   _needsShipping_ `boolean`:カートに配送が必要な場合。
-    -   _hasCalculatedShipping_`boolean`: カートに送料が計算されている場合。
-    -   _fees_`array`: カートの料金。
-    -   _totals_ `object`: カートの合計金額: カートの合計 (`getCartTotals` セレクタを参照ください)。
-    -   _errors_ `array`: カートのエラー (`getCartErrors` セレクタを参照ください)。
-    -   _paymentRequirements_ `object`: カートの支払い条件。
+    -   _hasCalculatedShipping_`boolean`：カートに送料が計算されている場合。
+    -   _fees`array`：カートの料金。
+    -   合計 `object`: カートの合計金額：カートの合計 (`getCartTotals` セレクタを参照ください)。
+    -   エラー `array`：カートのエラー (`getCartErrors` セレクタを参照ください)。
+    -   _paymentRequirements`object`：カートの支払い条件。
     -   _extensions_ `object`:拡張機能のデータ。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -55,34 +55,34 @@ dispatch( setCartData( newCartData ) );
 
 このアクションは、ストアにエラーデータを設定するために使用される。
 
-#### _Parameters_
+#### パラメーター 
 
--   _errorData_ `object`: ストアに設定する必要があるエラーデータ。
-    -   _code_ `string`: エラーコード: エラーコード。
-    -   _message_ `string`: エラーメッセージ: エラーメッセージ。
-    -   _data_ `object`: エラーメッセージ: 追加のエラーデータ。これは、以下のキーを持つオプションのオブジェクトです: 
-        -   _status_ `number`: エラーステータス: エラーステータス。
-        -   _params_ `string`: エラーパラメーター: エラーのパラメータ。
-        -   _message_ `string`: エラーメッセージ: エラーメッセージ。
-        -   _cart_ `object`: カートデータ: カートデータ。これは以下のキーを持つオプションのオブジェクトです: 
-            -   _coupons_ `array`: カート内のクーポンアイテム。
-            -   _shippingRates_`array`: カート内のクーポンアイテム: カートの配送料金(`getShippingRates`セレクタを参照)。
-            -   _shippingAddress_ `object`: 配送先住所 (`getCustomerData` セレクタを参照ください)。
-            -   _billingAddress_ `object` : 請求先住所 (`getCustomerData` セレクタを参照ください)。
-            -   _items_ `array`: カートアイテム。
+-   _errorData_ `object`：ストアに設定する必要があるエラーデータ。
+    -   code_ `string`: エラーコード：エラーコード。
+    -   メッセージ `string`: エラーメッセージ：エラーメッセージ。
+    -   data_ `object`: エラーメッセージ：追加のエラーデータ。これは、以下のキーを持つオプションのオブジェクトです：
+        -   status_ `number`: エラーステータス：エラーステータス。
+        -   params_ `string`: エラーパラメーター：エラーのパラメータ。
+        -   _message_ `string`: エラーメッセージ：エラーメッセージ。
+        -   cart_ `object`: カートデータ：カートデータ。これは以下のキーを持つオプションのオブジェクトです：
+            -   _coupons_ `array`：カート内のクーポンアイテム。
+            -   _shippingRates_`array`：カート内のクーポンアイテム：カートの配送料金(`getShippingRates`セレクタを参照)。
+            -   配送先住所 (`object` セレクタを参照ください)：配送先住所 (`getCustomerData` セレクタを参照ください)。
+            -   請求先住所 (`object` セレクタを参照ください)：請求先住所 (`getCustomerData` セレクタを参照ください)。
+            -   _items__`array`：カートアイテム。
             -   _itemsCount_ `number`:カート内のアイテムの総数
             -   _itemsWeight_ `number`:カート内のアイテムの総重量。
             -   _crossSells_ `array`:クロスセルのアイテム。
             -   _needsPayment_ `boolean`:カートに支払いが必要な場合。
             -   _needsShipping_ `boolean`:カートに配送が必要な場合。
-            -   _hasCalculatedShipping_`boolean`: カートに送料が計算されている場合。
-            -   _fees_ `array`: カートの料金。
-            -   _totals_ `object`: カートの合計金額: カート合計 (`getCartTotals` セレクタを参照ください)。
-            -   _errors_ `array`: カートのエラー (`getCartErrors` セレクタを参照ください)。
-            -   _paymentRequirements_ `object`: カートの支払い条件。
+            -   _hasCalculatedShipping_`boolean`：カートに送料が計算されている場合。
+            -   _fees`array`：カートの料金。
+            -   合計 `object`: カートの合計金額：カート合計 (`getCartTotals` セレクタを参照ください)。
+            -   エラー `array`：カートのエラー (`getCartErrors` セレクタを参照ください)。
+            -   _paymentRequirements`object`：カートの支払い条件。
             -   _extensions_ `object`:拡張機能のデータ。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -93,47 +93,47 @@ dispatch( setErrorData( newErrorData ) );
 
 このアクションは、提供されたカートでストアを更新する際に使用されるアクションオブジェクトを返します。顧客のアドレスは省略されるので、カートの項目と合計の更新だけが受け取られます。
 
-#### _Parameters_ 
+#### パラメーター 
 
-- _cartContents_ `object`: カートコンテンツ API レスポンス。
-    - _coupons_ `array`: カート内のクーポン商品。
-    - _shippingRates_ `array`: カートの配送料（`getShippingRates` セレクターを参照）。
-    - _shippingAddress_ `object`: 配送先住所（`getCustomerData` セレクターを参照）。
-    - _billingAddress_ `object`: 請求先住所（`getCustomerData` セレクターを参照）。
-    - _items_ `array`: カート内の商品。
-    - _itemsCount_ `number`: カート内の商品の合計数。
-    - _itemsWeight_ `number`: カート内の商品の合計重量。
-    - _crossSells_ `array`: クロスセル商品。
-    - _needsPayment_ `boolean`: カートで支払いが必要かどうか。
-    - _needsShipping_ `boolean`: カートに配送料が必要かどうか。
-    - _hasCalculatedShipping_ `boolean`: カートに配送料が計算されているかどうか。
-    - _fees_ `array`: カートの手数料。
-    - _totals_ `object`: カートの合計金額（`getCartTotals` セレクターを参照）。
-    - _errors_ `array`: カートのエラー（`getCartErrors` セレクターを参照）。
-    - _paymentRequirements_ `object`: カートの支払い要件。
-    - _extensions_ `object`: 拡張機能データ。
+-   __cartContents_ `object`：カートコンテンツ API レスポンス。
+    -   クーポン_ `array`：カート内のクーポンアイテム。
+    -   配送料金 `array`: カートの配送料金 (__INLINE_CODE_2__ を参照ください)：カートの配送料金(`getShippingRates`セレクタを参照)。
+    -   配送先住所 `object`：配送先住所 (`getCustomerData` セレクタを参照ください)。
+    -   請求先住所 (`object` セレクタを参照ください)：請求先住所 (`getCustomerData` セレクタを参照ください)。
+    -   _items`array`：カートアイテム。
+    -   _itemsCount_ `number`:カート内のアイテムの総数
+    -   _itemsWeight_ `number`:カート内のアイテムの総重量。
+    -   _crossSells_ `array`:クロスセルのアイテム。
+    -   _needsPayment_ `boolean`:カートに支払いが必要な場合。
+    -   _needsShipping_ `boolean`:カートに配送が必要な場合。
+    -   _hasCalculatedShipping_`boolean`：カートに送料が計算されている場合。
+    -   _fees`array`：カートの料金。
+    -   合計 `object`: カートの合計金額：カートの合計 (`getCartTotals` セレクタを参照ください)。
+    -   エラー `array`：カートのエラー (`getCartErrors` セレクタを参照ください)。
+    -   _paymentRequirements`object`：カートの支払い条件。
+    -   _extensions_ `object`:拡張機能のデータ。
 
-#### _Returns_ 
+#### を返す。 
 
-- `object`: 以下のキーを持つアクションオブジェクト:
-    - _type_ `string`: アクションタイプ
-    - _cartContents_ `object`: 以下のキーを持つカートの内容:
-        - _coupons_ `array`: カート内のクーポン商品
-        - _shippingRates_ `array`: カートの送料（`getShippingRates` セレクターを参照）
-        - _items_ `array`: カート内の商品
-        - _itemsCount_ `number`: カート内の商品の合計数
-        - _itemsWeight_ `number`: カート内の商品の合計重量
-        - _crossSells_ `array`: クロスセル商品
-        - _needsPayment_ `boolean`: カートで支払いが必要かどうか
-        - _needsShipping_ `boolean`: カートで配送が必要かどうか
-        - _hasCalculatedShipping_ `boolean`: カートに送料計算機能があるかどうか。
-        - _fees_ `array`: カート手数料。
-        - _totals_ `object`: カートの合計金額（`getCartTotals` セレクターを参照）。
-        - _errors_ `array`: カートエラー（`getCartErrors` セレクターを参照）。
-        - _paymentRequirements_ `object`: カートの支払い要件。
-        - _extensions_ `object`: 拡張機能データ。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
+    -   _cartContents`object`：次のキーを持つカートの中身：
+        -   _coupons`array`：カートの中身：カート内のクーポンアイテム。
+        -   _shippingRates_`array`：カートの配送料金 (`getShippingRates` セレクタを参照)。
+        -   _items`array`：カートアイテム。
+        -   _itemsCount_ `number`:カート内のアイテムの総数。
+        -   _itemsWeight_ `number`:カート内のアイテムの総重量。
+        -   _crossSells_ `array`:クロスセルのアイテム。
+        -   _needsPayment_ `boolean`:カートに支払いが必要な場合。
+        -   _needsShipping_ `boolean`:カートに配送が必要な場合。
+        -   _hasCalculatedShipping_`boolean`：カートに送料が計算されている場合。
+        -   _fees`array`：カートの料金。
+        -   合計 `object`: カートの合計金額：カートの合計 (`getCartTotals` セレクタを参照ください)。
+        -   エラー `array`：カートのエラー (`getCartErrors` セレクタを参照ください)。
+        -   _paymentRequirements`object`：カートの支払い条件。
+        -   _extensions_ `object`:拡張機能のデータ。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -144,17 +144,17 @@ dispatch( receiveCartContents( newCartContents ) );
 
 このアクションは、クーポンが適用されるタイミングを追跡するために使用されるアクションオブジェクトを返します。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _couponCode_ `string`:適用されるクーポンのコード。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
     -   _couponCode_ `string`:適用されるクーポンのコード。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -165,17 +165,17 @@ dispatch( receiveApplyingCoupon( couponCode ) );
 
 このアクションは、クーポンがいつ削除されたかを追跡するために使用されるアクションオブジェクトを返します。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _couponCode_ `string`:削除されるクーポンのコード。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
     -   _couponCode_ `string`:削除されるクーポンのコード。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -186,18 +186,18 @@ dispatch( receiveRemovingCoupon( couponCode ) );
 
 このアクションは、カート内の特定のアイテムを更新するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
--   _cartResponseItem_ `object`: 以下のキーを持つカート・レスポンス・オブジェクト: 
-    -   __cartItem_ `object`: カートアイテム(`getCartItem`セレクタを参照)。
+-   _cartResponseItem`object`：以下のキーを持つカート・レスポンス・オブジェクト：
+    -   __cartItem_ `object`：カートアイテム(`getCartItem`セレクタを参照)。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
-    -   _cartItem`object`: カートアイテム: カートアイテム(`getCartItem`セレクタを参照)。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
+    -   _cartItem`object`：カートアイテム：カートアイテム(`getCartItem`セレクタを参照)。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -208,19 +208,19 @@ dispatch( receiveCartItem( CartResponseItem ) );
 
 このアクションは、指定されたカートアイテムの数量が更新されているかどうかを示すアクションオブジェクトを返します。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _cartItemKey_ `string`:カートアイテムのキー。
--   _isPending_ `boolean` (デフォルト: `true`): カートアイテムの数量が更新中かどうか。
+-   _isPending_ `boolean` (デフォルト: `true`)：カートアイテムの数量が更新中かどうか。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
     -   _cartItemKey_ `string`:カートアイテムのキー。
-    -   _isPending_`boolean`: カートアイテムの数量が更新中かどうか。
+    -   _isPending_`boolean`：カートアイテムの数量が更新中かどうか。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -231,19 +231,19 @@ dispatch( itemIsPendingQuantity( cartItemKey, isPending ) );
 
 このアクションは、指定されたカートアイテムが削除されているかどうかを示すアクションオブジェクトを返します。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _cartItemKey_ `string`:カートアイテムのキー。
--   _isPending_ `boolean` (デフォルト: `true`): カートアイテムが削除されるかどうか。
+-   _isPending_ `boolean` (デフォルト: `true`)：カートアイテムが削除されるかどうか。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
     -   _cartItemKey_ `string`:カートアイテムのキー。
-    -   _isPending_`boolean`: カートアイテムのキー: カートアイテムが削除されるかどうか。
+    -   _isPending_`boolean`：カートアイテムのキー：カートアイテムが削除されるかどうか。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -254,17 +254,17 @@ dispatch( itemIsPendingDelete( cartItemKey, isPending ) );
 
 このアクションは、カートデータが古くなっているかどうかを示すアクションオブジェクトを返します。
 
-#### _Parameters_
+#### パラメーター 
 
--   _isCartDataStale_ `boolean` (デフォルト: `true`): もし `lastCartUpdate` のタイムスタンプが wcSettings 内のものより新しい場合は true。
+-   __isCartDataStale_ `boolean` (デフォルト: `true`)：もし `lastCartUpdate` のタイムスタンプが wcSettings 内のものより新しい場合は true。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
-    -   _isCartDataStale_`boolean`: もし `lastCartUpdate` のタイムスタンプが wcSettings 内のものより新しい場合は true。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
+    -   _isCartDataStale_`boolean`：もし `lastCartUpdate` のタイムスタンプが wcSettings 内のものより新しい場合は true。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -275,17 +275,17 @@ dispatch( setIsCartDataStale( isCartDataStale ) );
 
 このアクションは、顧客データ(請求先住所および/または配送先住所)が更新されているかどうかを示すアクションオブジェクトを返します。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _isResolving_ `boolean`:顧客データが更新されているかどうか。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
     -   _isResolving_ `boolean`:顧客データが更新されているかどうか。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -296,17 +296,17 @@ dispatch( updatingCustomerData( isResolving ) );
 
 このアクションは、送料が選択されているかどうかを示すアクションオブジェクトを返します。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _isResolving_ `boolean`:配送料金が選択されていれば真。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つアクションオブジェクト: 
-    -   _type_`string`: アクションタイプ。
+-   `object`：以下のキーを持つアクションオブジェクト：
+    -   _type_`string`：アクションタイプ。
     -   _isResolving_ `boolean`:配送料金が選択されている場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -317,16 +317,16 @@ dispatch( shippingRatesBeingSelected( isResolving ) );
 
 このアクションは、/cart/extensions エンドポイントに拡張機能から提供されたデータを POST リクエストとして送信するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
--   _args_ `object`: 以下のキーを持つリクエストの引数: 
+-   __args_ `object`：以下のキーを持つリクエストの引数：
     -   _extensionId_ `string`:エクステンションID。
-    -   data_ `object`: エンドポイントに送信するデータ: エンドポイントに送信するデータ: 
-        -   key_ `string`: 拡張機能のキー: 拡張機能のキー。
-        -   _value_ `string`: 拡張機能のキー: 拡張機能の値。
-    -   _overwriteDirtyCustomerData_ `boolean`: クライアント内の顧客データを、ダーティ(まだサーバーにプッシュされていない)であってもサーバーから返されたデータで上書きするかどうか。
+    -   data_ `object`: エンドポイントに送信するデータ：エンドポイントに送信するデータ：
+        -   key_ `string`: 拡張機能のキー：拡張機能のキー。
+        -   __value_ `string`: 拡張機能のキー：拡張機能の値。
+    -   overwriteDirtyCustomerData`boolean`：クライアント内の顧客データを、ダーティ(まだサーバーにプッシュされていない)であってもサーバーから返されたデータで上書きするかどうか。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -337,11 +337,11 @@ dispatch( applyExtensionCartUpdate( args ) );
 
 このアクションは、カートにクーポンを適用するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _couponCode_ `string`:適用するクーポンのコード。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -352,11 +352,11 @@ dispatch( applyCoupon( couponCode ) );
 
 このアクションは、カートからクーポンを削除するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _couponCode_ `string`:削除するクーポンのコード。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -367,12 +367,12 @@ dispatch( removeCoupon( couponCode ) );
 
 このアクションはカートに商品を追加するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
--   _productId_`number`: カートに入れる商品ID。
--   _quantity_ `number` (デフォルト: `1`): 追加する商品の数量。
+-   _productId_`number`：カートに入れる商品ID。
+-   数量_ `number` (デフォルト: `1`)：追加する商品の数量。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -383,11 +383,11 @@ dispatch( addItemToCart( productId, quantity ) );
 
 このアクションは、カートから商品を削除するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _cartItemKey_ `string`:カート項目が更新されました。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -398,12 +398,12 @@ dispatch( removeItemFromCart( cartItemKey ) );
 
 このアクションはカート内の商品の数量を変更するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _cartItemKey_ `string`:更新中のカートアイテムです。
--   _quantity_ `number`: アイテムの数量。
+-   _quantity`number`：アイテムの数量。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -414,12 +414,12 @@ dispatch( changeCartItemQuantity( cartItemKey, quantity ) );
 
 このアクションは、カートの配送料金を選択するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
--   _rateId_ `string`: 選択する配送料金のID。
--   _packageId_ `number | string` (デフォルト: `null`): 配送料金内で選択されるパッケージのキー。
+-   _rateId_ `string`：選択する配送料金のID。
+-   _packageId_ `number | string` (デフォルト: `null`)：配送料金内で選択されるパッケージのキー。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -430,20 +430,20 @@ dispatch( selectShippingRate( rateId, packageId ) );
 
 このアクションは、カートの請求先住所をサーバーに送信するupdateCustomerDataとは対照的に、ローカルに設定するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
-- _billingAddress_ `object`: 設定が必要な請求先住所。キーは以下のとおりです。
-    - _first_name_ `string`: 名。
-    - _last_name_ `string`: 姓。
-    - _company_ `string`: 会社名。
-    - _address_1_ `string`: 住所1行目。
-    - _address_2_ `string`: 住所2行目。
-    - _city_ `string`: 市区町村名。
-    - _state_ `string`: 州名。
-    - _postcode_ `string`: 郵便番号。
-    - _country_ `string`: 国名。
+-   _billingAddress`object`：設定が必要な請求先住所。キーは以下の通り：
+    -   _first_name_ `string`:姓。
+    -   姓 `string`: 姓：姓。
+    -   company_ `string`: 会社名：会社名。
+    -   住所_1_ `string`：住所1行目。
+    -   住所2_ `string`：住所2行目。
+    -   city_ `string`: 都市名：都市名。
+    -   state_ `string`: 都道府県名：州名。
+    -   postcode_ `string`: 郵便番号：郵便番号。
+    -   国名 `string`: 国名：国名。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -452,22 +452,22 @@ dispatch( setBillingAddress( billingAddress ) );
 
 ### 配送先住所
 
-このアクションは、カートの配送先住所をサーバーに送信する updateCustomerData とは対照的に、カートの配送先住所をローカルに設定するために使用されます。
+このアクションは、カートの配送先住所をサーバーに送信するupdateCustomerDataとは対照的に、カートの配送先住所をローカルに設定するために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
-- _shippingAddress_ `object`: 設定する配送先住所。キーは以下のとおりです。
-    - _first_name_ `string`: 名。
-    - _last_name_ `string`: 姓。
-    - _company_ `string`: 会社名。
-    - _address_1_ `string`: 住所1行目。
-    - _address_2_ `string`: 住所2行目。
-    - _city_ `string`: 市区町村名。
-    - _state_ `string`: 州名。
-    - _postcode_ `string`: 郵便番号。
-    - _country_ `string`: 国名。
+-   shippingAddress`object`：設定が必要な配送先住所。キーは以下の通り：
+    -   _first_name_ `string`:姓。
+    -   姓 `string`: 姓：姓。
+    -   company_ `string`: 会社名：会社名。
+    -   住所_1_ `string`：住所1行目。
+    -   住所2_ `string`：住所2行目。
+    -   city_ `string`: 都市名：都市名。
+    -   state_ `string`: 都道府県名：州名。
+    -   postcode_ `string`: 郵便番号：郵便番号。
+    -   国名 `string`: 国名：国名。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -478,23 +478,23 @@ dispatch( setShippingAddress( shippingAddress ) );
 
 このアクションは、顧客の配送先住所や請求先住所を更新し、更新されたカートを返すために使用されます。
 
-#### _Parameters_
+#### パラメーター 
 
-- _customerData_ `object`: 顧客の請求先住所と配送先住所。キーは以下のとおりです。
-    - _shippingAddress_ `object`: 以下のキーを持つ配送先住所。
-        - _first_name_ `string`: 名。
-        - _last_name_ `string`: 姓。
-        - _company_ `string`: 会社名。
-        - _address_1_ `string`: 住所1行目。
-        - _address_2_ `string`: 住所2行目。
-        - _city_ `string`: 市区町村名。
-        - _state_ `string`: 州名。
-        - _postcode_ `string`: 郵便番号。
-        - _country_ `string`: 国名。
-    - _billingAddress_ `object`: 請求先住所（配送先住所と同じキー）。
-- `editing: boolean` (デフォルト: `true`): 住所が編集中の場合、応答からストア内の顧客データは更新されません。
+-   _customerData`object`：顧客の請求先住所と配送先住所。キーは以下の通りです：
+    -   shippingAddress`object`：以下のキーを持つ配送先住所：
+        -   _first_name_ `string`:姓。
+        -   姓 `string`: 姓：姓。
+        -   company_ `string`: 会社名：会社名。
+        -   住所_1_ `string`：住所1行目。
+        -   住所2_ `string`：住所2行目。
+        -   city_ `string`: 都市名：都市名。
+        -   state_ `string`: 都道府県名：州名。
+        -   postcode_ `string`: 郵便番号：郵便番号。
+        -   国名 `string`: 国名：国名。
+    -   billingAddress`object`：請求先住所 (配送先住所と同じキー)。
+-   `editing: boolean` (デフォルト: `true`)：住所が編集されている場合は、レスポンスからストアの顧客データを更新しません。
 
-#### _例_
+#### 例 
 
 ```js
 const { dispatch } = useDispatch( cartStore );
@@ -507,27 +507,27 @@ dispatch( updateCustomerData( customerData, editing ) );
 
 状態の Cart データを返します。
 
-#### _Returns_ 
+#### を返す。 
 
-- `object`: 以下のキーを持つ現在のカートデータ:
-    - _coupons_ `array`: カート内のクーポン商品。
-    - _shippingRates_ `array`: カートの配送料（`getShippingRates` セレクターを参照）。
-    - _shippingAddress_ `object`: 配送先住所（`getCustomerData` セレクターを参照）。
-    - _billingAddress_ `object`: 請求先住所。
-    - _items_ `array`: カート内の商品。
-    - _itemsCount_ `number`: カート内の商品の合計数。
-    - _itemsWeight_ `number`: カート内の商品の合計重量。
-    - _crossSells_ `array`: クロスセル商品。
-    - _needsPayment_ `boolean`: カートで支払いが必要かどうか。
-    - _needsShipping_ `boolean`: カートに配送料が必要かどうか。
-    - _hasCalculatedShipping_ `boolean`: カートに配送料が計算されているかどうか。
-    - _fees_ `array`: カートの手数料。
-    - _totals_ `object`: カートの合計金額（`getCartTotals` セレクターを参照）。
-    - _errors_ `array`: カートのエラー（`getCartErrors` セレクターを参照）。
-    - _paymentRequirements_ `object`: カートの支払い要件。
-    - _extensions_ `object`: 拡張機能データ。
+-   `object`：以下のキーを持つ現在のカートデータ：
+    -   _coupons_`array`：カート内のクーポンアイテム。
+    -   _shippingRates_`array`：カート内のクーポンアイテム：カートの配送料金(`getShippingRates`セレクタを参照)。
+    -   配送先住所 `object`：配送先住所 (`getCustomerData` セレクタを参照ください)。
+    -   billingAddress`object`：請求先住所。
+    -   _items`array`：カートアイテム。
+    -   _itemsCount_ `number`:カート内のアイテムの総数
+    -   _itemsWeight_ `number`:カート内のアイテムの総重量。
+    -   _crossSells_ `array`:クロスセルのアイテム。
+    -   _needsPayment_ `boolean`:カートに支払いが必要な場合。
+    -   _needsShipping_ `boolean`:カートに配送が必要な場合。
+    -   _hasCalculatedShipping_`boolean`：カートに送料が計算されている場合。
+    -   _fees`array`：カートの料金。
+    -   合計 `object`: カートの合計金額：カートの合計 (`getCartTotals` セレクタを参照ください)。
+    -   エラー `array`：カートのエラー (`getCartErrors` セレクタを参照ください)。
+    -   _paymentRequirements`object`：カートの支払い条件。
+    -   _extensions_ `object`:拡張機能のデータ。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -538,22 +538,22 @@ const cartData = store.getCartData();
 
 配送先住所と請求先住所を州から返します。
 
-#### _Returns_ 
+#### を返す。 
 
-- `object`: 現在の配送先住所と請求先住所。以下のキーを持ちます。
-    - _shippingAddress_ `object`: 配送先住所。以下のキーを持ちます。
-        - _first_name_ `string`: 名。
-        - _last_name_ `string`: 姓。
-        - _company_ `string`: 会社名。
-        - _address_1_ `string`: 住所 1 行目。
-        - _address_2_ `string`: 住所 2 行目。
-        - _city_ `string`: 市区町村名。
-        - _state_ `string`: 州名。
-        - _postcode_ `string`: 郵便番号。
-        - _country_ `string`: 国名。
-    - _billingAddress_ `object`: 請求先住所（配送先住所と同じキー）。
+-   `object`：現在の配送先住所と請求先住所：
+    -   __shippingAddress_`object`：次のキーを持つ配送先住所：
+        -   _first_name_ `string`:姓。
+        -   姓 `string`: 姓：姓。
+        -   company_ `string`: 会社名：会社名。
+        -   住所_1_ `string`：住所1行目。
+        -   住所2_ `string`：住所2行目。
+        -   city_ `string`: 都市名：都市名。
+        -   state_ `string`: 都道府県名：州名。
+        -   postcode_ `string`: 郵便番号：郵便番号。
+        -   国名 `string`: 国名：国名。
+    -   billingAddress`object`：請求先住所 (配送先住所と同じキー)。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -562,22 +562,22 @@ const customerData = store.getCustomerData();
 
 ### 配送料金の取得
 
-州(都道府県)からの送料を返します。
+州からの送料を返します。
 
-#### _Returns_ 
+#### を返す。 
 
-- `array`: 配送料。キーは以下のとおりです。
-    - _id_ `string`: 配送料ID。
-    - _label_ `string`: 配送料ラベル。
-    - _cost_ `string`: 配送料。
-    - _package_id_ `number`: 配送料パッケージID。
-    - _meta_data_ `array`: 配送料メタデータ。キーは以下のとおりです。
-        - _id_ `number`: 配送料メタデータID。
-        - _key_ `string`: 配送料メタデータキー。
-        - _value_ `string`: 配送料メタデータ値。
-    - _taxes_ `array`: 配送料にかかる税金。
+-   `array`：送料。キーは以下の通り：
+    -   ID_ `string`：配送料金のID。
+    -   label_ `string`：配送料金ラベル。
+    -   _cost`string`：配送料金のコスト。
+    -   _package_id_ `number`:配送料金パッケージID。
+    -   メタデータ `array`: 配送料金のメタデータ：配送料金のメタデータ。キーは以下の通り：
+        -   id`number`：配送料金メタデータのID。
+        -   _key_ `string`：配送料金メタデータのキー。
+        -   value`string`：配送料金メタデータの値。
+    -   _taxes`array`：配送料金の税金。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -588,11 +588,11 @@ const shippingRates = store.getShippingRates();
 
 カートに配送が必要かどうかを問い合わせます。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: カートに配送が必要な場合は真。
+-   `boolean`：カートに配送が必要な場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -603,11 +603,11 @@ const needsShipping = store.getNeedsShipping();
 
 カートの送料が計算されているかどうかを問い合わせます。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 送料が計算されていれば真。
+-   `boolean`：送料が計算されていれば真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -618,9 +618,9 @@ const hasCalculatedShipping = store.getHasCalculatedShipping();
 
 状態からカートの合計を返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 現在のカートの合計: 
+-   `object`：現在のカートの合計：
     -   _total_items_ `string`:割引、税金、送料を除いたカート内の商品の合計。
     -   _total_items_tax_ `string`:割引前の全商品の税金合計。
     -   _total_fees_ `string`:取引手数料の合計。
@@ -629,18 +629,18 @@ const hasCalculatedShipping = store.getHasCalculatedShipping();
     -   _total_discount_tax_ `string`:割引総額に適用される税金。
     -   _total_shipping_ `string`:合計送料。
     -   _total_shipping_tax_ `string`:合計送料に適用される税金。
-    -   _total_tax_ `string`: カートに適用される合計税金。
+    -   _total_tax`string`：カートに適用される合計税金。
     -   _total_price_ `string`:割引、税金、送料を含むカートの合計価格。
-    -   _tax_lines_ `array`: 税金の行数: オブジェクトの `name`, `price`, `rate`: タックスライン。
+    -   オブジェクトの__tax_lines_ `array`：税金の行数：オブジェクトの `name`, `price`, `rate`: タックスライン。
     -   _currency_code_ `string`:カートの通貨コード。
     -   _currency_symbol_ `string`:カートの通貨記号。
     -   _currency_minor_unit_ `integer`:カートの通貨単位。
-    -   _currency_decimal_separator_ `string`: カートの通貨小区切り文字。
-    -   _currency_thousand_separator_ `string`: カートの通貨の 1000 の区切り文字。
+    -   _currency_decimal_separator`string`：カートの通貨小区切り文字。
+    -   _currency_thousand_separator`string`：カートの通貨の 1000 の区切り文字。
     -   _currency_prefix_ `string`:カートの通貨プレフィックス。
     -   _currency_suffix_ `string`:カートの通貨サフィックス。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -651,16 +651,16 @@ const cartTotals = store.getCartTotals();
 
 カートのメタデータを状態から返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のキーを持つ現在のカートメタ: 
-    -   _updatingCustomerData_ `boolean`: 顧客データ(請求先および/または配送先住所)が更新されている場合。
-    -   _updatingSelectedRate_ `boolean`: 選択されたレートが更新されている場合。
-    -   _isCartDataStale_ `boolean`: カートデータが古い場合。
-    -   _applyingCoupon_ `string`: 適用中のクーポンコード。
-    -   _removingCoupon_ `string`: 削除されるクーポンコード。
+-   `object`：以下のキーを持つ現在のカートメタ：
+    -   _updatingCustomerData_`boolean`：顧客データ(請求先および/または配送先住所)が更新されている場合。
+    -   _updatingSelectedRate_`boolean`：選択されたレートが更新されている場合。
+    -   _isCartDataStale_`boolean`：カートデータが古い場合。
+    -   _applyingCoupon_`string`：適用中のクーポンコード。
+    -   _removingCoupon_`string`：削除されるクーポンコード。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -671,14 +671,14 @@ const cartMeta = store.getCartMeta();
 
 カートがAPIからカスタマーフェイシングエラーを受け取った場合、状態からカートエラーを返します。
 
-#### _Returns_ 
+#### を返す。 
 
-- `array`: 以下のキーを持つカートエラー:
-    - _code_ `string`: エラーコード。
-    - _message_ `string`: エラーメッセージ。
-    - _data_ `object`: APIレスポンスデータ。
+-   `array`：カートは以下のキーでエラー：
+    -   コード_ `string`：エラーコード。
+    -   メッセージ `string`: エラーメッセージ：エラーメッセージ。
+    -   data_ `object`: APIレスポンスのデータ：API レスポンスのデータ。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -689,11 +689,11 @@ const cartErrors = store.getCartErrors();
 
 クーポンが適用されているかどうかを問い合わせる。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: クーポンが適用されている場合は真。
+-   `boolean`：クーポンが適用されている場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -704,11 +704,11 @@ const isApplyingCoupon = store.isApplyingCoupon();
 
 カートデータが古いかどうかを問い合わせる。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: カートデータが古ければ真。
+-   `boolean`：カートデータが古ければ真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -719,11 +719,11 @@ const isCartDataStale = store.isCartDataStale();
 
 適用されているクーポンコードを返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `string`: 適用されるクーポンコード。
+-   `string`：適用されるクーポンコード。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -734,11 +734,11 @@ const couponBeingApplied = store.getCouponBeingApplied();
 
 クーポンが削除されたかどうかを問い合わせる。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: クーポンが削除される場合は真。
+-   `boolean`：クーポンが削除される場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -749,11 +749,11 @@ const isRemovingCoupon = store.isRemovingCoupon();
 
 削除されたクーポンコードを返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `string`: 削除されるクーポンコード。
+-   `string`：削除されるクーポンコード。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -764,55 +764,55 @@ const couponBeingRemoved = store.getCouponBeingRemoved();
 
 状態からカートアイテムを返します。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _cartItemKey_ `string`:カートアイテムのキー。
 
-#### _Returns_ 
+#### を返す。 
 
-- `object`: 以下のキーを持つカートアイテム:
-    - _key_ `string`: カートアイテムのキー。
-    - _id_ `number`: カートアイテムのID。
-    - _catalog_visibility_ `string`: カタログの表示設定。
-    - _quantity_limits_ `object`: 数量制限。
-    - _name_ `string`: カートアイテムの名前。
-    - _summary_ `string`: カートアイテムの概要。
-    - _short_description_ `string`: カートアイテムの短い説明。
-    - _description_ `string`: カートアイテムの説明。
-    - _sku_ `string`: カートアイテムのSKU。
-    - _low_stock_remaining_ `null` または `number`: 在庫残量。
-    - _backorders_allowed_ `boolean`: バックオーダーの可否を示す。
-    - _show_backorder_badge_ `boolean` : バックオーダーバッジを表示するかどうかを示します。
-    - _sold_individually_ `boolean` : 商品が個別販売されているかどうかを示します。
-    - _permalink_ `string`: カート商品のパーマリンク。
-    - _images_ `array`: カート商品の画像。
-    - _variation_ `array`: カート商品のバリエーション。
-    - _prices_ `object`: 以下のキーを持つカート商品の価格。
-        - _currency_code_ `string`: 通貨コード。
-        - _currency_symbol_ `string`: 通貨記号。
-        - _currency_minor_unit_ `number`: 通貨の小数点。
-        - _currency_decimal_separator_ `string`: 通貨の小数点区切り文字。
-        - _currency_thousand_separator_ `文字列`: 通貨の千の位の区切り文字。
-        - _currency_prefix_ `文字列`: 通貨の接頭辞。
-        - _currency_suffix_ `文字列`: 通貨の接尾辞。
-        - _price_ `文字列`: カート商品の価格。
-        - _regular_price_ `文字列`: カート商品の通常価格。
-        - _sale_price_ `文字列`: カート商品のセール価格。
-        - _price_range_ `文字列`: カート商品の価格帯。
-    - _totals_ `オブジェクト`: カート商品の合計金額。以下のキーが含まれます。
-        - _currency_code_ `文字列`: 通貨コード。
-        - _currency_symbol_ `文字列`: 通貨記号。
-        - _currency_minor_unit_ `数値`: 通貨の小単位。
-        - _currency_decimal_separator_ `string`: 通貨の小数点区切り文字。
-        - _currency_thousand_separator_ `string`: 通貨の千の位区切り文字。
-        - _currency_prefix_ `string`: 通貨の接頭辞。
-        - _currency_suffix_ `string`: 通貨の接尾辞。
-        - _line_subtotal_ `string`: カート商品の小計。
-        - _line_subtotal_tax_ `string`: カート商品の小計税。
-        - _line_total_ `string`: カート商品の合計税。
-        - _line_total_tax_ `string`: カート商品の合計税。
+-   `object`：以下のキーを持つカートアイテム：
+    -   _key_`string`：カートアイテムのキー。
+    -   _id_ `number`: カートアイテムのキー：カートアイテムのID。
+    -   _catalog_visibility`string`：カタログの可視性。
+    -   _quantity_limits`object`：数量制限。
+    -   name_ `string`: カートアイテム名：カートアイテムの名前。
+    -   概要 `string`: カートアイテムの概要：カートアイテムの概要。
+    -   _short_description`string`：カートアイテムの短い説明。
+    -   _description_ `string`:カートアイテムの説明。
+    -   カートアイテムの説明：カートアイテムのsku。
+    -   _low_stock_remaining_`null`または`number`：残りの在庫数。
+    -   バックオーダーが許可されているかどうかを示す __backorders_allowed_ `boolean` 。
+    -   バックオーダーのバッジを表示するかどうかを示す __show_backorder_badge_ `boolean` 。
+    -   商品が個別に販売されているかどうかを示す __sold_individually_ `boolean` 。
+    -   _permalink_ `string`:カートアイテムのパーマリンク。
+    -   _images`array`：カートアイテムの画像。
+    -   _variation_ `array`:カートアイテムのバリエーション。
+    -   価格 `object`: カートアイテムの価格：カートアイテムの価格：
+        -   _currency_code_ `string`:通貨コード。
+        -   _currency_symbol_ `string`:通貨記号。
+        -   _currency_minor_unit_ `number`:通貨の小単位。
+        -   通貨小単位 __currency_decimal_separator_ `string`：通貨の小数点以下の区切り文字。
+        -   通貨の千単位区切り文字：通貨の 1000 の区切り文字。
+        -   _currency_prefix_ `string`:通貨のプレフィックス。
+        -   _currency_suffix_ `string`:通貨のサフィックス。
+        -   価格 `string`：カートアイテムの価格。
+        -   _regular_price_ `string`:カート項目の通常価格。
+        -   _sale_price_ `string`:カートアイテムのセール価格。
+        -   _price_range_ `string`:カートアイテムの価格帯。
+    -   合計 `object`: カートアイテムの合計：以下のキーを持つカートアイテムの合計：
+        -   _currency_code_ `string`:通貨コード。
+        -   _currency_symbol_ `string`:通貨記号。
+        -   _currency_minor_unit_ `number`:通貨の小単位。
+        -   通貨小単位 __currency_decimal_separator_ `string`: 通貨の十進区切り文字：通貨の小数の区切り文字。
+        -   通貨の千単位区切り文字：通貨の 1000 の区切り文字。
+        -   _currency_prefix_ `string`:通貨のプレフィックス。
+        -   _currency_suffix_ `string`:通貨のサフィックス。
+        -   _line_subtotal_ `string`:カートアイテムの行小計。
+        -   _line_subtotal_tax_ `string`:カート項目行の小計税。
+        -   _line_total_ `string`:カート項目行の合計。
+        -   _line_total_tax_ `string`:カート項目行の合計税額。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -823,15 +823,15 @@ const cartItem = store.getCartItem( cartItemKey );
 
 カートの商品が数量保留中かどうかを問い合わせます。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _cartItemKey_ `string`:カートアイテムのキー。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: カートアイテムが保留中の数量であれば真。
+-   `boolean`：カートアイテムが保留中の数量であれば真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -842,15 +842,15 @@ const isItemPendingQuantity = store.isItemPendingQuantity( cartItemKey );
 
 カートアイテムが削除待ちかどうかを問い合わせます。
 
-#### _Parameters_
+#### パラメーター 
 
 -   _cartItemKey_ `string`:カートアイテムのキー。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: カートアイテムが削除待ちの場合は true。
+-   `boolean`：カートアイテムが削除待ちの場合は true。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -861,11 +861,11 @@ const isItemPendingDelete = store.isItemPendingDelete( cartItemKey );
 
 顧客データが更新されているかどうかを照会します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 顧客データが更新されている場合は真。
+-   `boolean`：顧客データが更新されている場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -875,13 +875,13 @@ const isCustomerDataUpdating = store.isCustomerDataUpdating();
 ### 配送料金の更新のための住所フィールドである。
 
 配送料金に影響する配送先フィールドが更新されているかどうかを照会します。
-デフォルトでは、Store APIは以下の配送先フィールドを配送料金の計算に必須であるとみなします: `state`、`country`、`postcode`、`city`。
+デフォルトでは、Store APIは以下の配送先フィールドを配送料金の計算に必須であるとみなします：`state`、`country`、`postcode`、`city`。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 配送料金に影響する配送先フィールドが更新されている場合は真。
+-   `boolean`：配送料金に影響する配送先フィールドが更新されている場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -892,11 +892,11 @@ const isAddressFieldsForShippingRatesUpdating = store.isAddressFieldsForShipping
 
 保留中のカート操作 (項目の追加、数量の更新、削除) があるかどうかを問い合わせます。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 保留中のカート操作(商品の追加、数量の更新、商品の削除)がある場合は真。
+-   `boolean`：保留中のカート操作(商品の追加、数量の更新、商品の削除)がある場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -907,11 +907,11 @@ const hasPendingItemsOperations = store.hasPendingItemsOperations();
 
 送料が選択されているかどうかを照会します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 配送料金が選択されている場合は真。
+-   `boolean`：配送料金が選択されている場合は真。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -922,11 +922,11 @@ const isShippingRateBeingSelected = store.isShippingRateBeingSelected();
 
 現在数量が更新されているアイテムのアイテムキーを取得します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `string[]`: 現在数量が更新されているアイテムのアイテムキーを持つ配列。
+-   `string[]`：現在数量が更新されているアイテムのアイテムキーを持つ配列。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );
@@ -937,11 +937,11 @@ const itemsPendingQuantityUpdate = store.getItemsPendingQuantityUpdate();
 
 現在削除中のアイテムのアイテムキーを取得します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `string[]`: 現在削除されているアイテムのキーを持つ配列。
+-   `string[]`：現在削除されているアイテムのキーを持つ配列。
 
-#### _例_
+#### 例 
 
 ```js
 const store = select( cartStore );

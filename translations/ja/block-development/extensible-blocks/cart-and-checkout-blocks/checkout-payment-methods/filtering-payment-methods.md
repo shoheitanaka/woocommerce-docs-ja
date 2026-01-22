@@ -3,7 +3,7 @@ post_title: Filtering payment methods in the Checkout block
 sidebar_label: Filtering payment methods
 ---
 
-# チェックアウトブロックでの支払い方法のフィルタリング
+# Filtering payment methods in the Checkout block
 
 ## 問題
 
@@ -11,7 +11,7 @@ sidebar_label: Filtering payment methods
 
 ### 解決策
 
-WooCommerce Blocks は `registerPaymentMethodExtensionCallbacks` という関数を提供し、エクステンションが特定の支払い方法に対するコールバックを登録し、支払いが可能かどうかを判断できるようにしています。
+WooCommerce Blocksは`registerPaymentMethodExtensionCallbacks`という関数を提供し、エクステンションが特定の支払い方法に対するコールバックを登録し、支払いが可能かどうかを判断できるようにしています。
 
 ### インポート
 
@@ -38,7 +38,7 @@ const { registerPaymentMethodExtensionCallbacks } = window.wc.wcBlocksRegistry;
 
 #### 拡張名前空間の衝突
 
-すでに`registerPaymentMethodExtensionCallbacks`で使用されている拡張ネームスペースの下にコールバックを登録しようとすると、登録は中止され、一意のネームスペースを使用していないことが通知されます。これは JavaScript コンソールに表示されます。
+すでに`registerPaymentMethodExtensionCallbacks`で使用されている拡張ネームスペースの下にコールバックを登録しようとすると、登録は中止され、一意のネームスペースを使用していないことが通知されます。これはJavaScriptコンソールに表示されます。
 
 ### 使用例
 
@@ -61,7 +61,7 @@ registerPaymentMethodExtensionCallbacks( 'my-hypothetical-extension', {
 payment_method_name: ( arg ) => {...}
 ```
 
-`payment_method_name`は、支払い方法が WooCommerce Blocks に登録されたときに使用された[name プロパティ](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration)の値です。
+`payment_method_name`は、支払い方法がWooCommerce Blocksに登録されたときに使用された[nameプロパティ](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration)の値です。
 
 登録されたコールバックは、対応する支払い方法がショッパーのオプションとして利用可能かどうかを決定するために使用されます。この関数には、現在の注文に関するデータを含むオブジェクトが渡されます。
 
@@ -85,7 +85,7 @@ interface CanMakePaymentArgument {
 }
 ```
 
-コールバックが受け取るパラメータで利用できないデータが必要な場合は、[Store API でデータを公開する](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/rest-api/extend-rest-api-add-data.md)ことを検討することができます。
+コールバックが受け取るパラメータで利用できないデータが必要な場合は、[Store APIでデータを公開する](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/client/blocks/docs/third-party-developers/extensibility/rest-api/extend-rest-api-add-data.md)ことを検討することができます。
 
 ## 要件による支払い方法のフィルタリング
 
@@ -93,27 +93,27 @@ interface CanMakePaymentArgument {
 
 あなたのエクステンションは、特定の商品を含む注文を特定の支払ゲートウェイでのみ処理できるように、ストアに機能を追加しました。
 
-`Bookings` の例で説明すると、買い物客が `Bookable` の商品、例えばホテルへの宿泊をカートに追加し、マーチャントであるあなたが支払いを行う前にすべての予約を確認したいとします。その時点では、顧客のチェックアウト情報を取得する必要はありますが、支払い方法を取得する必要はありません。
+`Bookings`の例で説明すると、買い物客が`Bookable`の商品、例えばホテルへの宿泊をカートに追加し、マーチャントであるあなたが支払いを行う前にすべての予約を確認したいとします。その時点では、顧客のチェックアウト情報を取得する必要はありますが、支払い方法を取得する必要はありません。
 
 ### 解決策
 
-買い物客が支払いの詳細を入力せずにチェックアウトできるようにするために、他のチェックアウトの詳細を入力する必要がありますが、`Bookable` アイテムを含むカートを処理する新しい支払い方法を作成することができます。
+買い物客が支払いの詳細を入力せずにチェックアウトできるようにするために、他のチェックアウトの詳細を入力する必要がありますが、`Bookable`アイテムを含むカートを処理する新しい支払い方法を作成することができます。
 
-支払い方法の `supports` 設定を使用すると、他の支払い方法（クレジットカード、PayPalなど）がチェックアウトに使用されるのを防ぎ、エクステンションが追加した支払い方法のみがチェックアウトブロックに表示されるようにすることができます。
+支払い方法の`supports`設定を使用すると、他の支払い方法（クレジットカード、PayPalなど）がチェックアウトに使用されるのを防ぎ、エクステンションが追加した支払い方法のみがチェックアウトブロックに表示されるようにすることができます。
 
-WooCommerce Blocks に支払い方法を登録する方法の詳細については、[支払い方法の統合](./payment-method-integration.md)ドキュメントを参照してください。
+WooCommerce Blocksに支払い方法を登録する方法の詳細については、[支払い方法の統合](./payment-method-integration.md)ドキュメントを参照してください。
 
 ### 基本的な使い方
 
-上記にリンクされている支払い方法の登録に関するドキュメントに従って、一意の `supports` 機能、例えば `booking_availability` で支払い方法を登録する必要があります。これは、そのメソッドを分離し、他のメソッドが表示されないようにするために使用されます。
+上記にリンクされている支払い方法の登録に関するドキュメントに従って、一意の`supports`機能、例えば`booking_availability`で支払い方法を登録する必要があります。これは、そのメソッドを分離し、他のメソッドが表示されないようにするために使用されます。
 
-まず、カートの特定の支払い要件を決定するために、カートのチェックを実行する関数を作成する必要があります。以下は、`Bookable` の商品に対してこれを行う例です。
+まず、カートの特定の支払い要件を決定するために、カートのチェックを実行する関数を作成する必要があります。以下は、`Bookable`の商品に対してこれを行う例です。
 
-そして、`ExtendSchema` クラスで `register_payment_requirements` を使い、チェックアウト・ブロックにコールバックを実行させ、要件をチェックするように指示する必要があります。
+そして、`ExtendSchema`クラスで`register_payment_requirements`を使い、チェックアウト・ブロックにコールバックを実行させ、要件をチェックするように指示する必要があります。
 
 ### まとめ
 
-このコード例では、`Pseudo_Booking_Class` というクラスがあり、 `cart_contains_bookable_product` メソッドが利用可能であると仮定しています。このメソッドの実装はここでは関係ありません。
+このコード例では、`Pseudo_Booking_Class`というクラスがあり、`cart_contains_bookable_product`メソッドが利用可能であると仮定しています。このメソッドの実装はここでは関係ありません。
 
 ```php
 /**
@@ -133,9 +133,9 @@ function inject_payment_feature_requirements_for_cart_api() {
 }
 ```
 
-カートに予約可能な商品がある場合、この関数は `booking_availability` を含む配列を返し、そうでない場合は空の配列を返します。
+カートに予約可能な商品がある場合、この関数は`booking_availability`を含む配列を返し、そうでない場合は空の配列を返します。
 
-次のステップでは、`ExtendSchema` クラスに、どの支払い方法を表示するかをチェックするときにこのコールバックを実行するように指示します。
+次のステップでは、`ExtendSchema`クラスに、どの支払い方法を表示するかをチェックするときにこのコールバックを実行するように指示します。
 
 そのためには、次のようなコードを使うことができる：
 
@@ -149,6 +149,6 @@ add_action('woocommerce_blocks_loaded', function() {
 });
 ```
 
-このコード・ブロックのコメントに注意することが重要で、独自の `ExtendSchema` をインスタンス化してはならない。
+このコード・ブロックのコメントに注意することが重要で、独自の`ExtendSchema`をインスタンス化してはならない。
 
-正しい `supports` 値を使用して支払い方法を正しく追加した場合、カートに `Bookable` アイテムがある状態でチェックアウト ページに到達すると、`booking_availability` 要件を `supports` しない支払い方法は表示されませんが、この要件を _サポート_ している支払い方法は表示されます。
+正しい`supports`の値で支払い方法を正しく追加した場合、`Bookable`の商品をカートに入れた状態でチェックアウトのページに到達すると、`booking_availability`の要件を`supports`がサポートしていない方法は表示されず、__INLINE_CODE_3__の要件を__INLINE_CODE_2__がサポートしている方法は表示されます。
