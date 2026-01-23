@@ -7,13 +7,13 @@ sidebar_label: Store Notices Store
 
 お知らせストアでは、お知らせ用のコンテナを登録したり解除したりできます。これはカスタムブロックのような特定の場所にお知らせを表示するのに便利です。
 
-このストアを利用するには、`storeNoticesStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data` が `wc.wcBlocksData` を指す外部として登録されていると仮定すると、`StoreDescriptor` をインポートすることができます: 
+このストアを利用するには、`storeNoticesStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、`StoreDescriptor`をインポートすることができます：
 
 ```js
 import { storeNoticesStore } from '@woocommerce/block-data';
 ```
 
-そうでない場合は、このようにウィンドウからアクセスする: 
+そうでない場合は、このようにウィンドウからアクセスする：
 
 ```js
 const { storeNoticesStore } = window.wc.wcBlocksData;
@@ -50,17 +50,17 @@ export default function Block( attributes ) {
 
 このアクションは新しいコンテナを登録する。
 
-#### _Parameters_ 
+#### パラメーター 
 
--   _containerContext_ `string`: 登録するコンテナのコンテキストまたは識別子。
+-   __containerContext_ `string`：登録するコンテナのコンテキストまたは識別子。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のプロパティを持つアクションオブジェクト
-    -   _type_ `string`: アクションのタイプ。
-    -   _containerContext_ `string`: 渡された_containerContext_。
+-   `object`：以下のプロパティを持つアクションオブジェクト：
+    -   type_ `string`：アクションのタイプ。
+    -   _containerContext`string`：渡された_containerContext_。
 
-#### _例_ 
+#### 例 
 
 ```javascript
 import { storeNoticesStore } from '@woocommerce/block-data';
@@ -72,17 +72,17 @@ dispatch( storeNoticesStore ).registerContainer( 'someContainerContext' );
 
 このアクションは、既存のコンテナの登録を解除する。
 
-#### _Parameters_ 
+#### パラメーター 
 
-- _containerContext_ `string`: 登録解除するコンテナのコンテキストまたは識別子。
+-   コンテナコンテキスト `string`：登録を解除するコンテナのコンテキストまたは識別子。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のプロパティを持つアクションオブジェクト: 
-    -   _type_ `string`: アクションのタイプ。
-    -   _containerContext_ `string`: 渡された _containerContext_。
+-   `object`：以下のプロパティを持つアクションオブジェクト：
+    -   type_ `string`：アクションのタイプ。
+    -   _containerContext`string`：渡された_containerContext_。
 
-#### _例_ 
+#### 例 
 
 ```js
 import { storeNoticesStore } from '@woocommerce/block-data';
@@ -96,11 +96,11 @@ dispatch( storeNoticesStore ).unregisterContainer( 'someContainerContext' );
 
 州から現在登録されているコンテナのリストを返す。
 
-#### _Returns_ 
+#### を返す。 
 
--   `string[]`: 登録されているコンテナコンテキストを表す文字列の配列。
+-   `string[]`：登録されているコンテナコンテキストを表す文字列の配列。
 
-#### _例_ 
+#### 例 
 
 ```js
 import { storeNoticesStore } from '@woocommerce/block-data';

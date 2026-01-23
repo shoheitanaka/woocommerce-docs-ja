@@ -96,7 +96,7 @@
         "original": "## __INLINE_CODE_0__",
         "codeBlocks": [],
         "inlineCodes": [
-          "`useValidateCheckout`"
+          "`woocommerce_sale_badge_text`"
         ],
         "urls": []
       }
@@ -34031,7 +34031,7 @@
     },
     "27fe1337d7dc11f8a4a771369ea72c49085018b8e9400c2dc11d92de3b494884": {
       "original": "1. **Open the workflow run details** in GitHub (under the **Actions** tab) to see exactly where and why the failure occurred. Most of the time, the workflow will display a clear error message.\n2. **Read the error message carefully.** Sometimes the problem is as simple as a missing workflow configuration or skipped step.\n3. **If you're unsure what the error means or how to proceed,** don't hesitate to ask for help in the release Slack channel. It's better to get a second opinion than to guess.",
-      "translated": "1. **GitHubの**Actions**タブにあるワークフロー実行の詳細**を開くと、失敗が発生した場所と原因を正確に確認することができます。ほとんどの場合、ワークフローには明確なエラーメッセージが表示されます。\n2. **エラーメッセージを注意深く読んでください。** 時には、ワークフロー設定の欠落やステップのスキップといった単純な問題であることもあります。\n3. **エラーの意味や進め方がわからない場合、**遠慮せずにリリースのSlackチャンネルで助けを求めてください。推測するよりも、セカンドオピニオンを得る方が良いでしょう。",
+      "translated": "1. **GitHubの**Actions**タブでワークフロー実行の詳細**を開き、失敗が発生した場所と原因を確認してください。ほとんどの場合、ワークフローには明確なエラーメッセージが表示されます。\n2. **エラーメッセージを注意深く読んでください。** 時には、ワークフロー設定の欠落やステップのスキップといった単純な問題であることもあります。\n3. **エラーの意味や進め方がわからない場合、**遠慮せずにリリースのSlackチャンネルで助けを求めてください。推測するよりも、セカンドオピニオンを得る方が良いでしょう。",
       "metadata": {
         "original": "1. **Open the workflow run details** in GitHub (under the **Actions** tab) to see exactly where and why the failure occurred. Most of the time, the workflow will display a clear error message.\n2. **Read the error message carefully.** Sometimes the problem is as simple as a missing workflow configuration or skipped step.\n3. **If you're unsure what the error means or how to proceed,** don't hesitate to ask for help in the release Slack channel. It's better to get a second opinion than to guess.",
         "codeBlocks": [],
@@ -34071,7 +34071,7 @@
     },
     "13a73c668eb9a5dd1f9de89590c88c1ac1b325b3101f9ac13ba4652030ba29ef": {
       "original": "1. **Identify the cause**: Check if the failing tests pass on trunk. If they do, the fix likely needs to be backported.\n2. **Backport test fixes**: If possible, [backport](/docs/contribution/releases/backporting) the relevant test fixes from trunk to the release branch, then re-run the CI workflow.\n3. **Handle complex cases**: If backporting isn't possible due to dependencies or the cause isn't clear, document what you've found and ask for help in the release Slack channel. The \"Heart of Gold - Flux\" team can assist with resolving CI issues that block release work.",
-      "translated": "1. **原因を特定する**：失敗したテストがトランクでパスしているかどうかチェックしてください。もし通っていれば、その修正はバックポートする必要があります。\n2. **テストの修正をバックポートする**：可能であれば、関連するテスト修正をトランクからリリースブランチに [バックポート](/docs/contribution/releases/backporting) して、CI ワークフローを再実行します。\n3. **複雑なケースに対処する**：依存関係によってバックポートができない場合や、原因がはっきりしない場合は、発見したことを文書化し、リリースのSlackチャンネルで助けを求めてください。Heart of Gold - Flux」チームは、リリース作業を妨げるCI問題の解決を支援することができます。",
+      "translated": "1. **原因を特定する**：失敗したテストがtrunkでパスしているか確認してください。もし通っていれば、その修正はバックポートする必要があります。\n2. **テストの修正をバックポートする**：可能であれば、関連するテスト修正をトランクからリリースブランチに [バックポート](/docs/contribution/releases/backporting) して、CI ワークフローを再実行します。\n3. **複雑なケースに対処する**：依存関係によってバックポートができない場合や、原因がはっきりしない場合は、発見したことを文書化し、リリースのSlackチャンネルで助けを求めてください。Heart of Gold - Flux」チームは、リリース作業を妨げるCI問題の解決を支援することができます。",
       "metadata": {
         "original": "1. **Identify the cause**: Check if the failing tests pass on trunk. If they do, the fix likely needs to be backported.\n2. **Backport test fixes**: If possible, [backport](/docs/contribution/releases/backporting) the relevant test fixes from trunk to the release branch, then re-run the CI workflow.\n3. **Handle complex cases**: If backporting isn't possible due to dependencies or the cause isn't clear, document what you've found and ask for help in the release Slack channel. The \"Heart of Gold - Flux\" team can assist with resolving CI issues that block release work.",
         "codeBlocks": [],
@@ -34259,7 +34259,7 @@
     },
     "5f314a94aaead9948ab22e9c6fd46e242626334dd7f06df9448c779c775c1b02": {
       "original": "### The release needs to be delayed. What should we do? {#release-delay}",
-      "translated": "### リリースを延期する必要がある。どうすればよいですか？リリース遅延}{#release-delay}。",
+      "translated": "### リリースを延期する必要がある。どうしますか？リリース遅延} {#release-delay",
       "metadata": {
         "original": "### The release needs to be delayed. What should we do? {#release-delay}",
         "codeBlocks": [],
@@ -34269,7 +34269,7 @@
     },
     "c98d9b7a19733482d8384c733a8ef6f93d70eca49de24d70600ba44dcf82134b": {
       "original": "1. Create an internal Slack thread to communicate with the engineering teams as well as Dev Advocacy. This also provides an opportunity for teams to share any additional context and verify or challenge schedule changes.\n2. Ask Dev Advocacy to communicate the delay publicly.\n3. If there's a clear ETA on the patch release with a fix, [update the release calendar](__URL_0__) with the new dates.",
-      "translated": "1.社内にSlackスレッドを作成し、エンジニアリングチームやDev Advocacyと連絡を取る。これは、チームが追加的なコンテキストを共有し、スケジュールの変更を確認したり、異議を唱えたりする機会にもなる。\n2.Dev Advocacyに遅延を公に伝えるよう依頼する。\n3.修正パッチのリリースに明確なETAがある場合は、[リリースカレンダー](__URL_0__)を新しい日付で更新する。",
+      "translated": "1.社内にSlackスレッドを作成し、エンジニアリングチームやDev Advocacyとコミュニケーションをとる。これは、チームが追加的なコンテキストを共有し、スケジュールの変更を確認したり、異議を唱えたりする機会にもなる。\n2.Dev Advocacyに遅延を公に伝えるよう依頼する。\n3.修正パッチのリリースに明確なETAがある場合は、[リリースカレンダー](__URL_0__)を新しい日付で更新する。",
       "metadata": {
         "original": "1. Create an internal Slack thread to communicate with the engineering teams as well as Dev Advocacy. This also provides an opportunity for teams to share any additional context and verify or challenge schedule changes.\n2. Ask Dev Advocacy to communicate the delay publicly.\n3. If there's a clear ETA on the patch release with a fix, [update the release calendar](__URL_0__) with the new dates.",
         "codeBlocks": [],
@@ -73209,6 +73209,514 @@
         ],
         "urls": []
       }
+    },
+    "43ee23780773ce41d3b8adeddd521eefa59525ad24103d15281974f280648773": {
+      "original": "### A serious bug was detected during internal checks / monitoring {#deploy-serious-bug}",
+      "translated": "### 内部チェック/監視中に深刻なバグが検出されました {#deploy-serious-bug}.",
+      "metadata": {
+        "original": "### A serious bug was detected during internal checks / monitoring {#deploy-serious-bug}",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6423afd04fdce590ed61c01c3b1ee71187d3d8ec9768afca7a59b277c1a6e56a": {
+      "original": "For RC and stable releases, deploying to our staging environment and monitoring for errors is required before the release is made publicly available. If a serious bug is detected during this monitoring period, follow these steps:",
+      "translated": "RC および安定版リリースでは、リリースが一般公開される前に、ステージング環境へのデプロイとエラーの監視が必要です。この監視期間中に重大なバグが検出された場合は、以下の手順に従ってください：",
+      "metadata": {
+        "original": "For RC and stable releases, deploying to our staging environment and monitoring for errors is required before the release is made publicly available. If a serious bug is detected during this monitoring period, follow these steps:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "09ac03415e88829794eef473793a2d2bb33c4a39d41061ce90fd8f7a56ada8ab": {
+      "original": "1. **Request a revert** of the deploy in the staging environment.\n2. **Pause the release process** immediately and do not continue with any remaining steps in the tracking issue.\n3. **Update the tracking issue** to reflect that the release is blocked, including details about the bug.\n4. **Do not publish** any of the draft GitHub releases that were created, but also **do not delete** them. They will be published later along with the version that passes validation.\n5. **Coordinate with the relevant engineering team(s)** to develop a fix.\n6. **Involve Developer Advocacy** if the release schedule needs to be adjusted or communicated publicly ([read more on delays below](#release-delay)).",
+      "translated": "1. **ステージング環境でのデプロイのリバート**を要求してください。\n2. **リリース・プロセス** を直ちに一時停止し、追跡中の問題の残りのステップを続行しないでください。\n3. **バグについての詳細を含め、リリースがブロックされたことを反映させるため、追跡中の問題**を更新してください。\n4. **作成されたGitHubリリースのドラフトは**公開しないでください。これらは後で検証に合格したバージョンとともに公開されます。\n5. **関連するエンジニアリングチーム**と調整し、修正を開発してください。\n6. *リリースのスケジュールを調整したり、公に伝える必要がある場合は、** Developer Advocacy**を巻き込んでください([遅延については下記をお読みください](#release-delay))。",
+      "metadata": {
+        "original": "1. **Request a revert** of the deploy in the staging environment.\n2. **Pause the release process** immediately and do not continue with any remaining steps in the tracking issue.\n3. **Update the tracking issue** to reflect that the release is blocked, including details about the bug.\n4. **Do not publish** any of the draft GitHub releases that were created, but also **do not delete** them. They will be published later along with the version that passes validation.\n5. **Coordinate with the relevant engineering team(s)** to develop a fix.\n6. **Involve Developer Advocacy** if the release schedule needs to be adjusted or communicated publicly ([read more on delays below](#release-delay)).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "05b3de7e83f4333729a7d118e1474a1486e86b2a4fda10375add6fb3c002c8d4": {
+      "original": "#### How to proceed once the bug fix is merged into the release branch?",
+      "translated": "#### バグ修正がリリースブランチにマージされた後、どのように進めるか？",
+      "metadata": {
+        "original": "#### How to proceed once the bug fix is merged into the release branch?",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a1c22415d44e71c47b539927f38c3070cee7560e27261255d5d971125cd2c099": {
+      "original": "1. **Create a new tracking issue** for the new version (e.g., __INLINE_CODE_0__ if the bug was detected during __INLINE_CODE_1__, or __INLINE_CODE_2__ if detected while monitoring __INLINE_CODE_3__). Do not reuse the existing tracking issue.\n2. **Follow the release procedure as normal** for the new version.\n3. **Publish all draft releases** for the affected version series. Even if the prior version wasn't made publicly available, it must be published along with the valid version. Each version will have its own changelog section.",
+      "translated": "1. **新しいバージョンの新しい追跡課題**を作成してください(例えば、バグが__INLINE_CODE_1__中に検出された場合は__INLINE_CODE_0__、__INLINE_CODE_3__の監視中に検出された場合は__INLINE_CODE_2__)。既存の追跡課題を再利用しないでください。\n2. **新バージョンのリリース手順** に従ってください。\n3. **影響を受けるバージョンのすべてのドラフト・リリース**を公開してください。以前のバージョンが一般公開されていない場合でも、有効なバージョンと一緒に公開しなければなりません。各バージョンには、それぞれの変更履歴セクションがあります。",
+      "metadata": {
+        "original": "1. **Create a new tracking issue** for the new version (e.g., __INLINE_CODE_0__ if the bug was detected during __INLINE_CODE_1__, or __INLINE_CODE_2__ if detected while monitoring __INLINE_CODE_3__). Do not reuse the existing tracking issue.\n2. **Follow the release procedure as normal** for the new version.\n3. **Publish all draft releases** for the affected version series. Even if the prior version wasn't made publicly available, it must be published along with the valid version. Each version will have its own changelog section.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`-rc.2`",
+          "`-rc.1`",
+          "`x.y.2`",
+          "`x.y.1`"
+        ],
+        "urls": []
+      }
+    },
+    "cc124f42b630d3918a2b8326774d3e004f16bc43d8b481f11b8626f4ecb8bcb6": {
+      "original": ":::important",
+      "translated": "::重要",
+      "metadata": {
+        "original": ":::important",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c98cfe3e4dcbb1592f1f2855bda7ffb5b95906e58c1121ca2ee6920fabf86a53": {
+      "original": "While this guide can be used as reference, keep in mind that version-specific instructions are provided in the [release tracking issues](__URL_0__) created ahead of the release cycle, and should be preferred.",
+      "translated": "このガイドは参考として使用することができますが、リリースサイクルの前に作成される[リリース追跡課題](__URL_0__)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。",
+      "metadata": {
+        "original": "While this guide can be used as reference, keep in mind that version-specific instructions are provided in the [release tracking issues](__URL_0__) created ahead of the release cycle, and should be preferred.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce/issues?q=state%3Aopen%20label%3A%22Release%22%20author%3Aapp%2Flinear%20tracking"
+        ]
+      }
+    },
+    "7f85ecb54411bced9bb4ec1f001e2bacc21c27cee69314a654c4679127ff8efa": {
+      "original": "This page provides an overview of the steps required to build any WooCommerce release from the release branch. Review the flowchart to understand the overall process and the decision table. Step-by-step instructions are provided below.",
+      "translated": "このページでは、リリースブランチからWooCommerceリリースをビルドするために必要なステップの概要を説明します。全体的なプロセスと決定表を理解するためにフローチャートを確認してください。ステップバイステップの手順を以下に示します。",
+      "metadata": {
+        "original": "This page provides an overview of the steps required to build any WooCommerce release from the release branch. Review the flowchart to understand the overall process and the decision table. Step-by-step instructions are provided below.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6ed20d9463642b25ced96b6a98ce2ab3789c904660076f99b237b7ea87eb6853": {
+      "original": "![Release Process flow chart](/img/doc_images/release-process.png)",
+      "translated": "![リリースプロセスフローチャート](/img/doc_images/release-process.png)",
+      "metadata": {
+        "original": "![Release Process flow chart](/img/doc_images/release-process.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "2fdc8f85ced713b321cb61df5896acf72522455151d452a04704419bf3853e9e": {
+      "original": "## Instructions",
+      "translated": "## 指示",
+      "metadata": {
+        "original": "## Instructions",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4fa4f10fd5e199d1e1aea7b3971d1f26543d4d3941b488b47e95a98a175ca4cf": {
+      "original": "Perform all the steps below in order. When running _any_ GitHub workflow, ensure you do it from the __INLINE_CODE_0__ branch (the default) and input the release version or branch as indicated.",
+      "translated": "以下のステップを順番に実行してください。GitHubワークフローを実行する際は、__INLINE_CODE_0__ブランチ（デフォルト）から実行し、リリースバージョンまたはブランチを指示に従って入力してください。",
+      "metadata": {
+        "original": "Perform all the steps below in order. When running _any_ GitHub workflow, ensure you do it from the __INLINE_CODE_0__ branch (the default) and input the release version or branch as indicated.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`trunk`"
+        ],
+        "urls": []
+      }
+    },
+    "8dd5b908deec4584069289ad4d1a9cbf270936d4208592ed71c54b38b460253a": {
+      "original": "Keep the _[Release Troubleshooting & Recovery](/docs/contribution/releases/troubleshooting)_ guide handy, in case you encounter any issues.",
+      "translated": "何か問題が発生したときのために、_[リリースのトラブルシューティングとリカバリー](/docs/contribution/releases/troubleshooting)_ガイドを手元に置いておいてください。",
+      "metadata": {
+        "original": "Keep the _[Release Troubleshooting & Recovery](/docs/contribution/releases/troubleshooting)_ guide handy, in case you encounter any issues.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1475c383a762f0df99a3b9e100cfbc504f30b1a65410567cce400ec3657a054e": {
+      "original": "#### 1. Pre-build checks",
+      "translated": "#### 1.ビルド前のチェック",
+      "metadata": {
+        "original": "#### 1. Pre-build checks",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "5f86ef28acf43e8eab57359de361da9cff6f6098765af414b060492a81fc1c24": {
+      "original": "- [ ] Confirm [GitHub services](__URL_0__) are operational.\n- [ ] Verify no open issues or pull requests exist against the [release milestone](__URL_1__). Ping authors as needed to merge or close.\n- [ ] Ensure that there aren't any pull requests [with label \"cherry pick failed\"](__URL_2__) that apply to this release that haven't been actioned.\n- [ ] Confirm the __INLINE_CODE_0__ value in the readme.txt on the release branch matches the one [on WordPress.org's __INLINE_CODE_1__](__URL_3__).",
+      "translated": "- [GitHub サービス](__URL_0__) が稼働していることを確認する。\n- [リリースマイルストーン](__URL_1__)に対して未解決の課題やプルリクエストが存在しないことを確認する。必要に応じて作者にPingを送り、マージまたはクローズする。\n- [ ] このリリースに該当するプルリクエスト[ラベルが「cherry pick failed」](__URL_2__)で、アクションされていないものがないことを確認する。\n- [ ] リリースブランチの readme.txt の __INLINE_CODE_0__ の値が [WordPress.org の __INLINE_CODE_1__](__URL_3__) の値と一致することを確認する。",
+      "metadata": {
+        "original": "- [ ] Confirm [GitHub services](__URL_0__) are operational.\n- [ ] Verify no open issues or pull requests exist against the [release milestone](__URL_1__). Ping authors as needed to merge or close.\n- [ ] Ensure that there aren't any pull requests [with label \"cherry pick failed\"](__URL_2__) that apply to this release that haven't been actioned.\n- [ ] Confirm the __INLINE_CODE_0__ value in the readme.txt on the release branch matches the one [on WordPress.org's __INLINE_CODE_1__](__URL_3__).",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`Stable tag`",
+          "`trunk`"
+        ],
+        "urls": [
+          "https://www.githubstatus.com/",
+          "https://github.com/woocommerce/woocommerce/milestones/",
+          "https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22",
+          "https://plugins.trac.wordpress.org/browser/woocommerce/trunk/readme.txt#L7"
+        ]
+      }
+    },
+    "e272214013566ba7e5a2593aaa1985557f11b29f8b6c853ba49acb69580fb9f6": {
+      "original": "#### 2. Build the release package",
+      "translated": "#### 2.リリースパッケージをビルドする",
+      "metadata": {
+        "original": "#### 2. Build the release package",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "bf1fce8b914676393cb905a15de917d7981af4ec5c8e7702c8453309479cc144": {
+      "original": "- [ ] Run workflow **[Release: Bump version number](__URL_0__)**: enter the release branch as _Release branch_ and choose the release type from the dropdown.\n- [ ] Review and merge the PR that was generated against the release branch.\n- [ ] Run workflow **[Release: Compile changelog](__URL_1__)**: enter the release main version (__INLINE_CODE_0__) as _Version_ and leave _Release date_ empty, except when building the package ahead of schedule.\n- [ ] Review and merge the PRs that were generated: one against __INLINE_CODE_1__ and another one against the release branch. Both should be under the release milestone.\n- [ ] Run workflow **[Release: Build ZIP file](__URL_2__)** to build the asset and create the GitHub release: enter the release branch as _Release branch_ and check _Create GitHub release_.\n- [ ] Confirm that a draft release [was created in the repository](__URL_3__) with an attached __INLINE_CODE_2__ asset.",
+      "translated": "- [ ] ワークフロー **[Release: Bump version number](__URL_0__)** を実行します: リリースブランチを _Release branch_ と入力し、ドロップダウンからリリースタイプを選択します。\n- [リリースブランチに対して生成されたPRをレビューし、マージします。\n-  ] ワークフロー **[Release: Compile changelog](__URL_1__)** を実行します: _Version_ にリリースのメインバージョン (__INLINE_CODE_0__) を入力し、_Release date_ を空白にします。\n- [ ] 生成された PR をレビューしてマージしてください: 一つは __INLINE_CODE_1__ に対して、もう一つはリリースブランチに対してです。どちらもリリースマイルストーンの下にあるはずです。\n- [ ] ワークフロー **[Release: Build ZIP file](__URL_2__)** を実行し、アセットのビルドと GitHub リリースの作成を行います。\n- [__INLINE_CODE_2__ アセットが添付されたドラフトリリースが リポジトリに作成された](__URL_3__) ことを確認します。",
+      "metadata": {
+        "original": "- [ ] Run workflow **[Release: Bump version number](__URL_0__)**: enter the release branch as _Release branch_ and choose the release type from the dropdown.\n- [ ] Review and merge the PR that was generated against the release branch.\n- [ ] Run workflow **[Release: Compile changelog](__URL_1__)**: enter the release main version (__INLINE_CODE_0__) as _Version_ and leave _Release date_ empty, except when building the package ahead of schedule.\n- [ ] Review and merge the PRs that were generated: one against __INLINE_CODE_1__ and another one against the release branch. Both should be under the release milestone.\n- [ ] Run workflow **[Release: Build ZIP file](__URL_2__)** to build the asset and create the GitHub release: enter the release branch as _Release branch_ and check _Create GitHub release_.\n- [ ] Confirm that a draft release [was created in the repository](__URL_3__) with an attached __INLINE_CODE_2__ asset.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`x.y`",
+          "`trunk`",
+          "`woocommerce.zip`"
+        ],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce/actions/workflows/release-bump-version.yml",
+          "https://github.com/woocommerce/woocommerce/actions/workflows/release-compile-changelog.yml",
+          "https://github.com/woocommerce/woocommerce/actions/workflows/release-build-zip-file.yml",
+          "https://github.com/woocommerce/woocommerce/releases"
+        ]
+      }
+    },
+    "c8f257c6013daff82cc72da3536dbe92063916d770b1f20963f77929ec6f648f": {
+      "original": "#### 3. Upload the release to WordPress.org",
+      "translated": "#### 3.WordPress.orgにリリースをアップロードする。",
+      "metadata": {
+        "original": "#### 3. Upload the release to WordPress.org",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "69499c49c96d37ccf53a170ba0de1bdc88e5260a116652e83d544950dfc4f3de": {
+      "original": "- [ ] Run workflow **[Release: Upload release to WordPress.org](__URL_0__)**: enter the release version (__INLINE_CODE_0__) as _Release tag to upload_ and make sure to check off the confirmation box.\n- [ ] Confirm that SVN tag [exists on WordPress.org SVN](__URL_1__).\n- [ ] [Log into WordPress.org](__URL_2__) using the credentials from the __INLINE_CODE_1__ secret in the secret store and approve the release.\n- [ ] After a few minutes, confirm that the release package [is available for download](__URL_3__).",
+      "translated": "- [ ] ワークフローを実行 **[Release: Upload release to WordPress.org](__URL_0__)**: _Release tag to upload_ にリリースバージョン (__INLINE_CODE_0__) を入力し、確認ボックスにチェックを入れてください。\n- [ ] SVNタグが[WordPress.org SVNに存在する](__URL_1__)ことを確認します。\n- [ ] シークレットストアの __INLINE_CODE_1__ シークレットの認証情報を使って [WordPress.org](__URL_2__) にログインし、リリースを承認します。\n- [ ] 数分後、リリースパッケージが [ダウンロード可能](__URL_3__) になっていることを確認します。",
+      "metadata": {
+        "original": "- [ ] Run workflow **[Release: Upload release to WordPress.org](__URL_0__)**: enter the release version (__INLINE_CODE_0__) as _Release tag to upload_ and make sure to check off the confirmation box.\n- [ ] Confirm that SVN tag [exists on WordPress.org SVN](__URL_1__).\n- [ ] [Log into WordPress.org](__URL_2__) using the credentials from the __INLINE_CODE_1__ secret in the secret store and approve the release.\n- [ ] After a few minutes, confirm that the release package [is available for download](__URL_3__).",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`x.y.z`",
+          "`WordPress.org \"WooCommerce\" user account`"
+        ],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce/actions/workflows/release-upload-to-wporg.yml",
+          "https://plugins.svn.wordpress.org/woocommerce/tags/",
+          "https://wordpress.org/plugins/developers/releases/",
+          "https://wordpress.org/plugins/woocommerce/advanced/"
+        ]
+      }
+    },
+    "120f3796107c533f5ab1f96bc2bffa58bc017caaf8ac861b5c125ed1fd87272b": {
+      "original": "#### 4. Deploy to the staging environment",
+      "translated": "#### 4.ステージング環境にデプロイする",
+      "metadata": {
+        "original": "#### 4. Deploy to the staging environment",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "5f2698eb5064526d956ba98342893256c85e3b5990f81ba8d1459ba1e080d12e": {
+      "original": ":::caution\nThis step only applies to __INLINE_CODE_0__ or stable (__INLINE_CODE_1__  onwards) releases.\n:::",
+      "translated": "::注意\nこのステップは __INLINE_CODE_0__ または安定版 (__INLINE_CODE_1__ 以降) にのみ適用されます。\n:::",
+      "metadata": {
+        "original": ":::caution\nThis step only applies to __INLINE_CODE_0__ or stable (__INLINE_CODE_1__  onwards) releases.\n:::",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`rc`",
+          "`x.y.0`"
+        ],
+        "urls": []
+      }
+    },
+    "bbdd18d11c72f7bca7f908b95ec07eaca1705bc215a2a1fcfa079c670a16bd59": {
+      "original": "- [ ] Follow the [guide to deploy to the staging environment](__URL_0__) and monitor for 4 hours (RC) or 2 hours (stable) after deploy.",
+      "translated": "- [ステージング環境へのデプロイガイド](__URL_0__)に従い、デプロイ後4時間(RC)または2時間(安定)監視する。",
+      "metadata": {
+        "original": "- [ ] Follow the [guide to deploy to the staging environment](__URL_0__) and monitor for 4 hours (RC) or 2 hours (stable) after deploy.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://wp.me/PCYsg-18BQ"
+        ]
+      }
+    },
+    "fba2dcb646b243956deb57ac87154c8ebc4e6af063ab1916895ef14906a1bf23": {
+      "original": "##### If a critical issue was detected while monitoring",
+      "translated": "##### 監視中に重大な問題が検出された場合",
+      "metadata": {
+        "original": "##### If a critical issue was detected while monitoring",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9039e67686dba639fbff31b126bb89edd62f722304e4c2ce8c377f4f48ccbbda": {
+      "original": "- [ ] Request a revert in the staging environment.\n- [ ] Pause the release process and **do not continue with any steps on this issue**. Follow the procedure in the [troubleshooting guide](__URL_0__) instead.",
+      "translated": "- [ステージング環境での差し戻しを要求する。\n-  ] リリースプロセスを一時停止し、**この問題に関する手順を続行しないでください**。代わりに [トラブルシューティングガイド](__URL_0__) の手順に従ってください。",
+      "metadata": {
+        "original": "- [ ] Request a revert in the staging environment.\n- [ ] Pause the release process and **do not continue with any steps on this issue**. Follow the procedure in the [troubleshooting guide](__URL_0__) instead.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://developer.woocommerce.com/docs/contribution/releases/troubleshooting/#deploy-serious-bug"
+        ]
+      }
+    },
+    "f4b22d6c6d35469c7ea7f8f33aea260e4df299368f20db3cbaa31996fc651643": {
+      "original": "#### 5. Publish the release",
+      "translated": "#### 5.リリースの発行",
+      "metadata": {
+        "original": "#### 5. Publish the release",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "79fabaa71d22699e72d3db5177750cf8290fc837100c75f971d22ef9031a6522": {
+      "original": "- [ ] **(Only for stable releases)** Run workflow **[Release: Update stable tag](__URL_0__)**: enter the release version (__INLINE_CODE_0__) as _Version_ and make sure to check off the confirmation box.\n- [ ] Publish the [release draft](__URL_1__) that was previously created, as well as any other release drafts that might exist from previous attempts. **Ensure** that \"Set as the latest release\" is checked **only** for stable releases.",
+      "translated": "- [ ] **(安定版リリースの場合のみ)** ワークフロー **[Release: Update stable tag](__URL_0__)** を実行します。\n- [ ] 以前に作成した[リリースドラフト](__URL_1__)を公開します。 **最新のリリースとして設定する\" が、** 安定版リリースのみ** チェックされていることを確認してください。",
+      "metadata": {
+        "original": "- [ ] **(Only for stable releases)** Run workflow **[Release: Update stable tag](__URL_0__)**: enter the release version (__INLINE_CODE_0__) as _Version_ and make sure to check off the confirmation box.\n- [ ] Publish the [release draft](__URL_1__) that was previously created, as well as any other release drafts that might exist from previous attempts. **Ensure** that \"Set as the latest release\" is checked **only** for stable releases.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`x.y.z`"
+        ],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce/actions/workflows/release-update-stable-tag.yml",
+          "https://github.com/woocommerce/woocommerce/releases"
+        ]
+      }
+    },
+    "b32729c37be764e61b09e16dd2550f4cd5e6c4bf7fe6fc56450aaefcf26aa050": {
+      "original": "#### 6. Post-release tasks",
+      "translated": "#### 6.リリース後のタスク",
+      "metadata": {
+        "original": "#### 6. Post-release tasks",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "576870c1ee75c402a93d9c5d6e54eae0cf0747b618186766334e772f212bcc45": {
+      "original": "- [ ] Wait at least 1 hour for all automations to complete and make sure to merge any follow-up PRs under the [release milestone](__URL_0__).\n- [ ] Continue monitoring for bugs related to the release for at least 3 days. See the [release monitoring guide](__URL_1__) for more details.\n",
+      "translated": "- [リリースマイルストーン](__URL_0__)の下でフォローアップPRをマージしてください。\n- [ ] リリースに関連するバグの監視を少なくとも3日間は続けてください。詳細については、[リリースモニタリングガイド](__URL_1__) を参照してください。\n",
+      "metadata": {
+        "original": "- [ ] Wait at least 1 hour for all automations to complete and make sure to merge any follow-up PRs under the [release milestone](__URL_0__).\n- [ ] Continue monitoring for bugs related to the release for at least 3 days. See the [release monitoring guide](__URL_1__) for more details.\n",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://github.com/woocommerce/woocommerce/milestones/",
+          "https://developer.woocommerce.com/docs/contribution/releases/monitoring/"
+        ]
+      }
+    },
+    "b5fbc99cfe8bcf616b585ae37d42445cde10d4c20d7e0e854793dc4b57307e21": {
+      "original": "# On-Sale Badge block",
+      "translated": "# セール・バッジ・ブロック",
+      "metadata": {
+        "original": "# On-Sale Badge block",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7f911a622fd39884907a0b57fb1382a7dc096507338b20264f7baf05b29c92e1": {
+      "original": "The On-Sale Badge block displays a \"Sale\" badge on products that are on sale.",
+      "translated": "セール中バッジブロックは、セール中の商品に「セール」バッジを表示します。",
+      "metadata": {
+        "original": "The On-Sale Badge block displays a \"Sale\" badge on products that are on sale.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0867c661518c4b4870788765a190d2db8266d7030e98da3640f0397d55a7f5a2": {
+      "original": "> **Note:** This block uses the slug __INLINE_CODE_0__.",
+      "translated": "> このブロックは__INLINE_CODE_0__というスラッグを使用しています。",
+      "metadata": {
+        "original": "> **Note:** This block uses the slug __INLINE_CODE_0__.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`woocommerce/product-sale-badge`"
+        ],
+        "urls": []
+      }
+    },
+    "8d4ed08e03d376587dfcf3c8e58b01f3946b02429b3bac32c57de0d071474801": {
+      "original": "The __INLINE_CODE_0__ filter allows customization of the sale badge text based on product context.",
+      "translated": "__INLINE_CODE_0__フィルタは、商品のコンテキストに基づいてセールバッジのテキストをカスタマイズすることができます。",
+      "metadata": {
+        "original": "The __INLINE_CODE_0__ filter allows customization of the sale badge text based on product context.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`woocommerce_sale_badge_text`"
+        ],
+        "urls": []
+      }
+    },
+    "4d0fdeb75cdce40fcac63e85779c20ce5fd878d05f4fa68da5df22f83598cc6a": {
+      "original": "-   _$sale_text_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The sale badge text.\n-   _$product_ __INLINE_CODE_2__ - The product object.",
+      "translated": "-   _$sale_text_ __INLINE_CODE_0__ (デフォルト: __INLINE_CODE_1__) - セールバッジのテキスト。\n-   _$product_ __INLINE_CODE_2__ - 商品オブジェクト。",
+      "metadata": {
+        "original": "-   _$sale_text_ __INLINE_CODE_0__ (default: __INLINE_CODE_1__) - The sale badge text.\n-   _$product_ __INLINE_CODE_2__ - The product object.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`",
+          "`'Sale'`",
+          "`WC_Product`"
+        ],
+        "urls": []
+      }
+    },
+    "24e08c2ca498466541a2298980c6a5d9f2fecc29e1b03e6de132bd4cda5f0c17": {
+      "original": "-   __INLINE_CODE_0__ - The filtered sale badge text.",
+      "translated": "-   __INLINE_CODE_0__ - フィルタリングされたセールバッジのテキスト。",
+      "metadata": {
+        "original": "-   __INLINE_CODE_0__ - The filtered sale badge text.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`string`"
+        ],
+        "urls": []
+      }
+    },
+    "b2e8bd7f9e0655538d1b2c4f2387103fa40b2518fb47f769238675edee0587d6": {
+      "original": "#### Product-specific customization <!-- omit in toc -->",
+      "translated": "#### 製品固有のカスタマイズ<!-- omit in toc -->",
+      "metadata": {
+        "original": "#### Product-specific customization <!-- omit in toc -->",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "dcbbb15f1a33349b6bb80a78c2039ebd96afef86c2254bb7075a371046705c0e": {
+      "original": "#### Discount percentage <!-- omit in toc -->",
+      "translated": "#### 割引率<!-- omit in toc -->",
+      "metadata": {
+        "original": "#### Discount percentage <!-- omit in toc -->",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c8f8762bbf705d4d801f58cb5bf2a49e39ded1ce9add0b0584af3978a1bb054e": {
+      "original": "## Difference from __INLINE_CODE_0__",
+      "translated": "## __INLINE_CODE_0__との違い",
+      "metadata": {
+        "original": "## Difference from __INLINE_CODE_0__",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`woocommerce_sale_flash`"
+        ],
+        "urls": []
+      }
+    },
+    "47946e0c3dd9345fa79f2ec5e6c2f8524500eda9896778487deb6498b4454971": {
+      "original": "| Aspect | __INLINE_CODE_0__ | __INLINE_CODE_1__ |\n| --- | --- | --- |\n| **Context** | On-Sale Badge block | Classic templates (__INLINE_CODE_2__, __INLINE_CODE_3__) |\n| **Output** | Plain text | HTML markup |\n| **Parameters** | __INLINE_CODE_4__, __INLINE_CODE_5__ | __INLINE_CODE_6__, __INLINE_CODE_7__, __INLINE_CODE_8__ |\n| **Default** | __INLINE_CODE_9__ | __INLINE_CODE_10__ |\n| **Since** | WooCommerce 10.0.0 | WooCommerce 2.x |",
+      "translated": "| アスペクト | __INLINE_CODE_0__ | __INLINE_CODE_1__ |\n| --- | --- | --- |\n| コンテキスト**｜セール・バッジ・ブロック｜クラシック・テンプレート (__INLINE_CODE_2__, __INLINE_CODE_3__)\n| 出力** | プレインテキスト | HTMLマークアップ\n| パラメータ** | __INLINE_CODE_4__, __INLINE_CODE_5__ | __INLINE_CODE_6__, __INLINE_CODE_7__, __INLINE_CODE_8__ |\n| **デフォルト** | __INLINE_CODE_9__ | __INLINE_CODE_10__\n| WooCommerce 10.0.0｜WooCommerce 2.x｜**Since**｜WooCommerce 10.0.0｜WooCommerce 2.x",
+      "metadata": {
+        "original": "| Aspect | __INLINE_CODE_0__ | __INLINE_CODE_1__ |\n| --- | --- | --- |\n| **Context** | On-Sale Badge block | Classic templates (__INLINE_CODE_2__, __INLINE_CODE_3__) |\n| **Output** | Plain text | HTML markup |\n| **Parameters** | __INLINE_CODE_4__, __INLINE_CODE_5__ | __INLINE_CODE_6__, __INLINE_CODE_7__, __INLINE_CODE_8__ |\n| **Default** | __INLINE_CODE_9__ | __INLINE_CODE_10__ |\n| **Since** | WooCommerce 10.0.0 | WooCommerce 2.x |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`woocommerce_sale_badge_text`",
+          "`woocommerce_sale_flash`",
+          "`loop/sale-flash.php`",
+          "`single-product/sale-flash.php`",
+          "`$sale_text`",
+          "`$product`",
+          "`$html`",
+          "`$post`",
+          "`$product`",
+          "`'Sale'`",
+          "`'<span class=\"onsale\">Sale!</span>'`"
+        ],
+        "urls": []
+      }
+    },
+    "b3b32fcdaf5caf5e258f8c9a6f4c0307be0444ecb924dfc43e4890318937ddae": {
+      "original": "### Output handling",
+      "translated": "### 出力処理",
+      "metadata": {
+        "original": "### Output handling",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "52a2a2f734249bdaf8c27b11a986ea82213457cc0e2751854d08c87cd7e7047d": {
+      "original": "The block filter expects plain text only. HTML tags will be escaped and displayed as text.",
+      "translated": "ブロックフィルターはプレーンテキストのみを受け付けます。HTMLタグはエスケープされ、テキストとして表示されます。",
+      "metadata": {
+        "original": "The block filter expects plain text only. HTML tags will be escaped and displayed as text.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "157013edc12f83cdce31c8441a065604f51695142085c4c5cb58271f3e9194c1": {
+      "original": "The classic filter expects HTML markup:",
+      "translated": "クラシックフィルターはHTMLマークアップを期待する：",
+      "metadata": {
+        "original": "The classic filter expects HTML markup:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b89f2709d9ee17a73e0fb0e15037b3e61ee5232eeebb30a8743b1384ac30c40c": {
+      "original": "### Supporting both",
+      "translated": "### 両方をサポート",
+      "metadata": {
+        "original": "### Supporting both",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "90fb65f8d25f07393119a9b98dcdc4f02fa8864bfb5489f8a551c6e7c98a0453": {
+      "original": "To support both block and classic themes, implement both filters:",
+      "translated": "ブロックテーマとクラシックテーマの両方をサポートするには、両方のフィルタを実装します：",
+      "metadata": {
+        "original": "To support both block and classic themes, implement both filters:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ad1c4ccba76ba94746a53969c125c55a2dd165a20a50d74f68601349f11a74f8": {
+      "original": "-   The sale badge only renders when __INLINE_CODE_0__ returns __INLINE_CODE_1__.\n-   Filter output is escaped with __INLINE_CODE_2__ by the block.\n-   For Cart and Checkout blocks, use the [__INLINE_CODE_3__ filter](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items/#salebadgepriceformat) instead.\n",
+      "translated": "-   セールバッジは、__INLINE_CODE_0__が__INLINE_CODE_1__を返したときのみ表示されます。\n-   フィルター出力はブロックによって__INLINE_CODE_2__でエスケープされます。\n-   カートブロックとチェックアウトブロックでは、代わりに[__INLINE_CODE_3__ filter](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items/#salebadgepriceformat)を使用してください。\n",
+      "metadata": {
+        "original": "-   The sale badge only renders when __INLINE_CODE_0__ returns __INLINE_CODE_1__.\n-   Filter output is escaped with __INLINE_CODE_2__ by the block.\n-   For Cart and Checkout blocks, use the [__INLINE_CODE_3__ filter](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items/#salebadgepriceformat) instead.\n",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`$product->is_on_sale()`",
+          "`true`",
+          "`esc_html()`",
+          "`saleBadgePriceFormat`"
+        ],
+        "urls": []
+      }
     }
   },
   "docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items.md": {
@@ -73882,9 +74390,9 @@
     "segments": 8
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/troubleshooting.md": {
-    "hash": "7278b5e2c0e9c1a8dd443ec2cdfae46678ca000bdd8dd1bfa1a414aeedcda003",
-    "translatedAt": "2025-12-27T02:43:15.322Z",
-    "segments": 33
+    "hash": "a35a24a4166daccf215b3dac02a454995f5298ff9c65127fc9a74a4e69421616",
+    "translatedAt": "2026-01-23T02:42:31.324Z",
+    "segments": 30
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/schedule.md": {
     "hash": "e0642ba8c5613a9f358bd447084ded23f1759e6554a243ccd0692ad7b25d5922",
@@ -73917,9 +74425,9 @@
     "segments": 13
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/building-and-publishing.md": {
-    "hash": "fdcb7d13ed614c604154dc59b27cb4bfde59814f606f1ec09587868a7eee6c4d",
-    "translatedAt": "2025-12-27T02:43:33.785Z",
-    "segments": 23
+    "hash": "53e623ce29bb8e50b52f2bbabd7bfa54d59f73cce85cc6bdb6f6a77f8182ebe6",
+    "translatedAt": "2026-01-23T02:42:34.837Z",
+    "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/backporting.md": {
     "hash": "664f2cbabd877cf41325e6c311042a7d8db12776f623ad4bb72b9a2aa198e958",
@@ -74475,5 +74983,10 @@
     "hash": "273f39d06c9a03fabf35c86dd642c5bd6cd6a56a566377200b7236e23ed85f72",
     "translatedAt": "2026-01-16T02:42:02.257Z",
     "segments": 9
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/product-sale-badge-block/README.md": {
+    "hash": "0eca454fe20afefb86c05e5b763117dfb087353d7ff97babb19a09a41276a8da",
+    "translatedAt": "2026-01-23T02:42:38.444Z",
+    "segments": 22
   }
 }

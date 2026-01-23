@@ -3,85 +3,74 @@ post_title: Building and Publishing a Release
 sidebar_label: Building and Publishing
 sidebar_position: 1
 ---
+# リリースの構築と発表
 
-# Building and Publishing a Release
+::重要
 
-リリースの過程で何らかの問題が発生した場合は、[リリースのトラブルシューティングとリカバリーガイド](/docs/contribution/releases/troubleshooting)を参照して、一般的な問題のステップバイステップの解決策とリカバリーの手順を確認してください。
+このガイドは参考として使用することができますが、リリースサイクルの前に作成される[リリース追跡課題](https://github.com/woocommerce/woocommerce/issues?q=state%3Aopen%20label%3A%22Release%22%20author%3Aapp%2Flinear%20tracking)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。
 
-## 前提条件
+:::
 
-- コミットを承認するには、WooCommerceプラグインのコミッターアクセスを持つWordPress.orgアカウントが必要です。
+このページでは、リリースブランチからWooCommerceリリースをビルドするために必要なステップの概要を説明します。全体的なプロセスと決定表を理解するためにフローチャートを確認してください。ステップバイステップの手順を以下に示します。
 
-## プレチェック
+## 概要
 
-1. **公開されるリリースと一致するマイルストーンに対して、未解決の [Pull Requests](https://github.com/woocommerce/woocommerce/pulls?q=is%3Aopen+is%3Apr) または [Issues](https://github.com/woocommerce/woocommerce/issues) がないことを確認してください。
-   - 他のリリースブランチやトランクにマージする必要があるかもしれない[backported pull requests](/docs/contribution/releases/backporting)を含め、リリースのマイルストーンに関連するすべてのプルリクエストをクローズしなければなりません。
-2. **未解決の "cherry pick failed "[プルリクエスト](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22).**がないかチェックしてください。
-   - そのようなPRがあれば、別のPRで解決されることを期待するか、手動で解決するようにしてください。
-3. **`readme.txt`のStableタグが[WordPress.orgのtrunk](https://plugins.trac.wordpress.org/browser/woocommerce/trunk/readme.txt#L7)と一致することを確認する。
-   - この値は、ビルド中のバージョンではなく、現在の安定バージョンと一致する必要があります。
-4. **GitHub [サービス](https://www.githubstatus.com/) が完全に動作していることを確認してください。
+![リリースプロセスフローチャート](/img/doc_images/release-process.png)
 
-## WooCommerceの構築
+## 指示
 
-1. *** ["Release: Bump version number "ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-bump-version.yml).** を実行します。
-   - `trunk`から実行します。
-   - リリースするバージョンの種類（`beta`、`rc`、`stable`）を選択します。
-   - リリースするブランチを _Release branch_ と入力します (例: `release/10.0`).
-   - 作成されたPRをレビューし、マージする。
-2. **["Release: Compile changelog" ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-compile-changelog.yml).** を実行します。
-   - `trunk`から実行し、メジャーバージョン番号とリリース予定日を入力する。
-   - 作成された2つのPR (1つはトランク用、もう1つはリリースブランチ用) をレビューしてマージします。
-   - 変更履歴の日付が正しいことを確認してください。
-3. **リリースZIPファイルを["Release: Build ZIP file "ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-build-zip-file.yml).**を使ってビルドします。
-   - `trunk`から実行し、引数にリリースブランチを入力します。
-   - Create GitHub release "を`true`に設定します。
-   - ワークフローは、`woocommerce.zip`ファイルを添付した[ドラフトリリースタグ](https://github.com/woocommerce/woocommerce/releases)を作成します。
+以下のステップを順番に実行してください。GitHubワークフローを実行する際は、`trunk`ブランチ（デフォルト）から実行し、リリースバージョンまたはブランチを指示に従って入力してください。
 
-## リリースの発表
+何か問題が発生したときのために、_[リリースのトラブルシューティングとリカバリー](/docs/contribution/releases/troubleshooting)_ガイドを手元に置いておいてください。
 
-### ステップ1：WordPress.orgにリリースをアップロードする
+### Steps
 
-- releaseタグを使用して、`trunk`から["Release: Upload release to WordPress.org "ワークフロー](https://github.com/woocommerce/woocommerce/actions/workflows/release-upload-to-wporg.yml)を実行する。
-- これにより新しいSVNタグが作成され、リリースがtrunkより新しい場合はtrunkが上書きされます。
-- 最初のベータ版をリリースする場合、処理時間が長くなることが予想されます。
+#### 1.ビルド前のチェック
 
-### ステップ2：リリースを承認する
+- [GitHub サービス](https://www.githubstatus.com/) が稼働していることを確認する。
+- [リリースマイルストーン](https://github.com/woocommerce/woocommerce/milestones/)に対して未解決の課題やプルリクエストが存在しないことを確認する。必要に応じて作者にPingを送り、マージまたはクローズする。
+- [ ] このリリースに該当するプルリクエスト[ラベルが「cherry pick failed」](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22)で、アクションされていないものがないことを確認する。
+- [ ] リリースブランチの readme.txt の `Stable tag` の値が [WordPress.org の `trunk`](https://plugins.trac.wordpress.org/browser/woocommerce/trunk/readme.txt#L7) の値と一致することを確認する。
 
-- ユーザー `woocommerce` として [WordPress.org plugin releases](https://wordpress.org/plugins/developers/releases/) にアクセスし、リリースを承認する。
-- WordPress.orgが新しいバージョンをビルドするまで数分待ちます。
+#### 2.リリースパッケージをビルドする
 
-### ステップ3：リリースの可用性を確認する
+- [ ] ワークフロー **[Release: Bump version number](https://github.com/woocommerce/woocommerce/actions/workflows/release-bump-version.yml)** を実行します: リリースブランチを _Release branch_ と入力し、ドロップダウンからリリースタイプを選択します。
+- [リリースブランチに対して生成されたPRをレビューし、マージします。
+-  ] ワークフロー **[Release: Compile changelog](https://github.com/woocommerce/woocommerce/actions/workflows/release-compile-changelog.yml)** を実行します: _Version_ にリリースのメインバージョン (`x.y`) を入力し、_Release date_ を空白にします。
+- [ ] 生成された PR をレビューしてマージしてください: 一つは `trunk` に対して、もう一つはリリースブランチに対してです。どちらもリリースマイルストーンの下にあるはずです。
+- [ ] ワークフロー **[Release: Build ZIP file](https://github.com/woocommerce/woocommerce/actions/workflows/release-build-zip-file.yml)** を実行し、アセットのビルドと GitHub リリースの作成を行います。
+- [`woocommerce.zip` アセットが添付されたドラフトリリースが リポジトリに作成された](https://github.com/woocommerce/woocommerce/releases) ことを確認します。
 
-- 新しいリリースが表示されることを確認してください：
-    - [https://plugins.svn.wordpress.org/woocommerce/tags/](https://plugins.svn.wordpress.org/woocommerce/tags/)
-    - 詳細オプション画面](https://wordpress.org/plugins/woocommerce/advanced/)の「以前のバージョン」ドロップダウン。
+#### 3.WordPress.orgにリリースをアップロードする。
 
-### ステップ4：リリースのテストと検証
+- [ ] ワークフローを実行 **[Release: Upload release to WordPress.org](https://github.com/woocommerce/woocommerce/actions/workflows/release-upload-to-wporg.yml)**: _Release tag to upload_ にリリースバージョン (`x.y.z`) を入力し、確認ボックスにチェックを入れてください。
+- [ ] SVNタグが[WordPress.org SVNに存在する](https://plugins.svn.wordpress.org/woocommerce/tags/)ことを確認します。
+- [ ] シークレットストアの `WordPress.org "WooCommerce" user account` シークレットの認証情報を使って [WordPress.org](https://wordpress.org/plugins/developers/releases/) にログインし、リリースを承認します。
+- [ ] 数分後、リリースパッケージが [ダウンロード可能](https://wordpress.org/plugins/woocommerce/advanced/) になっていることを確認します。
 
-- **条件:** 安定版および RC 版リリース (`-rc.x` または `.x`) に対してのみ、このステップを実行してください。
-- **安定性と機能性を確保するために、リリースの徹底的なテストと検証を実施してください。このバージョンを実行しているサイトに重大な影響を与える可能性のある問題がないか慎重に監視してください。
+#### 4.ステージング環境にデプロイする
 
-### ステップ5：安定タグの更新
+::注意
+このステップは `rc` または安定版 (`x.y.0` 以降) にのみ適用されます。
+:::
 
-- **条件:** 以下の場合のみ、このステップを実行してください：
-    - リリースが安定版リリース(`.x`)であること。
-    - テストと検証(ステップ4)で大きな問題が見つからなかった。
-- **アクション:** `trunk` から ["Release: Update stable tag" workflow](https://github.com/woocommerce/woocommerce/actions/workflows/release-update-stable-tag.yml) を実行し、バージョンを設定し、ワークフロー入力の一部として stable タグを更新するオプションを選択します。
-    - リリースブランチとトランクの両方のプルリクエストを確認し、マージします。
+- [ステージング環境へのデプロイガイド](https://wp.me/PCYsg-18BQ)に従い、デプロイ後4時間(RC)または2時間(安定)監視する。
 
-### ステップ6：GitHubリリースタグの発行
+##### 監視中に重大な問題が検出された場合
 
-- **アクション:** [以前に作成したGitHubドラフトリリースタグ](https://github.com/woocommerce/woocommerce/releases)を公開します。
-- **リリースステータスを設定する場合:**
-    - 開発版、ベータ版、RC版をリリースする場合は、"Set as a pre-release" をチェックしてください。
-    - ステップ 5 で安定版としてマークされたバージョンの場合は、 "Set as the latest release" をチェックしてください。
-    - ステップ5で安定版としてマークされていない場合は、最新リリースとして設定しないでください。
+- [ステージング環境での差し戻しを要求する。
+-  ] リリースプロセスを一時停止し、**この問題に関する手順を続行しないでください**。代わりに [トラブルシューティングガイド](https://developer.woocommerce.com/docs/contribution/releases/troubleshooting/#deploy-serious-bug) の手順に従ってください。
 
-## 決定表
+#### 5.リリースの発行
 
-| ステップ｜実行する条件｜条件が満たされない場合のアクション
-|--------|--------------------------------------------------------------------------------|-------------------------------------|
-| ステップ4: **または** リリース候補(RC)ではない場合: ステップ4をスキップしてください。
-| ステップ5: **安定版リリースではない、かつ** ステップ4で重大な問題がない場合、ステップ5をスキップしてください。
-| ステップ6: 5で安定版とマークされた場合のみ "最新版 "とマークする。
+- [ ] **(安定版リリースの場合のみ)** ワークフロー **[Release: Update stable tag](https://github.com/woocommerce/woocommerce/actions/workflows/release-update-stable-tag.yml)** を実行します。
+- [ ] 以前に作成した[リリースドラフト](https://github.com/woocommerce/woocommerce/releases)を公開します。 **最新のリリースとして設定する" が、** 安定版リリースのみ** チェックされていることを確認してください。
+
+#### 6.リリース後のタスク
+
+::注意
+このステップは `rc` または安定版 (`x.y.0` 以降) にのみ適用されます。
+:::
+
+- [リリースマイルストーン](https://github.com/woocommerce/woocommerce/milestones/)の下でフォローアップPRをマージしてください。
+- [ ] リリースに関連するバグの監視を少なくとも3日間は続けてください。詳細については、[リリースモニタリングガイド](https://developer.woocommerce.com/docs/contribution/releases/monitoring/) を参照してください。
