@@ -3,13 +3,12 @@ post_title: Building and Publishing a Release
 sidebar_label: Building and Publishing
 sidebar_position: 1
 ---
-# リリースの構築と発表
+
+# Building and Publishing a Release
 
 ::重要
 
 このガイドは参考として使用することができますが、リリースサイクルの前に作成される[リリース追跡課題](https://github.com/woocommerce/woocommerce/issues?q=state%3Aopen%20label%3A%22Release%22%20author%3Aapp%2Flinear%20tracking)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。
-
-:::
 
 このページでは、リリースブランチからWooCommerceリリースをビルドするために必要なステップの概要を説明します。全体的なプロセスと決定表を理解するためにフローチャートを確認してください。ステップバイステップの手順を以下に示します。
 
@@ -23,13 +22,11 @@ sidebar_position: 1
 
 何か問題が発生したときのために、_[リリースのトラブルシューティングとリカバリー](/docs/contribution/releases/troubleshooting)_ガイドを手元に置いておいてください。
 
-### Steps
-
 #### 1.ビルド前のチェック
 
 - [GitHub サービス](https://www.githubstatus.com/) が稼働していることを確認する。
 - [リリースマイルストーン](https://github.com/woocommerce/woocommerce/milestones/)に対して未解決の課題やプルリクエストが存在しないことを確認する。必要に応じて作者にPingを送り、マージまたはクローズする。
-- [ ] このリリースに該当するプルリクエスト[ラベルが「cherry pick failed」](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22)で、アクションされていないものがないことを確認する。
+- [ ] このリリースに適用されるプルリクエスト[ラベルが "cherry pick failed"](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22)で未対応のものがないことを確認する。
 - [ ] リリースブランチの readme.txt の `Stable tag` の値が [WordPress.org の `trunk`](https://plugins.trac.wordpress.org/browser/woocommerce/trunk/readme.txt#L7) の値と一致することを確認する。
 
 #### 2.リリースパッケージをビルドする

@@ -3,7 +3,8 @@ sidebar_label: On-Sale Badge block
 category_slug: product-sale-badge
 post_title: On-Sale Badge block
 ---
-# セール・バッジ・ブロック
+
+# On-Sale Badge block
 
 セール中バッジブロックは、セール中の商品に「セール」バッジを表示します。
 
@@ -74,7 +75,7 @@ function show_discount_percentage_badge( $sale_text, $product ) {
 }
 ```
 
-## `woocommerce_sale_flash`との違い
+## `woocommerce_sale_flash` との違い
 
 | アスペクト | `woocommerce_sale_badge_text` | `woocommerce_sale_flash` |
 | --- | --- | --- |
@@ -127,8 +128,6 @@ function my_classic_sale_flash( $html, $post, $product ) {
 	return '<span class="onsale">' . __( 'Special Offer', 'your-textdomain' ) . '</span>';
 }
 ```
-
-## Notes
 
 -   セールバッジは、`$product->is_on_sale()`が`true`を返したときのみ表示されます。
 -   フィルター出力はブロックによって`esc_html()`でエスケープされます。
