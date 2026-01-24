@@ -28,17 +28,16 @@ const { registerPaymentMethodExtensionCallbacks } = window.wc.wcBlocksRegistry;
 ```
 
 ### 署名
-
-| パラメータ
+| パラメータ   | 説明                                                                                                         | タイプ                                              |
 | ----------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| `namespace` | 拡張機能を識別するためのユニークな文字列です。他の拡張機能との名前の衝突を避けるものを選んでください。| `string`
-| `callbacks`｜異なる支払い方法のために登録されたコールバックを含むオブジェクト｜< string, CanMakePaymentExtensionCallback > ｜レコード。
+| `namespace` | 拡張機能を識別するためのユニークな文字列です。他の拡張機能との名前の衝突を避けるものを選んでください。| `string` |
+| `callbacks`｜異なる支払い方法のために登録されたコールバックを含むオブジェクト｜レコード < string, CanMakePaymentExtensionCallback > |
 
 [コールバック](#callbacks-registered-for-payment-methods)については以下をお読みください。
 
 #### 拡張名前空間の衝突
 
-すでに`registerPaymentMethodExtensionCallbacks`で使用されている拡張ネームスペースの下にコールバックを登録しようとすると、登録は中止され、一意のネームスペースを使用していないことが通知されます。これは JavaScript コンソールに表示されます。
+すでに `registerPaymentMethodExtensionCallbacks` で使用されている拡張ネームスペースの下にコールバックを登録しようとすると、登録は中止され、一意のネームスペースを使用していないことが通知されます。これは JavaScript コンソールに表示されます。
 
 ### 使用例
 

@@ -61,18 +61,18 @@ const options = {
 
 #### `ExpressPaymentMethodConfiguration`
 
-| オプション｜タイプ｜説明｜必須
+| オプション｜タイプ｜説明｜必須 |
 | --- | --- | --- | --- |
-| `name`｜文字列｜ゲートウェイ・クライアント側の一意な識別子。| はい。
-| `title`｜文字列｜支払い方法の可読性名前。エディタでマーチャントに表示されます。| いいえ。
-| `description`｜文字列｜決済ゲートウェイを説明する1～2文。エディタでマーチャントに表示されます。| いいえ
-| `gatewayId`｜文字列｜サーバー側に登録されているペイメントゲートウェイのID。エディタ内でマーチャントを正しい設定ページに誘導するために使用されます。これが指定されていない場合、マーチャントは一般的なWoo支払い設定ページにリダイレクトされます。| いいえ
-| `content` | ReactNode｜フロントエンドでブロックがレンダリングされたときに、express支払い方法エリアに出力されるReactノード。チェックアウト支払い方法のインターフェイスからpropsを受け取る。| はい
-| `edit`｜ReactNode｜ エディタでブロックがレンダリングされるときに、エクスプレス支払い方法エリアに出力されるReactノード。支払い方法インターフェースからチェックアウトへのプロップを受け取ります(プレビューデータ付き)。| はい
-| `canMakePayment` | 関数｜支払い方法が買い物客にとって利用可能であるべきかを決定するコールバック。| はい
-| はい｜`paymentMethodId`｜文字列｜サーバへのチェックアウト処理リクエストに付随する識別子。支払いを処理するための支払い方法ゲートウェイクラスを識別するために使用される。| いいえ
-| ゲートウェイがサポートする支払い機能の配列。支払い方法がカートのコンテンツに使用できるかどうかをクロスチェックするために使用されます。値が提供されない場合、デフォルトは `['products']` です。| いいえ
-| これは、express の支払い方法でサポートされるスタイルのバリエーションの配列です。これらはすべてのアクティブなエクスプレス決済ボタンに適用されるスタイルで、エディターのエクスプレス決済ブロックから制御できます。これらのサポートされる値は`['height', 'borderRadius']`のいずれかです。| いいえ
+| `name`｜文字列｜ゲートウェイ・クライアント側の一意な識別子。| はい |
+| `title`｜文字列｜支払い方法の可読性名前。エディタでマーチャントに表示されます。| いいえ |
+| `description`｜文字列｜決済ゲートウェイを説明する1～2文。エディタでマーチャントに表示されます。| いいえ |
+| `gatewayId`｜文字列｜サーバー側に登録されているペイメントゲートウェイのID。エディタ内でマーチャントを正しい設定ページに誘導するために使用されます。これが指定されていない場合、マーチャントは一般的なWoo支払い設定ページにリダイレクトされます。| いいえ |
+| `content` | ReactNode | フロントエンドでブロックがレンダリングされたときに、express支払い方法エリアに出力されるReactノード。チェックアウト支払い方法のインターフェイスからpropsを受け取る。| はい |
+| `edit`｜ReactNode | エディタでブロックがレンダリングされるときに、エクスプレス支払い方法エリアに出力されるReactノード。支払い方法インターフェースからチェックアウトへのプロップを受け取ります(プレビューデータ付き)。| はい |
+| `canMakePayment` | 関数 | 支払い方法が買い物客にとって利用可能であるべきかを決定するコールバック。| はい |
+| `paymentMethodId` | 文字列 |サーバへのチェックアウト処理リクエストに付随する識別子。支払いを処理するための支払い方法ゲートウェイクラスを識別するために使用される。| いいえ |
+| `supports:features` | 配列 |ゲートウェイがサポートする支払い機能の配列。支払い方法がカートのコンテンツに使用できるかどうかをクロスチェックするために使用されます。値が提供されない場合、デフォルトは `['products']` です。| いいえ |
+| `supports:style` | 配列 |これは、express の支払い方法でサポートされるスタイルのバリエーションの配列です。これらはすべてのアクティブなエクスプレス決済ボタンに適用されるスタイルで、エディターのエクスプレス決済ブロックから制御できます。これらのサポートされる値は`['height', 'borderRadius']`のいずれかです。| いいえ |
 
 #### `canMakePayment` オプション
 
@@ -147,14 +147,14 @@ registerPaymentMethod( options );
 
 コンフィギュレーション・インスタンスに与えるオプションは、この形のオブジェクトでなければなりません（`PaymentMethodRegistrationOptions` typedef参照）。コンフィギュレーション・インスタンスに与えるオプションは、エクスプレス・ペイメント・メソッドのものと同じですが、以下のものが追加されます：
 
-| プロパティ｜タイプ｜説明
+| プロパティ｜タイプ | 説明 |
 | --- | --- | --- |
 | `savedTokenComponent` | ReactNode｜保存された支払い方法を処理するためのロジックを含むReactノード。この支払い方法のために顧客の保存されたトークンが選択されたときにレンダリングされます。|
 | `label` | ReactNode｜支払い方法オプションのラベルを出力するためのReactノード。テキストでも画像でもかまいません。|
 | `ariaLabel` | string｜支払い方法が選択されたときにスクリーンリーダーによって読み取られるラベル。|
 | `placeOrderButtonLabel` | string | この支払い方法が選択されたときに、デフォルトの "注文する "ボタンのテキストを変更するオプションのラベル。`placeOrderButton`と排他的です。|
-| `placeOrderButton` | Reactコンポーネント｜この支払い方法が選択されたときに、デフォルトの「注文する」ボタンを置き換えるReactコンポーネントを指定します。`placeOrderButtonLabel`と排他的です。このコンポーネントは `PaymentMethodInterface` プロップを受け取ります。|
-| `supports`｜オブジェクト｜サポートされる機能に関する情報を含みます：|
+| `placeOrderButton` | React Component｜この支払い方法が選択されたときに、デフォルトの「注文する」ボタンを置き換えるReactコンポーネントを指定します。`placeOrderButtonLabel`と排他的です。このコンポーネントは `PaymentMethodInterface` プロップを受け取ります。|
+| `supports`｜object｜サポートされる機能に関する情報を含みます：|
 | `supports.showSavedCards`｜boolean｜この支払い方法で保存されたカードが顧客に表示されるかどうかを決定します。|
 | `supports.showSaveOption`｜boolean｜将来の使用のために支払い方法を保存するチェックボックスを表示するかどうかを制御します。|
 
@@ -559,8 +559,11 @@ const Content = ( props ) => {
 その後、`woocommerce_rest_checkout_process_payment_with_context` のコールバックがこのデータにアクセスし、支払い処理に使用することができる。
 
 ```php
-add_action( 'woocommerce_rest_checkout_process_payment_with_context', function( $context, $result ) { )
-  if ( $context->payment_method === 'bacs' ) { { $myGatewayCustoms
-    myGatewayCustomData = $context->payment_data['myGatewayCustomData']；
-    // ここでは、$myGatewayCustomData を使用して支払いを処理します。
+add_action( 'woocommerce_rest_checkout_process_payment_with_context', function( $context, $result ) {
+  if ( $context->payment_method === 'bacs' ) 
+    { $myGatewayCustomData = $context->payment_data['myGatewayCustomData']；
+      // ここでは、$myGatewayCustomData を使用して支払いを処理します。
+    }
+  }
+);
 ```
