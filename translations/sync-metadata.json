@@ -1,14 +1,8 @@
 {
-  "syncDate": "2026-01-23T02:42:08.437Z",
-  "upstreamCommit": "f0154251ede9bd41c9e717671829df45274bfc2e",
-  "filesChanged": 7,
+  "syncDate": "2026-01-24T02:38:48.032Z",
+  "upstreamCommit": "beb1a311a35ae634c8e7c57e5cd9828a56a5bbde",
+  "filesChanged": 1,
   "files": [
-    "docs/_docu-tools/package.json",
-    "docs/contribution/releases/building-and-publishing.md",
-    "docs/contribution/releases/troubleshooting.md",
-    "docs/_docu-tools/static/img/doc_images/release-process.excalidraw",
-    "docs/_docu-tools/static/img/doc_images/release-process.png",
-    "docs/block-development/extensible-blocks/product-sale-badge-block/README.md",
-    "docs/block-development/extensible-blocks/product-sale-badge-block/_category_.json"
+    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md"
   ]
 }

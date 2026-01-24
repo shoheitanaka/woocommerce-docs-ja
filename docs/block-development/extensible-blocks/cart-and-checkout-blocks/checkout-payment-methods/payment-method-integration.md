@@ -564,7 +564,3 @@ add_action( 'woocommerce_rest_checkout_process_payment_with_context', function( 
   if ( $context->payment_method === 'bacs' ) {
     $myGatewayCustomData = $context->payment_data['myGatewayCustomData'];
     // Here we would use the $myGatewayCustomData to process the payment
-    }
-  }
-);
-```
