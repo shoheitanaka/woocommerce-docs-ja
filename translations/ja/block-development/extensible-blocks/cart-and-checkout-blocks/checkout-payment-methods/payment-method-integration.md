@@ -61,7 +61,7 @@ const options = {
 
 #### `ExpressPaymentMethodConfiguration`
 
-| オプション｜タイプ｜説明｜必須 |
+| オプション｜タイプ｜説明｜必須
 | --- | --- | --- | --- |
 | `name`｜文字列｜ゲートウェイ・クライアント側の一意な識別子。| はい。
 | `title`｜文字列｜支払い方法の可読性名前。エディタでマーチャントに表示されます。| いいえ。
@@ -147,14 +147,14 @@ registerPaymentMethod( options );
 
 コンフィギュレーション・インスタンスに与えるオプションは、この形のオブジェクトでなければなりません（`PaymentMethodRegistrationOptions` typedef参照）。コンフィギュレーション・インスタンスに与えるオプションは、エクスプレス・ペイメント・メソッドのものと同じですが、以下のものが追加されます：
 
-| プロパティ｜タイプ | 説明 |
+| プロパティ｜タイプ｜説明
 | --- | --- | --- |
 | `savedTokenComponent` | ReactNode｜保存された支払い方法を処理するためのロジックを含むReactノード。この支払い方法のために顧客の保存されたトークンが選択されたときにレンダリングされます。|
 | `label` | ReactNode｜支払い方法オプションのラベルを出力するためのReactノード。テキストでも画像でもかまいません。|
 | `ariaLabel` | string｜支払い方法が選択されたときにスクリーンリーダーによって読み取られるラベル。|
 | `placeOrderButtonLabel` | string | この支払い方法が選択されたときに、デフォルトの "注文する "ボタンのテキストを変更するオプションのラベル。`placeOrderButton`と排他的です。|
-| `placeOrderButton` | React Component｜この支払い方法が選択されたときに、デフォルトの「注文する」ボタンを置き換えるReactコンポーネントを指定します。`placeOrderButtonLabel`と排他的です。このコンポーネントは `PaymentMethodInterface` プロップを受け取ります。|
-| `supports`｜object｜サポートされる機能に関する情報を含みます：|
+| `placeOrderButton` | Reactコンポーネント｜この支払い方法が選択されたときに、デフォルトの「注文する」ボタンを置き換えるReactコンポーネントを指定します。`placeOrderButtonLabel`と排他的です。このコンポーネントは `PaymentMethodInterface` プロップを受け取ります。|
+| `supports`｜オブジェクト｜サポートされる機能に関する情報を含みます：|
 | `supports.showSavedCards`｜boolean｜この支払い方法で保存されたカードが顧客に表示されるかどうかを決定します。|
 | `supports.showSaveOption`｜boolean｜将来の使用のために支払い方法を保存するチェックボックスを表示するかどうかを制御します。|
 
