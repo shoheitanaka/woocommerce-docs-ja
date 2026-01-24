@@ -37,7 +37,7 @@ const { registerPaymentMethodExtensionCallbacks } = window.wc.wcBlocksRegistry;
 
 #### 拡張名前空間の衝突
 
-すでに `registerPaymentMethodExtensionCallbacks` で使用されている拡張ネームスペースの下にコールバックを登録しようとすると、登録は中止され、一意のネームスペースを使用していないことが通知されます。これはJavaScriptコンソールに表示されます。
+すでに`registerPaymentMethodExtensionCallbacks`で使用されている拡張ネームスペースの下にコールバックを登録しようとすると、登録は中止され、一意のネームスペースを使用していないことが通知されます。これはJavaScriptコンソールに表示されます。
 
 ### 使用例
 
