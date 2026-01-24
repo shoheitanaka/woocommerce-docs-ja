@@ -2,13 +2,13 @@
 sidebar_label: Payment Store
 ---
 
-# 支払ストア (`wc/store/payment`) 
+# Payment Store (`wc/store/payment`) 
 
 ## 概要
 
 支払データストアは、支払方法データと支払処理情報を保存するために使用されます。支払いステータスが変更されると、データストアに反映されます。
 
-**⚠️ 現在、すべてのアクションは内部専用です。どのアクションがエクステンションのインタラクションとして有用かを判断している間です。私たちは、拡張機能がこのデータストアにアクションをディスパッチすることをまだ推奨していません。**
+**⚠️ 現在、すべてのアクションは内部専用です。どのアクションがエクステンションのインタラクションとして有用かを判断している間です。私たちは、拡張機能がこのデータストアにアクションをディスパッチすることをまだ推奨していません。
 
 ペイメントデータストアに保持されるデータの例を以下に示す。この例では、複数のペイメントゲートウェイがアクティブで、トークンが保存されている状態を示しています。
 
@@ -69,7 +69,7 @@ sidebar_label: Payment Store
 }
 ```
 
-このストアを利用するには、`paymentStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data` が `wc.wcBlocksData` を指す外部として登録されていると仮定すると、このキーをインポートすることができます: 
+このストアを利用するには、`paymentStore` `StoreDescriptor` を参照するモジュールでインポートします。`@woocommerce/block-data`が`wc.wcBlocksData`を指す外部として登録されていると仮定すると、このキーをインポートすることができます：
 
 ```js
 const { paymentStore } = window.wc.wcBlocksData;
@@ -83,26 +83,26 @@ const { paymentStore } = window.wc.wcBlocksData;
 
 > 🚨 このセレクタを使う代わりに、フォーカスされたセレクタを使うべきです。このセレクタは、ユニットテストでセレクタをモックするためだけに使うべきです。
 
-#### _Returns_ 
+#### を返す。 
 
-- `object`: 決済ストアの現在の状態。以下のプロパティが含まれます。
-    - _status_ `string`: 決済プロセスの現在のステータス。可能な値は、`idle`、`started`、`processing`、`ready`、`error`、`success`、`failed` です。
-    - _activePaymentMethod_ `string`: アクティブな決済方法のID。
-    - _activeSavedToken_ `string`: アクティブな保存済みトークンのID。
-    - _availablePaymentMethods_ `object`: 利用可能な決済方法。これは現在、決済方法IDをキーとするオブジェクトです。各メンバーには、決済方法IDを値とする`name`エントリが含まれています。
-    - _availableExpressPaymentMethods_ `object`: 利用可能なエクスプレス決済方法。これは現在、決済方法IDをキーとするオブジェクトです。各メンバーには、支払い方法IDを値とする「name」エントリが含まれます。
-    - _savedPaymentMethods_ `object`: 現在の顧客の保存済み支払い方法。これはオブジェクトであり、各支払い方法に固有のものです。例えば、Stripeの保存済みトークンは以下のように返されます。
-    - _paymentMethodData_ `object`: 現在の支払い方法データ。これは各支払い方法に固有のものであるため、ここではこれ以上の詳細を提供することはできません。
-    - _paymentResult_ `object`: 以下のプロパティを持つオブジェクト。
-    - _message_ `string`: 支払いゲートウェイから返されるメッセージ。
-    - _paymentStatus_ `string`: 支払いのステータス。可能な値は、`success`、`failure`、`pending`、`error`、`not set` です。
-    - _paymentDetails_ `object`: 支払いゲートウェイから返される支払いの詳細。
-- _redirectUrl_ `string`: チェックアウト完了後にリダイレクトする URL。
-    - _paymentMethodsInitialized_ `boolean`: 支払い方法が初期化されている場合は true、そうでない場合は false。
-    - _expressPaymentMethodsInitialized_ `boolean`: エクスプレス支払い方法が初期化されている場合は true、そうでない場合は false。
-    - _shouldSavePaymentMethod_ `boolean`: 支払い方法を保存する場合は true、そうでない場合は false。
+-   `object`：以下のプロパティを持つ決済ストアの現在の状態：
+   	-  status_ `string`：決済プロセスの現在の状態。取り得る値は以下のとおり：`idle`、`started`、_inline_code_4__、_inline_code_5__、_inline_code_6__、_inline_code_7__、_inline_code_8__。
+   	-  _activePaymentMethod_`string`：アクティブな支払い方法のID。
+   	-  _activeSavedToken`string`：アクティブなセーブドトークンのID。
+   	-  _availablePaymentMethods_ `object`: 利用可能な支払い方法：利用可能な支払い方法。これは現在、支払い方法IDをキーとするオブジェクトです。各メンバーには、ペイメントメソッドIDを値とする`name`エントリーが含まれます。
+   	-  _availableExpressPaymentMethods_`object`：利用可能なエクスプレス決済方法。これは現在、支払方法IDをキーとするオブジェクトです。各メンバーには、支払い方法IDを値とする`name`エントリが含まれます。
+   	-  savedPaymentMethods_`object`：現在の顧客の保存された支払い方法。これはオブジェクトで、各支払方法に固有です。例として、Stripeの保存されたトークンは次のように返されます：
+   	- paymentMethodData`object`：現在の支払い方法のデータ。paymentMethodData__INLINE_CODE_16__：現在の支払い方法データ。これは各支払い方法に固有なので、ここでは詳細を説明できません。
+   	- _paymentResult_ `object`:以下のプロパティを持つオブジェクト：
+      		- message`string`：決済ゲートウェイから返されたメッセージ：ペイメントゲートウェイから返されるメッセージ。
+      		- _paymentStatus_ `string`:支払いのステータス。とりうる値は以下のとおり：`success`、`failure`、`pending`、`error`、`not set`。
+      		- _paymentDetails`object`：ペイメントゲートウェイから返される支払いの詳細。
+      		- _redirectUrl_ `string`:チェックアウト完了後にリダイレクトするURL。
+   	- __paymentMethodsInitialized_ `boolean`：支払い方法が初期化されていれば true、そうでなければ false。
+   	- expressPaymentMethodsInitialized`boolean`：express の支払い方法が初期化されていれば true、そうでなければ false。
+   	- _shouldSavePaymentMethod_`boolean`：支払い方法を保存する必要がある場合は true、そうでない場合は false。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -113,11 +113,11 @@ const currentState = store.getState();
 
 ステータスが `idle` かどうかを問い合わせる。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが`idle`の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`idle`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -128,11 +128,11 @@ const isPaymentIdle = store.isPaymentIdle();
 
 エクスプレス支払い方法がクリックされたかどうかを照会します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: エクスプレス支払い方法のボタンがクリックされた場合はtrue、そうでない場合はfalse。
+-   `boolean`：エクスプレス支払い方法のボタンがクリックされた場合はtrue、そうでない場合はfalse。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -143,11 +143,11 @@ const isExpressPaymentStarted = store.isExpressPaymentStarted();
 
 ステータスが `processing` かどうかを問い合わせる。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが`processing`の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`processing`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -158,11 +158,11 @@ const isPaymentProcessing = store.isPaymentProcessing();
 
 ステータスが `ready` かどうかを問い合わせる。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが `ready` の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`ready`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -173,11 +173,11 @@ const isPaymentReady = store.isPaymentReady();
 
 ステータスが `error` かどうかを問い合わせる。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが`error`の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`error`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -188,11 +188,11 @@ const hasPaymentError = store.hasPaymentError();
 
 エクスプレスペイメントメソッドがアクティブかどうかを返します。これは、エクスプレスペイメントメソッドが開いていて、ユーザー入力を受け付けているときに真になります。Google Pay の場合はモーダルが開いているときですが、他の支払い方法では UI が異なる場合があります。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: エクスプレス支払い方法が有効かどうか。
+-   `boolean`：エクスプレス支払い方法が有効かどうか。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -203,26 +203,26 @@ const isExpressPaymentMethodActive = store.isExpressPaymentMethodActive();
 
 アクティブな保存済みトークンを返します。顧客がアカウントに保存した支払い方法には、トークンが関連付けられています。これらのいずれかが選択されている場合、このセレクタは現在アクティブなトークンを返します。選択されていない場合は、空の文字列が返されます。
 
-#### _Returns_ 
+#### を返す。 
 
--   `string`: アクティブなセーブドトークンのID。セーブドトークンが選択されていない場合は空文字列。
+-   `string`：アクティブなセーブドトークンのID。セーブドトークンが選択されていない場合は空文字列。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
 const activeSavedToken = store.getActiveSavedToken();
 ```
 
-### getActivePaymentMethod
+### getActivePaymentMethod。
 
 アクティブな支払方法のIDを返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `string`: アクティブな支払い方法のID。
+-   `string`：アクティブな支払い方法のID。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -233,18 +233,18 @@ const activePaymentMethod = store.getActivePaymentMethod();
 
 利用可能な支払方法を返します。エクスプレス決済は含まれません。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 利用可能な支払い方法。これは現在、支払方法IDをキーとするオブジェクトである。各メンバーは`name`エントリーを持ち、その値として支払い方法IDを持ちます。
+-   `object`：利用可能な支払い方法。これは現在、支払方法IDをキーとするオブジェクトである。各メンバーは`name`エントリーを持ち、その値として支払い方法IDを持ちます。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
 const availablePaymentMethods = store.getAvailablePaymentMethods();
 ```
 
-`availablePaymentMethods`は次のようになる:
+`availablePaymentMethods`は次のようになる：
 
 ```js
 {
@@ -260,15 +260,15 @@ const availablePaymentMethods = store.getAvailablePaymentMethods();
 }
 ```
 
-### getAvailableExpressPaymentMethods(利用可能なエクスプレス支払方法)
+### getAvailableExpressPaymentMethods（利用可能なエクスプレス支払方法
 
 利用可能なエクスプレス支払方法を返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 利用可能なエクスプレス支払方法。これは現在、支払方法IDをキーとするオブジェクトです。各メンバーには、`name`エントリーがあり、その値として支払い方法IDが含まれます。
+-   `object`：利用可能なエクスプレス支払方法。これは現在、支払方法IDをキーとするオブジェクトです。各メンバーには、`name`エントリーがあり、その値として支払い方法IDが含まれます。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -276,7 +276,7 @@ const availableExpressPaymentMethods =
 	store.getAvailableExpressPaymentMethods();
 ```
 
-`availableExpressPaymentMethods` は次のようになる: 
+`availableExpressPaymentMethods`は次のようになる：
 
 ```js
 {
@@ -291,13 +291,13 @@ const availableExpressPaymentMethods =
 
 ### getPaymentMethodData
 
-現在の支払方法のデータを返します。これは、アクティブな支払方法が変更されるたびに変更され、支払方法ごとに永続化されません。たとえば、顧客が PayPal を選択している場合、支払い方法のデータはその支払い方法に固有のものになります。顧客が Stripe に切り替えた場合、支払い方法のデータは Stripe によって上書きされ、以前の値（PayPalが選択されていた場合）は使用できなくなります。
+現在の支払方法のデータを返します。これは、アクティブな支払方法が変更されるたびに変更され、支払方法ごとに永続化されません。たとえば、顧客がPayPalを選択している場合、支払い方法のデータはその支払い方法に固有のものになります。顧客がStripeに切り替えた場合、支払い方法のデータはStripeによって上書きされ、以前の値（PayPalが選択されていた場合）は使用できなくなります。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 現在の支払方法データ。これは各支払方法に固有であるため、ここで詳細を提供することはできません。
+-   `object`：現在の支払方法データ。これは各支払方法に固有であるため、ここで詳細を提供することはできません。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -308,9 +308,9 @@ const paymentMethodData = store.getPaymentMethodData();
 
 現在の顧客について保存されているすべての支払方法を返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 現在の顧客の保存された支払い方法。これはオブジェクトで、各支払い方法に固有です。例として、Stripe の保存されたトークンは次のように返されます: 
+-   `object`：現在の顧客の保存された支払い方法。これはオブジェクトで、各支払い方法に固有です。例として、Stripeの保存されたトークンは次のように返されます：
 
 ```js
 savedPaymentMethods: {
@@ -335,7 +335,7 @@ savedPaymentMethods: {
 }
 ```
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -346,9 +346,9 @@ const savedPaymentMethods = store.getSavedPaymentMethods();
 
 現在の顧客の保存された支払い方法のうち、有効なもの、つまり現在の注文の支払いに使用できるものを返します。
 
-#### _Returns_ 
+#### を返す。 
 
-`object` - 現在の顧客に対して保存されている、有効な支払い方法。これはオブジェクトで、各支払方法に固有です。例として、Stripe の保存されたトークンは次のように返されます: 
+`object` - 現在の顧客に対して保存されている、有効な支払い方法。これはオブジェクトで、各支払方法に固有です。例として、Stripeの保存されたトークンは次のように返されます：
 
 ```js
 activeSavedPaymentMethods: {
@@ -373,38 +373,38 @@ activeSavedPaymentMethods: {
 }
 ```
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
 const activeSavedPaymentMethods = store.getActiveSavedPaymentMethods();
 ```
 
-### getIncompatiblePaymentMethods（互換性のない支払い方法）
+### getIncompatiblePaymentMethods（互換性のない支払い方法）。
 
-Checkout ブロックと互換性のない支払い方法のリストを返します。
+Checkoutブロックと互換性のない支払い方法のリストを返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のプロパティを持つ互換性のない支払いメソッドのリスト、または支払いメソッドやエクスプレス支払いメソッドが初期化されていない場合は空のオブジェクト
-   	-  _name_ `string`: 支払方法の名前。
+-   `object`：以下のプロパティを持つ互換性のない支払いメソッドのリスト、または支払いメソッドやエクスプレス支払いメソッドが初期化されていない場合は空のオブジェクト：
+   	-  name_ `string`：支払方法の名前。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
 const incompatiblePaymentMethods = store.getIncompatiblePaymentMethods();
 ```
 
-### 支払方法を保存する
+### 支払方法を保存する。
 
 支払い方法を顧客のアカウントに保存するかどうかを返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払い方法を保存する場合はtrue、そうでない場合はfalse。
+-   `boolean`：支払い方法を保存する場合はtrue、そうでない場合はfalse。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -415,11 +415,11 @@ const shouldSavePaymentMethod = store.getShouldSavePaymentMethod();
 
 支払い方法が初期化されているかどうかを返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払い方法が初期化されていればtrue、そうでなければfalse。
+-   `boolean`：支払い方法が初期化されていればtrue、そうでなければfalse。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -430,11 +430,11 @@ const paymentMethodsInitialized = store.paymentMethodsInitialized();
 
 express の支払い方法が初期化されているかどうかを返します。
 
-#### _Returns_ 
+#### を返す。 
 
-`boolean`: express の支払い方法が初期化されていれば true、そうでなければ false。
+`boolean`：express の支払い方法が初期化されていれば true、そうでなければ false。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -446,9 +446,9 @@ const expressPaymentMethodsInitialized =
 
 最後に支払いを試みた結果を返します。
 
-#### _Returns_ 
+#### を返す。 
 
--   `object`: 以下のプロパティを持つオブジェクト: 
+-   `object`：以下のプロパティを持つオブジェクト：
 
 ```ts
 {
@@ -459,7 +459,7 @@ const expressPaymentMethodsInitialized =
 }
 ```
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -472,11 +472,11 @@ const paymentResult = store.getPaymentResult();
 
 > ⚠️ このセレクタは非推奨であり、将来のリリースで削除される予定です。代わりに`isPaymentIdle`を使用してください。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが`pristine`の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`pristine`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -487,13 +487,13 @@ const isPaymentPristine = store.isPaymentPristine();
 
 ステータスが `started` かどうかを問い合わせる。
 
-> ⚠️ このセレクタは非推奨であり、将来のリリースで削除される予定です。代わりに`isExpressPaymentStarted` を使用してください。
+> ⚠️ このセレクタは非推奨であり、将来のリリースで削除される予定です。代わりに`isExpressPaymentStarted`を使用してください。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが `started` の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`started`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -506,11 +506,11 @@ const isPaymentStarted = store.isPaymentStarted();
 
 > ⚠️ このセレクタは非推奨であり、将来のリリースで削除される予定です。代わりに`isPaymentReady`を使用してください。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが `success` の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`success`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -521,13 +521,13 @@ const isPaymentSuccess = store.isPaymentSuccess();
 
 ステータスが `failed` かどうかを問い合わせる。
 
-> ⚠️ このセレクタは非推奨であり、将来のリリースで削除される予定です。代わりに `hasPaymentError` を使用してください。
+> ⚠️ このセレクタは非推奨であり、将来のリリースで削除される予定です。代わりに`hasPaymentError`を使用してください。
 
-#### _Returns_ 
+#### を返す。 
 
--   `boolean`: 支払いステータスが `failed` の場合は真、そうでない場合は偽。
+-   `boolean`：支払いステータスが`failed`の場合は真、そうでない場合は偽。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
@@ -540,18 +540,18 @@ const isPaymentFailed = store.isPaymentFailed();
 
 > ⚠️ このセレクタは非推奨であり、将来のリリースで削除される予定です。上記のセレクタを使用してください。
 
-#### _Returns_ 
+#### を返す。 
 
-- `object`: 現在の支払いステータス。以下のキーが含まれます。
-    - _isPristine_ `boolean`: 支払い処理が開始されておらず、エラーも発生しておらず、完了していない場合は True になります。初期値は True です。
-    - _isStarted_ `boolean`: 支払い処理が開始された場合は True になります。
-    - _isProcessing_ `boolean`: 支払いが処理中の場合は True になります。
-    - _hasError_ `boolean`: 支払い処理でエラーが発生した場合は True になります。
-    - _hasFailed_ `boolean`: 支払い処理が失敗した場合は True になります。
-    - _isSuccessful_ `boolean`: 支払い処理が成功した場合は True になります。
-    - _isDoingExpressPayment_ `boolean`: エクスプレス支払い方法が有効な場合は True、それ以外の場合は False になります。
+-   `object`：現在の支払い状況：
+    -   _isPristine_ `boolean`:isPristine__INLINE_CODE_1__：支払い処理が開始されておらず、エラーもなく、終了していない場合は真。これは初期状態では真です。
+    -   isStarted_ `boolean`：支払い処理が開始された場合、真。
+    -   _isProcessing`boolean`：支払い処理中であれば真。
+    -   hasError_ `boolean`: エラー：支払い処理でエラーが発生した場合は true。
+    -   _hasFailed_`boolean`：支払い処理が失敗した場合に true。
+    -   _isSuccessful_`boolean`：支払い処理が成功した場合に true。
+    -   _isDoingExpressPayment_`boolean`：エクスプレス決済が有効な場合は true、そうでない場合は false。
 
-#### _例_ 
+#### 例 
 
 ```js
 const store = select( paymentStore );
