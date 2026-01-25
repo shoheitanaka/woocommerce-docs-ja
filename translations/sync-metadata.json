@@ -1,6 +1,6 @@
 {
-  "syncDate": "2026-01-24T02:38:48.032Z",
-  "upstreamCommit": "beb1a311a35ae634c8e7c57e5cd9828a56a5bbde",
+  "syncDate": "2026-01-25T02:50:13.686Z",
+  "upstreamCommit": "00295f4b6b02c13f034bb0678ae52454d0e0bcc6",
   "filesChanged": 1,
   "files": [
     "docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md"
