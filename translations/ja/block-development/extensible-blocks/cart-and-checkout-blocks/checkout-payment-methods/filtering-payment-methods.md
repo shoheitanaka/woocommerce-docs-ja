@@ -28,10 +28,11 @@ const { registerPaymentMethodExtensionCallbacks } = window.wc.wcBlocksRegistry;
 ```
 
 ### 署名
-| パラメータ   | 説明                                                                                                         | タイプ                                              |
+
+| パラメータ
 | ----------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| `namespace` | 拡張機能を識別するためのユニークな文字列です。他の拡張機能との名前の衝突を避けるものを選んでください。| `string` |
-| `callbacks`｜異なる支払い方法のために登録されたコールバックを含むオブジェクト｜レコード < string, CanMakePaymentExtensionCallback > |
+| `namespace` | 拡張機能を識別するためのユニークな文字列です。他の拡張機能との名前の衝突を避けるものを選んでください。| `string`
+| `callbacks`｜異なる支払い方法のために登録されたコールバックを含むオブジェクト｜< string, CanMakePaymentExtensionCallback > ｜レコード。
 
 [コールバック](#callbacks-registered-for-payment-methods)については以下をお読みください。
 
