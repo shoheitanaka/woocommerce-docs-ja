@@ -12,6 +12,9 @@ require('dotenv').config();
 // DeepL クライアント初期化
 const translator = new deepl.Translator(process.env.DEEPL_API_KEY);
 
+// Glossary
+let deeplGlossary = null;
+
 // 統計情報
 const stats = {
   totalFiles: 0,
@@ -30,6 +33,9 @@ async function translateDocuments(targetFiles = null) {
   console.log('🌐 Starting translation process...\n');
 
   try {
+    // Glossaryの初期化
+    await initializeGlossary();
+    
     // キャッシュの読み込み
     const cache = await loadCache();
     
@@ -753,14 +759,21 @@ async function translateSingleSegment(segment, cache) {
   }
 
   try {
+    const translateOptions = {
+      preserveFormatting: true,
+      tagHandling: 'xml'
+    };
+    
+    // Glossaryを使用する場合
+    if (deeplGlossary) {
+      translateOptions.glossary = deeplGlossary;
+    }
+    
     const result = await translator.translateText(
       segment.original,
       config.translation.sourceLang,
       config.translation.targetLang,
-      {
-        preserveFormatting: true,
-        tagHandling: 'xml'
-      }
+      translateOptions
     );
 
     stats.apiCalls++;
@@ -800,14 +813,21 @@ async function translateBatch(segments, cache) {
   const texts = segments.map(s => s.original);
   
   try {
+    const translateOptions = {
+      preserveFormatting: true,
+      tagHandling: 'xml'
+    };
+    
+    // Glossaryを使用する場合
+    if (deeplGlossary) {
+      translateOptions.glossary = deeplGlossary;
+    }
+    
     const results = await translator.translateText(
       texts,
       config.translation.sourceLang,
       config.translation.targetLang,
-      {
-        preserveFormatting: true,
-        tagHandling: 'xml'
-      }
+      translateOptions
     );
 
     stats.apiCalls++;
@@ -853,10 +873,15 @@ async function translateFrontmatter(frontmatter) {
   // タイトルと説明のみ翻訳
   if (frontmatter.title) {
     try {
+      const translateOptions = {};
+      if (deeplGlossary) {
+        translateOptions.glossary = deeplGlossary;
+      }
       const result = await translator.translateText(
         frontmatter.title,
         config.translation.sourceLang,
-        config.translation.targetLang
+        config.translation.targetLang,
+        translateOptions
       );
       translated.title = result.text;
       stats.apiCalls++;
@@ -867,10 +892,15 @@ async function translateFrontmatter(frontmatter) {
 
   if (frontmatter.description) {
     try {
+      const translateOptions = {};
+      if (deeplGlossary) {
+        translateOptions.glossary = deeplGlossary;
+      }
       const result = await translator.translateText(
         frontmatter.description,
         config.translation.sourceLang,
-        config.translation.targetLang
+        config.translation.targetLang,
+        translateOptions
       );
       translated.description = result.text;
       stats.apiCalls++;
@@ -1026,6 +1056,61 @@ function reconstructMarkdown(original, translatedSegments) {
   result = result.replace(/^([-*+]\s+)__(`[^`]+`)/gm, '$1$2');
   
   return result;
+}
+
+/**
+ * Glossaryの初期化
+ */
+async function initializeGlossary() {
+  // Glossaryが無効化されている場合はスキップ
+  if (!config.translation?.glossary?.enabled) {
+    console.log('ℹ️  Glossary is disabled in config\n');
+    return;
+  }
+
+  try {
+    console.log('📚 Initializing glossary...');
+    
+    // Glossary設定の読み込み
+    const glossaryConfigPath = path.join(process.cwd(), config.translation.glossary.configPath);
+    const glossaryData = JSON.parse(await fs.readFile(glossaryConfigPath, 'utf-8'));
+    
+    if (!glossaryData.enabled) {
+      console.log('ℹ️  Glossary is disabled in glossary.json\n');
+      return;
+    }
+
+    const glossaryName = glossaryData.name || 'woocommerce-ja-glossary';
+    
+    // 既存のGlossaryを検索
+    const glossaries = await translator.listGlossaries();
+    const existingGlossary = glossaries.find(g => g.name === glossaryName);
+    
+    if (existingGlossary) {
+      console.log(`   ✓ Using existing glossary: ${glossaryName}`);
+      deeplGlossary = existingGlossary.glossaryId;
+    } else {
+      // 新しいGlossaryを作成
+      console.log(`   ⚙️  Creating new glossary: ${glossaryName}`);
+      
+      const entries = glossaryData.entries || {};
+      const newGlossary = await translator.createGlossary(
+        glossaryName,
+        config.translation.sourceLang,
+        config.translation.targetLang,
+        { entries }
+      );
+      
+      deeplGlossary = newGlossary.glossaryId;
+      console.log(`   ✓ Glossary created successfully`);
+    }
+    
+    console.log('');
+  } catch (error) {
+    console.error(`⚠️  Failed to initialize glossary: ${error.message}`);
+    console.error('   Continuing without glossary...\n');
+    deeplGlossary = null;
+  }
 }
 
 /**

@@ -256,6 +256,49 @@ GitHub Actionsで:
 
 ### 翻訳の最適化
 
+#### Glossary（用語集）の設定
+
+翻訳の一貫性を保つため、Glossary機能を使用できます。
+
+**Glossaryファイルの編集**:
+
+`config/glossary.json`を編集して、専門用語の対訳を定義します:
+
+```json
+{
+  "enabled": true,
+  "name": "woocommerce-ja-glossary",
+  "description": "WooCommerce documentation Japanese translation glossary",
+  "entries": {
+    "WooCommerce": "WooCommerce",
+    "checkout": "チェックアウト",
+    "payment method": "支払い方法",
+    "gateway": "ゲートウェイ",
+    ...
+  }
+}
+```
+
+**Glossaryの有効化/無効化**:
+
+`config/config.json`で設定:
+
+```json
+{
+  "translation": {
+    "glossary": {
+      "enabled": true,
+      "configPath": "config/glossary.json"
+    }
+  }
+}
+```
+
+**注意事項**:
+- Glossaryは初回翻訳時に自動的にDeepLに作成されます
+- 既存のGlossaryがある場合は再利用されます
+- Glossaryを更新した場合、DeepLで既存のGlossaryを削除する必要があります
+
 #### バッチサイズの調整
 
 大量のファイルを処理する場合:

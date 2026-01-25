@@ -23,7 +23,11 @@
     "preserveFrontmatter": true,
     "splitByParagraph": true,
     "batchSize": 10,
-    "maxCharsPerRequest": 5000
+    "maxCharsPerRequest": 5000,
+    "glossary": {
+      "enabled": true,
+      "configPath": "config/glossary.json"
+    }
   },
   "cache": {
     "enabled": true,
