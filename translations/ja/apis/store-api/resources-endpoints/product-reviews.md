@@ -14,12 +14,12 @@ GET /products/reviews?orderby=rating&order=desc
 | 属性 | タイプ | 必須 | 説明 |
 | :------------ | :------ | :------:| :-------------------------------------------------------------------------------------------------- |
 | `page` | integer | no | コレクションの現在のページ。                                                                     |
-| `per_page` | integer | no | 結果セットで返されるアイテムの最大数。空白の場合、デフォルトは無制限。           |
-| `offset` | integer | no | 結果セットを特定のアイテム数だけオフセットします。                                                |
+| `per_page` | integer | no | 結果セットで返されるアイテムの最大数。                                               |
+| `offset` | integer | no | 結果セットを特定のアイテム数だけオフセットする。                                                |
 | `order` | string | no | ソート属性の昇順または降順。許可される値：指定可能な値: `asc`, `desc` | ソート・アトリビュートの昇順または降順。
 | `orderby` | string | no | オブジェクト属性でコレクションをソートします。許可される値：`date`、 `date_gmt`、 `id`、 `rating`、 `product`｜。
-| `category_id`｜文字列｜いいえ｜特定のカテゴリーIDのレビューに結果を限定します。                                             |
-| `product_id` | string | no | 特定の商品IDのレビューに結果を限定する。                                              |
+| `category_id` | string | no | 特定のカテゴリーIDのレビューに結果を限定します。                                             |
+| `product_id` | string | no | 特定のプロダクトIDからのレビューに結果を限定する。                                              |
 
 ```sh
 curl "https://example-store.com/wp-json/wc/store/v1/products/collection-data?calculate_price_range=true&calculate_attribute_counts=pa_size,pa_color&calculate_rating_counts=true"

@@ -73717,6 +73717,31 @@
         ],
         "urls": []
       }
+    },
+    "b32745408f0bf6444ec1e8bee255cc50e43b3bb68fab833dd2f9ae4c5f622bcf": {
+      "original": "| Attribute     | Type    | Required | Description                                                                                         |\n| :------------ | :------ | :------: | :-------------------------------------------------------------------------------------------------- |\n| __INLINE_CODE_0__        | integer |    no    | Current page of the collection.                                                                     |\n| __INLINE_CODE_1__    | integer |    no    | Maximum number of items to be returned in result set.                                               |\n| __INLINE_CODE_2__      | integer |    no    | Offset the result set by a specific number of items.                                                |\n| __INLINE_CODE_3__       | string  |    no    | Order sort attribute ascending or descending. Allowed values: __INLINE_CODE_4__, __INLINE_CODE_5__                         |\n| __INLINE_CODE_6__     | string  |    no    | Sort collection by object attribute. Allowed values : __INLINE_CODE_7__, __INLINE_CODE_8__, __INLINE_CODE_9__, __INLINE_CODE_10__, __INLINE_CODE_11__ |\n| __INLINE_CODE_12__ | string  |    no    | Limit result set to reviews from specific category IDs.                                             |\n| __INLINE_CODE_13__  | string  |    no    | Limit result set to reviews from specific product IDs.                                              |",
+      "translated": "| 属性 | タイプ | 必須 | 説明 |\n| :------------ | :------ | :------:| :-------------------------------------------------------------------------------------------------- |\n| __INLINE_CODE_0__ | integer | no | コレクションの現在のページ。                                                                     |\n| __INLINE_CODE_1__ | integer | no | 結果セットで返されるアイテムの最大数。                                               |\n| __INLINE_CODE_2__ | integer | no | 結果セットを特定のアイテム数だけオフセットする。                                                |\n| __INLINE_CODE_3__ | string | no | ソート属性の昇順または降順。許可される値：指定可能な値: __INLINE_CODE_4__, __INLINE_CODE_5__ | ソート・アトリビュートの昇順または降順。\n| __INLINE_CODE_6__ | string | no | オブジェクト属性でコレクションをソートします。許可される値：__INLINE_CODE_7__、 __INLINE_CODE_8__、 __INLINE_CODE_9__、 __INLINE_CODE_10__、 __INLINE_CODE_11__｜。\n| __INLINE_CODE_12__ | string | no | 特定のカテゴリーIDのレビューに結果を限定します。                                             |\n| __INLINE_CODE_13__ | string | no | 特定のプロダクトIDからのレビューに結果を限定する。                                              |",
+      "metadata": {
+        "original": "| Attribute     | Type    | Required | Description                                                                                         |\n| :------------ | :------ | :------: | :-------------------------------------------------------------------------------------------------- |\n| __INLINE_CODE_0__        | integer |    no    | Current page of the collection.                                                                     |\n| __INLINE_CODE_1__    | integer |    no    | Maximum number of items to be returned in result set.                                               |\n| __INLINE_CODE_2__      | integer |    no    | Offset the result set by a specific number of items.                                                |\n| __INLINE_CODE_3__       | string  |    no    | Order sort attribute ascending or descending. Allowed values: __INLINE_CODE_4__, __INLINE_CODE_5__                         |\n| __INLINE_CODE_6__     | string  |    no    | Sort collection by object attribute. Allowed values : __INLINE_CODE_7__, __INLINE_CODE_8__, __INLINE_CODE_9__, __INLINE_CODE_10__, __INLINE_CODE_11__ |\n| __INLINE_CODE_12__ | string  |    no    | Limit result set to reviews from specific category IDs.                                             |\n| __INLINE_CODE_13__  | string  |    no    | Limit result set to reviews from specific product IDs.                                              |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`page`",
+          "`per_page`",
+          "`offset`",
+          "`order`",
+          "`asc`",
+          "`desc`",
+          "`orderby`",
+          "`date`",
+          "`date_gmt`",
+          "`id`",
+          "`rating`",
+          "`product`",
+          "`category_id`",
+          "`product_id`"
+        ],
+        "urls": []
+      }
     }
   },
   "docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items.md": {
@@ -74840,8 +74865,8 @@
     "segments": 4
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-reviews.md": {
-    "hash": "5e09f980cfa7319da3e9a20d746e06f28c5ea334fb658f0b7294ac4ed5b7d8fa",
-    "translatedAt": "2025-12-27T02:50:03.242Z",
+    "hash": "6326a174bd52b61b99bb60b95aa5fa5a924afe3dab9496a0e4538639be2c8342",
+    "translatedAt": "2026-01-27T02:47:00.152Z",
     "segments": 5
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-collection-data.md": {
