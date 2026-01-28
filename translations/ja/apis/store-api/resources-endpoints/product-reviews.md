@@ -18,7 +18,7 @@ GET /products/reviews?orderby=rating&order=desc
 | `offset` | integer | no | 結果セットを特定のアイテム数だけオフセットする。                                                |
 | `order` | string | no | ソート属性の昇順または降順。許可される値：指定可能な値: `asc`, `desc` | ソート・アトリビュートの昇順または降順。
 | `orderby` | string | no | オブジェクト属性でコレクションをソートします。許可される値：`date`、 `date_gmt`、 `id`、 `rating`、 `product`｜。
-| `category_id` | string | no | 特定のカテゴリーIDのレビューに結果を限定します。                                             |
+| `category_id`｜文字列｜いいえ｜特定のカテゴリーIDのレビューに結果を限定します。                                             |
 | `product_id` | string | no | 特定の商品IDのレビューに結果を限定する。                                              |
 
 ```sh
