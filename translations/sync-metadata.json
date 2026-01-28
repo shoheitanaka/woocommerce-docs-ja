@@ -1,8 +1,8 @@
 {
-  "syncDate": "2026-01-25T02:50:13.686Z",
-  "upstreamCommit": "00295f4b6b02c13f034bb0678ae52454d0e0bcc6",
+  "syncDate": "2026-01-28T02:43:55.401Z",
+  "upstreamCommit": "00429ddf402d10a5a604e02b9b7573acab6bd42c",
   "filesChanged": 1,
   "files": [
-    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/checkout-payment-methods/payment-method-integration.md"
+    "docs/apis/store-api/resources-endpoints/product-reviews.md"
   ]
 }
