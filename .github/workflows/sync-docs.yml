@@ -2,8 +2,8 @@ name: Sync Upstream Documentation
 
 on:
   schedule:
-    # 毎日午前2時（UTC）に実行
-    - cron: '0 2 * * *'
+    # 3日に1回、午前2時（JST）に実行（UTC 17:00）
+    - cron: '0 17 */3 * *'
   workflow_dispatch:  # 手動実行も可能
     inputs:
       force_sync:
