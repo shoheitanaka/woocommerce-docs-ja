@@ -2,6 +2,10 @@
 
 このセクションでは、WooCommerceエクステンションを構築、テスト、配布するためのガイドとリソースを提供します。
 
+## 重要：内部コードと公開コード
+
+[すべてのWooCommerceコードがエクステンションでの使用を意図しているわけではありません。`Automattic\WooCommerce\Internal`名前空間のクラスと`@internal`でマークされたコードはWooCommerceコア専用です: WooCommerceリリース間の後方互換性は保証されず、これらを使用すると拡張機能が壊れる可能性があります。拡張機能開発のベストプラクティス](../best-practices-extensions/extension-development-best-practices.md)と[内部名前空間ドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/README.md)を参照してください。
+
 ## ♪ はじめに
 
 - [シンプルな拡張機能の設計](/extensions/getting-started-extensions/how-to-design-a-simple-extension) - 拡張機能のアーキテクチャとベストプラクティスを学びます。
@@ -12,7 +16,7 @@
 
 WooCommerceマーケットプレイスに参加して、あなたのエクステンションを世界中の360万以上のアクティブなストアに紹介しましょう。
 
-[エクステンション開発者がWooCommerceマーケットプレイスを選ぶ理由](https://woocommerce.com/partners/)と[エクステンションを投稿する](https://woocommerce.com/document/submitting-your-product-to-the-woo-marketplace/)について詳しくご覧ください。
+[エクステンション開発者がWooCommerceマーケットプレイスを選ぶ理由](https://woocommerce.com/partners/)と[エクステンションを投稿する](https://woocommerce.com/document/submitting-your-product-to-the-woo-marketplace/)の詳細についてはこちらをご覧ください。
 
 ### クオリティ・インサイト・ツールキット（QIT）
 

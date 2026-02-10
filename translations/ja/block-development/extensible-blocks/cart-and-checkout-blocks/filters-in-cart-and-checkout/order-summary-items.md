@@ -2,15 +2,15 @@
 post_title: Order summary items
 sidebar_label: Order summary items
 ---
-
-# Order summary items
+# オーダー概要
 
 以下のオーダーサマリーアイテムフィルターが利用可能です：
 
 -   `cartItemClass`
 -   `cartItemPrice`
+-   `cartItemScreenReaderPrice`
 -   `itemName`
--   `subtotalPriceFormat`
+-   インラインコード4
 
 以下のオブジェクトはフィルター間で共有される：
 
@@ -19,7 +19,7 @@ sidebar_label: Order summary items
 
 以下のスクリーンショットは、個々のフィルターがどの部分に影響するかを示しています：
 
-![Order Summary Items](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-16.29.45.png)
+![注文概要項目](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-16.29.45.png)
 
 ## `cartItemClass`
 
@@ -94,9 +94,9 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット
 
-| 前
-|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|![カート項目クラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ff555a84-8d07-4889-97e1-8f7d50d47350) |![カート項目クラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/183809d8-03dc-466d-a415-d8d2062d880f) |｜...
+| 前 | 後 |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![カートアイテムクラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ff555a84-8d07-4889-97e1-8f7d50d47350) | ![カートアイテムクラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/183809d8-03dc-466d-a415-d8d2062d880f) |
 
 ## `cartItemPrice`
 
@@ -172,9 +172,98 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット
 
-| 前
-|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|![カート商品価格フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/58137fc4-884d-4783-9275-5f78abec1473) |![カート商品価格フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/fb502b74-6447-49a8-8d35-241e738f089d) |｜...
+| 前 | 後 |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![カート商品価格フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/58137fc4-884d-4783-9275-5f78abec1473) | ![カート商品価格フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/fb502b74-6447-49a8-8d35-241e738f089d)
+
+## `cartItemScreenReaderPrice`
+
+### 説明
+
+`cartItemScreenReaderPrice`フィルタを使用すると、スクリーンリーダーや支援技術を使用するユーザーに発表される注文概要アイテムの価格をフォーマットすることができます。画面上の視覚的な変更はありません。コードの変更は、カート内の各アイテムに含まれる`<span class="screen-reader-text">`で確認できます。
+
+### パラメーター
+
+-   デフォルト値 `string` （デフォルト：1つの商品の購入の場合は`Total price for <quantity/> <productName/> item: <price/>`、複数の商品の購入の場合は`Total price for <quantity/> <productName/> items: <price/>`） - デフォルトの注文サマリーのスクリーンリーダーのテキスト。
+-   __extensions_ `object` (default: `{}`) - 拡張オブジェクト。
+-   args_ `object` - 以下のキーを持つ引数オブジェクト：
+    -   cart_ `object` - [カートオブジェクト](#cart-object)を参照してください。
+    -   _cartItem_ `object` - `wc/store/cart` の注文概要項目オブジェクト。[注文概要項目オブジェクト](#cart-item-object) を参照ください。
+    -   コンテクスト_ `string` (`summary`) - ミニカート概要の他のフィルターのコンテクストと一致するように固定されたアイテムのコンテクスト。
+-   validation_ `boolean` - 返り値が部分文字列 `<quantity/>`、 `<productName/>`、 `<price/>` を含むかどうかをチェックします。
+
+### リターン
+
+-   これは、`<quantity/>`、_`<productName/>`および`<price/>`の部分文字列を含む必要があります。
+
+### コード例
+
+#### 基本例
+
+```tsx
+const { registerCheckoutFilters } = window.wc.blocksCheckout;
+const { _n } = window.wp.i18n;
+
+const modifyCartItemScreenReaderPrice = ( defaultValue, extensions, args, validation ) => {
+	const isOrderSummaryContext = args?.context === 'summary';
+
+	if ( ! isOrderSummaryContext ) {
+		return defaultValue;
+	}
+
+	return _n(
+		'<quantity/> <productName/> item will cost <price/>',
+		'<quantity/> <productName/> items will cost <price/>',
+		args?.cartItem?.quantity ?? 1,
+		'example-extension'
+	);
+};
+
+registerCheckoutFilters( 'example-extension', {
+	cartItemScreenReaderPrice: modifyCartItemScreenReaderPrice,
+} );
+```
+
+#### 高度な例
+
+```tsx
+const { registerCheckoutFilters } = window.wc.blocksCheckout;
+const { _n } = window.wp.i18n;
+
+const modifyCartItemScreenReaderPrice = ( defaultValue, extensions, args, validation ) => {
+	const isOrderSummaryContext = args?.context === 'summary';
+
+	if ( ! isOrderSummaryContext ) {
+		return defaultValue;
+	}
+
+	if ( args?.cartItem?.name === 'Beanie with Logo' ) {
+		return _n(
+			'Total price for <quantity/> <productName/> item: <price/> to keep you warm',
+			'Total price for <quantity/> <productName/> items: <price/> to keep you warm',
+			args?.cartItem?.quantity ?? 1,
+			'example-extension'
+		);
+	}
+
+	if ( args?.cartItem?.name === 'Sunglasses' ) {
+		return _n(
+			'Total price for <quantity/> <productName/> item: <price/> to keep you cool',
+			'Total price for <quantity/> <productName/> items: <price/> to keep you cool',
+			args?.cartItem?.quantity ?? 1,
+			'example-extension'
+		);
+	}
+
+	return defaultValue;
+};
+
+registerCheckoutFilters( 'example-extension', {
+	cartItemScreenReaderPrice: modifyCartItemScreenReaderPrice,
+} );
+```
+
+> フィルターは組み合わせることもできます。例として[Combined filters](/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/)を参照してください。
 
 ## `itemName`
 
@@ -249,9 +338,9 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット
 
-|![ 前
-|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|項目名フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/3dc0bda7-fccf-4f35-a2e2-aa04e616563a) |!
+| Before                                                                                                                                         | After                                                                                                                                         |
+|:----------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![項目名フィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/3dc0bda7-fccf-4f35-a2e2-aa04e616563a) | ![項目名フィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/c96b8394-03a7-45f6-813b-5335f4bf83b5)
 
 ## `subtotalPriceFormat`
 
@@ -271,7 +360,7 @@ registerCheckoutFilters( 'example-extension', {
 
 ### リターン
 
--   `string` - 変更された注文サマリー項目の小計価格のフォーマットで、`<price/>`の部分文字列、または元の価格のフォーマットを含んでいる必要があります。
+-   `string` - 部分文字列`<price/>`を含む、注文サマリー項目の小計価格の変更フォーマット、または元の価格フォーマット。
 
 ### コード例
 
@@ -337,9 +426,9 @@ registerCheckoutFilters( 'example-extension', {
 
 ### スクリーンショット
 
-| 前
-|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|![小計価格フォーマットフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/3574e7ae-9857-4651-ac9e-e6b597e3a589) |![小計価格フォーマットフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/94e18439-6d6b-44a4-ade1-8302c5984641) |｜...
+| Before                                                                                                                                                     | After                                                                                                                                                     |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![小計価格フォーマットフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/3574e7ae-9857-4651-ac9e-e6b597e3a589) | ![小計価格フォーマットフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/94e18439-6d6b-44a4-ade1-8302c5984641) |
 
 ## カートオブジェクト
 
