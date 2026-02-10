@@ -14,7 +14,7 @@
 
 ## WooCommerceマーケットプレイスに投稿する
 
-WooCommerceマーケットプレイスに参加して、あなたのエクステンションを世界中の360万以上のアクティブなストアに紹介しましょう。
+WooCommerceマーケットプレイスに参加して、あなたのエクステンションを世界中の360万以上のアクティブなストアに公開しましょう。
 
 [エクステンション開発者がWooCommerceマーケットプレイスを選ぶ理由](https://woocommerce.com/partners/)と[エクステンションを投稿する](https://woocommerce.com/document/submitting-your-product-to-the-woo-marketplace/)の詳細についてはこちらをご覧ください。
 

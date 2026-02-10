@@ -3,7 +3,8 @@ post_title: Classes in WooCommerce
 sidebar_label: Classes
 sidebar_position: 1
 ---
-# WooCommerceのクラス
+
+# Classes in WooCommerce
 
 ## WooCommerceのクラス一覧
 
@@ -31,7 +32,7 @@ WooCommerceには商品データのロードと出力を担当するいくつか
 
 `$product = wc_get_product( $post->ID );`。
 
-なぜなら、`the_post()`を呼び出すと、投稿が商品である場合、グローバル変数`$product`に自動的に入力されるからです。
+なぜなら、`the_post()`を呼び出すと、投稿が商品である場合、自動的にグローバル変数`$product`に値が入るからです。
 
 このクラスに含まれるメソッドの完全なリストについては、[WC_Product Code Reference](https://woocommerce.github.io/code-reference/classes/WC-Product.html) を参照してください。
 
@@ -61,7 +62,7 @@ $cart_subtotal = $woocommerce->cart->get_cart_subtotal();
 
 WooCommerceは内部インフラコードを含んでおり、**エクステンションによる使用を意図していません**：
 
-- **`Automattic\WooCommerce\Internal\*`**:この名前空間のすべてのクラスは内部クラスです。後方互換性は保証されません: これらのクラスは将来のWooCommerceのリリースで変更、改名、削除される可能性があります。
+- **`Automattic\WooCommerce\Internal\*`**:この名前空間のすべてのクラスは内部的なものです。後方互換性は保証されません: これらのクラスは将来のWooCommerceのリリースで変更、改名、削除される可能性があります。
 - **INLINE_CODE_1__アノテーションを持つクラス**：同様に、docblockに`@internal`のマークがあるクラス、メソッド、フックはエクステンションでは使用しないでください。
 
 内部コードを使用すると、WooCommerceがアップデートされたときに拡張機能が壊れる可能性があります。上記の定義に従った内部コード以外のコードは公開されており、一般的に安全に使用できます。

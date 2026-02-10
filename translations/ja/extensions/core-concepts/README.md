@@ -13,7 +13,7 @@
 WooCommerceはエクステンションの使用を目的としたパブリックAPIと内部インフラストラクチャのコードを含んでいます。 *WooCommerceリリース間の後方互換性は保証されないため、**拡張機能は内部コード**を使用しないでください：
 
 - **内部名前空間**：`Automattic\WooCommerce\Internal`以下のクラスはすべて内部インフラストラクチャです。
-- **内部アノテーション**：コード・エンティティ（クラス、メソッド、フック）は、docblock内で`@internal`のマークが付いています。
+- **内部アノテーション**：コード・エンティティ（クラス、メソッド、フック）は、docblockで`@internal`とマークされます。
 
 内部コードを使用すると、マーチャントがWooCommerceをアップデートしたときに拡張機能が壊れる可能性があります。詳しくは[拡張機能開発のベストプラクティス](../best-practices-extensions/extension-development-best-practices.md)と[内部名前空間のドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/README.md)をご覧ください。
 
@@ -24,3 +24,4 @@ WooCommerceはエクステンションの使用を目的としたパブリック
 ## プラグインの構造と標準
 
 必要なすべてのメタデータを含む、拡張機能のメインプラグインファイルのヘッダの [ヘッダプラグインコメント例](./example-header-plugin-comment.md) フォーマットを参照してください。また、拡張機能の変更履歴ファイルに変更を記録するための標準の [変更履歴フォーマット](./changelog-txt.md) を学び、シームレスな機能のために WooCommerce のプラグイン API と適切に統合するための [WooCommerce プラグイン API コールバック](./woocommerce-plugin-api-callback.md) を理解しましょう。
+

@@ -2,7 +2,8 @@
 post_title: Order summary items
 sidebar_label: Order summary items
 ---
-# オーダー概要
+
+# Order summary items
 
 以下のオーダーサマリーアイテムフィルターが利用可能です：
 
@@ -10,7 +11,7 @@ sidebar_label: Order summary items
 -   `cartItemPrice`
 -   `cartItemScreenReaderPrice`
 -   `itemName`
--   インラインコード4
+-   `subtotalPriceFormat`
 
 以下のオブジェクトはフィルター間で共有される：
 
@@ -19,7 +20,7 @@ sidebar_label: Order summary items
 
 以下のスクリーンショットは、個々のフィルターがどの部分に影響するかを示しています：
 
-![注文概要項目](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-16.29.45.png)
+![Order Summary Items](https://woocommerce.com/wp-content/uploads/2023/10/Screenshot-2023-10-26-at-16.29.45.png)
 
 ## `cartItemClass`
 
@@ -30,7 +31,7 @@ sidebar_label: Order summary items
 ### パラメーター
 
 -   _defaultValue_ `string` (デフォルト: `''`) - デフォルトの注文要約項目クラスです。
--   extensions_ `object` (default: `{}`) - extensions オブジェクト。
+-   __extensions_ `object` (default: `{}`) - 拡張オブジェクト。
 -   args_ `object` - 以下のキーを持つ引数オブジェクト：
     -   cart_ `object` - [カートオブジェクト](#cart-object)を参照してください。
     -   _cartItem_ `object` - `wc/store/cart` の注文概要項目オブジェクト。[注文概要項目オブジェクト](#cart-item-object) を参照ください。
@@ -96,7 +97,7 @@ registerCheckoutFilters( 'example-extension', {
 
 | 前 | 後 |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ![カートアイテムクラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ff555a84-8d07-4889-97e1-8f7d50d47350) | ![カートアイテムクラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/183809d8-03dc-466d-a415-d8d2062d880f) |
+| ![カートアイテムクラスフィルター適用前](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/ff555a84-8d07-4889-97e1-8f7d50d47350) | ![カートアイテムクラスフィルター適用後](https://github.com/woocommerce/woocommerce-blocks/assets/3323310/183809d8-03dc-466d-a415-d8d2062d880f)
 
 ## `cartItemPrice`
 
@@ -180,7 +181,7 @@ registerCheckoutFilters( 'example-extension', {
 
 ### 説明
 
-`cartItemScreenReaderPrice`フィルタを使用すると、スクリーンリーダーや支援技術を使用するユーザーに発表される注文概要アイテムの価格をフォーマットすることができます。画面上の視覚的な変更はありません。コードの変更は、カート内の各アイテムに含まれる`<span class="screen-reader-text">`で確認できます。
+`cartItemScreenReaderPrice`フィルタを使用すると、スクリーンリーダーや支援技術を使用しているユーザーに対して、注文概要のアイテム価格をフォーマットすることができます。画面上の視覚的な変更はありません。コードの変更は、カート内の各アイテムに含まれる`<span class="screen-reader-text">`で確認できます。
 
 ### パラメーター
 
