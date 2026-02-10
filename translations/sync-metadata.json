@@ -1,8 +1,16 @@
 {
-  "syncDate": "2026-01-30T02:57:36.092Z",
-  "upstreamCommit": "1c8472d14a22b805ecaa79636c922cc16e9ec9a8",
-  "filesChanged": 1,
+  "syncDate": "2026-02-10T17:27:42.376Z",
+  "upstreamCommit": "f1f319542f262fcce50fdce38e83e1bb66e4165f",
+  "filesChanged": 9,
   "files": [
-    "docs/apis/store-api/resources-endpoints/product-reviews.md"
+    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/order-summary-items.md",
+    "docs/contribution/releases/README.md",
+    "docs/contribution/releases/building-and-publishing.md",
+    "docs/contribution/releases/troubleshooting.md",
+    "docs/extensions/best-practices-extensions/extension-development-best-practices.md",
+    "docs/extensions/core-concepts/README.md",
+    "docs/extensions/core-concepts/class-reference.md",
+    "docs/extensions/getting-started-extensions/README.md",
+    "docs/contribution/releases/workflows.md"
   ]
 }
