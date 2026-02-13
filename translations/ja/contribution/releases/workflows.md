@@ -3,7 +3,8 @@ post_title: Release Workflows
 sidebar_label: Workflows
 sidebar_position: 9
 ---
-# リリースのワークフロー
+
+# Release Workflows
 
 WooCommerce のリリースプロセスは GitHub Actions ワークフローによってサポートされており、繰り返しタスクの自動化、プロセスのガードレール化、通知の送信などを行います。このページでは、リリースに関連するすべてのワークフローを、どのようにトリガーされるかによって整理しています。
 
@@ -32,7 +33,7 @@ WooCommerce のリリースプロセスは GitHub Actions ワークフローに�
 | [マイルストーン付きPRをリリースブランチにチェリーピックする](https://github.com/woocommerce/woocommerce/blob/trunk/.github/workflows/cherry-pick-milestoned-prs.yml) | `trunk`でPRがクローズまたはマイルストーン付きになった場合、`trunk`からPRのマイルストーンに一致する`release/x.y`ブランチにチェリーピックする。コアロジックには[`shared-cherry-pick`](https://github.com/woocommerce/woocommerce/blob/trunk/.github/workflows/shared-cherry-pick.yml)を使用。|
 | [凍結リリースへのチェリーピック](https://github.com/woocommerce/woocommerce/blob/trunk/.github/workflows/cherry-pick-to-frozen.yml) | `cherry pick to frozen release`ラベルを持つ`release/x.y`ブランチにマージされたPR | `release/x.y`ブランチから次の(凍結された)`release/x.y`ブランチへのチェリーピック。コアロジックには[`shared-cherry-pick`](https://github.com/woocommerce/woocommerce/blob/trunk/.github/workflows/shared-cherry-pick.yml)を使用します。|
 | PRは`release/x.y`ブランチにマージされ、`cherry pick to trunk`ラベルが付けられます｜`release/x.y`ブランチから`trunk`にチェリーピックされます。コアロジックには[`shared-cherry-pick`](https://github.com/woocommerce/woocommerce/blob/trunk/.github/workflows/shared-cherry-pick.yml)を使用。|
-| `cherry-pick-*` ブランチのPRイベント｜`cherry pick has conflicts`ラベルが存在する場合、CIに失敗します。|
+| `cherry-pick-*` ブランチのPRイベント｜`cherry pick has conflicts` ラベルが存在する場合、CIに失敗する。|
 
 ### マイルストーン
 

@@ -3,7 +3,8 @@ sidebar_label: Contribute to Woo
 category_slug: contributing
 post_title: Contribute to Woo
 ---
-# ♪ ウーに貢献しよう
+
+# Contribute to Woo
 
 Wooコントリビューターコミュニティへの参加に興味がありますか？このドキュメントのリンクは、あなたが最初の貢献をするために必要な操作の順序を要約し、案内しています。経験豊富なWooCommerce開発者の方は、テンプレートリンクや以下のリファレンスドキュメントやガイドをご利用ください。
 

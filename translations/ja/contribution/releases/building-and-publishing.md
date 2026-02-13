@@ -3,13 +3,12 @@ post_title: Building and Publishing a Release
 sidebar_label: Building and Publishing
 sidebar_position: 1
 ---
-# リリースの構築と発表
+
+# Building and Publishing a Release
 
 ::重要
 
-このガイドは参考として使用することができますが、リリースサイクルの前に作成される[リリース追跡課題](https://github.com/woocommerce/woocommerce/issues?q=state%3Aopen%20label%3A%22Release%22%20author%3Aapp%2Flinear%20tracking)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。
-
-:::
+このガイドは参考として使用することができますが、リリースサイクルに先立って作成された[リリース追跡課題](https://github.com/woocommerce/woocommerce/issues?q=state%3Aopen%20label%3A%22Release%22%20author%3Aapp%2Flinear%20tracking)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。
 
 このページでは、リリースブランチからWooCommerceリリースをビルドするために必要なステップの概要を説明します。全体的なプロセスと決定表を理解するためにフローチャートを確認してください。ステップバイステップの手順を以下に示します。
 
@@ -22,8 +21,6 @@ sidebar_position: 1
 以下の手順を順番に実行してください。GitHubワークフローを実行する際は、`trunk`ブランチ（デフォルト）から実行し、リリースバージョンまたはブランチを指示に従って入力してください。
 
 何か問題が発生したときのために、_[リリースのトラブルシューティングとリカバリー](/docs/contribution/releases/troubleshooting)_ガイドを手元に置いておいてください。
-
-### Steps
 
 #### 1.ビルド前のチェック
 

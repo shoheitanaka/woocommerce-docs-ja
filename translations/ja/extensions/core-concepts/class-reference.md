@@ -3,7 +3,8 @@ post_title: Classes in WooCommerce
 sidebar_label: Classes
 sidebar_position: 1
 ---
-# WooCommerceのクラス
+
+# Classes in WooCommerce
 
 ## WooCommerceのクラス一覧
 
@@ -25,7 +26,7 @@ WooCommerceのクラス一覧は[WooCommerceコードリファレンス](https:/
 
 このクラスに含まれるメソッドの全リストは[WooCommerceクラスコードリファレンス](https://woocommerce.github.io/code-reference/classes/WooCommerce.html)をご覧ください。
 
-### WC_Product
+### WC_製品
 
 WooCommerceには商品データのロードと出力を担当するいくつかの商品クラスがあります。これは
 
@@ -48,7 +49,7 @@ $customer_country = $woocommerce->customer->get_country();
 
 ### WC_Cart
 
-カートクラスは、ユーザーのカートデータをロードし、セッションに保存します。たとえば、カートの小計を取得するには、次のようにします：
+カートクラスは、ユーザーのカートデータをロードしてセッションに保存します。たとえば、カートの小計を取得するには、次のようにします：
 
 ```php
 global $woocommerce;

@@ -2,7 +2,8 @@
 post_title: How to assess the impact of a pull request
 sidebar_label: Assessing PR impact
 ---
-# プルリクエストの影響を評価する方法
+
+# How to assess the impact of a pull request
 
 Pull RequestがHigh-Impactと宣言されるべきかどうかを決定するのは複雑な作業です。これを達成するためには、Pull Requestで導入された変更がWooCommerceに与える影響を評価し、見積もる必要があります。これは通常主観的な作業であり、WooCommerceの製品詳細、技術的な詳細、さらには顧客の問題履歴に関する膨大な知識が要求されるため、時には不正確なこともあります。
 

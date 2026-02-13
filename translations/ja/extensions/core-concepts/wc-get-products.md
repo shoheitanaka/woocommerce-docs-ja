@@ -2,7 +2,8 @@
 post_title: wc_get_products and product queries
 sidebar_label: Product Querying
 ---
-# `wc_get_products` と商品クエリー
+
+# `wc_get_products` and product queries
 
 `wc_get_products`と`WC_Product_Query`は、安全に使用でき、将来のWooCommerceバージョンでデータベースが変更されても壊れない、標準的な商品検索方法を提供します。カスタムのWP_Queriesやデータベースクエリを作成することは、将来のWooCommerceバージョンでコードが壊れる可能性があります。これはプラグインやテーマの開発者が複数の商品を取得するためのベストプラクティスの方法です。`wc_get_products`と`WC_Product_Query`はWordPressの[`get_posts`と`WP_Query`](https://developer.wordpress.org/reference/classes/wp_query/)に似ています。これらと同様に、検索条件を定義する引数の配列を渡します。
 
@@ -131,7 +132,7 @@ $products = wc_get_products( array( 'return' => 'ids' ) );
 | **limit** | 整数を指定します: 検索結果の最大数、または無制限の場合は `-1` を指定します。デフォルト：サイト `posts_per_page` 設定。|
 | **page** | 整数値: 結果を取得するページ。`'offset'`が使われている場合は何もしません。|
 | **offset** | 整数で指定: 結果をオフセットする量。|
-| **paginate** | booleanを指定します: ページ分割を行う場合はtrue、行わない場合はfalseを指定します。デフォルト：inline_code_3__。有効にすると、フィールドを持つオブジェクトを返すように結果を変更します：`products` (見つかった商品の配列)、 `total` (見つかった商品の数)、 `max_num_pages` (総ページ数)。|
+| **paginate** | booleanを指定します: ページ分割を行う場合はtrue、行わない場合はfalseを指定します。デフォルト：inline_code_3__。有効にすると、フィールドを持つオブジェクトを返すように結果を変更します：`products` (見つかった商品の配列)、 `total` (見つかった商品数)、 `max_num_pages` (総ページ数)。|
 
 #### 例
 
@@ -263,7 +264,7 @@ $products = wc_get_products( array( 'total_sales' => 0 ) );
 | ブール値で指定：在庫管理が有効な商品に限定する。|
 | **reviews_allowed** | booleanを受け付けます: レビューを許可する商品に限定します。|
 | **backorders** | 文字列を指定します：`'yes'`、`'no'`、`'notify'`のいずれかを指定します。|
-| 文字列： `wc_get_products` または `wc_get_products` または `WC_Product_Query`：`'visible'`、 `'catalog'`、 `'search'`、 `'hidden'`のいずれか。CatalogVisibility定数クラス](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Enums/CatalogVisibility.php)を参照してください。|
+| 文字列： __INLINE_CODE_0__ または __INLINE_CODE_1__ または __INLINE_CODE_2__：`'visible'`、 `'catalog'`、 `'search'`、 `'hidden'`のいずれか。CatalogVisibility定数クラス](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Enums/CatalogVisibility.php)を参照してください。|
 | **download_limit** | 整数を受け取ります: ダウンロードの上限、または無制限の場合は `-1` です。|
 | **download_expiry** | ダウンロードの有効期限(日)を整数で指定するか、無制限の場合は `-1` を指定します。|
 
@@ -327,7 +328,7 @@ $products = wc_get_products( array( 'stock_status' => \Automattic\WooCommerce\En
 [| パラメータ
 | --------- | ----------- |
 | 文字列を受け取ります：`'taxable'`、`'shipping'`、または `'none'`。ProductTaxStatus定数クラス](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Enums/ProductTaxStatus.php)を参照してください。|
-| tax_class**｜文字列を受け入れます：タックスクラススラッグ。|
+| **tax_class** | 文字列を受け取ります: タックスクラスのスラッグ。|
 | **shipping_class** | 文字列または文字列の配列を受け入れます。|
 
 #### 例
@@ -370,8 +371,6 @@ $products = wc_get_products( array( 'average_rating' => 5.0 ) );
 // Get products with 1 review.
 $products = wc_get_products( array( 'review_count' => 1 ) );
 ```
-
-### Date
 
 日付の引数は、以下に説明する標準的な書式に従って値を受け取るので、より柔軟なクエリが可能になる。
 
@@ -433,8 +432,6 @@ function handle_custom_query_var( $query, $query_vars ) {
 }
 add_filter( 'woocommerce_product_data_store_cpt_get_products_query', 'handle_custom_query_var', 10, 2 );
 ```
-
-Usage:
 
 ```php
 $products = wc_get_products( array( 'customvar' => 'somevalue' ) );

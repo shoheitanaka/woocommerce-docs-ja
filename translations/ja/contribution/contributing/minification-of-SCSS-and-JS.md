@@ -2,9 +2,8 @@
 post_title: Handling SCSS and JS minification in WooCommerce
 sidebar_label: Minification of SCSS and JS
 ---
-# WooCommerceにおけるSCSSとJSの最小化処理
 
-## SCSS
+# Handling SCSS and JS minification in WooCommerce
 
 WooCommerceプロジェクトでSCSSファイルを更新する場合、**最小化されていないSCSSファイル**にのみ変更をコミットしてください。最小化はリリースプロセスの一部として処理されます。
 

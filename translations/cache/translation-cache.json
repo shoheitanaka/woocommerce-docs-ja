@@ -781,7 +781,7 @@
     },
     "9f93b35f9aa5d784d05f552d4aeb3617c3d1a09f76b75831cc90ac041d305c63": {
       "original": "## Clearing the product/shop transients cache",
-      "translated": "## 商品/ショップのトランジェントキャッシュのクリア",
+      "translated": "## 商品/ショップのトランジェントキャッシュをクリアする",
       "metadata": {
         "original": "## Clearing the product/shop transients cache",
         "codeBlocks": [],
@@ -863,7 +863,7 @@
     },
     "307682ef7ff9eda3aa764f3097a258e704083960c56c75cf7f064b254fd6f271": {
       "original": "## Getting a coupon",
-      "translated": "## クーポンの取得",
+      "translated": "## クーポン取得",
       "metadata": {
         "original": "## Getting a coupon",
         "codeBlocks": [],
@@ -7383,7 +7383,7 @@
     },
     "499f0874a0717d2bbb10c7aec59c47967024f56fd842ede76771a26d5385c64c": {
       "original": "The __INLINE_CODE_0__ array has an option called __INLINE_CODE_1__ - if true then an __INLINE_CODE_2__ message will be appended.",
-      "translated": "__INLINE_CODE_0__配列には、__INLINE_CODE_1__というオプションがある。",
+      "translated": "__INLINE_CODE_0__配列には__INLINE_CODE_1__というオプションがあり、もしtrueなら__INLINE_CODE_2__メッセージが追加される。",
       "metadata": {
         "original": "The __INLINE_CODE_0__ array has an option called __INLINE_CODE_1__ - if true then an __INLINE_CODE_2__ message will be appended.",
         "codeBlocks": [],
@@ -7417,7 +7417,7 @@
     },
     "9369e7e563cf948b044655b1032e1624e9cacb0f2dafa0bc2a9d5d91745ac18f": {
       "original": "This function is the standard way of retrieving orders based on certain parameters. This function should be used for order retrieval so that when we move to custom tables, functions still work.",
-      "translated": "この関数は、特定のパラメータに基づいて注文を検索する標準的な方法である。この関数は、注文の検索に使用されるべきもので、カスタムテーブルに移行した際にも関数が機能するようにします。",
+      "translated": "この関数は、特定のパラメータに基づいて注文を検索する標準的な方法である。この関数は、注文の検索に使用されるべきもので、カスタムテーブルに移行した際にも、関数は機能します。",
       "metadata": {
         "original": "This function is the standard way of retrieving orders based on certain parameters. This function should be used for order retrieval so that when we move to custom tables, functions still work.",
         "codeBlocks": [],
@@ -7587,7 +7587,7 @@
     },
     "6885732c14bb83191596f01be3ab99e7ffcf68916862b2d6e55bac42134c3bab": {
       "original": "This function is the standard way of retrieving products based on certain parameters.",
-      "translated": "この関数は、特定のパラメータに基づいて製品を検索する標準的な方法です。",
+      "translated": "この関数は、特定のパラメーターに基づいて商品を検索する標準的な方法である。",
       "metadata": {
         "original": "This function is the standard way of retrieving products based on certain parameters.",
         "codeBlocks": [],
@@ -12687,7 +12687,7 @@
     },
     "0d733e6a3d2dad89e160fa460f4fa719be3710deab44ab93e47f001af669a4a3": {
       "original": "The code above outputs the block highlighted in red in the image below, which is the New Order email a shop manager receives following a successful order on their site:",
-      "translated": "上のコードは、下の画像で赤くハイライトされているブロックを出力します。これは、ショップマネージャーが、サイト上で注文が成功した後に受け取る新規注文メールです：",
+      "translated": "上のコードは、下の画像で赤くハイライトされているブロックを出力します。これは、ショップマネージャーが、自分のサイトで注文が成功した後に受け取る新規注文メールです：",
       "metadata": {
         "original": "The code above outputs the block highlighted in red in the image below, which is the New Order email a shop manager receives following a successful order on their site:",
         "codeBlocks": [],
@@ -30414,7 +30414,7 @@
     },
     "e10a6d012952ae2794cf483460a903b84b0fa3546adc541b7e94ca70571aa11a": {
       "original": "### WC_Product",
-      "translated": "### WC_Product",
+      "translated": "### WC_製品",
       "metadata": {
         "original": "### WC_Product",
         "codeBlocks": [],
@@ -30501,7 +30501,7 @@
     },
     "1e31aca0bb9d93206c7db4fad12cb86f3d1a18debe275ea47b404d014da749c6": {
       "original": "The cart class loads and stores the users cart data in a session. For example, to get the cart subtotal you could use:",
-      "translated": "カートクラスは、ユーザーのカートデータをロードし、セッションに保存します。たとえば、カートの小計を取得するには、次のようにします：",
+      "translated": "カートクラスは、ユーザーのカートデータをロードしてセッションに保存します。たとえば、カートの小計を取得するには、次のようにします：",
       "metadata": {
         "original": "The cart class loads and stores the users cart data in a session. For example, to get the cart subtotal you could use:",
         "codeBlocks": [],
@@ -34121,7 +34121,7 @@
     },
     "66d4906adcb979544d273fe2268bf95f9c46b1cb68e9e5f050aef88c563a966c": {
       "original": "1. Delete any GitHub draft release or tag for the incorrect release:\n   - Go to **Code > Releases** and delete the draft release.\n   - In **Code > Tags**, delete the tag for the incorrect version. _If you skip this, the final release may point to the wrong commit in history._\n2. Check the status of the __INLINE_CODE_0__ branch (either in the GitHub UI or locally after pulling the latest changes).\n3. Figure out which step failed. For example, if the plugin header version is correct but the changelog is missing, only the changelog step needs to be re-run.\n4. Review any [auto-generated PRs](__URL_0__): if there are open PRs that weren't merged and are no longer needed, close them and delete their branches.",
-      "translated": "[1.GitHubのドラフトリリースや不正なリリースのタグを削除してください：\n   - コード > リリース**に移動し、ドラフトリリースを削除する。\n   - コード > タグ**で、間違ったバージョンのタグを削除してください。これをスキップすると、最終リリースが履歴の間違ったコミットを指す可能性があります。\n2.INLINE_CODE_0__ ブランチの状態を確認します (GitHub UI で確認するか、最新の変更をプルした後でローカルで確認します)。\n3.どのステップで失敗したかを調べます。たとえば、プラグインのヘッダーのバージョンは正しいのに変更履歴がない場合は、変更履歴のステップだけを再実行する必要があります。\n4.自動生成された PR](__URL_0__) をレビューする: マージされず、もう必要ないオープンな PR があれば、それを閉じてブランチを削除します。",
+      "translated": "[1.GitHubのドラフトリリースや不正なリリースのタグを削除してください：\n   - コード > リリース**に移動し、ドラフトリリースを削除する。\n   - コード > タグ**で、間違ったバージョンのタグを削除してください。これをスキップすると、最終的なリリースが履歴の間違ったコミットを指す可能性があります。\n2.INLINE_CODE_0__ ブランチの状態を確認します (GitHub UI で確認するか、最新の変更をプルした後でローカルで確認します)。\n3.どのステップで失敗したかを調べます。たとえば、プラグインのヘッダーのバージョンは正しいのに変更履歴がない場合は、変更履歴のステップだけを再実行する必要があります。\n4.自動生成された PR](__URL_0__) をレビューする: マージされず、もう必要ないオープンな PR があれば、それを閉じてブランチを削除します。",
       "metadata": {
         "original": "1. Delete any GitHub draft release or tag for the incorrect release:\n   - Go to **Code > Releases** and delete the draft release.\n   - In **Code > Tags**, delete the tag for the incorrect version. _If you skip this, the final release may point to the wrong commit in history._\n2. Check the status of the __INLINE_CODE_0__ branch (either in the GitHub UI or locally after pulling the latest changes).\n3. Figure out which step failed. For example, if the plugin header version is correct but the changelog is missing, only the changelog step needs to be re-run.\n4. Review any [auto-generated PRs](__URL_0__): if there are open PRs that weren't merged and are no longer needed, close them and delete their branches.",
         "codeBlocks": [],
@@ -34225,7 +34225,7 @@
     },
     "c8e2d0531b622934ae5e23fef3154ac62e7fb1d5c8632c2480ac4a9ae2b8d25d": {
       "original": "### A critical bug surfaced after the release was marked stable on WordPress.org",
-      "translated": "### WordPress.orgで安定版とされたリリース後に重大なバグが見つかった。",
+      "translated": "### WordPress.orgで安定版とされたリリース後に重大なバグが表面化した。",
       "metadata": {
         "original": "### A critical bug surfaced after the release was marked stable on WordPress.org",
         "codeBlocks": [],
@@ -34269,7 +34269,7 @@
     },
     "c98d9b7a19733482d8384c733a8ef6f93d70eca49de24d70600ba44dcf82134b": {
       "original": "1. Create an internal Slack thread to communicate with the engineering teams as well as Dev Advocacy. This also provides an opportunity for teams to share any additional context and verify or challenge schedule changes.\n2. Ask Dev Advocacy to communicate the delay publicly.\n3. If there's a clear ETA on the patch release with a fix, [update the release calendar](__URL_0__) with the new dates.",
-      "translated": "1.社内にSlackスレッドを作成し、エンジニアリングチームやDev Advocacyとコミュニケーションをとる。これは、チームが追加的なコンテキストを共有し、スケジュールの変更を確認したり、異議を唱えたりする機会にもなる。\n2.Dev Advocacyに遅延を公に伝えるよう依頼する。\n3.修正パッチのリリースに明確なETAがある場合は、[リリースカレンダー](__URL_0__)を新しい日付で更新する。",
+      "translated": "1.社内にSlackスレッドを作成し、エンジニアリングチームやDev Advocacyと連絡を取る。これは、チームが追加的なコンテキストを共有し、スケジュールの変更を確認したり、異議を唱えたりする機会にもなる。\n2.Dev Advocacyに遅延を公に伝えるよう依頼する。\n3.修正パッチのリリースに明確なETAがある場合は、[リリースカレンダー](__URL_0__)を新しい日付で更新する。",
       "metadata": {
         "original": "1. Create an internal Slack thread to communicate with the engineering teams as well as Dev Advocacy. This also provides an opportunity for teams to share any additional context and verify or challenge schedule changes.\n2. Ask Dev Advocacy to communicate the delay publicly.\n3. If there's a clear ETA on the patch release with a fix, [update the release calendar](__URL_0__) with the new dates.",
         "codeBlocks": [],
@@ -34321,7 +34321,7 @@
     },
     "472a2f537d91178caa87f4d11699d0be64a31ba4176e93bb0c6e286c10e2c02b": {
       "original": "As a rule of thumb, when in doubt, consider to delay the release by a week for confidence.\n",
-      "translated": "経験則として、疑わしい場合は、信頼性を高めるためにリリースを1週間遅らせることを検討する。\n",
+      "translated": "経験則として、疑わしい場合は、信頼性を高めるためにリリースを1週間遅らせることを考慮する。\n",
       "metadata": {
         "original": "As a rule of thumb, when in doubt, consider to delay the release by a week for confidence.\n",
         "codeBlocks": [],
@@ -73277,7 +73277,7 @@
     },
     "c98cfe3e4dcbb1592f1f2855bda7ffb5b95906e58c1121ca2ee6920fabf86a53": {
       "original": "While this guide can be used as reference, keep in mind that version-specific instructions are provided in the [release tracking issues](__URL_0__) created ahead of the release cycle, and should be preferred.",
-      "translated": "このガイドは参考として使用することができますが、リリースサイクルの前に作成される[リリース追跡課題](__URL_0__)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。",
+      "translated": "このガイドは参考として使用することができますが、リリースサイクルに先立って作成された[リリース追跡課題](__URL_0__)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。",
       "metadata": {
         "original": "While this guide can be used as reference, keep in mind that version-specific instructions are provided in the [release tracking issues](__URL_0__) created ahead of the release cycle, and should be preferred.",
         "codeBlocks": [],
@@ -73839,7 +73839,7 @@
     },
     "67ed109013f8bcf80ab1368ef34417cfe9556e94de7f07b3c20071508670efcf": {
       "original": "Each skill contains a __INLINE_CODE_0__ file with step-by-step instructions for tasks like:",
-      "translated": "各スキルには__INLINE_CODE_0__ファイルが含まれており、次のようなタスクのステップバイステップの指示がある：",
+      "translated": "各スキルには、__INLINE_CODE_0__ファイルが含まれており、次のようなタスクをステップごとに説明している：",
       "metadata": {
         "original": "Each skill contains a __INLINE_CODE_0__ file with step-by-step instructions for tasks like:",
         "codeBlocks": [],
@@ -73944,7 +73944,7 @@
     },
     "a582a14d82d0a5433925b83fe317ff300b1b37a0b1b82df6162e0f944d78dcb4": {
       "original": "# __INLINE_CODE_0__ and product queries",
-      "translated": "# __INLINE_CODE_0__ と商品クエリー",
+      "translated": "# __INLINE_CODE_0__ と商品クエリ",
       "metadata": {
         "original": "# __INLINE_CODE_0__ and product queries",
         "codeBlocks": [],
@@ -74029,7 +74029,7 @@
     },
     "4de1df533ca1b480e7c20a5388f740299f8e7dbbaa1cebd659dab23db276c4f0": {
       "original": "| Parameter | Description |\n| --------- | ----------- |\n| **limit** | Accepts an integer: maximum number of results to retrieve or __INLINE_CODE_0__ for unlimited. Default: site __INLINE_CODE_1__ setting. |\n| **page** | Accepts an integer: page of results to retrieve. Does nothing if __INLINE_CODE_2__ is used. |\n| **offset** | Accepts an integer: amount to offset product results. |\n| **paginate** | Accepts a boolean: true for pagination, or false for not. Default: __INLINE_CODE_3__. If enabled, modifies the return results to give an object with fields: __INLINE_CODE_4__ (array of found products), __INLINE_CODE_5__ (number of found products), and __INLINE_CODE_6__ (total number of pages). |",
-      "translated": "| パラメータ\n| --------- | ----------- |\n| **limit** | 整数を指定します: 検索結果の最大数、または無制限の場合は __INLINE_CODE_0__ を指定します。デフォルト：サイト __INLINE_CODE_1__ 設定。|\n| **page** | 整数値: 結果を取得するページ。__INLINE_CODE_2__が使われている場合は何もしません。|\n| **offset** | 整数で指定: 結果をオフセットする量。|\n| **paginate** | booleanを指定します: ページ分割を行う場合はtrue、行わない場合はfalseを指定します。デフォルト：inline_code_3__。有効にすると、フィールドを持つオブジェクトを返すように結果を変更します：__INLINE_CODE_4__ (見つかった商品の配列)、 __INLINE_CODE_5__ (見つかった商品の数)、 __INLINE_CODE_6__ (総ページ数)。|",
+      "translated": "| パラメータ\n| --------- | ----------- |\n| **limit** | 整数を指定します: 検索結果の最大数、または無制限の場合は __INLINE_CODE_0__ を指定します。デフォルト：サイト __INLINE_CODE_1__ 設定。|\n| **page** | 整数値: 結果を取得するページ。__INLINE_CODE_2__が使われている場合は何もしません。|\n| **offset** | 整数で指定: 結果をオフセットする量。|\n| **paginate** | booleanを指定します: ページ分割を行う場合はtrue、行わない場合はfalseを指定します。デフォルト：inline_code_3__。有効にすると、フィールドを持つオブジェクトを返すように結果を変更します：__INLINE_CODE_4__ (見つかった商品の配列)、 __INLINE_CODE_5__ (見つかった商品数)、 __INLINE_CODE_6__ (総ページ数)。|",
       "metadata": {
         "original": "| Parameter | Description |\n| --------- | ----------- |\n| **limit** | Accepts an integer: maximum number of results to retrieve or __INLINE_CODE_0__ for unlimited. Default: site __INLINE_CODE_1__ setting. |\n| **page** | Accepts an integer: page of results to retrieve. Does nothing if __INLINE_CODE_2__ is used. |\n| **offset** | Accepts an integer: amount to offset product results. |\n| **paginate** | Accepts a boolean: true for pagination, or false for not. Default: __INLINE_CODE_3__. If enabled, modifies the return results to give an object with fields: __INLINE_CODE_4__ (array of found products), __INLINE_CODE_5__ (number of found products), and __INLINE_CODE_6__ (total number of pages). |",
         "codeBlocks": [],
@@ -74155,7 +74155,7 @@
     },
     "28ab35dcb39d63233116601e92c613d4cf4ebdd8b269d3b9037ffaa84bcb7c45": {
       "original": "| Parameter | Description |\n| --------- | ----------- |\n| **tax_status** | Accepts a string: __INLINE_CODE_0__, __INLINE_CODE_1__, or __INLINE_CODE_2__. See [ProductTaxStatus constant class](__URL_0__). |\n| **tax_class** | Accepts a string: a tax class slug. |\n| **shipping_class** | Accepts a string or array of strings: one or more shipping class slugs. |",
-      "translated": "[| パラメータ\n| --------- | ----------- |\n| 文字列を受け取ります：__INLINE_CODE_0__、__INLINE_CODE_1__、または __INLINE_CODE_2__。ProductTaxStatus定数クラス](__URL_0__)を参照してください。|\n| tax_class**｜文字列を受け入れます：タックスクラススラッグ。|\n| **shipping_class** | 文字列または文字列の配列を受け入れます。|",
+      "translated": "[| パラメータ\n| --------- | ----------- |\n| 文字列を受け取ります：__INLINE_CODE_0__、__INLINE_CODE_1__、または __INLINE_CODE_2__。ProductTaxStatus定数クラス](__URL_0__)を参照してください。|\n| **tax_class** | 文字列を受け取ります: タックスクラスのスラッグ。|\n| **shipping_class** | 文字列または文字列の配列を受け入れます。|",
       "metadata": {
         "original": "| Parameter | Description |\n| --------- | ----------- |\n| **tax_status** | Accepts a string: __INLINE_CODE_0__, __INLINE_CODE_1__, or __INLINE_CODE_2__. See [ProductTaxStatus constant class](__URL_0__). |\n| **tax_class** | Accepts a string: a tax class slug. |\n| **shipping_class** | Accepts a string or array of strings: one or more shipping class slugs. |",
         "codeBlocks": [],
@@ -74350,7 +74350,7 @@
     },
     "d146ddd0379fbe9f748e74708def5256e11ab60a92cc5d8171f9dd2d9949200f": {
       "original": "15. **Remove unused code**. With version control, there's no reason to leave commented-out code; it's annoying to scroll through and read. Remove it and add it back later if needed.\n16. **Use Comments** to describe the functions of your code. If you have a function, what does the function do? There should be comments for most if not all functions in your code. Someone/You may want to modify the plugin, and comments are helpful for that. We recommend using [PHP Doc Blocks](__URL_0__) similar to [WooCommerce](__URL_1__).\n17. **Avoid God Objects**. [God Objects](__URL_2__) are objects that know or do too much. The point of object-oriented programming is to take a large problem and break it into smaller parts. When functions do too much, it's hard to follow their logic, making bugs harder to fix. Instead of having massive functions, break them down into smaller pieces.\n18. **Separate Business Logic & Presentation Logic.** It's a good practice to separate business logic (i.e., how the plugin works) from [presentation logic](__URL_3__) (i.e., how it looks). Two separate pieces of logic are more easily maintained and swapped if necessary. An example is to have two different classes - one for displaying the end results, and one for the admin settings page.\n19. **Use Transients to Store Offsite Information**. If you provide a service via an API, it's best to store that information so future queries can be done faster and the load on your service is lessened. [WordPress transients](__URL_4__) can be used to store data for a certain amount of time.\n20. **Log data that can be useful for debugging purposes**, with two conditions: Allow any logging as an 'opt in', and  Use the [WC_Logger](__URL_5__) class. A user can then view logs on their system status page. Learn [how to add a link to logged data](/docs/code-snippets/link-to-logged-data) in your extension. \n21. **Test Your Code with [WP_DEBUG](__URL_6__)** mode on, so you can see all PHP warnings sent to the screen. This will flag things like making sure a variable is set before checking the value.\n22. **Integrate the [Quality Insights Toolkit (QIT)](__URL_7__) into your development workflow**: The QIT allows the ability to test your extensions against new releases of PHP, WooCommerce, and WordPress, as well as other active extensions, at the same time. Additionally, the toolkit includes a [command-line interface (CLI) tool](__URL_8__) that allows you to run and view tests against development builds. This helps to catch errors before releasing a new version.\n23. **Never use internal WooCommerce code in your extensions**. Classes in the __INLINE_CODE_0__ namespace and code marked with __INLINE_CODE_1__ annotations are for WooCommerce core use only. **Backwards compatibility is not guaranteed** for internal code: it may change, be renamed, or be removed in any future release. Using internal code in your extension may cause it to break when merchants update WooCommerce. See the [Internal namespace documentation](__URL_9__) for details.",
-      "translated": "[15. **未使用のコードを削除する**。バージョン管理では、コメントアウトされたコードを残す理由はありません。スクロールして読むのが煩わしいからです。スクロールして読むのは面倒です。削除して、必要なら後で追加してください。\n16. **コメント**を使って、コードの機能を説明してください。関数があるなら、その関数は何をするのか？コード内のすべての関数とは言わないまでも、ほとんどの関数にコメントがあるべきです。誰かが、あるいはあなたがプラグインを修正したいと思うかもしれません。WooCommerce](__URL_1__)と同様に、[PHP Doc Blocks](__URL_0__)を使用することをお勧めします。\n17. **神オブジェクトは避けてください。[神オブジェクト](__URL_2__)は、知りすぎていたり、やりすぎていたりするオブジェクトです。オブジェクト指向プログラミングのポイントは、大きな問題を小さな部分に分割することです。機能が多すぎると、そのロジックに従うのが難しくなり、バグを修正するのが難しくなります。巨大な関数を持つのではなく、小さなパーツに分割するのだ。\n18. **ビジネスロジックとプレゼンテーションロジックの分離.** ビジネスロジック（つまり、プラグインがどのように動作するか）と[プレゼンテーションロジック](__URL_3__)(つまり、どのように見えるか)を分離するのは良い習慣です。ロジックを2つに分けることで、メンテナンスが容易になり、必要に応じて入れ替えることができます。例えば、最終結果を表示するためのクラスと、管理画面の設定ページを表示するためのクラスです。\n19. **トランジェントを使ってオフサイト情報を保存する**。APIを介してサービスを提供する場合、その情報を保存しておくと、将来のクエリがより速く実行され、サービスの負荷が軽減されます。[WordPressのトランシエント](__URL_4__)は、一定時間データを保存するために使用できます。\n20. **デバッグに役立つデータをログに残すことができます：オプトイン(opt in)」としてロギングを許可し、[WC_Logger](__URL_5__)クラスを使用します。ユーザーは、システムステータスページでログを見ることができます。拡張機能で[ログデータへのリンクを追加する方法](/docs/code-snippets/link-to-logged-data)を学んでください。 \n21. **[WP_DEBUG](__URL_6__)**モードをオンにして、コードをテストしてください。これにより、値をチェックする前に変数が設定されていることを確認するようなフラグが立てられます。\n22. **Quality Insights Toolkit (QIT)](__URL_7__) を開発ワークフローに組み込んでください：QITは、PHP、WooCommerce、WordPressの新しいリリースや他のアクティブなエクステンションに対して、エクステンションを同時にテストすることができます。さらに、ツールキットには[コマンドラインインターフェイス(CLI)ツール](__URL_8__)が含まれており、開発ビルドに対してテストを実行および表示することができます。これは、新しいバージョンをリリースする前にエラーをキャッチするのに役立ちます。\n23. **エクステンションでWooCommerceの内部コードを使用しないでください。__INLINE_CODE_0__名前空間内のクラスと__INLINE_CODE_1__アノテーションが付いたコードはWooCommerceコア専用です。 **内部コードの後方互換性は保証されません**: 将来のリリースで変更、改名、削除される可能性があります。拡張機能で内部コードを使用すると、マーチャントがWooCommerceをアップデートしたときに壊れる可能性があります。詳しくは[内部名前空間のドキュメント](__URL_9__)をご覧ください。",
+      "translated": "[15. **未使用のコードを削除する**。バージョン管理では、コメントアウトされたコードを残す理由はありません。スクロールして読むのが煩わしいからです。スクロールして読むのは面倒です。削除して、必要なら後で追加してください。\n16. **コメント**を使って、コードの機能を説明してください。関数があるなら、その関数は何をするのか？コード内のすべての関数とは言わないまでも、ほとんどの関数にコメントがあるべきです。誰かが、あるいはあなたがプラグインを修正したくなるかもしれません。WooCommerce](__URL_1__)と同様に、[PHP Doc Blocks](__URL_0__)を使用することをお勧めします。\n17. **神オブジェクトは避けてください。[神オブジェクト](__URL_2__)は、知りすぎていたり、やりすぎていたりするオブジェクトです。オブジェクト指向プログラミングのポイントは、大きな問題を小さな部分に分割することです。機能が多すぎると、そのロジックに従うのが難しくなり、バグを修正するのが難しくなります。巨大な関数を持つのではなく、小さなパーツに分割するのだ。\n18. **ビジネスロジックとプレゼンテーションロジックの分離.** ビジネスロジック（つまり、プラグインがどのように動作するか）と[プレゼンテーションロジック](__URL_3__)(つまり、どのように見えるか)を分離するのは良い習慣です。ロジックを2つに分けることで、メンテナンスが容易になり、必要に応じて入れ替えることができます。例えば、最終結果を表示するためのクラスと、管理画面の設定ページを表示するためのクラスです。\n19. **トランジェントを使ってオフサイト情報を保存する**。APIを介してサービスを提供する場合、その情報を保存しておくと、将来のクエリがより速く実行され、サービスの負荷が軽減されます。[WordPressのトランシエント](__URL_4__)は、一定時間データを保存するために使用できます。\n20. **デバッグに役立つデータをログに残すことができます：オプトイン(opt in)」としてロギングを許可し、[WC_Logger](__URL_5__)クラスを使用します。ユーザーは、システムステータスページでログを見ることができます。拡張機能で[ログデータへのリンクを追加する方法](/docs/code-snippets/link-to-logged-data)を学んでください。 \n21. **[WP_DEBUG](__URL_6__)**モードをオンにして、コードをテストしてください。これにより、値をチェックする前に変数が設定されていることを確認するようなフラグが立てられます。\n22. **Quality Insights Toolkit (QIT)](__URL_7__) を開発ワークフローに組み込んでください：QITは、PHP、WooCommerce、WordPressの新しいリリースや他のアクティブなエクステンションに対して、エクステンションを同時にテストすることができます。さらに、ツールキットには[コマンドラインインターフェイス(CLI)ツール](__URL_8__)が含まれており、開発ビルドに対してテストを実行および表示することができます。これは、新しいバージョンをリリースする前にエラーをキャッチするのに役立ちます。\n23. **エクステンションでWooCommerceの内部コードを使用しないでください。__INLINE_CODE_0__名前空間内のクラスと__INLINE_CODE_1__アノテーションが付いたコードはWooCommerceコア専用です。 **内部コードの後方互換性は保証されません**: 将来のリリースで変更、改名、削除される可能性があります。拡張機能で内部コードを使用すると、マーチャントがWooCommerceをアップデートしたときに壊れる可能性があります。詳しくは[内部名前空間のドキュメント](__URL_9__)をご覧ください。",
       "metadata": {
         "original": "15. **Remove unused code**. With version control, there's no reason to leave commented-out code; it's annoying to scroll through and read. Remove it and add it back later if needed.\n16. **Use Comments** to describe the functions of your code. If you have a function, what does the function do? There should be comments for most if not all functions in your code. Someone/You may want to modify the plugin, and comments are helpful for that. We recommend using [PHP Doc Blocks](__URL_0__) similar to [WooCommerce](__URL_1__).\n17. **Avoid God Objects**. [God Objects](__URL_2__) are objects that know or do too much. The point of object-oriented programming is to take a large problem and break it into smaller parts. When functions do too much, it's hard to follow their logic, making bugs harder to fix. Instead of having massive functions, break them down into smaller pieces.\n18. **Separate Business Logic & Presentation Logic.** It's a good practice to separate business logic (i.e., how the plugin works) from [presentation logic](__URL_3__) (i.e., how it looks). Two separate pieces of logic are more easily maintained and swapped if necessary. An example is to have two different classes - one for displaying the end results, and one for the admin settings page.\n19. **Use Transients to Store Offsite Information**. If you provide a service via an API, it's best to store that information so future queries can be done faster and the load on your service is lessened. [WordPress transients](__URL_4__) can be used to store data for a certain amount of time.\n20. **Log data that can be useful for debugging purposes**, with two conditions: Allow any logging as an 'opt in', and  Use the [WC_Logger](__URL_5__) class. A user can then view logs on their system status page. Learn [how to add a link to logged data](/docs/code-snippets/link-to-logged-data) in your extension. \n21. **Test Your Code with [WP_DEBUG](__URL_6__)** mode on, so you can see all PHP warnings sent to the screen. This will flag things like making sure a variable is set before checking the value.\n22. **Integrate the [Quality Insights Toolkit (QIT)](__URL_7__) into your development workflow**: The QIT allows the ability to test your extensions against new releases of PHP, WooCommerce, and WordPress, as well as other active extensions, at the same time. Additionally, the toolkit includes a [command-line interface (CLI) tool](__URL_8__) that allows you to run and view tests against development builds. This helps to catch errors before releasing a new version.\n23. **Never use internal WooCommerce code in your extensions**. Classes in the __INLINE_CODE_0__ namespace and code marked with __INLINE_CODE_1__ annotations are for WooCommerce core use only. **Backwards compatibility is not guaranteed** for internal code: it may change, be renamed, or be removed in any future release. Using internal code in your extension may cause it to break when merchants update WooCommerce. See the [Internal namespace documentation](__URL_9__) for details.",
         "codeBlocks": [],
@@ -74482,7 +74482,7 @@
     },
     "f75dabfc30740597846921609488d405e8b710a12b7752823a7c8e501aeb2ba1": {
       "original": "| Workflow | Trigger | What it does |\n| -------- | ------- | ------------ |\n| [Cherry-pick Milestoned PRs to Release Branches](__URL_0__) | PR closed or milestoned on __INLINE_CODE_0__ | Cherry-picks from __INLINE_CODE_1__ to the __INLINE_CODE_2__ branch matching the PR milestone. Uses [__INLINE_CODE_3__](__URL_1__) for the core logic. |\n| [Cherry-pick to Frozen Release](__URL_2__) | PR merged on a __INLINE_CODE_4__ branch with the __INLINE_CODE_5__ label | Cherry-picks from a __INLINE_CODE_6__ branch to the next (frozen) __INLINE_CODE_7__ branch. Uses [__INLINE_CODE_8__](__URL_3__) for the core logic. |\n| [Cherry Pick to Trunk](__URL_4__) | PR merged on a __INLINE_CODE_9__ branch with the __INLINE_CODE_10__ label | Cherry-picks from a __INLINE_CODE_11__ branch back to __INLINE_CODE_12__. Uses [__INLINE_CODE_13__](__URL_5__) for the core logic. |\n| [Block merge if cherry-pick conflicts exist](__URL_6__) | PR events on __INLINE_CODE_14__ branches | Fails CI when the __INLINE_CODE_15__ label is present, preventing the PR from being merged until conflicts are resolved and the label is removed. |",
-      "translated": "| ワークフロー｜トリガー｜何をするのか？\n| -------- | ------- | ------------ |\n| [マイルストーン付きPRをリリースブランチにチェリーピックする](__URL_0__) | __INLINE_CODE_0__でPRがクローズまたはマイルストーン付きになった場合、__INLINE_CODE_1__からPRのマイルストーンに一致する__INLINE_CODE_2__ブランチにチェリーピックする。コアロジックには[__INLINE_CODE_3__](__URL_1__)を使用。|\n| [凍結リリースへのチェリーピック](__URL_2__) | __INLINE_CODE_5__ラベルを持つ__INLINE_CODE_4__ブランチにマージされたPR | __INLINE_CODE_6__ブランチから次の(凍結された)__INLINE_CODE_7__ブランチへのチェリーピック。コアロジックには[__INLINE_CODE_8__](__URL_3__)を使用します。|\n| PRは__INLINE_CODE_9__ブランチにマージされ、__INLINE_CODE_10__ラベルが付けられます｜__INLINE_CODE_11__ブランチから__INLINE_CODE_12__にチェリーピックされます。コアロジックには[__INLINE_CODE_13__](__URL_5__)を使用。|\n| __INLINE_CODE_14__ ブランチのPRイベント｜__INLINE_CODE_15__ラベルが存在する場合、CIに失敗します。|",
+      "translated": "| ワークフロー｜トリガー｜何をするのか？\n| -------- | ------- | ------------ |\n| [マイルストーン付きPRをリリースブランチにチェリーピックする](__URL_0__) | __INLINE_CODE_0__でPRがクローズまたはマイルストーン付きになった場合、__INLINE_CODE_1__からPRのマイルストーンに一致する__INLINE_CODE_2__ブランチにチェリーピックする。コアロジックには[__INLINE_CODE_3__](__URL_1__)を使用。|\n| [凍結リリースへのチェリーピック](__URL_2__) | __INLINE_CODE_5__ラベルを持つ__INLINE_CODE_4__ブランチにマージされたPR | __INLINE_CODE_6__ブランチから次の(凍結された)__INLINE_CODE_7__ブランチへのチェリーピック。コアロジックには[__INLINE_CODE_8__](__URL_3__)を使用します。|\n| PRは__INLINE_CODE_9__ブランチにマージされ、__INLINE_CODE_10__ラベルが付けられます｜__INLINE_CODE_11__ブランチから__INLINE_CODE_12__にチェリーピックされます。コアロジックには[__INLINE_CODE_13__](__URL_5__)を使用。|\n| __INLINE_CODE_14__ ブランチのPRイベント｜__INLINE_CODE_15__ ラベルが存在する場合、CIに失敗する。|",
       "metadata": {
         "original": "| Workflow | Trigger | What it does |\n| -------- | ------- | ------------ |\n| [Cherry-pick Milestoned PRs to Release Branches](__URL_0__) | PR closed or milestoned on __INLINE_CODE_0__ | Cherry-picks from __INLINE_CODE_1__ to the __INLINE_CODE_2__ branch matching the PR milestone. Uses [__INLINE_CODE_3__](__URL_1__) for the core logic. |\n| [Cherry-pick to Frozen Release](__URL_2__) | PR merged on a __INLINE_CODE_4__ branch with the __INLINE_CODE_5__ label | Cherry-picks from a __INLINE_CODE_6__ branch to the next (frozen) __INLINE_CODE_7__ branch. Uses [__INLINE_CODE_8__](__URL_3__) for the core logic. |\n| [Cherry Pick to Trunk](__URL_4__) | PR merged on a __INLINE_CODE_9__ branch with the __INLINE_CODE_10__ label | Cherry-picks from a __INLINE_CODE_11__ branch back to __INLINE_CODE_12__. Uses [__INLINE_CODE_13__](__URL_5__) for the core logic. |\n| [Block merge if cherry-pick conflicts exist](__URL_6__) | PR events on __INLINE_CODE_14__ branches | Fails CI when the __INLINE_CODE_15__ label is present, preventing the PR from being merged until conflicts are resolved and the label is removed. |",
         "codeBlocks": [],
@@ -74818,7 +74818,7 @@
     },
     "1fd96d51914e27fe06204b5f3fbc10ddb75b5711ce39d6dc6dd8f36fc5b51e9a": {
       "original": "-   __INLINE_CODE_0__\n-   __INLINE_CODE_1__\n-   __INLINE_CODE_2__\n-   __INLINE_CODE_3__\n-   __INLINE_CODE_4__",
-      "translated": "-   ____INLINE_CODE_0__\n-   ____INLINE_CODE_1__\n-   ____INLINE_CODE_2__\n-   ____INLINE_CODE_3__\n-   インラインコード4",
+      "translated": "-   ____INLINE_CODE_0__\n-   ____INLINE_CODE_1__\n-   ____INLINE_CODE_2__\n-   ____INLINE_CODE_3__\n-   ____INLINE_CODE_4__",
       "metadata": {
         "original": "-   __INLINE_CODE_0__\n-   __INLINE_CODE_1__\n-   __INLINE_CODE_2__\n-   __INLINE_CODE_3__\n-   __INLINE_CODE_4__",
         "codeBlocks": [],
@@ -74834,7 +74834,7 @@
     },
     "5ccaa560f43f81097a8c0b320dbc239e3d07340ca04b352cde4b2df2649508bb": {
       "original": "| Before                                                                                                                                               | After                                                                                                                                               |\n|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|\n| ![Before applying the Cart Item Class filter](__URL_0__) | ![After applying the Cart Item Class filter](__URL_1__) |",
-      "translated": "| 前 | 後 |\n|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|\n| ![カートアイテムクラスフィルター適用前](__URL_0__) | ![カートアイテムクラスフィルター適用後](__URL_1__)",
+      "translated": "| 前 | 後 |\n|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|\n| ![カートアイテムクラスフィルター適用前](__URL_0__) | ![カートアイテムクラスフィルター適用後](__URL_1__) |",
       "metadata": {
         "original": "| Before                                                                                                                                               | After                                                                                                                                               |\n|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|\n| ![Before applying the Cart Item Class filter](__URL_0__) | ![After applying the Cart Item Class filter](__URL_1__) |",
         "codeBlocks": [],
@@ -74947,7 +74947,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/wc-cli/wc-cli-examples.md": {
     "hash": "7b22a3e2ff9d087d31643cd0e02840d6d0bd324fc69f02342571ab3031622f7d",
-    "translatedAt": "2026-02-13T17:21:52.589Z",
+    "translatedAt": "2026-02-13T17:21:51.850Z",
     "segments": 30
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/wc-cli/wc-cli-commands.md": {
@@ -75007,7 +75007,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/ai.md": {
     "hash": "07e704c53448f194296dec4a9e74e55812685f79b195654c567911aeae430e2c",
-    "translatedAt": "2026-02-13T17:21:54.312Z",
+    "translatedAt": "2026-02-13T17:21:53.548Z",
     "segments": 20
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/getting-started/README.md": {
@@ -75022,7 +75022,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/useful-functions.md": {
     "hash": "a882d57d1376a0dfbb77b030603c0712ba2ab897150c1db135eac491a1c3cf21",
-    "translatedAt": "2026-02-13T17:22:05.339Z",
+    "translatedAt": "2026-02-13T17:22:04.616Z",
     "segments": 88
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/code-snippets/uninstall_remove_all_woocommerce_data.md": {
@@ -75262,7 +75262,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/template-structure.md": {
     "hash": "9b5a0c0f0fe7e3863c223f9ce969928a8ea4a02e1ee4638d483d86b670c0c6af",
-    "translatedAt": "2026-02-13T17:22:08.702Z",
+    "translatedAt": "2026-02-13T17:22:08.030Z",
     "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/theming/theme-development/set-up-a-child-theme.md": {
@@ -75487,7 +75487,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/getting-started-extensions/README.md": {
     "hash": "28b925e8bd6b95e94390c398ad64e7a39b5b95ab30649046ad109eabca4c4ccb",
-    "translatedAt": "2026-02-13T17:22:10.762Z",
+    "translatedAt": "2026-02-13T17:22:10.134Z",
     "segments": 17
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/extension-onboarding/integrating-coming-soon-mode.md": {
@@ -75537,7 +75537,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/class-reference.md": {
     "hash": "1782b0a616339567f7676d3e62d46e7cfed65a2ed45b4ae77ef965338e8b1532",
-    "translatedAt": "2026-02-13T17:22:24.519Z",
+    "translatedAt": "2026-02-13T17:22:24.261Z",
     "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/check-if-woo-is-active.md": {
@@ -75557,7 +75557,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/README.md": {
     "hash": "7502b8fbece105e74f24b4b2557dcd5508779991ad7a355740db3e9c94e1816c",
-    "translatedAt": "2026-02-13T17:22:27.495Z",
+    "translatedAt": "2026-02-13T17:22:27.379Z",
     "segments": 13
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/support-and-documentation.md": {
@@ -75577,7 +75577,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/extension-development-best-practices.md": {
     "hash": "8fa1c4935b278fd21f7d70628fd96f4560108b7c3040362b6f39689e726f7e7c",
-    "translatedAt": "2026-02-13T17:22:28.616Z",
+    "translatedAt": "2026-02-13T17:22:28.113Z",
     "segments": 9
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/best-practices-extensions/compatibility.md": {
@@ -75612,7 +75612,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/troubleshooting.md": {
     "hash": "a61de1d10b1c995fc4c4b39ff1f40622ba1b705f87bbe97411d90f9ab0fa3890",
-    "translatedAt": "2026-02-13T17:22:42.597Z",
+    "translatedAt": "2026-02-13T17:22:42.673Z",
     "segments": 30
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/schedule.md": {
@@ -75647,7 +75647,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/building-and-publishing.md": {
     "hash": "6e3e396695a1ee555b89163ef350c4c17c27e4fcc8596938687530d8506af162",
-    "translatedAt": "2026-02-13T17:22:50.321Z",
+    "translatedAt": "2026-02-13T17:22:50.320Z",
     "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/backporting.md": {
@@ -75657,7 +75657,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/README.md": {
     "hash": "db33d2f7ff93f94b6d5e7a05bd36cf984daf1517dc14ab45f244a44016808365",
-    "translatedAt": "2026-02-13T17:22:51.363Z",
+    "translatedAt": "2026-02-13T17:22:51.330Z",
     "segments": 4
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing-docs/style-guide.md": {
@@ -75687,12 +75687,12 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/naming-conventions.md": {
     "hash": "fc9ed9459371743c269fdbf5858deff6eaee326a69ca6fe9b435808ea193f3e5",
-    "translatedAt": "2026-02-13T17:22:54.892Z",
+    "translatedAt": "2026-02-13T17:22:54.900Z",
     "segments": 19
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/minification-of-SCSS-and-JS.md": {
     "hash": "bfca33547c11e908e4d105ad0bd602f6cadd578ba97ca2b161ffda8fac851b3f",
-    "translatedAt": "2026-02-13T17:22:55.720Z",
+    "translatedAt": "2026-02-13T17:22:55.706Z",
     "segments": 6
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/deprecation-in-core.md": {
@@ -75702,7 +75702,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/deciding-pr-high-impact.md": {
     "hash": "95b6bd28c8b5a6f4e9b6f4808da0f57fafec9047f2b0cdd51af517ed2ce54020",
-    "translatedAt": "2026-02-13T17:22:57.023Z",
+    "translatedAt": "2026-02-13T17:22:57.038Z",
     "segments": 9
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/common-issues.md": {
@@ -75717,7 +75717,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/README.md": {
     "hash": "3939b8e0a6fbccd667ca3131a4010b864c7562216769e7e60a3671571cdb293c",
-    "translatedAt": "2026-02-13T17:22:58.945Z",
+    "translatedAt": "2026-02-13T17:22:58.998Z",
     "segments": 18
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/contributing/CSS-SASS-coding-guidelines-and-naming-conventions.md": {
@@ -76157,7 +76157,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/order-summary-items.md": {
     "hash": "d3de502a1bc8791ac2b1bea563b4136826a4cac50b5491b8bbba75f9e1c2cff7",
-    "translatedAt": "2026-02-13T17:23:09.060Z",
+    "translatedAt": "2026-02-13T17:23:09.320Z",
     "segments": 76
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/coupons.md": {
@@ -76212,12 +76212,12 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/extensions/core-concepts/wc-get-products.md": {
     "hash": "4f4c0ac07380ce113a73f6880136ae389a5fbba04d7226636aca39d9597f9c0a",
-    "translatedAt": "2026-02-13T17:22:20.614Z",
+    "translatedAt": "2026-02-13T17:22:19.015Z",
     "segments": 41
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/contribution/releases/workflows.md": {
     "hash": "9c3383f8f15ac90e5da6c556734b91f9014c24ba41bd2c81eda4693fd8630c62",
-    "translatedAt": "2026-02-13T17:22:34.519Z",
+    "translatedAt": "2026-02-13T17:22:34.576Z",
     "segments": 20
   }
 }

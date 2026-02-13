@@ -1,7 +1,8 @@
 ---
 post_title: Useful core functions
 ---
-# 便利なコア機能
+
+# Useful core functions
 
 WooCommerceのコア関数はフロントエンドと管理画面の両方で利用できます。これらは`includes/wc-core-functions.php`にあり、プラグインのテーマで使用することができます。
 
@@ -133,13 +134,13 @@ wc_clean( $var )
 wc_price( $price, $args = array() )
 ```
 
-` $args`配列には、` ex_tax_label`というオプションがある。
+` $args`配列には` ex_tax_label`というオプションがあり、もしtrueなら`excluding tax`メッセージが追加される。
 
 ## オーダー関数
 
 ### wc_get_orders
 
-この関数は、特定のパラメータに基づいて注文を検索する標準的な方法である。この関数は、注文の検索に使用されるべきもので、カスタムテーブルに移行した際にも関数が機能するようにします。
+この関数は、特定のパラメータに基づいて注文を検索する標準的な方法である。この関数は、注文の検索に使用されるべきもので、カスタムテーブルに移行した際にも、関数は機能します。
 
 ```php
 wc_get_orders( $args )
@@ -195,7 +196,7 @@ wc_get_endpoint_url( $endpoint, $value = '', $permalink = '' )
 
 ### wc_get_products
 
-この関数は、特定のパラメータに基づいて製品を検索する標準的な方法です。
+この関数は、特定のパラメーターに基づいて商品を検索する標準的な方法である。
 
 ```php
 wc_get_products( $args )
