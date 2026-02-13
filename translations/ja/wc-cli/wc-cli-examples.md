@@ -3,8 +3,7 @@ post_title: WooCommerce CLI examples
 sidebar_label: Examples
 sidebar_position: 3
 ---
-
-# WooCommerce CLI Examples
+# WooCommerce CLI の例
 
 各コマンドの完全なドキュメントは`--help`を使用して入手できます。以下はCLIで何ができるかを示すコマンドの例です。
 
@@ -14,15 +13,23 @@ sidebar_position: 3
 
 各コマンドは`.feature`ファイルを持っています。例えば、[これらの支払いゲートウェイのコマンド](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/cli/features/payment_gateway.feature)。
 
-## 商品/ショップのトランジェントキャッシュをクリアする
+## 商品/ショップのトランジェントキャッシュのクリア
+
+Command: 
 
 `$ wp wc tool run clear_transients --user=1`。
+
+Response:
 
 `Success: Updated system_status_tool clear_transients.`。
 
 ## 全てのシステムツールのリスト
 
+Command: 
+
 `$ wp wc tool list --user=1`。
+
+Response:
 
 ```bash
 +----------------------------+----------------------------------+-------------------------------+-----------------------------------------------------------------------------------+
@@ -48,13 +55,21 @@ sidebar_position: 3
 
 ## 顧客を作る
 
+Command:
+
 `$ wp wc customer create --email='woo@woo.local' --user=1 --billing='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --shipping='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --password='hunter2' --username='mrbob' --first_name='Bob' --last_name='Tester'`。
+
+Response:
 
 `Success: Created customer 17.`。
 
 ## CSV 形式での顧客の取得
 
+Command:
+
 `$ wp wc customer get 17 --user=1 --format=csv`。
+
+Response:
 
 ```bash
 Field,Value
@@ -79,13 +94,21 @@ avatar_url,http://2.gravatar.com/avatar/5791d33f7d6472478c0b5fa69133f09a?s=96
 
 ## 注文に顧客メモを追加する 355
 
+Command:
+
 `$ wp wc order_note create 355 --note="Great repeat customer" --customer_note=true --user=1`。
+
+Response:
 
 `Success: Created order_note 286.`。
 
 ## オーダーノートの取得
 
+Command:
+
 `$ wp wc order_note get 355 286 --user=1`。
+
+Response:
 
 ```bash
 +---------------+-----------------------+
@@ -100,13 +123,21 @@ avatar_url,http://2.gravatar.com/avatar/5791d33f7d6472478c0b5fa69133f09a?s=96
 
 ## クーポンの更新
 
+Command:
+
 `$ wp wc shop_coupon update 45 --amount='10' --discount_type='percent' --free_shipping=true --user=1`。
+
+Response:
 
 `Success: Updated shop_coupon 45.`。
 
-## クーポン取得
+## クーポンの取得
+
+Command:
 
 `$ wp wc shop_coupon get 45 --user=1`。
+
+Response:
 
 ```bash
 +-----------------------------+---------------------+
@@ -139,3 +170,13 @@ avatar_url,http://2.gravatar.com/avatar/5791d33f7d6472478c0b5fa69133f09a?s=96
 | meta_data                   | []                  |
 +-----------------------------+---------------------+
 ```
+
+## WP CLIを使ったデータベースのアップグレード
+
+WooCommerceの新しいバージョンがリリースされると、データベースのアップグレードを実行するよう促されることがよくあります。WP adminから実行することも可能ですが、上級ユーザはCLI経由でこれらのアップグレードを実行することを好むかもしれません。
+
+データベースを更新するには、以下のCLIコマンドを使用する：
+
+`$ wp wc update`。
+
+余計な引数は必要なく、保留中のアップグレードのみが実行されます。アップデートが実行されると、新しいバージョンが表示されます。
