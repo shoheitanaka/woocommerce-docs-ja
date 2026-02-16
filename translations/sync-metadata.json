@@ -1,8 +1,25 @@
 {
-  "syncDate": "2026-01-30T02:57:36.092Z",
-  "upstreamCommit": "1c8472d14a22b805ecaa79636c922cc16e9ec9a8",
-  "filesChanged": 1,
+  "syncDate": "2026-02-13T17:21:27.136Z",
+  "upstreamCommit": "c1b6b7b7f0715bca8e54616601758f009e0e5b47",
+  "filesChanged": 18,
   "files": [
-    "docs/apis/store-api/resources-endpoints/product-reviews.md"
+    "docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/order-summary-items.md",
+    "docs/code-snippets/useful-functions.md",
+    "docs/contribution/contributing/README.md",
+    "docs/contribution/contributing/deciding-pr-high-impact.md",
+    "docs/contribution/contributing/minification-of-SCSS-and-JS.md",
+    "docs/contribution/contributing/naming-conventions.md",
+    "docs/contribution/releases/README.md",
+    "docs/contribution/releases/building-and-publishing.md",
+    "docs/contribution/releases/troubleshooting.md",
+    "docs/extensions/best-practices-extensions/extension-development-best-practices.md",
+    "docs/extensions/core-concepts/README.md",
+    "docs/extensions/core-concepts/class-reference.md",
+    "docs/extensions/getting-started-extensions/README.md",
+    "docs/getting-started/ai.md",
+    "docs/theming/theme-development/template-structure.md",
+    "docs/wc-cli/wc-cli-examples.md",
+    "docs/contribution/releases/workflows.md",
+    "docs/extensions/core-concepts/wc-get-products.md"
   ]
 }

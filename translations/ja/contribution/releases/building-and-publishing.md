@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ::重要
 
-このガイドは参考として使用することができますが、リリースサイクルの前に作成される[リリース追跡課題](https://github.com/woocommerce/woocommerce/issues?q=state%3Aopen%20label%3A%22Release%22%20author%3Aapp%2Flinear%20tracking)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。
+このガイドは参考として使用することができますが、リリースサイクルに先立って作成された[リリース追跡課題](https://github.com/woocommerce/woocommerce/issues?q=state%3Aopen%20label%3A%22Release%22%20author%3Aapp%2Flinear%20tracking)には、バージョン固有の指示が提供されており、そちらを優先すべきであることに留意してください。
 
 このページでは、リリースブランチからWooCommerceリリースをビルドするために必要なステップの概要を説明します。全体的なプロセスと決定表を理解するためにフローチャートを確認してください。ステップバイステップの手順を以下に示します。
 
@@ -18,7 +18,7 @@ sidebar_position: 1
 
 ## 指示
 
-以下のステップを順番に実行してください。GitHubワークフローを実行する際は、`trunk`ブランチ（デフォルト）から実行し、リリースバージョンまたはブランチを指示に従って入力してください。
+以下の手順を順番に実行してください。GitHubワークフローを実行する際は、`trunk`ブランチ（デフォルト）から実行し、リリースバージョンまたはブランチを指示に従って入力してください。
 
 何か問題が発生したときのために、_[リリースのトラブルシューティングとリカバリー](/docs/contribution/releases/troubleshooting)_ガイドを手元に置いておいてください。
 
@@ -26,17 +26,17 @@ sidebar_position: 1
 
 - [GitHub サービス](https://www.githubstatus.com/) が稼働していることを確認する。
 - [リリースマイルストーン](https://github.com/woocommerce/woocommerce/milestones/)に対して未解決の課題やプルリクエストが存在しないことを確認する。必要に応じて作者にPingを送り、マージまたはクローズする。
-- [ ] このリリースに適用されるプルリクエスト[ラベルが "cherry pick failed"](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22)で未対応のものがないことを確認する。
+- [ ] このリリースに該当するプルリクエスト[ラベルが「cherry pick failed」](https://github.com/woocommerce/woocommerce/pulls?q=is:pr+label:%22cherry+pick+failed%22)で、アクションされていないものがないことを確認する。
 - [ ] リリースブランチの readme.txt の `Stable tag` の値が [WordPress.org の `trunk`](https://plugins.trac.wordpress.org/browser/woocommerce/trunk/readme.txt#L7) の値と一致することを確認する。
 
 #### 2.リリースパッケージをビルドする
 
-- [ ] ワークフロー **[Release: Bump version number](https://github.com/woocommerce/woocommerce/actions/workflows/release-bump-version.yml)** を実行します: リリースブランチを _Release branch_ と入力し、ドロップダウンからリリースタイプを選択します。
+- [ ] ワークフローを実行する **[Release: Bump version number](https://github.com/woocommerce/woocommerce/actions/workflows/release-bump-version.yml)**: リリースのメインバージョン (`x.y`) を _Release branch_ として入力し、ドロップダウンからリリースタイプを選択します。
 - [リリースブランチに対して生成されたPRをレビューし、マージします。
--  ] ワークフロー **[Release: Compile changelog](https://github.com/woocommerce/woocommerce/actions/workflows/release-compile-changelog.yml)** を実行します: _Version_ にリリースのメインバージョン (`x.y`) を入力し、_Release date_ を空白にします。
+-  ] ワークフロー **[Release: Compile changelog](https://github.com/woocommerce/woocommerce/actions/workflows/release-compile-changelog.yml)** を実行します: _Version_ にリリースのメインバージョン (`x.y`) を入力し、_Release date_ は空のままにします。
 - [ ] 生成された PR をレビューしてマージしてください: 一つは `trunk` に対して、もう一つはリリースブランチに対してです。どちらもリリースマイルストーンの下にあるはずです。
-- [ ] ワークフロー **[Release: Build ZIP file](https://github.com/woocommerce/woocommerce/actions/workflows/release-build-zip-file.yml)** を実行し、アセットのビルドと GitHub リリースの作成を行います。
-- [`woocommerce.zip` アセットが添付されたドラフトリリースが リポジトリに作成された](https://github.com/woocommerce/woocommerce/releases) ことを確認します。
+- [ ] ワークフロー **[Release: Build ZIP file](https://github.com/woocommerce/woocommerce/actions/workflows/release-build-zip-file.yml)** を実行し、アセットのビルドと GitHub リリースの作成を行います：_Release branch_ としてリリースのメインバージョン (`x.y`) を入力し、_Create GitHub release_ をチェックします。
+- [ ] リポジトリにドラフトリリースが作成されたことを確認し、`woocommerce.zip` アセットを添付します。
 
 #### 3.WordPress.orgにリリースをアップロードする。
 
@@ -51,7 +51,8 @@ sidebar_position: 1
 このステップは `rc` または安定版 (`x.y.0` 以降) にのみ適用されます。
 :::
 
-- [ステージング環境へのデプロイガイド](https://wp.me/PCYsg-18BQ)に従い、デプロイ後4時間(RC)または2時間(安定)監視する。
+- [ ] [ステージング環境へのデプロイガイド](https://wp.me/PCYsg-18BQ) に従い、デプロイ後 4 時間 (RC) または 2 時間 (stable) 監視する。
+- [ ] このリリースの監視と議論のために、releases Slack チャンネルにスレッドを作成してください。
 
 ##### 監視中に重大な問題が検出された場合
 
@@ -66,7 +67,7 @@ sidebar_position: 1
 #### 6.リリース後のタスク
 
 ::注意
-このステップは `rc` または安定版 (`x.y.0` 以降) にのみ適用されます。
+このステップは安定版 (`x.y.0` 以降) にのみ適用されます。
 :::
 
 - [リリースマイルストーン](https://github.com/woocommerce/woocommerce/milestones/)の下でフォローアップPRをマージしてください。

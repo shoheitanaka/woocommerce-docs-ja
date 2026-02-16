@@ -26,7 +26,7 @@ WooCommerceのクラス一覧は[WooCommerceコードリファレンス](https:/
 
 このクラスに含まれるメソッドの全リストは[WooCommerceクラスコードリファレンス](https://woocommerce.github.io/code-reference/classes/WooCommerce.html)をご覧ください。
 
-### WC_Product
+### WC_製品
 
 WooCommerceには商品データのロードと出力を担当するいくつかの商品クラスがあります。これは
 
@@ -49,7 +49,7 @@ $customer_country = $woocommerce->customer->get_country();
 
 ### WC_Cart
 
-カートクラスは、ユーザーのカートデータをロードし、セッションに保存します。たとえば、カートの小計を取得するには、次のようにします：
+カートクラスは、ユーザーのカートデータをロードしてセッションに保存します。たとえば、カートの小計を取得するには、次のようにします：
 
 ```php
 global $woocommerce;
@@ -57,3 +57,14 @@ $cart_subtotal = $woocommerce->cart->get_cart_subtotal();
 ```
 
 このクラスに含まれるメソッドの完全なリストについては、[WC_Cart コードリファレンス](https://woocommerce.github.io/code-reference/classes/WC-Cart.html) を参照してください。
+
+## 内部クラス (使用不可)
+
+WooCommerceは内部インフラコードを含んでおり、**エクステンションによる使用を意図していません**：
+
+- **`Automattic\WooCommerce\Internal\*`**:この名前空間のすべてのクラスは内部的なものです。後方互換性は保証されません: これらのクラスは将来のWooCommerceのリリースで変更、改名、削除される可能性があります。
+- **INLINE_CODE_1__アノテーションを持つクラス**：同様に、docblockに`@internal`のマークがあるクラス、メソッド、フックはエクステンションでは使用しないでください。
+
+内部コードを使用すると、WooCommerceがアップデートされたときに拡張機能が壊れる可能性があります。上記の定義に従った内部コード以外のコードは公開されており、一般的に安全に使用できます。
+
+詳細については、[内部名前空間のドキュメント](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/src/Internal/README.md)を参照してください。

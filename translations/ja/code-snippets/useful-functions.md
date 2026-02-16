@@ -146,7 +146,7 @@ wc_price( $price, $args = array() )
 wc_get_orders( $args )
 ```
 
-[引数と使い方](https://github.com/woocommerce/woocommerce/wiki/wc_get_orders-and-WC_Order_Query)
+[引数と使用法](/docs/extensions/core-concepts/wc-get-orders/)
 
 ### wc_get_order
 
@@ -202,7 +202,7 @@ wc_get_endpoint_url( $endpoint, $value = '', $permalink = '' )
 wc_get_products( $args )
 ```
 
-[引数と使い方](https://github.com/woocommerce/woocommerce/wiki/wc_get_products-and-WC_Product_Query)
+[引数と使用法](/docs/extensions/core-concepts/wc-get-products/)
 
 ### wc_get_product
 

@@ -18,3 +18,4 @@ WooCommerceのリリースプロセスは交代制のリリースリードによ
 * [リリーススケジュール](/docs/contribution/releases/schedule)
 * [リリース監視](/docs/contribution/releases/monitoring)
 * [パッケージリリース](/docs/contribution/releases/package-releases)
+* [ワークフロー](/docs/contribution/releases/workflows)

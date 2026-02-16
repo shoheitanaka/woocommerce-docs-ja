@@ -38,7 +38,7 @@ WooCommerceサイトの様々なテンプレートファイルは、FTPクライ
 do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email );
 ```
 
-上のコードは、下の画像で赤くハイライトされているブロックを出力します。これは、ショップマネージャーが、サイト上で注文が成功した後に受け取る新規注文メールです：
+上のコードは、下の画像で赤くハイライトされているブロックを出力します。これは、ショップマネージャーが、自分のサイトで注文が成功した後に受け取る新規注文メールです：
 
 ![image](https://woocommerce.com/wp-content/uploads/2020/05/templating-using-hooks.webp)
 
@@ -67,7 +67,7 @@ function my_custom_woo_function() {
 
 ## カスタムテンプレートのテーマサポートを宣言する
 
-テーマ開発者またはカスタムテンプレートを持つテーマを使用している場合、`add_theme_support`関数を使用してWooCommerceテーマのサポートを宣言する必要があります。GitHub の [Declaring WooCommerce Support in Themes](https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes) を参照してください。
+[テーマ開発者またはカスタムテンプレートを持つテーマを使用している場合、`add_theme_support`関数を使用してWooCommerceテーマのサポートを宣言する必要があります。テーマでWooCommerceサポートを宣言する](/docs/theming/theme-development/classic-theme-developer-handbook/#declaring-woocommerce-support)を参照してください。
 
 お使いのテーマに`woocommerce.php`がある場合、`woocommerce.php`が他のテンプレートファイルよりも優先されるため、`woocommerce/archive-product.php`を上書きすることはできません。これは表示の問題を防ぐためです。
 
