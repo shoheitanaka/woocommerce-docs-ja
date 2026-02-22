@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
 ---
-# はじめに
+
+# Getting started
 
 WooCommerce.comマーケットプレイスにようこそ！WooCommerce.comマーケットプレイスは、世界中の信頼できる開発者とマーチャントを結びつけ、パワフルで柔軟なオンラインストアを作成します。
 
@@ -21,7 +22,7 @@ WooCommerce.comマーケットプレイスにようこそ！WooCommerce.comマ�
 - 安全で、文書化され、メンテナンスが行き届いている。
 - セキュリティ](https://developer.wordpress.org/apis/security/)、[開発](https://developer.woocommerce.com/docs/extensions/best-practices-extensions/extension-development-best-practices/)、[ユーザーエクスペリエンス](https://developer.woocommerce.com/docs/extensions/ux-guidelines-extensions/best-practices/)のベストプラクティスに従っている。
 - 質の高いマーチャントサポートを提供すること
-- 直販、サブスクリプション、またはその他の方法による、明確で持続可能なマネタイズモデルを含むこと。
+- 直販、サブスクリプション、またはその他の方法を問わず、明確で持続可能なマネタイズモデルを含むこと。
 
 ## 協定
 

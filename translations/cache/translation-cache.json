@@ -75171,7 +75171,7 @@
     },
     "5078d0c73ef7b824e280b4ce10bc609994b7e23d9fa0b0c07b868b94d755031b": {
       "original": "- **Activate an autoresponder**: Automatically inform customers that you have received their request, including links to your privacy and data usage policies. Avoid promotional or affiliate links.\n- **Deactivate any platform feedback requests**: Customers already receive feedback requests from the Woo Marketplace directly.",
-      "translated": "- **オートレスポンダー**をアクティブにします：プライバシーポリシーやデータ利用ポリシーへのリンクを含め、リクエストを受け取ったことを顧客に自動的に通知する。プロモーションリンクやアフィリエイトリンクは避ける。\n- **Deactivate any platform feedback requests**：顧客はすでにWoo Marketplaceから直接フィードバックリクエストを受け取っています。",
+      "translated": "- **オートレスポンダー**をアクティブにします：プライバシーポリシーやデータ使用ポリシーへのリンクを含め、リクエストを受け取ったことを顧客に自動的に通知する。プロモーションリンクやアフィリエイトリンクは避ける。\n- **Deactivate any platform feedback requests**：顧客はすでにWoo Marketplaceから直接フィードバックリクエストを受け取っています。",
       "metadata": {
         "original": "- **Activate an autoresponder**: Automatically inform customers that you have received their request, including links to your privacy and data usage policies. Avoid promotional or affiliate links.\n- **Deactivate any platform feedback requests**: Customers already receive feedback requests from the Woo Marketplace directly.",
         "codeBlocks": [],
@@ -75201,7 +75201,7 @@
     },
     "3f79e08fc8b5cbcabbd620bd1b73258e505ca93a54b5f47c951a617c383ea1ce": {
       "original": "- **Only ask for login credentials once you have exhausted all other options.** This includes asking for screenshots and reproducing the problem on your own test site(s).\n- **When asking for login credentials:**\n    - Inform the customer that, under GDPR regulations, they must mention that they may need to give access to third-party support services in their store's terms and conditions.\n    - Always ask the customer to create a temporary administrator account for you. (You will need to tweak the instructions in the document linked above as you do not have access to __INLINE_CODE_0__.)\n    - At the end of the support interaction, ask the merchant to remove this temporary account.\n- **If the customer shares their details before you are able to provide the instructions above**, always point out that they ideally don't do this and that you strongly advise them to reset their password.\n- **Never ask for plain-text passwords.** Instead, use a password-sharing service like [QuickForget.com](__URL_0__) to create a unique, expiring link.",
-      "translated": "- **スクリーンショットを要求し、あなた自身のテストサイトで問題を再現することを含む。\n- **ログイン認証情報を尋ねる場合：***\n    - GDPRの規制により、サードパーティのサポートサービスへのアクセスを提供する必要がある可能性があることを、ストアの利用規約に記載する必要があることを顧客に伝える。\n    - 必ず顧客に一時的な管理者アカウントの作成を依頼すること。(__INLINE_CODE_0__にアクセスできないため、上記リンク先のドキュメントにある手順を微調整する必要があります)\n    - サポートの最後に、この一時的なアカウントを削除するよう加盟店に依頼してください。\n- **上記の指示を提供する前に顧客情報が共有された場合**、顧客はこのようなことをしないのが理想的であり、パスワードをリセットするよう強く勧めることを常に指摘してください。\n- **その代わりに、[QuickForget.com](__URL_0__)のようなパスワード共有サービスを使って、一意の期限付きリンクを作成してください。",
+      "translated": "- **スクリーンショットを要求し、あなた自身のテストサイトで問題を再現することを含む。\n- **ログイン認証情報を尋ねる場合：***\n    - GDPRの規制により、サードパーティのサポートサービスへのアクセスを提供する必要がある可能性があることを、ストアの利用規約に記載する必要があることを顧客に伝える。\n    - 必ず顧客に一時的な管理者アカウントの作成を依頼すること。(__INLINE_CODE_0__にアクセスできないため、上記リンク先のドキュメントの指示に手を加える必要があります)\n    - サポートの最後に、この一時的なアカウントを削除するよう加盟店に依頼してください。\n- **上記の指示を提供する前に顧客情報が共有された場合**、顧客はこのようなことをしないのが理想的であり、パスワードをリセットするよう強く勧めることを常に指摘してください。\n- **その代わりに、[QuickForget.com](__URL_0__)のようなパスワード共有サービスを使って、一意の期限付きリンクを作成してください。",
       "metadata": {
         "original": "- **Only ask for login credentials once you have exhausted all other options.** This includes asking for screenshots and reproducing the problem on your own test site(s).\n- **When asking for login credentials:**\n    - Inform the customer that, under GDPR regulations, they must mention that they may need to give access to third-party support services in their store's terms and conditions.\n    - Always ask the customer to create a temporary administrator account for you. (You will need to tweak the instructions in the document linked above as you do not have access to __INLINE_CODE_0__.)\n    - At the end of the support interaction, ask the merchant to remove this temporary account.\n- **If the customer shares their details before you are able to provide the instructions above**, always point out that they ideally don't do this and that you strongly advise them to reset their password.\n- **Never ask for plain-text passwords.** Instead, use a password-sharing service like [QuickForget.com](__URL_0__) to create a unique, expiring link.",
         "codeBlocks": [],
@@ -75305,7 +75305,7 @@
     },
     "222b8e032d2baea95389f820f02f898b5c0658bdf0d8df8c052cee3b1da6409b": {
       "original": "Keep in mind that customers are significantly more likely to leave a positive review following a helpful and timely support experience. Engaging positively with customer feedback — both praise and criticism — can strengthen your product reputation and foster long-term trust.",
-      "translated": "顧客は、親切でタイムリーなサポートを受けた後、好意的なレビューを残す可能性が非常に高いことを覚えておいてください。顧客からのフィードバック（賞賛と批判の両方）に積極的に関与することで、製品の評判を高め、長期的な信頼を育むことができます。",
+      "translated": "顧客は、親切でタイムリーなサポートを受けた後、肯定的なレビューを残す可能性が非常に高いことを覚えておいてください。顧客からのフィードバック（賞賛と批判の両方）に積極的に関与することで、製品の評判を高め、長期的な信頼を育むことができます。",
       "metadata": {
         "original": "Keep in mind that customers are significantly more likely to leave a positive review following a helpful and timely support experience. Engaging positively with customer feedback — both praise and criticism — can strengthen your product reputation and foster long-term trust.",
         "codeBlocks": [],
@@ -75395,7 +75395,7 @@
     },
     "537c89a7bcc21d1fccdeaa76800e883bf7cc1f86992c61a30bcfe4cb20421d00": {
       "original": "# Product update guidelines and best practices",
-      "translated": "# 製品更新のガイドラインとベストプラクティス",
+      "translated": "# 製品アップデートのガイドラインとベストプラクティス",
       "metadata": {
         "original": "# Product update guidelines and best practices",
         "codeBlocks": [],
@@ -75459,7 +75459,7 @@
     },
     "312a45e0766c140494e90afcc6ca8cbf492d6a71f51baf13842655836e061512": {
       "original": "1. **Monitor the [WooCommerce release calendar](__URL_0__)**: Anticipate changes that might impact your product.\n2. **Engage customer feedback**: Use reviews, support tickets, and feature requests to inform improvements, new features, and community-requested improvements.\n3. **Use semantic versioning**: Example: __INLINE_CODE_0__ for features, __INLINE_CODE_1__ for breaking changes.\n4. **Test thoroughly**: Ensure updates are stable and backward-compatible where possible. Consider integrating the [Quality Insights Tool](__URL_1__) (QIT) into your workflow to automatically detect potential issues.\n5. **Document changes transparently**: Maintain clear, customer-facing changelogs, update the documentation and the product page if needed.",
-      "translated": "1. **[WooCommerceリリースカレンダー](__URL_0__)**を監視してください：製品に影響を与える可能性のある変更を予測します。\n2. **顧客からのフィードバックを活用するレビュー、サポートチケット、機能リクエストを使って、改善、新機能、コミュニティから要求された改善をお知らせします。\n3. **セマンティック・バージョニング**を使用する：例例：機能には__INLINE_CODE_0__、変更点には__INLINE_CODE_1__を使用する。\n4. **徹底的なテスト**：可能であれば、アップデートが安定しており、後方互換性があることを確認してください。潜在的な問題を自動的に検出するために、[Quality Insights Tool](__URL_1__) (QIT)をワークフローに統合することを検討してください。\n5. **変更を透明性をもって文書化する**：顧客向けの明確な変更履歴を維持し、必要に応じてドキュメントと製品ページを更新しましょう。",
+      "translated": "1. **[WooCommerceリリースカレンダー](__URL_0__)**を監視してください：製品に影響を与える可能性のある変更を予測します。\n2. **顧客からのフィードバック**を活用する：レビュー、サポートチケット、機能リクエストを使って、改善、新機能、コミュニティから要求された改善をお知らせします。\n3. **セマンティック・バージョニング**を使用する：例例：機能には__INLINE_CODE_0__、変更点には__INLINE_CODE_1__を使用する。\n4. **徹底的なテスト**：可能であれば、アップデートが安定しており、後方互換性があることを確認してください。潜在的な問題を自動的に検出するために、[Quality Insights Tool](__URL_1__) (QIT)をワークフローに統合することを検討してください。\n5. **変更を透明性をもって文書化する**：顧客向けの明確な変更履歴を維持し、必要に応じてドキュメントと製品ページを更新しましょう。",
       "metadata": {
         "original": "1. **Monitor the [WooCommerce release calendar](__URL_0__)**: Anticipate changes that might impact your product.\n2. **Engage customer feedback**: Use reviews, support tickets, and feature requests to inform improvements, new features, and community-requested improvements.\n3. **Use semantic versioning**: Example: __INLINE_CODE_0__ for features, __INLINE_CODE_1__ for breaking changes.\n4. **Test thoroughly**: Ensure updates are stable and backward-compatible where possible. Consider integrating the [Quality Insights Tool](__URL_1__) (QIT) into your workflow to automatically detect potential issues.\n5. **Document changes transparently**: Maintain clear, customer-facing changelogs, update the documentation and the product page if needed.",
         "codeBlocks": [],
@@ -75505,7 +75505,7 @@
     },
     "5e96e04b1d7e329de17d057f7520f6562332c2569afdaa7c2910d99d00dedc7d": {
       "original": "- **Major releases**: At least quarterly, to align with [WooCommerce core releases](__URL_0__).\n- **Security fixes**: As needed, with urgency.\n- **Minor improvements**: Monthly or as features and fixes are ready.\n- **Documentation**: Keep changelogs and user guides current with each release.",
-      "translated": "[- **メジャーリリース**：WooCommerceのコアリリース](__URL_0__)に合わせて、少なくとも四半期ごとにリリースします。\n- **セキュリティ修正**：必要に応じて、緊急に。\n- **小さな改善**：毎月、または機能や修正の準備ができ次第。\n- **ドキュメント**：リリースごとに変更履歴とユーザーガイドを最新に保つ。",
+      "translated": "[- **メジャーリリース**：WooCommerceのコアリリース](__URL_0__)に合わせて、少なくとも四半期ごとにリリースします。\n- **セキュリティ修正**：必要に応じて、緊急に。\n- **小さな改善**：マイナーな改善**: 毎月、または機能や修正の準備ができ次第。\n- **ドキュメント**：リリースごとに変更履歴とユーザーガイドを最新に保つ。",
       "metadata": {
         "original": "- **Major releases**: At least quarterly, to align with [WooCommerce core releases](__URL_0__).\n- **Security fixes**: As needed, with urgency.\n- **Minor improvements**: Monthly or as features and fixes are ready.\n- **Documentation**: Keep changelogs and user guides current with each release.",
         "codeBlocks": [],
@@ -75646,7 +75646,7 @@
     },
     "0056d3bdbb6b5852a0536a28204a3c4fd0afdbbb9dec720315749144366f8b8f": {
       "original": "- **Confirmation:** Vendor admins will receive an email when a new version is submitted, confirming that it is in the queue. No action is needed.\n- **Rejected:** If a version fails any part of our automated testing, vendor admins will receive an email including the specific error. Developers should try to resolve the error and submit a new version when ready.\n- **Live:** If a version passes automated testing, it will be automatically deployed and made available to customers. No action is needed.",
-      "translated": "- **ベンダーの管理者は、新しいバージョンが提出されると、それがキューにあることを確認するEメールを受け取ります。何もする必要はありません。\n- **不合格:** テストが不合格になった場合、ベンダーの管理者は具体的なエラーを含むメールを受け取ります。開発者はエラーの解決に努め、準備ができ次第新しいバージョンを提出してください。\n- **自動テストに合格したバージョンは自動的にデプロイされ、顧客に提供されます。何もする必要はありません。",
+      "translated": "- **ベンダーの管理者は、新しいバージョンが提出されると、それがキューにあることを確認するEメールを受け取ります。何もする必要はありません。\n- **不合格:** テストが不合格になった場合、ベンダー管理者は具体的なエラーを含むメールを受け取ります。開発者はエラーの解決に努め、準備ができ次第新しいバージョンを提出してください。\n- **自動テストに合格したバージョンは自動的にデプロイされ、顧客に提供されます。何もする必要はありません。",
       "metadata": {
         "original": "- **Confirmation:** Vendor admins will receive an email when a new version is submitted, confirming that it is in the queue. No action is needed.\n- **Rejected:** If a version fails any part of our automated testing, vendor admins will receive an email including the specific error. Developers should try to resolve the error and submit a new version when ready.\n- **Live:** If a version passes automated testing, it will be automatically deployed and made available to customers. No action is needed.",
         "codeBlocks": [],
@@ -75814,7 +75814,7 @@
     },
     "341092253798fb9c4c585757a4d5f6175f88fd75a9c4f2b66e8c28c907ef85da": {
       "original": ":::note\nFor extra security, this application password is scoped to the deploy endpoint and cannot be used to perform any other action on the user's behalf.\n:::",
-      "translated": ":::note\nセキュリティ強化のため、このアプリケーションパスワードはデプロイエンドポイントにスコープされ、ユーザーに代わって他のアクションを実行するために使用することはできません。\n:::",
+      "translated": ":::note\n追加のセキュリティのため、このアプリケーションパスワードはデプロイエンドポイントにスコープされ、ユーザーに代わって他のアクションを実行するために使用することはできません。\n:::",
       "metadata": {
         "original": ":::note\nFor extra security, this application password is scoped to the deploy endpoint and cannot be used to perform any other action on the user's behalf.\n:::",
         "codeBlocks": [],
@@ -75834,7 +75834,7 @@
     },
     "3f8a9a4a4672305c1aa565884e26afe5d466921dae73210c64ec00c58d049c59": {
       "original": "Make a POST request to deploy your product using the following command:",
-      "translated": "以下のコマンドを使用して、製品をデプロイするためのPOSTリクエストを行います：",
+      "translated": "以下のコマンドを使用して、製品をデプロイするためのPOSTリクエストを行う：",
       "metadata": {
         "original": "Make a POST request to deploy your product using the following command:",
         "codeBlocks": [],
@@ -75889,7 +75889,7 @@
     },
     "4304e5dc3eff241af2b71a26050a0ec20952cfac97a9d32b508a6d2fd6ca0b25": {
       "original": "When you query the deployment status, the response will provide details about the progress, including the status of various test runs.",
-      "translated": "デプロイメント ステータスを照会すると、さまざまなテスト実行のステータスなど、進行状況に関する詳細がレスポンスで返されます。",
+      "translated": "デプロイメント ステータスを照会すると、さまざまなテストの実行状況など、進行状況に関する詳細がレスポンスで返されます。",
       "metadata": {
         "original": "When you query the deployment status, the response will provide details about the progress, including the status of various test runs.",
         "codeBlocks": [],
@@ -75909,7 +75909,7 @@
     },
     "0ca4651c047dd9fdc3ee5ff49f65606c15fa056f9323362d14ac351646e8f7f7": {
       "original": "> **Note:** Additional test run objects may be present in the response, one for each test type that was executed.",
-      "translated": "> 注：*** テスト実行オブジェクトは、実行されたテストタイプごとに 1 つずつ、レスポンス内に追加で存在する可能性があります。",
+      "translated": "> 注：*** 実行されたテストタイプごとに、追加のテスト実行オブジェクトが存在する場合があります。",
       "metadata": {
         "original": "> **Note:** Additional test run objects may be present in the response, one for each test type that was executed.",
         "codeBlocks": [],
@@ -75953,7 +75953,7 @@
     },
     "242b25ead950c83b841f24f4d19b4c8d9210521b81feac01984d5e9630ef9c3f": {
       "original": "Not only does this initiative help mitigate potential compatibility issues before they affect users, but it also enhances the overall reliability of the products within our marketplace. Participating in this process not only contributes to a robust ecosystem but also elevates your extension's reputation for quality and reliability.",
-      "translated": "このイニシアチブは、潜在的な互換性の問題がユーザーに影響を与える前に緩和するのに役立つだけでなく、私たちのマーケットプレイス内の製品の全体的な信頼性を向上させます。このプロセスに参加することは、堅牢なエコシステムに貢献するだけでなく、エクステンションの品質と信頼性に対する評価を高めることにもつながります。",
+      "translated": "このイニシアチブは、潜在的な互換性の問題がユーザーに影響を与える前に緩和するのに役立つだけでなく、私たちのマーケットプレイス内の製品の全体的な信頼性を高めることにもなります。このプロセスに参加することは、堅牢なエコシステムに貢献するだけでなく、エクステンションの品質と信頼性に対する評価を高めることにもつながります。",
       "metadata": {
         "original": "Not only does this initiative help mitigate potential compatibility issues before they affect users, but it also enhances the overall reliability of the products within our marketplace. Participating in this process not only contributes to a robust ecosystem but also elevates your extension's reputation for quality and reliability.",
         "codeBlocks": [],
@@ -75963,7 +75963,7 @@
     },
     "9a6b4547a7c21840169306c3f532d3eea0a5f6c25b8d5f2945f0c4d357e27cc4": {
       "original": "Review our [QIT custom test documentation](__URL_0__) to begin leveraging the power of custom tests to guarantee your extension works seamlessly in real-world scenarios and stands out in the competitive Marketplace.",
-      "translated": "[QITカスタム・テスト・ドキュメント](__URL_0__) をご覧いただき、カスタム・テストのパワーを活用して、拡張機能が実世界のシナリオでシームレスに動作し、競争の激しいマーケットプレイスで際立つことを保証してください。",
+      "translated": "[QITカスタムテスト・ドキュメント](__URL_0__) を参照して、カスタムテストのパワーを活用し、拡張機能が実世界のシナリオでシームレスに動作し、競争の激しいマーケットプレイスで際立つことを保証してください。",
       "metadata": {
         "original": "Review our [QIT custom test documentation](__URL_0__) to begin leveraging the power of custom tests to guarantee your extension works seamlessly in real-world scenarios and stands out in the competitive Marketplace.",
         "codeBlocks": [],
@@ -75985,7 +75985,7 @@
     },
     "9ed4516baec9cee314b926924e9122715d76e0fa44ffecf18969519c721cdb39": {
       "original": "Feel free to reach out to the Marketplace team for update planning, QIT help, or deployment issues.",
-      "translated": "アップデートの計画、QITのヘルプ、デプロイメントの問題など、お気軽にマーケットプレイスチームまでお問い合わせください。",
+      "translated": "アップデートの計画、QITのヘルプ、デプロイメントに関する問題など、お気軽にマーケットプレイスチームまでお問い合わせください。",
       "metadata": {
         "original": "Feel free to reach out to the Marketplace team for update planning, QIT help, or deployment issues.",
         "codeBlocks": [],
@@ -76055,7 +76055,7 @@
     },
     "4bad8b753c23ff14d3ff3c0ce92ade5aa7e8346910abebdfce094ec7ff329598": {
       "original": "- **Standalone functionality plugins**: Plugins that extend WooCommerce with features not tied to an external system can be sold through the standard Marketplace license model, with billing handled directly through Woo.\n- **Integration plugins**: Plugins that connect WooCommerce to an external service or platform require a monetization approach that matches how the integrated system bills merchants.",
-      "translated": "- **スタンダロン機能プラグイン**：WooCommerceを拡張するプラグインで、外部システムと連携しない機能は、標準のMarketplaceライセンスモデルを通じて販売することができます。\n- **統合プラグイン**：WooCommerceを外部のサービスやプラットフォームに接続するプラグインは、統合されたシステムがマーチャントに請求する方法と一致するマネタイズアプローチが必要です。",
+      "translated": "- **スタンダロン機能プラグイン**：WooCommerceを拡張するプラグインで、外部システムと連携しない機能は、標準のMarketplaceライセンスモデルを通じて販売することができます。\n- **インテグレーションプラグイン**：WooCommerceを外部のサービスやプラットフォームに接続するプラグインは、統合されたシステムがマーチャントに請求する方法と一致するマネタイズアプローチが必要です。",
       "metadata": {
         "original": "- **Standalone functionality plugins**: Plugins that extend WooCommerce with features not tied to an external system can be sold through the standard Marketplace license model, with billing handled directly through Woo.\n- **Integration plugins**: Plugins that connect WooCommerce to an external service or platform require a monetization approach that matches how the integrated system bills merchants.",
         "codeBlocks": [],
@@ -76338,7 +76338,7 @@
     },
     "8cb5ff342fb398da76fd7674663539700e8b851dc81179542435f8e09e2d69f5": {
       "original": "If you're unsure which monetization model applies to your plugin, theme, or service, or if you'd like to discuss partnership options before submitting for review, please [contact the Marketplace team](__URL_0__). We recommend reaching out early in your planning process to ensure alignment before you invest significant development effort.",
-      "translated": "あなたのプラグイン、テーマ、またはサービスにどの収益化モデルが適用されるか不明な場合、またはレビューに提出する前にパートナーシップのオプションについて話し合いたい場合は、[マーケットプレイスチームにご連絡ください](__URL_0__)。重要な開発労力を投資する前に、計画プロセスの早い段階で連絡を取り、整合性を確認することをお勧めします。",
+      "translated": "あなたのプラグイン、テーマ、サービスにどのマネタイズモデルが適用されるか不明な場合、またはレビューに提出する前にパートナーシップのオプションについて話し合いたい場合は、[マーケットプレイスチームにご連絡ください](__URL_0__)。重要な開発労力を投資する前に、計画プロセスの早い段階で連絡を取り、整合性を確認することをお勧めします。",
       "metadata": {
         "original": "If you're unsure which monetization model applies to your plugin, theme, or service, or if you'd like to discuss partnership options before submitting for review, please [contact the Marketplace team](__URL_0__). We recommend reaching out early in your planning process to ensure alignment before you invest significant development effort.",
         "codeBlocks": [],
@@ -76512,7 +76512,7 @@
     },
     "dca291956d4770d140254566eb439661c0f336ae1579cd27cd45f8fd4a333ea1": {
       "original": "- **Earnings**: New sales, renewal sales, and refund amount.\n- **Commissions**: The amount the vendor earns from **net** product sales. Net revenue is defined as **revenue received from extension purchases minus refunds, chargebacks, disputes, discounts, and affiliate fees**.\n- **Subscriptions**: Total active subscriptions, including new and renewing this month, as well as refund and renewal rates.",
-      "translated": "- **収益**：新規売上、更新売上、返金額。\n- **コミッションベンダーの売上金額。純収入とは、**エクステンションの購入から受け取った収入から、払い戻し、チャージバック、紛争、割引、アフィリエイト手数料を差し引いたもの**と定義されます。\n- **サブスクリプション**：今月の新規および更新を含むアクティブなサブスクリプションの合計、および払い戻しと更新率。",
+      "translated": "- **収益**：新規売上、更新売上、返金額。\n- **コミッションベンダーの売上金額。純収入とは、**エクステンションの購入から受け取った収入から、払い戻し、チャージバック、紛争、割引、アフィリエイト手数料を差し引いたもの**と定義されます。\n- **サブスクリプション**：今月の新規および更新を含むアクティブなサブスクリプションの合計、および返金率と更新率。",
       "metadata": {
         "original": "- **Earnings**: New sales, renewal sales, and refund amount.\n- **Commissions**: The amount the vendor earns from **net** product sales. Net revenue is defined as **revenue received from extension purchases minus refunds, chargebacks, disputes, discounts, and affiliate fees**.\n- **Subscriptions**: Total active subscriptions, including new and renewing this month, as well as refund and renewal rates.",
         "codeBlocks": [],
@@ -76592,7 +76592,7 @@
     },
     "3d80a0b505fdb0475f3f746228b00a9a463ecd05dd2d2bef84d9006d5b2a00ba": {
       "original": "- Solve real merchant problems\n- Are secure, well-documented, and well-maintained\n- Follow [security](__URL_0__), [development](__URL_1__), and [user experience](__URL_2__) best practices\n- Offer high-quality merchant support\n- Include a clear and sustainable monetization model, whether through direct sales, subscriptions, or another approach",
-      "translated": "[- 実際の加盟店の問題を解決する\n- 安全で、文書化され、メンテナンスが行き届いている。\n- セキュリティ](__URL_0__)、[開発](__URL_1__)、[ユーザーエクスペリエンス](__URL_2__)のベストプラクティスに従っている。\n- 質の高いマーチャントサポートを提供すること\n- 直販、サブスクリプション、またはその他の方法による、明確で持続可能なマネタイズモデルを含むこと。",
+      "translated": "[- 実際の加盟店の問題を解決する\n- 安全で、文書化され、メンテナンスが行き届いている。\n- セキュリティ](__URL_0__)、[開発](__URL_1__)、[ユーザーエクスペリエンス](__URL_2__)のベストプラクティスに従っている。\n- 質の高いマーチャントサポートを提供すること\n- 直販、サブスクリプション、またはその他の方法を問わず、明確で持続可能なマネタイズモデルを含むこと。",
       "metadata": {
         "original": "- Solve real merchant problems\n- Are secure, well-documented, and well-maintained\n- Follow [security](__URL_0__), [development](__URL_1__), and [user experience](__URL_2__) best practices\n- Offer high-quality merchant support\n- Include a clear and sustainable monetization model, whether through direct sales, subscriptions, or another approach",
         "codeBlocks": [],
@@ -78695,7 +78695,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/products.md": {
     "hash": "98cfd7127fa190fbb95765b99fcc0e1cefa718cf309efd992094be2c3fdb1878",
-    "translatedAt": "2026-02-22T17:11:07.588Z",
+    "translatedAt": "2026-02-22T17:11:08.162Z",
     "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-tags.md": {
@@ -78865,32 +78865,32 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/support-guidelines.md": {
     "hash": "9a07c107a3136d25a207a800877488fe219384ca144506a9e5576e63b7e080c2",
-    "translatedAt": "2026-02-22T17:10:38.513Z",
+    "translatedAt": "2026-02-22T17:10:38.799Z",
     "segments": 45
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/product-update-guidelines.md": {
     "hash": "234c7a61b65a40bdd6049d599a7778d923bb7740221dc10485a7d328e29c50df",
-    "translatedAt": "2026-02-22T17:10:45.964Z",
+    "translatedAt": "2026-02-22T17:10:46.333Z",
     "segments": 58
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/monetization-expectations.md": {
     "hash": "9d07677a395353a8762c91c9bbcf5c30c0428b4e6c695b46e8477ffd09d5f71d",
-    "translatedAt": "2026-02-22T17:10:50.606Z",
+    "translatedAt": "2026-02-22T17:10:51.120Z",
     "segments": 36
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/managing-products.md": {
     "hash": "bdd4f9d4fe9189bf7f71433fd1c0cdf5d92bc38d519d6e24d5bd4a30609410a0",
-    "translatedAt": "2026-02-22T17:10:52.279Z",
+    "translatedAt": "2026-02-22T17:10:52.786Z",
     "segments": 18
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/getting-started.md": {
     "hash": "a6af42e5e506e23a8fc00f9198e9438219de7637c328db7b28912abb6224790c",
-    "translatedAt": "2026-02-22T17:10:55.326Z",
+    "translatedAt": "2026-02-22T17:10:55.901Z",
     "segments": 24
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/content-style-guide.md": {
     "hash": "f1572b3ac4d01e3618c915f7b47ec0820fc80783376d94eaf787b67a48a2ad8c",
-    "translatedAt": "2026-02-22T17:11:03.873Z",
+    "translatedAt": "2026-02-22T17:11:04.308Z",
     "segments": 68
   }
 }
