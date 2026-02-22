@@ -1105,9 +1105,9 @@
     "size": 8603
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/products.md": {
-    "hash": "4ef88f2db3fe382c8891382204f0cb9c97501c05e86f64a5d86279a16362fc65",
-    "updatedAt": "2025-12-27T02:36:17.941Z",
-    "size": 18608
+    "hash": "98cfd7127fa190fbb95765b99fcc0e1cefa718cf309efd992094be2c3fdb1878",
+    "updatedAt": "2026-02-22T17:10:10.718Z",
+    "size": 21340
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-tags.md": {
     "hash": "5836d4154e062a975b051644dc439d7ed580d962d78adade4943956b143b0972",
@@ -1273,5 +1273,35 @@
     "hash": "9c3383f8f15ac90e5da6c556734b91f9014c24ba41bd2c81eda4693fd8630c62",
     "updatedAt": "2026-02-13T17:21:27.821Z",
     "size": 8739
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/support-guidelines.md": {
+    "hash": "9a07c107a3136d25a207a800877488fe219384ca144506a9e5576e63b7e080c2",
+    "updatedAt": "2026-02-22T17:10:10.671Z",
+    "size": 6543
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/product-update-guidelines.md": {
+    "hash": "234c7a61b65a40bdd6049d599a7778d923bb7740221dc10485a7d328e29c50df",
+    "updatedAt": "2026-02-22T17:10:10.672Z",
+    "size": 9947
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/monetization-expectations.md": {
+    "hash": "9d07677a395353a8762c91c9bbcf5c30c0428b4e6c695b46e8477ffd09d5f71d",
+    "updatedAt": "2026-02-22T17:10:10.672Z",
+    "size": 6420
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/managing-products.md": {
+    "hash": "bdd4f9d4fe9189bf7f71433fd1c0cdf5d92bc38d519d6e24d5bd4a30609410a0",
+    "updatedAt": "2026-02-22T17:10:10.672Z",
+    "size": 2264
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/getting-started.md": {
+    "hash": "a6af42e5e506e23a8fc00f9198e9438219de7637c328db7b28912abb6224790c",
+    "updatedAt": "2026-02-22T17:10:10.673Z",
+    "size": 3796
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/content-style-guide.md": {
+    "hash": "f1572b3ac4d01e3618c915f7b47ec0820fc80783376d94eaf787b67a48a2ad8c",
+    "updatedAt": "2026-02-22T17:10:10.673Z",
+    "size": 6841
   }
 }
