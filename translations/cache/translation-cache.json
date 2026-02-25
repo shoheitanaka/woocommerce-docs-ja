@@ -74938,6 +74938,2649 @@
           "https://github.com/woocommerce/woocommerce-blocks/assets/3323310/94e18439-6d6b-44a4-ade1-8302c5984641"
         ]
       }
+    },
+    "35e89dbd82a3e402f9b71147f87908d9e544745a7a1a8647a1a5d26abfb19e6a": {
+      "original": "# Support guidelines for the Woo Marketplace",
+      "translated": "# Woo Marketplaceのサポートガイドライン",
+      "metadata": {
+        "original": "# Support guidelines for the Woo Marketplace",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0ffd6c09f1cf69b7af83388a590f0626d06172d3a444cfa5d4beeea4a30bd422": {
+      "original": "Adhering to the support expectations outlined in this guide is a requirement under the Marketplace Vendor Agreement. Failure to meet these expectations may result in temporary or permanent removal of your products from the Marketplace.",
+      "translated": "本ガイドに記載されているサポートに関する期待事項を遵守することは、マーケットプレイスベンダー契約の要件です。これらの期待事項を満たさない場合、マーケットプレイスから製品が一時的または恒久的に削除される可能性があります。",
+      "metadata": {
+        "original": "Adhering to the support expectations outlined in this guide is a requirement under the Marketplace Vendor Agreement. Failure to meet these expectations may result in temporary or permanent removal of your products from the Marketplace.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a6dc5ca2fba401cbc65de0cfde22f1dbbe3d413a0e2d6c847359c0f60182f106": {
+      "original": "By participating in the WooCommerce.com Marketplace, you're not just selling a product — you're offering a complete customer experience. Providing timely, high-quality support is a core part of that experience and a key factor in building long-term trust with your customers.",
+      "translated": "WooCommerce.comマーケットプレイスに参加することで、単に製品を販売するだけでなく、完全なカスタマーエクスペリエンスを提供することになります。タイムリーで質の高いサポートを提供することは、その体験の中核をなすものであり、顧客との長期的な信頼関係を築くための重要な要素です。",
+      "metadata": {
+        "original": "By participating in the WooCommerce.com Marketplace, you're not just selling a product — you're offering a complete customer experience. Providing timely, high-quality support is a core part of that experience and a key factor in building long-term trust with your customers.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "472db78cfbf2d541709a079a63e041edaa3229d2c8053e680c72730fbf5c942f": {
+      "original": "That said, great support is not only a requirement — it's a growth opportunity. Providing excellent support boosts customer loyalty, increases positive reviews, encourages repeat purchases, and strengthens your reputation in the Marketplace, ultimately contributing to your long-term growth and profitability.",
+      "translated": "つまり、優れたサポートは必要条件であるだけでなく、成長のチャンスでもあるのです。優れたサポートを提供することは、顧客ロイヤルティを高め、好意的なレビューを増やし、リピート購入を促し、マーケットプレイスでの評判を強化し、最終的には長期的な成長と収益性に貢献します。",
+      "metadata": {
+        "original": "That said, great support is not only a requirement — it's a growth opportunity. Providing excellent support boosts customer loyalty, increases positive reviews, encourages repeat purchases, and strengthens your reputation in the Marketplace, ultimately contributing to your long-term growth and profitability.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "034cb5b45cc14088dbec14dc057ca79f5e61f09afab01b8e6018083ea652d98b": {
+      "original": "## Support expectations",
+      "translated": "## サポートへの期待",
+      "metadata": {
+        "original": "## Support expectations",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f55332702683347e59dcae1d76b9a35032d9d2313145a11a3c1179fe4e4e0649": {
+      "original": "Marketplace vendors are responsible for customer support in line with WooCommerce's Support Policy, including:",
+      "translated": "マーケットプレイスベンダーは、WooCommerceのサポートポリシーに沿ったカスタマーサポートの責任を負います：",
+      "metadata": {
+        "original": "Marketplace vendors are responsible for customer support in line with WooCommerce's Support Policy, including:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "951e06ed4010ca2a9d9ae285518b67ff6cc51d09fb82a306cdf005d24256ead2": {
+      "original": "- Timely responses to customer emails.\n- Handling customer reviews and ratings promptly.\n- Managing feature requests posted on product pages.",
+      "translated": "- 顧客からのEメールにタイムリーに返信すること\n- お客様のレビューや評価を迅速に処理する\n- 商品ページに掲載された機能リクエストの管理",
+      "metadata": {
+        "original": "- Timely responses to customer emails.\n- Handling customer reviews and ratings promptly.\n- Managing feature requests posted on product pages.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c176dcf52aa937927f35a5c19025554b22a4803eb832fcb71e424696fb829fac": {
+      "original": "The WooCommerce team supports vendors by managing account issues, refunds, coupons, escalations, and live chat queries.",
+      "translated": "WooCommerce チームは、アカウントの問題、払い戻し、クーポン、エスカレーション、ライブチャットクエリを管理することで、ベンダーをサポートしています。",
+      "metadata": {
+        "original": "The WooCommerce team supports vendors by managing account issues, refunds, coupons, escalations, and live chat queries.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3a6d91522a9d02aba9f293eb0ff9ccb40cf9b18828dd198151323e93f5d5d8b0": {
+      "original": "### Response times",
+      "translated": "### 応答時間",
+      "metadata": {
+        "original": "### Response times",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "79ff2f2ff1c173732b35a4c71944a42fc95d9bcda05d29199a67be151379fedc": {
+      "original": "Timely responses are critical. If you are unavailable or expect delays, communicate this clearly with the WooCommerce team and arrange to redirect support requests appropriately.",
+      "translated": "タイムリーな対応が重要です。対応できない場合や遅延が予想される場合は、WooCommerce チームにその旨を明確に伝え、サポートリクエストを適切にリダイレクトするよう手配してください。",
+      "metadata": {
+        "original": "Timely responses are critical. If you are unavailable or expect delays, communicate this clearly with the WooCommerce team and arrange to redirect support requests appropriately.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "981616bcaa8ef2a8623bcc9efa3f2ded6e666c40d782b50fbadee86e0aeded40": {
+      "original": "### Support ratings",
+      "translated": "### サポート格付け",
+      "metadata": {
+        "original": "### Support ratings",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6eae1c2b802a7c29ca9a2e0fffab1424467b49b77cad78ff356fd5e7820b537d": {
+      "original": "Customers can rate their support experience seven (7) days after submitting a ticket. Maintaining good support ratings is crucial for continued Marketplace participation.",
+      "translated": "顧客は、チケットを提出してから7日後にサポート体験を評価することができます。良好なサポート評価を維持することは、マーケットプレイスへの継続的な参加に不可欠です。",
+      "metadata": {
+        "original": "Customers can rate their support experience seven (7) days after submitting a ticket. Maintaining good support ratings is crucial for continued Marketplace participation.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "68237d50bd93a1ab15e25c00350a4250b1596668e818d75aa97b8ebfb108bbff": {
+      "original": "### Live chat",
+      "translated": "### ライブチャット",
+      "metadata": {
+        "original": "### Live chat",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "dff8d39393a25c8199dcd01f99ec37f42cd54a40805a9db30b3a36dca1c8781f": {
+      "original": "Marketplace vendors provide support exclusively via email. WooCommerce handles live chat queries and redirects product-specific requests to a vendor's support email address.",
+      "translated": "マーケットプレイスベンダーは、電子メールのみでサポートを提供します。WooCommerce は、ライブチャットクエリを処理し、製品固有のリクエストをベンダーのサポートメールアドレスにリダイレクトします。",
+      "metadata": {
+        "original": "Marketplace vendors provide support exclusively via email. WooCommerce handles live chat queries and redirects product-specific requests to a vendor's support email address.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a33acc5dddb31a494affbdf027faf8c4750dd74b28002dfcbd3fa5111a6809b4": {
+      "original": "## How support works",
+      "translated": "## サポートの仕組み",
+      "metadata": {
+        "original": "## How support works",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3745b2fb12a8024ebec204c057943feb13eaafff1716bc0990f46a91d0701910": {
+      "original": "### Ticket routing",
+      "translated": "### チケットのルーティング",
+      "metadata": {
+        "original": "### Ticket routing",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "2c6522c6293ed90920d7f703a68e1adf1c0512382f7aa1af2d228057a2c91218": {
+      "original": "Customers submit tickets through the support request form and are automatically routed to your designated support email address. Each support email includes:",
+      "translated": "お客様がサポートリクエストフォームからチケットを送信すると、自動的にお客様の指定したサポートメールアドレスに送信されます。各サポートメールには以下の内容が含まれます：",
+      "metadata": {
+        "original": "Customers submit tickets through the support request form and are automatically routed to your designated support email address. Each support email includes:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "baec90d00b2154db6f44478615d2aa93c5b4108feb9369439b9451479b9e9bb8": {
+      "original": "- Product name\n- Subscription dates\n- System status report\n- The customer's message.",
+      "translated": "- 商品名\n- サブスクリプションの日付\n- システム状況報告\n- お客様のメッセージ",
+      "metadata": {
+        "original": "- Product name\n- Subscription dates\n- System status report\n- The customer's message.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "53cc65590cddda847191efa112e723f0562278cd0ed5ef1149ad69c38e9abff3": {
+      "original": "### Specifying your support email address",
+      "translated": "### サポート用メールアドレスの指定",
+      "metadata": {
+        "original": "### Specifying your support email address",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "d3e33fc208f59f05b5b303b1bbf1044375e62ea972a139b41acbf9411eb8d91d": {
+      "original": "Specify the email address that support tickets should be routed to in your vendor dashboard via _Settings > Store_. The WooCommerce team will also use this address to copy (CC) you in on tickets.",
+      "translated": "ベンダーのダッシュボードで_設定 > ストア_からサポートチケットの送信先メールアドレスを指定します。WooCommerce チームはこのアドレスをチケットのコピー (CC) に使用します。",
+      "metadata": {
+        "original": "Specify the email address that support tickets should be routed to in your vendor dashboard via _Settings > Store_. The WooCommerce team will also use this address to copy (CC) you in on tickets.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e51080bc85d9a27a8f79f9a8049956f5110329d2ed0b230de96a4b2e7179cef8": {
+      "original": ":::note\nThe Support Email field is different from Contact Email, which is used for order notifications.\n:::",
+      "translated": ":::note\nSupport Emailフィールドは、注文通知に使用されるContact Emailとは異なります。\n:::",
+      "metadata": {
+        "original": ":::note\nThe Support Email field is different from Contact Email, which is used for order notifications.\n:::",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c183fd699749522d6f4e092c106a370e1998bcd6972b09f3f3cc77621412c62d": {
+      "original": "![Support Email field in the vendor dashboard](./_media/support-email-field.png)",
+      "translated": "![ベンダーダッシュボードのサポートEメールフィールド](./_media/support-email-field.png)",
+      "metadata": {
+        "original": "![Support Email field in the vendor dashboard](./_media/support-email-field.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c8bb1018a988f969cd4c466308399606dfd50d43a8b8b5556a8735c7a1a64e42": {
+      "original": "### Getting set up for support ticket replies",
+      "translated": "### サポートチケット返信の設定",
+      "metadata": {
+        "original": "### Getting set up for support ticket replies",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "5078d0c73ef7b824e280b4ce10bc609994b7e23d9fa0b0c07b868b94d755031b": {
+      "original": "- **Activate an autoresponder**: Automatically inform customers that you have received their request, including links to your privacy and data usage policies. Avoid promotional or affiliate links.\n- **Deactivate any platform feedback requests**: Customers already receive feedback requests from the Woo Marketplace directly.",
+      "translated": "- **オートレスポンダー**をアクティブにします：プライバシーポリシーやデータ利用ポリシーへのリンクを含め、リクエストを受け取ったことを顧客に自動的に通知する。プロモーションリンクやアフィリエイトリンクは避ける。\n- **Deactivate any platform feedback requests**：顧客はすでにWoo Marketplaceから直接フィードバックリクエストを受け取っています。",
+      "metadata": {
+        "original": "- **Activate an autoresponder**: Automatically inform customers that you have received their request, including links to your privacy and data usage policies. Avoid promotional or affiliate links.\n- **Deactivate any platform feedback requests**: Customers already receive feedback requests from the Woo Marketplace directly.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8c1c19cd3d771d033d1f59999f8ae4f6b179c685db53366b78ccbae0652ada12": {
+      "original": "## Security and customer login credentials",
+      "translated": "## セキュリティと顧客ログイン情報",
+      "metadata": {
+        "original": "## Security and customer login credentials",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "fb4791e8fe21270e6c57fc39dd4c18039e4012dc3533ebfa92edde4cb7201128": {
+      "original": "If you need to log in to a merchant's store in order to successfully assist them, please follow these guidelines:",
+      "translated": "加盟店へのログインが必要な場合は、以下のガイドラインに従ってください：",
+      "metadata": {
+        "original": "If you need to log in to a merchant's store in order to successfully assist them, please follow these guidelines:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3f79e08fc8b5cbcabbd620bd1b73258e505ca93a54b5f47c951a617c383ea1ce": {
+      "original": "- **Only ask for login credentials once you have exhausted all other options.** This includes asking for screenshots and reproducing the problem on your own test site(s).\n- **When asking for login credentials:**\n    - Inform the customer that, under GDPR regulations, they must mention that they may need to give access to third-party support services in their store's terms and conditions.\n    - Always ask the customer to create a temporary administrator account for you. (You will need to tweak the instructions in the document linked above as you do not have access to __INLINE_CODE_0__.)\n    - At the end of the support interaction, ask the merchant to remove this temporary account.\n- **If the customer shares their details before you are able to provide the instructions above**, always point out that they ideally don't do this and that you strongly advise them to reset their password.\n- **Never ask for plain-text passwords.** Instead, use a password-sharing service like [QuickForget.com](__URL_0__) to create a unique, expiring link.",
+      "translated": "- **スクリーンショットを要求し、あなた自身のテストサイトで問題を再現することを含む。\n- **ログイン認証情報を尋ねる場合：***\n    - GDPRの規制により、サードパーティのサポートサービスへのアクセスを提供する必要がある可能性があることを、ストアの利用規約に記載する必要があることを顧客に伝える。\n    - 必ず顧客に一時的な管理者アカウントの作成を依頼すること。(__INLINE_CODE_0__にアクセスできないため、上記リンク先のドキュメントの指示に手を加える必要があります)\n    - サポートの最後に、この一時的なアカウントを削除するよう加盟店に依頼してください。\n- **上記の指示を提供する前に顧客情報が共有された場合**、顧客はこのようなことをしないのが理想的であり、パスワードをリセットするよう強く勧めることを常に指摘してください。\n- **その代わりに、[QuickForget.com](__URL_0__)のようなパスワード共有サービスを使って、一意の期限付きリンクを作成してください。",
+      "metadata": {
+        "original": "- **Only ask for login credentials once you have exhausted all other options.** This includes asking for screenshots and reproducing the problem on your own test site(s).\n- **When asking for login credentials:**\n    - Inform the customer that, under GDPR regulations, they must mention that they may need to give access to third-party support services in their store's terms and conditions.\n    - Always ask the customer to create a temporary administrator account for you. (You will need to tweak the instructions in the document linked above as you do not have access to __INLINE_CODE_0__.)\n    - At the end of the support interaction, ask the merchant to remove this temporary account.\n- **If the customer shares their details before you are able to provide the instructions above**, always point out that they ideally don't do this and that you strongly advise them to reset their password.\n- **Never ask for plain-text passwords.** Instead, use a password-sharing service like [QuickForget.com](__URL_0__) to create a unique, expiring link.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`woologin@woocommerce.com`"
+        ],
+        "urls": [
+          "https://quickforget.com/"
+        ]
+      }
+    },
+    "1836bcb5e22e8ce5fb95c49d7c275de987529d9e705be72ca6115f499a4eaaa4": {
+      "original": "## Collaboration, refunds, and escalations",
+      "translated": "## コラボレーション、払い戻し、エスカレーション",
+      "metadata": {
+        "original": "## Collaboration, refunds, and escalations",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "97e4fd57d805ab48294d334e53bdccf4626e27755016bf0cd10364fbb5d6922d": {
+      "original": "To collaborate with other Marketplace vendors, you can copy in (CC) relevant parties on support tickets. Contact information for other vendors is available from the WooCommerce team.",
+      "translated": "他のマーケットプレイスベンダーと協力するには、サポートチケットに関連する関係者をコピーイン（CC）することができます。他のベンダーの連絡先情報はWooCommerceチームから入手できます。",
+      "metadata": {
+        "original": "To collaborate with other Marketplace vendors, you can copy in (CC) relevant parties on support tickets. Contact information for other vendors is available from the WooCommerce team.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "afe60d70f6e4136958c823a3fe0966a3a94019db8c21cfaa7952cb16f8beb2f3": {
+      "original": "All refunds, coupons, and escalations are managed by WooCommerce. Forward relevant tickets by CCing the private email address from the Marketplace Developer P2.",
+      "translated": "すべての払い戻し、クーポン、エスカレーションはWooCommerceによって管理されます。マーケットプレイスデベロッパーP2からプライベートEメールアドレスをCCして関連チケットを転送してください。",
+      "metadata": {
+        "original": "All refunds, coupons, and escalations are managed by WooCommerce. Forward relevant tickets by CCing the private email address from the Marketplace Developer P2.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7289ad55a7f18f07f5ebecdd3b5fca6855624db0b35e88cc975c7ea29c2a8592": {
+      "original": "## Marketplace support tools",
+      "translated": "## マーケットプレイス支援ツール",
+      "metadata": {
+        "original": "## Marketplace support tools",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9f8fbefa42d9bf5626a78f18e0304940a65c6861257e1f84f40b72fa2c8e8bbd": {
+      "original": "### Active subscription checks",
+      "translated": "### アクティブな購読チェック",
+      "metadata": {
+        "original": "### Active subscription checks",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "91e6e969e735b47a4ce63b3d8c1e80e0b368c614e67c44255fe50c8fd4ce9006": {
+      "original": "Subscription details are included in customer support emails. Additional checks can be done through your vendor dashboard via _Settings > Tools_.",
+      "translated": "サブスクリプションの詳細は、カスタマーサポートの電子メールに記載されています。追加のチェックは、ベンダーのダッシュボードから _Settings > Tools_ で行うことができます。",
+      "metadata": {
+        "original": "Subscription details are included in customer support emails. Additional checks can be done through your vendor dashboard via _Settings > Tools_.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7a95f91ba83c8fac23a9f7cbe457bd26e885e7a68bfad83c53d3b775a5bcd0a7": {
+      "original": "![A customer's subscription details displayed in a vendor's dashboard](./_media/subscription-details.png)",
+      "translated": "![ベンダーのダッシュボードに表示される顧客の購読詳細](./_media/subscription-details.png)",
+      "metadata": {
+        "original": "![A customer's subscription details displayed in a vendor's dashboard](./_media/subscription-details.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c6198931be5c7eacaba0f13ed5ca0eed694941b04b66499bb39b6d54da9da1cb": {
+      "original": "### Reviews and ratings",
+      "translated": "### レビューと評価",
+      "metadata": {
+        "original": "### Reviews and ratings",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "465b63ec3a82dde6da599b6cf9514ec1b564f938b70db2139883c88fbf08e04c": {
+      "original": "Vendors are expected to monitor and respond to customer ratings and reviews as part of their support responsibilities. Addressing concerns promptly not only improves customer satisfaction but also demonstrates your commitment to quality service.",
+      "translated": "ベンダーは、サポート責任の一環として、顧客の評価やレビューを監視し、対応することが期待されています。懸念事項に迅速に対応することは、顧客満足度を向上させるだけでなく、質の高いサービスに対する貴社のコミットメントを示すことにもなります。",
+      "metadata": {
+        "original": "Vendors are expected to monitor and respond to customer ratings and reviews as part of their support responsibilities. Addressing concerns promptly not only improves customer satisfaction but also demonstrates your commitment to quality service.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "222b8e032d2baea95389f820f02f898b5c0658bdf0d8df8c052cee3b1da6409b": {
+      "original": "Keep in mind that customers are significantly more likely to leave a positive review following a helpful and timely support experience. Engaging positively with customer feedback — both praise and criticism — can strengthen your product reputation and foster long-term trust.",
+      "translated": "顧客は、親切でタイムリーなサポートを受けた後、好意的なレビューを残す可能性が非常に高いことを覚えておいてください。顧客からのフィードバック（賞賛と批判の両方）に積極的に関与することで、製品の評判を高め、長期的な信頼を育むことができます。",
+      "metadata": {
+        "original": "Keep in mind that customers are significantly more likely to leave a positive review following a helpful and timely support experience. Engaging positively with customer feedback — both praise and criticism — can strengthen your product reputation and foster long-term trust.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a12019db7a6b38da8f49f0543c1715b86671ec5125be4d8175a7296eea585fec": {
+      "original": "Reviews and ratings for your products are managed via your vendor dashboard.",
+      "translated": "製品のレビューや評価は、ベンダーダッシュボードで管理できます。",
+      "metadata": {
+        "original": "Reviews and ratings for your products are managed via your vendor dashboard.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "66caee2c5d2763cc3ce565060b8ac11249b1ee8c7fc07585dab537250771bd76": {
+      "original": "![Reviews and ratings displayed in a vendor's dashboard](./_media/reviews-ratings.png)",
+      "translated": "![ベンダーのダッシュボードに表示されるレビューと評価](./_media/reviews-ratings.png)",
+      "metadata": {
+        "original": "![Reviews and ratings displayed in a vendor's dashboard](./_media/reviews-ratings.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8cd59709a47cbd6805e02362bfebdf3bb5bbf1819bdea87d6b4ef4987cd2f1aa": {
+      "original": "### Feature requests",
+      "translated": "### 機能要望",
+      "metadata": {
+        "original": "### Feature requests",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "24ae845b3ad7cdaaadd76395b5884121ac7a384419738594ead4c018a0063006": {
+      "original": "Customers can post feature requests via your product page. These requests are publicly visible and provide valuable insight into what users want from your product.",
+      "translated": "顧客は製品ページから機能要望を投稿することができます。これらのリクエストは一般に公開され、ユーザーが製品に何を求めているかについての貴重な洞察を提供します。",
+      "metadata": {
+        "original": "Customers can post feature requests via your product page. These requests are publicly visible and provide valuable insight into what users want from your product.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f52c7c1eb71909d496c744d8698e9a1e57b25acdeb568f4deab27e32c2a8a61c": {
+      "original": "Vendors are expected to regularly monitor and respond to these requests like any other support channel. Timely, thoughtful engagement with feature requests demonstrates that you value user input and are actively working to improve your product.",
+      "translated": "ベンダーは、他のサポートチャネルと同様に、これらの要望を定期的に監視し、対応することが求められます。機能リクエストに対してタイムリーかつ思慮深く対応することは、ユーザーの意見を重視し、製品の改善に積極的に取り組んでいることを示すことになります。",
+      "metadata": {
+        "original": "Vendors are expected to regularly monitor and respond to these requests like any other support channel. Timely, thoughtful engagement with feature requests demonstrates that you value user input and are actively working to improve your product.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "01a770a96078ed82c56a89fc7dced9afa86511a737b1ccbcb3fb651792f0d209": {
+      "original": "Feature requests are a powerful tool for understanding how customers use your product, identifying common pain points, and shaping your product roadmap. By participating in these conversations, you can build trust and stay aligned with your customers' evolving needs.",
+      "translated": "機能リクエストは、顧客がどのように製品を使用しているかを理解し、共通のペインポイントを特定し、製品ロードマップを形成するための強力なツールです。このような会話に参加することで、信頼を築き、顧客の進化するニーズと常に一致することができます。",
+      "metadata": {
+        "original": "Feature requests are a powerful tool for understanding how customers use your product, identifying common pain points, and shaping your product roadmap. By participating in these conversations, you can build trust and stay aligned with your customers' evolving needs.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0200d7a57d20b1efab9d4fc8bb0c69d3a069d804ea16cb0468e372b5dabb2593": {
+      "original": "Feature requests for your products are managed in your vendor dashboard via _Feature Requests_.",
+      "translated": "製品の機能リクエストは、ベンダーダッシュボードの _Feature Requests_ で管理できます。",
+      "metadata": {
+        "original": "Feature requests for your products are managed in your vendor dashboard via _Feature Requests_.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "bec77ca2b60cbec507df0b811c0e926d262508d41f971e03a7db998461e43d05": {
+      "original": "![Feature requests listed in a vendor's dashboard](./_media/feature-requests.png)\n",
+      "translated": "![ベンダーのダッシュボードに表示される機能要望](./_media/feature-requests.png)\n",
+      "metadata": {
+        "original": "![Feature requests listed in a vendor's dashboard](./_media/feature-requests.png)\n",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "537c89a7bcc21d1fccdeaa76800e883bf7cc1f86992c61a30bcfe4cb20421d00": {
+      "original": "# Product update guidelines and best practices",
+      "translated": "# 製品アップデートのガイドラインとベストプラクティス",
+      "metadata": {
+        "original": "# Product update guidelines and best practices",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6d63354e78c9df2e1da5fd09a7e02e34ab955a5b29904693d9c10f9b9023d9c0": {
+      "original": "To maintain a high-quality and competitive Marketplace, we encourage all vendors to regularly update their products. Consistent updates ensure compatibility with the latest versions of WooCommerce and WordPress, improve security and performance, and deliver ongoing value to customers.",
+      "translated": "高品質で競争力のあるマーケットプレイスを維持するため、すべてのベンダーに定期的な製品のアップデートを推奨しています。一貫したアップデートは、WooCommerceとWordPressの最新バージョンとの互換性を確保し、セキュリティとパフォーマンスを向上させ、お客様に継続的な価値を提供します。",
+      "metadata": {
+        "original": "To maintain a high-quality and competitive Marketplace, we encourage all vendors to regularly update their products. Consistent updates ensure compatibility with the latest versions of WooCommerce and WordPress, improve security and performance, and deliver ongoing value to customers.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1bca41ffd0b40b0c30bbefcc43bb15e00f513a0cd403558692389a465638fa04": {
+      "original": "- Update your product at minimum **every 6 months**.\n- Align with the [WooCommerce core release calendar](__URL_0__).\n- Use tools such as the [Quality Insights Toolkit](__URL_1__) (QIT) and your **vendor dashboard**.\n- Check the [feature request portal](__URL_2__) for product ideas.\n- Regular updates = better customer trust and renewal rates.",
+      "translated": "[- 最低でも**6ヶ月ごと**に製品を更新してください。\n- WooCommerceコアリリースカレンダー](__URL_0__)に合わせてください。\n- Quality Insights [Toolkit](__URL_1__) (QIT)や**ベンダーダッシュボード**などのツールを使用してください。\n- [機能リクエストポータル](__URL_2__)をチェックし、製品のアイデアを探しましょう。\n- 定期的なアップデート＝顧客の信頼と更新率の向上。",
+      "metadata": {
+        "original": "- Update your product at minimum **every 6 months**.\n- Align with the [WooCommerce core release calendar](__URL_0__).\n- Use tools such as the [Quality Insights Toolkit](__URL_1__) (QIT) and your **vendor dashboard**.\n- Check the [feature request portal](__URL_2__) for product ideas.\n- Regular updates = better customer trust and renewal rates.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://developer.woocommerce.com/release-calendar/",
+          "https://qit.woo.com/",
+          "https://woocommerce.com/document/feature-request-portal/"
+        ]
+      }
+    },
+    "dca9942b9b8c9502d7d24b1474fa17b7b091674ace89644e5d2eb26c77e2cf70": {
+      "original": "## Why regular updates matter",
+      "translated": "## なぜ定期的なアップデートが重要なのか",
+      "metadata": {
+        "original": "## Why regular updates matter",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "889dd9b11f52a9acf2beb901f8780fad6a84055223d888cea99850993f7934ee": {
+      "original": "- **Compatibility**: Ensures your product works seamlessly with the latest WooCommerce and WordPress releases.\n- **Security**: Patches vulnerabilities and keeps customer sites secure.\n- **Performance**: Enhances speed, reliability, and efficiency.\n- **Customer trust**: Builds confidence in your brand and product longevity. Regularly updated products often see higher renewal rates. Each update is a reminder of the value of keeping a subscription.\n- **Support load reduction**: Reduces the number of support tickets by proactively addressing issues.",
+      "translated": "- **互換性**：最新のWooCommerceとWordPressのリリースで製品がシームレスに動作することを保証します。\n- **セキュリティ**：脆弱性のパッチを適用し、お客様のサイトを安全に保ちます。\n- **パフォーマンススピード、信頼性、効率を向上させます。\n- **顧客の信頼**：ブランドと製品の寿命に対する信頼を築きます。定期的に更新される製品は、更新率が高くなります。アップデートのたびに、サブスクリプションを維持する価値を再認識できます。\n- **サポート負荷の軽減**：積極的に問題に対処することで、サポートチケットの数を減らすことができます。",
+      "metadata": {
+        "original": "- **Compatibility**: Ensures your product works seamlessly with the latest WooCommerce and WordPress releases.\n- **Security**: Patches vulnerabilities and keeps customer sites secure.\n- **Performance**: Enhances speed, reliability, and efficiency.\n- **Customer trust**: Builds confidence in your brand and product longevity. Regularly updated products often see higher renewal rates. Each update is a reminder of the value of keeping a subscription.\n- **Support load reduction**: Reduces the number of support tickets by proactively addressing issues.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e549615e176311c563a448c6c3e04b754c8e202711d8e473106a5cba441c21bb": {
+      "original": "### Recommendations",
+      "translated": "### 推奨事項",
+      "metadata": {
+        "original": "### Recommendations",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "312a45e0766c140494e90afcc6ca8cbf492d6a71f51baf13842655836e061512": {
+      "original": "1. **Monitor the [WooCommerce release calendar](__URL_0__)**: Anticipate changes that might impact your product.\n2. **Engage customer feedback**: Use reviews, support tickets, and feature requests to inform improvements, new features, and community-requested improvements.\n3. **Use semantic versioning**: Example: __INLINE_CODE_0__ for features, __INLINE_CODE_1__ for breaking changes.\n4. **Test thoroughly**: Ensure updates are stable and backward-compatible where possible. Consider integrating the [Quality Insights Tool](__URL_1__) (QIT) into your workflow to automatically detect potential issues.\n5. **Document changes transparently**: Maintain clear, customer-facing changelogs, update the documentation and the product page if needed.",
+      "translated": "1. **[WooCommerceリリースカレンダー](__URL_0__)**を監視してください：製品に影響を与える可能性のある変更を予測します。\n2. **顧客からのフィードバックを活用するレビュー、サポートチケット、機能リクエストを使って、改善、新機能、コミュニティから要求された改善をお知らせします。\n3. **セマンティック・バージョニング**を使用する：例例：機能には__INLINE_CODE_0__、変更点には__INLINE_CODE_1__を使用する。\n4. **徹底的なテスト**：可能であれば、アップデートが安定しており、後方互換性があることを確認してください。潜在的な問題を自動的に検出するために、[Quality Insights Tool](__URL_1__) (QIT)をワークフローに統合することを検討してください。\n5. **変更を透明性をもって文書化する**：顧客向けの明確な変更履歴を維持し、必要に応じてドキュメントと製品ページを更新しましょう。",
+      "metadata": {
+        "original": "1. **Monitor the [WooCommerce release calendar](__URL_0__)**: Anticipate changes that might impact your product.\n2. **Engage customer feedback**: Use reviews, support tickets, and feature requests to inform improvements, new features, and community-requested improvements.\n3. **Use semantic versioning**: Example: __INLINE_CODE_0__ for features, __INLINE_CODE_1__ for breaking changes.\n4. **Test thoroughly**: Ensure updates are stable and backward-compatible where possible. Consider integrating the [Quality Insights Tool](__URL_1__) (QIT) into your workflow to automatically detect potential issues.\n5. **Document changes transparently**: Maintain clear, customer-facing changelogs, update the documentation and the product page if needed.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`v2.1.0`",
+          "`v3.0.0`"
+        ],
+        "urls": [
+          "https://developer.woocommerce.com/release-calendar/",
+          "https://qit.woo.com/docs/"
+        ]
+      }
+    },
+    "a54789a625c0e5f79527469931dc70adb9ff560e8cb3e4c2cdba334f7b6777ee": {
+      "original": "### Marketplace expectations",
+      "translated": "### 市場からの期待",
+      "metadata": {
+        "original": "### Marketplace expectations",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4612b9fa422d529f8d9e42c83ae7237eb65c0dc7092277f99933d7acbbf73979": {
+      "original": "Products that fail to stay current with WooCommerce core and/or those that are not updated at least once every six months will be **flagged for removal** from the WooCommerce Marketplace.",
+      "translated": "WooCommerceコアの最新情報に更新されていない製品、および/または少なくとも6ヶ月に1回更新されていない製品は、WooCommerceマーケットプレイスから**削除フラグ**が立てられます。",
+      "metadata": {
+        "original": "Products that fail to stay current with WooCommerce core and/or those that are not updated at least once every six months will be **flagged for removal** from the WooCommerce Marketplace.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "eda80e5063a9c62d3ca5de85b662c2331b08c3629cd6fe1bb87fd7c830c62d69": {
+      "original": "### Recommended update cadence",
+      "translated": "### 推奨更新周期",
+      "metadata": {
+        "original": "### Recommended update cadence",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "5e96e04b1d7e329de17d057f7520f6562332c2569afdaa7c2910d99d00dedc7d": {
+      "original": "- **Major releases**: At least quarterly, to align with [WooCommerce core releases](__URL_0__).\n- **Security fixes**: As needed, with urgency.\n- **Minor improvements**: Monthly or as features and fixes are ready.\n- **Documentation**: Keep changelogs and user guides current with each release.",
+      "translated": "[- **メジャーリリース**：WooCommerceのコアリリース](__URL_0__)に合わせて、少なくとも四半期ごとにリリースします。\n- **セキュリティ修正**：必要に応じて、緊急に。\n- **小さな改善**：毎月、または機能や修正の準備ができ次第。\n- **ドキュメント**：リリースごとに変更履歴とユーザーガイドを最新に保つ。",
+      "metadata": {
+        "original": "- **Major releases**: At least quarterly, to align with [WooCommerce core releases](__URL_0__).\n- **Security fixes**: As needed, with urgency.\n- **Minor improvements**: Monthly or as features and fixes are ready.\n- **Documentation**: Keep changelogs and user guides current with each release.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://developer.woocommerce.com/release-calendar/"
+        ]
+      }
+    },
+    "c1ba7c5468ad0c23193aced88c3b795dd831c368eaaf1b371828d2dde20cd4e2": {
+      "original": "## How to deploy updates",
+      "translated": "## アップデートの配布方法",
+      "metadata": {
+        "original": "## How to deploy updates",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "198dbafcfe2e1f3b93a5edaaf2042f0f01518bc8e1e275104776c0525cf21430": {
+      "original": "### Uploading new versions",
+      "translated": "### 新しいバージョンのアップロード",
+      "metadata": {
+        "original": "### Uploading new versions",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f3325d8fce61a2c16ce3ded3e392efdbb027d4d3e36934f2be912ac39021d6e8": {
+      "original": "Before uploading a new version of your extension, it is important to ensure that it passes all QIT quality standards. You can run these checks from your vendor dashboard by clicking the **_Quality Insights_** menu option.",
+      "translated": "拡張機能の新バージョンをアップロードする前に、すべてのQIT品質基準に合格していることを確認することが重要です。これらのチェックは、ベンダーのダッシュボードから **_Quality Insights_** メニューオプションをクリックして実行できます。",
+      "metadata": {
+        "original": "Before uploading a new version of your extension, it is important to ensure that it passes all QIT quality standards. You can run these checks from your vendor dashboard by clicking the **_Quality Insights_** menu option.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "2c9afed6d29d026921685e78af50490548af07e43f8568603b4f5d3d0ca32903": {
+      "original": "[Learn more about QIT tests and how to run them](__URL_0__).",
+      "translated": "[QITテストの詳細と実行方法](__URL_0__)。",
+      "metadata": {
+        "original": "[Learn more about QIT tests and how to run them](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://qit.woo.com/docs/"
+        ]
+      }
+    },
+    "7ba789b7af3221b12f6648bfe3e96f0bb08814a50deb22e4c05bd3eb0eacc3f9": {
+      "original": "You can upload the updated version after your extension passes all QIT checks.",
+      "translated": "エクステンションがQITのチェックをすべて通過した後、更新版をアップロードすることができます。",
+      "metadata": {
+        "original": "You can upload the updated version after your extension passes all QIT checks.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a3d03d85eb7be82479ab74fdf49e27b8d0b09c2a7512cd0563b7bcc20bbc4774": {
+      "original": "Click the **Versions** tab. You'll see all the versions you've previously uploaded, including highlights about what was in each version.",
+      "translated": "バージョン**」タブをクリックします。過去にアップロードしたすべてのバージョンと、各バージョンのハイライトが表示されます。",
+      "metadata": {
+        "original": "Click the **Versions** tab. You'll see all the versions you've previously uploaded, including highlights about what was in each version.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1eef7130438194d7ee2989240dc457217f1bdf2c1166337e45e7cdf42341bf29": {
+      "original": "![Product versions tab](./_media/product-update-versions.png)",
+      "translated": "![製品バージョンタブ](./_media/product-update-versions.png)",
+      "metadata": {
+        "original": "![Product versions tab](./_media/product-update-versions.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "81c830eeb5f22907ece3d0fbea5d08ff8ddeb5047df58d5fd28dea96bd0e06d5": {
+      "original": "Click the **Add version** button, then:",
+      "translated": "バージョン追加**ボタンをクリックしてください：",
+      "metadata": {
+        "original": "Click the **Add version** button, then:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "90685a6e99156948b9f89593f0fb7a1f732bc08df1846345a8a2f8a644da9692": {
+      "original": "1. **Select the .zip file** you want to upload from your computer.\n2. **Add the version number**.\n3. Click **Submit new version**.",
+      "translated": "1. **あなたのコンピュータからアップロードしたい.zipファイル**を選択してください。\n2. **バージョン番号**を追加します。\n3.新しいバージョンを提出する**をクリックします。",
+      "metadata": {
+        "original": "1. **Select the .zip file** you want to upload from your computer.\n2. **Add the version number**.\n3. Click **Submit new version**.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "bf03d410d7574331d62fef702e731e1abe53dd258bc56e3bf3c7449539f069f5": {
+      "original": "Once submitted, we will run the following tests on the uploaded file:",
+      "translated": "送信されると、アップロードされたファイルに対して以下のテストが実行されます：",
+      "metadata": {
+        "original": "Once submitted, we will run the following tests on the uploaded file:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ebefe76bb4e2d2227396fa2608f38619f25b8f9b7dcd8cedfb5a61065af061a7": {
+      "original": "- [End-to-end](__URL_0__) (E2E)\n- [Activation](__URL_1__)\n- [Security](__URL_2__)\n- [Woo API](__URL_3__)\n- [PHPCompatibility](__URL_4__)\n- [Malware](__URL_5__)",
+      "translated": "- [エンド・ツー・エンド](__URL_0__) (E2E)\n- [Activation](__URL_1__)\n- [Security](__URL_2__)\n- [Woo API](__URL_3__)\n- [PHPC互換性](__URL_4__)\n- [マルウェア](__URL_5__)",
+      "metadata": {
+        "original": "- [End-to-end](__URL_0__) (E2E)\n- [Activation](__URL_1__)\n- [Security](__URL_2__)\n- [Woo API](__URL_3__)\n- [PHPCompatibility](__URL_4__)\n- [Malware](__URL_5__)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://qit.woo.com/docs/managed-tests/woo-e2e",
+          "https://qit.woo.com/docs/managed-tests/activation",
+          "https://qit.woo.com/docs/managed-tests/security",
+          "https://qit.woo.com/docs/managed-tests/woo-api",
+          "https://qit.woo.com/docs/managed-tests/phpcompatibility",
+          "https://qit.woo.com/docs/managed-tests/malware"
+        ]
+      }
+    },
+    "3651ac800ac09df959cacd53942d0187d35446cf88815a02dff6f9aa737acabd": {
+      "original": "All vendor admins will receive email notifications throughout the process, including:",
+      "translated": "すべてのベンダーの管理者は、プロセスを通じて、以下のような電子メール通知を受け取ります：",
+      "metadata": {
+        "original": "All vendor admins will receive email notifications throughout the process, including:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0056d3bdbb6b5852a0536a28204a3c4fd0afdbbb9dec720315749144366f8b8f": {
+      "original": "- **Confirmation:** Vendor admins will receive an email when a new version is submitted, confirming that it is in the queue. No action is needed.\n- **Rejected:** If a version fails any part of our automated testing, vendor admins will receive an email including the specific error. Developers should try to resolve the error and submit a new version when ready.\n- **Live:** If a version passes automated testing, it will be automatically deployed and made available to customers. No action is needed.",
+      "translated": "- **ベンダーの管理者は、新しいバージョンが提出されると、それがキューにあることを確認するEメールを受け取ります。何もする必要はありません。\n- **不合格:** テストが不合格になった場合、ベンダーの管理者は具体的なエラーを含むメールを受け取ります。開発者はエラーの解決に努め、準備ができ次第新しいバージョンを提出してください。\n- **自動テストに合格したバージョンは自動的にデプロイされ、顧客に提供されます。何もする必要はありません。",
+      "metadata": {
+        "original": "- **Confirmation:** Vendor admins will receive an email when a new version is submitted, confirming that it is in the queue. No action is needed.\n- **Rejected:** If a version fails any part of our automated testing, vendor admins will receive an email including the specific error. Developers should try to resolve the error and submit a new version when ready.\n- **Live:** If a version passes automated testing, it will be automatically deployed and made available to customers. No action is needed.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4cf9d937d50925d2b8032b4c93c009fba7e7cd6ae0da0012104ea5cb174bea91": {
+      "original": "Activation, security, and malware test passes are required for a new product version to be deployed.",
+      "translated": "新しい製品バージョンを導入するには、アクティベーション、セキュリティ、およびマルウェアテストの合格が必要です。",
+      "metadata": {
+        "original": "Activation, security, and malware test passes are required for a new product version to be deployed.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "46166cbfd599b85b62a013ceeaf8b45ad527b397e43321217ac77836632e3c78": {
+      "original": "#### Formatting the changelog",
+      "translated": "#### 変更履歴のフォーマット",
+      "metadata": {
+        "original": "#### Formatting the changelog",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b2c281b671bc4c6c2d8c3083b4f6401b0441fb95f6ec5ee703c1a34da9015629": {
+      "original": "[Learn more about changelog formatting and entry types](__URL_0__).",
+      "translated": "[変更ログのフォーマットとエントリータイプについての詳細](__URL_0__)。",
+      "metadata": {
+        "original": "[Learn more about changelog formatting and entry types](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://developer.woocommerce.com/docs/extensions/core-concepts/changelog-txt/#the-changelogtxt-file"
+        ]
+      }
+    },
+    "7fae62e38558fa9ffb3e502a461f86091f28028533606d56ce28c9818b5e24ed": {
+      "original": "#### Common errors",
+      "translated": "#### よくあるエラー",
+      "metadata": {
+        "original": "#### Common errors",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3b58bb61f792efa8acdc23618ad7d094ea8571a933d4e003cb3e2708277d62f5": {
+      "original": "If an upload fails, there are a few common errors you should check first:",
+      "translated": "アップロードに失敗した場合、まず確認すべき一般的なエラーがいくつかあります：",
+      "metadata": {
+        "original": "If an upload fails, there are a few common errors you should check first:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "09866cf30bec38fd83d8e89469a0a2cbff8bc8e608fdf0c580ca179535dba1fc": {
+      "original": "- **The name of the file:** WooCommerce.com looks for a specific name for your .zip file and the main folder within it. You will see the expected name when you try to upload a product:",
+      "translated": "- **ファイル名:** WooCommerce.comはあなたの.zipファイルとその中のメインフォルダに特定の名前を探します。商品をアップロードしようとすると、予想される名前が表示されます：",
+      "metadata": {
+        "original": "- **The name of the file:** WooCommerce.com looks for a specific name for your .zip file and the main folder within it. You will see the expected name when you try to upload a product:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4b7e5fd135a22d2c970cc53c21b86c064fcc51aaf5c3df66eb3a6101666653e2": {
+      "original": "![Expected file name format](./_media/product-update-filename.png)",
+      "translated": "![期待されるファイル名形式](./_media/product-update-filename.png)",
+      "metadata": {
+        "original": "![Expected file name format](./_media/product-update-filename.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8399ff8ce095530ba81f15ee5512b0e51c73b85295eaa35efdcf025498b8eba4": {
+      "original": "- **A changelog is present**: A file named __INLINE_CODE_0__ must be present to serve as a record of what's changed from version to version.\n- **Invalid changelog:** The __INLINE_CODE_1__ file provided does not match the expected format.\n- **Mismatched version header**: The version in the extension header does not match the version provided during the upload process.\n- **Mismatched version numbers:** The version in the extension header and the __INLINE_CODE_2__ do not match.",
+      "translated": "- **変更ログが存在する**：__INLINE_CODE_0__という名前のファイルが、バージョンからバージョンへの変更点の記録として存在しなければなりません。\n- **提供された __INLINE_CODE_1__ ファイルは期待された形式と一致しません。\n- **バージョンヘッダーが不一致です：拡張機能ヘッダのバージョンが、アップロード中に提供されたバージョンと一致しません。\n- **拡張機能ヘッダーのバージョンと__INLINE_CODE_2__のバージョンが一致しません。",
+      "metadata": {
+        "original": "- **A changelog is present**: A file named __INLINE_CODE_0__ must be present to serve as a record of what's changed from version to version.\n- **Invalid changelog:** The __INLINE_CODE_1__ file provided does not match the expected format.\n- **Mismatched version header**: The version in the extension header does not match the version provided during the upload process.\n- **Mismatched version numbers:** The version in the extension header and the __INLINE_CODE_2__ do not match.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`changelog.txt`",
+          "`changelog.txt`",
+          "`changelog.txt`"
+        ],
+        "urls": []
+      }
+    },
+    "4a515b5130dd3c146b8899a44fc79fe4845bf1f5e2cccb8dedd6cbf7e59a35c9": {
+      "original": "#### Viewing test results",
+      "translated": "#### テスト結果の表示",
+      "metadata": {
+        "original": "#### Viewing test results",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ef8230f5d48cd50ca8294eb3bef9970cfde71d1e6bebe3a0b0e87aa723aa3a62": {
+      "original": "The results from the automated tests will be in the **Submission Tests** table, which can be viewed by clicking the associated **View** link as shown in the image below:",
+      "translated": "自動テストの結果は **Submission Tests** テーブルに表示され、下図のように関連する **View** リンクをクリックすることで確認できます：",
+      "metadata": {
+        "original": "The results from the automated tests will be in the **Submission Tests** table, which can be viewed by clicking the associated **View** link as shown in the image below:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b2e37457fa42cd880773d7be074196959e2bd5fe2069acb7873cf5237664095f": {
+      "original": "![Test results view](./_media/product-update-test-results.png)",
+      "translated": "![テスト結果表示](./_media/product-update-test-results.png)",
+      "metadata": {
+        "original": "![Test results view](./_media/product-update-test-results.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1f852d73e0906238e50c0bdaa88d29167a06e66824819064ae3377961127a48f": {
+      "original": "### Programmatically uploading new versions",
+      "translated": "### プログラムによる新バージョンのアップロード",
+      "metadata": {
+        "original": "### Programmatically uploading new versions",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b3e7a246280c3eb5bfeaae7990046c150aad2c4045a49cfdd978ec8e908319e5": {
+      "original": "To deploy an extension programmatically, it must be an extension update and **not** a new submission. This method serves as an alternative to logging into the vendor dashboard and using the user interface (UI) to perform the same action.",
+      "translated": "プログラムによって拡張機能をデプロイするには、拡張機能の更新でなければなりません。この方法は、ベンダーのダッシュボードにログインし、ユーザインタフェース (UI) を使用して同じアクションを実行する方法の代替となります。",
+      "metadata": {
+        "original": "To deploy an extension programmatically, it must be an extension update and **not** a new submission. This method serves as an alternative to logging into the vendor dashboard and using the user interface (UI) to perform the same action.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3c81ecf569a462a39a3efdf7324fa5174d18325dfb2c49bee51c53f7bc1c7cb7": {
+      "original": "#### Generating an application password",
+      "translated": "#### アプリケーションパスワードの生成",
+      "metadata": {
+        "original": "#### Generating an application password",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "098ad960a21a6fd33117a348014320b0d4d565a70b7885d78de2616d0d584269": {
+      "original": "1. Ensure that you are logged into your WooCommerce vendor dashboard.\n2. [Create an application password](__URL_0__).",
+      "translated": "1.WooCommerceベンダーダッシュボードにログインしていることを確認してください。\n2.[アプリケーションパスワードの作成](__URL_0__).",
+      "metadata": {
+        "original": "1. Ensure that you are logged into your WooCommerce vendor dashboard.\n2. [Create an application password](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/wp-admin/authorize-application.php?app_name=WCCOM+Product+Submissions&app_id=c08e8963-897b-46cd-91e9-e92488ac9120"
+        ]
+      }
+    },
+    "341092253798fb9c4c585757a4d5f6175f88fd75a9c4f2b66e8c28c907ef85da": {
+      "original": ":::note\nFor extra security, this application password is scoped to the deploy endpoint and cannot be used to perform any other action on the user's behalf.\n:::",
+      "translated": ":::note\n追加のセキュリティのため、このアプリケーションパスワードはデプロイエンドポイントにスコープされ、ユーザーに代わって他のアクションを実行するために使用することはできません。\n:::",
+      "metadata": {
+        "original": ":::note\nFor extra security, this application password is scoped to the deploy endpoint and cannot be used to perform any other action on the user's behalf.\n:::",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "30a4cc273b2aaf08fd29a35dfe3972d5fdebaf99015b793c1a241456c10ccc95": {
+      "original": "#### Deploying your product",
+      "translated": "#### 製品の展開",
+      "metadata": {
+        "original": "#### Deploying your product",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3f8a9a4a4672305c1aa565884e26afe5d466921dae73210c64ec00c58d049c59": {
+      "original": "Make a POST request to deploy your product using the following command:",
+      "translated": "以下のコマンドを使用して、製品をデプロイするためのPOSTリクエストを行う：",
+      "metadata": {
+        "original": "Make a POST request to deploy your product using the following command:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b1a755ffebc6b58e95d699b0d968e7467610d0384b4f22283bba734328566a81": {
+      "original": "Replace __INLINE_CODE_0__, __INLINE_CODE_1__, __INLINE_CODE_2__, and __INLINE_CODE_3__ with your actual product ID, username, application password, and product version, respectively.",
+      "translated": "__INLINE_CODE_0__、__INLINE_CODE_1__、__INLINE_CODE_2__、__INLINE_CODE_3__は、それぞれ実際のプロダクトID、ユーザー名、アプリケーションパスワード、製品バージョンに置き換えてください。",
+      "metadata": {
+        "original": "Replace __INLINE_CODE_0__, __INLINE_CODE_1__, __INLINE_CODE_2__, and __INLINE_CODE_3__ with your actual product ID, username, application password, and product version, respectively.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`<product_id>`",
+          "`<username>`",
+          "`<app_password>`",
+          "`<product_version>`"
+        ],
+        "urls": []
+      }
+    },
+    "3a317b98c7f88bf25a1ac4ead261b7c11c9f65f7c388c47fe1512c59da2153bd": {
+      "original": "#### Checking deployment status",
+      "translated": "#### 配備状況の確認",
+      "metadata": {
+        "original": "#### Checking deployment status",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7a69d2244a2dd258e6571c8d4c708b273cd8a31c81579eae6e21a72780e4ac27": {
+      "original": "To check the status of your deployment, use the following command:",
+      "translated": "デプロイのステータスを確認するには、以下のコマンドを使用する：",
+      "metadata": {
+        "original": "To check the status of your deployment, use the following command:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ecee20984e10b47fc836fb2c7fb4256a823e15d67210d934f7b7a21717daf5cd": {
+      "original": "#### Status response",
+      "translated": "#### ステータス・レスポンス",
+      "metadata": {
+        "original": "#### Status response",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4304e5dc3eff241af2b71a26050a0ec20952cfac97a9d32b508a6d2fd6ca0b25": {
+      "original": "When you query the deployment status, the response will provide details about the progress, including the status of various test runs.",
+      "translated": "デプロイメント ステータスを照会すると、さまざまなテストの実行状況など、進行状況に関する詳細がレスポンスで返されます。",
+      "metadata": {
+        "original": "When you query the deployment status, the response will provide details about the progress, including the status of various test runs.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "225690a3046c5fc8cc29de99ae0b1c89ccfb249b7d3caf4bbf21b9b6375e119a": {
+      "original": "Below is an example of this response:",
+      "translated": "以下はその回答例である：",
+      "metadata": {
+        "original": "Below is an example of this response:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0ca4651c047dd9fdc3ee5ff49f65606c15fa056f9323362d14ac351646e8f7f7": {
+      "original": "> **Note:** Additional test run objects may be present in the response, one for each test type that was executed.",
+      "translated": "> 注：*** 実行されたテストタイプごとに、追加のテスト実行オブジェクトが存在する場合があります。",
+      "metadata": {
+        "original": "> **Note:** Additional test run objects may be present in the response, one for each test type that was executed.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "269e33cd314580dbd0a9334df003fc25c80a291657e616c5556e424b3f1ff098": {
+      "original": "### Maximize compatibility and reliability via custom E2E tests",
+      "translated": "### カスタム E2E テストによる互換性と信頼性の最大化",
+      "metadata": {
+        "original": "### Maximize compatibility and reliability via custom E2E tests",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e1887c4913b9aa485d8a0652b0f7ef449c4ceb28b1ce1a7bd8531c4327f890a7": {
+      "original": "We strongly encourage contributing E2E tests for your extensions built on top of the QIT's [custom E2E testing framework](__URL_0__). By sharing these tests with us, you play a crucial role in ensuring true compatibility across different WordPress and WooCommerce versions, various PHP environments, and alongside other popular extensions.",
+      "translated": "QIT の [カスタム E2E テストフレームワーク](__URL_0__) 上に構築された拡張機能の E2E テストを寄稿することを強く推奨します。これらのテストを私たちと共有することで、異なる WordPress や WooCommerce のバージョン、さまざまな PHP 環境、そして他の人気のある拡張機能との間で、真の互換性を確保する上で重要な役割を果たします。",
+      "metadata": {
+        "original": "We strongly encourage contributing E2E tests for your extensions built on top of the QIT's [custom E2E testing framework](__URL_0__). By sharing these tests with us, you play a crucial role in ensuring true compatibility across different WordPress and WooCommerce versions, various PHP environments, and alongside other popular extensions.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://qit.woo.com/docs/custom-tests/introduction"
+        ]
+      }
+    },
+    "f7ee792ec768c45a945983610fc860fa9cb3b88a624a009c417cd73913adbfc7": {
+      "original": "Our custom E2E testing framework — equipped with a Dockerized development environment and simple-to-use command tools — empowers you to design and execute comprehensive tests using [Playwright](__URL_0__) that are tailored to your extension's unique functionalities.",
+      "translated": "当社のカスタムE2Eテストフレームワークは、Docker化された開発環境と使いやすいコマンドツールを備えており、[Playwright](__URL_0__)を使用して、拡張機能独自の機能に合わせて包括的なテストを設計し、実行することができます。",
+      "metadata": {
+        "original": "Our custom E2E testing framework — equipped with a Dockerized development environment and simple-to-use command tools — empowers you to design and execute comprehensive tests using [Playwright](__URL_0__) that are tailored to your extension's unique functionalities.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://playwright.dev/"
+        ]
+      }
+    },
+    "242b25ead950c83b841f24f4d19b4c8d9210521b81feac01984d5e9630ef9c3f": {
+      "original": "Not only does this initiative help mitigate potential compatibility issues before they affect users, but it also enhances the overall reliability of the products within our marketplace. Participating in this process not only contributes to a robust ecosystem but also elevates your extension's reputation for quality and reliability.",
+      "translated": "このイニシアチブは、潜在的な互換性の問題がユーザーに影響を与える前に緩和するのに役立つだけでなく、私たちのマーケットプレイス内の製品の全体的な信頼性を高めることにもなります。このプロセスに参加することは、堅牢なエコシステムに貢献するだけでなく、エクステンションの品質と信頼性に対する評価を高めることにもつながります。",
+      "metadata": {
+        "original": "Not only does this initiative help mitigate potential compatibility issues before they affect users, but it also enhances the overall reliability of the products within our marketplace. Participating in this process not only contributes to a robust ecosystem but also elevates your extension's reputation for quality and reliability.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9a6b4547a7c21840169306c3f532d3eea0a5f6c25b8d5f2945f0c4d357e27cc4": {
+      "original": "Review our [QIT custom test documentation](__URL_0__) to begin leveraging the power of custom tests to guarantee your extension works seamlessly in real-world scenarios and stands out in the competitive Marketplace.",
+      "translated": "[QITカスタムテスト・ドキュメント](__URL_0__) を参照して、カスタムテストの力を活用し、拡張機能が実際のシナリオでシームレスに動作し、競争の激しいマーケットプレイスで際立つことを保証してください。",
+      "metadata": {
+        "original": "Review our [QIT custom test documentation](__URL_0__) to begin leveraging the power of custom tests to guarantee your extension works seamlessly in real-world scenarios and stands out in the competitive Marketplace.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://qit.woo.com/docs/custom-tests/introduction"
+        ]
+      }
+    },
+    "5945b9a408dcea60f590851433b44f55944b09ecab281aec6d0f718f66f8a222": {
+      "original": "## Need help?",
+      "translated": "## ヘルプが必要ですか？",
+      "metadata": {
+        "original": "## Need help?",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9ed4516baec9cee314b926924e9122715d76e0fa44ffecf18969519c721cdb39": {
+      "original": "Feel free to reach out to the Marketplace team for update planning, QIT help, or deployment issues.",
+      "translated": "アップデートの計画、QITのヘルプ、デプロイメントに関する問題など、お気軽にマーケットプレイスチームまでお問い合わせください。",
+      "metadata": {
+        "original": "Feel free to reach out to the Marketplace team for update planning, QIT help, or deployment issues.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "feb4320cd645319f4a5bb16111130e3dbeb9ed78216d555f60f386a65721e74c": {
+      "original": "Let's work together to keep the WooCommerce.com Marketplace innovative, secure, and reliable for everyone!\n",
+      "translated": "WooCommerce.comマーケットプレイスの革新性、安全性、信頼性を維持するため、共に頑張りましょう！\n",
+      "metadata": {
+        "original": "Let's work together to keep the WooCommerce.com Marketplace innovative, secure, and reliable for everyone!\n",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f2cdb250bfa62cf861905e7f0efef80ce372584cfe05b4fea17a3af63e27aa59": {
+      "original": "# Monetization expectations for Marketplace plugins",
+      "translated": "# マーケットプレイス・プラグインへの収益化の期待",
+      "metadata": {
+        "original": "# Monetization expectations for Marketplace plugins",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e851805bc345737367d6d65ab7f92ad32826d5127a0f90beebe0e16285c7ff66": {
+      "original": "When listing a plugin on the Woo Marketplace, it's important to understand how we approach monetization. Our goal is to ensure alignment between how your plugin generates value and how that value is captured, creating a transparent experience for merchants and sustainable partnerships for developers.",
+      "translated": "Woo Marketplaceにプラグインを掲載する際、私たちがどのように収益化に取り組んでいるかを理解することが重要です。私たちのゴールは、あなたのプラグインがどのように価値を生み出し、どのようにその価値を獲得し、マーチャントにとって透明性のあるエクスペリエンスを、開発者にとって持続可能なパートナーシップを生み出すか、その整合性を確保することです。",
+      "metadata": {
+        "original": "When listing a plugin on the Woo Marketplace, it's important to understand how we approach monetization. Our goal is to ensure alignment between how your plugin generates value and how that value is captured, creating a transparent experience for merchants and sustainable partnerships for developers.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b75e2b4b0717004cba1aa980052fcf2c66a78ec50a9d7337ff78e697e6e7336d": {
+      "original": ":::note\nWe do not currently accept free plugins that have no path to monetization. There should be a path to monetization either within the plugin itself or through connection to other paid products or services that then fall into one of the monetization models listed below.\n:::",
+      "translated": "::注意\nマネタイズへの道がない無料プラグインは現在受け付けていません。プラグイン自体、または他の有料製品やサービスに接続することで、以下のマネタイズモデルのいずれかに該当するマネタイズへの道がある必要があります。\n:::",
+      "metadata": {
+        "original": ":::note\nWe do not currently accept free plugins that have no path to monetization. There should be a path to monetization either within the plugin itself or through connection to other paid products or services that then fall into one of the monetization models listed below.\n:::",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0c8f747e21ec1e481d1fb274af265612ae9c0d372e36df21911ffd5fe6b8869e": {
+      "original": "## Matching monetization models",
+      "translated": "## マネタイズ・モデルのマッチング",
+      "metadata": {
+        "original": "## Matching monetization models",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "61f9052309d17fb1f467dd6c2cdce7f0f9dea512a6e88d98b6b1bd9b6f21f71d": {
+      "original": "The monetization model for your Marketplace listing should reflect the way your solution generates revenue:",
+      "translated": "マーケットプレイスのリスティングの収益化モデルは、ソリューションが収益を生み出す方法を反映する必要があります：",
+      "metadata": {
+        "original": "The monetization model for your Marketplace listing should reflect the way your solution generates revenue:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4bad8b753c23ff14d3ff3c0ce92ade5aa7e8346910abebdfce094ec7ff329598": {
+      "original": "- **Standalone functionality plugins**: Plugins that extend WooCommerce with features not tied to an external system can be sold through the standard Marketplace license model, with billing handled directly through Woo.\n- **Integration plugins**: Plugins that connect WooCommerce to an external service or platform require a monetization approach that matches how the integrated system bills merchants.",
+      "translated": "- **スタンダロン機能プラグイン**：WooCommerceを拡張するプラグインで、外部システムと連携しない機能は、標準のMarketplaceライセンスモデルを通じて販売することができます。\n- **統合プラグイン**：WooCommerceを外部のサービスやプラットフォームに接続するプラグインは、統合されたシステムがマーチャントに請求する方法と一致するマネタイズアプローチが必要です。",
+      "metadata": {
+        "original": "- **Standalone functionality plugins**: Plugins that extend WooCommerce with features not tied to an external system can be sold through the standard Marketplace license model, with billing handled directly through Woo.\n- **Integration plugins**: Plugins that connect WooCommerce to an external service or platform require a monetization approach that matches how the integrated system bills merchants.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "085572fe7a17aeed54be0a7928237ccdf3c89fd7285717afdcd03e3026a153b9": {
+      "original": "## Standalone plugin licensing",
+      "translated": "## スタンドアロンプラグインのライセンス",
+      "metadata": {
+        "original": "## Standalone plugin licensing",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8f5ee56ab501ea941ea15afe91972d6eb54722cf2a3374c369e9a86c4017823c": {
+      "original": "For plugins that add functionality to WooCommerce without connecting to an external service, we offer two listing options:",
+      "translated": "外部サービスに接続せずにWooCommerceに機能を追加するプラグインについては、2つのリストオプションを提供しています：",
+      "metadata": {
+        "original": "For plugins that add functionality to WooCommerce without connecting to an external service, we offer two listing options:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f9225b404b87ec755142c38ae099ac97256eba77633268a968884a0aa6d5f401": {
+      "original": "### Paid license",
+      "translated": "### 有料ライセンス",
+      "metadata": {
+        "original": "### Paid license",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "46c9a8fb6efd148d6d8d2a2c5f2f0ab6bcff07dc7dbe59a39b74bd289b3a048a": {
+      "original": "The Marketplace supports a single-site license model. If you sell your plugin elsewhere with multi-site licenses or tiered packages, your Marketplace listing should use a price that closely matches your existing single-site license fee.",
+      "translated": "マーケットプレイスはシングルサイトライセンスモデルをサポートしています。マルチサイトライセンスまたは階層化されたパッケージであなたのプラグインを他の場所で販売している場合、あなたのマーケットプレイスのリストは、既存のシングルサイトライセンス料金と密接に一致する価格を使用する必要があります。",
+      "metadata": {
+        "original": "The Marketplace supports a single-site license model. If you sell your plugin elsewhere with multi-site licenses or tiered packages, your Marketplace listing should use a price that closely matches your existing single-site license fee.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "2df0926486c71b6d7e2d6dea463e60d8994959c0306f65395135fd3a8ff9d6e6": {
+      "original": "### Freemium",
+      "translated": "### フリーミアム",
+      "metadata": {
+        "original": "### Freemium",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "d07acfefabd958caf2d6683b1a547208f23a83ac284c27a58b0995e84dfd324e": {
+      "original": "If your plugin offers both free and paid tiers, you can list it using our Freemium model. This allows merchants to install a free version of your plugin with the option to upgrade to a paid tier for additional features. Freemium listings help merchants try before they buy while giving you an opportunity to demonstrate value and drive upgrades.",
+      "translated": "あなたのプラグインが無料版と有料版の両方を提供している場合、フリーミアムモデルを使用して掲載することができます。これにより、マーチャントは無料版のプラグインをインストールし、有料版にアップグレードして機能を追加することができます。フリーミアムの掲載は、マーチャントが購入する前に試すことができ、また価値を実証してアップグレードを促進する機会を提供します。",
+      "metadata": {
+        "original": "If your plugin offers both free and paid tiers, you can list it using our Freemium model. This allows merchants to install a free version of your plugin with the option to upgrade to a paid tier for additional features. Freemium listings help merchants try before they buy while giving you an opportunity to demonstrate value and drive upgrades.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "49157746d36c2fcd07fcc87b13bed034bb2645cd3b67506030b2f125100def3e": {
+      "original": "Freemium is ideal for plugins where:",
+      "translated": "フリーミアムは、以下のようなプラグインに最適である：",
+      "metadata": {
+        "original": "Freemium is ideal for plugins where:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7373a31f7e77c8b511bfac5668ba8dbfb1de911530ea17ae3b6d4df8f3c9045a": {
+      "original": "- An additional plugin is needed to provide the upgraded features\n- Core functionality works well as a free offering\n- Premium features provide clear, demonstrable value worth upgrading for\n- You want to build a user base before converting to paid",
+      "translated": "- アップグレードされた機能を提供するには、追加のプラグインが必要です。\n- コア機能は無料でも十分機能する\n- プレミアム機能は、アップグレードに値する明確で実証可能な価値を提供する\n- 有料化する前にユーザーベースを構築したい",
+      "metadata": {
+        "original": "- An additional plugin is needed to provide the upgraded features\n- Core functionality works well as a free offering\n- Premium features provide clear, demonstrable value worth upgrading for\n- You want to build a user base before converting to paid",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f200a7112aaf74fbe5236868c626c31e23e5e7a853d1a633c3579d4e9e1c0e07": {
+      "original": "## Integration plugin requirements",
+      "translated": "## 統合プラグインの要件",
+      "metadata": {
+        "original": "## Integration plugin requirements",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7f06a08c5ad723a2a7e5b52d413ee69952ea8c3b6a28509f53c45e824c9a74b5": {
+      "original": "For plugins that integrate WooCommerce with an external system, we have specific expectations:",
+      "translated": "WooCommerceと外部システムを統合するプラグインについては、特定の期待があります：",
+      "metadata": {
+        "original": "For plugins that integrate WooCommerce with an external system, we have specific expectations:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e7fb969e3f2b23d1a30c3e6467c02e17a514300cc64cf981ef1b08785b364855": {
+      "original": "### First-party development preferred",
+      "translated": "### ファーストパーティの開発が望ましい",
+      "metadata": {
+        "original": "### First-party development preferred",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9f65a611659e6f485392004de1eb1b38083a9582326aca6008071d91a45adeb0": {
+      "original": "We strongly prefer that integration plugins are built and maintained by the company that owns or operates the external system being integrated. This ensures:",
+      "translated": "統合プラグインは、統合される外部システムを所有または運用している企業によって構築および保守されることを強く希望します。これにより、以下のことが保証されます：",
+      "metadata": {
+        "original": "We strongly prefer that integration plugins are built and maintained by the company that owns or operates the external system being integrated. This ensures:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "876ff0e221857763771df05cdba0f61c5c45660b4789c9cc293718859df270f6": {
+      "original": "- Merchants have a direct relationship with the company billing them\n- Technical support comes from the team with deepest product knowledge\n- Long-term maintenance aligns with the external system's roadmap",
+      "translated": "- 加盟店は請求先企業と直接関係を持つことができる。\n- テクニカル・サポートは、最も製品知識の深いチームから提供される。\n- 長期メンテナンスは外部システムのロードマップに合わせる",
+      "metadata": {
+        "original": "- Merchants have a direct relationship with the company billing them\n- Technical support comes from the team with deepest product knowledge\n- Long-term maintenance aligns with the external system's roadmap",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1e916ef2386bfc34aedb5072ee2c6e055ca1652d8f5787a5c13ef90ea01cc3e8": {
+      "original": "If you're a third-party developer building an integration for a system you don't operate, we encourage you to connect with that company directly or [contact our Marketplace team](#questions-about-your-billing-structure) to discuss your specific situation.",
+      "translated": "サードパーティの開発者が、あなたが運営していないシステムのために統合を構築している場合は、その会社に直接連絡するか、[マーケットプレイスチームに連絡](#questions-about-your-billing-structure)して、あなたの具体的な状況について話し合うことをお勧めします。",
+      "metadata": {
+        "original": "If you're a third-party developer building an integration for a system you don't operate, we encourage you to connect with that company directly or [contact our Marketplace team](#questions-about-your-billing-structure) to discuss your specific situation.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7a0c06fc6c65260d88b0ce754d083b51a636097a7cb882227bc2b473bd0e57a7": {
+      "original": "### Appropriate billing structure",
+      "translated": "### 適切な課金体系",
+      "metadata": {
+        "original": "### Appropriate billing structure",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "bf0cd745d217b43a589106d70f8a80c4d7925e60dbbb3d3f8304b9a65c84a8a2": {
+      "original": "Plugins that connect to externally-billed services cannot use the standard paid Marketplace license model. Instead, you must use one of the following options:",
+      "translated": "外部課金サービスに接続するプラグインは、標準の有料 Marketplace ライセンスモデルを使用できません。代わりに、以下のオプションのいずれかを使用する必要があります：",
+      "metadata": {
+        "original": "Plugins that connect to externally-billed services cannot use the standard paid Marketplace license model. Instead, you must use one of the following options:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3c6c6bafd9a44650952ab0dde951c45c3819b4656548cbe1e543a62c1f15e0d0": {
+      "original": "| Billing Model | Description | Best For |\n| --- | --- | --- |\n| **Billing API** (recommended) | Our API handles subscription billing on behalf of your service, with validation endpoints to confirm payment status and active subscriptions. Billing shifts to Woo, and you receive payouts based on the revenue share model. [View Billing API documentation →](__URL_0__) | SaaS providers who want Woo to manage the billing relationship with merchants. |\n| **Partnership Agreement** | An agreement that extends our [Marketplace Vendor Agreement](__URL_1__) to accommodate solutions where billing occurs outside of WooCommerce. The plugin is listed free on the Marketplace. | Companies with existing billing relationships and infrastructure. |",
+      "translated": "| 課金モデル｜説明｜最適なもの\n| --- | --- | --- |\n| 課金API**（推奨）｜WooのAPIは、支払いステータスとアクティブなサブスクリプションを確認するためのバリデーションエンドポイントで、あなたのサービスに代わってサブスクリプションの課金を処理します。課金はWooに移り、あなたはレベニューシェアモデルに基づいた支払いを受け取ります。[課金APIのドキュメントを見る →](__URL_0__) | Wooにマーチャントとの課金関係を管理してもらいたいSaaSプロバイダ。|\n| パートナー契約**｜WooCommerceの外部で課金が発生するソリューションに対応するために、[Marketplace Vendor Agreement](__URL_1__) を拡張する契約です。このプラグインはマーケットプレイスに無料で掲載されています。| 既存の課金関係とインフラを持つ企業。|",
+      "metadata": {
+        "original": "| Billing Model | Description | Best For |\n| --- | --- | --- |\n| **Billing API** (recommended) | Our API handles subscription billing on behalf of your service, with validation endpoints to confirm payment status and active subscriptions. Billing shifts to Woo, and you receive payouts based on the revenue share model. [View Billing API documentation →](__URL_0__) | SaaS providers who want Woo to manage the billing relationship with merchants. |\n| **Partnership Agreement** | An agreement that extends our [Marketplace Vendor Agreement](__URL_1__) to accommodate solutions where billing occurs outside of WooCommerce. The plugin is listed free on the Marketplace. | Companies with existing billing relationships and infrastructure. |",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/document/billing-api-for-saas-products/",
+          "https://woocommerce.com/woo-vendor-agreement/"
+        ]
+      }
+    },
+    "ec58a8685847a0b343ca63a01129ac31a39063d22a906a72a206f14ed7b9413a": {
+      "original": "### About the Partnership Agreement",
+      "translated": "### パートナーシップ契約について",
+      "metadata": {
+        "original": "### About the Partnership Agreement",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c271df72c7363bdbebbdfbee2e5a5b22f46086996b809aae2ad471c3f7f81eb2": {
+      "original": "The Partnership Agreement is available as an alternative when the Billing API is not suitable for your business model. However, this option requires formal agreement to our partnership conditions and is subject to approval at our discretion. We assess each application to ensure alignment with Marketplace standards and merchant experience expectations.",
+      "translated": "パートナーシップ契約は、Billing APIがお客様のビジネスモデルに適していない場合の代替手段としてご利用いただけます。ただし、このオプションにはパートナーシップ条件への正式な同意が必要であり、当社の裁量で承認される場合があります。弊社は各アプリケーションを評価し、Marketplaceの標準および加盟店が期待するエクスペリエンスとの整合性を確認します。",
+      "metadata": {
+        "original": "The Partnership Agreement is available as an alternative when the Billing API is not suitable for your business model. However, this option requires formal agreement to our partnership conditions and is subject to approval at our discretion. We assess each application to ensure alignment with Marketplace standards and merchant experience expectations.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "937546006315775f8ece5ec9d5ac47cabd3d26b16c319c4c26cb54b4fde2aee5": {
+      "original": "If you're considering this option, we recommend [contacting our Marketplace team](#questions-about-your-billing-structure) early in your planning process to discuss eligibility and requirements before investing development effort.",
+      "translated": "このオプションを検討している場合は、開発労力を投資する前に、計画プロセスの早い段階で[マーケットプレイスチームに連絡する](#questions-about-your-billing-structure)ことをお勧めします。",
+      "metadata": {
+        "original": "If you're considering this option, we recommend [contacting our Marketplace team](#questions-about-your-billing-structure) early in your planning process to discuss eligibility and requirements before investing development effort.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0149a4bb1d0622f640552668693546e266c95ff8da22f7082a3a3ec5c3460aa3": {
+      "original": "## Theme licensing",
+      "translated": "## テーマライセンス",
+      "metadata": {
+        "original": "## Theme licensing",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e409a87326337e866ab36b0fc8f62eaa0835627d025a4e30bb3e980d61ae4c16": {
+      "original": "Themes listed on the Woo Marketplace use the standard paid license model only. Billing is handled directly through Woo using a single-site license fee.",
+      "translated": "Woo Marketplaceに掲載されているテーマは、標準の有料ライセンスモデルのみを使用しています。課金はシングルサイトライセンス料金を使用してWooを通して直接処理されます。",
+      "metadata": {
+        "original": "Themes listed on the Woo Marketplace use the standard paid license model only. Billing is handled directly through Woo using a single-site license fee.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "bdcb94bb84e756e031aa996b8200b17b319bbc959c4d14ef217c0a88c6d9f297": {
+      "original": "If you sell your theme elsewhere with multi-site licenses or tiered packages, your Marketplace listing should use a price that closely matches your existing single-site license fee.",
+      "translated": "マルチサイトライセンスまたは階層パッケージでテーマを他で販売している場合、あなたのマーケットプレイスのリストでは、既存のシングルサイトライセンス料金と密接に一致する価格を使用する必要があります。",
+      "metadata": {
+        "original": "If you sell your theme elsewhere with multi-site licenses or tiered packages, your Marketplace listing should use a price that closely matches your existing single-site license fee.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ef36ef8e632d281ecf366ce022a8c0ed736ae07ed10407ec8a9aee6d00d81236": {
+      "original": "## Business services",
+      "translated": "## ビジネスサービス",
+      "metadata": {
+        "original": "## Business services",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f4c24f72b4b330f129541a36c5839b0a0250bccd5978918f79440410d0262d3c": {
+      "original": "Business services (such as consulting, development, or managed services) require a formal agreement and prior approval from the Marketplace team before listing.",
+      "translated": "ビジネスサービス（コンサルティング、開発、マネージドサービスなど）は、掲載前に正式な契約とMarketplaceチームの事前承認が必要です。",
+      "metadata": {
+        "original": "Business services (such as consulting, development, or managed services) require a formal agreement and prior approval from the Marketplace team before listing.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "57dce808e2b19accd90e21eac60b782233ad06e0c6e101f523773497aff9bc52": {
+      "original": "If you offer business services that complement WooCommerce and would like to explore listing on the Marketplace, please [contact the Marketplace team](#questions-about-your-billing-structure) to discuss your offering and eligibility requirements.",
+      "translated": "WooCommerceを補完するビジネスサービスを提供し、マーケットプレイスへの掲載をご検討される場合は、マーケットプレイスチームまでお問い合わせください(#questions-about-your-billing-structure)。",
+      "metadata": {
+        "original": "If you offer business services that complement WooCommerce and would like to explore listing on the Marketplace, please [contact the Marketplace team](#questions-about-your-billing-structure) to discuss your offering and eligibility requirements.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a86a6b17c1fb4070adef25919f50970002ad04f1415bd8beeb3404990ae4bc83": {
+      "original": "## Questions about your billing structure?",
+      "translated": "## 課金体系についてのご質問ですか？",
+      "metadata": {
+        "original": "## Questions about your billing structure?",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8cb5ff342fb398da76fd7674663539700e8b851dc81179542435f8e09e2d69f5": {
+      "original": "If you're unsure which monetization model applies to your plugin, theme, or service, or if you'd like to discuss partnership options before submitting for review, please [contact the Marketplace team](__URL_0__). We recommend reaching out early in your planning process to ensure alignment before you invest significant development effort.",
+      "translated": "どのマネタイズモデルがあなたのプラグイン、テーマ、またはサービスに適用されるか不明な場合、またはレビューに提出する前にパートナーシップのオプションについて話し合いたい場合は、[マーケットプレイスチームにご連絡ください](__URL_0__)。重要な開発労力を投資する前に、計画プロセスの早い段階で連絡を取り、整合性を確認することをお勧めします。",
+      "metadata": {
+        "original": "If you're unsure which monetization model applies to your plugin, theme, or service, or if you'd like to discuss partnership options before submitting for review, please [contact the Marketplace team](__URL_0__). We recommend reaching out early in your planning process to ensure alignment before you invest significant development effort.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/partnerships-contact/"
+        ]
+      }
+    },
+    "684f7c6d89cf8849b4b789559e2b634d440d63aa17afbdeb90ce2362de3a5175": {
+      "original": "## Related resources",
+      "translated": "## 関連リソース",
+      "metadata": {
+        "original": "## Related resources",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "95892f6457602a75b26810c779a91bf14286347512a794c933c1beebf80d4e70": {
+      "original": "- [Marketplace Vendor Agreement](__URL_0__) — Standard terms for all Marketplace vendors\n- [Billing API for SaaS Products](__URL_1__) — Technical documentation for integrating with our billing system\n- [Submitting Your Product](__URL_2__) — Complete submission guidelines\n",
+      "translated": "- [マーケットプレイスベンダー規約](__URL_0__) - すべてのマーケットプレイスベンダーの標準規約\n- [SaaS製品の課金API](__URL_1__) - 当社の課金システムと統合するための技術文書\n- [製品の提出](__URL_2__) - 完全な提出ガイドライン\n",
+      "metadata": {
+        "original": "- [Marketplace Vendor Agreement](__URL_0__) — Standard terms for all Marketplace vendors\n- [Billing API for SaaS Products](__URL_1__) — Technical documentation for integrating with our billing system\n- [Submitting Your Product](__URL_2__) — Complete submission guidelines\n",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/woo-vendor-agreement/",
+          "https://woocommerce.com/document/billing-api-for-saas-products/",
+          "https://woocommerce.com/document/submitting-your-product-to-the-woo-marketplace/"
+        ]
+      }
+    },
+    "cc529a3bef0935f2b253cc75b6311183439f3c7ff029ec0d1bc38a68e5db78a0": {
+      "original": "# Managing products in the Woo Marketplace",
+      "translated": "# Wooマーケットプレイスでの商品管理",
+      "metadata": {
+        "original": "# Managing products in the Woo Marketplace",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ffd400a33f91eb5b1205f965edc061c571648682908ce7687c1e91c07af470bd": {
+      "original": "Developers selling in the WooCommerce.com Marketplace can edit their product pages, access information like usage data and sales, and manage reviews.",
+      "translated": "WooCommerce.comマーケットプレイスで販売する開発者は、商品ページを編集したり、利用データや売上などの情報にアクセスしたり、レビューを管理したりすることができます。",
+      "metadata": {
+        "original": "Developers selling in the WooCommerce.com Marketplace can edit their product pages, access information like usage data and sales, and manage reviews.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e508c5d1994f7691d8d2365bbc7d7b63451d729615c8e5b1687a84ee0c6b5137": {
+      "original": "## Editing a product page",
+      "translated": "## 商品ページの編集",
+      "metadata": {
+        "original": "## Editing a product page",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b40e6e03b818e359571d2dfda5f39a3a6c1ffcca8ca23e635f0c88f37981fdb8": {
+      "original": "Most of the work for managing products can be done via the [vendor dashboard](__URL_0__).",
+      "translated": "製品の管理作業のほとんどは、[ベンダー・ダッシュボード](__URL_0__)から行うことができる。",
+      "metadata": {
+        "original": "Most of the work for managing products can be done via the [vendor dashboard](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/wp-admin/"
+        ]
+      }
+    },
+    "73aa4423e65dc6f25a6d4d3d6f425837b097c1926b61d226619a7a3ca425b7cf": {
+      "original": "- From your vendor dashboard, navigate to _Products > All Products_.\n- Select the product you want to work on.",
+      "translated": "- ベンダーのダッシュボードから、_製品 > すべての製品_ に移動します。\n- 作業したい製品を選択します。",
+      "metadata": {
+        "original": "- From your vendor dashboard, navigate to _Products > All Products_.\n- Select the product you want to work on.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "fa49892acdfc946c0e0f8794334c5c072134f12123dcc70506424792eaf35e4d": {
+      "original": "From there, you can see information about usage, upload a new version, or edit the product page. [Review our product page guidelines](__URL_0__).",
+      "translated": "そこから、使用状況に関する情報を確認したり、新しいバージョンをアップロードしたり、製品ページを編集したりすることができます。[製品ページのガイドラインを確認する](__URL_0__).",
+      "metadata": {
+        "original": "From there, you can see information about usage, upload a new version, or edit the product page. [Review our product page guidelines](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/document/marketing-product-pages-writing/"
+        ]
+      }
+    },
+    "51eaf04eea8bfc34264bfbcb8003cd45edc7b1cc60b38ae6163097b8e341a413": {
+      "original": "![Product management interface in vendor dashboard](./_media/manage-products-overview.png)",
+      "translated": "![ベンダーダッシュボードの製品管理インターフェース](./_media/manage-products-overview.png)",
+      "metadata": {
+        "original": "![Product management interface in vendor dashboard](./_media/manage-products-overview.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a131d3dca848b0e7fce05be4618707702485bf912913cc4231c62f17a5ac9956": {
+      "original": "[Review our product update guidelines and best practices](__URL_0__).",
+      "translated": "[製品アップデートのガイドラインとベストプラクティスをご確認ください](__URL_0__)。",
+      "metadata": {
+        "original": "[Review our product update guidelines and best practices](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/document/product-update-guidelines/"
+        ]
+      }
+    },
+    "401fff3ae2a6e0fb04fbbe325f5188be86cdce96085dc3bd8eed20dbbf506ee4": {
+      "original": "### Adding or editing documentation",
+      "translated": "### ドキュメントの追加・編集",
+      "metadata": {
+        "original": "### Adding or editing documentation",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "910398fd3f9021b1d536e45d732b0771bd92911a00ab4eae369a2a05bfe52377": {
+      "original": "To review, edit, or add documentation, navigate to _Documentation_ in your vendor dashboard. [Review our guidelines for creating effective documentation](__URL_0__).",
+      "translated": "ドキュメントを確認、編集、または追加するには、ベンダーダッシュボードの _Documentation_ に移動します。[効果的な文書を作成するためのガイドラインをご覧ください](__URL_0__)。",
+      "metadata": {
+        "original": "To review, edit, or add documentation, navigate to _Documentation_ in your vendor dashboard. [Review our guidelines for creating effective documentation](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/document/writing-documentation/"
+        ]
+      }
+    },
+    "9f51fb3350bb0447d922171808a56e3fe451020a32fe0dd892555bc308b12ee5": {
+      "original": "![Documentation management interface](./_media/manage-products-documentation.png)",
+      "translated": "![ドキュメント管理インターフェース](./_media/manage-products-documentation.png)",
+      "metadata": {
+        "original": "![Documentation management interface](./_media/manage-products-documentation.png)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3bd56e79c26eb6090a73fddb2d32a85622e556fd766b941ebb8bd6af1ba1feca": {
+      "original": "## Understanding product sales",
+      "translated": "## 商品の売れ行きを理解する",
+      "metadata": {
+        "original": "## Understanding product sales",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7d895c55a3a53e7547a2552ba73ad0fb21cc17c2d1ec3f2ab188b9a54ce72300": {
+      "original": "Vendors have access to reports on how their products are performing, including:",
+      "translated": "ベンダーは、自社製品のパフォーマンスに関する以下のようなレポートにアクセスできる：",
+      "metadata": {
+        "original": "Vendors have access to reports on how their products are performing, including:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "dca291956d4770d140254566eb439661c0f336ae1579cd27cd45f8fd4a333ea1": {
+      "original": "- **Earnings**: New sales, renewal sales, and refund amount.\n- **Commissions**: The amount the vendor earns from **net** product sales. Net revenue is defined as **revenue received from extension purchases minus refunds, chargebacks, disputes, discounts, and affiliate fees**.\n- **Subscriptions**: Total active subscriptions, including new and renewing this month, as well as refund and renewal rates.",
+      "translated": "- **収益**：新規売上、更新売上、返金額。\n- **コミッションベンダーの売上金額。純収入とは、**エクステンションの購入から受け取った収入から、払い戻し、チャージバック、紛争、割引、アフィリエイト手数料を差し引いたもの**と定義されます。\n- **サブスクリプション**：今月の新規および更新を含むアクティブなサブスクリプションの合計、および払い戻しと更新率。",
+      "metadata": {
+        "original": "- **Earnings**: New sales, renewal sales, and refund amount.\n- **Commissions**: The amount the vendor earns from **net** product sales. Net revenue is defined as **revenue received from extension purchases minus refunds, chargebacks, disputes, discounts, and affiliate fees**.\n- **Subscriptions**: Total active subscriptions, including new and renewing this month, as well as refund and renewal rates.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "40a44bc1e8a2f2f14688e98907a2345eda22a8e66031d74d7c2de0b6c69b8540": {
+      "original": "To view this information, log in to your vendor dashboard and navigate to _Analytics > Overview_.",
+      "translated": "この情報を表示するには、ベンダーのダッシュボードにログインし、_Analytics > Overview_に移動します。",
+      "metadata": {
+        "original": "To view this information, log in to your vendor dashboard and navigate to _Analytics > Overview_.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1e4ff15150c568e9676adcd81c114ccc2cb01d986fa4af4226cfbe2b0fff61b0": {
+      "original": "![Analytics overview dashboard](./_media/manage-products-analytics.png)\n",
+      "translated": "![アナリティクス概要ダッシュボード](./_media/manage-products-analytics.png)\n",
+      "metadata": {
+        "original": "![Analytics overview dashboard](./_media/manage-products-analytics.png)\n",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8c265e92b8e4887432924d13ec2b322e7c78bb9bfec3253443eb238e331906c2": {
+      "original": "We are excited to have you here! The WooCommerce.com Marketplace connects trusted developers and merchants worldwide to create powerful and flexible online stores.",
+      "translated": "WooCommerce.comマーケットプレイスにようこそ！WooCommerce.comマーケットプレイスは、世界中の信頼できる開発者とマーチャントを結びつけ、パワフルで柔軟なオンラインストアを作成します。",
+      "metadata": {
+        "original": "We are excited to have you here! The WooCommerce.com Marketplace connects trusted developers and merchants worldwide to create powerful and flexible online stores.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6dd8995489a3daa7c8fddef7a3e96fe763088d838420663479ade48120746121": {
+      "original": "## Why you should sell in the Woo Marketplace",
+      "translated": "## Wooマーケットプレイスで販売すべき理由",
+      "metadata": {
+        "original": "## Why you should sell in the Woo Marketplace",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "d4546540590c7dbcb0c5770211d4125c283f756201a3512ef7b210ae02afa348": {
+      "original": "- **Access to a global network** of WooCommerce merchants\n- **Built-in brand recognition and trust** by listing your product in the official WooCommerce Marketplace\n- **Revenue sharing** designed to support your business growth\n- **Opportunities** to be featured in WooCommerce marketing campaigns\n- **Insights and feedback** from a community of active merchants and developers",
+      "translated": "- **WooCommerceマーチャントのグローバルネットワーク**へのアクセス\n- 公式WooCommerceマーケットプレイスへの商品掲載による**ブランド認知と信頼**の構築\n- **ビジネスの成長をサポートするために設計された収益共有**。\n- **WooCommerce マーケティングキャンペーンに掲載される機会**があります。\n- **アクティブなマーチャントとデベロッパーのコミュニティからの洞察とフィードバック",
+      "metadata": {
+        "original": "- **Access to a global network** of WooCommerce merchants\n- **Built-in brand recognition and trust** by listing your product in the official WooCommerce Marketplace\n- **Revenue sharing** designed to support your business growth\n- **Opportunities** to be featured in WooCommerce marketing campaigns\n- **Insights and feedback** from a community of active merchants and developers",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "cb8cc951535dcf67c84363c8551df75b753d04806b4c66bbc8529df1c592e05d": {
+      "original": "## Are you a good fit?",
+      "translated": "## ♪ お似合いですか？",
+      "metadata": {
+        "original": "## Are you a good fit?",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3dee2faa83cbf90be7be33055ba94184bca7c81012ff6be554091759b49f2d6e": {
+      "original": "We are looking for products that:",
+      "translated": "私たちは次のような製品を探しています：",
+      "metadata": {
+        "original": "We are looking for products that:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3d80a0b505fdb0475f3f746228b00a9a463ecd05dd2d2bef84d9006d5b2a00ba": {
+      "original": "- Solve real merchant problems\n- Are secure, well-documented, and well-maintained\n- Follow [security](__URL_0__), [development](__URL_1__), and [user experience](__URL_2__) best practices\n- Offer high-quality merchant support\n- Include a clear and sustainable monetization model, whether through direct sales, subscriptions, or another approach",
+      "translated": "[- 実際の加盟店の問題を解決する\n- 安全で、文書化され、メンテナンスが行き届いている。\n- セキュリティ](__URL_0__)、[開発](__URL_1__)、[ユーザーエクスペリエンス](__URL_2__)のベストプラクティスに従っている。\n- 質の高いマーチャントサポートを提供すること\n- 直販、サブスクリプション、またはその他の方法による、明確で持続可能なマネタイズモデルを含むこと。",
+      "metadata": {
+        "original": "- Solve real merchant problems\n- Are secure, well-documented, and well-maintained\n- Follow [security](__URL_0__), [development](__URL_1__), and [user experience](__URL_2__) best practices\n- Offer high-quality merchant support\n- Include a clear and sustainable monetization model, whether through direct sales, subscriptions, or another approach",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://developer.wordpress.org/apis/security/",
+          "https://developer.woocommerce.com/docs/extensions/best-practices-extensions/extension-development-best-practices/",
+          "https://developer.woocommerce.com/docs/extensions/ux-guidelines-extensions/best-practices/"
+        ]
+      }
+    },
+    "d0033179d059c84c4f877d9a17ecb5f6e364fb3f4fee12d39918b9c55ce3a4cb": {
+      "original": "## The agreement",
+      "translated": "## 協定",
+      "metadata": {
+        "original": "## The agreement",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "26e3cc8f567bf17abb7ee3ceed49c99f87489791bc8a6ba5ba3df63f0c897ec1": {
+      "original": "To join the WooCommerce Marketplace, vendors must offer high-quality, secure products, provide strong customer support, and follow WooCommerce's guidelines around listings, updates, pricing, and communication. The commercial terms are based on a revenue share model, with 70% of sales going to the vendor.",
+      "translated": "WooCommerceマーケットプレイスに参加するには、ベンダーは高品質で安全な製品を提供し、強力なカスタマーサポートを提供し、リスティング、アップデート、価格設定、コミュニケーションに関するWooCommerceのガイドラインに従う必要があります。商取引条件は収益分配モデルに基づいており、売上の70%がベンダーに支払われます。",
+      "metadata": {
+        "original": "To join the WooCommerce Marketplace, vendors must offer high-quality, secure products, provide strong customer support, and follow WooCommerce's guidelines around listings, updates, pricing, and communication. The commercial terms are based on a revenue share model, with 70% of sales going to the vendor.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6c9cd7a6b0e910ae0536ab5850d279d45d4355d433c2520ffa05c7ce78bcd17e": {
+      "original": "[Read the full Marketplace Vendor Agreement](__URL_0__).",
+      "translated": "[マーケットプレイスベンダー規約全文を読む](__URL_0__)。",
+      "metadata": {
+        "original": "[Read the full Marketplace Vendor Agreement](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/woo-vendor-agreement/"
+        ]
+      }
+    },
+    "8291bd8140644baecc899d38b3875c9b03e5a7b7f1b0f4fc74a88a62bdc7d0d1": {
+      "original": "## The submission journey",
+      "translated": "## 投稿の旅",
+      "metadata": {
+        "original": "## The submission journey",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9dda5871279d2c7c42dd4213cbd8853b06956b95e0a83a7567db8121d0e4272f": {
+      "original": "### Step 1: Prepare your product",
+      "translated": "### ステップ1：製品の準備",
+      "metadata": {
+        "original": "### Step 1: Prepare your product",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b2e9c4b35b25f08f54837ed3c57b8d0f72afc48b0665ef89fdc291852548fdb7": {
+      "original": "1. Build and thoroughly test your extension or theme.\n2. Ensure it meets our [technical](__URL_0__), [user experience](__URL_1__) (UX), and [security standards](__URL_2__).\n3. Write clear and comprehensive [documentation](__URL_3__).",
+      "translated": "1.拡張機能やテーマを構築し、徹底的にテストする。\n2.私たちの[技術的](__URL_0__)、[ユーザーエクスペリエンス](__URL_1__) (UX)、[セキュリティ基準](__URL_2__)を満たしていることを確認してください。\n3.明確で包括的な[ドキュメント](__URL_3__)を書く。",
+      "metadata": {
+        "original": "1. Build and thoroughly test your extension or theme.\n2. Ensure it meets our [technical](__URL_0__), [user experience](__URL_1__) (UX), and [security standards](__URL_2__).\n3. Write clear and comprehensive [documentation](__URL_3__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://developer.woocommerce.com/docs/extensions/best-practices-extensions/extension-development-best-practices/",
+          "https://developer.woocommerce.com/docs/extensions/ux-guidelines-extensions/best-practices/",
+          "https://developer.wordpress.org/apis/security/",
+          "https://developer.woocommerce.com/docs/extensions/best-practices-extensions/support-and-documentation/"
+        ]
+      }
+    },
+    "a3fc857f8b30c47d458309330def5b067ebbce04caa6ec7b0ae8ee02d842d97c": {
+      "original": "### Step 2: Apply to the Marketplace",
+      "translated": "### ステップ2：マーケットプレイスに申し込む",
+      "metadata": {
+        "original": "### Step 2: Apply to the Marketplace",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6b709dd7638adc71b0b8c75ed5a5a7f4f9ff10ef1cc874abc044bedcb06784d7": {
+      "original": "Submit detailed product information, demo links, and test instructions for review.",
+      "translated": "詳細な製品情報、デモリンク、テスト方法を提出し、レビューを受けてください。",
+      "metadata": {
+        "original": "Submit detailed product information, demo links, and test instructions for review.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f7df742176222d983ef340c526afab6983a98871885138c6df5ce538dc3a3cc2": {
+      "original": "### Step 3: Product review",
+      "translated": "### ステップ3：製品レビュー",
+      "metadata": {
+        "original": "### Step 3: Product review",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9919f998f47015774f9d455398a65cf4864d7e89c3dec6e866f292f4aad4a567": {
+      "original": "1. Our team reviews your submission for functionality, security, compatibility, and UX.\n2. You may receive feedback and revision requests.",
+      "translated": "1.私たちのチームは、機能性、セキュリティ、互換性、UXのためにあなたの提出物をレビューします。\n2.フィードバックや修正依頼を受け取ることもあります。",
+      "metadata": {
+        "original": "1. Our team reviews your submission for functionality, security, compatibility, and UX.\n2. You may receive feedback and revision requests.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1439d69e31a6935796f98ec90374584e795dd4b231b590527c39f3cebd8bb86b": {
+      "original": "### Step 4: Launch and sell",
+      "translated": "### ステップ4：立ち上げと販売",
+      "metadata": {
+        "original": "### Step 4: Launch and sell",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "374718740da2b3fe7f9d72b28ff9bf9ed422bc789ecf20d54f5b5e8dcb2a0585": {
+      "original": "1. Once approved, your product is listed in the WooCommerce.com Marketplace.\n2. After launch, maintain and update your product, and provide ongoing merchant support.",
+      "translated": "1.承認されると、商品がWooCommerce.comマーケットプレイスに掲載されます。\n2.掲載後は、商品のメンテナンスとアップデートを行い、継続的なマーチャントサポートを提供します。",
+      "metadata": {
+        "original": "1. Once approved, your product is listed in the WooCommerce.com Marketplace.\n2. After launch, maintain and update your product, and provide ongoing merchant support.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "c8514641eeef1a4be5a0dd20e7db559e101d52d5e34f6bac91c0ba103006fa5d": {
+      "original": "## Helpful resources",
+      "translated": "## お役立ち情報",
+      "metadata": {
+        "original": "## Helpful resources",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "89668ed7ce252cb8684dbe23d87cab8fd5ef47f39a65f00aadc161279be18268": {
+      "original": "- [Submission guidelines](__URL_0__)\n- [Extension developer handbook](__URL_1__)\n- [Block theme developer handbook](__URL_2__)\n- [SaaS Billing API](__URL_3__)\n- [Marketplace Vendor Agreement](__URL_4__)",
+      "translated": "- [投稿ガイドライン](__URL_0__)\n- [エクステンション開発者ハンドブック](__URL_1__)\n- [ブロックテーマ開発者ハンドブック](__URL_2__)\n- [SaaS 課金 API](__URL_3__)\n- [マーケットプレイスベンダー規約](__URL_4__)",
+      "metadata": {
+        "original": "- [Submission guidelines](__URL_0__)\n- [Extension developer handbook](__URL_1__)\n- [Block theme developer handbook](__URL_2__)\n- [SaaS Billing API](__URL_3__)\n- [Marketplace Vendor Agreement](__URL_4__)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/document/submitting-your-product-to-the-woo-marketplace/",
+          "https://developer.woocommerce.com/docs/extensions/getting-started-extensions/",
+          "https://developer.woocommerce.com/docs/theming/block-theme-development/theming-woo-blocks",
+          "https://woocommerce.com/document/billing-api-for-saas-products/",
+          "https://woocommerce.com/woo-vendor-agreement/"
+        ]
+      }
+    },
+    "c67d0043fcd2567b3e04309837b3bc2150712c0e01e1d656d18965ec7aaba99a": {
+      "original": "## Ready to apply?",
+      "translated": "## 準備はいいですか？",
+      "metadata": {
+        "original": "## Ready to apply?",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "5f160e42010e7c06177794a46954959cc6e32468b4eccfb7b05b757f4395495c": {
+      "original": "1. [Become a Marketplace partner](__URL_0__).\n2. Before you submit, we recommend reviewing the full [submission guidelines](__URL_1__) for detailed steps.\n3. When you're ready, [submit your product](__URL_2__).",
+      "translated": "1.[マーケットプレイスのパートナーになる](__URL_0__)。\n2.投稿する前に、詳細な手順については、[投稿のガイドライン](__URL_1__) の全文を確認することをお勧めします。\n3.準備ができたら、[製品を投稿する](__URL_2__).",
+      "metadata": {
+        "original": "1. [Become a Marketplace partner](__URL_0__).\n2. Before you submit, we recommend reviewing the full [submission guidelines](__URL_1__) for detailed steps.\n3. When you're ready, [submit your product](__URL_2__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/partners/",
+          "https://woocommerce.com/document/submitting-your-product-to-the-woo-marketplace/#section-1",
+          "https://woocommerce.com/document/submitting-your-product-to-the-woo-marketplace/"
+        ]
+      }
+    },
+    "2f0b868e44141c3d98cbf4f3dcc711ea7f8fa7a8c2fb2e1c13ae2666733a9452": {
+      "original": "We look forward to helping you succeed in the WooCommerce Marketplace!\n",
+      "translated": "WooCommerceマーケットプレイスでの成功をお手伝いできることを楽しみにしています！\n",
+      "metadata": {
+        "original": "We look forward to helping you succeed in the WooCommerce Marketplace!\n",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "03f4a92ebc82e4b921ccf0b8f48c665cd7cf2dc087cdc22e83aae21ce7e95193": {
+      "original": "# Marketplace Content Style Guide",
+      "translated": "# マーケットプレイスコンテンツスタイルガイド",
+      "metadata": {
+        "original": "# Marketplace Content Style Guide",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "9d647afcfbe9effcd462940f668e91d15157279867232b6df7fb47a5fa6beb69": {
+      "original": "This guide provides formatting and writing standards for creating product pages and documentation on the WooCommerce Marketplace. Following these guidelines ensures consistency across the Marketplace and creates a professional experience for merchants browsing and purchasing extensions.",
+      "translated": "このガイドでは、WooCommerce マーケットプレイスで製品ページとドキュメントを作成するための書式と記述の基準を示します。これらのガイドラインに従うことで、マーケットプレイス全体の一貫性が保証され、エクステンションを閲覧・購入するマーチャントにとってプロフェッショナルなエクスペリエンスが提供されます。",
+      "metadata": {
+        "original": "This guide provides formatting and writing standards for creating product pages and documentation on the WooCommerce Marketplace. Following these guidelines ensures consistency across the Marketplace and creates a professional experience for merchants browsing and purchasing extensions.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "04e407f7647a1639765b0702f7679d813b6749e8d45150d6e4a5286ffd017d77": {
+      "original": "For product page structure, required elements, and asset specifications, refer to [Product Page Content and Assets](/docs/woo-marketplace/product-page-content-and-assets/).",
+      "translated": "商品ページの構成、必須要素、アセット仕様については、[商品ページのコンテンツとアセット](/docs/woo-marketplace/product-page-content-and-assets/)を参照してください。",
+      "metadata": {
+        "original": "For product page structure, required elements, and asset specifications, refer to [Product Page Content and Assets](/docs/woo-marketplace/product-page-content-and-assets/).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6947fe32f88676e3e37ed8f6d5c789026db9170faa0eaf946275147d465859ad": {
+      "original": "## Writing Standards",
+      "translated": "## ライティング・スタンダード",
+      "metadata": {
+        "original": "## Writing Standards",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "3d309753d70cb278bb41fd206513baa3a92278e5a66e2895ea9c2a4e776ecb4c": {
+      "original": "### Product Naming Convention",
+      "translated": "### 製品命名規則",
+      "metadata": {
+        "original": "### Product Naming Convention",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "5a0edf0400d2bc2df1a92d352da183b5f2a6bf1ae331951ea43e3a9e5a8da9a3": {
+      "original": "Use the format \"Product Name for WooCommerce\" rather than \"WooCommerce Product Name\" throughout the product copy.",
+      "translated": "商品コピーでは「WooCommerce商品名」ではなく「WooCommerce商品名」を使用してください。",
+      "metadata": {
+        "original": "Use the format \"Product Name for WooCommerce\" rather than \"WooCommerce Product Name\" throughout the product copy.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "68a2c3d79e4c201ab5e70c87fc2190d613c2ba96554ab8c6569735036121abbd": {
+      "original": "This format ensures your product name complies with [trademark rules](__URL_0__) and leads with its unique identifier, improving discoverability and clarity.",
+      "translated": "このフォーマットは、商品名が[商標ルール](__URL_0__)に準拠し、一意の識別子でリードすることを保証し、発見しやすさとわかりやすさを向上させます。",
+      "metadata": {
+        "original": "This format ensures your product name complies with [trademark rules](__URL_0__) and leads with its unique identifier, improving discoverability and clarity.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://automattic.com/trademark-policy/"
+        ]
+      }
+    },
+    "c7699ab70ca361a02264dd42d991511f5a0e07da9e5450a3a78b1fb28998ab02": {
+      "original": "### Grammar and Punctuation",
+      "translated": "### 文法と句読点",
+      "metadata": {
+        "original": "### Grammar and Punctuation",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "25366aab3d682068c1dd26ba3bf48b056dcc3072a038831f383b06b36ce23390": {
+      "original": "Follow the [WooCommerce Grammar, Punctuation, and Capitalization Guide](__URL_0__) for comprehensive guidance. Key points include:",
+      "translated": "[WooCommerce文法、句読点、大文字表記ガイド](__URL_0__)を参考にしてください。主なポイントは以下の通りです：",
+      "metadata": {
+        "original": "Follow the [WooCommerce Grammar, Punctuation, and Capitalization Guide](__URL_0__) for comprehensive guidance. Key points include:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/document/woocommerce-grammar-punctuation-and-capitalization-guide/"
+        ]
+      }
+    },
+    "06850d557bc1b8c2d0232205b5423e9f4ee9bd3e1ae826279b1634ca2c3b3bb9": {
+      "original": "**Use the Oxford comma** when listing three or more items:",
+      "translated": "**3つ以上の項目を記載する場合は、オックスフォード・コンマ**を使用してください：",
+      "metadata": {
+        "original": "**Use the Oxford comma** when listing three or more items:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ba9d042c4436c40c72992fcab32577cbf9a845cfb408b3cf5323624c04cfb7b2": {
+      "original": "- ✓ \"Track orders, manage inventory, and process refunds.\"\n- ✗ \"Track orders, manage inventory and process refunds.\"",
+      "translated": "- ✓ \"注文の追跡、在庫管理、返金処理\"\n- ✗ \"注文の追跡、在庫管理、返金処理\"",
+      "metadata": {
+        "original": "- ✓ \"Track orders, manage inventory, and process refunds.\"\n- ✗ \"Track orders, manage inventory and process refunds.\"",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "99a422b3efb420fc9ec4d1794f046783152f676e916312e3da0d2ecbaf6c608d": {
+      "original": "**Use active voice** instead of passive voice whenever possible:",
+      "translated": "**受動態ではなく能動態を使うこと：",
+      "metadata": {
+        "original": "**Use active voice** instead of passive voice whenever possible:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "99eb3da7b48aef32ba1feba1eb7151931602b9dd434dbeb0a28d06dd5d86c690": {
+      "original": "- ✓ \"The extension sends email notifications when orders ship.\"\n- ✗ \"Email notifications are sent by the extension when orders are shipped.\"",
+      "translated": "- ✓ \"注文が発送されると、エクステンションからEメール通知が送信されます。\"\n- ✗ \"注文が発送されると、エクステンションからEメール通知が送信されます。\"",
+      "metadata": {
+        "original": "- ✓ \"The extension sends email notifications when orders ship.\"\n- ✗ \"Email notifications are sent by the extension when orders are shipped.\"",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "de04d93253c93fb14f9e08970d86b1e79fcd5bb7f788e6d87a9814a942acc027": {
+      "original": "**Capitalization:**",
+      "translated": "**資本金",
+      "metadata": {
+        "original": "**Capitalization:**",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1651a0320fc8ec91b134dadb1ab233087c5555daf806c9522e7675329c140679": {
+      "original": "- Use sentence case for headings (capitalize only the first word and proper nouns)\n- Do not use ALL CAPS for emphasis\n- Capitalize product names, features, and WooCommerce terminology correctly",
+      "translated": "- 見出しにはセンテンスケースを使用する（最初の単語と固有名詞のみ大文字にする）\n- 強調するために全角文字を使用しない\n- 商品名、機能、WooCommerce用語を正しく大文字で表記する。",
+      "metadata": {
+        "original": "- Use sentence case for headings (capitalize only the first word and proper nouns)\n- Do not use ALL CAPS for emphasis\n- Capitalize product names, features, and WooCommerce terminology correctly",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b1d376fe99425ac884c3339cdf87a219733ff46a639951141b74e00145c7269a": {
+      "original": "**Spelling and terminology:**",
+      "translated": "*スペルと用語：***。",
+      "metadata": {
+        "original": "**Spelling and terminology:**",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "27af46fe46f29c241134c1b0116c7309d11382800c553e737b3c043520a3d740": {
+      "original": "- Use American English spelling\n- Use \"ecommerce\" (lowercase, no hyphen)\n- Use \"WooCommerce\" (not \"Woocommerce\" or \"wooCommerce\")",
+      "translated": "- アメリカ英語のスペルを使用する\n- ecommerce\"（小文字、ハイフンなし）を使用する。\n- WooCommerce \"を使用してください（\"Woocommerce \"や \"wooCommerce \"ではありません）。",
+      "metadata": {
+        "original": "- Use American English spelling\n- Use \"ecommerce\" (lowercase, no hyphen)\n- Use \"WooCommerce\" (not \"Woocommerce\" or \"wooCommerce\")",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "acda7e56958c4d27e7a4ee781aea3ba7141a6e2d22e96e053600a3b360367b34": {
+      "original": "## Formatting Guidelines",
+      "translated": "## 書式ガイドライン",
+      "metadata": {
+        "original": "## Formatting Guidelines",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "433e42f635c78db0b5af4fcda37fc8ea12b6bcc1c0fc4cf012e3e3581fcb420f": {
+      "original": "Maintain clean, consistent formatting by following these standards. Custom styling interferes with the Marketplace design system and creates an inconsistent experience.",
+      "translated": "これらの標準に従って、クリーンで一貫性のある書式を維持してください。カスタムスタイルは、マーケットプレイスのデザインシステムに干渉し、一貫性のないエクスペリエンスを生み出します。",
+      "metadata": {
+        "original": "Maintain clean, consistent formatting by following these standards. Custom styling interferes with the Marketplace design system and creates an inconsistent experience.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f7807de7beb7fa2ecc9733b109c1e8e8308454d9762a2187661814bee4a3af8c": {
+      "original": "### Text Formatting",
+      "translated": "### テキストの書式設定",
+      "metadata": {
+        "original": "### Text Formatting",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7a8c486ea4ddda66df09e8e447a8b4876710971d50a1ff9f36899ba1a3745245": {
+      "original": "**Do not:**",
+      "translated": "**しないでください。",
+      "metadata": {
+        "original": "**Do not:**",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "721e913a2a265390680f191657e6f27f08b186df7ddd66073d8d999a71c8a0bd": {
+      "original": "- Center headings or body text\n- Alter the default text color\n- Add custom font sizes or font families\n- Use bold or italic formatting excessively",
+      "translated": "- 見出しまたは本文の中央揃え\n- デフォルトのテキスト色を変更する\n- カスタムのフォントサイズまたはフォントファミリを追加する\n- 太字や斜体の書式を過度に使用する",
+      "metadata": {
+        "original": "- Center headings or body text\n- Alter the default text color\n- Add custom font sizes or font families\n- Use bold or italic formatting excessively",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4d0113e014f51d4aaf88cb5f511d20c75b0f970df0831a5b9b3a55cc21fb7db4": {
+      "original": "- Use left-aligned text throughout\n- Allow headings and paragraphs to inherit default styles\n- Use bold sparingly for key terms only",
+      "translated": "- テキストはすべて左揃え\n- 見出しと段落はデフォルトのスタイルを継承させる。\n- 太字は重要な用語にのみ控えめに使用する",
+      "metadata": {
+        "original": "- Use left-aligned text throughout\n- Allow headings and paragraphs to inherit default styles\n- Use bold sparingly for key terms only",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "50117fe86cdc954e7bf21f545cf260bb86c4e615212defcbb18ba4d60be86f81": {
+      "original": "### Headings",
+      "translated": "### 見出し",
+      "metadata": {
+        "original": "### Headings",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "5bddf4722040cf43c001553306f503090f26cc7fe9b77e00ee1af7b7547c36a0": {
+      "original": "- Include more than one H1 tag per page (the product title serves as the H1)\n- Center-align headings\n- Apply custom colors or styles to headings",
+      "translated": "- 1ページに1つ以上のH1タグを含める（商品タイトルがH1の役割を果たす）\n- 見出しを中央揃えにする\n- 見出しにカスタムカラーやカスタムスタイルを適用する",
+      "metadata": {
+        "original": "- Include more than one H1 tag per page (the product title serves as the H1)\n- Center-align headings\n- Apply custom colors or styles to headings",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "158bc03a9c789d3f475bfea1be8c4ae05ded7230f2d53335ecee03d0ae979b85": {
+      "original": "- Use H2 for main sections\n- Use H3 for subsections within an H2 section\n- Maintain a logical heading hierarchy (do not skip levels)",
+      "translated": "- メインセクションにはH2を使用する\n- H2セクション内のサブセクションにはH3を使用する\n- 論理的な見出し階層を維持する（レベルを飛ばさない）",
+      "metadata": {
+        "original": "- Use H2 for main sections\n- Use H3 for subsections within an H2 section\n- Maintain a logical heading hierarchy (do not skip levels)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "41c5b287df69119baeaa71dd014bc4150c47a7bc163ebac67d5785a5177a1180": {
+      "original": "### Sections and Layout",
+      "translated": "### セクションとレイアウト",
+      "metadata": {
+        "original": "### Sections and Layout",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "cc0d7e43b9eb24dcce47790becb9c4fa0aa5d0839ed98637d39999791752ff44": {
+      "original": "- Create custom-styled sections or containers\n- Add borders around sections\n- Apply background colors to content areas\n- Add custom spacing between sections\n- Add additional styles to columns",
+      "translated": "- カスタムスタイルのセクションやコンテナを作成\n- セクションの周りにボーダーを追加する\n- コンテンツエリアに背景色を適用する\n- セクション間にカスタムスペーシングを追加する\n- カラムにスタイルを追加する",
+      "metadata": {
+        "original": "- Create custom-styled sections or containers\n- Add borders around sections\n- Apply background colors to content areas\n- Add custom spacing between sections\n- Add additional styles to columns",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ae5bc0ae667148fdee5c5a2f15ab67b6de70148ceb5229c67bf74ee100452449": {
+      "original": "- Use standard paragraph and heading blocks\n- Let the Marketplace template handle section spacing\n- Use the default column block without style modifications",
+      "translated": "- 標準的な段落ブロックと見出しブロックを使用する\n- セクションの間隔はマーケットプレイスのテンプレートに任せる\n- スタイルを変更せずにデフォルトの列ブロックを使用する",
+      "metadata": {
+        "original": "- Use standard paragraph and heading blocks\n- Let the Marketplace template handle section spacing\n- Use the default column block without style modifications",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "cc68eae36941716891a7344ad80cedba36f81f62700fdfeb7537473fb4063a7a": {
+      "original": "- Customize bullet or number designs with custom CSS\n- Add custom spacing between list items\n- Create nested lists more than two levels deep",
+      "translated": "- カスタムCSSで箇条書きや数字のデザインをカスタマイズ\n- リストアイテム間にカスタムスペーシングを追加\n- 2階層以上のネストされたリストの作成",
+      "metadata": {
+        "original": "- Customize bullet or number designs with custom CSS\n- Add custom spacing between list items\n- Create nested lists more than two levels deep",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "461028f32638909815f58cda507a1f77c95da102e507f74023908342754bcb94": {
+      "original": "- Use the standard unordered or ordered list blocks\n- Apply the approved list classes for styled checkmarks (see Formatting Tools below)",
+      "translated": "- 標準の順序なしリストまたは順序付きリストブロックを使用する\n- 承認されたリスト・クラスをスタイル付きチェックマークに適用する (以下の書式設定ツールを参照)",
+      "metadata": {
+        "original": "- Use the standard unordered or ordered list blocks\n- Apply the approved list classes for styled checkmarks (see Formatting Tools below)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "2d8de14f673cda6429e802c5d3f297847bbd3d1d6941fa5b34324faba11b0e85": {
+      "original": "## Content Restrictions",
+      "translated": "## 内容の制限",
+      "metadata": {
+        "original": "## Content Restrictions",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "448409f60fb4066a5a88cde0b860476f572ceb4fba2a4e9ac5fd0b11ddd9fa59": {
+      "original": "Do not use emojis in product pages or documentation. Emojis can cause accessibility issues, display inconsistently across devices, and create an unprofessional appearance.",
+      "translated": "製品ページや文書に絵文字を使用しないでください。絵文字はアクセシビリティの問題を引き起こし、デバイス間で表示が一貫せず、プロらしくない外観になる可能性があります。",
+      "metadata": {
+        "original": "Do not use emojis in product pages or documentation. Emojis can cause accessibility issues, display inconsistently across devices, and create an unprofessional appearance.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e9ada5a81edb20352fc1dbf2fab30f2be561ab0aefd9499da7021859bd571cf1": {
+      "original": "- ✗ \"🚀 Boost your sales!\"\n- ✓ \"Boost your sales\"",
+      "translated": "- ✗ \"🚀 売り上げを伸ばそう！\"\n- 売上を伸ばそう",
+      "metadata": {
+        "original": "- ✗ \"🚀 Boost your sales!\"\n- ✓ \"Boost your sales\"",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "6758eb2775455074363afc92f25b696b667840542b629c2008dfd2367c8052ee": {
+      "original": "### External Links",
+      "translated": "### 外部リンク",
+      "metadata": {
+        "original": "### External Links",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "0271d05ef34b29ceb2e155ddfdda258500f5ec1d91c3408e77db383937af01f4": {
+      "original": "Do not include links to external websites. All support and documentation links should point to Marketplace URLs:",
+      "translated": "外部ウェブサイトへのリンクは含めないでください。すべてのサポートとドキュメンテーションのリンクは、マーケットプレイスのURLを指すようにしてください：",
+      "metadata": {
+        "original": "Do not include links to external websites. All support and documentation links should point to Marketplace URLs:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1bb24da36d95a3dc3adb176d556a00b55f01248052f5b4231f037fdf7d3bcb6d": {
+      "original": "- Link to your product documentation hosted on WooCommerce.com\n- Link to Marketplace support resources\n- Do not link to external support portals, documentation sites, or landing pages",
+      "translated": "- WooCommerce.comでホストされている製品ドキュメントへのリンク\n- マーケットプレイスのサポートリソースへのリンク\n- 外部のサポートポータル、ドキュメントサイト、ランディングページにリンクしないでください。",
+      "metadata": {
+        "original": "- Link to your product documentation hosted on WooCommerce.com\n- Link to Marketplace support resources\n- Do not link to external support portals, documentation sites, or landing pages",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8b3a87144dbbe4507d7b2963683bd43b2bd6c2fe054915ac6b06a63ed93de471": {
+      "original": "## Formatting Tools",
+      "translated": "## 書式ツール",
+      "metadata": {
+        "original": "## Formatting Tools",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "2890b8c632699fcae89d876ea437f6c44da4e1c3356988e2323f6b1616828e15": {
+      "original": "The WooCommerce Marketplace provides several formatting tools to create visually appealing content while maintaining consistency.",
+      "translated": "WooCommerce Marketplaceには、一貫性を保ちながら視覚的に魅力的なコンテンツを作成するためのフォーマットツールがいくつか用意されています。",
+      "metadata": {
+        "original": "The WooCommerce Marketplace provides several formatting tools to create visually appealing content while maintaining consistency.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ee8c9360f23983bf1d3a6fa57f86b7dcb2697daf89ab8714b7f005a777a38e90": {
+      "original": "### Styled List Classes",
+      "translated": "### スタイル付きリストクラス",
+      "metadata": {
+        "original": "### Styled List Classes",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "275a6ae1b72a53b68862107e287e259f62a8255012ee3900c84e3f7a094efeb3": {
+      "original": "Use these CSS classes to create professional checkmark lists:",
+      "translated": "これらのCSSクラスを使って、プロフェッショナルなチェックマークリストを作成しましょう：",
+      "metadata": {
+        "original": "Use these CSS classes to create professional checkmark lists:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "7b986218c482db5ef5de098662f677b3c8ae5667997d4ffc272cd30e3a847af5": {
+      "original": "#### Primary checkmark list (wccom-tick-list-primary)",
+      "translated": "#### プライマリチェックマークリスト (wccom-tick-list-primary)",
+      "metadata": {
+        "original": "#### Primary checkmark list (wccom-tick-list-primary)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "802709b380949a036977fe5ad4405757277503cb048b04e90b14ffb10ff59114": {
+      "original": "Creates bold checkmarks in green circles. Use for main benefit lists at the top of your product description.",
+      "translated": "太字のチェックマークを緑の丸で囲みます。商品説明の上部にある主なベネフィットリストに使用します。",
+      "metadata": {
+        "original": "Creates bold checkmarks in green circles. Use for main benefit lists at the top of your product description.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "daff137f5f7f587be8239b77b7460b8624d4f9f27b81dc3ba2dcf6919edaf964": {
+      "original": "#### Secondary checkmark list (wccom-tick-list-secondary)",
+      "translated": "#### 二次チェックマークリスト (wccom-tick-list-secondary)",
+      "metadata": {
+        "original": "#### Secondary checkmark list (wccom-tick-list-secondary)",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "02343eef8094b5768e527dbad53686c5aa41256aa373ba7be03f4b266c2a3e1f": {
+      "original": "Creates lightweight green checkmarks. Use for feature lists and secondary content throughout the page.",
+      "translated": "軽量な緑色のチェックマークを作成します。ページ全体の機能リストや二次コンテンツに使用します。",
+      "metadata": {
+        "original": "Creates lightweight green checkmarks. Use for feature lists and secondary content throughout the page.",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "af541c103b29f0e5cd159f1cf5eed134d07ff323a71d127768667ad1a1efc950": {
+      "original": "### Callout Boxes",
+      "translated": "### 吹き出しボックス",
+      "metadata": {
+        "original": "### Callout Boxes",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "b4c23e8d1dad9337cff2c9d388084ba7ca80e3a1320c67945e5b9158bc9af379": {
+      "original": "Use the box shortcode to highlight important information. Available styles:",
+      "translated": "ボックスショートコードを使って、重要な情報を強調しましょう。利用可能なスタイル",
+      "metadata": {
+        "original": "Use the box shortcode to highlight important information. Available styles:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "f83862e8f83cd84d3da0a525d5f3d745276f5f3f1519a2aa42bc93781af4d2b6": {
+      "original": "#### Info box",
+      "translated": "#### 情報ボックス",
+      "metadata": {
+        "original": "#### Info box",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e0f59b6a372a96c83311558e2cb6a958436637d81f0f423b6c1b6bcff0857dd8": {
+      "original": "For general tips and helpful information:",
+      "translated": "一般的なヒントや役立つ情報",
+      "metadata": {
+        "original": "For general tips and helpful information:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a07d9d4702c8fa9f500da812bf531f69b8b2398d6762cc69bdab764e6b8ad0eb": {
+      "original": "This component can be used with or without __INLINE_CODE_0__.",
+      "translated": "このコンポーネントは、__INLINE_CODE_0__の有無にかかわらず使用できる。",
+      "metadata": {
+        "original": "This component can be used with or without __INLINE_CODE_0__.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`style=\"info\"`"
+        ],
+        "urls": []
+      }
+    },
+    "823a95d00c8edbbd9cc9c91912e24bba60081997cbeba6fb6029322726b93d00": {
+      "original": "#### Alert box (style=\"alert\")",
+      "translated": "#### アラートボックス (style=\"alert\")",
+      "metadata": {
+        "original": "#### Alert box (style=\"alert\")",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e5b271e963a6ea88088d0c97908ddca02e507648a1b30c63a5d8c7c1bd43fc7f": {
+      "original": "For warnings or important notices:",
+      "translated": "警告や重要なお知らせ",
+      "metadata": {
+        "original": "For warnings or important notices:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a236e51ee2fc7775431747e73ccbb9ca3f555e7399bc5f6205c8f0216e1b45d0": {
+      "original": "#### Error box (style=\"error\")",
+      "translated": "#### エラーボックス (style=\"error\")",
+      "metadata": {
+        "original": "#### Error box (style=\"error\")",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e2b017720480bc05cb12e03084d15a448946a4f3a3f2ca446bf827ff44047ec7": {
+      "original": "For critical warnings or known limitations:",
+      "translated": "重大な警告や既知の制限について：",
+      "metadata": {
+        "original": "For critical warnings or known limitations:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1f68a4e254b7c2dc2ad538271ef642b52b920f7e6aa2ba6966e63d9d31fa145a": {
+      "original": "#### Success box (style=\"success\")",
+      "translated": "#### 成功ボックス (style=\"success\")",
+      "metadata": {
+        "original": "#### Success box (style=\"success\")",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ee2b216c5f1c6bdb9d2119fc273a7e8bdb027e5643da54b80f2821fa6e12f417": {
+      "original": "For positive confirmations or best practices:",
+      "translated": "肯定的な確認やベストプラクティスについて：",
+      "metadata": {
+        "original": "For positive confirmations or best practices:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "4ffc5291fadad048c9b688d896155accfbaccc623c128ca05f9c9a3d29649d19": {
+      "original": ":::info\nUse callout boxes sparingly. Overuse reduces their impact and creates visual clutter.\n:::",
+      "translated": ":::info\n吹き出しボックスは控えめに使いましょう。使い過ぎるとインパクトが弱くなり、視覚的に乱雑になる。\n:::",
+      "metadata": {
+        "original": ":::info\nUse callout boxes sparingly. Overuse reduces their impact and creates visual clutter.\n:::",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "aa65564074fc8aa73f3fc55362c2c6110b40ee1a82e409d988a0a40057348fed": {
+      "original": "## Documentation Standards",
+      "translated": "## ドキュメント基準",
+      "metadata": {
+        "original": "## Documentation Standards",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "85bf54034de62ec13dbf2f808914df740f59c8a668d36b8aca63cb655193756d": {
+      "original": "When creating documentation for your product, follow these additional guidelines:",
+      "translated": "製品のドキュメントを作成する際は、以下の追加ガイドラインに従ってください：",
+      "metadata": {
+        "original": "When creating documentation for your product, follow these additional guidelines:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "944843da7f18451e65b6172594cecfcecd8b7d8239a1fb438ea79f4862be23e2": {
+      "original": "### Structure",
+      "translated": "### 構造",
+      "metadata": {
+        "original": "### Structure",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "dd45edb51b301d366b393b82ba77bb41b88097ef8ad80980b1c0628c364d69dd": {
+      "original": "- Begin with a clear introduction explaining what the extension does\n- Please use the synced pattern titled \"Docs – Installation.\" This explains how our mutual customers should install purchases from WooCommerce.com.\n- Document all your product's features and settings\n- Provide troubleshooting guidance for common issues",
+      "translated": "- 拡張機能が何をするのかを説明する明確なイントロダクションから始めてください。\n- \"Docs - Installation \"というタイトルの同期パターンを使用してください。これは私たちの相互の顧客がWooCommerce.comからの購入をどのようにインストールすべきかを説明しています。\n- 製品のすべての機能と設定を文書化してください。\n- 一般的な問題に対するトラブルシューティングガイダンスを提供する",
+      "metadata": {
+        "original": "- Begin with a clear introduction explaining what the extension does\n- Please use the synced pattern titled \"Docs – Installation.\" This explains how our mutual customers should install purchases from WooCommerce.com.\n- Document all your product's features and settings\n- Provide troubleshooting guidance for common issues",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "a62072480b22262f7e3c8579b55e27a0306c1344196467c828f0f565920e0249": {
+      "original": "For detailed documentation frameworks, refer to [Support and Documentation Best Practices](__URL_0__).",
+      "translated": "詳細なドキュメンテーションの枠組みについては、[サポートとドキュメンテーションのベストプラクティス](__URL_0__)を参照してください。",
+      "metadata": {
+        "original": "For detailed documentation frameworks, refer to [Support and Documentation Best Practices](__URL_0__).",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": [
+          "https://woocommerce.com/document/extension-development-best-practices/#support-and-documentation"
+        ]
+      }
+    },
+    "4a8b8f82b90b1a38340e309b1cf638b358fdc0c57a5813ed744995324946b30e": {
+      "original": "### Images and Screenshots",
+      "translated": "### 画像とスクリーンショット",
+      "metadata": {
+        "original": "### Images and Screenshots",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "ec19b486dd56e24e797025f0c822a720327e946a77baa274cef29c7cffa9b49c": {
+      "original": "When adding visual content:",
+      "translated": "ビジュアル・コンテンツを追加する場合：",
+      "metadata": {
+        "original": "When adding visual content:",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "1a047bd51013ceac73c1cca74cdc9baf6544736293e1bcfcc0354ed312208452": {
+      "original": "- Use the modern WordPress admin color scheme\n- Use a recent core WordPress theme unless documenting a different theme\n- Ensure screenshots are clear and legible\n- Optimize file size\n- Do not include sensitive or personal information in screenshots\n- Add alt text to all images for accessibility\n",
+      "translated": "- 最新のWordPress管理画面のカラースキームを使用する\n- 異なるテーマのドキュメントを作成する場合を除き、最近のWordPressのコアテーマを使用すること\n- スクリーンショットは鮮明で見やすいものにすること\n- ファイルサイズを最適化する\n- スクリーンショットに機密情報や個人情報を含めない\n- アクセシビリティのため、すべての画像にaltテキストを追加する\n",
+      "metadata": {
+        "original": "- Use the modern WordPress admin color scheme\n- Use a recent core WordPress theme unless documenting a different theme\n- Ensure screenshots are clear and legible\n- Optimize file size\n- Do not include sensitive or personal information in screenshots\n- Add alt text to all images for accessibility\n",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "8a9f8022b8767b7dd335f06a9a71a1c3062e49bac9c4164787430ded554c7d78": {
+      "original": "| __INLINE_CODE_0__                              | string  |    no    | Operator to compare product tags. Allowed values: __INLINE_CODE_1__, __INLINE_CODE_2__, __INLINE_CODE_3__                                                                                                                                                               |\n| __INLINE_CODE_4__                                   | boolean |    no    | Limit result set to products on sale.                                                                                                                                                                                                 |\n| __INLINE_CODE_5__                                 | string  |    no    | Limit result set to products based on a minimum price, provided using the smallest unit of the currency. E.g. provide 10025 for 100.25 USD, which is a two-decimal currency, and 1025 for 1025 JPY, which is a zero-decimal currency. |\n| __INLINE_CODE_6__                                 | string  |    no    | Limit result set to products based on a maximum price, provided using the smallest unit of the currency. E.g. provide 10025 for 100.25 USD, which is a two-decimal currency, and 1025 for 1025 JPY, which is a zero-decimal currency. |\n| __INLINE_CODE_7__                              | array   |    no    | Limit result set to products with specified stock statuses. Expects an array of strings containing 'instock', 'outofstock' or 'onbackorder'.                                                                                          |\n| __INLINE_CODE_8__                                | array   |    no    | Limit result set to specific attribute terms. Expects an array of objects containing __INLINE_CODE_9__ (taxonomy), __INLINE_CODE_10__ or __INLINE_CODE_11__, and optional __INLINE_CODE_12__ for comparison.                                                             |\n| __INLINE_CODE_13__                        | string  |    no    | The logical relationship between attributes when filtering across multiple at once.                                                                                                                                                   |\n| __INLINE_CODE_14__                        | string  |    no    | Determines if hidden or visible catalog products are shown. Allowed values: __INLINE_CODE_15__, __INLINE_CODE_16__, __INLINE_CODE_17__, __INLINE_CODE_18__, __INLINE_CODE_19__                                                                                                           |\n| __INLINE_CODE_20__                                    | array   |    no    | Limit result set to products with a certain average rating. Allowed values: __INLINE_CODE_21__, __INLINE_CODE_22__, __INLINE_CODE_23__, __INLINE_CODE_24__, __INLINE_CODE_25__.                                                                                                                                  |\n| __INLINE_CODE_26__                                   | integer |    no    | Limit result set to products related to a specific product ID.                                                                                                                                                                        |",
+      "translated": "| __INLINE_CODE_0__｜文字列｜ no｜商品タグを比較する演算子。許可される値：__INLINE_CODE_1__、__INLINE_CODE_2__、__INLINE_CODE_3__。\n| __INLINE_CODE_4__ | boolean | no | 結果をセール中の商品に限定する。                                                                                                                                                                                                 |\n| __INLINE_CODE_5__ | string | no | 通貨の最小単位で指定された最低価格に基づく商品に結果を限定する。例：100.25 USDの場合は10025を、1025 JPYの場合は1025を指定します。|\n|__INLINE_CODE_6__ | string | no | 通貨の最小単位を使用して提供される、最大価格に基づく製品に結果セットを制限します。例：100.25米ドルには10025を、1025円には1025を指定します。|\n| __INLINE_CODE_7__｜配列｜no｜結果セットを指定された在庫ステータスの商品に限定する。instock'、'outofstock'または'onbackorder'を含む文字列の配列を期待します。                                                                                          |\n| __INLINE_CODE_8__ | array | no | 結果を特定の属性に限定します。__INLINE_CODE_9__ (タクソノミー)、 __INLINE_CODE_10__ または __INLINE_CODE_11__ を含むオブジェクトの配列、および比較のための __INLINE_CODE_12__ を期待します。                                                             |\n| __INLINE_CODE_13__                        | string  |    no    | The logical relationship between attributes when filtering across multiple at once.                                                                                                                                                   |\n| __INLINE_CODE_14__ | string | no | 非表示または表示されるカタログ商品を決定します。許可される値：許可される値：__INLINE_CODE_15__、__INLINE_CODE_16__、__INLINE_CODE_17__、__INLINE_CODE_18__、__INLINE_CODE_19__。\n| __INLINE_CODE_20__ | array | no | 結果を特定の平均評価を持つ商品に限定する。許可される値：指定可能な値： __INLINE_CODE_21__, __INLINE_CODE_22__, __INLINE_CODE_23__, __INLINE_CODE_24__, __INLINE_CODE_25__.                                                                                                                                  |\n| __INLINE_CODE_26__ | integer | no | 特定のプロダクトIDに関連するプロダクトに結果を限定する。                                                                                                                                                                        |",
+      "metadata": {
+        "original": "| __INLINE_CODE_0__                              | string  |    no    | Operator to compare product tags. Allowed values: __INLINE_CODE_1__, __INLINE_CODE_2__, __INLINE_CODE_3__                                                                                                                                                               |\n| __INLINE_CODE_4__                                   | boolean |    no    | Limit result set to products on sale.                                                                                                                                                                                                 |\n| __INLINE_CODE_5__                                 | string  |    no    | Limit result set to products based on a minimum price, provided using the smallest unit of the currency. E.g. provide 10025 for 100.25 USD, which is a two-decimal currency, and 1025 for 1025 JPY, which is a zero-decimal currency. |\n| __INLINE_CODE_6__                                 | string  |    no    | Limit result set to products based on a maximum price, provided using the smallest unit of the currency. E.g. provide 10025 for 100.25 USD, which is a two-decimal currency, and 1025 for 1025 JPY, which is a zero-decimal currency. |\n| __INLINE_CODE_7__                              | array   |    no    | Limit result set to products with specified stock statuses. Expects an array of strings containing 'instock', 'outofstock' or 'onbackorder'.                                                                                          |\n| __INLINE_CODE_8__                                | array   |    no    | Limit result set to specific attribute terms. Expects an array of objects containing __INLINE_CODE_9__ (taxonomy), __INLINE_CODE_10__ or __INLINE_CODE_11__, and optional __INLINE_CODE_12__ for comparison.                                                             |\n| __INLINE_CODE_13__                        | string  |    no    | The logical relationship between attributes when filtering across multiple at once.                                                                                                                                                   |\n| __INLINE_CODE_14__                        | string  |    no    | Determines if hidden or visible catalog products are shown. Allowed values: __INLINE_CODE_15__, __INLINE_CODE_16__, __INLINE_CODE_17__, __INLINE_CODE_18__, __INLINE_CODE_19__                                                                                                           |\n| __INLINE_CODE_20__                                    | array   |    no    | Limit result set to products with a certain average rating. Allowed values: __INLINE_CODE_21__, __INLINE_CODE_22__, __INLINE_CODE_23__, __INLINE_CODE_24__, __INLINE_CODE_25__.                                                                                                                                  |\n| __INLINE_CODE_26__                                   | integer |    no    | Limit result set to products related to a specific product ID.                                                                                                                                                                        |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`tag_operator`",
+          "`in`",
+          "`not_in`",
+          "`and`",
+          "`on_sale`",
+          "`min_price`",
+          "`max_price`",
+          "`stock_status`",
+          "`attributes`",
+          "`attribute`",
+          "`term_id`",
+          "`slug`",
+          "`operator`",
+          "`attribute_relation`",
+          "`catalog_visibility`",
+          "`any`",
+          "`visible`",
+          "`catalog`",
+          "`search`",
+          "`hidden`",
+          "`rating`",
+          "`1`",
+          "`2`",
+          "`3`",
+          "`4`",
+          "`5`",
+          "`related`"
+        ],
+        "urls": []
+      }
+    },
+    "2630d56fc886a50467ebab9275afbad0f23556297ade8c7fbfafa2babb702cdb": {
+      "original": "## Product Links and Embedding",
+      "translated": "## 製品リンクと埋め込み",
+      "metadata": {
+        "original": "## Product Links and Embedding",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "e8a2af0927acded236db0a40233634367f66b5195b29c48e98f91eb1f42536f0": {
+      "original": "Product responses include __INLINE_CODE_0__ that provide URLs to related resources. When products have upsells, cross-sells, or related products configured, embeddable links are included that can be used with WordPress's __INLINE_CODE_1__ feature.",
+      "translated": "商品のレスポンスには、関連リソースへの URL を提供する __INLINE_CODE_0__ が含まれます。商品にアップセル、クロスセル、関連商品が設定されている場合、WordPress の __INLINE_CODE_1__ 機能で使用できる埋め込み可能なリンクが含まれます。",
+      "metadata": {
+        "original": "Product responses include __INLINE_CODE_0__ that provide URLs to related resources. When products have upsells, cross-sells, or related products configured, embeddable links are included that can be used with WordPress's __INLINE_CODE_1__ feature.",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`_links`",
+          "`_embed`"
+        ],
+        "urls": []
+      }
+    },
+    "094abe3ae9a85b86d4893f25e2edab3168bc5020275c06f7fbfde0bcd99d89e5": {
+      "original": "### Available Links",
+      "translated": "### 利用可能なリンク",
+      "metadata": {
+        "original": "### Available Links",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "40a6e6eb7dd1987cfc90dd67d5ca56977dbd5be5192b043a1d1d6ffa8b3a4f9f": {
+      "original": "| Link         | Description                                         | Embeddable |\n| :----------- | :-------------------------------------------------- | :--------: |\n| __INLINE_CODE_0__       | Link to the current product                         | No         |\n| __INLINE_CODE_1__ | Link to the products collection                     | No         |\n| __INLINE_CODE_2__         | Link to parent product (for variations)             | No         |\n| __INLINE_CODE_3__    | Link to fetch upsell products (if configured)       | Yes        |\n| __INLINE_CODE_4__| Link to fetch cross-sell products (if configured)   | Yes        |\n| __INLINE_CODE_5__    | Link to fetch related products                      | Yes        |",
+      "translated": "| リンク｜説明｜埋め込み可能\n| :----------- | :-------------------------------------------------- | :--------:|\n| __INLINE_CODE_0__ | 現在の商品へのリンク | いいえ\n| __INLINE_CODE_1__｜商品コレクションへのリンク｜いいえ｜｜__INLINE_CODE_2__｜商品コレクションへのリンク\n| いいえ｜__INLINE_CODE_2__｜親製品（バリエーション用）へのリンク\n| __INLINE_CODE_3__ | アップセル商品へのリンク (設定されている場合)\n| __INLINE_CODE_4__|クロスセル商品取得へのリンク (設定されている場合) | はい｜｜__INLINE_CODE_4__|クロスセル商品取得へのリンク (設定されている場合)\n| はい｜__INLINE_CODE_5__｜関連商品の取得リンク｜はい｜__INLINE_CODE_5__｜関連商品の取得リンク(設定されている場合)",
+      "metadata": {
+        "original": "| Link         | Description                                         | Embeddable |\n| :----------- | :-------------------------------------------------- | :--------: |\n| __INLINE_CODE_0__       | Link to the current product                         | No         |\n| __INLINE_CODE_1__ | Link to the products collection                     | No         |\n| __INLINE_CODE_2__         | Link to parent product (for variations)             | No         |\n| __INLINE_CODE_3__    | Link to fetch upsell products (if configured)       | Yes        |\n| __INLINE_CODE_4__| Link to fetch cross-sell products (if configured)   | Yes        |\n| __INLINE_CODE_5__    | Link to fetch related products                      | Yes        |",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`self`",
+          "`collection`",
+          "`up`",
+          "`upsells`",
+          "`cross_sells`",
+          "`related`"
+        ],
+        "urls": []
+      }
+    },
+    "16d128cf0df3657df6b0f98908af61b8993962e36b74664bcff9fcc097a6c507": {
+      "original": "### Example Response with Links",
+      "translated": "### リンクのあるレスポンス例",
+      "metadata": {
+        "original": "### Example Response with Links",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
+    },
+    "214dc2a35e86139521faffa06d28fa57107a6b975607e44e00f757f6ca59663f": {
+      "original": "### Using the __INLINE_CODE_0__ Parameter",
+      "translated": "### __INLINE_CODE_0__パラメータの使用",
+      "metadata": {
+        "original": "### Using the __INLINE_CODE_0__ Parameter",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`_embed`"
+        ],
+        "urls": []
+      }
+    },
+    "c5f4569376f19ff6bd2fe223833e8af46972eb02b279601787e14f5c7900a6e1": {
+      "original": "Add __INLINE_CODE_0__ to any product request to automatically fetch and include the linked resources in an __INLINE_CODE_1__ object:",
+      "translated": "商品リクエストに__INLINE_CODE_0__を追加すると、リンクされたリソースを自動的に取得し、__INLINE_CODE_1__オブジェクトに含めます：",
+      "metadata": {
+        "original": "Add __INLINE_CODE_0__ to any product request to automatically fetch and include the linked resources in an __INLINE_CODE_1__ object:",
+        "codeBlocks": [],
+        "inlineCodes": [
+          "`?_embed`",
+          "`_embedded`"
+        ],
+        "urls": []
+      }
+    },
+    "3dc1ec336e5f2e4f4f1c615a780f38e16684e837d91adf7593a4fdd01c268e07": {
+      "original": "**Example response with embedding:**",
+      "translated": "*エンベッディングを使用した回答例：***。",
+      "metadata": {
+        "original": "**Example response with embedding:**",
+        "codeBlocks": [],
+        "inlineCodes": [],
+        "urls": []
+      }
     }
   },
   "docs/block-development/extensible-blocks/cart-and-checkout-blocks/filters-in-cart-and-checkout/cart-line-items.md": {
@@ -76051,9 +78694,9 @@
     "segments": 38
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/products.md": {
-    "hash": "4ef88f2db3fe382c8891382204f0cb9c97501c05e86f64a5d86279a16362fc65",
-    "translatedAt": "2025-12-27T02:50:02.543Z",
-    "segments": 17
+    "hash": "98cfd7127fa190fbb95765b99fcc0e1cefa718cf309efd992094be2c3fdb1878",
+    "translatedAt": "2026-02-25T17:28:32.552Z",
+    "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-tags.md": {
     "hash": "5836d4154e062a975b051644dc439d7ed580d962d78adade4943956b143b0972",
@@ -76219,5 +78862,35 @@
     "hash": "9c3383f8f15ac90e5da6c556734b91f9014c24ba41bd2c81eda4693fd8630c62",
     "translatedAt": "2026-02-13T17:22:34.576Z",
     "segments": 20
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/support-guidelines.md": {
+    "hash": "9a07c107a3136d25a207a800877488fe219384ca144506a9e5576e63b7e080c2",
+    "translatedAt": "2026-02-25T17:28:04.495Z",
+    "segments": 45
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/product-update-guidelines.md": {
+    "hash": "234c7a61b65a40bdd6049d599a7778d923bb7740221dc10485a7d328e29c50df",
+    "translatedAt": "2026-02-25T17:28:11.674Z",
+    "segments": 58
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/monetization-expectations.md": {
+    "hash": "9d07677a395353a8762c91c9bbcf5c30c0428b4e6c695b46e8477ffd09d5f71d",
+    "translatedAt": "2026-02-25T17:28:16.248Z",
+    "segments": 36
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/managing-products.md": {
+    "hash": "bdd4f9d4fe9189bf7f71433fd1c0cdf5d92bc38d519d6e24d5bd4a30609410a0",
+    "translatedAt": "2026-02-25T17:28:17.874Z",
+    "segments": 18
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/getting-started.md": {
+    "hash": "a6af42e5e506e23a8fc00f9198e9438219de7637c328db7b28912abb6224790c",
+    "translatedAt": "2026-02-25T17:28:20.929Z",
+    "segments": 24
+  },
+  "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/content-style-guide.md": {
+    "hash": "f1572b3ac4d01e3618c915f7b47ec0820fc80783376d94eaf787b67a48a2ad8c",
+    "translatedAt": "2026-02-25T17:28:28.944Z",
+    "segments": 68
   }
 }
