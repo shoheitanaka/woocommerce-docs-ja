@@ -2,13 +2,12 @@
 sidebar_position: 6
 sidebar_label: Product update guidelines
 ---
-# 製品アップデートのガイドラインとベストプラクティス
+
+# Product update guidelines and best practices
 
 高品質で競争力のあるマーケットプレイスを維持するため、すべてのベンダーに定期的な製品のアップデートを推奨しています。一貫したアップデートは、WooCommerceとWordPressの最新バージョンとの互換性を確保し、セキュリティとパフォーマンスを向上させ、お客様に継続的な価値を提供します。
 
 ## ベストプラクティス
-
-### TL;DR
 
 [- 最低でも**6ヶ月ごと**に製品を更新してください。
 - WooCommerceコアリリースカレンダー](https://developer.woocommerce.com/release-calendar/)に合わせてください。

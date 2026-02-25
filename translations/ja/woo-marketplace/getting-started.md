@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
 ---
-# はじめに
+
+# Getting started
 
 WooCommerce.comマーケットプレイスにようこそ！WooCommerce.comマーケットプレイスは、世界中の信頼できる開発者とマーチャントを結びつけ、パワフルで柔軟なオンラインストアを作成します。
 

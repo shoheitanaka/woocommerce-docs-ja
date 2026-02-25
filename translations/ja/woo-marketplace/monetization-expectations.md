@@ -2,7 +2,8 @@
 sidebar_position: 2
 sidebar_label: Monetization expectations
 ---
-# マーケットプレイス・プラグインへの収益化の期待
+
+# Monetization expectations for Marketplace plugins
 
 Woo Marketplaceにプラグインを掲載する際、私たちがどのように収益化に取り組んでいるかを理解することが重要です。私たちのゴールは、あなたのプラグインがどのように価値を生み出し、どのようにその価値を獲得し、マーチャントにとって透明性のあるエクスペリエンスを、開発者にとって持続可能なパートナーシップを生み出すか、その整合性を確保することです。
 
