@@ -2,13 +2,12 @@
 sidebar_position: 6
 sidebar_label: Product update guidelines
 ---
-# 製品アップデートのガイドラインとベストプラクティス
+
+# Product update guidelines and best practices
 
 高品質で競争力のあるマーケットプレイスを維持するため、すべてのベンダーに定期的な製品のアップデートを推奨しています。一貫したアップデートは、WooCommerceとWordPressの最新バージョンとの互換性を確保し、セキュリティとパフォーマンスを向上させ、お客様に継続的な価値を提供します。
 
 ## ベストプラクティス
-
-### TL;DR
 
 [- 最低でも**6ヶ月ごと**に製品を更新してください。
 - WooCommerceコアリリースカレンダー](https://developer.woocommerce.com/release-calendar/)に合わせてください。
@@ -144,7 +143,7 @@ curl -X POST https://woocommerce.com/wp-json/wc/submission/runner/v1/product/dep
 
 #### ステータス・レスポンス
 
-デプロイメント ステータスを照会すると、さまざまなテスト実行のステータスなど、進行状況に関する詳細がレスポンスで返されます。
+デプロイメント ステータスを照会すると、さまざまなテストの実行状況など、進行状況に関する詳細がレスポンスで返されます。
 
 以下はその回答例である：
 
@@ -169,7 +168,7 @@ curl -X POST https://woocommerce.com/wp-json/wc/submission/runner/v1/product/dep
 }
 ```
 
-> 注：*** テスト実行オブジェクトは、実行されたテストタイプごとに 1 つずつ、レスポンス内に追加で存在する可能性があります。
+> 注：*** 実行されたテストタイプごとに、追加のテスト実行オブジェクトが存在する場合があります。
 
 ### カスタム E2E テストによる互換性と信頼性の最大化
 

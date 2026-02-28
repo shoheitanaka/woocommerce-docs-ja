@@ -75395,7 +75395,7 @@
     },
     "537c89a7bcc21d1fccdeaa76800e883bf7cc1f86992c61a30bcfe4cb20421d00": {
       "original": "# Product update guidelines and best practices",
-      "translated": "# 製品アップデートのガイドラインとベストプラクティス",
+      "translated": "# 製品更新のガイドラインとベストプラクティス",
       "metadata": {
         "original": "# Product update guidelines and best practices",
         "codeBlocks": [],
@@ -75889,7 +75889,7 @@
     },
     "4304e5dc3eff241af2b71a26050a0ec20952cfac97a9d32b508a6d2fd6ca0b25": {
       "original": "When you query the deployment status, the response will provide details about the progress, including the status of various test runs.",
-      "translated": "デプロイメント ステータスを照会すると、さまざまなテスト実行のステータスなど、進行状況に関する詳細がレスポンスで返されます。",
+      "translated": "デプロイメント ステータスを照会すると、さまざまなテストの実行状況など、進行状況に関する詳細がレスポンスで返されます。",
       "metadata": {
         "original": "When you query the deployment status, the response will provide details about the progress, including the status of various test runs.",
         "codeBlocks": [],
@@ -75909,7 +75909,7 @@
     },
     "0ca4651c047dd9fdc3ee5ff49f65606c15fa056f9323362d14ac351646e8f7f7": {
       "original": "> **Note:** Additional test run objects may be present in the response, one for each test type that was executed.",
-      "translated": "> 注：*** テスト実行オブジェクトは、実行されたテストタイプごとに 1 つずつ、レスポンス内に追加で存在する可能性があります。",
+      "translated": "> 注：*** 実行されたテストタイプごとに、追加のテスト実行オブジェクトが存在する場合があります。",
       "metadata": {
         "original": "> **Note:** Additional test run objects may be present in the response, one for each test type that was executed.",
         "codeBlocks": [],
@@ -76338,7 +76338,7 @@
     },
     "8cb5ff342fb398da76fd7674663539700e8b851dc81179542435f8e09e2d69f5": {
       "original": "If you're unsure which monetization model applies to your plugin, theme, or service, or if you'd like to discuss partnership options before submitting for review, please [contact the Marketplace team](__URL_0__). We recommend reaching out early in your planning process to ensure alignment before you invest significant development effort.",
-      "translated": "どのマネタイズモデルがあなたのプラグイン、テーマ、またはサービスに適用されるか不明な場合、またはレビューに提出する前にパートナーシップのオプションについて話し合いたい場合は、[マーケットプレイスチームにご連絡ください](__URL_0__)。重要な開発労力を投資する前に、計画プロセスの早い段階で連絡を取り、整合性を確認することをお勧めします。",
+      "translated": "あなたのプラグイン、テーマ、またはサービスにどの収益化モデルが適用されるか不明な場合、またはレビューに提出する前にパートナーシップのオプションについて話し合いたい場合は、[マーケットプレイスチームにご連絡ください](__URL_0__)。重要な開発労力を投資する前に、計画プロセスの早い段階で連絡を取り、整合性を確認することをお勧めします。",
       "metadata": {
         "original": "If you're unsure which monetization model applies to your plugin, theme, or service, or if you'd like to discuss partnership options before submitting for review, please [contact the Marketplace team](__URL_0__). We recommend reaching out early in your planning process to ensure alignment before you invest significant development effort.",
         "codeBlocks": [],
@@ -76592,7 +76592,7 @@
     },
     "3d80a0b505fdb0475f3f746228b00a9a463ecd05dd2d2bef84d9006d5b2a00ba": {
       "original": "- Solve real merchant problems\n- Are secure, well-documented, and well-maintained\n- Follow [security](__URL_0__), [development](__URL_1__), and [user experience](__URL_2__) best practices\n- Offer high-quality merchant support\n- Include a clear and sustainable monetization model, whether through direct sales, subscriptions, or another approach",
-      "translated": "[- 実際の加盟店の問題を解決する\n- 安全で、文書化され、メンテナンスが行き届いている。\n- セキュリティ](__URL_0__)、[開発](__URL_1__)、[ユーザーエクスペリエンス](__URL_2__)のベストプラクティスに従っている。\n- 質の高いマーチャントサポートを提供すること\n- 直販、サブスクリプション、またはその他の方法を問わず、明確かつ持続可能なマネタイズモデルを含むこと",
+      "translated": "[- 実際の加盟店の問題を解決する\n- 安全で、文書化され、メンテナンスが行き届いている。\n- セキュリティ](__URL_0__)、[開発](__URL_1__)、[ユーザーエクスペリエンス](__URL_2__)のベストプラクティスに従っている。\n- 質の高いマーチャントサポートを提供すること\n- 直販、サブスクリプション、またはその他の方法を問わず、明確で持続可能なマネタイズモデルを含むこと。",
       "metadata": {
         "original": "- Solve real merchant problems\n- Are secure, well-documented, and well-maintained\n- Follow [security](__URL_0__), [development](__URL_1__), and [user experience](__URL_2__) best practices\n- Offer high-quality merchant support\n- Include a clear and sustainable monetization model, whether through direct sales, subscriptions, or another approach",
         "codeBlocks": [],
@@ -76803,7 +76803,7 @@
     },
     "9d647afcfbe9effcd462940f668e91d15157279867232b6df7fb47a5fa6beb69": {
       "original": "This guide provides formatting and writing standards for creating product pages and documentation on the WooCommerce Marketplace. Following these guidelines ensures consistency across the Marketplace and creates a professional experience for merchants browsing and purchasing extensions.",
-      "translated": "このガイドでは、WooCommerce マーケットプレイスで製品ページとドキュメントを作成するための書式と記述の基準を示します。これらのガイドラインに従うことで、マーケットプレイス全体の一貫性が保たれ、エクステンションを閲覧・購入するマーチャントにとってプロフェッショナルなエクスペリエンスが提供されます。",
+      "translated": "このガイドでは、WooCommerce マーケットプレイスで製品ページとドキュメントを作成するための書式と記述の基準を示します。これらのガイドラインに従うことで、マーケットプレイス全体の一貫性が保証され、エクステンションを閲覧・購入するマーチャントにとってプロフェッショナルなエクスペリエンスが提供されます。",
       "metadata": {
         "original": "This guide provides formatting and writing standards for creating product pages and documentation on the WooCommerce Marketplace. Following these guidelines ensures consistency across the Marketplace and creates a professional experience for merchants browsing and purchasing extensions.",
         "codeBlocks": [],
@@ -77277,7 +77277,7 @@
     },
     "e0f59b6a372a96c83311558e2cb6a958436637d81f0f423b6c1b6bcff0857dd8": {
       "original": "For general tips and helpful information:",
-      "translated": "一般的なヒントや役立つ情報",
+      "translated": "一般的なヒントや役立つ情報については",
       "metadata": {
         "original": "For general tips and helpful information:",
         "codeBlocks": [],
@@ -78695,7 +78695,7 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/products.md": {
     "hash": "98cfd7127fa190fbb95765b99fcc0e1cefa718cf309efd992094be2c3fdb1878",
-    "translatedAt": "2026-02-28T17:09:07.513Z",
+    "translatedAt": "2026-02-28T17:09:07.522Z",
     "segments": 25
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/apis/store-api/resources-endpoints/product-tags.md": {
@@ -78865,32 +78865,32 @@
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/support-guidelines.md": {
     "hash": "9a07c107a3136d25a207a800877488fe219384ca144506a9e5576e63b7e080c2",
-    "translatedAt": "2026-02-28T17:08:33.972Z",
+    "translatedAt": "2026-02-28T17:08:33.996Z",
     "segments": 45
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/product-update-guidelines.md": {
     "hash": "234c7a61b65a40bdd6049d599a7778d923bb7740221dc10485a7d328e29c50df",
-    "translatedAt": "2026-02-28T17:08:42.554Z",
+    "translatedAt": "2026-02-28T17:08:42.557Z",
     "segments": 58
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/monetization-expectations.md": {
     "hash": "9d07677a395353a8762c91c9bbcf5c30c0428b4e6c695b46e8477ffd09d5f71d",
-    "translatedAt": "2026-02-28T17:08:48.628Z",
+    "translatedAt": "2026-02-28T17:08:48.417Z",
     "segments": 36
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/managing-products.md": {
     "hash": "bdd4f9d4fe9189bf7f71433fd1c0cdf5d92bc38d519d6e24d5bd4a30609410a0",
-    "translatedAt": "2026-02-28T17:08:50.667Z",
+    "translatedAt": "2026-02-28T17:08:50.176Z",
     "segments": 18
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/getting-started.md": {
     "hash": "a6af42e5e506e23a8fc00f9198e9438219de7637c328db7b28912abb6224790c",
-    "translatedAt": "2026-02-28T17:08:54.437Z",
+    "translatedAt": "2026-02-28T17:08:53.984Z",
     "segments": 24
   },
   "/home/runner/work/woocommerce-docs-ja/woocommerce-docs-ja/docs/woo-marketplace/content-style-guide.md": {
     "hash": "f1572b3ac4d01e3618c915f7b47ec0820fc80783376d94eaf787b67a48a2ad8c",
-    "translatedAt": "2026-02-28T17:09:02.972Z",
+    "translatedAt": "2026-02-28T17:09:02.669Z",
     "segments": 68
   }
 }

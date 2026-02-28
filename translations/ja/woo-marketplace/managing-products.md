@@ -2,7 +2,8 @@
 sidebar_position: 5
 sidebar_label: Managing products
 ---
-# Wooマーケットプレイスでの商品管理
+
+# Managing products in the Woo Marketplace
 
 WooCommerce.comマーケットプレイスで販売する開発者は、商品ページを編集したり、利用データや売上などの情報にアクセスしたり、レビューを管理したりすることができます。
 

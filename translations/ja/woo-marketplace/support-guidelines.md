@@ -2,7 +2,8 @@
 sidebar_position: 9
 sidebar_label: Support guidelines
 ---
-# Woo Marketplaceのサポートガイドライン
+
+# Support guidelines for the Woo Marketplace
 
 本ガイドに記載されているサポートに関する期待事項を遵守することは、マーケットプレイスベンダー契約の要件です。これらの期待事項を満たさない場合、マーケットプレイスから製品が一時的または恒久的に削除される可能性があります。
 
