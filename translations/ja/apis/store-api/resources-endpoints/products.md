@@ -30,6 +30,7 @@ GET /products?max_price=10000
 GET /products?stock_status=['outofstock']
 GET /products?catalog_visibility=search
 GET /products?rating=4,5
+GET /products?related=34
 GET /products?return_price_range=true
 GET /products?return_attribute_counts=pa_size,pa_color
 GET /products?return_rating_counts=true
@@ -68,6 +69,7 @@ GET /products?return_rating_counts=true
 | `attribute_relation`                        | string  |    no    | The logical relationship between attributes when filtering across multiple at once.                                                                                                                                                   |
 | `catalog_visibility`                        | string  |    no    | Determines if hidden or visible catalog products are shown. Allowed values: `any`, `visible`, `catalog`, `search`, `hidden`                                                                                                           |
 | `rating`                                    | array   |    no    | Limit result set to products with a certain average rating. Allowed values: `1`, `2`, `3`, `4`, `5`.                                                                                                                                  |
+| `related`                                   | integer |    no    | Limit result set to products related to a specific product ID.                                                                                                                                                                        |
 
 ```sh
 curl "https://example-store.com/wp-json/wc/store/v1/products"
@@ -256,6 +258,65 @@ curl "https://example-store.com/wp-json/wc/store/v1/products/wordpress-pennant"
 	"add_to_cart": {
 		"text": "Add to cart",
 		"description": "Add &ldquo;WordPress Pennant&rdquo; to your cart"
+	}
+}
+```
+
+## 製品リンクと埋め込み
+
+商品のレスポンスには、関連リソースへの URL を提供する `_links` が含まれます。商品にアップセル、クロスセル、関連商品が設定されている場合、WordPress の `_embed` 機能で使用できる埋め込み可能なリンクが含まれます。
+
+### 利用可能なリンク
+
+| リンク｜説明｜埋め込み可能
+| :----------- | :-------------------------------------------------- | :--------:|
+| `self` | 現在の商品へのリンク | いいえ
+| `collection`｜商品コレクションへのリンク｜いいえ｜｜`up`｜商品コレクションへのリンク
+| いいえ｜__INLINE_CODE_2__｜親製品（バリエーション用）へのリンク
+| `upsells` | アップセル商品へのリンク (設定されている場合)
+| `cross_sells`|クロスセル商品取得へのリンク (設定されている場合) | はい｜｜__INLINE_CODE_4__|クロスセル商品取得へのリンク (設定されている場合)
+| はい｜`related`｜関連商品の取得リンク｜はい｜__INLINE_CODE_5__｜関連商品の取得リンク(設定されている場合)
+
+### リンクのあるレスポンス例
+
+```json
+{
+	"id": 34,
+	"name": "WordPress Pennant",
+	"_links": {
+		"self": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products/34"}],
+		"collection": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products"}],
+		"upsells": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products?include=10,20", "embeddable": true}],
+		"cross_sells": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products?include=30", "embeddable": true}],
+		"related": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products?related=34&per_page=10", "embeddable": true}]
+	}
+}
+```
+
+### `_embed`パラメータの使用
+
+商品リクエストに`?_embed`を追加すると、リンクされたリソースを自動的に取得し、`_embedded`オブジェクトに含めます：
+
+```sh
+curl "https://local.wordpress.test/wp-json/wc/store/v1/products/34?_embed"
+```
+
+*エンベッディングを使用した回答例：***。
+
+```json
+{
+	"id": 34,
+	"name": "WordPress Pennant",
+	"_links": {
+		"self": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products/34"}],
+		"collection": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products"}],
+		"upsells": [{"href": "https://local.wordpress.test/wp-json/wc/store/v1/products?include=10,20", "embeddable": true}]
+	},
+	"_embedded": {
+		"upsells": [
+			{"id": 10, "name": "Upsell Product 1", "...": "..."},
+			{"id": 20, "name": "Upsell Product 2", "...": "..."}
+		]
 	}
 }
 ```
